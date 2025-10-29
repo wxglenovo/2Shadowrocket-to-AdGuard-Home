@@ -73,25 +73,38 @@ jobs:
         run: |
           CURRENT_HOUR=$(date -u +"%H")
           if [ "$CURRENT_HOUR" = "00" ]; then
-            echo "✅ 每天 00:00 强制下载规则源并生成所有分片"
+            echo "✅ 每天 00:00 强制下载规则源并生成分片"
             python split_and_check_16.py --force-update
           else
             echo "⏩ 非 00:00，不强制下载"
           fi
 
-      - name: Ensure part file exists
+      - name: Ensure rules and first part exist
+        shell: bash
+        run: |
+          MERGED_FILE="merged_rules.txt"
+          TMP_DIR="tmp"
+          FIRST_PART="$TMP_DIR/part_01.txt"
+
+          if [ ! -f "$MERGED_FILE" ] || [ ! -f "$FIRST_PART" ]; then
+            echo "⚠ 缺少规则文件或分片，自动拉取规则源并生成分片"
+            python split_and_check_16.py --force-update
+          else
+            echo "✅ 规则文件和分片存在"
+          fi
+
+      - name: Ensure current part file exists
         shell: bash
         env:
           PART: ${{ steps.detect.outputs.part }}
         run: |
           PART_FILE=$(printf "tmp/part_%02d.txt" "$PART")
-
           if [ ! -f "$PART_FILE" ]; then
-            echo "⚠ 分片缺失：$PART_FILE"
+            echo "⚠ 当前分片缺失：$PART_FILE"
             echo "🔄 自动下载规则源并生成分片"
             python split_and_check_16.py --force-update
           else
-            echo "✅ 分片存在：$PART_FILE"
+            echo "✅ 当前分片存在：$PART_FILE"
           fi
 
       - name: Run DNS validation

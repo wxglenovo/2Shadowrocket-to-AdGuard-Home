@@ -1,5 +1,4 @@
 name: Split & DNS Check
-name: Split & DNS Check
 
 on:
   schedule:

@@ -1,13 +1,13 @@
 name: split_check
 
 on:
-  # 定时每天 4 次更新
+  # 每天 4 次定时触发
   schedule:
     - cron: "0 0 * * *"    # 00:00 UTC
     - cron: "0 6 * * *"    # 06:00 UTC
     - cron: "0 12 * * *"   # 12:00 UTC
     - cron: "0 18 * * *"   # 18:00 UTC
-  # 手动触发
+  # 手动触发 workflow
   workflow_dispatch:
     inputs:
       part:
@@ -47,6 +47,7 @@ jobs:
           else
               echo "自动轮替验证当前分片"
               python split_and_check_16.py | tee split_check.log
+          fi
 
       - name: Commit and push changes
         shell: bash

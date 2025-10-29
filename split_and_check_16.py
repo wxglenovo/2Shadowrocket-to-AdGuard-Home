@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 
 import os
 import sys
@@ -23,10 +21,11 @@ def download_urls():
     url = "https://raw.githubusercontent.com/your-repo/urls.txt"  # 替换为你的源
     r = requests.get(url)
     r.raise_for_status()
+    lines = r.text.splitlines()
     with open(URLS_TXT, "w", encoding="utf-8") as f:
         f.write(r.text)
-    print(f"✅ 下载完成，共 {len(r.text.splitlines())} 条规则")
-    return r.text.splitlines()
+    print(f"✅ 下载完成，共 {len(lines)} 条规则")
+    return lines
 
 def split_urls(lines):
     total = len(lines)

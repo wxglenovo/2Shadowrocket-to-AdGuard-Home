@@ -4,8 +4,8 @@ on:
   schedule:
     # 每天 UTC 0:00 强制更新 urls.txt 并生成所有分片
     - cron: "0 0 * * *"
-    # 每 1.5 小时轮替一片（含 23）
-    - cron: "0 0,1,3,4,6,7,9,10,12,13,15,16,18,19,21,22,23 * * *"
+    # 每天自动轮替 16 次分片验证，每 1.5 小时轮替一片
+    - cron: "0 0,1,3,4,6,7,9,10,12,13,15,16,18,19,21,22 * * *"
   workflow_dispatch:
     inputs:
       part:
@@ -34,62 +34,61 @@ jobs:
       - name: Install dependencies
         run: pip install --upgrade requests dnspython
 
-      - name: Daily force update at UTC 00:00
+      - name: Update urls.txt and split (daily forced)
+        shell: bash
         run: |
-          HOUR=$(date -u +"%H")
-          if [ "$HOUR" = "00" ]; then
-            echo "🔄 每日强制刷新规则与切片"
-            python split_and_check_16.py --force-update
+          CURRENT_HOUR=$(date -u +"%H")
+          if [ "$CURRENT_HOUR" = "00" ]; then
+              echo "🔄 每天强制更新 urls.txt 并生成分片"
+              python split_and_check_16.py --force-update
           else
-            echo "⏭ 当前不是 00:00，跳过强制更新"
+              echo "⏩ 非 0 点，不强制更新"
           fi
 
-      - name: Decide which part to run
-        id: decide
+      - name: Run split and DNS check
+        shell: bash
         run: |
+          LAST_PART_FILE=".last_part"
           PART_INPUT="${{ github.event.inputs.part }}"
-          LAST_FILE=".last_part"
 
           if [ -n "$PART_INPUT" ]; then
               PART="$PART_INPUT"
-              echo "🛠 手动请求验证分片 $PART"
+              echo "🛠 手动触发，验证分片 $PART"
           else
-              if [ -f "$LAST_FILE" ]; then
-                  LAST=$(cat "$LAST_FILE")
-                  PART=$(( (LAST % 16) + 1 ))
+              if [ -f "$LAST_PART_FILE" ]; then
+                  LAST_PART=$(cat "$LAST_PART_FILE")
+                  PART=$(( (LAST_PART % 16) + 1 ))
               else
                   PART=1
               fi
               echo "⏱ 自动轮替验证分片 $PART"
           fi
 
-          echo $PART > $LAST_FILE
-          echo "part=$PART" >> $GITHUB_OUTPUT
+          echo $PART > $LAST_PART_FILE
 
-      - name: Run split + validate with 50 threads
+          python split_and_check_16.py --part "$PART" | tee split_check.log
+
+      - name: Store log
+        shell: bash
         run: |
-          python split_and_check_16.py --part "${{ steps.decide.outputs.part }}" | head -n 500
-          echo "⚠ 日志已截断避免 GitHub 报错，完整日志写入 split_check.log"
-
-      - name: Save full log
-        run: |
-          mv split_check.log split_check_${{ steps.decide.outputs.part }}.log
-          echo "✅ 完整日志已保存 split_check_${{ steps.decide.outputs.part }}.log"
-
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: dns-logs
-          path: split_check_*.log
+          mkdir -p logs
+          if [ -f split_check.log ]; then
+              mv split_check.log "logs/split_check_part_${PART}.log"
+              echo "✅ 日志已保存：logs/split_check_part_${PART}.log"
+          else
+              echo "⚠ split_check.log 未生成，跳过移动"
+          fi
 
       - name: Commit & Push Validated Rules
+        shell: bash
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
           if ls dist/validated_part_*.txt 1> /dev/null 2>&1; then
-            git add dist/validated_part_*.txt tmp/part_*.txt .last_part || true
-            git commit -m "🤖 Auto update part ${{ steps.decide.outputs.part }}" || echo "No changes"
-            git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
+              git add dist/validated_part_*.txt tmp/part_*.txt logs/
+              git commit -m "🤖 Auto update: validated part ${PART}"
+              git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
           else
-            echo "⚠ 没有生成任何验证文件"
+              echo "⚠ 没有验证文件，跳过提交"
+          fi

@@ -4,7 +4,6 @@ import dns.resolver
 import concurrent.futures
 from datetime import datetime
 import argparse
-import time
 
 URLS_FILE = "urls.txt"
 OUTPUT_DIR = "dist"
@@ -29,8 +28,10 @@ def safe_fetch(url):
 
 def clean_rule(line):
     l = line.strip()
-    if not l or l.startswith("#") or l.startswith("!") or l.startswith("||browser.events") or l.startswith("||cf.iadsdk") \
-       or l.startswith("||dig.bdurl") or l.startswith("||lf-static") or l.startswith("||rt.applovin") or l.startswith("||*.ip6.arpa"):
+    if (not l or l.startswith("#") or l.startswith("!") or
+        l.startswith("||browser.events") or l.startswith("||cf.iadsdk") or
+        l.startswith("||dig.bdurl") or l.startswith("||lf-static") or
+        l.startswith("||rt.applovin") or l.startswith("||*.ip6.arpa")):
         return None
     return l
 
@@ -44,14 +45,6 @@ def is_valid_domain(domain):
         return True
     except:
         return False
-
-def check_batch(rules):
-    valid = []
-    for rule in rules:
-        domain = extract_domain(rule)
-        if is_valid_domain(domain):
-            valid.append(rule)
-    return valid
 
 def main():
     parser = argparse.ArgumentParser()
@@ -91,8 +84,11 @@ def main():
         print(f"✅ 切成 {PARTS} 份，每份约 {chunk:,} 条")
         return
 
-    # 确定当前分片
+    # 确定分片
     if manual_part is not None:
+        if manual_part < 0 or manual_part >= PARTS:
+            print(f"❌ part 参数 {manual_part} 无效，应在 0~{PARTS-1}")
+            return
         part_index = manual_part
         print(f"⏱ 手动验证分片：{part_index}")
     else:
@@ -107,7 +103,6 @@ def main():
 
     with open(target_file, "r", encoding="utf-8") as f:
         rules = f.read().splitlines()
-
     print(f"🔍 当前分片规则：{len(rules):,} 条")
 
     valid = []

@@ -71,8 +71,9 @@ jobs:
 
       - name: Check part file, re-download if missing
         shell: bash
+        env:
+          PART: ${{ steps.detect.outputs.part }}
         run: |
-          PART=${{ steps.detect.outputs.part }}
           PART_FILE="tmp/part_${PART}.txt"
 
           if [ ! -f "$PART_FILE" ]; then
@@ -85,20 +86,23 @@ jobs:
 
       - name: Run DNS validation
         shell: bash
+        env:
+          PART: ${{ steps.detect.outputs.part }}
         run: |
-          PART=${{ steps.detect.outputs.part }}
+          echo "⏱ 开始验证分片 $PART"
           python split_and_check_16.py --part "$PART" | tee split_check.log
 
       - name: Store log safely
         shell: bash
+        env:
+          PART: ${{ steps.detect.outputs.part }}
         run: |
           mkdir -p logs
-          PART=${{ steps.detect.outputs.part }}
           if [ -f split_check.log ]; then
             mv split_check.log "logs/split_check_part_${PART}.log"
             echo "✅ 日志已保存 logs/split_check_part_${PART}.log"
           else
-            echo "⚠ split_check.log 未生成，跳过"
+            echo "⚠ split_check.log 未生成，跳过移动"
           fi
 
       - name: Set git config
@@ -109,8 +113,9 @@ jobs:
 
       - name: Commit & Push Validated Rules
         shell: bash
+        env:
+          PART: ${{ steps.detect.outputs.part }}
         run: |
-          PART=${{ steps.detect.outputs.part }}
           if ls dist/validated_part_*.txt 1> /dev/null 2>&1; then
             git add dist/validated_part_*.txt tmp/part_*.txt logs/
             git commit -m "🤖 Auto update: validated part $PART" || echo "No changes to commit"

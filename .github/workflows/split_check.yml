@@ -2,46 +2,40 @@ name: SplitCheck
 
 on:
   schedule:
-    # 每天 0:00, 1:30, 3:00 ... 1.5 小时轮替
+    # 每天 1 次更新 urls.txt
     - cron: "0 0 * * *"
-    - cron: "30 1 * * *"
-    - cron: "0 3 * * *"
-    - cron: "30 4 * * *"
-    - cron: "0 6 * * *"
-    - cron: "30 7 * * *"
-    - cron: "0 9 * * *"
-    - cron: "30 10 * * *"
-    - cron: "0 12 * * *"
-    - cron: "30 13 * * *"
-    - cron: "0 15 * * *"
-    - cron: "30 16 * * *"
-    - cron: "0 18 * * *"
-    - cron: "30 19 * * *"
-    - cron: "0 21 * * *"
-    - cron: "30 22 * * *"
+    # 每小时轮替分片（UTC）
+    - cron: "0 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 * * *"
   workflow_dispatch:
+    inputs:
+      part:
+        description: '手动验证分片 0~15'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
 
 jobs:
-  splitcheck:
+  split_check:
     runs-on: ubuntu-latest
-    env:
-      PYTHONUNBUFFERED: 1
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Python
+      - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: "3.12"
 
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
           pip install requests dnspython
 
-      - name: Run Split & DNS Check
+      - name: Run split_and_check_16.py
+        shell: bash
+        env:
+          PYTHONUNBUFFERED: 1
         run: |
           if [ "${{ github.event.inputs.part }}" != "" ]; then
             echo "🛠 手动触发，验证分片 ${{ github.event.inputs.part }}"
@@ -49,21 +43,12 @@ jobs:
           else
             echo "⏱ 自动轮替验证当前分片"
             python split_and_check_16.py | tee split_check.log
-          fi
 
-      - name: Commit & Push Validated Results
+      - name: Commit & Push
+        shell: bash
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          FILES=""
-          [ -f dist/blocklist_valid.txt ] && FILES="$FILES dist/blocklist_valid.txt"
-          [ -d tmp ] && FILES="$FILES tmp/part_*.txt"
-
-          if [ -n "$FILES" ]; then
-            git add $FILES
-            git commit -m "🤖 Auto update: valid blocklist" || echo "No changes"
-            git push origin main
-          else
-            echo "⚠️ 没有生成任何文件，无需提交"
-          fi
+          git add dist/blocklist_valid.txt tmp/part_*.txt
+          git commit -m "🤖 Auto update: valid blocklist" || echo "No changes"
+          git push origin main

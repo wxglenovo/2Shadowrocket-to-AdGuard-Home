@@ -2,37 +2,24 @@ import os
 import requests
 import dns.resolver
 import concurrent.futures
-from datetime import datetime
 import argparse
+from datetime import datetime
 
-# ===============================
-# 配置
-# ===============================
 URLS_FILE = "urls.txt"
 OUTPUT_DIR = "tmp"
-DIST_DIR = "dist"
+BLOCKLIST_FILE = "dist/blocklist_valid.txt"
 PARTS = 16
-DNS_BATCH_SIZE = 800  # 每批 DNS 验证大小
-MAX_WORKERS = 80      # DNS 并发线程数
+DNS_BATCH_SIZE = 800
+MAX_WORKERS = 80  # 并发线程数
 
 resolver = dns.resolver.Resolver()
 resolver.timeout = 1.5
 resolver.lifetime = 1.5
 resolver.nameservers = ["1.1.1.1", "8.8.8.8", "9.9.9.9"]
 
-# ===============================
-# 参数解析
-# ===============================
-parser = argparse.ArgumentParser()
-parser.add_argument("--part", type=int, help="手动验证分片 0~15")
-args = parser.parse_args()
-manual_part = args.part
-
-# ===============================
-# 功能函数
-# ===============================
 def safe_fetch(url):
     try:
+        print(f"📥 下载：{url}")
         r = requests.get(url, timeout=10)
         r.raise_for_status()
         return r.text.splitlines()
@@ -61,24 +48,33 @@ def check_rule(rule):
     domain = extract_domain(rule)
     return rule if is_valid_domain(domain) else None
 
-# ===============================
-# 主程序
-# ===============================
-def main():
+def save_part_file(index, rules):
     os.makedirs(OUTPUT_DIR, exist_ok=True)
-    os.makedirs(DIST_DIR, exist_ok=True)
-    part_files = [os.path.join(OUTPUT_DIR, f"part_{i+1:02d}.txt") for i in range(PARTS)]
-    valid_output = os.path.join(DIST_DIR, "blocklist_valid.txt")
+    part_file = os.path.join(OUTPUT_DIR, f"part_{index+1:02d}.txt")
+    with open(part_file, "w", encoding="utf-8") as f:
+        f.write("\n".join(rules))
+    print(f"📄 分片 {index+1} 保存 {len(rules):,} 条规则 → {part_file}")
+    print(f"前 10 条示例： {rules[:10]}")
 
-    # ============================
-    # 首次执行：下载 urls.txt 并切片
-    # ============================
-    if not os.path.exists(part_files[0]):
+def load_part_file(index):
+    part_file = os.path.join(OUTPUT_DIR, f"part_{index+1:02d}.txt")
+    if not os.path.exists(part_file):
+        return []
+    with open(part_file, "r", encoding="utf-8") as f:
+        return f.read().splitlines()
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--part", type=int, help="手动指定分片验证 0~15")
+    args = parser.parse_args()
+
+    # 首次下载并切片
+    first_run = not all(os.path.exists(os.path.join(OUTPUT_DIR, f"part_{i+1:02d}.txt")) for i in range(PARTS))
+    if first_run:
         print("🧩 首次运行：下载并切片")
         if not os.path.exists(URLS_FILE):
-            print("❌ 未找到 urls.txt")
+            print("❌ urls.txt 不存在")
             return
-
         with open(URLS_FILE, "r", encoding="utf-8") as f:
             urls = [x.strip() for x in f if x.strip() and not x.startswith("#")]
 
@@ -87,7 +83,6 @@ def main():
             for lines in ex.map(safe_fetch, urls):
                 all_rules.extend(lines)
 
-        # 去注释 + 去重
         cleaned = list(dict.fromkeys([clean_rule(x) for x in all_rules if clean_rule(x)]))
         total = len(cleaned)
         print(f"✅ 去重后总计：{total:,} 条")
@@ -96,37 +91,22 @@ def main():
         for idx in range(PARTS):
             start = idx * chunk
             end = None if idx == PARTS - 1 else (idx + 1) * chunk
-            with open(part_files[idx], "w", encoding="utf-8") as f:
-                f.write("\n".join(cleaned[start:end]))
-            print(f"📄 分片 {idx+1} 保存 {len(cleaned[start:end]):,} 条规则 → {part_files[idx]}")
-            print(f"前 10 条示例： {cleaned[start:start+10]}")
-        return
+            save_part_file(idx, cleaned[start:end])
 
-    # ============================
-    # 确定当前处理分片
-    # ============================
-    if manual_part is not None:
-        part_index = manual_part
-        print(f"🛠 手动触发，验证分片 {part_index}")
+    # 确定处理分片
+    if args.part is not None:
+        part_index = args.part
+        print(f"🛠 手动触发，验证分片 {part_index+1}")
     else:
         minute = datetime.utcnow().hour * 60 + datetime.utcnow().minute
         part_index = (minute // 90) % PARTS
-        print(f"⏱ 自动轮替验证当前分片 {part_index}")
+        print(f"⏱ 自动轮替当前分片 {part_index+1}")
 
-    target_file = part_files[part_index]
-    if not os.path.exists(target_file):
-        print(f"⚠️ 分片不存在：{target_file}")
-        return
-
-    with open(target_file, "r", encoding="utf-8") as f:
-        rules = f.read().splitlines()
+    rules = load_part_file(part_index)
     total_rules = len(rules)
-    print(f"⏱ 当前处理分片：{target_file}, 总规则 {total_rules:,} 条")
+    print(f"⏱ 当前处理分片：{OUTPUT_DIR}/part_{part_index+1:02d}.txt, 总规则 {total_rules:,} 条")
     print(f"前 10 条规则示例： {rules[:10]}")
 
-    # ============================
-    # 分批 DNS 验证
-    # ============================
     valid = []
     for i in range(0, total_rules, DNS_BATCH_SIZE):
         batch = rules[i:i+DNS_BATCH_SIZE]
@@ -136,13 +116,11 @@ def main():
         valid.extend(batch_valid)
         print(f"✅ 已验证 {min(i+DNS_BATCH_SIZE, total_rules):,}/{total_rules:,} 条，本批有效 {len(batch_valid):,} 条")
 
-    # ============================
-    # 保存有效规则
-    # ============================
-    with open(valid_output, "a", encoding="utf-8") as f:
+    os.makedirs(os.path.dirname(BLOCKLIST_FILE), exist_ok=True)
+    with open(BLOCKLIST_FILE, "a", encoding="utf-8") as f:
         f.write("\n".join(valid) + "\n")
-    print(f"🎯 本次有效规则追加至 {valid_output}, 总计 {len(valid):,} 条")
-    print("✅ 执行结束")
+    print(f"✅ 本次有效总计 {len(valid):,} 条 → 已追加至 {BLOCKLIST_FILE}")
+    print("🎯 执行结束 ✅")
 
 if __name__ == "__main__":
     main()

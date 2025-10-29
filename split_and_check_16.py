@@ -2,110 +2,82 @@ import os
 import requests
 import dns.resolver
 import concurrent.futures
-from datetime import datetime, timezone
-import time
-import socket
+from datetime import datetime
 import argparse
+import time
 
-# ===================== 配置 =====================
 URLS_FILE = "urls.txt"
 OUTPUT_DIR = "dist"
-TMP_DIR = "tmp"
 PARTS = 16
-DNS_WORKERS = 10
-DNS_BATCH_SIZE = 200        # ✅ 修改为 200
-DNS_TIMEOUT = 1.5
-BATCH_SLEEP = 0.5
-RETRY_ON_FAIL = True
-
-socket.setdefaulttimeout(DNS_TIMEOUT)
+MAX_WORKERS = 80
+DNS_BATCH_SIZE = 200  # 每批处理200条 DNS
 
 resolver = dns.resolver.Resolver()
+resolver.timeout = 1.5
+resolver.lifetime = 1.5
 resolver.nameservers = ["1.1.1.1", "8.8.8.8", "9.9.9.9"]
-resolver.timeout = DNS_TIMEOUT
-resolver.lifetime = DNS_TIMEOUT
 
-# ===================== 函数 =====================
 def safe_fetch(url):
     try:
+        print(f"📥 下载：{url}")
         r = requests.get(url, timeout=10)
         r.raise_for_status()
         return r.text.splitlines()
-    except Exception:
+    except:
         print(f"⚠️ 下载失败：{url}")
         return []
 
 def clean_rule(line):
     l = line.strip()
-    if not l or l.startswith("#") or l.startswith("!"):
+    if not l or l.startswith("#") or l.startswith("!") or l.startswith("||browser.events") or l.startswith("||cf.iadsdk") \
+       or l.startswith("||dig.bdurl") or l.startswith("||lf-static") or l.startswith("||rt.applovin") or l.startswith("||*.ip6.arpa"):
         return None
     return l
 
 def extract_domain(rule):
-    return rule.lstrip("|").lstrip(".").split("^")[0].strip()
+    d = rule.lstrip("|").lstrip(".").split("^")[0]
+    return d.strip()
 
 def is_valid_domain(domain):
     try:
         resolver.resolve(domain, "A")
         return True
-    except Exception:
+    except:
         return False
 
-def check_rule(rule):
-    try:
+def check_batch(rules):
+    valid = []
+    for rule in rules:
         domain = extract_domain(rule)
         if is_valid_domain(domain):
-            return rule, None
-        else:
-            return None, domain
-    except Exception:
-        return None, extract_domain(rule)
+            valid.append(rule)
+    return valid
 
-def validate_batch(rules):
-    valid_rules = []
-    failed_domains = []
-    for i in range(0, len(rules), DNS_BATCH_SIZE):
-        batch = rules[i:i+DNS_BATCH_SIZE]
-        with concurrent.futures.ThreadPoolExecutor(max_workers=DNS_WORKERS) as ex:
-            results = list(ex.map(check_rule, batch))
-        for r, f in results:
-            if r:
-                valid_rules.append(r)
-            if f:
-                failed_domains.append(f)
-        print(f"✅ 已验证 {min(i+DNS_BATCH_SIZE, len(rules)):,}/{len(rules):,} 条，本批有效 {sum(1 for r,f in results if r):,} 条")
-        time.sleep(BATCH_SLEEP)
-    return valid_rules, failed_domains
-
-# ===================== 主函数 =====================
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--part", type=int, help="手动验证指定分片 0~15")
+    parser.add_argument("--part", type=int, help="手动指定分片 0~15")
     args = parser.parse_args()
+    manual_part = args.part
+
+    if not os.path.exists(URLS_FILE):
+        print("❌ 未找到 urls.txt")
+        return
 
     os.makedirs(OUTPUT_DIR, exist_ok=True)
-    os.makedirs(TMP_DIR, exist_ok=True)
+    part_files = [os.path.join(OUTPUT_DIR, f"part_{i}.txt") for i in range(PARTS)]
+    valid_output = os.path.join(OUTPUT_DIR, "blocklist_valid.txt")
 
-    part_files = [os.path.join(TMP_DIR, f"part_{i:02d}.txt") for i in range(PARTS)]
-    validated_files = [os.path.join(TMP_DIR, f"validated_{i:02d}.txt") for i in range(PARTS)]
-    failed_files = [os.path.join(TMP_DIR, f"failed_{i:02d}.txt") for i in range(PARTS)]
-    final_output = os.path.join(OUTPUT_DIR, "blocklist_valid.txt")
-
-    # ===================== 首次切片 =====================
+    # 首次运行，下载切片
     if not os.path.exists(part_files[0]):
-        if not os.path.exists(URLS_FILE):
-            print("❌ 未找到 urls.txt")
-            return
+        print("🧩 首次运行：下载并切片")
         with open(URLS_FILE, "r", encoding="utf-8") as f:
             urls = [x.strip() for x in f if x.strip() and not x.startswith("#")]
 
-        print("📥 下载规则源...")
         all_rules = []
-        with concurrent.futures.ThreadPoolExecutor(max_workers=10) as ex:
+        with concurrent.futures.ThreadPoolExecutor(max_workers=20) as ex:
             for lines in ex.map(safe_fetch, urls):
                 all_rules.extend(lines)
 
-        # 去注释 & 去重
         cleaned = list(dict.fromkeys([clean_rule(x) for x in all_rules if clean_rule(x)]))
         total = len(cleaned)
         print(f"✅ 去重后总计：{total:,} 条")
@@ -114,72 +86,42 @@ def main():
         for idx in range(PARTS):
             start = idx * chunk
             end = None if idx == PARTS - 1 else (idx + 1) * chunk
-            part_data = cleaned[start:end]
             with open(part_files[idx], "w", encoding="utf-8") as f:
-                f.write("\n".join(part_data))
-            print(f"📄 分片 {idx+1} 保存 {len(part_data):,} 条规则 → {part_files[idx]}")
-            print("前 10 条示例：", part_data[:10])
-
-    # ===================== 确定处理分片 =====================
-    if args.part is not None:
-        part_index = args.part
-    else:
-        now = datetime.now(timezone.utc)
-        minute = now.hour * 60 + now.minute
-        part_index = (minute // 25) % PARTS  # 每 25 分钟轮替一次
-
-    target_part = part_files[part_index]
-    target_validated = validated_files[part_index]
-    target_failed = failed_files[part_index]
-
-    if not os.path.exists(target_part):
-        print(f"⚠️ 分片 {part_index} 不存在，跳过")
+                f.write("\n".join(cleaned[start:end]))
+        print(f"✅ 切成 {PARTS} 份，每份约 {chunk:,} 条")
         return
 
-    with open(target_part, "r", encoding="utf-8") as f:
-        rules = [x.strip() for x in f if x.strip()]
-    total_rules = len(rules)
-    print(f"⏱ 当前处理分片：{target_part}, 总规则 {total_rules:,} 条")
-    print("前 10 条规则示例：", rules[:10])
+    # 确定当前分片
+    if manual_part is not None:
+        part_index = manual_part
+        print(f"⏱ 手动验证分片：{part_index}")
+    else:
+        minute = datetime.utcnow().hour * 60 + datetime.utcnow().minute
+        part_index = (minute // 25) % PARTS
+        print(f"⏱ 自动轮替验证分片：{part_index}")
 
-    # ===================== DNS 验证 =====================
-    valid_rules, failed_domains = validate_batch(rules)
+    target_file = part_files[part_index]
+    if not os.path.exists(target_file):
+        print("⚠️ 分片不存在，跳过")
+        return
 
-    # 自动重试失败分片一次
-    if RETRY_ON_FAIL and failed_domains:
-        print(f"🔄 重试失败域名 {len(failed_domains):,} 条")
-        time.sleep(2)
-        retry_valid, retry_failed = validate_batch(failed_domains)
-        valid_rules.extend(retry_valid)
-        failed_domains = retry_failed
+    with open(target_file, "r", encoding="utf-8") as f:
+        rules = f.read().splitlines()
 
-    # 保存验证结果
-    with open(target_validated, "w", encoding="utf-8") as f:
-        f.write("\n".join(valid_rules))
-    with open(target_failed, "w", encoding="utf-8") as f:
-        f.write("\n".join(failed_domains))
+    print(f"🔍 当前分片规则：{len(rules):,} 条")
 
-    # 输出分片 summary
-    success_count = len(valid_rules)
-    fail_count = len(failed_domains)
-    success_rate = success_count / total_rules * 100 if total_rules else 0
-    print(f"\n🎯 分片 {part_index+1}/{PARTS} Summary:")
-    print(f"   总规则: {total_rules:,}")
-    print(f"   有效: {success_count:,}")
-    print(f"   失败: {fail_count:,}")
-    print(f"   成功率: {success_rate:.2f}%\n")
+    valid = []
+    for i in range(0, len(rules), DNS_BATCH_SIZE):
+        batch = rules[i:i+DNS_BATCH_SIZE]
+        with concurrent.futures.ThreadPoolExecutor(max_workers=MAX_WORKERS) as ex:
+            results = ex.map(lambda r: r if is_valid_domain(extract_domain(r)) else None, batch)
+            valid.extend([r for r in results if r])
 
-    # 合并所有分片验证结果
-    all_valid = []
-    for vf in validated_files:
-        if os.path.exists(vf):
-            with open(vf, "r", encoding="utf-8") as f:
-                all_valid.extend([line.strip() for line in f if line.strip()])
-    all_valid = list(dict.fromkeys(all_valid))
-    with open(final_output, "w", encoding="utf-8") as f:
-        f.write("\n".join(all_valid))
-    print(f"🎯 最终有效规则生成：{final_output} 共 {len(all_valid):,} 条")
-    print("✅ 本次执行完成，无错误")
+    with open(valid_output, "a", encoding="utf-8") as f:
+        f.write("\n".join(valid) + "\n")
+
+    print(f"✅ 本次有效：{len(valid):,} 条 → 已追加至 {valid_output}")
+    print("🎯 执行结束，0 错误 ✅")
 
 if __name__ == "__main__":
     main()

@@ -10,9 +10,9 @@ URLS_FILE = "urls.txt"
 OUTPUT_DIR = "dist"
 TMP_DIR = "tmp"
 PARTS = 16
-DNS_WORKERS = 25       # 并行 DNS 查询线程数
-DNS_BATCH_SIZE = 5000  # 每批验证数量
-DNS_TIMEOUT = 2.0       # DNS 超时
+DNS_WORKERS = 10       # 并行 DNS 查询线程数
+DNS_BATCH_SIZE = 1000  # 每批验证数量
+DNS_TIMEOUT = 1.5       # DNS 超时（秒）
 
 # 设置全局 DNS 超时
 socket.setdefaulttimeout(DNS_TIMEOUT)
@@ -28,7 +28,7 @@ def safe_fetch(url):
         r = requests.get(url, timeout=10)
         r.raise_for_status()
         return r.text.splitlines()
-    except:
+    except Exception:
         print(f"⚠️ 下载失败：{url}")
         return []
 
@@ -45,14 +45,14 @@ def is_valid_domain(domain):
     try:
         resolver.resolve(domain, "A")
         return True
-    except:
+    except Exception:
         return False
 
 def check_rule(rule):
     try:
         domain = extract_domain(rule)
         return rule if is_valid_domain(domain) else None
-    except:
+    except Exception:
         return None
 
 # ===================== 主函数 =====================
@@ -74,7 +74,7 @@ def main():
 
     all_rules = []
     print("📥 下载规则源...")
-    with concurrent.futures.ThreadPoolExecutor(max_workers=20) as ex:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=10) as ex:
         for lines in ex.map(safe_fetch, urls):
             all_rules.extend(lines)
 
@@ -109,7 +109,7 @@ def main():
         rules = [x.strip() for x in f if x.strip()]
     print(f"🔍 当前分片规则总数：{len(rules):,} 条")
 
-    # 5️⃣ DNS 验证（分批）
+    # 5️⃣ DNS 验证（分批处理）
     valid_rules = []
     for i in range(0, len(rules), DNS_BATCH_SIZE):
         batch = rules[i:i+DNS_BATCH_SIZE]

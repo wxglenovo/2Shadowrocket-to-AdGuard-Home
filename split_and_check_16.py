@@ -126,7 +126,7 @@ def main():
     else:
         now = datetime.now(timezone.utc)
         minute = now.hour * 60 + now.minute
-        part_index = (minute // 90) % PARTS
+        part_index = (minute // 25) % PARTS  # 每 25 分钟轮替一次
 
     target_part = part_files[part_index]
     target_validated = validated_files[part_index]

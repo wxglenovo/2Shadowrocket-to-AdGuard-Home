@@ -2,7 +2,7 @@ name: Split & DNS Check
 
 on:
   schedule:
-    # 每天 UTC 0:00 更新 urls.txt
+    # 每天 UTC 0:00 强制更新 urls.txt 并生成所有分片
     - cron: "0 0 * * *"
     # 每天自动轮替 16 次分片验证，每 1.5 小时轮替一片
     - cron: "0 0,1,3,4,6,7,9,10,12,13,15,16,18,19,21,22 * * *"
@@ -33,6 +33,16 @@ jobs:
 
       - name: Install dependencies
         run: pip install --upgrade requests dnspython
+
+      - name: Update urls.txt and split (daily forced)
+        shell: bash
+        run: |
+          CURRENT_HOUR=$(date -u +"%H")
+          # UTC 0:00 强制更新 urls.txt 并生成所有分片
+          if [ "$CURRENT_HOUR" = "00" ]; then
+              echo "🔄 每天强制更新 urls.txt 并生成分片"
+              python split_and_check_16.py --force-update
+          fi
 
       - name: Run split and DNS check
         shell: bash
@@ -67,7 +77,6 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # 仅当验证文件存在时再 add & commit
           if ls dist/validated_part_*.txt 1> /dev/null 2>&1; then
               git add dist/validated_part_*.txt tmp/part_*.txt
               git commit -m "🤖 Auto update: valid blocklist" || echo "No changes"

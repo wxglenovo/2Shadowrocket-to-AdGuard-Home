@@ -66,14 +66,18 @@ def dns_validate_parallel(lines, max_workers=50):
 def process_part(part):
     part_file = os.path.join(TMP_DIR, f"part_{int(part):02d}.txt")
     if not os.path.exists(part_file):
-        print(f"⚠ 分片文件不存在: {part_file}")
-        return
+        print(f"⚠ 分片文件不存在: {part_file}，将自动生成所有分片")
+        split_parts()  # 自动生成分片
+        if not os.path.exists(part_file):
+            print(f"❌ 生成分片失败: {part_file}")
+            return
+
     lines = open(part_file, "r", encoding="utf-8").read().splitlines()
     print(f"⏱ 当前处理分片：{part_file}, 总规则 {len(lines)} 条")
     valid = dns_validate_parallel(lines)
     out_file = os.path.join(DIST_DIR, f"validated_part_{part}.txt")
     with open(out_file, "w", encoding="utf-8") as f:
-        f.write("\n".join(valid))
+        f.write("\n".join(valid))  # 即使 valid 为空也会生成文件
     print(f"📄 分片 {part} 验证完成，有效规则保存 → {out_file}")
 
 if __name__ == "__main__":
@@ -81,9 +85,13 @@ if __name__ == "__main__":
     parser.add_argument("--part", help="指定分片 1~16", required=True)
     args = parser.parse_args()
 
-    # 自动下载和分片（如果不存在 urls.txt）
+    # 自动下载 urls.txt
     if not os.path.exists(URLS_TXT):
         download_urls()
+
+    # 自动生成分片，如果分片不存在
+    first_part_file = os.path.join(TMP_DIR, "part_01.txt")
+    if not os.path.exists(first_part_file):
         split_parts()
 
     process_part(args.part)

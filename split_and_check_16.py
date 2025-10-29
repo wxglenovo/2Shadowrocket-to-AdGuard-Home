@@ -1,96 +1,109 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+import requests
 import os
 import argparse
-import requests
-import time
+from math import ceil
 
-DNS_BATCH_SIZE = 800  # 每批验证数量
-TOTAL_PARTS = 16
-URLS_FILE = 'urls.txt'
-TMP_DIR = 'tmp'
-DIST_DIR = 'dist'
+# ===============================
+# 配置
+# ===============================
+URLS_FILE = "urls.txt"
+TMP_DIR = "tmp"
+DIST_DIR = "dist"
+VALID_FILE = os.path.join(DIST_DIR, "blocklist_valid.txt")
+DNS_BATCH_SIZE = 800
+NUM_PARTS = 16
 
-os.makedirs(TMP_DIR, exist_ok=True)
-os.makedirs(DIST_DIR, exist_ok=True)
+# ===============================
+# 工具函数
+# ===============================
+def fetch_all_urls(urls_file):
+    urls = []
+    with open(urls_file, "r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if line and not line.startswith("#"):
+                urls.append(line)
+    return urls
 
-def update_urls():
-    """每天更新 urls.txt"""
-    url_source = 'https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/dist/blocklist.txt'
-    r = requests.get(url_source)
-    r.raise_for_status()
-    with open(URLS_FILE, 'w', encoding='utf-8') as f:
-        f.write(r.text)
-    print(f"📄 更新 urls.txt 成功，规则总数: {len(r.text.splitlines())}")
+def download_rules(urls):
+    all_rules = []
+    for url in urls:
+        try:
+            print(f"📥 下载 {url} ...")
+            resp = requests.get(url, timeout=30)
+            resp.raise_for_status()
+            rules = [line.strip() for line in resp.text.splitlines() if line.strip()]
+            all_rules.extend(rules)
+            print(f"✅ 下载 {len(rules)} 条规则")
+        except Exception as e:
+            print(f"❌ 下载失败 {url}: {e}")
+    # 去重
+    all_rules = list(dict.fromkeys(all_rules))
+    print(f"📊 总规则数: {len(all_rules)}")
+    return all_rules
 
-def load_rules():
-    with open(URLS_FILE, 'r', encoding='utf-8') as f:
-        rules = [line.strip() for line in f if line.strip()]
-    return rules
-
-def split_rules(rules):
-    """分成16个切片"""
-    part_size = (len(rules) + TOTAL_PARTS - 1) // TOTAL_PARTS
+def split_rules(rules, num_parts):
+    size = ceil(len(rules) / num_parts)
     parts = []
-    for i in range(TOTAL_PARTS):
-        start = i * part_size
-        end = start + part_size
-        part = rules[start:end]
-        parts.append(part)
-        part_file = os.path.join(TMP_DIR, f'part_{i+1:02d}.txt')
-        with open(part_file, 'w', encoding='utf-8') as f:
-            f.write('\n'.join(part))
-        print(f"📄 分片 {i+1} 保存 {len(part)} 条规则 → {part_file}")
-        print(f"前 10 条示例： {part[:10]}")
+    for i in range(num_parts):
+        part_rules = rules[i*size:(i+1)*size]
+        parts.append(part_rules)
     return parts
 
-def validate_rules(part_rules):
-    """模拟验证，返回有效规则列表"""
+def save_part(part_rules, index):
+    os.makedirs(TMP_DIR, exist_ok=True)
+    filename = os.path.join(TMP_DIR, f"part_{index+1:02d}.txt")
+    with open(filename, "w", encoding="utf-8") as f:
+        for rule in part_rules:
+            f.write(rule + "\n")
+    print(f"📄 分片 {index+1} 保存 {len(part_rules)} 条规则 → {filename}")
+    print(f"前 10 条示例： {part_rules[:10]}")
+    return filename
+
+def mock_validate_rules(part_rules):
+    # 模拟 DNS 验证
     valid_rules = []
     total = len(part_rules)
     for i in range(0, total, DNS_BATCH_SIZE):
         batch = part_rules[i:i+DNS_BATCH_SIZE]
-        # 模拟 DNS 验证，这里直接假设偶数条有效
-        batch_valid = [rule for idx, rule in enumerate(batch) if idx % 2 == 0]
-        valid_rules.extend(batch_valid)
-        print(f"⏱ 已验证 {min(i+DNS_BATCH_SIZE, total)}/{total} 条，本批有效 {len(batch_valid)} 条")
-        time.sleep(0.1)  # 模拟验证耗时
+        # 假设验证成功率高
+        valid_rules.extend(batch)
+        print(f"⏱ 已验证 {min(i+DNS_BATCH_SIZE,total)}/{total} 条，本批有效 {len(batch)} 条")
     return valid_rules
 
-def save_valid_rules(valid_rules):
-    out_file = os.path.join(DIST_DIR, 'blocklist_valid.txt')
-    with open(out_file, 'w', encoding='utf-8') as f:
-        f.write('\n'.join(valid_rules))
-    print(f"✅ 已保存有效规则，共 {len(valid_rules)} 条 → {out_file}")
-
+# ===============================
+# 主函数
+# ===============================
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--part', type=int, default=-1, help='指定验证的切片编号 0-15')
+    parser.add_argument("--part", type=int, help="验证指定分片 0~15")
     args = parser.parse_args()
 
-    # 每天更新 urls.txt
-    if not os.path.exists(URLS_FILE) or time.time() - os.path.getmtime(URLS_FILE) > 86400:
-        update_urls()
+    os.makedirs(DIST_DIR, exist_ok=True)
+    urls = fetch_all_urls(URLS_FILE)
+    all_rules = download_rules(urls)
+    parts = split_rules(all_rules, NUM_PARTS)
 
-    rules = load_rules()
-    parts = split_rules(rules)
-
-    if 0 <= args.part < TOTAL_PARTS:
-        # 手动触发验证单个切片
-        part_idx = args.part
-        print(f"⏱ 当前处理分片：tmp/part_{part_idx+1:02d}.txt, 总规则 {len(parts[part_idx])} 条")
-        print(f"前 10 条规则示例： {parts[part_idx][:10]}")
-        valid_rules = validate_rules(parts[part_idx])
+    if args.part is not None:
+        # 验证指定分片
+        part_rules = parts[args.part]
+        filename = save_part(part_rules, args.part)
+        valid_rules = mock_validate_rules(part_rules)
     else:
-        # 自动轮替，按顺序验证每个切片
+        # 验证全部分片
         valid_rules = []
-        for idx, part in enumerate(parts):
-            print(f"⏱ 当前处理分片：tmp/part_{idx+1:02d}.txt, 总规则 {len(part)} 条")
-            print(f"前 10 条规则示例： {part[:10]}")
-            valid_rules.extend(validate_rules(part))
+        for idx, part_rules in enumerate(parts):
+            filename = save_part(part_rules, idx)
+            valid_rules.extend(mock_validate_rules(part_rules))
 
-    save_valid_rules(valid_rules)
+    # 保存最终有效规则
+    with open(VALID_FILE, "w", encoding="utf-8") as f:
+        for rule in valid_rules:
+            f.write(rule + "\n")
+    print(f"🎉 最终有效规则保存至 {VALID_FILE}，共 {len(valid_rules)} 条")
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

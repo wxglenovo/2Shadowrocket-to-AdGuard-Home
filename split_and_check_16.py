@@ -7,7 +7,7 @@ import time
 import dns.resolver
 from concurrent.futures import ThreadPoolExecutor
 
-DNS_BATCH_SIZE = 800  # 每批验证数量
+DNS_BATCH_SIZE = 800
 URLS_TXT = "urls.txt"
 TMP_DIR = "tmp"
 DIST_DIR = "dist"
@@ -18,7 +18,7 @@ os.makedirs(DIST_DIR, exist_ok=True)
 
 def download_urls():
     url = "https://raw.githubusercontent.com/wxglenovo/Shadowrocket-to-AdGuard-Home/main/urls.txt"
-    print(f"📥 下载 urls.txt ...")
+    print(f"📥 下载最新 urls.txt ...")
     r = requests.get(url)
     r.raise_for_status()
     with open(URLS_TXT, "w", encoding="utf-8") as f:
@@ -66,8 +66,9 @@ def dns_validate_parallel(lines, max_workers=50):
 def process_part(part):
     part_file = os.path.join(TMP_DIR, f"part_{int(part):02d}.txt")
     if not os.path.exists(part_file):
-        print(f"⚠ 分片文件不存在: {part_file}，将自动生成所有分片")
-        split_parts()  # 自动生成分片
+        print(f"⚠ 分片文件不存在: {part_file}，重新下载最新 urls.txt 并生成分片")
+        download_urls()
+        split_parts()
         if not os.path.exists(part_file):
             print(f"❌ 生成分片失败: {part_file}")
             return
@@ -77,21 +78,33 @@ def process_part(part):
     valid = dns_validate_parallel(lines)
     out_file = os.path.join(DIST_DIR, f"validated_part_{part}.txt")
     with open(out_file, "w", encoding="utf-8") as f:
-        f.write("\n".join(valid))  # 即使 valid 为空也会生成文件
+        f.write("\n".join(valid))
     print(f"📄 分片 {part} 验证完成，有效规则保存 → {out_file}")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--part", help="指定分片 1~16", required=True)
+    parser.add_argument("--part", help="指定分片 1~16", required=False)
+    parser.add_argument("--force-update", action="store_true", help="每天强制更新 urls.txt 并生成分片")
     args = parser.parse_args()
 
-    # 自动下载 urls.txt
+    # 强制更新 urls.txt 并生成分片
+    if args.force_update:
+        download_urls()
+        split_parts()
+        if args.part:
+            process_part(args.part)
+        exit(0)
+
+    # 自动下载 urls.txt，如果文件不存在
     if not os.path.exists(URLS_TXT):
         download_urls()
 
     # 自动生成分片，如果分片不存在
     first_part_file = os.path.join(TMP_DIR, "part_01.txt")
     if not os.path.exists(first_part_file):
+        download_urls()
         split_parts()
 
-    process_part(args.part)
+    # 如果指定分片，执行验证
+    if args.part:
+        process_part(args.part)

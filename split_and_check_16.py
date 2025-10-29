@@ -1,92 +1,110 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-import concurrent.futures
-import dns.resolver
-import re
-from tqdm import tqdm
-import glob
 import os
+import requests
+import argparse
+import time
+import dns.resolver
+from concurrent.futures import ThreadPoolExecutor
 
-# ===============================
-# 创建临时目录
-# ===============================
-os.makedirs("tmp", exist_ok=True)
-os.makedirs("dist", exist_ok=True)
+DNS_BATCH_SIZE = 800
+URLS_TXT = "urls.txt"
+TMP_DIR = "tmp"
+DIST_DIR = "dist"
+PARTS = 16
 
-# ===============================
-# DNS 配置
-# ===============================
-resolver = dns.resolver.Resolver()
-resolver.timeout = 1
-resolver.lifetime = 1
+os.makedirs(TMP_DIR, exist_ok=True)
+os.makedirs(DIST_DIR, exist_ok=True)
 
-# ===============================
-# 域名正则
-# ===============================
-domain_regex = re.compile(r"^(?!-)([A-Za-z0-9-]{1,63}\.)+[A-Za-z]{2,}$")
+def download_urls():
+    url = "https://raw.githubusercontent.com/wxglenovo/Shadowrocket-to-AdGuard-Home/main/urls.txt"
+    print(f"📥 下载最新 urls.txt ...")
+    r = requests.get(url)
+    r.raise_for_status()
+    with open(URLS_TXT, "w", encoding="utf-8") as f:
+        f.write(r.text)
+    print(f"✅ urls.txt 下载完成，{len(r.text.splitlines())} 条规则")
 
-# ===============================
-# 提取规则域名
-# ===============================
-def extract_domain(rule: str) -> str:
-    rule = rule.strip().lstrip("|").lstrip("@@").split("^")[0]
-    rule = rule.replace("*", "").replace("||", "")
-    return rule
+def split_parts():
+    with open(URLS_TXT, "r", encoding="utf-8") as f:
+        lines = [line.strip() for line in f if line.strip()]
+    total = len(lines)
+    per_part = (total + PARTS - 1) // PARTS
+    for i in range(PARTS):
+        part_lines = lines[i*per_part:(i+1)*per_part]
+        filename = os.path.join(TMP_DIR, f"part_{i+1:02d}.txt")
+        with open(filename, "w", encoding="utf-8") as f:
+            f.write("\n".join(part_lines))
+        print(f"📄 分片 {i+1} 保存 {len(part_lines)} 条规则 → {filename}")
 
-# ===============================
-# 验证域名有效性
-# ===============================
-def is_valid_domain(rule: str) -> bool:
-    domain = extract_domain(rule)
-    if not domain or not domain_regex.match(domain):
-        return False
-    try:
-        resolver.resolve(domain, "A")
-        return True
-    except dns.resolver.NXDOMAIN:
-        return False
-    except (dns.resolver.NoNameservers, dns.resolver.Timeout, dns.resolver.YXDOMAIN):
-        return True
-    except:
-        return True
-
-# ===============================
-# 批量验证
-# ===============================
-def validate_batch(rules, batch_size=50000, max_workers=200):
+def dns_validate_parallel(lines, max_workers=50):
     valid = []
-    total_rules = len(rules)
+    resolver = dns.resolver.Resolver()
+    resolver.timeout = 2
+    resolver.lifetime = 2
 
-    for i in range(0, total_rules, batch_size):
-        batch = rules[i:i+batch_size]
-        with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
-            results = list(tqdm(executor.map(is_valid_domain, batch), total=len(batch), desc=f"Batch {i//batch_size+1}"))
-            for rule, ok in zip(batch, results):
-                if ok:
-                    valid.append(rule)
-        print(f"Processed {min(i+batch_size, total_rules)}/{total_rules} rules, valid: {len(valid)}")
+    def check(domain_line):
+        domain = domain_line.lstrip("|").split("^")[0].replace("*", "")
+        if not domain:
+            return None
+        try:
+            resolver.resolve(domain)
+            return domain_line
+        except Exception:
+            return None
+
+    start = time.time()
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        for idx, result in enumerate(executor.map(check, lines), 1):
+            if result:
+                valid.append(result)
+            if idx % DNS_BATCH_SIZE == 0 or idx == len(lines):
+                print(f"✅ 已验证 {idx}/{len(lines)} 条，本批有效 {len(valid)} 条")
+    print(f"🎯 分片处理完成，有效 {len(valid)}/{len(lines)} 条，用时 {time.time()-start:.1f} 秒")
     return valid
 
-# ===============================
-# 读取所有源文件
-# ===============================
-all_rules = []
-for file_path in sorted(glob.glob("tmp/*")):
-    with open(file_path, "r", encoding="utf-8") as f:
-        rules = [line.strip() for line in f if line.strip() and not line.startswith("#")]
-        all_rules.extend(rules)
+def process_part(part):
+    part_file = os.path.join(TMP_DIR, f"part_{int(part):02d}.txt")
+    if not os.path.exists(part_file):
+        print(f"⚠ 分片文件不存在: {part_file}，重新下载最新 urls.txt 并生成分片")
+        download_urls()
+        split_parts()
+        if not os.path.exists(part_file):
+            print(f"❌ 生成分片失败: {part_file}")
+            return
 
-print(f"Total rules loaded from all sources: {len(all_rules)}")
+    lines = open(part_file, "r", encoding="utf-8").read().splitlines()
+    print(f"⏱ 当前处理分片：{part_file}, 总规则 {len(lines)} 条")
+    valid = dns_validate_parallel(lines)
+    out_file = os.path.join(DIST_DIR, f"validated_part_{part}.txt")
+    with open(out_file, "w", encoding="utf-8") as f:
+        f.write("\n".join(valid))
+    print(f"📄 分片 {part} 验证完成，有效规则保存 → {out_file}")
 
-# ===============================
-# 验证规则
-# ===============================
-valid_rules = validate_batch(all_rules)
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--part", help="指定分片 1~16", required=False)
+    parser.add_argument("--force-update", action="store_true", help="每天强制更新 urls.txt 并生成分片")
+    args = parser.parse_args()
 
-# ===============================
-# 写入结果
-# ===============================
-with open("dist/valid_rules.txt", "w", encoding="utf-8") as f:
-    f.write("\n".join(valid_rules))
+    # 强制更新 urls.txt 并生成分片
+    if args.force_update:
+        download_urls()
+        split_parts()
+        if args.part:
+            process_part(args.part)
+        exit(0)
 
-print(f"✅ Finished validation: total {len(all_rules)}, valid {len(valid_rules)}, removed {len(all_rules)-len(valid_rules)}")
+    # 自动下载 urls.txt，如果文件不存在
+    if not os.path.exists(URLS_TXT):
+        download_urls()
+
+    # 自动生成分片，如果分片不存在
+    first_part_file = os.path.join(TMP_DIR, "part_01.txt")
+    if not os.path.exists(first_part_file):
+        download_urls()
+        split_parts()
+
+    # 如果指定分片，执行验证
+    if args.part:
+        process_part(args.part)

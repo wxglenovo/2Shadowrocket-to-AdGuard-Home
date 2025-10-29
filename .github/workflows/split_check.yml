@@ -77,7 +77,7 @@ jobs:
 
           if [ ! -f "$PART_FILE" ]; then
             echo "⚠ 分片缺失：$PART_FILE"
-            echo "🔄 自动重新下载规则源并生成分片"
+            echo "🔄 自动下载规则源并生成分片"
             python split_and_check_16.py --force-update
           else
             echo "✅ 分片存在：$PART_FILE"

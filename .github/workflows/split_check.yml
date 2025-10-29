@@ -2,9 +2,9 @@ name: Split DNS Validation
 
 on:
   schedule:
-    # 每天 00:00 UTC 更新 urls.txt
+    # 每天更新 urls.txt
     - cron: "0 0 * * *"
-    # 每天轮替 16 个分片（示例 UTC 时间，每小时一次，循环覆盖）
+    # 每小时轮替验证分片（示例：每天 16 次）
     - cron: "0 0 * * *"
     - cron: "0 1 * * *"
     - cron: "0 2 * * *"
@@ -32,7 +32,7 @@ permissions:
   contents: write
 
 jobs:
-  update_and_validate:
+  validate:
     runs-on: ubuntu-latest
     env:
       PYTHONUNBUFFERED: 1
@@ -46,7 +46,7 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Create directories
+      - name: Prepare directories
         run: |
           mkdir -p tmp dist
 
@@ -58,12 +58,14 @@ jobs:
 
       - name: Run validation
         run: |
-          if [ "${{ github.event.inputs.part }}" != "" ]; then
-            echo "🛠 手动触发，验证分片 ${{ github.event.inputs.part }}"
-            python split_and_check_16.py --part ${{ github.event.inputs.part }} | tee split_check.log
+          PART="${{ github.event.inputs.part }}"
+          if [ -n "$PART" ]; then
+            echo "🛠 手动触发，验证分片 $PART"
+            python split_and_check_16.py --part "$PART" | tee split_check.log
           else
             echo "⏱ 自动轮替验证当前分片"
             python split_and_check_16.py | tee split_check.log
+          fi
 
       - name: Commit and push valid rules
         run: |

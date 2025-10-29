@@ -8,8 +8,8 @@ on:
     - cron: "0 12 * * *"
     - cron: "0 18 * * *"
 
-    # 每 15 分钟轮替分片验证
-    - cron: "*/15 * * * *"
+    # 每 22 分钟轮替分片验证
+    - cron: "*/22 * * * *"
 
   workflow_dispatch:
     inputs:

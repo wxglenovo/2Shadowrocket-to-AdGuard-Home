@@ -32,7 +32,8 @@ jobs:
           python-version: '3.12'
 
       - name: Install dependencies
-        run: pip install --upgrade requests dnspython
+        run: |
+          pip install --upgrade requests dnspython
 
       - name: Detect PART index
         id: detect
@@ -42,16 +43,16 @@ jobs:
           PART_INPUT="${{ github.event.inputs.part }}"
 
           if [ -n "$PART_INPUT" ]; then
-              PART="$PART_INPUT"
-              echo "手动指定分片：$PART"
+            PART="$PART_INPUT"
+            echo "手动指定分片：$PART"
           else
-              if [ -f "$LAST_PART_FILE" ]; then
-                  LAST_PART=$(cat "$LAST_PART_FILE")
-                  PART=$(( (LAST_PART % 16) + 1 ))
-              else
-                  PART=1
-              fi
-              echo "自动轮替分片：$PART"
+            if [ -f "$LAST_PART_FILE" ]; then
+              LAST_PART=$(cat "$LAST_PART_FILE")
+              PART=$(( (LAST_PART % 16) + 1 ))
+            else
+              PART=1
+            fi
+            echo "自动轮替分片：$PART"
           fi
 
           echo $PART > $LAST_PART_FILE
@@ -62,10 +63,10 @@ jobs:
         run: |
           CURRENT_HOUR=$(date -u +"%H")
           if [ "$CURRENT_HOUR" = "00" ]; then
-              echo "✅ 每天 00:00 强制下载规则源并切片"
-              python split_and_check_16.py --force-update
+            echo "✅ 每天 00:00 强制下载规则源并切片"
+            python split_and_check_16.py --force-update
           else
-              echo "⏩ 非 00:00，不强制下载"
+            echo "⏩ 非 00:00，不强制下载"
           fi
 
       - name: Check part file, re-download if missing
@@ -75,11 +76,11 @@ jobs:
           PART_FILE="tmp/part_${PART}.txt"
 
           if [ ! -f "$PART_FILE" ]; then
-              echo "⚠ 分片缺失：$PART_FILE"
-              echo "🔄 自动重新下载规则源并切片"
-              python split_and_check_16.py --force-update
+            echo "⚠ 分片缺失：$PART_FILE"
+            echo "🔄 自动重新下载规则源并切片"
+            python split_and_check_16.py --force-update
           else
-              echo "✅ 分片存在：$PART_FILE"
+            echo "✅ 分片存在：$PART_FILE"
           fi
 
       - name: Run DNS validation
@@ -94,13 +95,14 @@ jobs:
           mkdir -p logs
           PART=${{ steps.detect.outputs.part }}
           if [ -f split_check.log ]; then
-              mv split_check.log "logs/split_check_part_${PART}.log"
-              echo "✅ 日志已保存 logs/split_check_part_${PART}.log"
+            mv split_check.log "logs/split_check_part_${PART}.log"
+            echo "✅ 日志已保存 logs/split_check_part_${PART}.log"
           else
-              echo "⚠ split_check.log 未生成，跳过移动"
+            echo "⚠ split_check.log 未生成，跳过"
           fi
 
       - name: Set git config
+        shell: bash
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -110,8 +112,8 @@ jobs:
         run: |
           PART=${{ steps.detect.outputs.part }}
           if ls dist/validated_part_*.txt 1> /dev/null 2>&1; then
-              git add dist/validated_part_*.txt tmp/part_*.txt logs/
-              git commit -m "🤖 Auto update: validated part $PART" || echo "No changes to commit"
-              git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
+            git add dist/validated_part_*.txt tmp/part_*.txt logs/
+            git commit -m "🤖 Auto update: validated part $PART" || echo "No changes to commit"
+            git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
           else
-              echo "⚠ 没有验证结果文件，跳过 commit & push"
+            echo "⚠ 没有验证结果文件，跳过 commit & push"

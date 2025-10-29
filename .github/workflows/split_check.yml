@@ -1,57 +1,117 @@
-name: Split and Check Blocklist
+name: Build AdGuardHome Rules
 
 on:
   schedule:
-    # 每天 16 次轮替验证切片（UTC 时间，每 1.5 小时）
-    - cron: '0 0,1,3,4,6,7,9,10,12,13,15,16,18,19,21,22 * * *'
+    - cron: "0 0 * * *"
+    - cron: "0 6 * * *"
+    - cron: "0 12 * * *"
+    - cron: "0 18 * * *"
   workflow_dispatch:
-    inputs:
-      part:
-        description: '手动验证切片编号 (0-15)'
-        required: false
-        default: ''
 
 permissions:
   contents: write
 
 jobs:
-  validate:
+  build:
     runs-on: ubuntu-latest
+
     steps:
+      # 1️⃣ 拉取仓库
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Python
+      # 2️⃣ 设置 Python
+      - name: Setup Python
         uses: actions/setup-python@v4
         with:
-          python-version: 3.12
+          python-version: 3.11
 
+      # 3️⃣ 安装依赖
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
-          pip install requests
+          pip install --upgrade pip
+          pip install dnspython tqdm requests
 
-      - name: Run validation
-        shell: bash
-        env:
-          PYTHONUNBUFFERED: 1
+      # 4️⃣ 下载规则源
+      - name: Download rules
         run: |
-          if [ "${{ github.event.inputs.part }}" != "" ]; then
-            PART="${{ github.event.inputs.part }}"
-            echo "🛠 手动触发，验证分片 $PART"
-            python split_and_check_16.py --part $PART | tee split_check.log
-          else
-            echo "⏱ 自动轮替验证当前分片"
-            python split_and_check_16.py | tee split_check.log
-          fi
+          mkdir -p tmp dist
+          while read url; do
+            file_name="tmp/$(basename "$url")"
+            echo "Downloading $url → $file_name"
+            curl -sSL "$url" -o "$file_name"
+          done < urls.txt
 
-      - name: Commit & Push valid rules
-        if: success()
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      # 5️⃣ 合并规则文件
+      - name: Merge rules
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add dist/blocklist_valid.txt tmp/part_*.txt
-          git commit -m "🤖 Auto update: valid blocklist" || echo "No changes"
-          git push https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git HEAD:main
+          cat tmp/* > tmp/merged_rules.txt
+          echo "Merged $(wc -l < tmp/merged_rules.txt) rules"
+
+      # 6️⃣ 运行多线程 DNS 验证
+      - name: Validate rules
+        run: |
+          python <<'EOF'
+#!/usr/bin/env python3
+import concurrent.futures
+import dns.resolver
+import re
+from tqdm import tqdm
+
+resolver = dns.resolver.Resolver()
+resolver.timeout = 1
+resolver.lifetime = 1
+
+domain_regex = re.compile(r"^(?!-)([A-Za-z0-9-]{1,63}\.)+[A-Za-z]{2,}$")
+
+def extract_domain(rule: str) -> str:
+    rule = rule.strip().lstrip("|").lstrip("@@").split("^")[0]
+    rule = rule.replace("*", "").replace("||", "")
+    return rule
+
+def is_valid_domain(rule: str) -> bool:
+    domain = extract_domain(rule)
+    if not domain or not domain_regex.match(domain):
+        return False
+    try:
+        resolver.resolve(domain, "A")
+        return True
+    except dns.resolver.NXDOMAIN:
+        return False
+    except (dns.resolver.NoNameservers, dns.resolver.Timeout, dns.resolver.YXDOMAIN):
+        return True
+    except:
+        return True
+
+def validate_batch(input_file: str, output_file: str, batch_size: int = 50000, max_workers: int = 200):
+    with open(input_file, "r", encoding="utf-8") as f:
+        rules = [line.strip() for line in f if line.strip() and not line.startswith("#")]
+
+    valid = []
+    total_rules = len(rules)
+
+    for i in range(0, total_rules, batch_size):
+        batch = rules[i:i+batch_size]
+        with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
+            results = list(tqdm(executor.map(is_valid_domain, batch), total=len(batch), desc=f"Batch {i//batch_size+1}"))
+            for rule, ok in zip(batch, results):
+                if ok:
+                    valid.append(rule)
+        print(f"Processed {min(i+batch_size, total_rules)}/{total_rules} rules, valid: {len(valid)}")
+
+    with open(output_file, "w", encoding="utf-8") as f:
+        f.write("\n".join(valid))
+
+    print(f"✅ Finished: {input_file} → {output_file}, total: {total_rules}, valid: {len(valid)}, removed: {total_rules - len(valid)}")
+
+validate_batch("tmp/merged_rules.txt", "dist/valid_rules.txt")
+EOF
+
+      # 7️⃣ 上传结果到仓库
+      - name: Commit & Push
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add dist/valid_rules.txt
+          git commit -m "Update validated rules"
+          git push || echo "No changes to commit"

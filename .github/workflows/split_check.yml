@@ -2,9 +2,9 @@ name: Split & DNS Check
 
 on:
   schedule:
-    # 每天 UTC 0:00 强制更新 urls.txt 并生成所有分片
+    # 每天 UTC 0:00 强制更新 urls.txt 并生成分片
     - cron: "0 0 * * *"
-    # 每天自动轮替 16 次分片验证，每 1.5 小时轮替一片
+    # 自动轮替 16 次分片，每 1.5 小时轮替一次
     - cron: "0 0,1,3,4,6,7,9,10,12,13,15,16,18,19,21,22 * * *"
   workflow_dispatch:
     inputs:
@@ -34,13 +34,13 @@ jobs:
       - name: Install dependencies
         run: pip install --upgrade requests dnspython
 
-      - name: Update urls.txt and split (daily forced)
+      - name: Daily update urls.txt and split
         shell: bash
         run: |
           CURRENT_HOUR=$(date -u +"%H")
           if [ "$CURRENT_HOUR" = "00" ]; then
-              echo "🔄 每天强制更新 urls.txt 并生成分片"
-              python split_and_check_16.py --force-update
+            echo "🔄 每天 UTC 0:00 强制更新 urls.txt 并生成分片"
+            python split_and_check_16.py --force-update
           fi
 
       - name: Run split and DNS check
@@ -50,16 +50,16 @@ jobs:
           PART_INPUT="${{ github.event.inputs.part }}"
 
           if [ -n "$PART_INPUT" ]; then
-              PART="$PART_INPUT"
-              echo "🛠 手动触发，验证分片 $PART"
+            PART="$PART_INPUT"
+            echo "🛠 手动触发，验证分片 $PART"
           else
-              if [ -f "$LAST_PART_FILE" ]; then
-                  LAST_PART=$(cat "$LAST_PART_FILE")
-                  PART=$(( (LAST_PART % 16) + 1 ))
-              else
-                  PART=1
-              fi
-              echo "⏱ 自动轮替验证分片 $PART"
+            if [ -f "$LAST_PART_FILE" ]; then
+              LAST_PART=$(cat "$LAST_PART_FILE")
+              PART=$(( (LAST_PART % 16) + 1 ))
+            else
+              PART=1
+            fi
+            echo "⏱ 自动轮替验证分片 $PART"
           fi
 
           echo $PART > $LAST_PART_FILE
@@ -71,9 +71,10 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
+          # 仅当文件存在才 commit & push
           if ls dist/validated_part_*.txt 1> /dev/null 2>&1; then
-              git add dist/validated_part_*.txt tmp/part_*.txt
-              git commit -m "🤖 Auto update: valid blocklist" || echo "No changes"
-              git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
+            git add dist/validated_part_*.txt tmp/part_*.txt
+            git commit -m "🤖 Auto update: valid blocklist" || echo "No changes"
+            git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
           else
-              echo "⚠ 没有生成任何验证文件，跳过 commit & push"
+            echo "⚠ 没有生成任何验证文件，跳过 commit & push"

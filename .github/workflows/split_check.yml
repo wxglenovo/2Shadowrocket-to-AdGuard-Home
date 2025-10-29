@@ -32,6 +32,7 @@ jobs:
       - name: Run blocklist split & DNS check
         run: |
           echo "⏱ Workflow 开始：$(date -u)"
+          # 可手动传 part 参数，例如：--part 3
           python split_and_check_16.py | tee split_check.log
           echo "⏱ Workflow 结束：$(date -u)"
 
@@ -40,9 +41,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           
-          # 添加文件
+          # 添加 dist 与 tmp 文件
           [ -f dist/blocklist_valid.txt ] && git add dist/blocklist_valid.txt
-          
           shopt -s nullglob
           for f in tmp/validated_*.txt tmp/failed_*.txt; do
             git add "$f"

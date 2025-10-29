@@ -56,10 +56,11 @@ jobs:
           PART="${{ github.event.inputs.part }}"
           if [ -n "$PART" ]; then
             echo "🛠 手动触发，验证分片 $PART"
-            python split_and_check_16.py --part $PART | tee split_check.log
+            python split_and_check_16.py --part "$PART" | tee split_check.log
           else
             echo "⏱ 自动轮替验证当前分片"
             python split_and_check_16.py | tee split_check.log
+          fi
 
       - name: Commit & Push Valid Rules
         shell: bash

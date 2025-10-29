@@ -1,52 +1,57 @@
-name: AdGuardHome Blocklist Auto Update
+name: split_check
 
 on:
   schedule:
-    - cron: "0 0 * * *"
-    - cron: "0 6 * * *"
-    - cron: "0 12 * * *"
-    - cron: "0 18 * * *"
+    # 每天 4 次自动触发：00:00、06:00、12:00、18:00 UTC
+    - cron:  "0 0 * * *"
+    - cron:  "0 6 * * *"
+    - cron:  "0 12 * * *"
+    - cron:  "0 18 * * *"
   workflow_dispatch:
-
-permissions:
-  contents: write
+    inputs:
+      part:
+        description: "手动指定分片索引（0~15）"
+        required: false
+        default: ""
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Python
-        uses: actions/setup-python@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          python-version: 3.12
+          python-version: "3.12"
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install requests dnspython
 
-      - name: Run blocklist split & DNS check
+      - name: Run Blocklist Validation
+        env:
+          PYTHONUNBUFFERED: 1  # 让 Python 输出实时刷新
         run: |
           echo "⏱ Workflow 开始：$(date -u)"
-          # 可手动传 part 参数，例如：--part 3
-          python split_and_check_16.py | tee split_check.log
+
+          # 判断手动触发是否指定分片
+          if [ -n "${{ github.event.inputs.part }}" ]; then
+              echo "⚡ 手动触发分片验证：part=${{ github.event.inputs.part }}"
+              python split_and_check_16.py --part ${{ github.event.inputs.part }} | tee split_check.log
+          else
+              echo "⚡ 自动轮替分片验证"
+              python split_and_check_16.py | tee split_check.log
+          fi
+
           echo "⏱ Workflow 结束：$(date -u)"
 
-      - name: Commit & Push changes
+      - name: Commit and Push Validated Rules
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          
-          # 添加 dist 与 tmp 文件
-          [ -f dist/blocklist_valid.txt ] && git add dist/blocklist_valid.txt
-          shopt -s nullglob
-          for f in tmp/validated_*.txt tmp/failed_*.txt; do
-            git add "$f"
-          done
-
-          git commit -m "🤖 Auto update: valid blocklist" || echo "No changes"
-          git push origin main || echo "⚠️ Push 失败"
+          git add dist/blocklist_valid.txt tmp/validated_*.txt tmp/failed_*.txt || echo "无新增文件"
+          git commit -m "🤖 Auto update: valid blocklist" || echo "无更改可提交"
+          git push origin main || echo "推送失败或无更改"

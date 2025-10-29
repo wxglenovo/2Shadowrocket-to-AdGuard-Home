@@ -1,10 +1,3 @@
-||server.francesconolivier.com^
-||server.franquiacrossexperience.com.br^
-||server.franveiculosbb.com.br^
-||server.freegamesall.com^
-||server.freelanz.app^
-||server.freitastcg.com.br^
-||server.fuhrosouto.com.br^
 ||server.fullgarage.com.br^
 ||server.fundocasanueva.com^
 ||server.funduptrading.com^
@@ -672,7 +665,6 @@
 ||server.palestranteandresilva.com.br^
 ||server.panelapremium.com.br^
 ||server.paninstituto.com.br^
-||server.pans.lixintex-cn.com^
 ||server.panthos.it^
 ||server.papelariadluxo.com^
 ||server.papelecreate.com.br^
@@ -1283,7 +1275,6 @@
 ||server.voceservidor.com.br^
 ||server.voeempresarial.com.br^
 ||server.volpevellasco.com.br^
-||server.vulcanxxxstart.cfd^
 ||server.vyjou.com^
 ||server.vyroz.com^
 ||server.w3asolution.com^
@@ -16544,6 +16535,7 @@
 ||simonline.nl^
 ||simonmanagementassociates.demdex.net^
 ||simonmesci.pro^
+||simonpowerline.com^
 ||simonpropiedades.cl^
 ||simonrichardson.nz^
 ||simonricon.pro^
@@ -17197,7 +17189,6 @@
 ||sincentre.info^
 ||sincenturypro.org^
 ||sinceonly.tk^
-||sincere-variations-515122.framer.app^
 ||sincere.okcftyze.in^
 ||sincereagent.tk^
 ||sincereautomatic.com^
@@ -23645,7 +23636,6 @@
 ||smartdatacenter.website^
 ||smartdatacollective.com^
 ||smartdatafocus.space^
-||smartdatahub.info^
 ||smartdatahubzone.online^
 ||smartdatamove.info^
 ||smartdayinvest.com^
@@ -41632,6 +41622,7 @@
 ||spmkomputer.com^
 ||spmo.ae^
 ||spmofficer.000webhostapp.com^
+||spmqfymfgbfha.space^
 ||spms.pro^
 ||spmscotland.com^
 ||spmslq.loan^
@@ -58015,7 +58006,6 @@
 ||static.delmovip.com^
 ||static.denakop.com^
 ||static.dev-onemedia.com^
-||static.devicesecurity.dropbox.deviceverifcationsnapcht.app^
 ||static.diditaxi.com.cn^
 ||static.didna.io^
 ||static.digiadglobal.com^
@@ -85229,7 +85219,6 @@
 ||syncopicfour.us^
 ||syncordisconsulting.com^
 ||syncplusconfig.s3.amazonaws.com^
-||syncreactiveaccountrenewbillsystemauthaccess.cauermaskepgwek.biz.id^
 ||syncretizemospzwg.download^
 ||syncronisera.se^
 ||syncrown.com^
@@ -89771,6 +89760,7 @@
 ||tacunair.com^
 ||tacwevvgrvnaq.space^
 ||tad.suning.com^
+||tad.tygem.com^
 ||tada-con.com^
 ||tada-love.jp^
 ||tadaapomail.com^
@@ -94405,7 +94395,6 @@
 ||taurmanba.qpon^
 ||tauron-zwrot.online^
 ||tauronbusiness.com^
-||tauronenergy.site^
 ||tauroni.com^
 ||tauronzwrot25.online^
 ||taurubisec.pro^
@@ -101941,3 +101930,6 @@
 ||teiebvjhve.work^
 ||teiebyqwr.shop^
 ||teiecharg.me.platwo.com^
+||teiecjbvzw.art^
+||teiecjbvzw.blue^
+||teiecjbvzw.top^

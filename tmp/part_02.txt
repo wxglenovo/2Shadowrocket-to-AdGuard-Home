@@ -1,3 +1,8 @@
+||acmap.zeotap.com^
+||acmarsef.weebly.com^
+||acmaus.com^
+||acmbinaryproxy.tk^
+||acmbnksonline.com^
 ||acmcdisco.pro^
 ||acmdihtumpuj.com^
 ||acme-challenge-chineopt-yastore-yandex-ru.online^
@@ -870,7 +875,6 @@
 ||actionplan.ml^
 ||actionplanet.cn^
 ||actionplanministries.com^
-||actionprotectionadvancedinternet.top^
 ||actionpulse.info^
 ||actionresearchedu.com^
 ||actionrtb.com^
@@ -40729,7 +40733,6 @@
 ||aiebilet.pl-kategoria-wyprzedaz-narzedzia-9.sbs^
 ||aiebilet.pl-kategorie-inne-12412.sbs^
 ||aiebilet.pl-kategorie-inne-1244.icu^
-||aiebilet.pl-kategorie-inne-13725.icu^
 ||aiebilet.pl-kategorie-inne-812412.sbs^
 ||aiebilet.pl-kategorie-inne-89133.sbs^
 ||aiebilet.pl-kategorie-inne-9244.sbs^
@@ -46866,7 +46869,6 @@
 ||alebilet.pl-kategoria98516284265726.shop^
 ||alebilet.pl-kategorie-inne-12412.sbs^
 ||alebilet.pl-kategorie-inne-1244.icu^
-||alebilet.pl-kategorie-inne-13725.icu^
 ||alebilet.pl-kategorie-inne-812412.sbs^
 ||alebilet.pl-kategorie-inne-89133.sbs^
 ||alebilet.pl-kategorie-inne-9244.sbs^
@@ -57031,7 +57033,6 @@
 ||allebilet.pl-kategoria-wyprzedaz-narzedzia-9.sbs^
 ||allebilet.pl-kategorie-inne-12412.sbs^
 ||allebilet.pl-kategorie-inne-1244.icu^
-||allebilet.pl-kategorie-inne-13725.icu^
 ||allebilet.pl-kategorie-inne-812412.sbs^
 ||allebilet.pl-kategorie-inne-89133.sbs^
 ||allebilet.pl-kategorie-inne-9244.sbs^
@@ -58768,7 +58769,6 @@
 ||allegro.pl-kategoria98516284265726.shop^
 ||allegro.pl-kategorie-inne-12412.sbs^
 ||allegro.pl-kategorie-inne-1244.icu^
-||allegro.pl-kategorie-inne-13725.icu^
 ||allegro.pl-kategorie-inne-812412.sbs^
 ||allegro.pl-kategorie-inne-89133.sbs^
 ||allegro.pl-kategorie-inne-9244.sbs^
@@ -62191,7 +62191,6 @@
 ||allegro.wtorkowe-okazje-cenowe.icu^
 ||allegro.x8q06y.sbs^
 ||allegro.xzx091238x7cvv.sbs^
-||allegro.y984.rest^
 ||allegro168.com^
 ||allegro6.pl^
 ||allegro7.pl^
@@ -62304,7 +62303,6 @@
 ||allegrolokainie.pl-kategoria-wyprzedaz-narzedzia-9.sbs^
 ||allegrolokainie.pl-kategorie-inne-12412.sbs^
 ||allegrolokainie.pl-kategorie-inne-1244.icu^
-||allegrolokainie.pl-kategorie-inne-13725.icu^
 ||allegrolokainie.pl-kategorie-inne-812412.sbs^
 ||allegrolokainie.pl-kategorie-inne-89133.sbs^
 ||allegrolokainie.pl-kategorie-inne-9244.sbs^
@@ -62540,7 +62538,6 @@
 ||allegrolokalne.pl-kategoria-wyprzedaz-narzedzia-9.sbs^
 ||allegrolokalne.pl-kategorie-inne-12412.sbs^
 ||allegrolokalne.pl-kategorie-inne-1244.icu^
-||allegrolokalne.pl-kategorie-inne-13725.icu^
 ||allegrolokalne.pl-kategorie-inne-812412.sbs^
 ||allegrolokalne.pl-kategorie-inne-89133.sbs^
 ||allegrolokalne.pl-kategorie-inne-9244.sbs^
@@ -62966,7 +62963,6 @@
 ||allegrolokalnie.9538287dn.icu^
 ||allegrolokalnie.96016176.sbs^
 ||allegrolokalnie.96585-id11b7fv-cid99-id14zpf-85.sbs^
-||allegrolokalnie.96714xcv-3856zy.xyz^
 ||allegrolokalnie.9675-id11b7fv-cid99-id14zpf85.sbs^
 ||allegrolokalnie.98299782431.sbs^
 ||allegrolokalnie.983574.sbs^
@@ -65709,7 +65705,6 @@
 ||allegrolokalnie.pl-kategoria98516284265726.shop^
 ||allegrolokalnie.pl-kategorie-inne-12412.sbs^
 ||allegrolokalnie.pl-kategorie-inne-1244.icu^
-||allegrolokalnie.pl-kategorie-inne-13725.icu^
 ||allegrolokalnie.pl-kategorie-inne-812412.sbs^
 ||allegrolokalnie.pl-kategorie-inne-89133.sbs^
 ||allegrolokalnie.pl-kategorie-inne-9244.sbs^
@@ -71327,6 +71322,7 @@
 ||aloyadakmashin.com^
 ||aloyernyaseqa.weebly.com^
 ||aloyforex.co.cc^
+||aloyogapl.com^
 ||alp-fund-pro.com^
 ||alp-fund-pro.net^
 ||alp-media.de^
@@ -73885,7 +73881,6 @@
 ||amazon.extafiles.com^
 ||amazon.fr-login-account-informations-backup.glbookkeepingtax.ca^
 ||amazon.freediscountoffers.com^
-||amazon.grahaminsurancegroupinc.com^
 ||amazon.hackingfree.com^
 ||amazon.oret.jp^
 ||amazon.poxo.com^
@@ -82003,7 +81998,6 @@
 ||anicecar.co.cc^
 ||anicholson.cabanova.com^
 ||aniclik.com^
-||anicracked.com^
 ||anicteric.stream^
 ||anida.it^
 ||anideasarti.com^
@@ -101939,5 +101933,3 @@
 ||arminco.com^
 ||arminfischer.de^
 ||arming.ru^
-||arminius.io^
-||arminius.io^$popup

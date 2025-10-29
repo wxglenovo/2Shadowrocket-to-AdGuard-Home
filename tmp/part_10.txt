@@ -1,10 +1,3 @@
-||postroller.com^
-||postrsyk.com^
-||posts44afezone.xyz^
-||postsafe.store^
-||postscanner.ru^
-||postsellsupport.com^
-||postservises.org^
 ||postshownmaq.info^
 ||postsphoto.life^
 ||poststock.tk^
@@ -30838,7 +30831,6 @@
 ||qc.wired.com^
 ||qc.yan.vn^
 ||qc1.cheshipin.com^
-||qc3swt.lat^
 ||qc4oue1r.top^
 ||qc8tl-6kmt3.ads.tremorhub.com^
 ||qcaejiouuvgk.com^
@@ -43817,6 +43809,7 @@
 ||rb6.info^
 ||rb7eam.keep.pl^
 ||rb88g.com^
+||rb88n.com^
 ||rb88p.com^
 ||rb88v.com^
 ||rba-screen.healthsafe-id.com^
@@ -46217,7 +46210,6 @@
 ||realten.cn^
 ||realtfsolutions.com^
 ||realthiop.xyz^
-||realtime-action-issue-activities.top^
 ||realtime-bid.com^
 ||realtime-bid.com^$document
 ||realtime-bid.com^$popup
@@ -46240,7 +46232,6 @@
 ||realtime.icecyber.org^
 ||realtime.liveperson.net^
 ||realtime.services.disqus.com^
-||realtimeactionissueactivities.top^
 ||realtimeads.com^
 ||realtimeanalytics.yext.com^
 ||realtimebreakingflash.live^
@@ -47064,7 +47055,6 @@
 ||recommended-download.com^
 ||recommended-protection-service-issue.autos^
 ||recommended-secured-security-advanced.autos^
-||recommended-security-protection-internet.top^
 ||recommended-twice.com^
 ||recommended-twice.com^$document
 ||recommended-twice.com^$popup
@@ -51007,7 +50997,6 @@
 ||rejgroups.com^
 ||reji.smartpayoutsurveys.info^
 ||rejmed.cz^
-||rejohiy.pro^
 ||rejoice-andwin1.life^
 ||rejoice.pbphgwbr.in^
 ||rejoiceplayschool.com^
@@ -73445,7 +73434,6 @@
 ||s.team-asi.com^
 ||s.team-lqm.com^
 ||s.team-m.cfd^
-||s.team-pi.com^
 ||s.team-rus.com^
 ||s.team-tsf.pro^
 ||s.team-tu.com^
@@ -93778,7 +93766,6 @@
 ||securedcommercialloans2.co.tv^
 ||securedcommercialloans3.co.tv^
 ||securedcustomer-account-info.com^
-||secureddatasoftverified.top^
 ||secureddetectedhighnetwork.top^
 ||secureddocfiles.com^
 ||secureddocufile.xyz^
@@ -98144,7 +98131,6 @@
 ||sellercentral-amazon-orders-products.net^
 ||sellercentral-amazon-services.co.uk^
 ||sellercentral-amazon.co.uk^
-||sellercentral-amazon.com-s11.net^
 ||sellercentral-amazon.com-s9.net^
 ||sellercentral-update-amazon.co.uk^
 ||sellercentral.amazon.com-s10.net^
@@ -100622,7 +100608,6 @@
 ||serv99.vizury.com^
 ||servacom.net^
 ||servad.mynet.com^
-||servadmnauth.de^
 ||servads.aip.org^
 ||servads.fansshare.com^
 ||servads.net^
@@ -101941,3 +101926,10 @@
 ||server.fowlerdetailing.com^
 ||server.fragataprivatebrokers.com.br^
 ||server.frameartstudio-curitiba.com.br^
+||server.francesconolivier.com^
+||server.franquiacrossexperience.com.br^
+||server.franveiculosbb.com.br^
+||server.freegamesall.com^
+||server.freelanz.app^
+||server.freitastcg.com.br^
+||server.fuhrosouto.com.br^

@@ -112,9 +112,9 @@
 ! CNAME https://github.com/easylist/easylist/issues/9383 https://github.com/AdguardTeam/cname-trackers/issues/15
 ! CPU abuse
 ! CSP Mining
-! Checksum: 444D1/ddUOBrwA3ANIssgQ
-! Checksum: WtBHlwkSLEGSCibHfCY6RQ
-! Checksum: w9gNJEWzb3GrteJotrmyZw
+! Checksum: +qdpDwnhVwOXiPa3lHd9DA
+! Checksum: 9m+lTXXSLEQiqbOxBn70IA
+! Checksum: mDjjv97N33ausOw4Yq81Cw
 ! Chinese
 ! Chinese google (https://github.com/easylist/easylist/issues/15643)
 ! Chinese supplement for the EasyList filters
@@ -216,7 +216,7 @@
 ! Last modified: 2025/10/29 06:15 +0800
 ! Last modified: 2025/10/30 00:10:18
 ! Last modified: 29 Oct 2025 10:01 UTC
-! Last modified: 29 Oct 2025 18:11 UTC
+! Last modified: 29 Oct 2025 18:31 UTC
 ! Latvian
 ! Licence: https://easylist.to/pages/licence.html
 ! License: https://easylist.to/pages/licence.html
@@ -306,7 +306,7 @@
 ! Version: 20230323162617
 ! Version: 2025.1029.1001.39
 ! Version: 202510290615
-! Version: 202510291811
+! Version: 202510291831
 ! Version: 20251030001018
 ! Vietnamese
 ! Vinted
@@ -889,8 +889,8 @@
 !||xip.io^
 !||yoogle.com^
 !||youtube.com/api/stats/atr?ns=*&ver=2&cmt=1.*&fs=0&*&euri&lact=
-!有效规则数目: 1544193
-!生成时间: 2025-10-30 01:49:12
+!有效规则数目: 1544070
+!生成时间: 2025-10-30 02:29:15
 $$a[href="/js/app.htm?url="]
 $$a[href="changhong886.com"]
 $$div[class="-ad-"]
@@ -37051,7 +37051,6 @@ zzzyk.com###Tinfo
 ||0l9u4vx25e.top^
 ||0latfee.ero-advertising.com^
 ||0lb.info^
-||0lhx-1.ru5kld.lat^
 ||0lioncame.tk^
 ||0lkfdvgtsupport.tk^
 ||0lkomkobuzz.tk^
@@ -58832,6 +58831,7 @@ zzzyk.com###Tinfo
 ||365technicalsupport.com^
 ||365techsupport.net^
 ||365tradeposition.com^
+||365w.bet^
 ||365x24x7.in^
 ||365xuet.com/assets/web/js/main.jsr_
 ||366-uky-221.mktoresp.com^
@@ -61236,7 +61236,6 @@ zzzyk.com###Tinfo
 ||3xfull.com^
 ||3xindiansex.com^
 ||3xit.net^
-||3xl.dev^
 ||3xl.icu^
 ||3xlist.com^
 ||3xlivesex.com^
@@ -73573,7 +73572,6 @@ zzzyk.com###Tinfo
 ||7395b53b810261.beer^
 ||739c49a8c68917.com^
 ||739ce0e51c3d11ca.live^
-||73a2370016b7.btfuze.prod.paypal-press.antimoney-laundering.org^
 ||73a435bfaf.com^
 ||73a965e2910251.beer^
 ||73au81v1yu.kameleoon.eu^
@@ -89213,7 +89211,6 @@ zzzyk.com###Tinfo
 ||a24998.actonservice.com^
 ||a24c384c65.2f3747e327.com^
 ||a24help.ru^
-||a25-matisse.paypal-topup.antimoney-laundering.org^
 ||a25.info^
 ||a250.casalemedia.com^
 ||a25026.actonservice.com^
@@ -101936,8 +101933,3 @@ zzzyk.com###Tinfo
 ||acman.ir^
 ||acman.us^
 ||acmao.com^
-||acmap.zeotap.com^
-||acmarsef.weebly.com^
-||acmaus.com^
-||acmbinaryproxy.tk^
-||acmbnksonline.com^

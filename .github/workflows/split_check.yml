@@ -34,9 +34,6 @@ jobs:
       - name: Install dependencies
         run: pip install --upgrade requests dnspython
 
-      - name: Download latest urls.txt
-        run: python split_and_check_16.py --update
-
       - name: Run split and DNS check
         shell: bash
         run: |

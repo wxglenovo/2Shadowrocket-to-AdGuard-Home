@@ -30,10 +30,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests dnspython
 
-      # 4️⃣ 执行脚本
+      # 4️⃣ 执行 Python 脚本
       - name: Run blocklist update
-        run: |
-          python split_and_check_16.py
+        run: python split_and_check_16.py
 
       # 5️⃣ 提交更新
       - name: Commit & push changes
@@ -46,4 +45,3 @@ jobs:
           else
             git commit -m "🤖 Auto update blocklist"
             git push
-          fi

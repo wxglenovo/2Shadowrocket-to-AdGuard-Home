@@ -2,9 +2,9 @@ name: Split & DNS Check
 
 on:
   schedule:
-    # 每天 UTC 0:00 强制更新 urls.txt 并生成所有分片
+    # 每天 UTC 0 点强制重新下载与切片
     - cron: "0 0 * * *"
-    # 每天自动轮替 16 次分片验证，每 1.5 小时轮替一片
+    # 每天轮替 16 次验证
     - cron: "0 0,1,3,4,6,7,9,10,12,13,15,16,18,19,21,22 * * *"
   workflow_dispatch:
     inputs:
@@ -34,18 +34,8 @@ jobs:
       - name: Install dependencies
         run: pip install --upgrade requests dnspython
 
-      - name: Update urls.txt and split (daily forced)
-        shell: bash
-        run: |
-          CURRENT_HOUR=$(date -u +"%H")
-          if [ "$CURRENT_HOUR" = "00" ]; then
-              echo "🔄 每天强制更新 urls.txt 并生成分片"
-              python split_and_check_16.py --force-update
-          else
-              echo "⏩ 非 0 点，不强制更新"
-          fi
-
-      - name: Run split and DNS check
+      - name: Detect PART index
+        id: detect
         shell: bash
         run: |
           LAST_PART_FILE=".last_part"
@@ -53,7 +43,7 @@ jobs:
 
           if [ -n "$PART_INPUT" ]; then
               PART="$PART_INPUT"
-              echo "🛠 手动触发，验证分片 $PART"
+              echo "手动指定分片：$PART"
           else
               if [ -f "$LAST_PART_FILE" ]; then
                   LAST_PART=$(cat "$LAST_PART_FILE")
@@ -61,22 +51,53 @@ jobs:
               else
                   PART=1
               fi
-              echo "⏱ 自动轮替验证分片 $PART"
+              echo "自动轮替分片：$PART"
           fi
 
           echo $PART > $LAST_PART_FILE
+          echo "part=$PART" >> $GITHUB_OUTPUT
 
+      - name: Force download & split only at 00:00
+        shell: bash
+        run: |
+          CURRENT_HOUR=$(date -u +"%H")
+          if [ "$CURRENT_HOUR" = "00" ]; then
+              echo "✅ 每天 00:00 强制下载规则源+切片"
+              python split_and_check_16.py --force-update
+          else
+              echo "⏩ 非 00:00，不强制下载"
+          fi
+
+      - name: Check if part file exists — if missing, re-download
+        shell: bash
+        run: |
+          PART=${{ steps.detect.outputs.part }}
+          PART_FILE="tmp/part_${PART}.txt"
+
+          if [ ! -f "$PART_FILE" ]; then
+              echo "⚠ 缺少分片：$PART_FILE"
+              echo "🔄 自动重新下载规则 + 切片"
+              python split_and_check_16.py --force-update
+          else
+              echo "✅ 分片存在：$PART_FILE"
+          fi
+
+      - name: Run DNS validation
+        shell: bash
+        run: |
+          PART=${{ steps.detect.outputs.part }}
           python split_and_check_16.py --part "$PART" | tee split_check.log
 
       - name: Store log
         shell: bash
         run: |
           mkdir -p logs
+          PART=${{ steps.detect.outputs.part }}
           if [ -f split_check.log ]; then
               mv split_check.log "logs/split_check_part_${PART}.log"
-              echo "✅ 日志已保存：logs/split_check_part_${PART}.log"
+              echo "✅ 日志已保存 logs/split_check_part_${PART}.log"
           else
-              echo "⚠ split_check.log 未生成，跳过移动"
+              echo "⚠ split_check.log 未生成，跳过"
           fi
 
       - name: Commit & Push Validated Rules
@@ -87,8 +108,7 @@ jobs:
 
           if ls dist/validated_part_*.txt 1> /dev/null 2>&1; then
               git add dist/validated_part_*.txt tmp/part_*.txt logs/
-              git commit -m "🤖 Auto update: validated part ${PART}"
+              git commit -m "🤖 Auto update: validated part ${{ steps.detect.outputs.part }}"
               git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
           else
-              echo "⚠ 没有验证文件，跳过提交"
-          fi
+              echo "⚠ 没有验证结果，不提交"

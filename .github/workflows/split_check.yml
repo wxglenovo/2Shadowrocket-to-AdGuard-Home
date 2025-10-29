@@ -1,5 +1,4 @@
 name: split_check
-name: Split and Check Blocklist
 
 on:
   # 每天更新 urls.txt 一次

@@ -1,59 +1,66 @@
 name: split_check
 
 on:
-  schedule:
-    # 每天 4 次更新 urls.txt
-    - cron: "0 0,6,12,18 * * *"
-    # 每 1 小时 30 分轮替分片验证（自动触发）
-    - cron: "0 0,90,180,270,360,450,540,630,720,810,900,990,1080,1170,1260,1350 * * *"
   workflow_dispatch:
     inputs:
       part:
-        description: '手动触发验证分片序号（0-15）'
+        description: '手动触发验证指定分片（0-15）'
         required: false
         default: ''
+  schedule:
+    # 每天更新 urls.txt 1 次（UTC 0:00）
+    - cron: "0 0 * * *"
+    # 每天 16 次轮替分片验证（UTC 时间）
+    - cron: "0 0 * * *"
+    - cron: "0 1 * * *"
+    - cron: "0 3 * * *"
+    - cron: "0 4 * * *"
+    - cron: "0 6 * * *"
+    - cron: "0 7 * * *"
+    - cron: "0 9 * * *"
+    - cron: "0 10 * * *"
+    - cron: "0 12 * * *"
+    - cron: "0 13 * * *"
+    - cron: "0 15 * * *"
+    - cron: "0 16 * * *"
+    - cron: "0 18 * * *"
+    - cron: "0 19 * * *"
+    - cron: "0 21 * * *"
+    - cron: "0 22 * * *"
 
 jobs:
-  build:
+  split-check:
     runs-on: ubuntu-latest
+    env:
+      PYTHONUNBUFFERED: 1
+
     steps:
-      - uses: actions/checkout@v4
+    - name: Checkout repository
+      uses: actions/checkout@v4
 
-      - name: Setup Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: 3.12
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.12
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install requests dnspython
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests dnspython
 
-      - name: Run split & check
-        run: |
-          if [ "${{ github.event.inputs.part }}" != "" ]; then
-            echo "🛠 手动触发，验证分片 ${{ github.event.inputs.part }}"
-            python split_and_check_16.py --part ${{ github.event.inputs.part }} | tee split_check.log
-          else
-            echo "⏱ 自动轮替验证当前分片"
-            python split_and_check_16.py | tee split_check.log
-        env:
-          PYTHONUNBUFFERED: 1
+    - name: Run Split and Check
+      run: |
+        if [ "${{ github.event.inputs.part }}" != "" ]; then
+          echo "🛠 手动触发，验证分片 ${{ github.event.inputs.part }}"
+          python split_and_check_16.py --part ${{ github.event.inputs.part }} | tee split_check.log
+        else
+          echo "⏱ 自动轮替验证当前分片"
+          python split_and_check_16.py | tee split_check.log
 
-      - name: Commit & push valid rules
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          
-          FILES_TO_ADD=""
-          [ -f dist/blocklist_valid.txt ] && FILES_TO_ADD="$FILES_TO_ADD dist/blocklist_valid.txt"
-          for f in tmp/part_*.txt; do
-            [ -f "$f" ] && FILES_TO_ADD="$FILES_TO_ADD $f"
-          done
-          
-          if [ -n "$FILES_TO_ADD" ]; then
-            git add $FILES_TO_ADD
-            git commit -m "🤖 Auto update: valid blocklist" || echo "No changes"
-            git push origin main
-          else
-            echo "⚠️ 没有需要提交的文件，跳过 commit"
+    - name: Commit and push valid rules
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+        git add dist/blocklist_valid.txt tmp/part_*.txt || echo "No files to add"
+        git commit -m "🤖 Auto update: valid blocklist" || echo "No changes"
+        git push origin main || echo "Push failed, maybe no changes"

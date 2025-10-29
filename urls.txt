@@ -1,4 +1,5 @@
 https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/AdGuard%20Home_Allowlist.txt
 https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/AdGuard%20Home_Blacklist.txt
 https://raw.githubusercontent.com/217heidai/adblockfilters/main/rules/adblockdnslite.txt
+https://gh-proxy.com/raw.githubusercontent.com/changzhaoCZ/fqnovel-adrules/refs/heads/main/fqnovel-fxxk_ads
 https://anti-ad.net/easylist.txt

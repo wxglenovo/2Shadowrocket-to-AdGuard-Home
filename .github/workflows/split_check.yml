@@ -1,20 +1,25 @@
-name: Split & DNS Check
+name: Build AdGuardHome Rules
 
 on:
+  workflow_dispatch:  # 手动触发
   schedule:
-    # 每天 UTC 0:00 强制更新 urls.txt 并生成分片
-    - cron: "0 0 * * *"
-    # 自动轮替 16 次分片，每 1.5 小时轮替一次
-    - cron: "0 0,1,3,4,6,7,9,10,12,13,15,16,18,19,21,22 * * *"
-  workflow_dispatch:
-    inputs:
-      part:
-        description: '手动验证指定分片 1~16'
-        required: false
-        default: ''
-
-permissions:
-  contents: write
+    # 每天 UTC 0:00, 1:30, 3:00, ... 每 1.5 小时轮替
+    - cron:  '0 0 * * *'
+    - cron:  '30 1 * * *'
+    - cron:  '0 3 * * *'
+    - cron:  '30 4 * * *'
+    - cron:  '0 6 * * *'
+    - cron:  '30 7 * * *'
+    - cron:  '0 9 * * *'
+    - cron:  '30 10 * * *'
+    - cron:  '0 12 * * *'
+    - cron:  '30 13 * * *'
+    - cron:  '0 15 * * *'
+    - cron:  '30 16 * * *'
+    - cron:  '0 18 * * *'
+    - cron:  '30 19 * * *'
+    - cron:  '0 21 * * *'
+    - cron:  '30 22 * * *'
 
 jobs:
   build:
@@ -23,66 +28,35 @@ jobs:
       PYTHONUNBUFFERED: 1
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+    - name: Checkout repo
+      uses: actions/checkout@v4
 
-      - name: Setup Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.12'
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.12"
 
-      - name: Install dependencies
-        run: pip install --upgrade requests dnspython
+    - name: Install dependencies
+      run: pip install requests dnspython
 
-      - name: Daily update urls.txt and split
-        shell: bash
-        run: |
-          CURRENT_HOUR=$(date -u +"%H")
-          if [ "$CURRENT_HOUR" = "00" ]; then
-            echo "🔄 每天 UTC 0:00 强制更新 urls.txt 并生成分片"
-            python split_and_check_16.py --force-update
-          fi
+    - name: Run split & check
+      shell: bash
+      run: |
+        echo "⏱ Workflow 开始：$(date -u)"
+        if [ "${{ github.event.inputs.part }}" != "" ]; then
+          echo "🛠 手动触发，验证分片 ${{ github.event.inputs.part }}"
+          python split_and_check_16.py --part ${{ github.event.inputs.part }} | tee split_check.log
+        else
+          echo "⏱ 自动轮替验证当前分片"
+          python split_and_check_16.py | tee split_check.log
+        fi
+        echo "⏱ Workflow 结束：$(date -u)"
 
-      - name: Run split and DNS check
-        shell: bash
-        run: |
-          LAST_PART_FILE=".last_part"
-          PART_INPUT="${{ github.event.inputs.part }}"
-
-          if [ -n "$PART_INPUT" ]; then
-            PART="$PART_INPUT"
-            echo "🛠 手动触发，验证分片 $PART"
-          else
-            if [ -f "$LAST_PART_FILE" ]; then
-              LAST_PART=$(cat "$LAST_PART_FILE")
-              PART=$(( (LAST_PART % 16) + 1 ))
-            else
-              PART=1
-            fi
-            echo "⏱ 自动轮替验证分片 $PART"
-          fi
-
-          echo $PART > $LAST_PART_FILE
-
-          # 如果分片不存在则强制更新 urls.txt 并切片
-          if [ ! -f "tmp/part_$(printf '%02d' "$PART").txt" ]; then
-            echo "⚠ 分片不存在，重新刷新 urls.txt"
-            python split_and_check_16.py --force-update
-          fi
-
-          python split_and_check_16.py --part "$PART" | tee split_check.log
-
-      - name: Commit & Push Validated Rules
-        shell: bash
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          # 仅当真正有文件才提交
-          if ls dist/validated_part_*.txt 1> /dev/null 2>&1; then
-            git add dist/validated_part_*.txt tmp/part_*.txt
-            git commit -m "🤖 Auto update: valid blocklist" || echo "No changes"
-            git push "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:main
-          else
-            echo "⚠ 没有生成任何验证文件，跳过 commit & push"
-          fi
+    - name: Commit & Push valid rules
+      shell: bash
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+        git add dist/blocklist_valid.txt tmp/part_*.txt
+        git commit -m "🤖 Auto update: valid blocklist" || echo "No changes"
+        git push origin main || echo "⚠️ Push 失败"

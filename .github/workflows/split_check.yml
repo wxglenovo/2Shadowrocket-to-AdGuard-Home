@@ -36,16 +36,17 @@ jobs:
       - name: Install dependencies
         run: pip install --upgrade requests dnspython
 
-      - name: Detect PART index
+      - name: Determine PART index
         id: detect
         shell: bash
         run: |
           mkdir -p tmp
+
           LAST_PART_FILE="tmp/last_part.txt"
 
-          # 拉取仓库最新的 last_part.txt 和分片
+          # 拉取仓库最新的 last_part.txt
           git fetch origin main
-          git checkout origin/main -- tmp/last_part.txt tmp/part_*.txt merged_rules.txt || echo "⚠ 文件可能不存在，稍后自动生成"
+          git checkout origin/main -- tmp/last_part.txt || echo "⚠ tmp/last_part.txt 不存在"
 
           PART_INPUT="${{ github.event.inputs.part }}"
 
@@ -67,7 +68,7 @@ jobs:
 
           echo "part=$PART" >> $GITHUB_OUTPUT
 
-      - name: Force download at 00:00
+      - name: Force download rules at 00:00
         shell: bash
         run: |
           CURRENT_HOUR=$(date -u +"%H")
@@ -123,10 +124,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          if ls dist/validated_part_*.txt 1> /dev/null 2>&1; then
-            git add dist/validated_part_*.txt tmp/part_*.txt logs/ merged_rules.txt
-            git commit -m "🤖 Auto update: validated part $PART" || echo "No changes to commit"
-            git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
-          else
-            echo "⚠ 没有生成任何验证文件，跳过 commit & push"
-          fi
+          # 提交 last_part.txt 和验证分片
+          git add tmp/last_part.txt dist/validated_part_*.txt tmp/part_*.txt logs/ merged_rules.txt
+          git commit -m "🤖 Auto update: validated part $PART" || echo "No changes to commit"
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main

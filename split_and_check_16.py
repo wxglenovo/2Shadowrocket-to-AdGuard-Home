@@ -1,143 +1,124 @@
-import os
 import requests
-import dns.resolver
-import concurrent.futures
-from datetime import datetime
+import os
 import argparse
+import time
+import random
+import dns.resolver
 
-# ---------------------------
+# ===============================
 # 配置
-# ---------------------------
-URLS_FILE = "urls.txt"
-DIST_DIR = "dist"
+# ===============================
+URLS_TXT = "urls.txt"
 TMP_DIR = "tmp"
+DIST_DIR = "dist"
 PARTS = 16
 DNS_BATCH_SIZE = 800
-MAX_WORKERS = 80  # DNS 并发线程数
 
-resolver = dns.resolver.Resolver()
-resolver.timeout = 1.5
-resolver.lifetime = 1.5
-resolver.nameservers = ["1.1.1.1", "8.8.8.8", "9.9.9.9"]
+os.makedirs(TMP_DIR, exist_ok=True)
+os.makedirs(DIST_DIR, exist_ok=True)
 
-# ---------------------------
-# 函数
-# ---------------------------
-def safe_fetch(url):
-    try:
-        r = requests.get(url, timeout=10)
-        r.raise_for_status()
-        return r.text.splitlines()
-    except:
-        return []
+# ===============================
+# 获取规则
+# ===============================
+def update_urls():
+    print("📥 更新 urls.txt")
+    url = "https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/urls.txt"
+    r = requests.get(url)
+    r.raise_for_status()
+    with open(URLS_TXT, "w", encoding="utf-8") as f:
+        f.write(r.text)
+    print(f"✅ urls.txt 更新完成，共 {len(r.text.splitlines())} 条规则")
 
-def clean_rule(line):
-    l = line.strip()
-    if not l or l.startswith("#"):
-        return None
-    return l
+# ===============================
+# 切分规则
+# ===============================
+def split_rules():
+    with open(URLS_TXT, "r", encoding="utf-8") as f:
+        rules = [line.strip() for line in f if line.strip()]
+    total = len(rules)
+    per_part = (total + PARTS - 1) // PARTS
+    parts_files = []
+    for i in range(PARTS):
+        part_rules = rules[i*per_part : (i+1)*per_part]
+        filename = os.path.join(TMP_DIR, f"part_{i+1:02d}.txt")
+        with open(filename, "w", encoding="utf-8") as f:
+            f.write("\n".join(part_rules))
+        parts_files.append(filename)
+        print(f"📄 分片 {i+1} 保存 {len(part_rules)} 条规则 → {filename}")
+        print(f"前 10 条示例： {part_rules[:10]}")
+    return parts_files, total
 
-def extract_domain(rule):
-    d = rule.lstrip("|").lstrip(".").split("^")[0]
-    return d.strip()
+# ===============================
+# DNS 验证
+# ===============================
+def validate_rules(filename):
+    with open(filename, "r", encoding="utf-8") as f:
+        rules = [line.strip() for line in f if line.strip()]
+    total = len(rules)
+    valid_rules = []
+    resolver = dns.resolver.Resolver()
+    resolver.timeout = 2
+    resolver.lifetime = 2
 
-def is_valid_domain(domain):
-    try:
-        resolver.resolve(domain, "A")
-        return True
-    except:
-        return False
+    for i in range(0, total, DNS_BATCH_SIZE):
+        batch = rules[i:i+DNS_BATCH_SIZE]
+        batch_valid = []
+        for rule in batch:
+            domain = rule.lstrip("|").rstrip("^").split("/")[0]
+            try:
+                resolver.resolve(domain)
+                batch_valid.append(rule)
+            except:
+                continue
+        valid_rules.extend(batch_valid)
+        print(f"✅ 已验证 {min(i+DNS_BATCH_SIZE, total)}/{total} 条，本批有效 {len(batch_valid)} 条")
+        print(f"前 10 条规则示例： {batch_valid[:10]}")
+        time.sleep(random.uniform(0.5,1.5))
+    return valid_rules, total
 
-def check_rule(rule):
-    domain = extract_domain(rule)
-    return rule if is_valid_domain(domain) else None
-
-# ---------------------------
-# 主函数
-# ---------------------------
+# ===============================
+# 主流程
+# ===============================
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--part", type=int, default=-1, help="手动验证指定分片（0~15）")
+    parser.add_argument("--part", type=int, help="验证指定分片 1~16")
     args = parser.parse_args()
-    part_arg = args.part
 
-    os.makedirs(DIST_DIR, exist_ok=True)
-    os.makedirs(TMP_DIR, exist_ok=True)
-    part_files = [os.path.join(TMP_DIR, f"part_{i+1:02}.txt") for i in range(PARTS)]
-    valid_output = os.path.join(DIST_DIR, "blocklist_valid.txt")
+    if not os.path.exists(URLS_TXT):
+        update_urls()
 
-    # ---------------------------
-    # 如果不存在分片或 urls.txt 更新时间大于一天，则更新 urls.txt 并切分
-    # ---------------------------
-    need_update = False
-    if not os.path.exists(URLS_FILE):
-        need_update = True
+    parts_files, total_rules = split_rules()
+
+    if args.part:
+        idx = args.part - 1
+        if 0 <= idx < PARTS:
+            print(f"⏱ 当前处理分片：{parts_files[idx]}, 总规则 {total_rules} 条")
+            valid_rules, _ = validate_rules(parts_files[idx])
+            part_file = os.path.join(TMP_DIR, f"validated_{idx+1:02d}.txt")
+            with open(part_file, "w", encoding="utf-8") as f:
+                f.write("\n".join(valid_rules))
+        else:
+            print("❌ 分片编号错误，应为 1~16")
     else:
-        mtime = datetime.fromtimestamp(os.path.getmtime(URLS_FILE))
-        if (datetime.utcnow() - mtime).days >= 1:
-            need_update = True
+        # 自动轮替验证，按顺序处理每个分片
+        for idx, part_file in enumerate(parts_files):
+            print(f"⏱ 当前处理分片：{part_file}, 总规则 {total_rules} 条")
+            valid_rules, _ = validate_rules(part_file)
+            validated_file = os.path.join(TMP_DIR, f"validated_{idx+1:02d}.txt")
+            with open(validated_file, "w", encoding="utf-8") as f:
+                f.write("\n".join(valid_rules))
+            time.sleep(2)
 
-    if need_update:
-        print("🟢 更新 urls.txt 并切片")
-        with open(URLS_FILE, "r", encoding="utf-8") as f:
-            urls = [x.strip() for x in f if x.strip() and not x.startswith("#")]
-
-        all_rules = []
-        with concurrent.futures.ThreadPoolExecutor(max_workers=20) as ex:
-            for lines in ex.map(safe_fetch, urls):
-                all_rules.extend(lines)
-
-        cleaned = list(dict.fromkeys([clean_rule(x) for x in all_rules if clean_rule(x)]))
-        total = len(cleaned)
-        print(f"✅ 总计去重规则 {total:,} 条")
-
-        chunk = total // PARTS
-        for idx in range(PARTS):
-            start = idx * chunk
-            end = None if idx == PARTS - 1 else (idx + 1) * chunk
-            with open(part_files[idx], "w", encoding="utf-8") as f:
-                f.write("\n".join(cleaned[start:end]))
-            print(f"📄 分片 {idx+1} 保存 {len(cleaned[start:end]):,} 条规则 → {part_files[idx]}")
-    else:
-        print("🟢 urls.txt 当天已更新，无需重复下载")
-
-    # ---------------------------
-    # 确定要验证的分片
-    # ---------------------------
-    if part_arg >= 0 and part_arg < PARTS:
-        target_idx = part_arg
-    else:
-        # 自动轮替，每 1.5 小时处理一个分片
-        minute = datetime.utcnow().hour * 60 + datetime.utcnow().minute
-        target_idx = (minute // 90) % PARTS
-
-    target_file = part_files[target_idx]
-    if not os.path.exists(target_file):
-        print(f"⚠️ 分片不存在：{target_file}")
-        return
-
-    with open(target_file, "r", encoding="utf-8") as f:
-        rules = f.read().splitlines()
-    print(f"⏱ 当前处理分片：{target_file}, 总规则 {len(rules):,} 条")
-    print(f"前 10 条规则示例： {rules[:10]}")
-
-    # ---------------------------
-    # DNS 验证
-    # ---------------------------
-    valid = []
-    total_rules = len(rules)
-    for i in range(0, total_rules, DNS_BATCH_SIZE):
-        batch = rules[i:i+DNS_BATCH_SIZE]
-        with concurrent.futures.ThreadPoolExecutor(max_workers=MAX_WORKERS) as ex:
-            results = list(ex.map(check_rule, batch))
-        batch_valid = [r for r in results if r]
-        valid.extend(batch_valid)
-        print(f"✅ 已验证 {min(i+DNS_BATCH_SIZE, total_rules):,}/{total_rules:,} 条，本批有效 {len(batch_valid):,} 条")
-
-    with open(valid_output, "a", encoding="utf-8") as f:
-        f.write("\n".join(valid) + "\n")
-    print(f"🎯 本次分片有效 {len(valid):,} 条 → 已追加至 {valid_output}")
-    print("✅ 执行结束")
+    # 汇总总有效规则
+    all_valid = []
+    for i in range(PARTS):
+        validated_file = os.path.join(TMP_DIR, f"validated_{i+1:02d}.txt")
+        if os.path.exists(validated_file):
+            with open(validated_file, "r", encoding="utf-8") as f:
+                all_valid.extend([line.strip() for line in f if line.strip()])
+    with open(os.path.join(DIST_DIR, "blocklist_valid.txt"), "w", encoding="utf-8") as f:
+        f.write("\n".join(all_valid))
+    print(f"🎯 总有效规则保存到 {os.path.join(DIST_DIR, 'blocklist_valid.txt')} 共 {len(all_valid)} 条")
 
 if __name__ == "__main__":
     main()

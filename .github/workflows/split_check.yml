@@ -102,7 +102,7 @@ jobs:
             mv split_check.log "logs/split_check_part_${PART}.log"
             echo "✅ 日志已保存 logs/split_check_part_${PART}.log"
           else
-            echo "⚠ split_check.log 未生成，跳过移动"
+            echo "⚠ split_check.log 未生成，跳过"
           fi
 
       - name: Set git config

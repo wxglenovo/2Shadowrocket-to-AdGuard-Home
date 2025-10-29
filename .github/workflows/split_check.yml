@@ -1,4 +1,4 @@
-name: split_check
+name: Build AdGuardHome Blocklist
 
 on:
   schedule:

@@ -1,185 +1,79 @@
-name: Validate AdGuard Rules (16-way Parallel)
+name: Split & DNS Check
 
 on:
   schedule:
+    # 每天 UTC 0:00 强制更新 urls.txt 并生成所有分片
     - cron: "0 0 * * *"
+    # 每天自动轮替 16 次分片验证，每 1.5 小时轮替一片
+    - cron: "0 0,1,3,4,6,7,9,10,12,13,15,16,18,19,21,22 * * *"
   workflow_dispatch:
+    inputs:
+      part:
+        description: '手动验证指定分片 1~16'
+        required: false
+        default: ''
 
 permissions:
   contents: write
 
 jobs:
-  prepare:
+  build:
     runs-on: ubuntu-latest
-    outputs:
-      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    env:
+      PYTHONUNBUFFERED: 1
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set Python
+      - name: Setup Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.11"
+          python-version: '3.12'
 
-      - name: Install deps
+      - name: Install dependencies
+        run: pip install --upgrade requests dnspython
+
+      - name: Update urls.txt and split (daily forced)
+        shell: bash
         run: |
-          pip install requests dnspython
+          CURRENT_HOUR=$(date -u +"%H")
+          if [ "$CURRENT_HOUR" = "00" ]; then
+              echo "🔄 每天强制更新 urls.txt 并生成分片"
+              python split_and_check_16.py --force-update
+          fi
 
-      - name: Download & Merge Rules
+      - name: Run split and DNS check
+        shell: bash
         run: |
-          python3 << 'EOF'
-import os, requests
+          LAST_PART_FILE=".last_part"
+          PART_INPUT="${{ github.event.inputs.part }}"
 
-URLS = "urls.txt"
-MASTER = "merged_rules.txt"
+          if [ -n "$PART_INPUT" ]; then
+              PART="$PART_INPUT"
+              echo "🛠 手动触发，验证分片 $PART"
+          else
+              if [ -f "$LAST_PART_FILE" ]; then
+                  LAST_PART=$(cat "$LAST_PART_FILE")
+                  PART=$(( (LAST_PART % 16) + 1 ))
+              else
+                  PART=1
+              fi
+              echo "⏱ 自动轮替验证分片 $PART"
+          fi
 
-if not os.path.exists(URLS):
-    print("❌ urls.txt 不存在，终止")
-    exit(1)
+          echo $PART > $LAST_PART_FILE
+          python split_and_check_16.py --part "$PART" | tee split_check.log
 
-merged = set()
-for u in open(URLS, "r", encoding="utf-8"):
-    u = u.strip()
-    if not u: continue
-    print("🌐 下载", u)
-    try:
-        r = requests.get(u, timeout=20)
-        r.raise_for_status()
-        for line in r.text.splitlines():
-            line=line.strip()
-            if line and not line.startswith("#"):
-                merged.add(line)
-    except Exception as e:
-        print("⚠ 下载失败", u, e)
-
-print("✅ 合并完成:", len(merged), "条")
-with open(MASTER,"w",encoding="utf-8") as f:
-    f.write("\n".join(sorted(merged)))
-EOF
-
-      - name: Split 16 parts
-        run: |
-          python3 << 'EOF'
-import os, math
-
-MASTER="merged_rules.txt"
-TMP="tmp"
-os.makedirs(TMP,exist_ok=True)
-
-lines=[l.strip() for l in open(MASTER,"r",encoding="utf-8") if l.strip()]
-total=len(lines)
-per=math.ceil(total/16)
-print("总规则:",total,"每片:",per)
-
-for i in range(16):
-    part=lines[i*per:(i+1)*per]
-    fn=f"tmp/part_{i+1:02d}.txt"
-    open(fn,"w",encoding="utf-8").write("\n".join(part))
-    print("✅ 生成",fn,"条数:",len(part))
-EOF
-
-      - id: set-matrix
-        run: echo "matrix=$(printf '%s' $(jq -n '[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]'))" >> $GITHUB_OUTPUT
-
-  validate:
-    needs: prepare
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        part: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Set Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: "3.11"
-
-      - name: Install deps
-        run: |
-          pip install dnspython
-
-      - name: Validate DNS Part
-        run: |
-          python3 << 'EOF'
-import dns.resolver, os, threading, concurrent.futures
-
-part = "${{ matrix.part }}"
-infile = f"tmp/part_{int(part):02d}.txt"
-outfile = f"dist/validated_part_{part}.txt"
-os.makedirs("dist",exist_ok=True)
-
-if not os.path.exists(infile):
-    print("❌ 缺失分片", infile)
-    exit(1)
-
-rules=[l.strip() for l in open(infile,"r",encoding="utf-8") if l.strip()]
-print(f"⏱ 分片 {part}: {len(rules)} 条")
-
-def check(rule):
-    resolver = dns.resolver.Resolver()
-    resolver.timeout = 2
-    resolver.lifetime = 2
-    domain = rule.lstrip("|").split("^")[0].replace("*","")
-    if not domain: return None
-    try:
-        resolver.resolve(domain)
-        return rule
-    except:
-        return None
-
-valid=[]
-with concurrent.futures.ThreadPoolExecutor(max_workers=50) as ex:
-    total=len(rules)
-    done=0
-    futures={ex.submit(check,r):r for r in rules}
-    for fut in concurrent.futures.as_completed(futures):
-        done+=1
-        r=fut.result()
-        if r: valid.append(r)
-        if done%500==0:
-            print(f"✅ 分片{part}: 已验证 {done}/{total}，有效 {len(valid)}")
-
-open(outfile,"w",encoding="utf-8").write("\n".join(valid))
-print(f"✅ 分片 {part} 完成，有效 {len(valid)} → {outfile}")
-EOF
-
-      - name: Upload Result
-        uses: actions/upload-artifact@v4
-        with:
-          name: validated_parts
-          path: dist/validated_part_${{ matrix.part }}.txt
-
-  merge:
-    needs: validate
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Download All Artifacts
-        uses: actions/download-artifact@v4
-        with:
-          name: validated_parts
-
-      - name: Merge validated parts
-        run: |
-          mkdir -p dist
-          cat dist/validated_part_*.txt | sort -u > dist/final_validated.txt
-          echo "✅ 合并完成 → dist/final_validated.txt"
-          echo "✅ 最终有效规则数:"
-          wc -l dist/final_validated.txt
-
-      - name: Push result
+      - name: Commit & Push Validated Rules
+        shell: bash
         run: |
           git config user.name "github-actions[bot]"
-          git config user.email "github-actions@github.com"
-          git add dist/final_validated.txt
-          git commit -m "Updated validated rules"
-          git push || echo "✅ 无更新可推送"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          if ls dist/validated_part_*.txt 1> /dev/null 2>&1; then
+              git add dist/validated_part_*.txt tmp/part_*.txt
+              git commit -m "🤖 Auto update: valid blocklist" || echo "No changes"
+              git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
+          else
+              echo "⚠ 没有生成任何验证文件，跳过 commit & push"

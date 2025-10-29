@@ -16,7 +16,6 @@ DNS_BATCH_SIZE = 500   # 每批验证数量
 DNS_TIMEOUT = 1.5      # DNS 超时（秒）
 BATCH_SLEEP = 0.5      # 每批验证间隔秒数
 
-# 设置全局 DNS 超时
 socket.setdefaulttimeout(DNS_TIMEOUT)
 
 resolver = dns.resolver.Resolver()
@@ -66,35 +65,34 @@ def main():
     validated_files = [os.path.join(TMP_DIR, f"validated_{i:02d}.txt") for i in range(PARTS)]
     final_output = os.path.join(OUTPUT_DIR, "blocklist_valid.txt")
 
-    # 1️⃣ 下载最新源
-    if not os.path.exists(URLS_FILE):
-        print("❌ 未找到 urls.txt")
+    # 下载最新源并切片（首次执行或 part 文件不存在）
+    if not os.path.exists(part_files[0]):
+        if not os.path.exists(URLS_FILE):
+            print("❌ 未找到 urls.txt")
+            return
+        with open(URLS_FILE, "r", encoding="utf-8") as f:
+            urls = [x.strip() for x in f if x.strip() and not x.startswith("#")]
+
+        all_rules = []
+        print("📥 下载规则源...")
+        with concurrent.futures.ThreadPoolExecutor(max_workers=10) as ex:
+            for lines in ex.map(safe_fetch, urls):
+                all_rules.extend(lines)
+
+        cleaned = list(dict.fromkeys([clean_rule(x) for x in all_rules if clean_rule(x)]))
+        total = len(cleaned)
+        print(f"✅ 去重后总计：{total:,} 条")
+
+        chunk = total // PARTS
+        for idx in range(PARTS):
+            start = idx * chunk
+            end = None if idx == PARTS - 1 else (idx + 1) * chunk
+            with open(part_files[idx], "w", encoding="utf-8") as f:
+                f.write("\n".join(cleaned[start:end]))
+        print(f"✅ 切成 {PARTS} 份，每份约 {chunk:,} 条")
         return
 
-    with open(URLS_FILE, "r", encoding="utf-8") as f:
-        urls = [x.strip() for x in f if x.strip() and not x.startswith("#")]
-
-    all_rules = []
-    print("📥 下载规则源...")
-    with concurrent.futures.ThreadPoolExecutor(max_workers=10) as ex:
-        for lines in ex.map(safe_fetch, urls):
-            all_rules.extend(lines)
-
-    # 2️⃣ 去注释 + 去重
-    cleaned = list(dict.fromkeys([clean_rule(x) for x in all_rules if clean_rule(x)]))
-    total = len(cleaned)
-    print(f"✅ 去重后总计：{total:,} 条")
-
-    # 3️⃣ 切 16 份
-    chunk = total // PARTS
-    for idx in range(PARTS):
-        start = idx * chunk
-        end = None if idx == PARTS - 1 else (idx + 1) * chunk
-        with open(part_files[idx], "w", encoding="utf-8") as f:
-            f.write("\n".join(cleaned[start:end]))
-    print(f"✅ 切成 {PARTS} 份，每份约 {chunk:,} 条")
-
-    # 4️⃣ 当前分片（每 1.5 小时轮替）
+    # 当前分片，每 1.5 小时轮替
     now = datetime.now(timezone.utc)
     minute = now.hour * 60 + now.minute
     part_index = (minute // 90) % PARTS
@@ -112,7 +110,7 @@ def main():
     total_rules = len(rules)
     print(f"🔍 当前分片规则总数：{total_rules:,} 条")
 
-    # 5️⃣ DNS 验证（分批处理）
+    # DNS 验证（分批处理）
     valid_rules = []
     for i in range(0, total_rules, DNS_BATCH_SIZE):
         batch = rules[i:i+DNS_BATCH_SIZE]
@@ -123,12 +121,12 @@ def main():
         print(f"✅ 已验证 {min(i+DNS_BATCH_SIZE, total_rules):,}/{total_rules:,} 条，当前批有效 {len(valid_batch):,} 条")
         time.sleep(BATCH_SLEEP)
 
-    # 6️⃣ 保存当前分片验证结果
+    # 保存当前分片验证结果
     with open(target_validated, "w", encoding="utf-8") as f:
         f.write("\n".join(valid_rules))
     print(f"✅ 当前分片有效规则：{len(valid_rules):,} 条 → 保存至 {target_validated}")
 
-    # 7️⃣ 合并所有 validated 文件
+    # 合并所有 validated 文件
     all_valid = []
     for vf in validated_files:
         if os.path.exists(vf):

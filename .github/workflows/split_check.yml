@@ -1,32 +1,25 @@
 name: split_check
 
 on:
+  schedule:
+    # 每天 4 次更新 urls.txt
+    - cron: "0 0,6,12,18 * * *"
+    # 每 1 小时 30 分轮替分片验证（自动触发）
+    - cron: "0 0,90,180,270,360,450,540,630,720,810,900,990,1080,1170,1260,1350 * * *"
   workflow_dispatch:
     inputs:
       part:
-        description: '手动指定分片 0~15'
+        description: '手动触发验证分片序号（0-15）'
         required: false
         default: ''
-  schedule:
-    # 每天 1 次更新 urls.txt（UTC 00:00）
-    - cron: "0 0 * * *"
-    # 每 1.5 小时轮替分片验证（16 次/天）
-    - cron: "0 0,3,6,9,12,15,18,21 * * *"     # 整点小时
-    - cron: "30 1,4,7,10,13,16,19,22 * * *"  # 半点小时
-
-permissions:
-  contents: write
 
 jobs:
-  validate:
+  build:
     runs-on: ubuntu-latest
-    env:
-      PYTHONUNBUFFERED: 1
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Set up Python
+      - name: Setup Python
         uses: actions/setup-python@v4
         with:
           python-version: 3.12
@@ -36,26 +29,31 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests dnspython
 
-      - name: Print start time
-        run: echo "⏱ Workflow 开始：$(date -u)"
-
-      - name: Run split_and_check_16.py
+      - name: Run split & check
         run: |
           if [ "${{ github.event.inputs.part }}" != "" ]; then
-              echo "🛠 手动触发，验证分片 ${{ github.event.inputs.part }}"
-              python split_and_check_16.py --part "${{ github.event.inputs.part }}" | tee split_check.log
+            echo "🛠 手动触发，验证分片 ${{ github.event.inputs.part }}"
+            python split_and_check_16.py --part ${{ github.event.inputs.part }} | tee split_check.log
           else
-              echo "⏱ 自动轮替验证当前分片"
-              python split_and_check_16.py | tee split_check.log
-          fi
+            echo "⏱ 自动轮替验证当前分片"
+            python split_and_check_16.py | tee split_check.log
+        env:
+          PYTHONUNBUFFERED: 1
 
       - name: Commit & push valid rules
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add dist/blocklist_valid.txt tmp/part_*.txt
-          git commit -m "🤖 Auto update: valid blocklist" || echo "No changes"
-          git push origin main
-
-      - name: Print end time
-        run: echo "⏱ Workflow 结束：$(date -u)"
+          
+          FILES_TO_ADD=""
+          [ -f dist/blocklist_valid.txt ] && FILES_TO_ADD="$FILES_TO_ADD dist/blocklist_valid.txt"
+          for f in tmp/part_*.txt; do
+            [ -f "$f" ] && FILES_TO_ADD="$FILES_TO_ADD $f"
+          done
+          
+          if [ -n "$FILES_TO_ADD" ]; then
+            git add $FILES_TO_ADD
+            git commit -m "🤖 Auto update: valid blocklist" || echo "No changes"
+            git push origin main
+          else
+            echo "⚠️ 没有需要提交的文件，跳过 commit"

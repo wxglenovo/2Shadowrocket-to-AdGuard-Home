@@ -1,15 +1,15 @@
-name: SplitCheck
+name: Split & DNS Check
 
 on:
   schedule:
-    # 每天 1 次更新 urls.txt
+    # 每天 0:00 UTC 更新 urls.txt
     - cron: "0 0 * * *"
-    # 每小时轮替分片（UTC）
-    - cron: "0 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 * * *"
+    # 每天自动轮替 16 次分片验证，每 1.5 小时一片（UTC 时间）
+    - cron: "0 0,1,3,4,6,7,9,10,12,13,15,16,18,19,21,22 * * *"
   workflow_dispatch:
     inputs:
       part:
-        description: '手动验证分片 0~15'
+        description: '手动验证指定分片 1~16'
         required: false
         default: ''
 
@@ -17,38 +17,39 @@ permissions:
   contents: write
 
 jobs:
-  split_check:
+  build:
     runs-on: ubuntu-latest
+    env:
+      PYTHONUNBUFFERED: 1
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Python
+      - name: Setup Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.12"
+          python-version: '3.12'
 
       - name: Install dependencies
-        run: |
-          pip install requests dnspython
+        run: pip install requests dnspython
 
-      - name: Run split_and_check_16.py
+      - name: Run split and DNS check
         shell: bash
-        env:
-          PYTHONUNBUFFERED: 1
         run: |
-          if [ "${{ github.event.inputs.part }}" != "" ]; then
-            echo "🛠 手动触发，验证分片 ${{ github.event.inputs.part }}"
-            python split_and_check_16.py --part ${{ github.event.inputs.part }} | tee split_check.log
+          PART="${{ github.event.inputs.part }}"
+          if [ -n "$PART" ]; then
+            echo "🛠 手动触发，验证分片 $PART"
+            python split_and_check_16.py --part $PART | tee split_check.log
           else
             echo "⏱ 自动轮替验证当前分片"
             python split_and_check_16.py | tee split_check.log
 
-      - name: Commit & Push
+      - name: Commit & Push Validated Rules
         shell: bash
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add dist/blocklist_valid.txt tmp/part_*.txt
+          git add dist/blocklist_valid.txt tmp/validated_*.txt
           git commit -m "🤖 Auto update: valid blocklist" || echo "No changes"
-          git push origin main
+          git push origin main || echo "⚠ Push failed, check permissions"

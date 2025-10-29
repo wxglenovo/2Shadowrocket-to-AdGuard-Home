@@ -1,39 +1,22 @@
 import os
-import sys
-import argparse
 import requests
 import dns.resolver
 import concurrent.futures
-from datetime import datetime
+from datetime import datetime, timezone
+import argparse
 
 URLS_FILE = "urls.txt"
-URLS_SOURCE = "https://raw.githubusercontent.com/你的仓库/urls.txt"
-OUTPUT_DIR = "dist"
+TMP_DIR = "tmp"
+DIST_DIR = "dist"
 PARTS = 16
 MAX_WORKERS = 80
 DNS_BATCH_SIZE = 800
+VALID_OUTPUT = os.path.join(DIST_DIR, "blocklist_valid.txt")
 
 resolver = dns.resolver.Resolver()
 resolver.timeout = 1.5
 resolver.lifetime = 1.5
 resolver.nameservers = ["1.1.1.1", "8.8.8.8", "9.9.9.9"]
-
-def download_urls_once():
-    """每天只下载一次 urls.txt"""
-    if os.path.exists(URLS_FILE):
-        mtime = datetime.utcfromtimestamp(os.path.getmtime(URLS_FILE))
-        if mtime.date() == datetime.utcnow().date():
-            print("✅ urls.txt 已存在，今日无需重新下载")
-            return
-    try:
-        print("📥 下载最新 urls.txt ...")
-        r = requests.get(URLS_SOURCE, timeout=15)
-        r.raise_for_status()
-        with open(URLS_FILE, "w", encoding="utf-8") as f:
-            f.write(r.text)
-        print("✅ urls.txt 下载完成")
-    except Exception as e:
-        print(f"⚠️ urls.txt 下载失败: {e}")
 
 def safe_fetch(url):
     try:
@@ -50,7 +33,8 @@ def clean_rule(line):
     return l
 
 def extract_domain(rule):
-    return rule.lstrip("|").lstrip(".").split("^")[0].strip()
+    d = rule.lstrip("|").lstrip(".").split("^")[0]
+    return d.strip()
 
 def is_valid_domain(domain):
     try:
@@ -63,85 +47,82 @@ def check_rule(rule):
     domain = extract_domain(rule)
     return rule if is_valid_domain(domain) else None
 
-def fetch_and_split():
-    download_urls_once()
+def split_rules():
+    os.makedirs(TMP_DIR, exist_ok=True)
+    os.makedirs(DIST_DIR, exist_ok=True)
     if not os.path.exists(URLS_FILE):
-        print("❌ urls.txt 不存在，无法切分")
-        return []
+        print("❌ 未找到 urls.txt")
+        return
 
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
     with open(URLS_FILE, "r", encoding="utf-8") as f:
         urls = [x.strip() for x in f if x.strip() and not x.startswith("#")]
 
     all_rules = []
+    print(f"⬇️ 下载 {len(urls)} 个源...")
     with concurrent.futures.ThreadPoolExecutor(max_workers=20) as ex:
         for lines in ex.map(safe_fetch, urls):
             all_rules.extend(lines)
 
+    # 去注释 + 去重
     cleaned = list(dict.fromkeys([clean_rule(x) for x in all_rules if clean_rule(x)]))
     total = len(cleaned)
-    print(f"✅ 去重后总计：{total:,} 条")
-
     chunk = total // PARTS
-    part_files = []
+
     for idx in range(PARTS):
         start = idx * chunk
         end = None if idx == PARTS - 1 else (idx + 1) * chunk
-        part_file = os.path.join(OUTPUT_DIR, f"part_{idx}.txt")
+        part_file = os.path.join(TMP_DIR, f"part_{idx+1:02d}.txt")
         with open(part_file, "w", encoding="utf-8") as f:
             f.write("\n".join(cleaned[start:end]))
-        part_files.append(part_file)
-    print(f"✅ 切成 {PARTS} 份，每份约 {chunk:,} 条")
-    return part_files
+        print(f"📄 分片 {idx+1} 保存 {len(cleaned[start:end]):,} 条规则 → {part_file}")
+        print(f"前 10 条示例： {cleaned[start:end][:10]}")
 
-def validate_part(part_file):
-    if not os.path.exists(part_file):
-        print(f"⚠️ 分片不存在：{part_file}")
-        return []
+def validate_part(part_index=None):
+    os.makedirs(TMP_DIR, exist_ok=True)
+    part_files = [os.path.join(TMP_DIR, f"part_{i+1:02d}.txt") for i in range(PARTS)]
 
-    with open(part_file, "r", encoding="utf-8") as f:
+    if part_index is None:
+        # 自动轮替
+        now = datetime.now(timezone.utc)
+        minute = now.hour * 60 + now.minute
+        part_index = (minute // 25) % PARTS
+
+    target_file = part_files[part_index]
+    if not os.path.exists(target_file):
+        print(f"⚠️ 分片不存在：{target_file}")
+        return
+
+    with open(target_file, "r", encoding="utf-8") as f:
         rules = f.read().splitlines()
+    total = len(rules)
+    print(f"⏱ 当前处理分片：{target_file}, 总规则 {total:,} 条")
+    print(f"前 10 条规则示例： {rules[:10]}")
 
     valid = []
-    total = len(rules)
-    print(f"🔍 当前分片规则：{total:,} 条")
-
+    verified_count = 0
     for i in range(0, total, DNS_BATCH_SIZE):
         batch = rules[i:i+DNS_BATCH_SIZE]
         with concurrent.futures.ThreadPoolExecutor(max_workers=MAX_WORKERS) as ex:
             results = list(ex.map(check_rule, batch))
-        valid.extend([r for r in results if r])
-        print(f"  🔹 已验证 {min(i+DNS_BATCH_SIZE, total)}/{total}")
+        batch_valid = [r for r in results if r]
+        valid.extend(batch_valid)
+        verified_count += len(batch)
+        print(f"前 10 条示例： {batch[:10]}")
+        print(f"✅ 已验证 {verified_count:,}/{total:,} 条，本批有效 {len(batch_valid):,} 条")
 
-    print(f"✅ 本批有效：{len(valid):,} 条")
-    return valid
-
-def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--part", type=int, help="手动验证指定分片 0~15")
-    args = parser.parse_args()
-
-    # 首次运行切片
-    first_part_file = os.path.join(OUTPUT_DIR, "part_0.txt")
-    if not os.path.exists(first_part_file):
-        print("🧩 首次运行：切分 urls.txt")
-        fetch_and_split()
-
-    if args.part is not None:
-        part_index = args.part
-    else:
-        minute = datetime.utcnow().hour * 60 + datetime.utcnow().minute
-        part_index = (minute // 90) % PARTS
-
-    part_file = os.path.join(OUTPUT_DIR, f"part_{part_index}.txt")
-    print(f"⏱ 当前处理分片：{part_file}")
-
-    valid_rules = validate_part(part_file)
-
-    output_file = os.path.join(OUTPUT_DIR, "blocklist_valid.txt")
-    with open(output_file, "a", encoding="utf-8") as f:
-        f.write("\n".join(valid_rules) + "\n")
-    print(f"✅ 已追加有效规则至 {output_file}")
+    # 保存有效规则
+    os.makedirs(DIST_DIR, exist_ok=True)
+    with open(VALID_OUTPUT, "a", encoding="utf-8") as f:
+        f.write("\n".join(valid) + "\n")
+    print(f"🎯 本分片有效总计：{len(valid):,} 条 → 已追加至 {VALID_OUTPUT}")
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--split", action="store_true", help="切分规则")
+    parser.add_argument("--part", type=int, help="验证指定分片 0~15")
+    args = parser.parse_args()
+
+    if args.split:
+        split_rules()
+    else:
+        validate_part(args.part)

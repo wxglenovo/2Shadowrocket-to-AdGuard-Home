@@ -73,7 +73,7 @@ jobs:
         env:
           PART: ${{ steps.detect.outputs.part }}
         run: |
-          PART_FILE="tmp/part_${PART}.txt"
+          PART_FILE=$(printf "tmp/part_%02d.txt" "$PART")
 
           if [ ! -f "$PART_FILE" ]; then
             echo "⚠ 分片缺失：$PART_FILE"

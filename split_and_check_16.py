@@ -15,7 +15,7 @@ MAX_WORKERS = 80  # 并发线程数
 resolver = dns.resolver.Resolver()
 resolver.timeout = 1.5
 resolver.lifetime = 1.5
-resolver.nameservers = ["1.1.1.1", "8.8.8.8", "9.9.9.9"]
+resolver.nameservers = ["1.1.1.1", "8.8.8.8", "9.9.9.9", "114.114.114.114", "114.114.114.119", "2400:3200::1", "223.5.5.5", "2400:3200:baba::1", "119.29.29.29"]
 
 def safe_fetch(url):
     try:

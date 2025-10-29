@@ -1,3 +1,64 @@
+||server.francesconolivier.com^
+||server.franquiacrossexperience.com.br^
+||server.franveiculosbb.com.br^
+||server.freegamesall.com^
+||server.freelanz.app^
+||server.freitastcg.com.br^
+||server.fuhrosouto.com.br^
+||server.fullgarage.com.br^
+||server.fundocasanueva.com^
+||server.funduptrading.com^
+||server.furniturelaagbe.com^
+||server.gabrielalvesdz.com^
+||server.gadgetngalaxy.com^
+||server.gaffsy.com^
+||server.gamerskitbd.com^
+||server.ganhosdigital.com.br^
+||server.gapbi.com.br^
+||server.gardenretreat-medspa.com^
+||server.garitari.com^
+||server.garzon.com.br^
+||server.gay.cat^
+||server.gazirbazarbd.com^
+||server.gbiseguros.com.br^
+||server.gefinancas.com.br^
+||server.genesispharma.com.br^
+||server.gentixfashion.com^
+||server.genusclin.com.br^
+||server.geoengenhariarn.com.br^
+||server.geracaoedu.com.br^
+||server.gersonkawa.site^
+||server.get-cracked.com^
+||server.getalphaforce.com^
+||server.getcommerce.xyz^
+||server.ghfarma.com.br^
+||server.ghorershopno.com^
+||server.ghorsajaobd.com^
+||server.giftitems.com.bd^
+||server.giftlye.com^
+||server.gigasmartbd.com^
+||server.ginandger.com^
+||server.gisellesell.com^
+||server.glamourgrid.xyz^
+||server.glidecartbd.com^
+||server.glmodas.com.br^
+||server.globalgadgetitems.com.bd^
+||server.globoup.shop^
+||server.glor-design.com^
+||server.glorencefashion.com^
+||server.gloriahomesbd.com^
+||server.glowshine.com.br^
+||server.gnextbaby.com^
+||server.go.derkleinemediengestalter.de^
+||server.go.her-closing-academy.de^
+||server.go2africa.com^
+||server.godeep.rickgordilho.com.br^
+||server.godobd.shop^
+||server.goesrodrigo.com^
+||server.gomeseteodoroadvocacia.com.br^
+||server.gomideglobal.com^
+||server.goodwinsmithoutlet.com^
+||server.googledominado.com.br^
 ||server.goprinthub.co.uk^
 ||server.gorila.ro^
 ||server.gouxstudio.com^
@@ -3161,6 +3222,7 @@
 ||serviciosgeneraleseyj.com^
 ||serviciosguru.com^
 ||serviciosinstagram.com^
+||servicioslogisticosdyc.com^
 ||serviciosmalika.com^
 ||serviciosmotrices.com^
 ||serviciospatito.com^
@@ -3548,6 +3610,7 @@
 ||serwis-daro.com.pl^
 ||serwis-laptopow24.pl^
 ||serwis-medyczny24.com^
+||serwis-naprawa.online^
 ||serwis-news.dfirma.pl^
 ||serwis-news.you2.pl^
 ||serwis.kb.help^
@@ -4449,6 +4512,7 @@
 ||sevastopol.gup.ru^
 ||sevbizleadservices.com^
 ||sevcem.ru^
+||sevdesevan.com^
 ||sevdinmi.net^
 ||seveelumus.com^
 ||sevemor.cf^
@@ -5991,7 +6055,6 @@
 ||sg-new-cdn-ap-southeast-1b-hb.rayjump.com^
 ||sg-new-cdn-ap-southeast-1c-hb.rayjump.com^
 ||sg-old-setting.rayjump.com^
-||sg-open-set-api.shenshiads.com^
 ||sg-payment.cydf.hoyoverse.com^
 ||sg-pl-844.vizury.com^
 ||sg-pl-d-c.vizury.com^
@@ -10706,6 +10769,8 @@
 ||shifoagn.uk^
 ||shift-12xhiprexengine.com^
 ||shift-17x-hiprex.com^
+||shift-2000hiprex-tech.com^
+||shift-2000hiprextech.com^
 ||shift-24-amrix.com^
 ||shift-360en.net^
 ||shift-360ys-app.com^
@@ -10750,7 +10815,9 @@
 ||shift08hiprex.com^
 ||shift100-amrix.com^
 ||shift100-amrixtech.com^
+||shift100amrix-software.com^
 ||shift100amrixreview.com^
+||shift12x-hiprex-system.com^
 ||shift12xhiprex.net^
 ||shift17xhiprex.com^
 ||shift17xhiprex.net^
@@ -10823,6 +10890,8 @@
 ||shiftitup.xyz^
 ||shiftkantrex.com^
 ||shiftkantrex100.net^
+||shiftkapidex-lab-app.com^
+||shiftkapidex-lab.com^
 ||shiftless.pbphgwbr.in^
 ||shiftlock.com^
 ||shiftoutbuy.com^
@@ -12352,6 +12421,7 @@
 ||shophapham.com^
 ||shophatieuphu.com^
 ||shophedu.com^
+||shophellosweeti.net^
 ||shophiharobux.com^
 ||shophkt294.weebly.com^
 ||shophoangkim.com^
@@ -13904,6 +13974,7 @@
 ||shy-clothes.com^
 ||shy-contribution.pro^
 ||shy.dk-9-a-6.ru^
+||shy.n4ym.ru^
 ||shyajio.com^
 ||shyamala.city^
 ||shyambaba.org^
@@ -14918,6 +14989,7 @@
 ||sigmabetrix.net^
 ||sigmabetrix.org^
 ||sigmabetrixapp.com^
+||sigmabetrixtech.com^
 ||sigmablue.org^
 ||sigmabrowse.com^
 ||sigmabypass.info^
@@ -14929,6 +15001,7 @@
 ||sigmadioxa.net^
 ||sigmaentertainmentpku.blogspot.com^
 ||sigmaessays.com^
+||sigmafantom-app.com^
 ||sigmafantom-soft.com^
 ||sigmagroup.actonservice.com^
 ||sigmahelp.ru^
@@ -14981,7 +15054,6 @@
 ||sign-in-appleaccountsecurelocked.com^
 ||sign-in-att-103724.weeblysite.com^
 ||sign-in-att-103993.weeblysite.com^
-||sign-in-att-104798.weeblysite.com^
 ||sign-in-att-107403.weeblysite.com^
 ||sign-in-att-109300.weeblysite.com^
 ||sign-in-blocked-service.com^
@@ -15001,7 +15073,6 @@
 ||sign-inn.godaddysites.com^
 ||sign-insupport.com^
 ||sign-into-bex-to-continue.weebly.com^
-||sign-into-your-att-account-106137.weeblysite.com^
 ||sign-ln-lcloud.com^
 ||sign-on00.000webhostapp.com^
 ||sign-support.com^
@@ -15866,7 +15937,6 @@
 ||silicontees.com^
 ||silicrinco.com^
 ||silicus.info^
-||silienne.hvdbodrd9.cn^
 ||siliguribarassociation.org^
 ||silikoreisen.at^
 ||silimbompom.com^
@@ -17111,6 +17181,7 @@
 ||sinastorage.com^
 ||sinatebapps.ir^
 ||sinatolux2.top^
+||sinavhocasi.com^
 ||sinavia.com^
 ||sinawap.com^
 ||sinawbimg.com^
@@ -17301,6 +17372,7 @@
 ||singertinsebeyssititit.krovatka.su^
 ||singertinsegeusssedes.krovatka.su^
 ||singertinsjeandes.krovatka.su^
+||singfable-flux-app.com^
 ||singfable-flux-app.net^
 ||singfableflux.pro^
 ||singfablefluxapp.com^
@@ -17663,6 +17735,7 @@
 ||sipahielektrik.com^
 ||sipandgrowrich.com^
 ||sipaof.mgr.consensu.org^
+||siparisdenizli.com^
 ||sipbc.it^
 ||sipchem.ddns.net^
 ||sipcomponents.com^
@@ -18191,6 +18264,7 @@
 ||site.ultimatetax.com^
 ||site.waitrose.com^
 ||site.webtupi.com.br^
+||site001486.jdmsite.com^
 ||site009.narod.ru^
 ||site05.michaelrabet.fr^
 ||site1-computerdoc.com^
@@ -18220,7 +18294,6 @@
 ||site3.free-share-buttons.com^
 ||site32.info^
 ||site360.org.uk^
-||site4-sbisec.yichongjf.com^
 ||site4freeproxy.tk^
 ||site4freesurf.tk^
 ||site8.boyfriend.show^
@@ -20039,6 +20112,7 @@
 ||skimegrid.shop^
 ||skimer.com^
 ||skimlinks.com^
+||skimlinks.js^
 ||skimlinkscom.skimlinks.com^
 ||skimmilk.tk^
 ||skimming56browsing.tk^
@@ -20934,6 +21008,7 @@
 ||skyline-nexus-pro.net^
 ||skyline-r34.com^
 ||skyline.pbphgwbr.in^
+||skyline24.net^
 ||skylineacademy.in^
 ||skylinebiz.biz^
 ||skylinebreak.tk^
@@ -22000,6 +22075,7 @@
 ||slimeslangiel.com^
 ||slimespell.com^
 ||slimfalcon.pro^
+||slimfinlore-app.com^
 ||slimfinlore.com^
 ||slimfinlore.net^
 ||slimfit247.com^
@@ -30438,6 +30514,7 @@
 ||snap-kapidexx.com^
 ||snap-kionexneo.com^
 ||snap-levora-app.com^
+||snap-levoraapp.com^
 ||snap.adsrvr.org^
 ||snap.cba.pl^
 ||snap.com^
@@ -30619,6 +30696,7 @@
 ||snapcore.site^
 ||snapcorex.cfd^
 ||snapcormaxsys.net^
+||snapcormaxsystech.com^
 ||snapcrack.net^
 ||snapcrackleshot.com^
 ||snapcrackpopple.tumblr.com^
@@ -30681,6 +30759,7 @@
 ||snapjudgment.org^
 ||snapka.com.pl^
 ||snapkantrexfin.net^
+||snapkapidex-x.com^
 ||snapkapidexx.net^
 ||snapkeflexpip.net^
 ||snapkionex-neo-tech.com^
@@ -32982,6 +33061,7 @@
 ||sofort-haldol-app.com^
 ||sofort-haldol-app.net^
 ||sofort-lunesta-app.com^
+||sofortavonex-system.com^
 ||sofortavonex-tech.com^
 ||soforteinkommen.net^
 ||sofortige-azopt-app.com^
@@ -33921,6 +34001,7 @@
 ||softwaretestingsupport.com^
 ||softwaretipsandtricks.us.intellitxt.com^
 ||softwaretohack.com^
+||softwaretradegpt.com^
 ||softwaretrend.net^
 ||softwaretricks.net^
 ||softwaretun.com^
@@ -34297,6 +34378,7 @@
 ||solaningermen.click^
 ||solanixpeak-2-7-ai.com^
 ||solanixpeak-27ai.com^
+||solanixpeak27-ai.com^
 ||solanixpeak27ai.com^
 ||solanixtrader.net^
 ||solanixtrader46flex.com^
@@ -34513,6 +34595,7 @@
 ||soldiuin.tk^
 ||soldmyhomes.net^
 ||soldmyhomesapp.com^
+||soldmyhomessolution.com^
 ||soldoutevents.icu^
 ||soldoutnight.com^
 ||soldpanes.info^
@@ -34727,6 +34810,7 @@
 ||solipro.top^
 ||solipy.com^
 ||solira-mist-software.com^
+||solira-mistsoftware.com^
 ||soliramist.com^
 ||soliramist.net^
 ||soliro.top^
@@ -34828,6 +34912,7 @@
 ||soloecuador.com^
 ||soloenganche.com^
 ||soloeshopper.top^
+||solofishvja.info^
 ||soloflute.co.uk^
 ||solofront.com^
 ||soloftp.com^
@@ -35293,6 +35378,7 @@
 ||solvexaccord.com^
 ||solvexamatrica.net^
 ||solvexaulagati.net^
+||solvexgain-7-9ai-software.com^
 ||solvexgain-79-ai.com^
 ||solvexgain-79-ai.net^
 ||solvexgain-79.com^
@@ -35337,6 +35423,8 @@
 ||solvingsecurity578-online.tk^
 ||solvingthesocialmediapuzzle.com^
 ||solvio.top^
+||solviontrust-engine.com^
+||solviontrust-software.com^
 ||solviontrust.com^
 ||solviontrust.net^
 ||solviontrustai.com^
@@ -35608,6 +35696,7 @@
 ||somigo-jabiru.site^
 ||sominamgiasi.com^
 ||somindia.in^
+||somineafyon.com^
 ||somir.com.mx^
 ||somitelhotel.com^
 ||somjyotiartemporium.com^
@@ -36643,6 +36732,7 @@
 ||sopos.xyz^
 ||sopot-fakt24.pl^
 ||sopotfile.website^
+||sopotstocznia.online^
 ||soppagroup.pro^
 ||soppe68.com^
 ||soppe68.shop^
@@ -37327,6 +37417,7 @@
 ||soundasthe.tk^
 ||soundbaseloaded.com^
 ||soundbeat.go2cloud.org^
+||soundbeat16u.info^
 ||soundbeatlab.com^
 ||soundbistroriverhead.com^
 ||soundblack.info^
@@ -37651,6 +37742,7 @@
 ||southfloridagaynews.com/images/banners/
 ||southfloridamarinecontractor.com^
 ||southfloridasupply.com^
+||southflowdex-app.com^
 ||southflowdex.com^
 ||southfltitle.com^
 ||southfoo.ml^
@@ -37834,6 +37926,7 @@
 ||sovonex-trader-solution.com^
 ||sovonex-trader.com^
 ||sovonex-trader.net^
+||sovonex-trader1-9edge.com^
 ||sovonex-traderapp.com^
 ||sovonextrader-19-edge.com^
 ||sovonextrader.cyou^
@@ -37865,6 +37958,7 @@
 ||sovrex-trader.net^
 ||sovrexnova.com^
 ||sovrexnova14ai.com^
+||sovrextrader-engine.com^
 ||sovrextrader28nova.com^
 ||sovrextrader28nova.net^
 ||sovrextraderengine.com^
@@ -38240,7 +38334,6 @@
 ||sp1tt1.lol^
 ||sp2.baidu.com^
 ||sp2.cba.pl^
-||sp200826.sitebeat.crazydomains.com^
 ||sp211315.sitebeat.crazydomains.com^
 ||sp220332.sitebeat.crazydomains.com^
 ||sp245995.sitebeat.crazydomains.com^
@@ -38281,7 +38374,6 @@
 ||sp624533.sitebeat.crazydomains.com^
 ||sp631624.sitebeat.crazydomains.com^
 ||sp652635.sitebeat.crazydomains.com^
-||sp659149.sitebeat.crazydomains.com^
 ||sp668002.sitebeat.crazydomains.com^
 ||sp67195.sitebeat.crazydomains.com^
 ||sp6788.com^
@@ -40903,9 +40995,11 @@
 ||spikaflora.ru^
 ||spike-chantix-xp.com^
 ||spike-chenix-xp.com^
+||spike-imovaxneo.com^
 ||spike-iplex-600.com^
 ||spike-iplex600-system.com^
 ||spike-manerix-software.com^
+||spike-maxalthub.com^
 ||spike-plant.valorbuff.com^
 ||spike-seo.com^
 ||spike.email-disney.cjm.adobe.com^
@@ -42188,6 +42282,7 @@
 ||spot-11x-prolia.com^
 ||spot-11x-sanorex.com^
 ||spot-11x-sanorex.net^
+||spot-11xprolia.com^
 ||spot-11xproliatech.com^
 ||spot-11xsanorex.com^
 ||spot-18x-sanorex.com^
@@ -42254,6 +42349,7 @@
 ||spot-gadget.blogspot.com^
 ||spot-herplex-2u.com^
 ||spot-herplex.com^
+||spot-herplex2u.com^
 ||spot-hiberix-opt.com^
 ||spot-hiprex100.com^
 ||spot-im-d.openx.net^
@@ -42277,6 +42373,7 @@
 ||spot-nurax.com^
 ||spot-nuvnex.com^
 ||spot-nuvnex.net^
+||spot-nuvnextech.com^
 ||spot-prolia-90-pro.com^
 ||spot-prolia-ai-80.com^
 ||spot-prolia-platformapp.co^
@@ -42297,6 +42394,7 @@
 ||spot-relpax-platform.co^
 ||spot-relpax-platform.com^
 ||spot-relpax-platform.net^
+||spot-relpax-xp-500.com^
 ||spot-relpax-xp-500.net^
 ||spot-relpax.co^
 ||spot-relpax.com^
@@ -42315,6 +42413,7 @@
 ||spot-sanorex-platform.co^
 ||spot-sanorex-platform.com^
 ||spot-sanorex-platform.net^
+||spot-sanorex-tech.com^
 ||spot-sanorex.co^
 ||spot-sanorex.com^
 ||spot-sanorex.net^
@@ -42329,6 +42428,7 @@
 ||spot.spsfactory.com^
 ||spot10.net^
 ||spot11x-prolia.com^
+||spot11x-sanorex.com^
 ||spot11xprolia.com^
 ||spot11xprolia.net^
 ||spot11xproliaai.com^
@@ -42342,6 +42442,7 @@
 ||spot12xsanorex.com^
 ||spot15xdanrex-engine.com^
 ||spot15xdanrex.net^
+||spot18xsanorex-app.com^
 ||spot18xsanorex-soft.com^
 ||spot18xsanorex.com^
 ||spot18xsanorex.net^
@@ -42390,6 +42491,7 @@
 ||spotadipex.co^
 ||spotadipex.com^
 ||spotadipex.net^
+||spotadipex40004v.com^
 ||spotadipex40004v.net^
 ||spotadipex40004vapp.com^
 ||spotadipex8000ai.com^
@@ -42421,6 +42523,7 @@
 ||spotbrevion20.com^
 ||spotbrevionpro.com^
 ||spotbuytool.com^
+||spotcelexa-x-software.com^
 ||spotcelexax.net^
 ||spotcenter.tk^
 ||spotcentrum.com^
@@ -42432,6 +42535,7 @@
 ||spotcodrix300.net^
 ||spotcodrix300.org^
 ||spotcodrix3000.com^
+||spotcodrix300engine.com^
 ||spotcolor.net^
 ||spotcormaxhub.net^
 ||spotdanrex-20-software.com^
@@ -42450,9 +42554,11 @@
 ||spoterymaxhex.net^
 ||spoterynd.net^
 ||spoterynd20.net^
+||spotevista-2usoftware.com^
 ||spotevista2u.net^
 ||spotewaun.com^
 ||spotexchange.com^
+||spotexelon-xp.org^
 ||spotexelonxp.net^
 ||spotexelonxpsoftware.com^
 ||spotf-info.com^
@@ -42464,6 +42570,7 @@
 ||spotflaw.com^
 ||spotflux.us^
 ||spotfolder.com^
+||spotforteo-600.com^
 ||spotforteo.com^
 ||spotfour.us^
 ||spotfpay.com^
@@ -42476,6 +42583,7 @@
 ||spotheadlinenews.com^
 ||spotherplex-2u.com^
 ||spotherplex.com^
+||spothiberix-opt-engine.com^
 ||spothiberixopt.net^
 ||spothigh.net^
 ||spothiprex100.net^
@@ -42757,6 +42865,7 @@
 ||spotlightthenewshub.com^
 ||spotlightwebsaga.com^
 ||spotlispro.com^
+||spotlispro500-soft.com^
 ||spotlispro500.com^
 ||spotlitfive.us^
 ||spotlornex-platform.com^
@@ -42846,6 +42955,7 @@
 ||spotsanorex8018x8000app.net^
 ||spotsanorexapp.com^
 ||spotsanorexapp.net^
+||spotsanorexsoft.com^
 ||spotsanzo.com^
 ||spotsback.icu^
 ||spotscenered.info^
@@ -42888,6 +42998,7 @@
 ||spottytwo.us^
 ||spotway.tk^
 ||spotworld.net^
+||spotwurnix-pro.com^
 ||spotwurnix.com^
 ||spotx-jinni.rtb.adx1.com^
 ||spotx-match.dotomi.com^
@@ -47795,7 +47906,6 @@
 ||ssallqcu.bid^
 ||ssamen.info^
 ||ssamiut.com^
-||ssamzigil.com^
 ||ssanair.com^
 ||ssanalytics.co.in^
 ||ssandassociates.ph^
@@ -52352,6 +52462,7 @@
 ||stabileitradex.com^
 ||stabilekinjer.net^
 ||stabilekinjer20.net^
+||stabileobrax-solution.com^
 ||stabileobrax.net^
 ||stabileobraxpro.com^
 ||stabilewinn.com^
@@ -52396,6 +52507,7 @@
 ||stablecapital-real.com^
 ||stablecapitalmax-soft.com^
 ||stablecapitalmax.com^
+||stablecapitalmaxsoft.com^
 ||stablecapitalpro.net^
 ||stablecapitalproai.com^
 ||stablecapitalrealai.com^
@@ -56175,6 +56287,7 @@
 ||starlightstakemarket.com^
 ||starlightstakemarket.net^
 ||starlightstakemarketapp.com^
+||starlightstakemarketsystem.com^
 ||starlightstride.com^
 ||starlightz.co.cc^
 ||starlikeone.us^
@@ -60989,7 +61102,6 @@
 ||statsbox.nl^
 ||statsbox.nl^$third-party
 ||statscol.pond5.com^
-||statscollector-1-asia.agora.io^
 ||statscollector-1-europe.agora.io^
 ||statscollector-1-north-america.agora.io^
 ||statscollector-1.agora.io^
@@ -61571,6 +61683,7 @@
 ||steakeffort.com^
 ||steakhousehollister.com^
 ||steaksaas.com^
+||stealcommunilty.icu^
 ||stealify.online^
 ||stealing-valuable.co.cc^
 ||stealman.zzz.com.ua^
@@ -64019,6 +64132,7 @@
 ||stoneframes.com^
 ||stonegate-bitflow-app.com^
 ||stonegate-bitflow-app.net^
+||stonegate-bitflow-engine.com^
 ||stonegatebitflow.com^
 ||stonehash.com^
 ||stonehawkcapital.com^
@@ -65342,6 +65456,7 @@
 ||stralfors.home.pl^
 ||stralivenoxar.com^
 ||stralotsb.com^
+||stralucit-vaultis-system.com^
 ||stralucitvaultis.com^
 ||stramanton.pro^
 ||stramatic.my^
@@ -65540,6 +65655,7 @@
 ||stratiftrouv.tk^
 ||stratifvoul.bid^
 ||stratix-boom-app.com^
+||stratix-boom-solution.com^
 ||stratix-boom.net^
 ||stratix.info^
 ||stratixboom.com^
@@ -66341,6 +66457,7 @@
 ||stripedburst.com^
 ||stripedcollar.net^
 ||stripedcollar.net^$third-party
+||stripedease.com^
 ||stripedmagpie.pro^
 ||stripedmitring.qpon^
 ||stripeinfo.com^
@@ -66584,6 +66701,7 @@
 ||stroy-aliance.ru^
 ||stroy-asfalt.com.ua^
 ||stroy-h.ru^
+||stroy-portall.ru^
 ||stroy-tehno.ru^
 ||stroy-tex.com^
 ||stroy.deltac.ru^
@@ -67642,6 +67760,7 @@
 ||stxml.d2.co.nz^
 ||stxmumxjxbeud.store^
 ||stxtrade.com^
+||sty.ink^
 ||sty.zkmobi.com^
 ||stydi.duckdns.org^
 ||stygg.xyz^
@@ -69899,6 +70018,7 @@
 ||summerxzp.xyz^
 ||summingbird.com^
 ||summirise.topfideals.com^
+||summit-edgeventures.com^
 ||summit-finrevo.net^
 ||summit-luxeron.net^
 ||summit-luxeronapp.com^
@@ -71470,6 +71590,7 @@
 ||supersekale.com^
 ||superseksi.pw^
 ||supersemperit.com^
+||superseniorzy.online^
 ||supersente.pro^
 ||superseocompany.com^
 ||superseptictanks.com^
@@ -71595,6 +71716,7 @@
 ||supertradeoption.com^
 ||supertraderapp-ai.com^
 ||supertraderapp-app.com^
+||supertraderapp-tech.com^
 ||supertraderapp.pro^
 ||supertraderappai.com^
 ||supertraff.com^
@@ -71935,6 +72057,7 @@
 ||supplyvurex.net^
 ||supplyvurexapp.net^
 ||supplyvurexplatform.com^
+||supplyvurexsolution.com^
 ||suppman26.37days.hop.clickbank.net^
 ||suppman26.credi28.hop.clickbank.net^
 ||suppmarine.com^
@@ -73806,7 +73929,6 @@
 ||support-email.info^
 ||support-emails.host^
 ||support-en.info^
-||support-ensuite.pages.dev^
 ||support-ep24.biz^
 ||support-epsonprinter.com^
 ||support-error.info^
@@ -74958,7 +75080,6 @@
 ||support-updateinformationservice.com^
 ||support-updates.help^
 ||support-upgradetech.net^
-||support-uphold-com-eng.pages.dev^
 ||support-upholdd-logi.pages.dev^
 ||support-uphuld-en.pages.dev^
 ||support-upsdelivery.info^
@@ -76184,7 +76305,6 @@
 ||supportnw.com^
 ||supporto-apple-secure1-id-apple.com-apple.it-italia.apple.intesasa.com^
 ||supporto-apple-ufficia.store.apple.inaitt.com^
-||supporto-cherrybank.com^
 ||supporto-clienti.com^
 ||supporto-icloud.com^
 ||supporto-secure1.italia-id-apple.com-ufficiale.idpaia.com^
@@ -82203,6 +82323,7 @@
 ||swap-exalgo.net^
 ||swap-exulgo.com^
 ||swap-exulgo20.com^
+||swap-hiberix200-app.com^
 ||swap-hiprex-nx.com^
 ||swap-hiprexnx.com^
 ||swap-juxer-20.com^
@@ -82218,6 +82339,7 @@
 ||swap-lotemax-app.com^
 ||swap-lotemax-platform.co^
 ||swap-lotemax-platform.com^
+||swap-lotemax-tech.com^
 ||swap-lotemax.co^
 ||swap-lotemax.net^
 ||swap-lotemax70.com^
@@ -82265,6 +82387,7 @@
 ||swap19xadipex.net^
 ||swap1xrelpaxapp.com^
 ||swap200exalgo.net^
+||swap200exalgosystem.com^
 ||swap20relpax.com^
 ||swap20relpaxreview.com^
 ||swap20sanorex.com^
@@ -82292,6 +82415,7 @@
 ||swap6ip.tk^
 ||swap6xrenova.com^
 ||swap7-1lasix-soft.com^
+||swap7-1lasix.com^
 ||swap70-exalgo.com^
 ||swap700lasix.com^
 ||swap70arlex.com^
@@ -82346,6 +82470,8 @@
 ||swapdropn.top^
 ||swapdropy.xyz^
 ||swapedexx.net^
+||swapexalgo-ai-platform.com^
+||swapexalgo-ai.com^
 ||swapexalgo.co^
 ||swapexalgo.net^
 ||swapexalgo50005x53.com^
@@ -82386,6 +82512,7 @@
 ||swapip.tk^
 ||swapitor-app.com^
 ||swapitor-soft.com^
+||swapitor.com^
 ||swapitor.org^
 ||swapitorai.com^
 ||swapitorapp.net^
@@ -82482,6 +82609,7 @@
 ||swapskillful.tk^
 ||swapsolutions.limited^
 ||swapstation.top^
+||swaptrad.net.uniswap-trade.net^
 ||swaptrap.live^
 ||swapv1proair.com^
 ||swapv1proair.net^
@@ -83689,6 +83817,7 @@
 ||switch-amrix-ai.com^
 ||switch-amrix-app.com^
 ||switch-amrix-app.net^
+||switch-amrix-engine.com^
 ||switch-amrix-platform.co^
 ||switch-amrix-platform.com^
 ||switch-amrix-platform.net^
@@ -83711,6 +83840,7 @@
 ||switch-eprex.co^
 ||switch-eprex.com^
 ||switch-erymax-solution.com^
+||switch-eurax-neo.com^
 ||switch-evexsys-soft.com^
 ||switch-evistacap.com^
 ||switch-exelonopt.com^
@@ -83729,6 +83859,7 @@
 ||switch-hiprex-platformapp.co^
 ||switch-hiprex-platformapp.com^
 ||switch-hiprex-platformapp.net^
+||switch-hiprex-system.com^
 ||switch-hiprex400-soft.com^
 ||switch-hiprexapp.co^
 ||switch-hiprexapp.com^
@@ -85126,6 +85257,7 @@
 ||syndaritrader92aiapp.com^
 ||syndaritraderai.com^
 ||syndaritraderapp.net^
+||syndaritradertech.com^
 ||syndenizen.shop^
 ||syndeticone.us^
 ||syndetonsix.us^
@@ -88774,6 +88906,7 @@
 ||t0p3rf0rm3nc3.com^
 ||t0pl.lat^
 ||t0pm0b1l3.com^
+||t0qm.9ha-t.ru^
 ||t0uq.99y401874.online^
 ||t0x529rn84tpw7sp62un.businessrulesanalysis.com^
 ||t0y.toyota.ca^
@@ -88783,6 +88916,7 @@
 ||t1-security.com^
 ||t1.0-g845.ru^
 ||t1.1wd2k.ru^
+||t1.3pea2.ru^
 ||t1.4-z493.ru^
 ||t1.4u-rr.ru^
 ||t1.612.com^
@@ -91915,6 +92049,7 @@
 ||talvexor-trader-ai.com^
 ||talvexor-trader.com^
 ||talvexortrader-app.com^
+||talvexortrader-solution.com^
 ||talvexortrader39-titan.com^
 ||talvexortrader39-titan.net^
 ||talvexortrader39.com^
@@ -94350,6 +94485,7 @@
 ||tavoos.net^
 ||tavosdex-app.com^
 ||tavosdex.net^
+||tavosdexapp-system.com^
 ||tavosdexapp.com^
 ||tavosdexapp.net^
 ||tavostochok.top^
@@ -99641,6 +99777,7 @@
 ||techblog.smartadserver.com^
 ||techblogs.info^
 ||techbooks.click^
+||techboost.sbs^
 ||techbox-corporate.com^
 ||techboy.vn^
 ||techbrowser.info^
@@ -101804,79 +101941,3 @@
 ||teiebvjhve.work^
 ||teiebyqwr.shop^
 ||teiecharg.me.platwo.com^
-||teiecjbvzw.art^
-||teiecjbvzw.blue^
-||teiecjbvzw.top^
-||teiecjbvzw.wiki^
-||teiecnjomp.cloud^
-||teiecnjomp.email^
-||teiecnjomp.info^
-||teiecsclwf.click^
-||teiecsclwf.pink^
-||teiecsclwf.red^
-||teiecsclwf.work^
-||teiecvbghn.art^
-||teiecvbghn.bond^
-||teiecvbghn.click^
-||teiecvbghn.cloud^
-||teiecvbghn.club^
-||teiecvbghn.cyou^
-||teiecvbghn.fit^
-||teiecvbghn.info^
-||teiecvbghn.ink^
-||teiecvbghn.red^
-||teiecvbghn.top^
-||teiecvbnml.art^
-||teiecvbnml.black^
-||teiecvbnml.ink^
-||teiecvbnml.work^
-||teiecvppoq.blue^
-||teiecvppoq.click^
-||teiecvppoq.cloud^
-||teiecvppoq.fan^
-||teiecvppoq.fit^
-||teiecvppoq.green^
-||teiecvppoq.icu^
-||teiecvppoq.pink^
-||teiecvppoq.work^
-||teiecvppoq.xin^
-||teiecyrugi.ink^
-||teiedbtycn.fit^
-||teiedbtycn.top^
-||teiedbtycn.work^
-||teiedbtycn.xin^
-||teiedeocbl.asia^
-||teiedeocbl.cloud^
-||teiedeocbl.fan^
-||teiedeocbl.pink^
-||teiedeocbl.red^
-||teiedeocbl.top^
-||teiedeocbl.xin^
-||teiedfyhgx.asia^
-||teiedfyhgx.click^
-||teiedfyhgx.club^
-||teiedfyhgx.fit^
-||teiedfyhgx.top^
-||teiedfyhgx.wiki^
-||teiedfyhgx.work^
-||teiedjucxw.fan^
-||teiedjucxw.icu^
-||teiedjucxw.red^
-||teiedjucxw.xin^
-||teiedksum.click^
-||teiedljgem.black^
-||teiedljgem.click^
-||teiedljgem.cloud^
-||teiedljgem.cyou^
-||teiedljgem.fan^
-||teiedljgem.ink^
-||teiedljgem.top^
-||teieeekyif.black^
-||teieeekyif.click^
-||teieeekyif.cloud^
-||teieeekyif.ink^
-||teieeekyif.wiki^
-||teieeekyif.work^
-||teieeekyif.xin^
-||teieehhlls.ink^
-||teieehhlls.pink^

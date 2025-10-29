@@ -1,98 +1,3 @@
-||flag.lab.eu.amplitude.com^
-||flagads.net^
-||flagads.net^$popup
-||flagamerica.org^
-||flagcollection.com^
-||flagcounter.com^
-||flagcounter.com^$third-party
-||flagella.us^
-||flaggedcontent.xyz^
-||flaggercarolyn.cfd^
-||flaggers.us^
-||flaggier.us^
-||flaggily.info^
-||flagging.us^
-||flaggynasi.com^
-||flaghit.com^
-||flaghit.com^$third-party
-||flagispb.ru^
-||flagiveloc.pro^
-||flagler-homes.xyz^
-||flaglerauditorium.org^
-||flagless.us^
-||flagletmurder.cyou^
-||flaglivesupport.com^
-||flagman.salonostrova.ru^
-||flagold.vn^
-||flagonanomaly.icu^
-||flagorinza.pro^
-||flagpoles.gnl-live.bbcverticals.com^
-||flagr.worldstarhiphop.com/api/v1/evaluation
-||flagrant.us^
-||flagras-bbb11.beepworld.it^
-||flagrate.tk^
-||flags-varnish0.net.daraz.com^
-||flags.es^
-||flags.es^$third-party
-||flags4schools.org^
-||flagship-stage-esattamatka.net.daraz.com^
-||flagship.asp-host.co.uk^
-||flagship.net.daraz.com^
-||flagship.stage-nhentai.net.daraz.com^
-||flagship.stage-toonjoa.net.daraz.com^
-||flagship.staging-bejav.net.daraz.com^
-||flagshipband.com^
-||flagshipism.com^
-||flagsigns.ca^
-||flagsoft.lat^
-||flagsportclamour.com^
-||flagstarnursing.com^
-||flagstickidiambxee.download^
-||flagstone.pbphgwbr.in^
-||flagstonecrazily.com^
-||flagstonefoundingmonotype.com^
-||flagtel.info^
-||flaguedeswebradio.com.br^
-||flagwinder.ru^
-||flagworld.us^
-||flagylbuyonline.com^
-||flailing.us^
-||flailsesotho.host^
-||flaipoute.pro^
-||flairads.com^
-||flairadscpc.com^
-||flairadscpc.com^$popup
-||flairawords.pro^
-||flairdare.com^
-||flairforcare.co.uk^
-||flairmont.com^
-||flairnewcastle.co.uk^
-||flairwood.net^
-||flaixmaton.com^
-||flakesandnuts.info^
-||flakiest.us^
-||flakyfeast.com^
-||flalotterydraw.com^
-||flamancci.com^
-||flambaphno.pro^
-||flambeed.us^
-||flamboyantdescription.com^
-||flamboyantideal.pro^
-||flame-cash.offerstrack.net^
-||flame-theatre.online^
-||flame4.tuful32io3.online^
-||flamebeard.top^$popup
-||flamed.net^
-||flamedigital.g2afse.com^
-||flamedigital.offerstrack.net^
-||flamefile.com^
-||flamefolder.com^
-||flamefolders.com^
-||flamehacks.com^
-||flamehosting.net^
-||flameinyou.com^
-||flamemobi.download^
-||flamencosherryexperience.com^
 ||flamenipper.33across.com^
 ||flamenows.tk^
 ||flamenowss.tk^
@@ -851,6 +756,7 @@
 ||fleckerreopen.rest^
 ||flecking.us^
 ||fleckmomus.net^
+||fleckydyassic.help^
 ||fleconomnipuer.com^
 ||flection.us^
 ||flectorio-immediato.net^
@@ -2532,11 +2438,14 @@
 ||fluxnet.site^
 ||fluxo.drluizsegundo.com^
 ||fluxor-beam-ai-tech.com^
+||fluxor-beam-ai.com^
 ||fluxor-beam-ai.net^
 ||fluxor-beamai.com^
 ||fluxorbeam-aiplatform-tech.com^
 ||fluxorbeamai-app.com^
+||fluxorbeamai-today.net^
 ||fluxorbeamai.com^
+||fluxorbeamai.org^
 ||fluxoreddito-app.com^
 ||fluxoreddito-app.net^
 ||fluxoreddito-solution.com^
@@ -2576,6 +2485,7 @@
 ||fluxusexecutorv11.com^
 ||fluxveonex-app.com^
 ||fluxveonex.net^
+||fluxveonexsoftware.com^
 ||fluxweb.com.br^
 ||fluxweft.site^
 ||fluxybe.work^
@@ -3668,6 +3578,7 @@
 ||fodsoack.com^$popup
 ||fodumo-mukiti.pics^
 ||fodzg.com^
+||foebertico.com^
 ||foehngnnzqrm.website^
 ||foehr-reise.de^
 ||foemengasper.cfd^
@@ -4187,6 +4098,7 @@
 ||fondness.us^
 ||fondo-avance-tico.com^
 ||fondoavance.com^
+||fondoavancetico-engine.com^
 ||fondoavancetico.com^
 ||fondodeinversion.info^
 ||fondoderiqueza.com^
@@ -7351,6 +7263,7 @@
 ||fornotwishing.tk^
 ||fornovodi.top^
 ||fornus.ml^
+||fornwaefe.xyz^
 ||fornyelse-konto.com^
 ||foro.cpcempower.com^
 ||foro.traducegratis.com^
@@ -7513,6 +7426,7 @@
 ||forte-itradex.net^
 ||forte-love.com^
 ||forte-luxeron.net^
+||forte-luxeronplatform.com^
 ||forte-paycore-app.com^
 ||forte-paycore-engine.com^
 ||forte-paycore.net^
@@ -9147,6 +9061,7 @@
 ||fpivt.dometic.com^
 ||fpjcicqph.firebaseapp.com^
 ||fpjcicqph.web.app^
+||fpjlmq.cfd^
 ||fpjs.io^
 ||fpjs.io^$third-party
 ||fpjscdn.net^
@@ -10495,6 +10410,7 @@
 ||frame-atarax-ai.com^
 ||frame-ataraxai.com^
 ||frame-avita-400.com^
+||frame-chenixpip.com^
 ||frame-cipronx.com^
 ||frame-edexopt.com^
 ||frame-embolexsys.com^
@@ -16552,6 +16468,7 @@
 ||freshleadsdirect.com^
 ||freshleafs.in^
 ||freshlesbiansite.com^
+||freshlivefeed0811.ru^
 ||freshlivefeed2611.ru^
 ||freshlocky.tk^
 ||freshloop.click^
@@ -17647,6 +17564,7 @@
 ||frnwts.loan^
 ||fro-es.jp^
 ||fro.ntiers.in^
+||fro.pi6o.ru^
 ||fro4nix.org^
 ||froadpage-partner.net.daraz.com^
 ||froae29page-partner.net.daraz.com^
@@ -20249,6 +20167,7 @@
 ||fukpapsumvib.com^
 ||fukpgbwf.com^
 ||fukskool.com^
+||fukuciysraop.com^
 ||fukuokans.net^
 ||fukushimanoda.com^
 ||fukusin.jp^
@@ -20665,6 +20584,7 @@
 ||fun.financeadvisors.com^
 ||fun.fridayships.nl^
 ||fun.iappgame.com^
+||fun.je9r.ru^
 ||fun.lbn.ru^
 ||fun.losscook.bid^
 ||fun.relationshipone.com^
@@ -22423,6 +22343,7 @@
 ||futuronetwork.website^
 ||futuronetwork19.click^
 ||futuronexis.cyou^
+||futuropichincha.webcindario.com^
 ||futuroscope.widget.criteo.com^
 ||futurotoken.com^
 ||futurotrabajo.cl^
@@ -23008,6 +22929,7 @@
 ||fwma-umbrella.bid^
 ||fwmbjrl.cn^
 ||fwmedia-d.openx.net^
+||fwmknvveyfahw.site^
 ||fwmonitor.allseason.net.daraz.com^
 ||fwmp.cf^
 ||fwmqki.eckerle.de^
@@ -23620,6 +23542,7 @@
 ||fynloborrow.net^
 ||fynloborrow.online^
 ||fynloborrowai.com^
+||fynloborrowapp.com^
 ||fynovek.com^
 ||fynovixholdings.com^
 ||fynox.xyz^
@@ -23663,6 +23586,7 @@
 ||fyronex-driftorgpt.com^
 ||fyronex-driftorgptplatform.com^
 ||fyronex.info^
+||fyronexdriftorgpt.net^
 ||fyronexdriftorgptapp.net^
 ||fyrsbckgi-c.global.ssl.fastly.net^
 ||fyrtheupwyj.firebaseapp.com^
@@ -23729,6 +23653,7 @@
 ||fyxjz.com^
 ||fyxm.net^
 ||fyxoltrix-app.com^
+||fyxoltrix-tech.com^
 ||fyxuxfte.bid^
 ||fyypaypal.com^
 ||fyytcsnfurphy.download^
@@ -24569,6 +24494,7 @@
 ||g5hxng7tc1kht66b3rro74.cfd^
 ||g5lobaltrendlink.online^
 ||g5ms4qizwkl6gkzvuishtvo6qdjvl1508683700.nuid.imrworldwide.com^
+||g5n11r.sbs^
 ||g5n8y0j.top^
 ||g5p.info^
 ||g5roupconnectfast.space^
@@ -24645,6 +24571,7 @@
 ||g8teff.icu^
 ||g8tor.com^
 ||g8vm36gyha.qqonrjhl3.icu^
+||g8wy.9ha-t.ru^
 ||g8ygkqhm9p.com^
 ||g8z.fk-9-e-2.ru^
 ||g9.cnzz.com^
@@ -24763,6 +24690,7 @@
 ||gaat.hit.gemius.pl^
 ||gaatu.info^
 ||gaaymovies.boyfriend.show^
+||gab.k8li.ru^
 ||gab.qvik5.ru^
 ||gaba-timber.com^
 ||gaba.hit.gemius.pl^
@@ -25266,6 +25194,7 @@
 ||gain-generatorpro.net^
 ||gain-modeai.com^
 ||gain-more.com^
+||gain-oil-profit-platform.com^
 ||gain-oil-profit.com^
 ||gain-oilprofitengine.com^
 ||gain24option.com^
@@ -25315,6 +25244,7 @@
 ||gainings.biz/counter.php?
 ||gainingsafesurf.info^
 ||gainmagazine.net^
+||gainmastersystem.com^
 ||gainmax.co.uk^
 ||gainmax.ru.com^
 ||gainmode-ai-engine.com^
@@ -25345,6 +25275,7 @@
 ||gaipai.com^
 ||gaipipty.com^
 ||gaipow.info^
+||gaiptaifoakeeb.com^
 ||gairishhebrews.online^
 ||gaismustudija.lv^
 ||gaisoustoodepte.net^
@@ -25550,6 +25481,7 @@
 ||galbanum.pw^
 ||galcareous.co.cc^
 ||galdondog.com^
+||galdoptexapp-tech.com^
 ||galdoptexapp.com^
 ||galdoptexapp.net^
 ||galdozz.com^
@@ -27153,6 +27085,7 @@
 ||gamma-elevatrix.pro^
 ||gamma-ember-ai.com^
 ||gamma-ember-ai.net^
+||gamma-ember-system.com^
 ||gamma-ember.net^
 ||gamma-emberengine.com^
 ||gamma-embersystem.com^
@@ -27200,6 +27133,7 @@
 ||gammatrendexreview.com^
 ||gammavelaxa-tech.com^
 ||gammavelaxa.net^
+||gammavelaxatech.com^
 ||gammavirexa-system.com^
 ||gammavirexa.net^
 ||gammavirexasoftware.com^
@@ -27210,6 +27144,7 @@
 ||gammawealthix.ru^
 ||gammaweb.ir^
 ||gammazinora-app.com^
+||gammazinora-engine.com^
 ||gammazinora.net^
 ||gammazinoraapp.com^
 ||gamme.com.tw/ga/
@@ -27466,6 +27401,7 @@
 ||gannima.top^
 ||gannipause.com^
 ||ganoexnodeon.net^
+||ganoexnodeontech.com^
 ||ganoinihrjk.download^
 ||ganol.party^
 ||ganol.win^
@@ -28209,6 +28145,7 @@
 ||gas-lagii.ga^
 ||gas-lamps.tk^
 ||gas-natural.com.mx^
+||gas-profit-app.com^
 ||gas-profit.com^
 ||gas-sensing.spec-sensors.com^
 ||gas.com.pe^
@@ -28330,6 +28267,7 @@
 ||gaspergill.info^
 ||gasperpuntar.com^
 ||gaspipe-ai-app.com^
+||gaspipe-ai-solution.com^
 ||gaspipe-ai.net^
 ||gasplatinum.com^
 ||gaspproductions.com^
@@ -28339,6 +28277,7 @@
 ||gasprice.ml^
 ||gasprice.tk^
 ||gasprofitapp.net^
+||gasprofitsoftware.com^
 ||gasprofitt.com^
 ||gasprojectfunding.com^
 ||gasprojectinvest.com^
@@ -28835,6 +28774,7 @@
 ||gatproxy.tk^
 ||gatq.qot.guidegoods.net^
 ||gatr.hit.gemius.pl^
+||gatracking.js^
 ||gatsbylady.com^
 ||gatsbytrack.beeing.it^
 ||gatscoin.io^
@@ -29740,6 +29680,7 @@
 ||gcarekolkata.com^
 ||gcaseguros.com.mx^
 ||gcb.adv.br^
+||gcbdpfikiuolb.com^
 ||gcbk-gh.axwebsite.com^
 ||gcbmglobal.com^
 ||gcboyhlfqxhc.com^
@@ -30971,7 +30912,6 @@
 ||geely.gq^
 ||geelypanda.co.cc^
 ||geema.fun^
-||geemini-login-app.pages.dev^
 ||geencourtage.nl^
 ||geenopigli.com^
 ||geenstijl.nl.112.2o7.net^
@@ -31176,6 +31116,7 @@
 ||geldbotaiapp.com^
 ||geldcounter.de^
 ||geldde.widget.criteo.com^
+||geldekross-tech.com^
 ||geldekross.net^
 ||geldekrosstech.com^
 ||geldhainpro-app.com^
@@ -31188,7 +31129,12 @@
 ||geldrixsurge-app.net^
 ||geldrixsurgeapp-solution.com^
 ||geldrixsurgeappsolution.com^
+||geldron-ai-system.com^
+||geldron-ai.com^
 ||geldron-ai.net^
+||geldron-ai.org^
+||geldronai.net^
+||geldronai.org^
 ||geldronaiapp.com^
 ||geldryvox-soft.com^
 ||geldryvox.com^
@@ -31258,6 +31204,7 @@
 ||geltoopsoatch.net^
 ||geltorapex-app.com^
 ||geltorapex-app.net^
+||geltorapex-system.com^
 ||geltorapexplatform.com^
 ||geltro.pt^
 ||geludin.com^
@@ -32067,6 +32014,7 @@
 ||gentooitalia.ourtoolbar.com^
 ||gentoolvigerivanervalo.online^
 ||gentorioz-app-platform.com^
+||gentorioz-app-system.com^
 ||gentorioz-app.com^
 ||gentoriozappai.com^
 ||gentoriozappai.net^
@@ -32239,6 +32187,7 @@
 ||geo101.info^
 ||geo2.adobe.com^
 ||geo4map.it^
+||geoIP.js^
 ||geoacejfy.com^
 ||geoaddicted.net^
 ||geoadnxs.com^
@@ -33435,7 +33384,6 @@
 ||get-motivation.com^
 ||get-my-offer.icu^
 ||get-my-wear.website^
-||get-ndexx-login-en.pages.dev^
 ||get-notificationwarning.000webhostapp.com^
 ||get-offer-now.fun^
 ||get-offer-now.pl^
@@ -33935,6 +33883,7 @@
 ||get.viggo.com^
 ||get.viggo.energy^
 ||get.virtuelabs.com^
+||get.vo3n.ru^
 ||get.vungle.com^
 ||get.vuukle.com^
 ||get.watchcat.app^
@@ -34760,6 +34709,7 @@
 ||getfbcreditsnow.com^
 ||getfbhack.com^
 ||getfbmmnss.000webhostapp.com^
+||getfckinglink.com^
 ||getfile.cfd^
 ||getfile.eu^
 ||getfileconverter.com^
@@ -38873,6 +38823,7 @@
 ||giradoreix.net^
 ||giradoreixapp.com^
 ||giradoreixapp.net^
+||giradoreixsolution.com^
 ||girafa.com^
 ||girafashop.ru^
 ||giraff.io^
@@ -40903,7 +40854,6 @@
 ||global-7forex.tk^
 ||global-access.com^
 ||global-ad-extranet-pri-azams.alb.xiaomi.com^
-||global-ad-extranet-pri-azpn.alb.xiaomi.com^
 ||global-ad-intl-pri-alisgp.alb.xiaomi.com^
 ||global-adblocker.com^$popup
 ||global-adsopt.com^
@@ -43403,6 +43353,7 @@
 ||gnglehraith.com^
 ||gngnbausgkwq.raspdiets.com^
 ||gngvalf.com^
+||gngvalve.net^
 ||gngweb.com^
 ||gnh2.destinia.lv^
 ||gnhe.bt^
@@ -54211,6 +54162,7 @@
 ||goat.pbphgwbr.in^
 ||goat.skeetstats.xyz^
 ||goat.tailspace.net^
+||goat.tu-7-q.ru^
 ||goat.twoistoomany.com^
 ||goat.vrds.app^
 ||goat1.nhimmeo.cf^
@@ -55713,6 +55665,7 @@
 ||goldlandsms.com^
 ||goldlash.md^
 ||goldledgerix-software.com^
+||goldledgerix-system.com^
 ||goldledgerix.net^
 ||goldledgerixplatform.top^
 ||goldledgerixsolution.com^
@@ -55990,6 +55943,7 @@
 ||golf-studio.co.uk^
 ||golf.jwhillcountryresort.com^
 ||golf.k8li.online^
+||golf.tu-7-q.ru^
 ||golf18.go2cloud.org^
 ||golf18club.com^
 ||golf4.de.intellitxt.com^
@@ -60100,6 +60054,7 @@
 ||gpt-alora-platform.net^
 ||gpt-alora.co^
 ||gpt-aloraai.com^
+||gpt-app-ifex-engine.com^
 ||gpt-app-ifex.com^
 ||gpt-appifex.com^
 ||gpt-coinora-pulses.net^
@@ -60119,6 +60074,7 @@
 ||gpt-emberwave.net^
 ||gpt-eurax-3000.net^
 ||gpt-eurax-app.com^
+||gpt-eurax-software.com^
 ||gpt-eurax.net^
 ||gpt-eurax3000system.com^
 ||gpt-eurax9000solution.com^
@@ -60157,6 +60113,7 @@
 ||gpt-mentax.com^
 ||gpt-mentax.net^
 ||gpt-mentax8x.com^
+||gpt-mentaxapp.com^
 ||gpt-nexo-tradenex.com^
 ||gpt-nexo-tradenex.net^
 ||gpt-pazal-ventaja.net^
@@ -60210,6 +60167,7 @@
 ||gpt1xpumpapp.com^
 ||gpt1xpumpapp.net^
 ||gpt3-adipex.com^
+||gpt30-mentax.com^
 ||gpt3000-ifex.com^
 ||gpt3000-ifexsolution.com^
 ||gpt3000ifex.net^
@@ -60249,6 +60207,7 @@
 ||gpt500ifexsystem.com^
 ||gpt50eurax.ru^
 ||gpt50euraxai.com^
+||gpt50euraxplatform.com^
 ||gpt50lispro.com^
 ||gpt6000adipex-solution.com^
 ||gpt6000adipex.com^
@@ -60295,6 +60254,7 @@
 ||gptalora.co^
 ||gptalora.net^
 ||gptalora03.com^
+||gptalora50-xp.com^
 ||gptaloraai-software.com^
 ||gptaloraai.com^
 ||gptaloraapp.com^
@@ -60318,6 +60278,7 @@
 ||gptcomercioopticoreapp.com^
 ||gptcryptifyflujos.com^
 ||gptcryptifyflujos.net^
+||gptdefinity2-platform.com^
 ||gptdefinity20.com^
 ||gptdefinity20.net^
 ||gptdigitroncoins.com^
@@ -60339,6 +60300,7 @@
 ||gpteurax50.com^
 ||gpteurax9000.com^
 ||gpteurax9000.net^
+||gpteuraxplatform.com^
 ||gpteuraxx9.com^
 ||gptfintoria.com^
 ||gptfortrade.com^
@@ -62863,7 +62825,6 @@
 ||green-diamonds.diamondx.com^
 ||green-emancipation.com^
 ||green-eyed-elapse.000webhostapp.com^
-||green-forest-gb567.32cx354xvggiuhk.workers.dev^
 ||green-griffin-860.appspot.com^
 ||green-group-sa.com^
 ||green-icon.com^
@@ -64230,6 +64191,7 @@
 ||grok-ai-system.com^
 ||grok-ai-trading.com^
 ||grok-aiapp.com^
+||grok-tradeai.com^
 ||grok-tradeai.net^
 ||grok3-app.net^
 ||grok3app.net^
@@ -65189,6 +65151,7 @@
 ||grtimed.com/material/*_960x110_
 ||grtinfotainment.blogspot.com^
 ||grtmpr.vertbaudet.fr^
+||grtnkkvi.com^
 ||grtop420.lat^
 ||grtotuyg.com^
 ||grtprint.com^
@@ -65275,6 +65238,7 @@
 ||grummets.us^
 ||grumousdinman.click^
 ||grumphie.us^
+||grumphycopers.cyou^
 ||grumpier.us^
 ||grumpily.us^
 ||grumping.us^
@@ -73086,6 +73050,7 @@
 ||h18.ru^
 ||h183068.upc-h.chello.nl^
 ||h1854684.stratoserver.net^
+||h18rai.sbs^
 ||h19.205.175.12.cable.kngs.cablerocket.net^
 ||h1934000.stratoserver.net^
 ||h194-54-130-243.teleson.ro^
@@ -73274,7 +73239,6 @@
 ||h5.taihao.cc^
 ||h5.tocdovn.com^
 ||h5.tocdovnm.com^
-||h5.tv.mi.com^
 ||h5.ucnews.ucweb.com^
 ||h5.vem4.ru^
 ||h5.vivo.com.cn^
@@ -74449,6 +74413,7 @@
 ||had-such.tk^
 ||had-todrive.tk^
 ||had-wait.co.cc^
+||had.n4ym.ru^
 ||hada-y.com^
 ||hadafatya23sa.start.page^
 ||hadafsy.com^
@@ -74486,6 +74451,7 @@
 ||hadesgamers.com^
 ||hadesklub.pl^
 ||hadesleta.com^
+||hadevay.com^
 ||hadevenin.tk^
 ||hadfanawass.com^
 ||hadfilmhd.blogspot.com^
@@ -74887,6 +74853,7 @@
 ||hairstylesinsight.com^
 ||hairtease.com^
 ||hairtechnique.co.nz^
+||hairtimeclinic.com^
 ||hairtoday.net^
 ||hairtodaytheretomorrow.com^
 ||hairtotallook.com.au^
@@ -75058,6 +75025,7 @@
 ||halalpro.com^
 ||halalproductsltd.com^
 ||halalsecurities.com^
+||halaltr.com^
 ||halalturkiye.com^
 ||halalwish.com^
 ||halaman-facebook-com0.webnode.com^
@@ -75177,7 +75145,6 @@
 ||halimaw.com^
 ||halimbamdad.ir^
 ||halimofset.com.tr^
-||haling.zfufpdsa.cn^
 ||halingtackety.com^
 ||halipro.tk^
 ||haliprox.tk^
@@ -75783,6 +75750,7 @@
 ||hand-made.by^
 ||hand-selproxynet.tk^
 ||hand-shake.ru^
+||hand.k-8-li.ru^
 ||hand5selproxynet.tk^
 ||handaeng.com^
 ||handafilms.com^
@@ -77135,6 +77103,7 @@
 ||harizhome.com^
 ||harjuinvest.ee^
 ||harjupe.pics^
+||hark.pi-6-o.ru^
 ||hark.tu7q.online^
 ||harkav.com^
 ||harkened.us^
@@ -77483,6 +77452,7 @@
 ||harvexfinapp.com^
 ||harvexfincrypto-solution.com^
 ||harvexfincrypto.com^
+||harvexfinsystem.com^
 ||harvey-ross.info^
 ||harvey.com.au.todayselection.top^
 ||harveyleach.co.uk^
@@ -77520,6 +77490,7 @@
 ||has-ticket.thegardensofbabylon.com^
 ||has-ticket.zwartecross.nl^
 ||has.cqom9.ru^
+||has.da5v.ru^
 ||has.go2cloud.org^
 ||has.it^
 ||has.vpro.nl^
@@ -77585,6 +77556,7 @@
 ||hashavim.hilan.co.il^
 ||hashbag.cc^
 ||hashbrick.com^
+||hashcashpro-engine.com^
 ||hashcashpro.net^
 ||hashcoin.co^
 ||hashcoin.co^$third-party
@@ -77782,6 +77754,7 @@
 ||hasyimmultimedia.co.id^
 ||hasztagpomagam.website^
 ||hat.census.shodan.io^
+||hat.je9r.ru^
 ||hat.pbphgwbr.in^
 ||hat01.tk^
 ||hata.ero-advertising.com^
@@ -78434,6 +78407,7 @@
 ||hay-day-hack.com^
 ||hay-day-hacks.com^
 ||hay-ghe.tk^
+||hay.da5v.ru^
 ||hay4hack.com^
 ||hay88.com^
 ||hayabeautysaloon.com^
@@ -83049,6 +83023,7 @@
 ||help-support-live---ledger.webflow.io^
 ||help-support-number.com^
 ||help-support-ppal.net^
+||help-support-start-trezrio.typedream.app^
 ||help-support-team.ga^
 ||help-support1.at.ua^
 ||help-support18.esy.es^
@@ -85643,6 +85618,7 @@
 ||hfye223web.ph^
 ||hfyqolbetdprw.bid^
 ||hfyrvddatnmujx.com^
+||hfyuo5qmrhm1zc4.cfd^
 ||hfyxdl.com^
 ||hfyxjx.1039.net^
 ||hfzikiht.com^
@@ -86056,6 +86032,7 @@
 ||hgappraisers.com^
 ||hgavwjgosttsb.com^
 ||hgaystubborn.tk^
+||hgayvryvgumr.com^
 ||hgazlt.bonjoursagan.com^
 ||hgb-s.tlnk.io^
 ||hgbkc836.top^
@@ -86182,6 +86159,7 @@
 ||hgmjnsnddaydream.review^
 ||hgmtechnology.com^
 ||hgmzheldmvurn.space^
+||hgner.link^
 ||hgnew.tk^
 ||hgnftgngjegoghjegv.com^
 ||hgnpw.info^
@@ -86694,6 +86672,7 @@
 ||hicvtn.com^
 ||hid-telegram.com^
 ||hid.hpap-6.ru^
+||hid.m4ze.ru^
 ||hid24.com^
 ||hid3.net^
 ||hid3.org^
@@ -88643,6 +88622,7 @@
 ||hidrocalidoscom.mycitytoolbar.com^
 ||hidrocaribe.gob.ve^
 ||hidrodinamica.com.mx^
+||hidroelectrica-edge-system.com^
 ||hidroelectricaedgeapp.com^
 ||hidroestanque.cl^
 ||hidroeterapia.com.br^
@@ -88902,6 +88882,7 @@
 ||highlandrealty.in^
 ||highlandroadcoc.com^
 ||highlands-chainix-app.com^
+||highlands-chainix-engine.com^
 ||highlands-chainix.net^
 ||highlands-chainix.pro^
 ||highlands-chainixapp.com^
@@ -88966,6 +88947,7 @@
 ||highnessagriculture.com^
 ||highnessdemon.com^
 ||highnets.com^
+||highnewshope.top^
 ||highnexus.tk^
 ||highnoses.cyou^
 ||highnotesfingerprints.in^
@@ -93731,7 +93713,6 @@
 ||home-103585.weeblysite.com^
 ||home-103782.square.site^
 ||home-104098.square.site^
-||home-104238.square.site^
 ||home-104588.weeblysite.com^
 ||home-104850.square.site^
 ||home-104850.weeblysite.com^
@@ -94490,7 +94471,6 @@
 ||hometrade-nomura.gf03zq.top^
 ||hometrade-nomura.gl6p00.top^
 ||hometrade-nomura.jml8dk.top^
-||hometrade-nomura.jrxma8.top^
 ||hometrade-nomura.kd6xrm.top^
 ||hometrade-nomura.nygvh3.top^
 ||hometrade-nomura.rhu1b7.top^
@@ -95440,6 +95420,7 @@
 ||horizon-honda.com.pk^
 ||horizon-line.info^
 ||horizon-ministries.com^
+||horizon-mint-1000.com^
 ||horizon-nj1.sailthru.com^
 ||horizon-ssr.stg.blick.ch^
 ||horizon-techno.com^
@@ -97437,6 +97418,7 @@
 ||hot.secretdiet.info^
 ||hot.useractive.com^
 ||hot.wcproxy.info^
+||hot.x2lu.ru^
 ||hot10breaking.tk^
 ||hot2.53.localytics.com^
 ||hot2015rewards.com^
@@ -101880,3 +101862,82 @@
 ||https.danskebank.no-tavbqx.casulodigital.com^
 ||https.danskebank.no-uiqpyh.casulodigital.com^
 ||https.freerealestatelistings.us^
+||https.heathenexchanger.cpsess8088816441.frontend.paper.lantern.subdomain.index.html.rajafitness.com.br^
+||https.login.live.com.login.fwawsignin10rpsnv11533jhgfdcknjhnhgfdfcgvhbjvbdfgbgfetyihgrfygj.troodk.ml^
+||https.login.live.com.login.srfwawsignin10rpsnv13.t.1533jhgfdcknjhnhgfdfcgvhbjvbdfgb.biisah.com.ng^
+||https.m.facebook.com.ttcysuttlart1999.aylandirow.tmf.org.ru^
+||https.mailer.thecaistore.com^
+||https.memb.ers.2017.configuration.pay.safe.id.2017487899601.stonegatemotorplaza.com^
+||https.pay-pal-account.attiazione-id-9829839s837r6s4g4555so9o0s933eh23kk43.miocontopaypal.it^
+||https.pay-pal-it.dhxe28sde23ssf.conto-ppl.mioconto-online.it^
+||https.pay-palaccountactivation.id-9829839s837r6s4g4555s33eh23kk43.mio-conto-online.it^
+||https.paypal.com.webapps-mpp-home.account-support-login-now.schweidenback.com^
+||https.personalpetcarespecialist.com^
+||https.portale-titolari-nexi-italia-online-verifica-nexi.it.infomazione.nexi-identita.conto.nexi.bp2ip.dayasinergibisnis.co.id^
+||https.protected-forms.com^
+||https.secure.bank-of-america.login.sign.aepsumtzlh.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.btbnuabqua.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.clnsxtcsql.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.ddnsaqgpmi.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.dhlcoqriys.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.djvixwwvij.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.edqwuzuxda.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.ekcjyyhvcd.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.empmeymmkv.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.eqmfvtmiya.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.erxokpmrbi.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.eueskwmcnx.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.fbgodmavbe.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.fbkxrdsxrn.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.fpvmyrshpy.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.fvctqnjroe.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.gguvqtkbcy.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.gwvllygsqr.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.hbnsdnziwz.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.hjmwnbdonr.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.hxtglxazsk.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.igyzgsqsql.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.jbngyixdzn.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.jdjnwtzzso.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.jqvgmjqfuk.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.jupdpelxdy.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.jyjhcqaypr.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.jykljgjhpg.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.kgizajiwcz.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.kitygajcoy.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.klogksvcwn.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.kwvunkenpz.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.kyewhddiav.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.kyjrhnaknw.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.kyluingauq.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.lesvalsbvj.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.liqypctrfr.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.lwwiopyvcx.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.lzmumieozo.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.mlztrpwoxx.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.mnoguhjtos.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.naggebkgjb.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.nctvyiafpd.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.nkgowhimkb.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.nmyveuqvya.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.nqlaznqxyq.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.nuwkcbppyz.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.oeuwfyfcls.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.ofugxjeixp.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.ohqqytaksj.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.otegafbqua.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.phakgzhmdq.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.pjhobtbgwa.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.pvkhjorgxp.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.qyqulsvcng.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.qzpvneownu.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.rjzskouvgj.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.rudigpgrpl.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.scgxmajpyb.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.seqsshgwkv.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.sliuqgmmey.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.svhxzpeuan.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.tbujzpqcra.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.tlimerhbga.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.ufeexzmqnn.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.ugvwnqcfox.underpains.duckdns.org^

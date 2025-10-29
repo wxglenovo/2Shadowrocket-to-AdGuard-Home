@@ -103,7 +103,7 @@
 ! Bing
 ! Block parked domains. Sometimes it is not immediately obvious that it is dead
 ! Block ping
-! Blocked domains: 4885
+! Blocked domains: 4827
 ! Bosnian
 ! Bright Data https://github.com/AdguardTeam/AdGuardSDNSFilter/issues/1580
 ! Bulgarian
@@ -112,9 +112,9 @@
 ! CNAME https://github.com/easylist/easylist/issues/9383 https://github.com/AdguardTeam/cname-trackers/issues/15
 ! CPU abuse
 ! CSP Mining
-! Checksum: /TesaNDeH/VNmJ+f4mrZaA
-! Checksum: 3W8G7VUYfHQkTgtSoV3V5w
-! Checksum: J3zuvKDuWdOFAYy1kEZSLw
+! Checksum: 444D1/ddUOBrwA3ANIssgQ
+! Checksum: WtBHlwkSLEGSCibHfCY6RQ
+! Checksum: w9gNJEWzb3GrteJotrmyZw
 ! Chinese
 ! Chinese google (https://github.com/easylist/easylist/issues/15643)
 ! Chinese supplement for the EasyList filters
@@ -214,10 +214,9 @@
 ! Japanese
 ! Korean
 ! Last modified: 2025/10/29 06:15 +0800
-! Last modified: 2025/10/29 16:11:03
+! Last modified: 2025/10/30 00:10:18
 ! Last modified: 29 Oct 2025 10:01 UTC
-! Last modified: 29 Oct 2025 13:01 UTC
-! Last modified: 29 Oct 2025 13:11 UTC
+! Last modified: 29 Oct 2025 18:11 UTC
 ! Latvian
 ! Licence: https://easylist.to/pages/licence.html
 ! License: https://easylist.to/pages/licence.html
@@ -307,9 +306,8 @@
 ! Version: 20230323162617
 ! Version: 2025.1029.1001.39
 ! Version: 202510290615
-! Version: 202510291301
-! Version: 202510291311
-! Version: 20251029161103
+! Version: 202510291811
+! Version: 20251030001018
 ! Vietnamese
 ! Vinted
 ! Webcompat Generichide fixes (Avoid any potential filters being applied to non-ad domains)
@@ -652,8 +650,8 @@
 ! ||www.sstats.hellobank.be^
 ! ||zillow.com/HYx10rg3/init.js
 ! 出版读物插图修复
-! 压缩后规则数: 255433
-! 原始规则数: 255433
+! 压缩后规则数: 255444
+! 原始规则数: 255444
 ! 完整排行榜
 ! 小说评论区屏蔽
 ! 尝试修复新添加在阅读界面的短剧
@@ -891,8 +889,8 @@
 !||xip.io^
 !||yoogle.com^
 !||youtube.com/api/stats/atr?ns=*&ver=2&cmt=1.*&fs=0&*&euri&lact=
-!有效规则数目: 1543194
-!生成时间: 2025-10-29 20:41:57
+!有效规则数目: 1544193
+!生成时间: 2025-10-30 01:49:12
 $$a[href="/js/app.htm?url="]
 $$a[href="changhong886.com"]
 $$div[class="-ad-"]
@@ -35170,6 +35168,7 @@ zzzyk.com###Tinfo
 ||03629e3.netsolhost.com^
 ||0365.bid^
 ||0365alert.com^
+||0365ss.com^
 ||036cdb9a824f91747c8d8c62474afbd8.informacji-nf.sbs^
 ||036d702d271dae07f88e4fc97cae127d.org^
 ||036e.cn^
@@ -36093,6 +36092,7 @@ zzzyk.com###Tinfo
 ||08tcqdxg1o.top^
 ||08usevpn.website^
 ||08wgwg.com^
+||08xpyi.cfd^
 ||09-113.031.popsite.net^
 ||09.git.fra1.appnexus.com^
 ||09.sharedsource.org^
@@ -36895,6 +36895,7 @@ zzzyk.com###Tinfo
 ||0fees.net^
 ||0fepzy7ghxwkutj-p.adktrack34.xyz^
 ||0ff.bz^
+||0ff.m4ze.ru^
 ||0ff1cema1lbox.000webhostapp.com^
 ||0ff42a1771d8.com^
 ||0ffaf504b2.com^
@@ -37332,6 +37333,7 @@ zzzyk.com###Tinfo
 ||0unblocks.kllist.info^
 ||0unblocks.partshotlist.com^
 ||0unblocks.weblista.pt^
+||0ur.r9xa.ru^
 ||0us-car2us-web-wwwwususnode-webapp.net.daraz.com^
 ||0us.info^
 ||0utl00k-365-0ff1ce0nline.ml^
@@ -39450,6 +39452,7 @@ zzzyk.com###Tinfo
 ||10support.com^
 ||10surdix.com^
 ||10surf.info^
+||10ta.do-k-3.ru^
 ||10technician.com^
 ||10tide.com^
 ||10topantivirus.com^
@@ -41723,6 +41726,7 @@ zzzyk.com###Tinfo
 ||1353.content.swrve.com^
 ||1353.tm.zedo.com^
 ||135373proxy.tk^
+||135461223.site^
 ||13549.url.tudown.com^
 ||135513832.keywordblocks.com^
 ||13554359.xyz^
@@ -46463,6 +46467,7 @@ zzzyk.com###Tinfo
 ||1i8c0f11.de^
 ||1ibeworking.info^
 ||1ibpz7namvc8194z9hkj37ali.designmysite.pro^
+||1id.r9xa.ru^
 ||1idcgsv7fz.top^
 ||1ifdtwdlmt7srdlmbyhzcjrkj-mailer-netflix.info^
 ||1igare0jn.de^
@@ -46557,6 +46562,7 @@ zzzyk.com###Tinfo
 ||1kdailyprofit.biz^
 ||1kdailyprofit.co^
 ||1kdailyprofitapp.com^
+||1kdailyprofitstech.com^
 ||1kdailys.online^
 ||1kdvyjoatx.top^
 ||1ketang.com/Runtime/js/play
@@ -53451,6 +53457,7 @@ zzzyk.com###Tinfo
 ||2778255fe56.com^
 ||2779ec7bc8.a6e822f510.com^
 ||277c560a810272.beer^
+||277jyi3klhhhx87x8xuq3t.rest^
 ||277wxf.info^
 ||278-dul-470.mktoresp.com^
 ||27804060102e.icu^
@@ -54938,6 +54945,7 @@ zzzyk.com###Tinfo
 ||2l6ddsmnm.de^
 ||2l754cdvzx.top^
 ||2l94.com^
+||2la32k.cfd^
 ||2laezi9.cn^
 ||2lafc.voluumtrk.com^
 ||2laser3d.com^
@@ -55012,6 +55020,7 @@ zzzyk.com###Tinfo
 ||2minor.com^
 ||2minor.tk^
 ||2mj.pl^
+||2mj8v5.cfd^
 ||2mke5l187.de^
 ||2mkfnjgetonthehorn.tk^
 ||2mmijicallfast.tk^
@@ -59399,7 +59408,6 @@ zzzyk.com###Tinfo
 ||3822893.notifysrv.com^
 ||3822edf4d1022.beer^
 ||3825700.fls.doubleclick.net^
-||382741us-coinbase.com^
 ||382be190f4.com^
 ||382cbeb8710272.beer^
 ||382e0233c1022.beer^
@@ -61136,6 +61144,7 @@ zzzyk.com###Tinfo
 ||3u.zi-qa.ru^
 ||3uhercallus.tk^
 ||3uhm9egl.myutilitydomain.com^
+||3ujh3456.recoupsenate.com^
 ||3ukg5.voluumtrk.com^
 ||3unblockit.info^
 ||3under.ru^
@@ -61146,6 +61155,7 @@ zzzyk.com###Tinfo
 ||3uuak.voluumtrk.com^
 ||3uubyv.lat^
 ||3uw.truespeedlink.com^
+||3uwww3456.recoupsenate.com^
 ||3uzzo.voluumtrk.com^
 ||3v.x-vo4.ru^
 ||3v20w.fifth.pw^
@@ -61811,11 +61821,9 @@ zzzyk.com###Tinfo
 ||40svintageporn.com/hit
 ||40tricks.blogspot.com^
 ||40usprox.info^
-||40vpel.share-na2.hsforms.com^
 ||40wan.com/js/www2/
 ||40wh.com^
 ||40xbfzk8.com^
-||40zieb.share-na2.hsforms.com^
 ||41-152-132-95.pool.ukrtel.net^
 ||41-169-195-217.cust.centrio.cz^
 ||41.0-030.net.daraz.com^
@@ -61876,7 +61884,6 @@ zzzyk.com###Tinfo
 ||41230011.net^
 ||41233138.com^
 ||4123ml2969.marinsm.com^
-||4123w1.share-na2.hsforms.com^
 ||412536.ortb.adtelligent.com^
 ||412539.ortb.adtelligent.com^
 ||412686c681020.beer^
@@ -61942,8 +61949,6 @@ zzzyk.com###Tinfo
 ||415592201.keywordblocks.com^
 ||4155a0b1c1024.beer^
 ||415757512.keywordblocks.com^
-||415ds0.share-na2.hsforms.com^
-||415onh.share-na2.hsforms.com^
 ||416-ldx-286.mktoresp.com^
 ||416-weightloss.com-oo4.net^
 ||4160048.notify6.com^
@@ -61996,9 +62001,7 @@ zzzyk.com###Tinfo
 ||4177784.notify6.com^
 ||4177796.notify6.com^
 ||4178782.notify6.com^
-||41795q.share-na2.hsforms.com^
 ||4179930.notify6.com^
-||417w1c.share-na2.hsforms.com^
 ||417x.info^
 ||418-crp-850.mktoresp.com^
 ||418-xee-301.mktoresp.com^
@@ -62042,19 +62045,15 @@ zzzyk.com###Tinfo
 ||4197720.notify6.com^
 ||4197730.notify6.com^
 ||4199.com^
-||419m76.share-na2.hsforms.com^
 ||419rb.com^
 ||419s8sibt0.top^
 ||419windows.com^
-||41a095.share-na2.hsforms.com^
 ||41a43d5bc1022.beer^
 ||41ac-7681-c3a8-14d9.reporo.net^
 ||41ahqv8er945jkbx.net.daraz.com^
 ||41b.org^
-||41b1m5.share-na2.hsforms.com^
 ||41b5062d22.com^
 ||41brand.com^
-||41brtx.share-na2.hsforms.com^
 ||41c.org^
 ||41c8e4c101024.beer^
 ||41cm.shop^
@@ -62066,7 +62065,6 @@ zzzyk.com###Tinfo
 ||41df76c67812005c.com^
 ||41e88c48d1021.beer^
 ||41ea2b64.ngrok.io^
-||41eewf.share-na2.hsforms.com^
 ||41ef19c0f0794e058c.com^
 ||41farmingtondrive.top^
 ||41fast-unlock.tk^
@@ -65652,7 +65650,6 @@ zzzyk.com###Tinfo
 ||5108954.fls.doubleclick.net^
 ||5109132.fls.doubleclick.net^
 ||510bc0e351024.beer^
-||510i1d.top^
 ||510w.com^
 ||5110331.fls.doubleclick.net^
 ||5110f56bf0.c3a36bbaca.com^
@@ -65844,7 +65841,6 @@ zzzyk.com###Tinfo
 ||519-jvy-663.mktoresp.com^
 ||5192cnkxrctikciqjjlop9woiuhao1509504150.nuid.imrworldwide.com^
 ||5193100.fls.doubleclick.net^
-||519332da.rtc.youme.im^
 ||519397.com^
 ||51939812.de.strato-hosting.eu^
 ||51941656.de.strato-hosting.eu^
@@ -68085,6 +68081,7 @@ zzzyk.com###Tinfo
 ||58mingri.cn^
 ||58mingtian.cn^
 ||58mldjau3c500d7n.verwin.com^
+||58muvh.cfd^
 ||58owk.fifth.pw^
 ||58rfnch2yq.com^
 ||58shuma.com^
@@ -68325,6 +68322,7 @@ zzzyk.com###Tinfo
 ||5aiful4nwar-oto.blogspot.com^
 ||5amers.com.au^
 ||5amjcxz1advapdshyb0j2fndfjq201515396621.nuid.imrworldwide.com^
+||5ap.je9r.ru^
 ||5arketing.0-01-lib-oa-1-cf23region.net.daraz.com^
 ||5asgs.lat^
 ||5asixr.top^
@@ -73186,6 +73184,7 @@ zzzyk.com###Tinfo
 ||71hy.com^
 ||71i.nuggad.de^
 ||71i.nuggad.net^
+||71ir1k.sbs^
 ||71j3.lat^
 ||71krod.pics^
 ||71lf6z67h6.com^
@@ -81304,6 +81303,7 @@ zzzyk.com###Tinfo
 ||900.la/imgs/1bb725da-974f-43da-9eb9-dfdebc224949/2015-12-18/zg3wwaug.gif
 ||900.la/imgs/d829d551-1d6e-4018-b3fe-78991bbbe2d6/2016-06-27/yiwmbica.gif
 ||9000-firebase-billab-1761172032270.cluster-r7kbxfo3fnev2vskbkhhphetq6.cloudworkstations.dev^
+||9000-firebase-detuu-1761632984144.cluster-dwvm25yncracsxpd26rcd5ja3m.cloudworkstations.dev^
 ||9000-firebase-expired-1759135909947.cluster-j6d3cbsvdbe5uxnhqrfzzeyj7i.cloudworkstations.dev^
 ||9000-firebase-meta001-1758627939093.cluster-zhw3w37rxzgkutusbbhib6qhra.cloudworkstations.dev^
 ||9000-firebase-nexzustexus-1754225054854.cluster-wfwbjypkvnfkaqiqzlu3ikwjhe.cloudworkstations.dev^
@@ -83605,6 +83605,7 @@ zzzyk.com###Tinfo
 ||97go.biz^
 ||97gouwu.com^
 ||97iigfvj.cricket^
+||97je80.cfd^
 ||97kuaixiu.com^
 ||97myspace.info^
 ||97nb.net^
@@ -85253,6 +85254,7 @@ zzzyk.com###Tinfo
 ||a-nagy-alku.com^
 ||a-new-trends.blogspot.com^
 ||a-nj.1rx.io^
+||a-nwb.bezoeknummer-837387467.sbs^
 ||a-nz-verifyyourself.net^
 ||a-o.ninja^
 ||a-onebailbondsllc.com^
@@ -86895,6 +86897,7 @@ zzzyk.com###Tinfo
 ||a0297575.xsph.ru^
 ||a02d0adbca0.com^
 ||a02prop.club^
+||a03.4qua0.ru^
 ||a03.korrelate.net^
 ||a030.casalemedia.com^
 ||a0300934.xsph.ru^
@@ -100294,6 +100297,7 @@ zzzyk.com###Tinfo
 ||account.uivv.org^
 ||account.umeng.com^
 ||account.unsightly-otter.customer.envato-staging.com^
+||account.vadeware.com^
 ||account.valide.checker.automatique.payverif.com^
 ||account.voluptuarianbit.com^
 ||account.weightgainformula.club^
@@ -100592,6 +100596,7 @@ zzzyk.com###Tinfo
 ||accounts.longmusic.com^
 ||accounts.marketwebb.me^
 ||accounts.marketwebb.mobi^
+||accounts.maxweb.black^
 ||accounts.microsoftonline.com.shapefastweightloss.com^
 ||accounts.mx^
 ||accounts.net^
@@ -101302,7 +101307,6 @@ zzzyk.com###Tinfo
 ||acespam.lpgit.co.uk^
 ||acesportsgear.com^
 ||acess-id3-fr.com^
-||acess-start-trezoor-web.square.site^
 ||acess.paymentsonline.ml^
 ||acessando-atualizado.com^
 ||acessando-completo.com^
@@ -101334,6 +101338,7 @@ zzzyk.com###Tinfo
 ||acesseportal.com^
 ||acesseportalbb.com^
 ||acesslimitado.com^
+||acesso-01-app.v6.rocks^
 ||acesso-app.tk^
 ||acesso-bb-mobile.tk^
 ||acesso-bb.ml^
@@ -101784,6 +101789,7 @@ zzzyk.com###Tinfo
 ||acinetobacter.host^
 ||acinexomo.pro^
 ||acinfos342.5gbfree.com^
+||acinggentler.com^
 ||acinic.stream^
 ||acinitarr.cyou^
 ||acinster.info^
@@ -101880,3 +101886,58 @@ zzzyk.com###Tinfo
 ||aclefs.ins-styler.com^
 ||aclefs.myto-do.com^
 ||aclefs.nmachinen.com^
+||aclefs.penginep.com^
+||aclefs.plug-top-test.com^
+||aclefs.s-engines.com^
+||aclefs.sagent-s.com^
+||aclefs.tool-h.com^
+||aclefs.zgear-z.com^
+||aclendingdirect.com^
+||aclgroups.com^
+||aclhagvngkjf.com^
+||aclhs.de^
+||aclick.adhoc1.net^
+||aclick.adhoc2.net^
+||aclickads.com^
+||aclickoooo.host^
+||aclimatecarolinrhyme.com^
+||acline.ru^
+||acliu.com^
+||aclktrkr.com^
+||aclktrkr.com^$popup
+||aclm.biz^
+||aclo.site^
+||acloak.info^
+||aclockworkhomage.com^
+||aclog.itmedia.co.jp^
+||aclomxokn.com^
+||aclordi.actonservice.com^
+||acloud.com^
+||acloudcollective.com^
+||acloudg.cyou^
+||acloudimages.com^
+||acloudvideos.com^
+||aclsqdpgeaik.com^
+||aclu.tt.omtrdc.net^
+||aclwlkyzxxhn.com^
+||acm-em.hazren.com^
+||acm-forex-0.tk^
+||acm-forex-4.tk^
+||acm-forex-6q.tk^
+||acm-forex-8.tk^
+||acm-forex.tk^
+||acm-initiatives.com^
+||acm.ee^
+||acm2.ei.m.aeiwc.static.c11n.seguridadyvigilancia.pe^
+||acm2.eim.ae.iwc.static.injectsystems.com.au^
+||acm2.eim.ae.iwc.static.normoeagles.com.au^
+||acma.in^
+||acmagemarlog.com^
+||acman.ir^
+||acman.us^
+||acmao.com^
+||acmap.zeotap.com^
+||acmarsef.weebly.com^
+||acmaus.com^
+||acmbinaryproxy.tk^
+||acmbnksonline.com^

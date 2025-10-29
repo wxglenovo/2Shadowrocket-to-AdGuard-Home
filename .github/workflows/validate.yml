@@ -1,47 +1,47 @@
-name: Update Blocklist 4x Daily
+name: Update AdGuard Blocklist
 
 on:
   schedule:
-    # 每天 UTC 0:00 / 6:00 / 12:00 / 18:00 执行
-    - cron: "0 0 * * *"
-    - cron: "0 6 * * *"
-    - cron: "0 12 * * *"
-    - cron: "0 18 * * *"
+    - cron: "0 0 * * *"   # 每天 00:00 UTC
+    - cron: "0 6 * * *"   # 每天 06:00 UTC
+    - cron: "0 12 * * *"  # 每天 12:00 UTC
+    - cron: "0 18 * * *"  # 每天 18:00 UTC
   workflow_dispatch:
 
 jobs:
-  update-blocklist:
+  build:
     runs-on: ubuntu-latest
+    timeout-minutes: 120   # 防止长时间 DNS 验证超时
 
     steps:
-      # 1️⃣ 检出仓库
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 2️⃣ 设置 Python
-      - name: Setup Python
+      - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: 3.12
+          python-version: "3.12"
 
-      # 3️⃣ 安装依赖
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install requests dnspython
 
-      # 4️⃣ 执行 Python 脚本
-      - name: Run blocklist update
-        run: python split_and_check_16.py
+      - name: Run split & check script with live logging
+        run: |
+          # 打印开始时间
+          echo "⏱ Workflow 开始：$(date -u)"
+          
+          # 执行 Python 脚本，实时输出每批 DNS 验证日志
+          python split_and_check_16.py | tee split_check.log
+          
+          # 打印结束时间
+          echo "⏱ Workflow 结束：$(date -u)"
 
-      # 5️⃣ 提交更新
-      - name: Commit & push changes
+      - name: Commit and push updates
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add dist/blocklist_valid.txt tmp/validated_*.txt tmp/part_*.txt
-          if git diff-index --quiet HEAD; then
-            echo "No changes to commit"
-          else
-            git commit -m "🤖 Auto update blocklist"
-            git push
+          git add dist/blocklist_valid.txt tmp/validated_*.txt
+          git commit -m "🤖 Auto update: valid blocklist" || echo "No changes"
+          git push origin main

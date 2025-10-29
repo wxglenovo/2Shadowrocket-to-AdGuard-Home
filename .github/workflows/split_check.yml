@@ -38,7 +38,6 @@ jobs:
         shell: bash
         run: |
           CURRENT_HOUR=$(date -u +"%H")
-          # UTC 0:00 强制更新 urls.txt 并生成所有分片
           if [ "$CURRENT_HOUR" = "00" ]; then
               echo "🔄 每天强制更新 urls.txt 并生成分片"
               python split_and_check_16.py --force-update
@@ -51,11 +50,9 @@ jobs:
           PART_INPUT="${{ github.event.inputs.part }}"
 
           if [ -n "$PART_INPUT" ]; then
-              # 手动触发
               PART="$PART_INPUT"
               echo "🛠 手动触发，验证分片 $PART"
           else
-              # 自动轮替
               if [ -f "$LAST_PART_FILE" ]; then
                   LAST_PART=$(cat "$LAST_PART_FILE")
                   PART=$(( (LAST_PART % 16) + 1 ))
@@ -65,10 +62,7 @@ jobs:
               echo "⏱ 自动轮替验证分片 $PART"
           fi
 
-          # 保存当前轮替分片
           echo $PART > $LAST_PART_FILE
-
-          # 执行 Python 验证脚本
           python split_and_check_16.py --part "$PART" | tee split_check.log
 
       - name: Commit & Push Validated Rules
@@ -83,4 +77,3 @@ jobs:
               git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
           else
               echo "⚠ 没有生成任何验证文件，跳过 commit & push"
-          fi

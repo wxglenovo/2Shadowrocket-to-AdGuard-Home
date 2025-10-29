@@ -1,35 +1,19 @@
 name: split_check
+name: Split and Check Blocklist
 
 on:
+  # 每天更新 urls.txt 一次
+  schedule:
+    - cron: "0 0 * * *"  # UTC 时间每天 00:00 更新 urls.txt
   workflow_dispatch:
     inputs:
       part:
         description: '手动触发验证指定分片（0-15）'
         required: false
         default: ''
-  schedule:
-    # 每天更新 urls.txt 1 次（UTC 0:00）
-    - cron: "0 0 * * *"
-    # 每天 16 次轮替分片验证（UTC 时间）
-    - cron: "0 0 * * *"
-    - cron: "0 1 * * *"
-    - cron: "0 3 * * *"
-    - cron: "0 4 * * *"
-    - cron: "0 6 * * *"
-    - cron: "0 7 * * *"
-    - cron: "0 9 * * *"
-    - cron: "0 10 * * *"
-    - cron: "0 12 * * *"
-    - cron: "0 13 * * *"
-    - cron: "0 15 * * *"
-    - cron: "0 16 * * *"
-    - cron: "0 18 * * *"
-    - cron: "0 19 * * *"
-    - cron: "0 21 * * *"
-    - cron: "0 22 * * *"
 
 jobs:
-  split-check:
+  update_and_validate:
     runs-on: ubuntu-latest
     env:
       PYTHONUNBUFFERED: 1
@@ -38,7 +22,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Setup Python
+    - name: Set up Python
       uses: actions/setup-python@v4
       with:
         python-version: 3.12
@@ -48,6 +32,12 @@ jobs:
         python -m pip install --upgrade pip
         pip install requests dnspython
 
+    - name: Download urls.txt
+      run: |
+        mkdir -p tmp dist
+        echo "📥 下载 urls.txt"
+        curl -fsSL -o urls.txt https://raw.githubusercontent.com/你的用户名/你的仓库/main/urls.txt
+
     - name: Run Split and Check
       run: |
         if [ "${{ github.event.inputs.part }}" != "" ]; then
@@ -56,11 +46,12 @@ jobs:
         else
           echo "⏱ 自动轮替验证当前分片"
           python split_and_check_16.py | tee split_check.log
+        fi
 
-    - name: Commit and push valid rules
+    - name: Commit and push results
       run: |
         git config user.name "github-actions[bot]"
         git config user.email "github-actions[bot]@users.noreply.github.com"
-        git add dist/blocklist_valid.txt tmp/part_*.txt || echo "No files to add"
-        git commit -m "🤖 Auto update: valid blocklist" || echo "No changes"
+        git add dist/blocklist_valid.txt tmp/part_*.txt || echo "No changes"
+        git commit -m "🤖 Auto update: valid blocklist" || echo "No changes to commit"
         git push origin main || echo "Push failed, maybe no changes"

@@ -109,16 +109,18 @@ def main():
 
     with open(target_part, "r", encoding="utf-8") as f:
         rules = [x.strip() for x in f if x.strip()]
-    print(f"🔍 当前分片规则总数：{len(rules):,} 条")
+    total_rules = len(rules)
+    print(f"🔍 当前分片规则总数：{total_rules:,} 条")
 
     # 5️⃣ DNS 验证（分批处理）
     valid_rules = []
-    for i in range(0, len(rules), DNS_BATCH_SIZE):
+    for i in range(0, total_rules, DNS_BATCH_SIZE):
         batch = rules[i:i+DNS_BATCH_SIZE]
         with concurrent.futures.ThreadPoolExecutor(max_workers=DNS_WORKERS) as ex:
             results = list(ex.map(check_rule, batch))
-        valid_rules.extend([r for r in results if r])
-        print(f"✅ 已验证 {i + len(batch):,}/{len(rules):,} 条")
+        valid_batch = [r for r in results if r]
+        valid_rules.extend(valid_batch)
+        print(f"✅ 已验证 {min(i+DNS_BATCH_SIZE, total_rules):,}/{total_rules:,} 条，当前批有效 {len(valid_batch):,} 条")
         time.sleep(BATCH_SLEEP)
 
     # 6️⃣ 保存当前分片验证结果

@@ -4,15 +4,17 @@ import dns.resolver
 import concurrent.futures
 from datetime import datetime, timezone
 import socket
+import time
 
 # ===================== 配置 =====================
 URLS_FILE = "urls.txt"
 OUTPUT_DIR = "dist"
 TMP_DIR = "tmp"
 PARTS = 16
-DNS_WORKERS = 10       # 并行 DNS 查询线程数
-DNS_BATCH_SIZE = 1000  # 每批验证数量
-DNS_TIMEOUT = 1.5       # DNS 超时（秒）
+DNS_WORKERS = 5        # 并行 DNS 查询线程数
+DNS_BATCH_SIZE = 500   # 每批验证数量
+DNS_TIMEOUT = 1.5      # DNS 超时（秒）
+BATCH_SLEEP = 0.5      # 每批验证间隔秒数
 
 # 设置全局 DNS 超时
 socket.setdefaulttimeout(DNS_TIMEOUT)
@@ -117,6 +119,7 @@ def main():
             results = list(ex.map(check_rule, batch))
         valid_rules.extend([r for r in results if r])
         print(f"✅ 已验证 {i + len(batch):,}/{len(rules):,} 条")
+        time.sleep(BATCH_SLEEP)
 
     # 6️⃣ 保存当前分片验证结果
     with open(target_validated, "w", encoding="utf-8") as f:

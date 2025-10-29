@@ -1,30 +1,13 @@
-name: Split DNS Validation
+name: AdGuardHome Blocklist Validation
 
 on:
   schedule:
-    # 每天更新 urls.txt
-    - cron: "0 0 * * *"
-    # 每小时轮替验证分片（示例：每天 16 次）
-    - cron: "0 0 * * *"
-    - cron: "0 1 * * *"
-    - cron: "0 2 * * *"
-    - cron: "0 3 * * *"
-    - cron: "0 4 * * *"
-    - cron: "0 5 * * *"
-    - cron: "0 6 * * *"
-    - cron: "0 7 * * *"
-    - cron: "0 8 * * *"
-    - cron: "0 9 * * *"
-    - cron: "0 10 * * *"
-    - cron: "0 11 * * *"
-    - cron: "0 12 * * *"
-    - cron: "0 13 * * *"
-    - cron: "0 14 * * *"
-    - cron: "0 15 * * *"
+    # 每天 16 次，UTC 时间，每 1.5 小时轮替
+    - cron: "0 0,90,180,270,360,450,540,630,720,810,900,990,1080,1170,1260,1350 * * *"
   workflow_dispatch:
     inputs:
       part:
-        description: '手动验证分片 1~16'
+        description: '手动触发验证指定分片 (0-15)'
         required: false
         default: ''
 
@@ -32,33 +15,31 @@ permissions:
   contents: write
 
 jobs:
-  validate:
+  validate-blocklist:
     runs-on: ubuntu-latest
     env:
       PYTHONUNBUFFERED: 1
       GH_TOKEN: ${{ secrets.GH_TOKEN }}
+
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Python
+      - name: Setup Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.12"
+          python-version: 3.12
 
-      - name: Prepare directories
+      - name: Install dependencies
         run: |
-          mkdir -p tmp dist
+          python -m pip install --upgrade pip
+          pip install requests
 
-      - name: Download urls.txt
-        run: |
-          echo "📥 下载最新 urls.txt"
-          curl -sSL -o urls.txt "https://raw.githubusercontent.com/wxglenovo/Shadowrocket-to-AdGuard-Home/main/urls.txt"
-          echo "✅ 下载完成，条数：$(wc -l < urls.txt)"
-
-      - name: Run validation
+      - name: Run blocklist validation
         run: |
           PART="${{ github.event.inputs.part }}"
+          echo "⏱ Workflow 开始：$(date -u)"
+          
           if [ -n "$PART" ]; then
             echo "🛠 手动触发，验证分片 $PART"
             python split_and_check_16.py --part "$PART" | tee split_check.log
@@ -67,10 +48,17 @@ jobs:
             python split_and_check_16.py | tee split_check.log
           fi
 
+          echo "⏱ Workflow 结束：$(date -u)"
+
       - name: Commit and push valid rules
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add dist/blocklist_valid.txt tmp/part_*.txt
-          git commit -m "🤖 Auto update: valid blocklist" || echo "No changes"
-          git push https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }} HEAD:main
+
+          # 仅在存在文件时提交
+          if [ -f dist/blocklist_valid.txt ] || ls tmp/part_*.txt 1> /dev/null 2>&1; then
+            git add dist/blocklist_valid.txt tmp/part_*.txt
+            git commit -m "🤖 Auto update: valid blocklist" || echo "No changes"
+            git push https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }} HEAD:main
+          else
+            echo "⚠️ 没有需要提交的文件，跳过 push"

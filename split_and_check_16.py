@@ -1,201 +1,148 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 import os
 import requests
+import dns.resolver
+import concurrent.futures
+from datetime import datetime
 import argparse
-import asyncio
-import dns.asyncresolver
 
-URLS_TXT = "urls.txt"
-TMP_DIR = "tmp"
+# ===============================
+# 配置
+# ===============================
+URLS_FILE = "urls.txt"
+OUTPUT_DIR = "tmp"
 DIST_DIR = "dist"
-MASTER_RULE = "merged_rules.txt"
 PARTS = 16
-MAX_CONCURRENCY = 500   # 并发数（越大越快，可调 300~1000）
+DNS_BATCH_SIZE = 800  # 每批 DNS 验证大小
+MAX_WORKERS = 80      # DNS 并发线程数
 
-os.makedirs(TMP_DIR, exist_ok=True)
-os.makedirs(DIST_DIR, exist_ok=True)
+resolver = dns.resolver.Resolver()
+resolver.timeout = 1.5
+resolver.lifetime = 1.5
+resolver.nameservers = ["1.1.1.1", "8.8.8.8", "9.9.9.9"]
 
+# ===============================
+# 参数解析
+# ===============================
+parser = argparse.ArgumentParser()
+parser.add_argument("--part", type=int, help="手动验证分片 0~15")
+args = parser.parse_args()
+manual_part = args.part
 
-# =====================================================
-# ✅ 下载并合并规则
-# =====================================================
-def download_all_sources():
-    if not os.path.exists(URLS_TXT):
-        print("❌ urls.txt 不存在，无法下载规则")
-        return False
-
-    print("📥 开始下载并合并所有规则源...")
-    merged = set()
-    with open(URLS_TXT, "r", encoding="utf-8") as f:
-        urls = [u.strip() for u in f if u.strip()]
-
-    for url in urls:
-        print(f"🌐 {url}")
-        try:
-            r = requests.get(url, timeout=20)
-            r.raise_for_status()
-            for line in r.text.splitlines():
-                line = line.strip()
-                if line and not line.startswith("#"):
-                    merged.add(line)
-        except Exception as e:
-            print(f"⚠ 下载失败 {url}: {e}")
-
-    print(f"✅ 下载完成，共 {len(merged)} 条规则")
-    with open(MASTER_RULE, "w", encoding="utf-8") as f:
-        f.write("\n".join(sorted(merged)))
-
-    return True
-
-
-# =====================================================
-# ✅ 分成 PARTS 片
-# =====================================================
-def split_parts():
-    if not os.path.exists(MASTER_RULE):
-        print("❌ 缺少 merged_rules.txt，无法分片")
-        return False
-
-    with open(MASTER_RULE, "r", encoding="utf-8") as f:
-        rules = [l.strip() for l in f if l.strip()]
-
-    total = len(rules)
-    per = (total + PARTS - 1) // PARTS
-    print(f"🪓 分片 {total} 条，每片 ~{per}")
-
-    for i in range(PARTS):
-        sub = rules[i * per:(i + 1) * per]
-        fname = os.path.join(TMP_DIR, f"part_{i + 1:02d}.txt")
-        with open(fname, "w", encoding="utf-8") as f:
-            f.write("\n".join(sub))
-        print(f"📄 part_{i + 1:02d}: {len(sub)} 条")
-
-    return True
-
-
-# =====================================================
-# ✅ 异步 DNS 批量验证
-# =====================================================
-async def check_domain(resolver, rule):
-    domain = rule.lstrip("|").split("^")[0].replace("*", "")
-    if not domain:
-        return None
+# ===============================
+# 功能函数
+# ===============================
+def safe_fetch(url):
     try:
-        await resolver.resolve(domain)
-        return rule
+        r = requests.get(url, timeout=10)
+        r.raise_for_status()
+        return r.text.splitlines()
     except:
+        print(f"⚠️ 下载失败：{url}")
+        return []
+
+def clean_rule(line):
+    l = line.strip()
+    if not l or l.startswith("#"):
         return None
+    return l
 
+def extract_domain(rule):
+    d = rule.lstrip("|").lstrip(".").split("^")[0]
+    return d.strip()
 
-async def dns_validate_async(lines):
-    resolver = dns.asyncresolver.Resolver()
-    resolver.nameservers = ["8.8.8.8", "1.1.1.1"]  # 加速
-    resolver.timeout = 2
-    resolver.lifetime = 2
+def is_valid_domain(domain):
+    try:
+        resolver.resolve(domain, "A")
+        return True
+    except:
+        return False
 
-    sem = asyncio.Semaphore(MAX_CONCURRENCY)
-    valid = []
+def check_rule(rule):
+    domain = extract_domain(rule)
+    return rule if is_valid_domain(domain) else None
 
-    async def worker(rule):
-        async with sem:
-            r = await check_domain(resolver, rule)
-            if r:
-                valid.append(r)
+# ===============================
+# 主程序
+# ===============================
+def main():
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    os.makedirs(DIST_DIR, exist_ok=True)
+    part_files = [os.path.join(OUTPUT_DIR, f"part_{i+1:02d}.txt") for i in range(PARTS)]
+    valid_output = os.path.join(DIST_DIR, "blocklist_valid.txt")
 
-    tasks = [worker(rule) for rule in lines]
-    print(f"🚀 开始异步验证 {len(lines)} 条...")
-    await asyncio.gather(*tasks)
+    # ============================
+    # 首次执行：下载 urls.txt 并切片
+    # ============================
+    if not os.path.exists(part_files[0]):
+        print("🧩 首次运行：下载并切片")
+        if not os.path.exists(URLS_FILE):
+            print("❌ 未找到 urls.txt")
+            return
 
-    print(f"✅ 有效规则: {len(valid)}")
-    return valid
+        with open(URLS_FILE, "r", encoding="utf-8") as f:
+            urls = [x.strip() for x in f if x.strip() and not x.startswith("#")]
 
+        all_rules = []
+        with concurrent.futures.ThreadPoolExecutor(max_workers=20) as ex:
+            for lines in ex.map(safe_fetch, urls):
+                all_rules.extend(lines)
 
-def dns_validate(lines):
-    return asyncio.run(dns_validate_async(lines))
+        # 去注释 + 去重
+        cleaned = list(dict.fromkeys([clean_rule(x) for x in all_rules if clean_rule(x)]))
+        total = len(cleaned)
+        print(f"✅ 去重后总计：{total:,} 条")
 
-
-# =====================================================
-# ✅ 处理单个分片
-# =====================================================
-def process_part(part):
-    part = int(part)
-    part_file = os.path.join(TMP_DIR, f"part_{part:02d}.txt")
-    out_file = os.path.join(DIST_DIR, f"validated_part_{part:02d}.txt")
-
-    if os.path.exists(out_file):
-        print(f"⏩ 分片 {part} 已验证，跳过 → {out_file}")
+        chunk = total // PARTS
+        for idx in range(PARTS):
+            start = idx * chunk
+            end = None if idx == PARTS - 1 else (idx + 1) * chunk
+            with open(part_files[idx], "w", encoding="utf-8") as f:
+                f.write("\n".join(cleaned[start:end]))
+            print(f"📄 分片 {idx+1} 保存 {len(cleaned[start:end]):,} 条规则 → {part_files[idx]}")
+            print(f"前 10 条示例： {cleaned[start:start+10]}")
         return
 
-    if not os.path.exists(part_file):
-        print(f"⚠ 分片 {part} 缺失，重新下载切片")
-        download_all_sources()
-        split_parts()
+    # ============================
+    # 确定当前处理分片
+    # ============================
+    if manual_part is not None:
+        part_index = manual_part
+        print(f"🛠 手动触发，验证分片 {part_index}")
+    else:
+        minute = datetime.utcnow().hour * 60 + datetime.utcnow().minute
+        part_index = (minute // 90) % PARTS
+        print(f"⏱ 自动轮替验证当前分片 {part_index}")
 
-    lines = open(part_file, "r", encoding="utf-8").read().splitlines()
-    print(f"⏱ 验证分片 {part} 共 {len(lines)} 条")
+    target_file = part_files[part_index]
+    if not os.path.exists(target_file):
+        print(f"⚠️ 分片不存在：{target_file}")
+        return
 
-    valid = dns_validate(lines)
+    with open(target_file, "r", encoding="utf-8") as f:
+        rules = f.read().splitlines()
+    total_rules = len(rules)
+    print(f"⏱ 当前处理分片：{target_file}, 总规则 {total_rules:,} 条")
+    print(f"前 10 条规则示例： {rules[:10]}")
 
-    with open(out_file, "w", encoding="utf-8") as f:
-        f.write("\n".join(valid))
+    # ============================
+    # 分批 DNS 验证
+    # ============================
+    valid = []
+    for i in range(0, total_rules, DNS_BATCH_SIZE):
+        batch = rules[i:i+DNS_BATCH_SIZE]
+        with concurrent.futures.ThreadPoolExecutor(max_workers=MAX_WORKERS) as ex:
+            results = list(ex.map(check_rule, batch))
+        batch_valid = [r for r in results if r]
+        valid.extend(batch_valid)
+        print(f"✅ 已验证 {min(i+DNS_BATCH_SIZE, total_rules):,}/{total_rules:,} 条，本批有效 {len(batch_valid):,} 条")
 
-    print(f"✅ 分片 {part} 完成 → {out_file}")
+    # ============================
+    # 保存有效规则
+    # ============================
+    with open(valid_output, "a", encoding="utf-8") as f:
+        f.write("\n".join(valid) + "\n")
+    print(f"🎯 本次有效规则追加至 {valid_output}, 总计 {len(valid):,} 条")
+    print("✅ 执行结束")
 
-
-# =====================================================
-# ✅ 合并所有最终结果
-# =====================================================
-def merge_validated_results():
-    print("📦 合并所有已验证分片...")
-    valid_all = set()
-
-    for i in range(1, PARTS + 1):
-        f = os.path.join(DIST_DIR, f"validated_part_{i:02d}.txt")
-        if os.path.exists(f):
-            with open(f, "r", encoding="utf-8") as fp:
-                for line in fp:
-                    valid_all.add(line.strip())
-
-    out = os.path.join(DIST_DIR, "validated_all.txt")
-    with open(out, "w", encoding="utf-8") as f:
-        f.write("\n".join(sorted(valid_all)))
-
-    print(f"✅ ✅ 最终文件已生成 → {out}")
-    print(f"✅ 共 {len(valid_all)} 条有效规则")
-
-
-# =====================================================
-# ✅ 主入口
-# =====================================================
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--part", help="验证指定分片 1~16")
-    parser.add_argument("--force-update", action="store_true", help="强制重新下载和切片")
-    parser.add_argument("--merge", action="store_true", help="合并所有分片结果")
-    args = parser.parse_args()
-
-    # 强制下载
-    if args.force_update:
-        download_all_sources()
-        split_parts()
-
-    # 自动补齐
-    if not os.path.exists(MASTER_RULE) or not os.path.exists(os.path.join(TMP_DIR, "part_01.txt")):
-        download_all_sources()
-        split_parts()
-
-    # 验证单片
-    if args.part:
-        process_part(args.part)
-        exit(0)
-
-    # 合并最终结果
-    if args.merge:
-        merge_validated_results()
-        exit(0)
-
-    print("ℹ 用法:")
-    print("   python3 script.py --part 1        # 验证第1片")
-    print("   python3 script.py --merge         # 合并验证结果")
-    print("   python3 script.py --force-update  # 重新下载 + 分片")
+    main()

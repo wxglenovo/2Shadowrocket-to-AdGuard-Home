@@ -38,7 +38,13 @@ jobs:
         id: detect
         shell: bash
         run: |
-          LAST_PART_FILE=".last_part"
+          mkdir -p tmp
+          LAST_PART_FILE="tmp/last_part.txt"
+
+          # 拉取最新仓库记录
+          git fetch origin main
+          git checkout origin/main -- tmp/last_part.txt || echo "⚠ tmp/last_part.txt 不存在"
+
           PART_INPUT="${{ github.event.inputs.part }}"
 
           if [ -n "$PART_INPUT" ]; then
@@ -54,7 +60,12 @@ jobs:
             echo "⏱ 自动轮替分片：$PART"
           fi
 
+          # 保存下一次使用
           echo $PART > $LAST_PART_FILE
+          git add $LAST_PART_FILE
+          git commit -m "🤖 Update last_part to $PART" || echo "No changes"
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
+
           echo "part=$PART" >> $GITHUB_OUTPUT
 
       - name: Force download at 00:00

@@ -3,18 +3,18 @@ import requests
 import dns.resolver
 import concurrent.futures
 from datetime import datetime, timezone
-import socket
 import time
+import socket
 
 # ===================== 配置 =====================
 URLS_FILE = "urls.txt"
 OUTPUT_DIR = "dist"
 TMP_DIR = "tmp"
 PARTS = 16
-DNS_WORKERS = 5        # 并行 DNS 查询线程数
-DNS_BATCH_SIZE = 500   # 每批验证数量
-DNS_TIMEOUT = 1.5      # DNS 超时（秒）
-BATCH_SLEEP = 0.5      # 每批验证间隔秒数
+DNS_WORKERS = 10        # 并行 DNS 查询线程数
+DNS_BATCH_SIZE = 500    # 每批验证数量
+DNS_TIMEOUT = 1.5       # DNS 超时（秒）
+BATCH_SLEEP = 0.5       # 每批验证间隔秒
 
 socket.setdefaulttimeout(DNS_TIMEOUT)
 
@@ -52,9 +52,12 @@ def is_valid_domain(domain):
 def check_rule(rule):
     try:
         domain = extract_domain(rule)
-        return rule if is_valid_domain(domain) else None
+        if is_valid_domain(domain):
+            return rule, None
+        else:
+            return None, domain
     except Exception:
-        return None
+        return None, extract_domain(rule)
 
 # ===================== 主函数 =====================
 def main():
@@ -63,9 +66,10 @@ def main():
 
     part_files = [os.path.join(TMP_DIR, f"part_{i:02d}.txt") for i in range(PARTS)]
     validated_files = [os.path.join(TMP_DIR, f"validated_{i:02d}.txt") for i in range(PARTS)]
+    failed_files = [os.path.join(TMP_DIR, f"failed_{i:02d}.txt") for i in range(PARTS)]
     final_output = os.path.join(OUTPUT_DIR, "blocklist_valid.txt")
 
-    # 下载最新源并切片（首次执行或 part 文件不存在）
+    # ✅ 首次运行：下载 urls.txt 并切片
     if not os.path.exists(part_files[0]):
         if not os.path.exists(URLS_FILE):
             print("❌ 未找到 urls.txt")
@@ -73,12 +77,13 @@ def main():
         with open(URLS_FILE, "r", encoding="utf-8") as f:
             urls = [x.strip() for x in f if x.strip() and not x.startswith("#")]
 
-        all_rules = []
         print("📥 下载规则源...")
+        all_rules = []
         with concurrent.futures.ThreadPoolExecutor(max_workers=10) as ex:
             for lines in ex.map(safe_fetch, urls):
                 all_rules.extend(lines)
 
+        # 去注释 & 去重
         cleaned = list(dict.fromkeys([clean_rule(x) for x in all_rules if clean_rule(x)]))
         total = len(cleaned)
         print(f"✅ 去重后总计：{total:,} 条")
@@ -98,6 +103,7 @@ def main():
     part_index = (minute // 90) % PARTS
     target_part = part_files[part_index]
     target_validated = validated_files[part_index]
+    target_failed = failed_files[part_index]
 
     print(f"⏱ 当前处理分片：{target_part}")
 
@@ -112,32 +118,46 @@ def main():
 
     # DNS 验证（分批处理）
     valid_rules = []
+    failed_domains = []
     for i in range(0, total_rules, DNS_BATCH_SIZE):
         batch = rules[i:i+DNS_BATCH_SIZE]
         with concurrent.futures.ThreadPoolExecutor(max_workers=DNS_WORKERS) as ex:
             results = list(ex.map(check_rule, batch))
-        valid_batch = [r for r in results if r]
-        valid_rules.extend(valid_batch)
-        print(f"✅ 已验证 {min(i+DNS_BATCH_SIZE, total_rules):,}/{total_rules:,} 条，当前批有效 {len(valid_batch):,} 条")
+        for r, f in results:
+            if r:
+                valid_rules.append(r)
+            if f:
+                failed_domains.append(f)
+        print(f"✅ 已验证 {min(i+DNS_BATCH_SIZE, total_rules):,}/{total_rules:,} 条，本批有效 {sum(1 for r,f in results if r):,} 条")
         time.sleep(BATCH_SLEEP)
 
     # 保存当前分片验证结果
     with open(target_validated, "w", encoding="utf-8") as f:
         f.write("\n".join(valid_rules))
-    print(f"✅ 当前分片有效规则：{len(valid_rules):,} 条 → 保存至 {target_validated}")
+    with open(target_failed, "w", encoding="utf-8") as f:
+        f.write("\n".join(failed_domains))
 
-    # 合并所有 validated 文件
+    # 输出 summary
+    success_count = len(valid_rules)
+    fail_count = len(failed_domains)
+    success_rate = success_count / total_rules * 100 if total_rules else 0
+    print(f"\n🎯 分片 {part_index+1}/{PARTS} Summary:")
+    print(f"   总规则: {total_rules:,}")
+    print(f"   有效: {success_count:,}")
+    print(f"   失败: {fail_count:,}")
+    print(f"   成功率: {success_rate:.2f}%\n")
+
+    # 合并所有分片验证结果
     all_valid = []
     for vf in validated_files:
         if os.path.exists(vf):
             with open(vf, "r", encoding="utf-8") as f:
                 all_valid.extend([line.strip() for line in f if line.strip()])
-
     all_valid = list(dict.fromkeys(all_valid))
     with open(final_output, "w", encoding="utf-8") as f:
         f.write("\n".join(all_valid))
     print(f"🎯 最终有效规则生成：{final_output} 共 {len(all_valid):,} 条")
-    print("✅ 执行结束，无错误")
+    print("✅ 本次执行完成，无错误")
 
 if __name__ == "__main__":
     main()

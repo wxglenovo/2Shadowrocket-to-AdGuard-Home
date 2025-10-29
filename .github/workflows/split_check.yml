@@ -4,13 +4,13 @@ on:
   workflow_dispatch:
     inputs:
       part:
-        description: '手动指定分片 0~15'
+        description: '手动验证分片编号（0-15），不填则自动轮替'
         required: false
         default: ''
   schedule:
-    # 每天 UTC 0 点更新 urls.txt
+    # 每天 UTC 0:00 更新 urls.txt
     - cron: "0 0 * * *"
-    # 每 1.5 小时轮替验证分片 (UTC)
+    # 每 1.5 小时轮替验证分片（共 16 份）
     - cron: "0 0 * * *"
     - cron: "30 1 * * *"
     - cron: "0 3 * * *"
@@ -32,16 +32,17 @@ permissions:
   contents: write
 
 jobs:
-  validate:
+  split-check:
     runs-on: ubuntu-latest
     env:
       PYTHONUNBUFFERED: 1
+
     steps:
-      - name: Checkout repository
+      - name: Checkout repo
         uses: actions/checkout@v4
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v4
         with:
           python-version: 3.12
 
@@ -50,23 +51,30 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests dnspython
 
-      - name: Run DNS Validation
+      - name: Run split & DNS check
         shell: bash
         run: |
-          PART="${{ github.event.inputs.part }}"
-          if [ -n "$PART" ]; then
-            echo "🛠 手动触发，验证分片 $PART"
-            python split_and_check_16.py --part "$PART" | tee split_check.log
+          echo "⏱ Workflow 开始：$(date -u)"
+
+          if [ "${{ github.event.inputs.part }}" != "" ]; then
+            echo "🛠 手动触发，验证分片 ${{ github.event.inputs.part }}"
+            python split_and_check_16.py --part ${{ github.event.inputs.part }} | tee split_check.log
           else
             echo "⏱ 自动轮替验证当前分片"
             python split_and_check_16.py | tee split_check.log
           fi
 
-      - name: Commit & Push Valid Rules
-        shell: bash
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add dist/blocklist_valid.txt tmp/part_*.txt
-          git commit -m "🤖 Auto update: valid blocklist" || echo "No changes"
-          git push origin main
+          echo "⏱ Workflow 结束：$(date -u)"
+
+      - name: Commit & push results
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
+          force: false
+          commit_message: "🤖 Auto update: valid blocklist"
+          directory: .
+          # 只添加存在的文件
+          file_pattern: |
+            dist/blocklist_valid.txt
+            tmp/part_*.txt

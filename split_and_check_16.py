@@ -16,16 +16,16 @@ resolver.timeout = 1.5
 resolver.lifetime = 1.5
 resolver.nameservers = ["1.1.1.1", "8.8.8.8", "9.9.9.9"]
 
-# =======================
-# 命令行参数
-# =======================
+# -------------------------
+# 命令行参数解析
+# -------------------------
 parser = argparse.ArgumentParser()
 parser.add_argument("--part", type=int, help="手动验证指定分片 0~15")
 args = parser.parse_args()
 
-# =======================
+# -------------------------
 # 工具函数
-# =======================
+# -------------------------
 def safe_fetch(url):
     try:
         print(f"📥 下载：{url}")
@@ -57,9 +57,9 @@ def check_rule(rule):
     domain = extract_domain(rule)
     return rule if is_valid_domain(domain) else None
 
-# =======================
+# -------------------------
 # 主逻辑
-# =======================
+# -------------------------
 def main():
     if not os.path.exists(URLS_FILE):
         print("❌ 未找到 urls.txt")
@@ -98,9 +98,9 @@ def main():
     if args.part is not None:
         part_index = args.part
     else:
-        # 每1.5小时轮替一次
+        # 每 80 分钟轮替一次
         minute = datetime.utcnow().hour * 60 + datetime.utcnow().minute
-        part_index = (minute // 90) % PARTS
+        part_index = (minute // 80) % PARTS
 
     target_file = part_files[part_index]
     print(f"⏱ 当前处理分片：{target_file}")

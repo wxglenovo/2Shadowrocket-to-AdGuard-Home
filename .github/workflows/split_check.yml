@@ -63,6 +63,13 @@ jobs:
           fi
 
           echo $PART > $LAST_PART_FILE
+
+          # 如果分片不存在则强制更新 urls.txt 并切片
+          if [ ! -f "tmp/part_$(printf '%02d' "$PART").txt" ]; then
+            echo "⚠ 分片不存在，重新刷新 urls.txt"
+            python split_and_check_16.py --force-update
+          fi
+
           python split_and_check_16.py --part "$PART" | tee split_check.log
 
       - name: Commit & Push Validated Rules
@@ -71,10 +78,11 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # 仅当文件存在才 commit & push
+          # 仅当真正有文件才提交
           if ls dist/validated_part_*.txt 1> /dev/null 2>&1; then
             git add dist/validated_part_*.txt tmp/part_*.txt
             git commit -m "🤖 Auto update: valid blocklist" || echo "No changes"
-            git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
+            git push "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:main
           else
             echo "⚠ 没有生成任何验证文件，跳过 commit & push"
+          fi

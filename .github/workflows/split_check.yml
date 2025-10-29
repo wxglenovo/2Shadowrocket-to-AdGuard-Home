@@ -1,9 +1,7 @@
 name: split_check
-
-
 on:
   schedule:
-    # 每天 16 次，每次 1.5 小时（90分钟）
+    # 每天 16 次，每 1.5 小时轮替
     - cron: "0 0 * * *"
     - cron: "30 1 * * *"
     - cron: "0 3 * * *"
@@ -24,7 +22,7 @@ on:
   workflow_dispatch:
     inputs:
       part:
-        description: "手动验证指定分片 0~15，不填则自动轮替"
+        description: "手动验证分片 0~15"
         required: false
         default: ""
 
@@ -37,10 +35,9 @@ jobs:
     env:
       PYTHONUNBUFFERED: 1
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Set up Python
+      - name: Setup Python
         uses: actions/setup-python@v4
         with:
           python-version: 3.12
@@ -48,7 +45,7 @@ jobs:
       - name: Install dependencies
         run: pip install requests dnspython
 
-      - name: Validate Blocklist
+      - name: Validate blocklist
         run: |
           echo "⏱ Workflow 开始：$(date -u)"
           PART="${{ github.event.inputs.part }}"
@@ -67,4 +64,4 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add dist/blocklist_valid.txt dist/part_*.txt || echo "No changes"
           git commit -m "🤖 Auto update: valid blocklist" || echo "No changes"
-          git push origin main || echo "Push failed, maybe no changes"
+          git push origin main || echo "Push失败，可能无更新"

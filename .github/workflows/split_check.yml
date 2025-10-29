@@ -16,108 +16,41 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ 拉取仓库
+      # 1️⃣ Checkout
       - name: Checkout
         uses: actions/checkout@v4
 
-      # 2️⃣ 设置 Python
+      # 2️⃣ Setup Python
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
           python-version: 3.11
 
-      # 3️⃣ 安装依赖
+      # 3️⃣ Install dependencies
       - name: Install dependencies
         run: |
           pip install --upgrade pip
           pip install dnspython tqdm requests
 
-      # 4️⃣ 下载所有源
+      # 4️⃣ Download all rule sources
       - name: Download all rule sources
         run: |
           mkdir -p tmp dist
           while read url; do
-            file_name="tmp/$(basename "$url")"
+            file_name="tmp/$(echo "$url" | sed 's/[^a-zA-Z0-9_.-]/_/g')"
             echo "Downloading $url → $file_name"
             curl -sSL "$url" -o "$file_name"
           done < urls.txt
 
-      # 5️⃣ 分片轮替验证脚本
-      - name: Validate rules (sharded multi-thread)
-        run: |
-          python <<'EOF'
-#!/usr/bin/env python3
-import concurrent.futures
-import dns.resolver
-import re
-from tqdm import tqdm
-import glob
+      # 5️⃣ Run validation script
+      - name: Validate rules
+        run: python validate_rules.py
 
-resolver = dns.resolver.Resolver()
-resolver.timeout = 1
-resolver.lifetime = 1
-
-domain_regex = re.compile(r"^(?!-)([A-Za-z0-9-]{1,63}\.)+[A-Za-z]{2,}$")
-
-def extract_domain(rule: str) -> str:
-    rule = rule.strip().lstrip("|").lstrip("@@").split("^")[0]
-    rule = rule.replace("*", "").replace("||", "")
-    return rule
-
-def is_valid_domain(rule: str) -> bool:
-    domain = extract_domain(rule)
-    if not domain or not domain_regex.match(domain):
-        return False
-    try:
-        resolver.resolve(domain, "A")
-        return True
-    except dns.resolver.NXDOMAIN:
-        return False
-    except (dns.resolver.NoNameservers, dns.resolver.Timeout, dns.resolver.YXDOMAIN):
-        return True
-    except:
-        return True
-
-def validate_batch(rules, batch_size=50000, max_workers=200):
-    valid = []
-    total_rules = len(rules)
-
-    for i in range(0, total_rules, batch_size):
-        batch = rules[i:i+batch_size]
-        with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
-            results = list(tqdm(executor.map(is_valid_domain, batch), total=len(batch), desc=f"Batch {i//batch_size+1}"))
-            for rule, ok in zip(batch, results):
-                if ok:
-                    valid.append(rule)
-        print(f"Processed {min(i+batch_size, total_rules)}/{total_rules} rules, valid: {len(valid)}")
-    return valid
-
-# ===============================
-# 读取所有源文件，按源分片轮替处理
-# ===============================
-all_rules = []
-for file_path in sorted(glob.glob("tmp/*")):
-    with open(file_path, "r", encoding="utf-8") as f:
-        rules = [line.strip() for line in f if line.strip() and not line.startswith("#")]
-        all_rules.extend(rules)
-
-print(f"Total rules loaded from all sources: {len(all_rules)}")
-
-# 验证所有规则
-valid_rules = validate_batch(all_rules)
-
-# 写入结果
-with open("dist/valid_rules.txt", "w", encoding="utf-8") as f:
-    f.write("\n".join(valid_rules))
-
-print(f"✅ Finished validation: total {len(all_rules)}, valid {len(valid_rules)}, removed {len(all_rules)-len(valid_rules)}")
-EOF
-
-      # 6️⃣ 提交结果到仓库
+      # 6️⃣ Commit & Push
       - name: Commit & Push
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
           git add dist/valid_rules.txt
-          git commit -m "Update validated rules"
-          git push || echo "No changes to commit"
+          git commit -m "Update validated rules" || echo "No changes to commit"
+          git push

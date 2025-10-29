@@ -1,4 +1,4 @@
-name: Build AdGuardHome Rules
+name: Build AdGuardHome Rules (Sharded Multi-Source)
 
 on:
   schedule:
@@ -32,8 +32,8 @@ jobs:
           pip install --upgrade pip
           pip install dnspython tqdm requests
 
-      # 4️⃣ 下载规则源
-      - name: Download rules
+      # 4️⃣ 下载所有源
+      - name: Download all rule sources
         run: |
           mkdir -p tmp dist
           while read url; do
@@ -42,14 +42,8 @@ jobs:
             curl -sSL "$url" -o "$file_name"
           done < urls.txt
 
-      # 5️⃣ 合并规则文件
-      - name: Merge rules
-        run: |
-          cat tmp/* > tmp/merged_rules.txt
-          echo "Merged $(wc -l < tmp/merged_rules.txt) rules"
-
-      # 6️⃣ 运行多线程 DNS 验证
-      - name: Validate rules
+      # 5️⃣ 分片轮替验证脚本
+      - name: Validate rules (sharded multi-thread)
         run: |
           python <<'EOF'
 #!/usr/bin/env python3
@@ -57,6 +51,7 @@ import concurrent.futures
 import dns.resolver
 import re
 from tqdm import tqdm
+import glob
 
 resolver = dns.resolver.Resolver()
 resolver.timeout = 1
@@ -83,10 +78,7 @@ def is_valid_domain(rule: str) -> bool:
     except:
         return True
 
-def validate_batch(input_file: str, output_file: str, batch_size: int = 50000, max_workers: int = 200):
-    with open(input_file, "r", encoding="utf-8") as f:
-        rules = [line.strip() for line in f if line.strip() and not line.startswith("#")]
-
+def validate_batch(rules, batch_size=50000, max_workers=200):
     valid = []
     total_rules = len(rules)
 
@@ -98,16 +90,30 @@ def validate_batch(input_file: str, output_file: str, batch_size: int = 50000, m
                 if ok:
                     valid.append(rule)
         print(f"Processed {min(i+batch_size, total_rules)}/{total_rules} rules, valid: {len(valid)}")
+    return valid
 
-    with open(output_file, "w", encoding="utf-8") as f:
-        f.write("\n".join(valid))
+# ===============================
+# 读取所有源文件，按源分片轮替处理
+# ===============================
+all_rules = []
+for file_path in sorted(glob.glob("tmp/*")):
+    with open(file_path, "r", encoding="utf-8") as f:
+        rules = [line.strip() for line in f if line.strip() and not line.startswith("#")]
+        all_rules.extend(rules)
 
-    print(f"✅ Finished: {input_file} → {output_file}, total: {total_rules}, valid: {len(valid)}, removed: {total_rules - len(valid)}")
+print(f"Total rules loaded from all sources: {len(all_rules)}")
 
-validate_batch("tmp/merged_rules.txt", "dist/valid_rules.txt")
+# 验证所有规则
+valid_rules = validate_batch(all_rules)
+
+# 写入结果
+with open("dist/valid_rules.txt", "w", encoding="utf-8") as f:
+    f.write("\n".join(valid_rules))
+
+print(f"✅ Finished validation: total {len(all_rules)}, valid {len(valid_rules)}, removed {len(all_rules)-len(valid_rules)}")
 EOF
 
-      # 7️⃣ 上传结果到仓库
+      # 6️⃣ 提交结果到仓库
       - name: Commit & Push
         run: |
           git config user.name "github-actions"

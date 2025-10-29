@@ -23,8 +23,10 @@ jobs:
       PYTHONUNBUFFERED: 1
 
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Python
         uses: actions/setup-python@v4
@@ -41,9 +43,9 @@ jobs:
           mkdir -p tmp
           LAST_PART_FILE="tmp/last_part.txt"
 
-          # 拉取最新仓库记录
+          # 拉取仓库最新的 last_part.txt 和分片
           git fetch origin main
-          git checkout origin/main -- tmp/last_part.txt || echo "⚠ tmp/last_part.txt 不存在"
+          git checkout origin/main -- tmp/last_part.txt tmp/part_*.txt merged_rules.txt || echo "⚠ 文件可能不存在，稍后自动生成"
 
           PART_INPUT="${{ github.event.inputs.part }}"
 
@@ -62,9 +64,6 @@ jobs:
 
           # 保存下一次使用
           echo $PART > $LAST_PART_FILE
-          git add $LAST_PART_FILE
-          git commit -m "🤖 Update last_part to $PART" || echo "No changes"
-          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
 
           echo "part=$PART" >> $GITHUB_OUTPUT
 
@@ -125,7 +124,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
           if ls dist/validated_part_*.txt 1> /dev/null 2>&1; then
-            git add dist/validated_part_*.txt tmp/part_*.txt logs/
+            git add dist/validated_part_*.txt tmp/part_*.txt logs/ merged_rules.txt
             git commit -m "🤖 Auto update: validated part $PART" || echo "No changes to commit"
             git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
           else

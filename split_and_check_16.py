@@ -1,3 +1,5 @@
+
+
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 import os
@@ -13,8 +15,7 @@ DIST_DIR = "dist"
 MASTER_RULE = "merged_rules.txt"
 PARTS = 16
 DNS_WORKERS = 50
-DNS_TIMEOUT = 3
-BATCH_SIZE = 500
+DNS_TIMEOUT = 2
 DELETE_COUNTER_FILE = os.path.join(DIST_DIR, "delete_counter.json")
 DELETE_THRESHOLD = 4
 
@@ -80,21 +81,19 @@ def check_domain(rule):
 
 
 def dns_validate(lines):
-    print(f"🚀 启动 {DNS_WORKERS} 并发验证，分批 {BATCH_SIZE} 条")
+    print(f"🚀 启动 {DNS_WORKERS} 并发验证")
     valid = []
-    total = len(lines)
-    for start in range(0, total, BATCH_SIZE):
-        batch = lines[start:start+BATCH_SIZE]
+    with ThreadPoolExecutor(max_workers=DNS_WORKERS) as executor:
+        futures = {executor.submit(check_domain, rule): rule for rule in lines}
+        total = len(lines)
         done = 0
-        with ThreadPoolExecutor(max_workers=DNS_WORKERS) as executor:
-            futures = {executor.submit(check_domain, rule): rule for rule in batch}
-            for future in as_completed(futures):
-                done += 1
-                result = future.result()
-                if result:
-                    valid.append(result)
-                if done % 50 == 0:
-                    print(f"✅ 批 {start//BATCH_SIZE + 1} 已验证 {done}/{len(batch)} 条规则，有效 {len(valid)} 条")
+        for future in as_completed(futures):
+            done += 1
+            result = future.result()
+            if result:
+                valid.append(result)
+            if done % 500 == 0:
+                print(f"✅ 已验证 {done}/{total} 条，有效 {len(valid)} 条")
     print(f"✅ 分片验证完成，有效 {len(valid)} 条")
     return valid
 
@@ -141,10 +140,14 @@ def process_part(part):
     for rule in old_rules | set(lines):
         if rule in valid:
             final_rules.add(rule)
+            if rule in delete_counter:
+                print(f"🔄 验证成功，清零删除计数: {rule}")
+            # 验证成功清零计数
             new_delete_counter[rule] = 0
         else:
             count = delete_counter.get(rule, 0) + 1
             new_delete_counter[rule] = count
+            print(f"⚠ 连续删除计数 {count}/{DELETE_THRESHOLD}: {rule}")
             if count >= DELETE_THRESHOLD:
                 removed_count += 1
             else:
@@ -157,7 +160,7 @@ def process_part(part):
     with open(out_file, "w", encoding="utf-8") as f:
         f.write("\n".join(sorted(final_rules)))
 
-    print(f"✅ 分片 {part} 完成: 总数 {len(final_rules)}, 新增 {added_count}, 删除 {removed_count}")
+    print(f"✅ 分片 {part} 完成: 总 {len(final_rules)}, 新增 {added_count}, 删除 {removed_count}")
 
 
 if __name__ == "__main__":

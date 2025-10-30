@@ -2,7 +2,7 @@ name: Split & DNS Check
 
 on:
   schedule:
-    # 每天 UTC 0:00, 6:00, 12:00, 18:00 强制更新 urls.txt 并生成分片
+    # 每天 UTC 0,6,12,18 强制更新规则源
     - cron: "0 0,6,12,18 * * *"
     # 每 15 分钟轮替一片
     - cron: "0,15,30,45 * * * *"
@@ -61,6 +61,7 @@ jobs:
             fi
             echo "⏱ 自动轮替验证分片 $PART"
           fi
+
           echo "$PART" > "$LAST_PART_FILE"
 
           PART_FILE=$(printf "tmp/part_%02d.txt" "$PART")
@@ -75,6 +76,7 @@ jobs:
         run: |
           set -e
           PART=$(cat .last_part)
+          mkdir -p logs
           python split_and_check_16.py --part "$PART" | tee "logs/split_check_part_${PART}.log"
 
       - name: Commit & Push Validated Rules

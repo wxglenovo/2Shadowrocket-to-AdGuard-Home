@@ -40,44 +40,31 @@ jobs:
         shell: bash
         run: |
           mkdir -p tmp
-          LAST_PART_FILE="tmp/last_part.txt"
+          LAST_FILE="tmp/last_part.txt"
           git fetch origin main
-          git checkout origin/main -- tmp/last_part.txt || echo "⚠ tmp/last_part.txt 不存在"
+          git checkout origin/main -- tmp/last_part.txt || true
           PART_INPUT="${{ github.event.inputs.part }}"
           if [ -n "$PART_INPUT" ]; then
             PART="$PART_INPUT"
-            echo "🛠 手动指定分片：$PART"
           else
-            if [ -f "$LAST_PART_FILE" ]; then
-              LAST=$(cat "$LAST_PART_FILE")
+            if [ -f "$LAST_FILE" ]; then
+              LAST=$(cat "$LAST_FILE")
               PART=$(( (LAST % 16) + 1 ))
             else
               PART=1
             fi
-            echo "⏱ 自动轮替分片：$PART"
           fi
-          echo "$PART" > "$LAST_PART_FILE"
+          echo "$PART" > "$LAST_FILE"
           echo "part=$PART" >> $GITHUB_OUTPUT
 
-      - name: Force download rules at schedule times
+      - name: Force download rules at schedule
         shell: bash
         run: |
           CURRENT_HOUR=$(date -u +"%H")
           echo "⏱ 当前 UTC 小时：$CURRENT_HOUR"
           if [[ "$CURRENT_HOUR" == "00" || "$CURRENT_HOUR" == "06" || "$CURRENT_HOUR" == "12" || "$CURRENT_HOUR" == "18" ]]; then
-            echo "✅ 强制下载规则源并生成分片"
             python split_and_check_16.py --force-update
-          else
-            echo "⏩ 非下载时间，不强制更新"
-
-      - name: Ensure rules & first part exist
-        shell: bash
-        run: |
-          if [ ! -f merged_rules.txt ] || [ ! -f tmp/part_01.txt ]; then
-            echo "⚠ 缺少规则文件或分片，自动生成"
-            python split_and_check_16.py --force-update
-          else
-            echo "✅ 规则文件和分片存在"
+          fi
 
       - name: Run DNS validation & collect stats
         shell: bash
@@ -85,16 +72,13 @@ jobs:
           PART: ${{ steps.detect.outputs.part }}
         run: |
           mkdir -p logs dist
-          echo "⏱ 开始验证分片 $PART"
-
-          STATS_JSON=$(python split_and_check_16.py --part "$PART" --stats-json)
-          TOTAL=$(echo "$STATS_JSON" | python -c "import sys,json; print(json.load(sys.stdin)['total'])")
-          ADDED=$(echo "$STATS_JSON" | python -c "import sys,json; print(json.load(sys.stdin)['added'])")
-          REMOVED=$(echo "$STATS_JSON" | python -c "import sys,json; print(json.load(sys.stdin)['removed'])")
-
+          STATS=$(python split_and_check_16.py --part "$PART")
+          # 提取总数/新增/删除
+          TOTAL=$(echo $STATS | grep -oP '总数 \K\d+')
+          ADDED=$(echo $STATS | grep -oP '新增 \K\d+')
+          REMOVED=$(echo $STATS | grep -oP '删除 \K\d+')
           echo "STAT_LINE=总数 $TOTAL, 新增 $ADDED, 删除 $REMOVED" >> $GITHUB_ENV
           echo "✅ 分片 $PART 验证完成: $STAT_LINE"
-
           python split_and_check_16.py --part "$PART" | tee logs/split_check_part_${PART}.log
 
       - name: Commit & Push Validated Rules
@@ -104,9 +88,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          git add tmp/last_part.txt dist/validated_part_*.txt tmp/part_*.txt logs/ merged_rules.txt
+          git add tmp/last_part.txt dist/validated_part_*.txt tmp/part_*.txt logs/ merged_rules.txt dist/validated_summary.log
           git commit -m "🤖 Auto update: validated part $PART
 ${STAT_LINE}" || echo "No changes"
-          git pull --rebase origin main || echo "⚠ Pull failed or nothing to rebase"
+          git pull --rebase origin main || true
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main

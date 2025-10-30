@@ -1,3 +1,34 @@
+||w2txo5aa-32f2bfdf48ee3113a195e7724ad3166d94e979a0-sac.d.aa.online-metrix.net^
+||w2txo5aa-4872bb6066633201343a5d42846d1b13388c4223-am1.d.aa.online-metrix.net^
+||w2txo5aa-67123b9f6cac60168467deaec584955c3cf483d8-am1.d.aa.online-metrix.net^
+||w2w-online.com^
+||w2w.24x7help.org^
+||w2yjlqaabu1rjjx0.everesttech.net^
+||w3-reporting-csp.reddit.com^
+||w3-reporting-nel.reddit.com^
+||w3-reporting.reddit.com^
+||w3.0-01-lib-oa-1-admin8.net.daraz.com^
+||w3.0-01-lib-oa-1-administrators-csr40.net.daraz.com^
+||w3.153.lvruan.com^
+||w3.153.yhlg.com^
+||w3.air-worldwide.com^
+||w3.aktionaersbank.de^
+||w3.am15.net^
+||w3.amegybank.com^
+||w3.bitterstrawberry.com^
+||w3.calbanktrust.com^
+||w3.cnkk.org^
+||w3.extreme-dm.com^
+||w3.flatex.at^
+||w3.flatex.de^
+||w3.flatex.es^
+||w3.flatex.nl^
+||w3.gdyl2.ru^
+||w3.hitbox.com^
+||w3.nbarizona.com^
+||w3.nsbank.com^
+||w3.providerpay.com^
+||w3.tcboregon.com^
 ||w3.tcbwa.com^
 ||w3.ting55.com^
 ||w3.vectrabank.com^
@@ -8187,6 +8218,7 @@
 ||wdguidebooks.com^
 ||wdgvxhelpdisneyplusprod.112.2o7.net^
 ||wdgvxhelphuluprod.112.2o7.net^
+||wdh.bo3l.ru^
 ||wdhcco.com^
 ||wdhcqn.info^
 ||wdhubbs.us^
@@ -10122,13 +10154,11 @@
 ||web2proxy.net^
 ||web2proxy4u.info^
 ||web2repository.com^
-||web2site.im^
 ||web2up.com^
 ||web3-ads.adk2.co^
 ||web3-check.com^
 ||web3-connect-wallet.webflow.io^
 ||web3-dapps.xyz^
-||web3-exodso-io.pages.dev^
 ||web3-exodss.pages.dev^
 ||web3-imabooks.tk^
 ||web3-ledgervault.pro^
@@ -10163,9 +10193,6 @@
 ||web39.voodoo.com^
 ||web3ads.net^
 ||web3ads.net^$third-party
-||web3ai-defi.com^
-||web3ai-defi.net^
-||web3ai-defi.vip^
 ||web3authorization-restore.net^
 ||web3basedsurfjusts5.tk^
 ||web3basedsurfs.tk^
@@ -10235,7 +10262,6 @@
 ||web7.perkinelmer.com^
 ||web7.voodoo.com^
 ||web75759505679.nut.cc^
-||web76r2e15f.weebly.com^
 ||web777-8surf.tk^
 ||web78650.tk^
 ||web7connectvision.online^
@@ -11543,7 +11569,6 @@
 ||weblifehealth.com^
 ||weblike.cl^
 ||weblimiteds.org^
-||weblimpanome.github.io^
 ||webline22.ru^
 ||weblinetunesconnect.com^
 ||weblininstaller.com^
@@ -13269,6 +13294,7 @@
 ||websrv.insert.io^
 ||webss.ru^
 ||webssearches.com^
+||webssit.com^
 ||webssl.info^
 ||websstitleproxys.tk^
 ||webssupport.ddns.net^
@@ -13903,6 +13929,7 @@
 ||webwebfenxi.189.cn^
 ||webwebget.com^
 ||webweft.com^
+||webwehda.webflow.io^
 ||webwendy.com^
 ||webwereld.nl.intellitxt.com^
 ||webwet.tk^
@@ -14052,6 +14079,7 @@
 ||wecut.com.br^
 ||wecvhi.ekftei2weudt.info^
 ||wecyjtnykvebc.online^
+||wecypay.com^
 ||wed.dj^
 ||wed.pl8a.ru^
 ||wedannouncements.com^
@@ -14512,6 +14540,7 @@
 ||weichongyisheng.cn^
 ||weichuanggroup.com.cn^
 ||weichudao.top^
+||weico.org^
 ||weicreative.com^
 ||weicun.xyz^
 ||weidafreight.rf.gd^
@@ -14746,6 +14775,7 @@
 ||welch4inc.com^
 ||welcohomeappliances.com^
 ||welcom31.000webhostapp.com^
+||welcome--ledgerlive-en-us.webflow.io^
 ||welcome-ayxtiyu.com^
 ||welcome-media.fr^
 ||welcome-perspective-278515.framer.app^
@@ -17035,6 +17065,7 @@
 ||whaijoorgoo.com^
 ||whainteryield.jmp9.com^
 ||whainvbot.com^
+||whaiphaugraurt.com^
 ||whairtoa.com^
 ||whairtoa.com^$popup
 ||whakatanehomepage.co.nz^
@@ -17202,17 +17233,15 @@
 ||whatproxy.ml^
 ||whatrunswhere.go2cloud.org^
 ||whats-bel.platfirm.top^
-||whats-dn.vip^
 ||whats-invest.online^
 ||whats-invest.site^
 ||whats-this-called.tk^
 ||whats-this.tk^
+||whats-ut.vip^
 ||whats-wl.platfirm.top^
 ||whats-xtl.vip^
 ||whats-xts.vip^
 ||whats-xtx.vip^
-||whats-xwi.vip^
-||whats-xwy.vip^
 ||whats-xya.vip^
 ||whats-xyd.vip^
 ||whats-xys.vip^
@@ -19274,6 +19303,7 @@
 ||whstvdsqpzlaa.website^
 ||whsxcm.com^
 ||whtester.com^
+||whtgpcykrbqum.online^
 ||whtianboo.com^
 ||whtrsheljrpso.rocks^
 ||whtsrv9.com^
@@ -20060,6 +20090,7 @@
 ||wietgram.com^
 ||wiets.com^
 ||wieumentfernenvirus.com^
+||wieuydyewy.weebly.com^
 ||wievforum.wallst.ru^
 ||wiezienlabiryntu.pl^
 ||wiezvhxoqhnn.com^
@@ -21403,7 +21434,6 @@
 ||windacerbity.com^
 ||windadblocker.com^$popup
 ||windaily.tk^
-||windatem.com^
 ||windbellstore.com^
 ||windbend.click^
 ||windbests.com^
@@ -24480,6 +24510,7 @@
 ||wjgohz.com^
 ||wjgravier.us.kzpcmad.tk^
 ||wjguc.com^
+||wjhanonquilpp.store^
 ||wjhefjot.000webhostapp.com^
 ||wjhfaawt.com^
 ||wjhyljsatmw.info^
@@ -24919,6 +24950,7 @@
 ||wljjgn.loan^
 ||wljjgq.loan^
 ||wljmgn.loan^
+||wljrvynqkzdvn.site^
 ||wljsgc.loan^
 ||wljsgp.loan^
 ||wljsgt.loan^
@@ -25509,6 +25541,7 @@
 ||wnybornxeukq.com^
 ||wnyc.org/analytics/
 ||wnycooling.com^
+||wnydnxop.com^
 ||wnys1.com^
 ||wnywe.com^
 ||wnyywf.frankonia.de^
@@ -26220,6 +26253,7 @@
 ||woodenmarten.pro^
 ||woodenoyster.pro^
 ||woodenporcupine.pro^
+||woodenships-wholesale.com^
 ||woodenside.pro^
 ||woodenstepup.com^
 ||woodentermite.pro^
@@ -27137,7 +27171,6 @@
 ||workschoolsurfing.info^
 ||worksfire.co.cc^
 ||workshop-buddy.com^
-||workshopbox.github.io^
 ||workshopj.com^
 ||workshopjs.fishdns.com^
 ||workshopmodcontent.com^
@@ -28675,6 +28708,7 @@
 ||wq14u.com^
 ||wq24-1.g-site.store^
 ||wq4zenp5.top^
+||wq7.1z22k.ru^
 ||wq9.0o-js.ru^
 ||wq9.227-m.ru^
 ||wq9.7-j230.ru^
@@ -29688,6 +29722,7 @@
 ||wskazywac-wygranych.eu^
 ||wskcruise.com^
 ||wskei.cn^
+||wskengenharia.com.br^
 ||wsknjzjwlyrically.review^
 ||wsknow.net^
 ||wsksrvhet.xyz^
@@ -31431,7 +31466,6 @@
 ||ww856.smartadserver.com^
 ||ww881.smartadserver.com^
 ||ww8zz.ouasflpydty21tf.bapb.gdn^
-||ww9.intepsa.com^
 ||ww9.kohls.com^
 ||ww9.lloydsbank.com^
 ||ww946.smartadserver.com^
@@ -31514,6 +31548,7 @@
 ||wwe2k14superstarsdlc.goblogz.net^
 ||wwe2kbeta.com^
 ||wweapple.com^
+||wwebadminn.weebly.com^
 ||wwebdesign.nl^
 ||wweconsumer.112.2o7.net^
 ||wwecorp2.112.2o7.net^
@@ -31850,7 +31885,6 @@
 ||www-bofasummary-com.membership.editmysite.com^
 ||www-boxberry-trackcode.ru^
 ||www-check.shop^
-||www-checkpoints-pages-contacts.ubpages.com^
 ||www-chillhouse.network^
 ||www-choisir-lockers.com^
 ||www-choisir-pickup-fr.com^
@@ -32128,7 +32162,6 @@
 ||www-sbihinsei-id.xingcai21e.cyou^
 ||www-sbihinsei-id.yfpgij.top^
 ||www-sbisec-co-jp.cnaot.com^
-||www-sbisec-co-jp.freemanwm.com^
 ||www-sbisec-co-jp.huahaiwujin.com^
 ||www-sbisec-co-jp.keeyosmart.com^
 ||www-sbisec-co-jp.motorshifi.com^
@@ -32292,6 +32325,7 @@
 ||www.0075544.info^
 ||www.007v.ru^
 ||www.008.free-counter.co.uk^
+||www.00800.vip^
 ||www.008k.com^
 ||www.00apple00.com^
 ||www.00b0f00log00n0.000webhostapp.com^
@@ -37042,6 +37076,7 @@
 ||www.3650393.com^
 ||www.36505.net^
 ||www.3650933.com^
+||www.3651234.com^
 ||www.3651330.com^
 ||www.3651353.com^
 ||www.3651533.com^
@@ -40049,6 +40084,7 @@
 ||www.806av.com^
 ||www.807518.com^
 ||www.80797.com^
+||www.807xpj.com^
 ||www.808-fitness.com-oo4.net^
 ||www.808116.com^
 ||www.8089779g.890m.com^
@@ -57697,6 +57733,7 @@
 ||www.amazingunigrace.nl^
 ||www.amazingvideorun.com^
 ||www.amazingyangon.com^
+||www.amazmivoma.com^
 ||www.amazn-update.com^
 ||www.amazon-accountant.com^
 ||www.amazon-active.com^
@@ -58719,6 +58756,7 @@
 ||www.amysyw1kgc31jmaj5z5qkeqhf.net^
 ||www.amythas.com^
 ||www.amyz.xt.pl^
+||www.amz-surprise.online^
 ||www.amz00000.com^
 ||www.amzcard.download^
 ||www.amzcodes.download^
@@ -60276,6 +60314,7 @@
 ||www.antiquehostel.ro^
 ||www.antiquemirrorslondon.com^
 ||www.antiquesandcollectables.online^
+||www.antiquewhite-woodcock-764696.hostingersite.com^
 ||www.antiquitesmaison.com^
 ||www.antiquits.com^
 ||www.antirughenaturale.com^
@@ -70082,6 +70121,7 @@
 ||www.autopricep.kz^
 ||www.autoprime.in^
 ||www.autoprof.es^
+||www.autoprofithub.net^
 ||www.autoprofithub.org^
 ||www.autopromotor.ro^
 ||www.autoprop.fr^
@@ -71082,6 +71122,7 @@
 ||www.axahfqquroamed.review^
 ||www.axan.co.uk^
 ||www.axantum.com^
+||www.axapartners.co^
 ||www.axaritowers.com^
 ||www.axasegurosagenciacadiz.com^
 ||www.axbcv.bid^
@@ -77067,6 +77108,8 @@
 ||www.bet365-bonus-code.org^
 ||www.bet365affiliates-support.com^
 ||www.bet365bby.com^
+||www.bet365h1.cc^
+||www.bet365h7.net^
 ||www.bet365tiyu03.com^
 ||www.beta-cell.com^
 ||www.beta-cmsadmix.com^
@@ -101916,20 +101959,3 @@
 ||www.code-om97.stream^
 ||www.code-on17.stream^
 ||www.code-on37.stream^
-||www.code-on57.stream^
-||www.code-on77.stream^
-||www.code-on97.stream^
-||www.code-op17.stream^
-||www.code-op37.stream^
-||www.code-op57.stream^
-||www.code-op77.stream^
-||www.code-op97.stream^
-||www.code-opq17.stream^
-||www.code-opq34.stream^
-||www.code-oq17.stream^
-||www.code-oq37.stream^
-||www.code-oq57.stream^
-||www.code-oq77.stream^
-||www.code-oq97.stream^
-||www.code-or17.stream^
-||www.code-or37.stream^

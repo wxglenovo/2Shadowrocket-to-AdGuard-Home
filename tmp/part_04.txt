@@ -1,3 +1,68 @@
+||chronosurge.website^
+||chronoverify.com^
+||chronovialab.icu^
+||chronovista.cyou^
+||chronowarp.site^
+||chronoz.info^
+||chronozodmirrora.quest^
+||chrooo.soccerandrugby.com^
+||chropro.com^
+||chrs-garbsen.de^
+||chrs-mln-krs.com^
+||chrumedia.com^
+||chrupczakphoto.com^
+||chry.info^
+||chryler.com^
+||chrysalis.org.au^
+||chrysalisinteractive.com^
+||chryselssigns.com^
+||chryslerjeepcom.mpeasylink.com^
+||chryslerlouisville.com^
+||chryslerremotes.com^
+||chrysmaccabees.com^
+||chrysostrck.com^
+||chrysostrck.com^$popup
+||chrysrisar.com^
+||chrystal31.hookupdating33.com^
+||chryvast.com^
+||chs-lb.com^
+||chs-matomo-1238305517.eu-west-2.elb.amazonaws.com^
+||chs-pvt.us^
+||chs.gr^
+||chs1nc.com^
+||chs2.firebaseapp.com^
+||chs2.web.app^
+||chsepro.com^
+||chservermin.com^
+||chsh.ml^
+||chshcms.net^
+||chsia750.host^
+||chsian0.com^
+||chsian5.com^
+||chslwea.top^
+||chsn.edu.bd^
+||chsnjrotc.org^
+||chsnovi.org^
+||chsplantsales.co.uk^
+||chsprintsupport.com^
+||chsprintsupport.info^
+||chsprintsupport.net^
+||chsprintsupport.org^
+||chsrkred.com^
+||chstarkeco.com^
+||chstlk.com^
+||chsupport-www.partner.net.daraz.com^
+||cht-br.com^
+||chtatic.appspot.com^
+||chtbl.com^
+||chtbl.com^$script,third-party,xmlhttprequest
+||chtcauto.cn^
+||chtday24.com^
+||chtechnic.com.my^
+||chtic.net^
+||chtintr.com^
+||chtntor.com^
+||chtntr.com^
 ||chtntwgyhixef.website^
 ||chtoelalena.ru^
 ||chtomcat-www.partner.net.daraz.com^
@@ -486,7 +551,6 @@
 ||ci67.actonsoftware.com^
 ||ci68.actonsoftware.com^
 ||ci69.actonsoftware.com^
-||ci69699-wordpress-eorzg.tw1.ru^
 ||ci7.info^
 ||ci7.xg5e7.ru^
 ||ci70.actonsoftware.com^
@@ -1178,6 +1242,7 @@
 ||cinarra.com^$third-party
 ||cinarspa.com^
 ||cinbevfortefver.com^
+||cinbiseproologiusg.godaddysites.com^
 ||cincapa.xyz^
 ||cincherwarse.qpon^
 ||cinchonicinvik.info^
@@ -2811,6 +2876,7 @@
 ||ckhtqypqrwuqv.online^
 ||ckhucfvwvuxc.in^
 ||cki.credityou.cn^
+||cki.fe7a.ru^
 ||ckianmeyjnw.com^
 ||ckidkina.ru^
 ||ckies.net^
@@ -3232,7 +3298,6 @@
 ||claim-snapx.xyz^
 ||claim-snortertoken.live^
 ||claim-snortertokens.com^
-||claim-vultisig.xyz^
 ||claim-wallet.com^
 ||claim-xyotokens.com^
 ||claim-your-prizes-here.life^
@@ -11495,6 +11560,7 @@
 ||cloudcoin.support^
 ||cloudcoins.biz^
 ||cloudcoins.co^
+||cloudcollect.meitudata.com^
 ||cloudcomputerexperts.com^
 ||cloudcon2nectclick.online^
 ||cloudconex.com^
@@ -12201,7 +12267,6 @@
 ||clsvndfrontcar31.net.daraz.com^
 ||clsvugmivpf.com^
 ||clswednesday.co.in^
-||clsy-creneau.com^
 ||clsyxddpbt.com^
 ||clt-ameli-assurance.center^
 ||clt.banggood.com^
@@ -14240,38 +14305,6 @@
 ||cnhv.co^
 ||cnhv.co^$third-party
 ||cnhv.com^
-||cnic-probe-aws-asia-tokyo-live-1761604801.xyz^
-||cnic-probe-aws-asia-tokyo-live-1761605401.xyz^
-||cnic-probe-aws-asia-tokyo-live-1761605701.xyz^
-||cnic-probe-aws-asia-tokyo-live-1761607201.xyz^
-||cnic-probe-aws-asia-tokyo-live-1761607801.xyz^
-||cnic-probe-aws-asia-tokyo-live-1761609002.online^
-||cnic-probe-aws-asia-tokyo-live-1761609601.online^
-||cnic-probe-aws-eu-frankfurt-live-1761604501.xyz^
-||cnic-probe-aws-eu-frankfurt-live-1761606602.xyz^
-||cnic-probe-aws-eu-frankfurt-live-1761611101.online^
-||cnic-probe-aws-eu-frankfurt-live-1761612601.online^
-||cnic-probe-aws-north-america-oregon-live-1761605101.xyz^
-||cnic-probe-aws-north-america-oregon-live-1761606301.xyz^
-||cnic-probe-aws-north-america-oregon-live-1761608401.xyz^
-||cnic-probe-aws-north-america-oregon-live-1761608402.online^
-||cnic-probe-aws-north-america-oregon-live-1761610502.online^
-||cnic-probe-aws-north-america-oregon-live-1761610801.online^
-||cnic-probe-aws-north-america-oregon-live-1761611401.online^
-||cnic-probe-aws-north-america-oregon-live-1761612901.online^
-||cnic-probe-aws-north-america-vir-live-1761604201.xyz^
-||cnic-probe-aws-north-america-vir-live-1761606901.xyz^
-||cnic-probe-aws-north-america-vir-live-1761608101.xyz^
-||cnic-probe-aws-north-america-vir-live-1761609902.online^
-||cnic-probe-aws-oceania-sydney-live-1761606001.xyz^
-||cnic-probe-aws-oceania-sydney-live-1761607501.xyz^
-||cnic-probe-aws-oceania-sydney-live-1761608702.online^
-||cnic-probe-aws-oceania-sydney-live-1761608702.xyz^
-||cnic-probe-aws-oceania-sydney-live-1761609301.online^
-||cnic-probe-aws-oceania-sydney-live-1761610202.online^
-||cnic-probe-aws-oceania-sydney-live-1761611701.online^
-||cnic-probe-aws-oceania-sydney-live-1761612002.online^
-||cnic-probe-aws-oceania-sydney-live-1761612301.online^
 ||cnidaplay.com^
 ||cnidc.us^
 ||cnidk1ahf2.neliver.com^
@@ -14745,7 +14778,6 @@
 ||cnwnews.com/templets/images/artpangu.gif
 ||cnwnews.com/templets/images/jccf
 ||cnwuamf.top^
-||cnwucnf.top^
 ||cnwvlz1nmd.neliver.com^
 ||cnwzzw.info^
 ||cnx0ttb9jp.neliver.com^
@@ -18052,6 +18084,7 @@
 ||codecupcake.com^
 ||codecupdate.com^
 ||coded.ddns.net^
+||coded404-see.mdbgo.io^
 ||codedbooks.tk^
 ||codedbrains.tk^
 ||codedexchange.com^
@@ -18801,7 +18834,6 @@
 ||coinartfusion.com^
 ||coinat.com^
 ||coinatom.com^
-||coinbae.cn^
 ||coinbaessupportnumber.club^
 ||coinbaesupporthelplinenumber.online^
 ||coinbaise.com^
@@ -18816,16 +18848,17 @@
 ||coinbase-card.ru^
 ||coinbase-codepromo.com^
 ||coinbase-customer-support.online^
+||coinbase-en-eng.pages.dev^
 ||coinbase-eth-giveaway.com^
 ||coinbase-getcrypto.890m.com^
 ||coinbase-gift.tumblr.com^
 ||coinbase-give.com^
 ||coinbase-helpdesk.info^
 ||coinbase-loginn.pages.dev^
-||coinbase-mailbox.support^
 ||coinbase-medium.tumblr.com^
 ||coinbase-news.tumblr.com^
 ||coinbase-pro-logi.pages.dev^
+||coinbase-pro-login-cdn.pages.dev^
 ||coinbase-pro-login867.godaddysites.com^
 ||coinbase-pro.org^
 ||coinbase-prrologin7.godaddysites.com^
@@ -18857,7 +18890,6 @@
 ||coinbasepay.info^
 ||coinbasepro-giveaway.com^
 ||coinbasepro10000.webcindario.com^
-||coinbaseprologic.webflow.io^
 ||coinbasepromo.webcindario.com^
 ||coinbasesecuritytokens.com^
 ||coinbasespromo.tumblr.com^
@@ -18870,6 +18902,7 @@
 ||coinbasevvallet.gitbook.io^
 ||coinbasewallets.store^
 ||coinbayou.com^
+||coinbcveprologix.gitbook.io^
 ||coinbene.net^
 ||coinbest.org^
 ||coinbit24.site^
@@ -19032,6 +19065,7 @@
 ||coininsider.com^
 ||coininstagram.com^
 ||coinio.cc^
+||coinjbaseprozlogiii.godaddysites.com^
 ||coinjive.com^
 ||coinjumpj.top^
 ||coinjumpk.top^
@@ -27568,6 +27602,7 @@
 ||conavestimoluripadrexu.store^
 ||conbe-9prologi.godaddysites.com^
 ||conbenlkkceeabcf.online^
+||conbesspprolloghini.godaddysites.com^
 ||conbuhandoirs.cf^
 ||conc1setrack9.com^
 ||concabisog.pro^
@@ -28330,6 +28365,7 @@
 ||confirm-my-account-details.net^
 ||confirm-my-idenfity-account.start.page^
 ||confirm-newstatement.com^
+||confirm-order221.xyz^
 ||confirm-paypal-usa.com^
 ||confirm-ppl-steps.ml^
 ||confirm-referer.glrsales.com^
@@ -38329,6 +38365,7 @@
 ||courtenayharry.blogspot.com^
 ||courteneycop.tk^
 ||courtensdreef.xyz^
+||courteous-garage.com^
 ||courtesyas-offices.tk^
 ||courtesyas8-offices.tk^
 ||courtesyasbest.tk^
@@ -38391,6 +38428,7 @@
 ||covazay.icu^
 ||covbistride.review^
 ||cove.n4ym.online^
+||cove.r-9-xa.ru^
 ||coveermyspace.info^
 ||coveforttowing.com^
 ||coven-ilyar.net^
@@ -38998,7 +39036,6 @@
 ||cpanel-global.com^
 ||cpanel-log.000webhostapp.com^
 ||cpanel-rcpfghygfdrftgyujt.github.io^
-||cpanel-usa.com^
 ||cpanel-v2-interaction.net.daraz.com^
 ||cpanel-webmail-362bqp4s7i.pages.dev^
 ||cpanel-webmail-79b36bs74f.pages.dev^
@@ -40117,6 +40154,7 @@
 ||cpusurf.info^
 ||cputemperaturemonitorwindows10.com^
 ||cpuusages.co.cc^
+||cpux.gmud.top^
 ||cpuyehue.cl^
 ||cpuz.ru^
 ||cpv-adv.ggytc.com^
@@ -40517,7 +40555,6 @@
 ||cr738267-wordpress-98tnq.tw1.ru^
 ||cr7proxy.ga^
 ||cr7proxy.ml^
-||cr820031-wordpress-wwe17.tw1.ru^
 ||cr85725-wordpress-uog5a.tw1.ru^
 ||cr8box.com.au^
 ||cr9090worldrecord.wz.cz^
@@ -42195,7 +42232,6 @@
 ||creatuempleo.com^
 ||creaturecabbage.com^
 ||creaturefoundry.com^
-||creaturely-molly-2422.dataplicity.io^
 ||creatures.gr^
 ||creaturesanctuary.com^
 ||creatureupon.tk^
@@ -42620,6 +42656,7 @@
 ||crediwhatsapp.org^
 ||credliobhd2022.imi.lat^
 ||credltbhd2025rd.imi.lat^
+||crednix-app.com^
 ||crednix-app.net^
 ||crednixappai.com^
 ||credo.edu.pl^
@@ -44605,6 +44642,7 @@
 ||crocspolandsklep.com^
 ||crocssklep.shop^
 ||crocsy.com^
+||croctrammie.cfd^
 ||croea.com^
 ||croea.com^$third-party
 ||croesetranslations.com^
@@ -45677,6 +45715,7 @@
 ||crypto-snapchat.com^
 ||crypto-snapchat.uk^
 ||crypto-sprixultra360.com^
+||crypto-superstar.io^
 ||crypto-supporter.com^
 ||crypto-trade.biz^
 ||crypto-trader.cloud^
@@ -45951,6 +45990,7 @@
 ||cryptomarket-fx.com^
 ||cryptomarketgap.com^
 ||cryptomaster.care^
+||cryptomasters.app^
 ||cryptomcw.com^
 ||cryptomcw.com^$document
 ||cryptome.online^
@@ -46527,6 +46567,7 @@
 ||cs.xhlive.org^
 ||cs.yieldoptimizer.com^
 ||cs.zg-api.com^
+||cs0.fe7a.ru^
 ||cs0008sbeda.enzyme-supply.com^
 ||cs0008sbeda.moromi-koso-c.com^
 ||cs0008sbeda.moromi-koso.com^
@@ -48511,6 +48552,7 @@
 ||ctsdwm.com^
 ||ctseinc.com^
 ||ctsentry.somesiniste.tk^
+||ctsfactory.com^
 ||ctsh.fr^
 ||ctshirts.demdex.net^
 ||ctshirts.tt.omtrdc.net^
@@ -48868,7 +48910,6 @@
 ||cudfmkelimocy.space^
 ||cudgelyarr.icu^
 ||cudgoz.mifcom.de^
-||cudies.com^
 ||cudjgcnwoo-s.icu^
 ||cudjntck.com^
 ||cudohkaqu.lg.maxgrowth.ru^
@@ -53112,6 +53153,7 @@
 ||czea9hvedc.neliver.com^
 ||czech-girls.com^
 ||czech-sex.com^
+||czech-synergy.com^
 ||czech-teens.com^
 ||czechbiser.ru^
 ||czechhotelbooking.com^
@@ -55516,6 +55558,7 @@
 ||d2ky6ej7580qqy.cloudfront.net^
 ||d2kyy9hvbrzkgn.cloudfront.net^
 ||d2kz60b0gq4lg.cloudfront.net^
+||d2l.bo3l.ru^
 ||d2l3f1n039mza.cloudfront.net^
 ||d2l8bbn629wykr.cloudfront.net^
 ||d2lahoz916es9g.cloudfront.net^
@@ -57839,6 +57882,7 @@
 ||dahlie.org^
 ||dahllite.us^
 ||dahmeialeveque.blogspot.com^
+||dahnimusic.com^
 ||dahode-radere.pics^
 ||dahongahuntingsafaris.com^
 ||dahpixuky.kyepovobi.maxgrowth.ru^
@@ -59254,7 +59298,6 @@
 ||danielbeacham.com^
 ||danielboaventura.com.br^
 ||danielcobb.co.uk^
-||danieldannytly.weebly.com^
 ||danielebollero.it^
 ||danielefiore.com^
 ||danielemurra.com^
@@ -59707,6 +59750,7 @@
 ||dardenrestaurants.tt.omtrdc.net^
 ||dardescolly.com^
 ||dardiplomacia.com^
+||dardohaxee.net^
 ||dardzeglhpsqv.tech^
 ||dare-share.com^
 ||dare24.tk^
@@ -64970,7 +65014,6 @@
 ||datadynamiclab.website^
 ||datadynamicportal.space^
 ||datadynastylab7.click^
-||dataecho.cfd^
 ||dataencrypt.us^
 ||dataentrybposervices.com^
 ||dataerasure.net^
@@ -65984,6 +66027,7 @@
 ||daugavadreams.com^
 ||daugegeezeeboot.net^
 ||dauger.fr^
+||daughtari.com^
 ||daughterfather.net^
 ||daughterglossary.net^
 ||daughterinlawrib.com^
@@ -66126,6 +66170,7 @@
 ||davesgeneralstore.com^
 ||daveshearth.com^
 ||daveshobyshop.com^
+||daveshowa.com^
 ||davesmodelshop.com^
 ||davesousa.com^
 ||daveswebpage.net^
@@ -66339,7 +66384,6 @@
 ||dawarehouse.org^
 ||dawayo.com^
 ||dawbauxedivinised.review^
-||dawcockparanete5732.blob.core.windows.net^
 ||dawdawkhtny.ga^
 ||dawediu5.com^
 ||daweijita.com/201*430.
@@ -66735,7 +66779,6 @@
 ||db.puttme.gq^
 ||db.replayrink.com^
 ||db.riskwaters.com^
-||db.safemessaging.org^
 ||db.serendipidance.com^
 ||db.sextoysandmen.com^
 ||db.stonyrundesign.com^
@@ -68271,7 +68314,6 @@
 ||ddas.in^
 ||ddasdeadmsilatmaiui.arlamooz.net^
 ||ddata.huntingtonbank.com^
-||ddattsbc343f.weebly.com^
 ||ddaycounter.com^
 ||ddaynew.5demo.xyz^
 ||ddb56207b0.4dc005d17a.com^
@@ -70512,7 +70554,6 @@
 ||deep-betrixplatform.com^
 ||deep-content.io^
 ||deep-content.io^$third-party
-||deep-crash.com^
 ||deep-creativity.com^
 ||deep-down-under.tk^
 ||deep-echo.com^
@@ -72522,8 +72563,6 @@
 ||deliverytraffnews.com^
 ||deliverytried.org^
 ||deliverywbozon.ru^
-||deliveryweb-rotadosabor.shop^
-||deliveryweb-rotadosabor.top^
 ||delivra.com/tracking/$third-party
 ||delivsuper.pro^
 ||deliwery-olx-pl.info^
@@ -73284,7 +73323,6 @@
 ||demo.chengcoach.com^
 ||demo.cj.com^
 ||demo.classconnect.cloud^
-||demo.cloudcubesolutions.com^
 ||demo.cloudjet.org^
 ||demo.codechain.com^
 ||demo.com.hk^
@@ -73312,6 +73350,7 @@
 ||demo.gimixz.com.au^
 ||demo.glassforcars.com.au^
 ||demo.gomi.do^
+||demo.gradualinstituto.com.br^
 ||demo.grantsinger.com^
 ||demo.himaxwell.com^
 ||demo.hostfabrica.ru^
@@ -75200,6 +75239,7 @@
 ||designgroupabd.com^
 ||designguide.at^
 ||designguide.icu^
+||designh.co.kr^
 ||designindiaimpex.com^
 ||designinferno.com.au^
 ||designingcustomerexperience.com^
@@ -78279,6 +78319,7 @@
 ||dgjhrv.top^
 ||dgjinchijixie168.com^
 ||dgjjkkla.cn^
+||dgjjtiishmyuc.com^
 ||dgjlfdvqb.bid^
 ||dgjswgl.com^
 ||dgkaqo.com^
@@ -79618,6 +79659,7 @@
 ||dianrui.com^
 ||dianrxajze.neliver.com^
 ||diansaripratama.id^
+||dianshang999.vip^
 ||dianshihuanping.cn^
 ||diansp.com^
 ||diantajayasemesta.co.id^
@@ -82150,6 +82192,7 @@
 ||dingzhichilun.com^
 ||dinhdanhcutru.com^
 ||dinhdatreal.vn^
+||dinhex-gpt.com^
 ||dinhex-gpt.net^
 ||dinhexgpt-software.com^
 ||dinhlangdieukhac.net^
@@ -82636,7 +82679,6 @@
 ||directdexchange.com^$popup
 ||directdi6gcore.online^
 ||directdirectb3yte.store^
-||directdiscountcars.lat^
 ||directdl.com^
 ||directdls.com^
 ||directdlzones.blogspot.com^
@@ -83324,7 +83366,6 @@
 ||disciconvo.pro^
 ||disciform.us^
 ||discipleship.support^
-||disciplineadvisors.in^
 ||discipulaccion.com^
 ||discission.us^
 ||discitrans.pro^
@@ -87385,6 +87426,7 @@
 ||dlkfhlkjoirfgn.com^
 ||dlkjgjmy.com^
 ||dlkkl.weebly.com^
+||dlkliqrxt2.com^
 ||dlkoo.cc/down/$subdocument
 ||dlkoo.cc/down/*.htm$popup
 ||dlkoo.cc/down/copy
@@ -87718,6 +87760,7 @@
 ||dm1.3328.cn^
 ||dm1.ddwk8.cn^
 ||dm1.guanwawa.com^
+||dm1.r4tu.ru^
 ||dm1.yongkao.com^
 ||dm1.zjydt.com^
 ||dm1080p.com/tb/$script
@@ -91251,6 +91294,7 @@
 ||domainparkingmanager.it^
 ||domainparkingmanager.it^$document
 ||domainplayersclub.com^
+||domainprime.sa.com^
 ||domainpro.ir^
 ||domainprompt.info^
 ||domainprotected.info^
@@ -93425,6 +93469,7 @@
 ||doswedh.com^
 ||doswf.com^
 ||doswwi.caringlasses.com^
+||dosya-goruntule.xyz^
 ||dosya-indirici.online^
 ||dosya.kingspy.info^
 ||dosyalar.downloadtr.com^
@@ -96950,6 +96995,7 @@
 ||dplthings.com^
 ||dplthings.creativeunderpressure.com^
 ||dplugbzf.shop^
+||dplus-recover.com^
 ||dplus.cnzz.com^
 ||dplus.umeng.com^
 ||dpluspredatorgm.win^
@@ -97231,6 +97277,7 @@
 ||dqkx2g0ycj.neliver.com^
 ||dqlcgelw.com^
 ||dqldmtpu.com^
+||dqlsgjwdoyjtw.space^
 ||dqlxpgnbrutelike.review^
 ||dqmfeimedqswbr.com^
 ||dqmop.com^
@@ -98130,7 +98177,6 @@
 ||dream-road.jp^
 ||dream-skin.com^
 ||dream-sponsor.de^
-||dream-tech.website^
 ||dream-vacations.tk^
 ||dream-visioneering.com^
 ||dream.awbox.com^
@@ -98265,7 +98311,6 @@
 ||dreamhomesouth.com^
 ||dreamhomesproject.com^
 ||dreamhomz.com^
-||dreamhoodbakes.co.uk^
 ||dreamhope.net^
 ||dreamhorizon3.top^
 ||dreamhorizon7x.top^
@@ -101914,22 +101959,3 @@
 ||dt.waterdrop.com.au^
 ||dt.web-search-home.com^
 ||dt.xfyun.cn^
-||dt.zxzhengxin.com^
-||dt00.net^
-||dt00.net^$third-party
-||dt07.net^
-||dt07.net^$third-party
-||dt0a0n6f.tampabay.res.rr.com^
-||dt0a0nb6.tampabay.res.rr.com^
-||dt0j.icu^
-||dt131n72.tampabay.res.rr.com^
-||dt170nb4.tampabay.res.rr.com^
-||dt1blog.com^
-||dt1pxsve3tgas.cloudfront.net^
-||dt243100.com^
-||dt2xr6g2i5.com^
-||dt39ojrs.download^
-||dt3y1f1i1disy.cloudfront.net^
-||dt448.top^
-||dt4ever.com^
-||dt51.net^

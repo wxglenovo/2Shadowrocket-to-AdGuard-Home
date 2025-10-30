@@ -2,13 +2,10 @@ name: Split & DNS Check
 
 on:
   schedule:
-    # 每天 UTC 0:00、6:00、12:00、18:00 强制更新 urls.txt 并生成分片
-    - cron: "0 0 * * *"
-    - cron: "0 6 * * *"
-    - cron: "0 12 * * *"
-    - cron: "0 18 * * *"
-    # ✅ 每 22 分钟自动轮替一片
-    - cron: "*/22 * * * *"
+    # 每天 UTC 0:00, 6:00, 12:00, 18:00 强制更新 urls.txt 并生成分片
+    - cron: "0 0,6,12,18 * * *"
+    # 每 15 分钟轮替一片
+    - cron: "0,15,30,45 * * * *"
   workflow_dispatch:
     inputs:
       part:
@@ -37,25 +34,59 @@ jobs:
       - name: Install dependencies
         run: pip install --upgrade requests dnspython
 
-      - name: Run split and DNS check
+      - name: Prepare rules
         shell: bash
         run: |
+          set -e
           PART_INPUT="${{ github.event.inputs.part }}"
+          CURRENT_HOUR=$(date -u +"%H")
+
+          # 每天强制更新规则源
+          if [ "$CURRENT_HOUR" = "00" ] || [ "$CURRENT_HOUR" = "06" ] || [ "$CURRENT_HOUR" = "12" ] || [ "$CURRENT_HOUR" = "18" ]; then
+            echo "🔄 每天强制更新规则源并切片"
+            python split_and_check_16.py --force-update
+          fi
+
+          # 自动轮替分片
+          LAST_PART_FILE=".last_part"
           if [ -n "$PART_INPUT" ]; then
-              echo "🛠 手动触发，验证分片 $PART_INPUT"
-              python split_and_check_16.py --force-update --part "$PART_INPUT"
+            PART="$PART_INPUT"
+            echo "🛠 手动触发，验证分片 $PART"
           else
-              python split_and_check_16.py
+            if [ -f "$LAST_PART_FILE" ]; then
+              LAST_PART=$(cat "$LAST_PART_FILE")
+              PART=$(( (LAST_PART % 16) + 1 ))
+            else
+              PART=1
+            fi
+            echo "⏱ 自动轮替验证分片 $PART"
+          fi
+          echo "$PART" > "$LAST_PART_FILE"
+
+          PART_FILE=$(printf "tmp/part_%02d.txt" "$PART")
+          # 分片缺失则自动下载规则源
+          if [ ! -f "$PART_FILE" ]; then
+            echo "⚠ 分片缺失：$PART_FILE，自动下载规则源并切片"
+            python split_and_check_16.py --force-update
+          fi
+
+      - name: Run DNS validation
+        shell: bash
+        run: |
+          set -e
+          PART=$(cat .last_part)
+          python split_and_check_16.py --part "$PART" | tee "logs/split_check_part_${PART}.log"
 
       - name: Commit & Push Validated Rules
         shell: bash
         run: |
+          set -e
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
           if ls dist/validated_part_*.txt 1> /dev/null 2>&1; then
-              git add dist/validated_part_*.txt tmp/part_*.txt logs/
-              git commit -m "🤖 Auto update: validated part" || echo "No changes"
-              git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
+            git add dist/validated_part_*.txt tmp/part_*.txt logs/
+            git commit -m "🤖 Auto update: validated part $PART" || echo "No changes to commit"
+            git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
           else
-              echo "⚠ 没有验证结果文件，跳过 commit & push"
+            echo "⚠ 没有生成任何验证文件，跳过 commit & push"

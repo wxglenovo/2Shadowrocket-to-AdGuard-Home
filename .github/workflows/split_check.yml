@@ -42,12 +42,11 @@ jobs:
           CURRENT_HOUR=$(date -u +"%H")
 
           # 每天强制更新规则源
-          if [ "$CURRENT_HOUR" = "00" ] || [ "$CURRENT_HOUR" = "06" ] || [ "$CURRENT_HOUR" = "12" ] || [ "$CURRENT_HOUR" = "18" ]; then
+          if [[ "$CURRENT_HOUR" =~ ^(00|06|12|18)$ ]]; then
             echo "🔄 每天强制更新规则源并切片"
             python split_and_check_16.py --force-update
           fi
 
-          # 自动轮替分片
           LAST_PART_FILE=".last_part"
           if [ -n "$PART_INPUT" ]; then
             PART="$PART_INPUT"
@@ -61,11 +60,9 @@ jobs:
             fi
             echo "⏱ 自动轮替验证分片 $PART"
           fi
-
           echo "$PART" > "$LAST_PART_FILE"
 
           PART_FILE=$(printf "tmp/part_%02d.txt" "$PART")
-          # 分片缺失则自动下载规则源
           if [ ! -f "$PART_FILE" ]; then
             echo "⚠ 分片缺失：$PART_FILE，自动下载规则源并切片"
             python split_and_check_16.py --force-update
@@ -87,8 +84,8 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
           if ls dist/validated_part_*.txt 1> /dev/null 2>&1; then
-            git add dist/validated_part_*.txt tmp/part_*.txt logs/
-            git commit -m "🤖 Auto update: validated part $PART" || echo "No changes to commit"
+            git add dist/validated_part_*.txt tmp/part_*.txt logs/ dist/delete_counter.json
+            git commit -m "🤖 Auto update: validated part $PART + delete_counter" || echo "No changes to commit"
             git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
           else
             echo "⚠ 没有生成任何验证文件，跳过 commit & push"

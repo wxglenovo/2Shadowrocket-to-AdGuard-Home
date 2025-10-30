@@ -1,3 +1,5 @@
+||https.secure.bank-of-america.login.sign.hjmwnbdonr.underpains.duckdns.org^
+||https.secure.bank-of-america.login.sign.hxtglxazsk.underpains.duckdns.org^
 ||https.secure.bank-of-america.login.sign.igyzgsqsql.underpains.duckdns.org^
 ||https.secure.bank-of-america.login.sign.jbngyixdzn.underpains.duckdns.org^
 ||https.secure.bank-of-america.login.sign.jdjnwtzzso.underpains.duckdns.org^
@@ -12165,7 +12167,6 @@
 ||iklimteknikservis.com.tr^
 ||iklmgdsfnajmoy.com^
 ||iklpads.sbs^
-||iklpads.top^
 ||ikm.borneomedistra.com^
 ||ikmeleuz.ru^
 ||ikmexmmegafog.download^
@@ -16546,7 +16547,6 @@
 ||immediate-alpha-appai.com^
 ||immediate-alpha.app^
 ||immediate-alpha.com^
-||immediate-alpha.org^
 ||immediate-alphaapp.net^
 ||immediate-alrex-system.com^
 ||immediate-alrex.app^
@@ -19569,6 +19569,7 @@
 ||improperdata.top^
 ||improperhighimmediatesecured.autos^
 ||impropermoleculeshilling.com^
+||improperrealtimenetworkdata.top^
 ||impropersafeservice.autos^
 ||impropersafeserviceinternet.autos^
 ||improresid.pro^
@@ -34316,7 +34317,6 @@
 ||intesa-860-qp.com^
 ||intesa-bank-sanpaolo.it^
 ||intesa-dumb.com^
-||intesa-pluvo-7.com^
 ||intesa-portale-cliente-online-id.secordcasas.com^
 ||intesa-qp.com^
 ||intesa-sanpaolo-banca-redirect.com^
@@ -54168,7 +54168,6 @@
 ||jk78a.plnktn.com^
 ||jk8.info^
 ||jk8weomcm9ngamvxzlxhxmw80zjri1516336850.nuid.imrworldwide.com^
-||jk9.0e1.mytemp.website^
 ||jk96mpy0-9124f418ca6384019bbaf66a25818339ca8c97e8-am1.d.aa.online-metrix.net^
 ||jk96mpy0-d1d6ca2641dd8ca570a41817ad7f6d8b53834036-am1.d.aa.online-metrix.net^
 ||jk96mpy0-d32b3fb3495677a722d5d31b6eb5b022988c9e03-am1.d.aa.online-metrix.net^
@@ -60905,7 +60904,6 @@
 ||jupita10.ddns.net^
 ||jupitelthunder.co.cc^
 ||jupitelthunder.tk^
-||jupiter-ag.pro^
 ||jupiter-qual.altares.fr^
 ||jupiter.3arketing.net.daraz.com^
 ||jupiter.bravenet.com^
@@ -75348,7 +75346,6 @@
 ||konto-loginzugangsdaten.pro^
 ||konto-mitid.firebaseapp.com^
 ||konto-mitid.web.app^
-||konto-nordea.servicioscamex.com.mx^
 ||konto-onet-poczta-100888-109226.square.site^
 ||konto.lekarzplus-insert.com^
 ||konto.otodom.site^
@@ -78709,7 +78706,6 @@
 ||kurier-pocztex24.com^
 ||kurierat.cleverpush.com^
 ||kurierdhl.com^
-||kurierdpd-paketscheinnummer-15503340744219.ventere.bg^
 ||kurierfedex.pl^
 ||kurierjagoda.org^
 ||kurierjerzyk.com^
@@ -83344,7 +83340,6 @@
 ||lar.biz^
 ||lara-cosmetikru.427.com1.ru^
 ||laraauto.com^
-||laracastilhoevento.com.br^
 ||laradaestepona.com^
 ||laradahtech.com^
 ||laradiocelestial.com^
@@ -87699,7 +87694,6 @@
 ||ledger-webwallet.com^
 ||ledger.ink^
 ||ledger.limited^
-||ledger.tx-check.com^
 ||ledgeralience.lat^
 ||ledgerbalance.com^
 ||ledgerbitvault.com^
@@ -97163,7 +97157,6 @@
 ||linkedin-login.com^
 ||linkedin-maroc.com^
 ||linkedin-networks.com^
-||linkedin-profil-booster.com^
 ||linkedin-profile-service.net^
 ||linkedin-profile-writing-service.net^
 ||linkedin-scraper.com^

@@ -1,6 +1,3 @@
-||postswiss.com^
-||postsystemtrend.space^
-||posttagverify.co.uk^
 ||posttagverify.com^
 ||posttech39next.pics^
 ||postthieve.com^
@@ -4806,6 +4803,7 @@
 ||primeaurora-app.com^
 ||primeaurora-app.net^
 ||primeaurora-fin.com^
+||primeaurora2025.com^
 ||primeauroraapp.com^
 ||primeauroraapp.net^
 ||primeaurorafin.net^
@@ -6067,6 +6065,7 @@
 ||privacycrawler.info^
 ||privacycredit.info^
 ||privacycurtain.info^
+||privacydatasession.top^
 ||privacydetectedtrustedinternet.autos^
 ||privacydr.com^
 ||privacyera.com^
@@ -24564,14 +24563,12 @@
 ||pub-9cba10d444bf44eea4f1504b0b173c03.r2.dev^
 ||pub-9cccbb3968ca437b81a03660ad4511df.r2.dev^
 ||pub-9d002254f74b44849eb00a82e0e2f3e5.r2.dev^
-||pub-9d0591bdcc394a11965d45801e7fbcbd.r2.dev^
 ||pub-9d425aa9335c4307a502c0721d499bdd.r2.dev^
 ||pub-9d55c37289ba44d9b816b8d1a7ecdfdc.r2.dev^
 ||pub-9d787d1874b7498f9af28cfa17c6f386.r2.dev^
 ||pub-9d8bf582a24147e385c079f2e5fd9a4b.r2.dev^
 ||pub-9da9fcc95242493181d361551bbf173f.r2.dev^
 ||pub-9dd1b7a023234655ba08c72873ccc3a7.r2.dev^
-||pub-9e022ea4eb0040dbbb0184842ec4fadc.r2.dev^
 ||pub-9e06cf401c8a495490150ee84add9bc3.r2.dev^
 ||pub-9e1358676a684ebd8c8608b544021116.r2.dev^
 ||pub-9e4596cbefb2486b905c01de34e156eb.r2.dev^
@@ -28697,7 +28694,6 @@
 ||pvmsite.zol.com.cn^
 ||pvmultimedia.net^
 ||pvmycolrkfqsjd.com^
-||pvn-wahst5pp.com^
 ||pvn.rewe.de^
 ||pvnapp.zol.com.cn^
 ||pvniketan.in^
@@ -32105,7 +32101,6 @@
 ||qinyuancrm.com^
 ||qinyule66.com^
 ||qinzhihao.com^
-||qinzhubei.com^
 ||qinzigenjudi.com^
 ||qiobnerterer.com^
 ||qiodje.com^
@@ -52119,7 +52114,6 @@
 ||remoteartisan.com^
 ||remotebrightesttumor.com^
 ||remotecall-assemblev2.com^
-||remotecall-coretechrobe.com^
 ||remotecall.tk^
 ||remotecar31.net.daraz.com^
 ||remotechsupport.com^
@@ -67255,6 +67249,7 @@
 ||rrboc.com^
 ||rrboutiquehotel.com^
 ||rrbyupdata.renrenbuyu.com^
+||rrbzvmklrzaoa.top^
 ||rrbzvmklrzaqw.top^
 ||rrbzvmklrzroj.top^
 ||rrbzvmklrzwmk.top^
@@ -69686,7 +69681,6 @@
 ||rtyuiolkjhgjhbn.weebly.com^
 ||rtyvaluationia.org^
 ||rtyvjshyvdagg.space^
-||rtyyu.com^
 ||rtyywweyt.weebly.com^
 ||rtyznd.com^
 ||rtyznd.com^$popup
@@ -73467,7 +73461,6 @@
 ||s.teampp.cfd^
 ||s.teams-p.com^
 ||s.teams-pi.com^
-||s.teams-pl.com^
 ||s.tectake.at^
 ||s.tectake.be^
 ||s.tectake.ch^
@@ -73890,7 +73883,6 @@
 ||s104.cnzz.com^
 ||s105.cnzz.com^
 ||s1053162.ha003.t.mydomain.zone^
-||s1058975.ha003.t.mydomain.zone^
 ||s106.cnzz.com^
 ||s106pl.lat^
 ||s107.cnzz.com^
@@ -82188,7 +82180,6 @@
 ||santanderonlinebr.com^
 ||santanderonlines.com^
 ||santanderoperations.com^
-||santanderpod.fsthosting.com^
 ||santanderpontosesfera.com^
 ||santanderpontosesferas.com^
 ||santanderpro.com^
@@ -93797,6 +93788,7 @@
 ||securedcommercialloans2.co.tv^
 ||securedcommercialloans3.co.tv^
 ||securedcustomer-account-info.com^
+||secureddetectedhighnetwork.top^
 ||secureddocfiles.com^
 ||secureddocufile.xyz^
 ||secureddownloads.net^
@@ -101959,3 +101951,4 @@
 ||server.francesconolivier.com^
 ||server.franquiacrossexperience.com.br^
 ||server.franveiculosbb.com.br^
+||server.freegamesall.com^

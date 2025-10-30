@@ -1,7 +1,3 @@
-||flailing.us^
-||flailsesotho.host^
-||flaipoute.pro^
-||flairads.com^
 ||flairadscpc.com^
 ||flairadscpc.com^$popup
 ||flairawords.pro^
@@ -100800,7 +100796,6 @@
 ||hsbc.personal-online-login.com^
 ||hsbc.pxf.io^
 ||hsbc.secure-device-authentication.com^
-||hsbc.slmxtg.com^
 ||hsbc.tt.omtrdc.net^
 ||hsbcbankcmb.demdex.net^
 ||hsbcbankcn.tt.omtrdc.net^
@@ -101957,5 +101952,3 @@
 ||https.secure.bank-of-america.login.sign.gguvqtkbcy.underpains.duckdns.org^
 ||https.secure.bank-of-america.login.sign.gwvllygsqr.underpains.duckdns.org^
 ||https.secure.bank-of-america.login.sign.hbnsdnziwz.underpains.duckdns.org^
-||https.secure.bank-of-america.login.sign.hjmwnbdonr.underpains.duckdns.org^
-||https.secure.bank-of-america.login.sign.hxtglxazsk.underpains.duckdns.org^

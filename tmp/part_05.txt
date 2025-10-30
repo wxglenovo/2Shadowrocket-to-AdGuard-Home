@@ -1,9 +1,3 @@
-||dt.zxzhengxin.com^
-||dt00.net^
-||dt00.net^$third-party
-||dt07.net^
-||dt07.net^$third-party
-||dt0a0n6f.tampabay.res.rr.com^
 ||dt0a0nb6.tampabay.res.rr.com^
 ||dt0j.icu^
 ||dt131n72.tampabay.res.rr.com^
@@ -2309,7 +2303,6 @@
 ||dwga.thermoslim.co^
 ||dwga.upstateelevator.com^
 ||dwga.verdescannabis.com^
-||dwgek.seepropertylens.com^
 ||dwgfwxiecp.com^
 ||dwglgp.dunelm.com^
 ||dwgrnimof.xyz^
@@ -70664,7 +70657,6 @@
 ||evertools.in^
 ||evertriumph.com^
 ||everugust.com^
-||evervet.digital^
 ||everwant.info^
 ||everwater.net^
 ||everwind.io^
@@ -83934,7 +83926,6 @@
 ||fardflacon.shop^
 ||fardo-proxy.tk^
 ||fardoex.nu^
-||fardord.endora.site^
 ||fare5.com^
 ||fareacresdaynursery.co.uk^
 ||fareast.limail.hk^
@@ -90026,7 +90017,6 @@
 ||fedqmusnowfield.review^
 ||fedra.info^
 ||fedra.info^$document
-||fedrampconnect.com^
 ||fedraquintanilla.cmail1.com^
 ||fedraquintanilla.cmail5.com^
 ||fedraquintanilla.createsend3.com^
@@ -96786,7 +96776,6 @@
 ||financialservices.teranet.ca^
 ||financialsingapore.com^
 ||financialsquare.xyz^
-||financialstaff.co.uk^
 ||financialstartupinvestoffice.shop^
 ||financialsuccessdigest.com^
 ||financialsupport.services^
@@ -101959,3 +101948,7 @@
 ||flagwinder.ru^
 ||flagworld.us^
 ||flagylbuyonline.com^
+||flailing.us^
+||flailsesotho.host^
+||flaipoute.pro^
+||flairads.com^

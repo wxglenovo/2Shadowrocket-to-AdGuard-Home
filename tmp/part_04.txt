@@ -1,9 +1,3 @@
-||chronosurge.website^
-||chronoverify.com^
-||chronovialab.icu^
-||chronovista.cyou^
-||chronowarp.site^
-||chronoz.info^
 ||chronozodmirrora.quest^
 ||chrooo.soccerandrugby.com^
 ||chropro.com^
@@ -18084,7 +18078,6 @@
 ||codecupcake.com^
 ||codecupdate.com^
 ||coded.ddns.net^
-||coded404-see.mdbgo.io^
 ||codedbooks.tk^
 ||codedbrains.tk^
 ||codedexchange.com^
@@ -57882,7 +57875,6 @@
 ||dahlie.org^
 ||dahllite.us^
 ||dahmeialeveque.blogspot.com^
-||dahnimusic.com^
 ||dahode-radere.pics^
 ||dahongahuntingsafaris.com^
 ||dahpixuky.kyepovobi.maxgrowth.ru^
@@ -66170,7 +66162,6 @@
 ||davesgeneralstore.com^
 ||daveshearth.com^
 ||daveshobyshop.com^
-||daveshowa.com^
 ||davesmodelshop.com^
 ||davesousa.com^
 ||daveswebpage.net^
@@ -73350,7 +73341,6 @@
 ||demo.gimixz.com.au^
 ||demo.glassforcars.com.au^
 ||demo.gomi.do^
-||demo.gradualinstituto.com.br^
 ||demo.grantsinger.com^
 ||demo.himaxwell.com^
 ||demo.hostfabrica.ru^
@@ -75239,7 +75229,6 @@
 ||designgroupabd.com^
 ||designguide.at^
 ||designguide.icu^
-||designh.co.kr^
 ||designindiaimpex.com^
 ||designinferno.com.au^
 ||designingcustomerexperience.com^
@@ -79659,7 +79648,6 @@
 ||dianrui.com^
 ||dianrxajze.neliver.com^
 ||diansaripratama.id^
-||dianshang999.vip^
 ||dianshihuanping.cn^
 ||diansp.com^
 ||diantajayasemesta.co.id^
@@ -93469,7 +93457,6 @@
 ||doswedh.com^
 ||doswf.com^
 ||doswwi.caringlasses.com^
-||dosya-goruntule.xyz^
 ||dosya-indirici.online^
 ||dosya.kingspy.info^
 ||dosyalar.downloadtr.com^
@@ -101959,3 +101946,9 @@
 ||dt.waterdrop.com.au^
 ||dt.web-search-home.com^
 ||dt.xfyun.cn^
+||dt.zxzhengxin.com^
+||dt00.net^
+||dt00.net^$third-party
+||dt07.net^
+||dt07.net^$third-party
+||dt0a0n6f.tampabay.res.rr.com^

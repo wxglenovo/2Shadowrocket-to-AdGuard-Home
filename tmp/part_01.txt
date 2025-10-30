@@ -112,9 +112,9 @@
 ! CNAME https://github.com/easylist/easylist/issues/9383 https://github.com/AdguardTeam/cname-trackers/issues/15
 ! CPU abuse
 ! CSP Mining
-! Checksum: 6fqMqXbQX4+oAZ+hopjFWw
-! Checksum: 7xJ6vu8DlD9uh8cwFBZbCQ
-! Checksum: YuEDIVMfXQNH+0ol6GB7Zg
+! Checksum: W1WkGQVDFzccsn8eeJYjhg
+! Checksum: kEzRqKvSD095BseDjY/uvA
+! Checksum: x6zewcEHt+Ow5srPUHmzmA
 ! Chinese
 ! Chinese google (https://github.com/easylist/easylist/issues/15643)
 ! Chinese supplement for the EasyList filters
@@ -216,7 +216,7 @@
 ! Last modified: 2025/10/29 06:15 +0800
 ! Last modified: 2025/10/30 08:32:18
 ! Last modified: 29 Oct 2025 22:05 UTC
-! Last modified: 30 Oct 2025 06:11 UTC
+! Last modified: 30 Oct 2025 06:31 UTC
 ! Latvian
 ! Licence: https://easylist.to/pages/licence.html
 ! License: https://easylist.to/pages/licence.html
@@ -306,7 +306,7 @@
 ! Version: 20230323162617
 ! Version: 2025.1029.2205.13
 ! Version: 202510290615
-! Version: 202510300611
+! Version: 202510300631
 ! Version: 20251030083218
 ! Vietnamese
 ! Vinted
@@ -889,8 +889,8 @@
 !||xip.io^
 !||yoogle.com^
 !||youtube.com/api/stats/atr?ns=*&ver=2&cmt=1.*&fs=0&*&euri&lact=
-!有效规则数目: 1544518
-!生成时间: 2025-10-30 13:49:01
+!有效规则数目: 1544407
+!生成时间: 2025-10-30 14:29:33
 $$a[href="/js/app.htm?url="]
 $$a[href="changhong886.com"]
 $$div[class="-ad-"]
@@ -33473,7 +33473,6 @@ zzzyk.com###Tinfo
 ||007unblocker.com^
 ||008.free-counter.co.uk^
 ||008.free-counters.co.uk^
-||00800.vip^
 ||00821b9c529941d2.com^
 ||0082tv.net^
 ||0082tv.net^$third-party
@@ -34741,7 +34740,6 @@ zzzyk.com###Tinfo
 ||01.partner.net.daraz.com^
 ||01.pbx-sand.nym2.appnexus.com^
 ||01.pbx.nyc2.appnexus.com^
-||01.pilot45.com^
 ||01.podcast.nym2.appnexus.com^
 ||01.sharedsource.org^
 ||01.smsinformativo.com^
@@ -58589,7 +58587,6 @@ zzzyk.com###Tinfo
 ||36505.net^
 ||3650535.com^
 ||3650933.com^
-||3651234.com^
 ||3651330.com^
 ||3651353.com^
 ||3651355.com^
@@ -64250,7 +64247,6 @@ zzzyk.com###Tinfo
 ||4f8190e0b10261.beer^
 ||4f8675bc0214dd78.com^
 ||4f872p63.top^
-||4f8d4eb6-c0c4-4029-8674-69587a7ee2a9.wpfeedback.co^
 ||4f8f-baf5-1641-348a.reporo.net^
 ||4f91a0ab51024.beer^
 ||4f941a91590f2c1f0.com^
@@ -76738,7 +76734,6 @@ zzzyk.com###Tinfo
 ||807af9ef710272.beer^
 ||807dbdfe41023.beer^
 ||807df2a0610272.beer^
-||807xpj.com^
 ||808-fitness.com-oo4.net^
 ||808.tianya.cn^
 ||808.tianyaui.cn^
@@ -79913,6 +79908,7 @@ zzzyk.com###Tinfo
 ||88bb36fab4.com^
 ||88blw.com^
 ||88c2a3d941022.beer^
+||88c2xrjre76e76rv.rest^
 ||88c4-9d39-bf4e-9306.reporo.net^
 ||88cb0eb486.com^
 ||88cb8677110271.beer^
@@ -81496,7 +81492,6 @@ zzzyk.com###Tinfo
 ||90t.rd-1-a-2.ru^
 ||90unblocknow.info^
 ||90usprox.info^
-||90web-santander.com^
 ||90x.info^
 ||90zavod.ru^
 ||91-113-104-31.adsl.highway.telekom.at^
@@ -101957,5 +101952,3 @@ zzzyk.com###Tinfo
 ||acm-forex-4.tk^
 ||acm-forex-6q.tk^
 ||acm-forex-8.tk^
-||acm-forex.tk^
-||acm-initiatives.com^

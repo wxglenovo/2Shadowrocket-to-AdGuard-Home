@@ -1,4 +1,3 @@
-||server.freegamesall.com^
 ||server.freelanz.app^
 ||server.freitastcg.com.br^
 ||server.fuhrosouto.com.br^
@@ -31432,7 +31431,6 @@
 ||snipsten.us^
 ||snipsterde.widget.criteo.com^
 ||snipten.us^
-||snipverscn.dev^
 ||snipzone.chickenkiller.com^
 ||snissoft.innovativetraining4u.com^
 ||snit.pbphgwbr.in^
@@ -56497,7 +56495,6 @@
 ||start-trezor-start.pages.dev^
 ||start-trezor-suite-faq.pages.dev^
 ||start-trezor-web.pages.dev^
-||start-trezure-en.wasmer.app^
 ||start-up-consultants.com^
 ||start-w0rk.tk^
 ||start-w4eb.xyz^
@@ -62027,7 +62024,6 @@
 ||steamcomunlty.com^
 ||steamcomunmitty.com^
 ||steamcomunnitty.cc^
-||steamcomunnity.cc^
 ||steamcomunnity.ru^
 ||steamcomunyti.com^
 ||steamcomuunnity.com^
@@ -62073,7 +62069,6 @@
 ||steamcornmnunuty.mu-n.com^
 ||steamcornmunilty.com^
 ||steamcornnnunity.com^
-||steamcoummulnity.sbs^
 ||steamcoummunity.com^
 ||steamcoymmunity.com^
 ||steamcrack.com^
@@ -64648,7 +64643,6 @@
 ||store.pinkupcape.com^
 ||store.pjs.outlet.com^
 ||store.popeurope.com^
-||store.poweredartstyle.com^
 ||store.poweredonlinedev.com^
 ||store.pridesocial.net^
 ||store.prizescanner.top^
@@ -69058,7 +69052,6 @@
 ||suctionpoker.com^
 ||suctiontwo.us^
 ||suctorialsix.us^
-||sucuralvitualbanlombia.pro^
 ||sucuri.7eer.net^
 ||sucuriip.greenmonkeydesignstudio.com^
 ||sucursalpersona.transaccionbcolombiss.hol.es^
@@ -69067,7 +69060,6 @@
 ||sucursalvirtual11.w3spaces.com^
 ||sucursalvirtuales.co^
 ||sucursalweb.es^
-||sucurtalvirlualbanmlonbia.store^
 ||suczki-mlode.blogspot.com^
 ||sud-concept.net^
 ||sud.holidayinsider.com^
@@ -82609,7 +82601,6 @@
 ||swapsanorexsolution.com^
 ||swapsdesign.cfd^
 ||swapsendj.top^
-||swapsfianance.top^
 ||swapskillful.tk^
 ||swapsolutions.limited^
 ||swapstation.top^
@@ -83766,9 +83757,6 @@
 ||swisspost-zoll.web.app^
 ||swisspost.acceptsale.com^
 ||swisspost.lieferung43262.click^
-||swisspost.quittung23170.live^
-||swisspost.quittung835122.cfd^
-||swisspost.total91637.cfd^
 ||swisspost.web.app^
 ||swissposta.cc^
 ||swissposte.gq^
@@ -101959,3 +101947,8 @@
 ||teiecnjomp.email^
 ||teiecnjomp.info^
 ||teiecsclwf.click^
+||teiecsclwf.pink^
+||teiecsclwf.red^
+||teiecsclwf.work^
+||teiecvbghn.art^
+||teiecvbghn.bond^

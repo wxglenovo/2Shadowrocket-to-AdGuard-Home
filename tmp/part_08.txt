@@ -24025,7 +24025,6 @@
 ||m.usersonline.com^
 ||m.uu0152q.cn^
 ||m.uw45o.cn^
-||m.uwqnfa.cc^
 ||m.uzhaj.com^
 ||m.v.fwmrm.net^
 ||m.v76rk.cn^
@@ -27827,7 +27826,6 @@
 ||maii-daum-net.atwebpages.com^
 ||maiicenterteam.000webhostapp.com^
 ||maiif.org^
-||maiifjq.top^
 ||maiilverifylsa.com^
 ||maijer.net^
 ||maijinglin.com^
@@ -30282,7 +30280,6 @@
 ||mainvpn.zedo.com^
 ||mainwalleffect.tk^
 ||mainwaves.info^
-||mainws.cc^
 ||mainyhdfjr.info^
 ||mainyhdncdn.ca^
 ||mainzeyswitch.us^
@@ -34080,7 +34077,6 @@
 ||maps-icloud.ooo^
 ||maps-icloud.today^
 ||maps-isupport.com^
-||maps-localizado.com^
 ||maps-location.site^
 ||maps-queens.com^
 ||maps-shop.pxf.io^
@@ -54385,6 +54381,7 @@
 ||mfynwrbjbbybm.site^
 ||mfysum.miamasvin.co.kr^
 ||mfywrwigats.review^
+||mfzijmmmuiibz.website^
 ||mfzrr.mixperfume.com^
 ||mg-dev.visa.com^
 ||mg-email.cle.learnformula.com^
@@ -78081,7 +78078,6 @@
 ||momentumeconomy.com^
 ||momentumfirst.com.au^
 ||momentumglow-aiapp.com^
-||momentumglowai.com^
 ||momentumglowai.net^
 ||momentumglowaiapp.com^
 ||momentumglowaiapp.net^
@@ -85003,7 +84999,6 @@
 ||msn-groups.4-all.org^
 ||msn-health.com^
 ||msn-proxy.info^
-||msn-support-live-2025.ct.ws^
 ||msn-tech-support.weebly.com^
 ||msn.112.2o7.net^
 ||msn.allyes.com^
@@ -85942,7 +85937,6 @@
 ||mto.multiopen.cn^
 ||mtoalv.cn^
 ||mtobvhdbhhnpt.website^
-||mtoken.run^
 ||mton19.com^
 ||mtoneafol.mi-website.es^
 ||mtoolkit.com^
@@ -89568,7 +89562,6 @@
 ||my-very-merry.biz^
 ||my-vidar.com^
 ||my-vintage.com^
-||my-vodaccount.com^
 ||my-vodafone.co.uk^
 ||my-voice.net^
 ||my-vzwsupport.com^
@@ -89857,7 +89850,6 @@
 ||my.trgino.com^
 ||my.tsgo.io^
 ||my.tsys.com^
-||my.turtue.com^
 ||my.uk.myway.com^
 ||my.uptv.com^
 ||my.veinteractive.com^
@@ -94645,7 +94637,6 @@
 ||mystat.it^$third-party
 ||mystat.pl^
 ||mystatemnt-desktopcapp.live^
-||mystatemnt-desktopcapps.live^
 ||mystaticfiles.com^
 ||mystats.com^
 ||mystats.flixfiend.top^
@@ -101959,3 +101950,5 @@
 ||nellads.com^
 ||nellaimasthanbiryani.com^
 ||nellara.com^
+||nellforgery.com^
+||nellgriffin.com^

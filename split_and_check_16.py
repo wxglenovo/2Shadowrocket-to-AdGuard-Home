@@ -7,7 +7,7 @@ import dns.resolver
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import json
 
-URLS_TXT = "urls.txt"   # 存放规则源地址
+URLS_TXT = "urls.txt"
 TMP_DIR = "tmp"
 DIST_DIR = "dist"
 MASTER_RULE = "merged_rules.txt"
@@ -15,16 +15,16 @@ PARTS = 16
 DNS_WORKERS = 50
 DNS_TIMEOUT = 2
 DELETE_COUNTER_FILE = "delete_counter.json"
+SUMMARY_FILE = os.path.join(DIST_DIR, "validated_summary.log")
 
 os.makedirs(TMP_DIR, exist_ok=True)
 os.makedirs(DIST_DIR, exist_ok=True)
 
-# ---------------- 下载并合并规则 ----------------
+# ---------------- 下载规则 ----------------
 def download_all_sources():
     if not os.path.exists(URLS_TXT):
-        print("❌ urls.txt 不存在，无法获取规则源")
+        print("❌ urls.txt 不存在")
         return False
-    print("📥 开始下载规则源...")
     merged = set()
     with open(URLS_TXT, "r", encoding="utf-8") as f:
         urls = [u.strip() for u in f if u.strip()]
@@ -45,9 +45,6 @@ def download_all_sources():
 
 # ---------------- 分片 ----------------
 def split_parts():
-    if not os.path.exists(MASTER_RULE):
-        print("⚠ 缺少合并规则文件")
-        return False
     with open(MASTER_RULE, "r", encoding="utf-8") as f:
         rules = [l.strip() for l in f if l.strip()]
     total = len(rules)
@@ -64,7 +61,7 @@ def check_domain(rule):
     resolver = dns.resolver.Resolver()
     resolver.timeout = DNS_TIMEOUT
     resolver.lifetime = DNS_TIMEOUT
-    domain = rule.lstrip("|").split("^")[0].replace("*", "")
+    domain = rule.lstrip("|").split("^")[0].replace("*","")
     if not domain:
         return None
     try:
@@ -76,14 +73,14 @@ def check_domain(rule):
 def dns_validate(lines):
     valid = []
     with ThreadPoolExecutor(max_workers=DNS_WORKERS) as executor:
-        futures = {executor.submit(check_domain, rule): rule for rule in lines}
+        futures = {executor.submit(check_domain, r): r for r in lines}
         done = 0
         total = len(lines)
-        for future in as_completed(futures):
+        for f in as_completed(futures):
             done += 1
-            result = future.result()
-            if result:
-                valid.append(result)
+            res = f.result()
+            if res:
+                valid.append(res)
             if done % 500 == 0:
                 print(f"✅ 已验证 {done}/{total} 条，有效 {len(valid)}")
     return valid
@@ -94,62 +91,68 @@ def process_part(part, stats_json=False):
     if not os.path.exists(part_file):
         download_all_sources()
         split_parts()
-    if not os.path.exists(part_file):
-        print("❌ 分片不存在")
-        return
-
     lines = open(part_file, "r", encoding="utf-8").read().splitlines()
     print(f"⏱ 开始验证分片 {part}，共 {len(lines)} 条")
 
     valid = dns_validate(lines)
     old_rules = set()
-    out_file = os.path.join(DIST_DIR, f"validated_part_{part:02d}.txt")
-
+    out_file = os.path.join(DIST_DIR, f"validated_part_{int(part):02d}.txt")
     if os.path.exists(out_file):
         old_rules = set(open(out_file, "r", encoding="utf-8").read().splitlines())
 
-    # 加载删除计数
+    # 删除计数器
     delete_counter = {}
     if os.path.exists(DELETE_COUNTER_FILE):
-        delete_counter = json.load(open(DELETE_COUNTER_FILE, "r", encoding="utf-8"))
+        delete_counter = json.load(open(DELETE_COUNTER_FILE,"r",encoding="utf-8"))
 
     final_rules = []
     added = 0
     removed = 0
-
-    for rule in valid:
-        final_rules.append(rule)
-        if rule not in old_rules:
+    for r in valid:
+        final_rules.append(r)
+        if r not in old_rules:
             added += 1
-
-    for rule in old_rules:
-        if rule not in valid:
-            count = delete_counter.get(rule, 0) + 1
-            delete_counter[rule] = count
-            if count < 4:
-                final_rules.append(rule)
+    for r in old_rules:
+        if r not in valid:
+            count = delete_counter.get(r,0)+1
+            delete_counter[r]=count
+            if count<4:
+                final_rules.append(r)
             removed += 1
 
-    # 保存新的计数
-    json.dump(delete_counter, open(DELETE_COUNTER_FILE, "w", encoding="utf-8"), indent=2)
+    # 保存删除计数器
+    json.dump(delete_counter, open(DELETE_COUNTER_FILE,"w",encoding="utf-8"), indent=2)
 
-    with open(out_file, "w", encoding="utf-8") as f:
+    with open(out_file,"w",encoding="utf-8") as f:
         f.write("\n".join(sorted(final_rules)))
 
     total = len(final_rules)
     print(f"✅ 分片 {part} 完成: 总数 {total}, 新增 {added}, 删除 {removed}")
 
-    if stats_json:
-        return {"total": total, "added": added, "removed": removed}
-    else:
-        return valid, added, removed, total
+    return {"part": part, "total": total, "added": added, "removed": removed}
+
+# ---------------- 更新 summary ----------------
+def update_summary(stats):
+    summary_file = SUMMARY_FILE
+    all_stats = {}
+    if os.path.exists(summary_file):
+        for line in open(summary_file,"r",encoding="utf-8"):
+            if line.strip():
+                p,t,a,d = line.strip().split(",")
+                all_stats[int(p)]= {"total":int(t),"added":int(a),"removed":int(d)}
+    all_stats[stats["part"]] = stats
+    with open(summary_file,"w",encoding="utf-8") as f:
+        for i in range(1, PARTS+1):
+            if i in all_stats:
+                s = all_stats[i]
+                f.write(f"{i},{s['total']},{s['added']},{s['removed']}\n")
+    print(f"📊 Summary 更新完成：{summary_file}")
 
 # ---------------- 主程序 ----------------
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--part", help="验证指定分片 1~16")
-    parser.add_argument("--force-update", action="store_true", help="强制重新下载所有规则源并切片")
-    parser.add_argument("--stats-json", action="store_true", help="输出 JSON 统计")
+    parser.add_argument("--force-update", action="store_true", help="强制下载")
     args = parser.parse_args()
 
     if args.force_update:
@@ -157,8 +160,6 @@ if __name__ == "__main__":
         split_parts()
 
     if args.part:
-        stats = process_part(args.part, stats_json=args.stats_json)
-        if args.stats_json:
-            print(json.dumps(stats))
-        else:
-            print(f"总数 {stats[3]}, 新增 {stats[1]}, 删除 {stats[2]}")
+        stats = process_part(args.part)
+        update_summary(stats)
+        print(f"总数 {stats['total']}, 新增 {stats['added']}, 删除 {stats['removed']}")

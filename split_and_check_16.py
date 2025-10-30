@@ -13,13 +13,14 @@ DIST_DIR = "dist"
 MASTER_RULE = "merged_rules.txt"
 PARTS = 16
 DNS_WORKERS = 50
-DNS_TIMEOUT = 2
+DNS_TIMEOUT = 3
 BATCH_SIZE = 500
 DELETE_COUNTER_FILE = os.path.join(DIST_DIR, "delete_counter.json")
 DELETE_THRESHOLD = 4
 
 os.makedirs(TMP_DIR, exist_ok=True)
 os.makedirs(DIST_DIR, exist_ok=True)
+
 
 def download_all_sources():
     if not os.path.exists(URLS_TXT):
@@ -45,6 +46,7 @@ def download_all_sources():
         f.write("\n".join(sorted(merged)))
     return True
 
+
 def split_parts():
     if not os.path.exists(MASTER_RULE):
         print("⚠ 缺少合并规则文件")
@@ -62,6 +64,7 @@ def split_parts():
         print(f"📄 分片 {i+1}: {len(part_rules)} 条 → {filename}")
     return True
 
+
 def check_domain(rule):
     resolver = dns.resolver.Resolver()
     resolver.timeout = DNS_TIMEOUT
@@ -75,12 +78,13 @@ def check_domain(rule):
     except:
         return None
 
+
 def dns_validate(lines):
     print(f"🚀 启动 {DNS_WORKERS} 并发验证，分批 {BATCH_SIZE} 条")
     valid = []
     total = len(lines)
-    for i in range(0, total, BATCH_SIZE):
-        batch = lines[i:i+BATCH_SIZE]
+    for start in range(0, total, BATCH_SIZE):
+        batch = lines[start:start+BATCH_SIZE]
         done = 0
         with ThreadPoolExecutor(max_workers=DNS_WORKERS) as executor:
             futures = {executor.submit(check_domain, rule): rule for rule in batch}
@@ -89,10 +93,11 @@ def dns_validate(lines):
                 result = future.result()
                 if result:
                     valid.append(result)
-                if done % 100 == 0 or done == len(batch):
-                    print(f"✅ 批次 {i//BATCH_SIZE+1} 已验证 {done}/{len(batch)} 条，有效 {len(valid)} 条")
+                if done % 50 == 0:
+                    print(f"✅ 批 {start//BATCH_SIZE + 1} 已验证 {done}/{len(batch)} 条规则，有效 {len(valid)} 条")
     print(f"✅ 分片验证完成，有效 {len(valid)} 条")
     return valid
+
 
 def load_delete_counter():
     if os.path.exists(DELETE_COUNTER_FILE):
@@ -100,9 +105,11 @@ def load_delete_counter():
             return json.load(f)
     return {}
 
+
 def save_delete_counter(counter):
     with open(DELETE_COUNTER_FILE, "w", encoding="utf-8") as f:
         json.dump(counter, f, indent=2, ensure_ascii=False)
+
 
 def process_part(part):
     part_file = os.path.join(TMP_DIR, f"part_{int(part):02d}.txt")
@@ -126,6 +133,7 @@ def process_part(part):
 
     delete_counter = load_delete_counter()
     new_delete_counter = {}
+
     final_rules = set()
     removed_count = 0
     added_count = 0
@@ -150,6 +158,7 @@ def process_part(part):
         f.write("\n".join(sorted(final_rules)))
 
     print(f"✅ 分片 {part} 完成: 总数 {len(final_rules)}, 新增 {added_count}, 删除 {removed_count}")
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()

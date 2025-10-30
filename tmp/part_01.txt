@@ -112,9 +112,9 @@
 ! CNAME https://github.com/easylist/easylist/issues/9383 https://github.com/AdguardTeam/cname-trackers/issues/15
 ! CPU abuse
 ! CSP Mining
-! Checksum: ++jJQeukubsmCuAC2Gu5UQ
-! Checksum: 8f6ywArbsLTzMlwYdY0U+w
-! Checksum: kdhFqnXRT4wacAjgc2iFQg
+! Checksum: p2ZhIbWEDS2rCzdgTq6dRg
+! Checksum: pTKB4l/Zw5feI4wRYm7eyA
+! Checksum: yu5gwpU8pg58n87pV1mEAA
 ! Chinese
 ! Chinese google (https://github.com/easylist/easylist/issues/15643)
 ! Chinese supplement for the EasyList filters
@@ -216,7 +216,7 @@
 ! Last modified: 2025/10/29 06:15 +0800
 ! Last modified: 2025/10/30 16:10:28
 ! Last modified: 30 Oct 2025 10:00 UTC
-! Last modified: 30 Oct 2025 12:01 UTC
+! Last modified: 30 Oct 2025 14:41 UTC
 ! Latvian
 ! Licence: https://easylist.to/pages/licence.html
 ! License: https://easylist.to/pages/licence.html
@@ -306,7 +306,7 @@
 ! Version: 20230323162617
 ! Version: 2025.1030.1000.16
 ! Version: 202510290615
-! Version: 202510301201
+! Version: 202510301441
 ! Version: 20251030161028
 ! Vietnamese
 ! Vinted
@@ -650,8 +650,8 @@
 ! ||www.sstats.hellobank.be^
 ! ||zillow.com/HYx10rg3/init.js
 ! 出版读物插图修复
-! 压缩后规则数: 255448
-! 原始规则数: 255448
+! 压缩后规则数: 255449
+! 原始规则数: 255449
 ! 完整排行榜
 ! 小说评论区屏蔽
 ! 尝试修复新添加在阅读界面的短剧
@@ -889,8 +889,8 @@
 !||xip.io^
 !||yoogle.com^
 !||youtube.com/api/stats/atr?ns=*&ver=2&cmt=1.*&fs=0&*&euri&lact=
-!有效规则数目: 1544355
-!生成时间: 2025-10-30 19:45:34
+!有效规则数目: 1544007
+!生成时间: 2025-10-30 22:41:24
 $$a[href="/js/app.htm?url="]
 $$a[href="changhong886.com"]
 $$div[class="-ad-"]
@@ -33496,6 +33496,7 @@ zzzyk.com###Tinfo
 ||009.bapi.adsafeprotected.com^
 ||00984f58e492b16f.com^
 ||009855.com^
+||0099xxy78.weebly.com^
 ||009e08e1ba5e6907.com^
 ||009wows.com^
 ||00a45915310291.beer^
@@ -35199,7 +35200,6 @@ zzzyk.com###Tinfo
 ||0364f21a805c1f7d.com^
 ||0365.bid^
 ||0365alert.com^
-||0365ss.com^
 ||036cdb9a824f91747c8d8c62474afbd8.informacji-nf.sbs^
 ||036d702d271dae07f88e4fc97cae127d.org^
 ||036e.cn^
@@ -37555,6 +37555,7 @@ zzzyk.com###Tinfo
 ||0wnt1c.cfd^
 ||0workbypass.info^
 ||0wptk.voluumtrk.com^
+||0wq.ye-t5c.ru^
 ||0wr.xf7-27.ru^
 ||0wuaa9hw4rm66fq366jleo3f7lymo1516216722.nuid.imrworldwide.com^
 ||0wwdo226yexm.top^
@@ -39604,6 +39605,7 @@ zzzyk.com###Tinfo
 ||10rocketse.tk^
 ||10root25.website^
 ||10saxv.sbs^
+||10shanqureshi96.github.io^
 ||10sn95to9.de^
 ||10stepstostartingyouronlinebusiness.com^
 ||10stepstoyes.net^
@@ -43045,6 +43047,7 @@ zzzyk.com###Tinfo
 ||1544-4306.com^
 ||15444.editor-qa1.marketingcloudqaapis.com^
 ||15459.ftp-qa1.marketingcloudqaops.com^
+||1545jgd.demotionborrower.digital^
 ||1546465976629.usercash.com^
 ||1546a.s.fwmrm.net^
 ||1546a.v.fwmrm.net^
@@ -43729,7 +43732,6 @@ zzzyk.com###Tinfo
 ||16ao.mathon.fr^
 ||16aq.cn^
 ||16b4cf29a884cb7e1effd5174bb9f23a.com^
-||16bdj.pages.dev^
 ||16bit.in^
 ||16bvii.com^
 ||16bxpp5iywra.icu^
@@ -45210,6 +45212,7 @@ zzzyk.com###Tinfo
 ||19-59-rg.com^
 ||19.0-00d24000000isrqea4.net.daraz.com^
 ||19.219.102.97.cfl.res.rr.com^
+||19.45.167.72.host.secureserver.net^
 ||19.6.87.194.dynamic.dol.ru^
 ||19.62.233.72.static.reverse.ltdomains.com^
 ||19.68.118.70.cfl.res.rr.com^
@@ -47810,6 +47813,7 @@ zzzyk.com###Tinfo
 ||1yyhe.voluumtrk.com^
 ||1yyju.com^
 ||1yz.info^
+||1z.5no-v.ru^
 ||1z0rcepau0.top^
 ||1z3.ss-9-y-4.ru^
 ||1z9280.com^
@@ -50447,6 +50451,7 @@ zzzyk.com###Tinfo
 ||2159d7bb08.d8df5ac9e8.com^
 ||215a043303.com^
 ||215bcdf4310241.beer^
+||216-126-236-157.cprapid.com^
 ||216-135-134-95.pool.ukrtel.net^
 ||216-188-255-155.dyn.grandenetworks.net^
 ||216-221-195-9.pool.dsl.bbtel.com^
@@ -54522,6 +54527,7 @@ zzzyk.com###Tinfo
 ||2b934f17e10272.beer^
 ||2b935df2e654123207337c5d4c561181.com^
 ||2b9637d8610291.beer^
+||2b9k.ye-t5c.ru^
 ||2ba0f6361c.com^
 ||2ba7912a81021.beer^
 ||2bai8wb5d6.kenstewardministries.org^
@@ -55011,7 +55017,6 @@ zzzyk.com###Tinfo
 ||2f5.apidocskeeleootstrap.0-030.net.daraz.com^
 ||2f55c257310272.beer^
 ||2f5a1f1fab21a56.com^
-||2f5c-casefb250831.vercel.app^
 ||2f5de272ff.com^
 ||2f5f651e63.akstat.io^
 ||2f5f651e64.akstat.io^
@@ -59301,7 +59306,6 @@ zzzyk.com###Tinfo
 ||365technicalsupport.com^
 ||365techsupport.net^
 ||365tradeposition.com^
-||365w.bet^
 ||365x24x7.in^
 ||365xuet.com/assets/web/js/main.jsr_
 ||366-uky-221.mktoresp.com^
@@ -59730,6 +59734,7 @@ zzzyk.com###Tinfo
 ||3758.net^
 ||375961d56.com^
 ||375ae75e710281.beer^
+||375aiclaim.pages.dev^
 ||375ba732b4.e3a9997095.com^
 ||375c3320.ngrok.io^
 ||376-eax-990.mktoresp.com^
@@ -65349,6 +65354,7 @@ zzzyk.com###Tinfo
 ||4lkokogiveacall.tk^
 ||4love.info^
 ||4ly.ir^
+||4m.7si-s.ru^
 ||4m.mt3o4.ru^
 ||4m.v-9542.ru^
 ||4m4ones1q.com^
@@ -73092,6 +73098,7 @@ zzzyk.com###Tinfo
 ||6hqvgnhgsdsaujgg07fpuh17z45gw1507498790.nuid.imrworldwide.com^
 ||6hsgf6.lat^
 ||6hstcanada.com^
+||6hu.gl8r.ru^
 ||6hudgy.lat^
 ||6hueji2phone.tk^
 ||6hupone.tk6hupone.tk^
@@ -73106,6 +73113,7 @@ zzzyk.com###Tinfo
 ||6hwdg.lat^
 ||6hyl.com^
 ||6i3t3y2u-prisonner08pw6o6.stream^
+||6i4.ze9y.ru^
 ||6i789.com^
 ||6i7s83jk7q.kandisweets.com^
 ||6i7y3i.ru^
@@ -75751,6 +75759,7 @@ zzzyk.com###Tinfo
 ||77usprox.info^
 ||77v6jk9itk.com^
 ||77vip.wang^
+||77w.gl8r.ru^
 ||77xxmm.cn^
 ||77zhenia.net^
 ||77zip.com^
@@ -76043,6 +76052,7 @@ zzzyk.com###Tinfo
 ||78y.net^
 ||78y.ynbr-8.ru^
 ||78z4qg555t.top^
+||79-137-204-233.cprapid.com^
 ||79-175-119-244.adsl-a-3.sezampro.rs^
 ||79-175-120-157.adsl-a-3.sezampro.rs^
 ||79-175-120-7.adsl-a-3.sezampro.rs^
@@ -76370,6 +76380,7 @@ zzzyk.com###Tinfo
 ||7browsercat-proxy.tk^
 ||7bsvcs.lat^
 ||7buscar.com^
+||7bv.xa4p.ru^
 ||7bwh.com^
 ||7c.apidocskeeleootstrap.0-030.net.daraz.com^
 ||7c.video-ak.cdn.spotify.com^
@@ -77282,6 +77293,7 @@ zzzyk.com###Tinfo
 ||7xsf4r.com1.z0.glb.clouddn.com/lianzi.mp4
 ||7xswdc.cc^
 ||7xt.info^
+||7xui-casefb610583.vercel.app^
 ||7y2cq0-ahcss0gt.com^
 ||7y3bcefa.stream^
 ||7y412.com^
@@ -77602,7 +77614,6 @@ zzzyk.com###Tinfo
 ||80-87-183-232.static.oxid.cz^
 ||80-97-133-95.pool.ukrtel.net^
 ||80-music.com^
-||80.173.153.160.host.secureserver.net^
 ||80.178.5.176.adsl.012.net.il^
 ||80.179.195.144.cable.012.net.il^
 ||80.215.188.72.cfl.res.rr.com^
@@ -77801,7 +77812,6 @@ zzzyk.com###Tinfo
 ||80a16e63df.com^
 ||80a3e39b3395e268.com^
 ||80aczhyfg8v3bu7jzesb.viomil.ro^
-||80aef3df-4d6b-4a3e-8445-abef8311a8b0-00-3bhcmrrunb7ks.riker.replit.dev^
 ||80b6bbc92507f3fa.xyz^
 ||80b883c7f18b44fafe88bc3b964b77fa.xyz^
 ||80bpm.net^
@@ -80742,6 +80752,7 @@ zzzyk.com###Tinfo
 ||878e1e3461024.beer^
 ||878edf8ae10261.beer^
 ||879-ryh-696.mktoresp.com^
+||879.lo9q.ru^
 ||879.stats.misstrends.com^
 ||879.thebussybandit.com^
 ||87929796a10271.beer^
@@ -81476,7 +81487,6 @@ zzzyk.com###Tinfo
 ||8b53ef875f21a00d.com^
 ||8b62ddc457.c046100d82.com^
 ||8b64dce031022.beer^
-||8b70k3i5awvgshy.plto920dl20a-28ad.pl^
 ||8b729138310272.beer^
 ||8b75c1fe010281.beer^
 ||8b77d90e45.1b60887cd1.com^
@@ -81875,6 +81885,7 @@ zzzyk.com###Tinfo
 ||8iorkbuzz.tk^
 ||8iorktech.tk^
 ||8ipztcc1.com^
+||8iqi14tk4hqyw9pkcvc68inpl32vub.rest^
 ||8iql349ie.lojadanetssx.com^
 ||8iqpy8cgkk.com^
 ||8ishghd.lat^
@@ -82080,6 +82091,7 @@ zzzyk.com###Tinfo
 ||8rzt.adj.st^
 ||8s.kj-4-o-0.ru^
 ||8s1iev2r4d.top^
+||8s3.s7li.ru^
 ||8s32e590un.com^
 ||8s5s.com^
 ||8s5s.com^$popup
@@ -82531,6 +82543,7 @@ zzzyk.com###Tinfo
 ||9023cab03a.addf375bbe.com^
 ||90241faf010241.beer^
 ||9024525399319.usercash.com^
+||90265xx65.weebly.com^
 ||902815.glycyl.pw^
 ||9029a597b10272.beer^
 ||902f.com^
@@ -82756,6 +82769,7 @@ zzzyk.com###Tinfo
 ||911-proxy.info^
 ||911.cc^
 ||911.moy.su^
+||911.s7li.ru^
 ||911.sos-empleados.net^
 ||911.x24hr.com^
 ||9110386857762.usercash.com^
@@ -85987,6 +86001,7 @@ zzzyk.com###Tinfo
 ||9idzz.lyfd2xzauti9d8p.bapb.gdn^
 ||9if5m.c1l.us^
 ||9ihome.com/info/ADTopvnet/
+||9ij.v3ix.ru^
 ||9ij5upko10mf3yr3.beta.mercury.ai^
 ||9ijshj.lat^
 ||9ilbq21wja79kn36.alimebot.net.daraz.com^
@@ -86348,6 +86363,7 @@ zzzyk.com###Tinfo
 ||9tyuebcalltodaz.tk^
 ||9u5syataewpmftpqy85di8eqxmudypq5ksuizcmmbgc0bcaqxa.xyz^
 ||9u5uh.filled.pw^
+||9u93-casefb623710.vercel.app^
 ||9udzbflcs6.top^
 ||9ugycontact.tk^
 ||9uim1pc4ej4n.ru.themoneytizer.com^
@@ -86402,6 +86418,7 @@ zzzyk.com###Tinfo
 ||9wx.org/statics/js/new.js
 ||9wytevgsupp.tk^
 ||9x1n1qc0-prisonnersxvwjoj.stream^
+||9x2.v3ix.ru^
 ||9x43jiy97d.top^
 ||9x4yujhb0.com^
 ||9x5.org^
@@ -88752,6 +88769,7 @@ zzzyk.com###Tinfo
 ||a11waweb25mailaccess.tripod.com^
 ||a11ybar.com^
 ||a12.alphagodaddy.com^
+||a12.r4tu.ru^
 ||a12.x-traceur.com^
 ||a120.casalemedia.com^
 ||a1200.casalemedia.com^
@@ -89773,6 +89791,7 @@ zzzyk.com###Tinfo
 ||a18954.actonsoftware.com^
 ||a18971.actonsoftware.com^
 ||a19.g.akamai.net^
+||a19.xa4p.ru^
 ||a190.casalemedia.com^
 ||a1900.casalemedia.com^
 ||a19007.actonsoftware.com^
@@ -96096,6 +96115,7 @@ zzzyk.com###Tinfo
 ||aacw.info^
 ||aacworks.com^
 ||aacx.info^
+||aacycjgsifojcw.com^
 ||aaczwq7asu.neliver.com^
 ||aad-marketing.ascendeventmedia.com^
 ||aad-societies.com^
@@ -99400,7 +99420,6 @@ zzzyk.com###Tinfo
 ||abv-103938.square.site^
 ||abv-104656.square.site^
 ||abv-105542.square.site^
-||abv-106792.weeblysite.com^
 ||abv-108382.square.site^
 ||abv-help.weebly.com^
 ||abv-mebelshop.ru^
@@ -101715,7 +101734,6 @@ zzzyk.com###Tinfo
 ||account.uivv.org^
 ||account.umeng.com^
 ||account.unsightly-otter.customer.envato-staging.com^
-||account.vadeware.com^
 ||account.valide.checker.automatique.payverif.com^
 ||account.voluptuarianbit.com^
 ||account.weightgainformula.club^
@@ -102014,7 +102032,6 @@ zzzyk.com###Tinfo
 ||accounts.longmusic.com^
 ||accounts.marketwebb.me^
 ||accounts.marketwebb.mobi^
-||accounts.maxweb.black^
 ||accounts.microsoftonline.com.shapefastweightloss.com^
 ||accounts.mx^
 ||accounts.net^
@@ -102040,42 +102057,3 @@ zzzyk.com###Tinfo
 ||accountscenter-platform.help^
 ||accountscenterfb.com^
 ||accountsclose.site^
-||accountsdemosurf.tk^
-||accountsdoor.com^
-||accountsecure-verification.com^
-||accountsecure.xyz^
-||accountsecuressupport.com^
-||accountsecureverify.redirectme.net^
-||accountsecurity-google.com^
-||accountsefty.net^
-||accountsefty.org^
-||accountserpiceverify.com^
-||accountservicemanagealert.com^
-||accountservicepaypal.com^
-||accountservices-chargebacksupport.info^
-||accountservicesandsupportcenter.com^
-||accountservicesonlineemail.co.uk^
-||accountsettingcenterrr.weebly.com^
-||accountsettingnew-supportcenter-verifypages.pages.dev^
-||accountsfacebok.start.page^
-||accountsforex.cz.cc^
-||accountsforex.tk^
-||accountsforexfree.tk^
-||accountsglenbrook225.org^
-||accountsgoog1e.com^
-||accountsguru.info^
-||accountsinfo.net^
-||accountsinsight.com^
-||accountsllsouth.northamerica.net.daraz.com^
-||accountslogin.services^
-||accountslogs.com^
-||accountsmages.dotcloudapp.com^
-||accountsmicrosoft.com^
-||accountsnapchat.com^
-||accountsnapchat.net^
-||accountsoftware.in^
-||accountspaypal.info^
-||accountsplaza.net^
-||accountsreceivablesupport.com^
-||accountssale.com^
-||accountssnapchat.online^

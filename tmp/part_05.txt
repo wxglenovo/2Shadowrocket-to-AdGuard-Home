@@ -1,3 +1,37 @@
+||ds-email.admissions.pembroke.sa.edu.au^
+||ds-email.ags.vic.edu.au^
+||ds-email.aism.edu.my^
+||ds-email.apply.mta.qld.edu.au^
+||ds-email.carinya.nsw.edu.au^
+||ds-email.clc.vic.edu.au^
+||ds-email.crccs.vic.edu.au^
+||ds-email.ecmelb.catholic.edu.au^
+||ds-email.enrol.nudgee.qld.edu.au^
+||ds-email.enrol.vsv.vic.edu.au^
+||ds-email.flcr.qld.edu.au^
+||ds-email.gardenschool.edu.my^
+||ds-email.grg.nsw.edu.au^
+||ds-email.mercedes.wa.edu.au^
+||ds-email.meriden.nsw.edu.au^
+||ds-email.pacificenrolments.education^
+||ds-email.plc.vic.edu.au^
+||ds-email.waterfrontmontessori.com^
+||ds-erp.com^
+||ds-i.com^
+||ds-ll.serving-sys.com^
+||ds-m.addthisedge.com.edgekey.net^
+||ds-motorsport.com^
+||ds-original.com^
+||ds-overseas.com^
+||ds-pc.admsger.com^
+||ds-pv.iqu-operation.com^
+||ds-s7.addthis.com.edgekey.net^
+||ds-sync.dotomi.com^
+||ds-technologie.com^
+||ds-vn.serving-sys.com^
+||ds-webproxy.tk^
+||ds-www.addthis.com.edgekey.net^
+||ds.11st.co.kr^
 ||ds.247realmedia.com^
 ||ds.addthis.com^
 ||ds.advg.jp^
@@ -2469,6 +2503,7 @@
 ||dundebeefs.pro^
 ||dunderaffiliates.com^
 ||dune.n-4-ke.ru^
+||dune.s7li.online^
 ||dune.treqz.online^
 ||dune.tu-7-q.ru^
 ||dune.tu7q.online^
@@ -2883,7 +2918,6 @@
 ||dusksurf.com^
 ||dusktech.com^
 ||duskward-zevorith-app.com^
-||duskward-zevorith.net^
 ||duskwardzevorithapp.com^
 ||duskweave.site^
 ||duskwhisper.online^
@@ -4525,7 +4559,6 @@
 ||dynarisprimeapp.net^
 ||dynaristrader52flux.com^
 ||dynarixtrader.net^
-||dynarixtraderai.com^
 ||dynarunner.info^
 ||dynascroma.pro^
 ||dynaserv.ads360.com^
@@ -4728,7 +4761,6 @@
 ||dywizea.icu^
 ||dywjcc.top^
 ||dywolfer.de^
-||dywqlskkax.rupen.cfd^
 ||dywqwrtnhegyz.com^
 ||dywsudvroa.neliver.com^
 ||dywuhp-unbnf.love^
@@ -7431,6 +7463,7 @@
 ||ea9ead96810241.beer^
 ||ea9wy3-143yur.stream^
 ||eaa.edu.ph^
+||eaa.v3ix.ru^
 ||eaa2a4d4c9372092f5856ad9085bd5e0.com^
 ||eaa70a567e63f948.com^
 ||eaad.www-zaloguj.hair^
@@ -9670,7 +9703,6 @@
 ||ebay.viewitm.com^
 ||ebay.ws.it.ws.mezarkabristanisleri.com^
 ||ebay1.112.2o7.net^
-||ebay2.ebmallabb.com^
 ||ebay4u.justclick.ru^
 ||ebay5.com^
 ||ebay7.it^
@@ -10607,6 +10639,7 @@
 ||ec18fgdpv3.com^
 ||ec2-107-20-156-239.compute-1.amazonaws.com^
 ||ec2-13-127-188-209.ap-south-1.compute.amazonaws.com^
+||ec2-13-215-214-112.ap-southeast-1.compute.amazonaws.com^
 ||ec2-13-58-215-234.us-east-2.compute.amazonaws.com^
 ||ec2-18-204-218-146.compute-1.amazonaws.com^
 ||ec2-23-20-103-122.compute-1.amazonaws.com^
@@ -12400,7 +12433,6 @@
 ||edexcel.info^
 ||edexcoinpro.com^
 ||edexcoinpro.net^
-||edexcoinpro.org^
 ||edexcoinproapp.com^
 ||edf-consommation.com^
 ||edf-electricite.info^
@@ -12668,7 +12700,6 @@
 ||edgeustrade.com^
 ||edgevaultra-solution.com^
 ||edgevaultraapp.net^
-||edgevaultura.net^
 ||edgevedgeiledgeble.net.daraz.com^
 ||edgevequal.site^
 ||edgevertise.com^
@@ -17334,7 +17365,6 @@
 ||eldrlj.icu^
 ||eldros-lutharis-app.com^
 ||eldros-lutharis.net^
-||eldroslutharis.com^
 ||eldroslutharis.net^
 ||eldruidaylashierbas.com^
 ||eldry.us^
@@ -56125,6 +56155,7 @@
 ||en-amazon.com^
 ||en-applverifynow.com^
 ||en-biocomplete3.com^
+||en-bridge-trizo.github.io^
 ||en-chainfix.pages.dev^
 ||en-collect.trendyol.com^
 ||en-customer.com^
@@ -56170,7 +56201,6 @@
 ||en-trezorstart.pages.dev^
 ||en-uphold-us.pages.dev^
 ||en-us-apple.com^
-||en-us-cooinbase-walletextenstion.pages.dev^
 ||en-us-erectoninmd.com^
 ||en-us-ledgerlogin.pages.dev^
 ||en-us-support.belkin.com^
@@ -56305,6 +56335,7 @@
 ||enablebrowser.com^
 ||enablebrowser.info^
 ||enabledbrowser.info^
+||enabledetective.com^
 ||enabledevmode.dev^
 ||enabledlondon.com^
 ||enablefirewall.info^
@@ -58309,6 +58340,7 @@
 ||enormousearth.com^
 ||enormousebooks.biz^
 ||enormousfoot.com^
+||enormousgrievedsquall.com^
 ||enormousimpala.pro^
 ||enormousjunglefowl.pro^
 ||enormousprawn.pro^
@@ -60552,6 +60584,7 @@
 ||epv54.neoplus.adsl.tpnet.pl^
 ||epvasfpjlathyrus.download^
 ||epvhmxyqa.bid^
+||epw.ju8r.ru^
 ||epw102.neoplus.adsl.tpnet.pl^
 ||epw12.neoplus.adsl.tpnet.pl^
 ||epw139.neoplus.adsl.tpnet.pl^
@@ -67478,7 +67511,6 @@
 ||estrategia-luxogenia.net^
 ||estrategiadigital.com.br^
 ||estrategialuxogenia-app.com^
-||estrategialuxogenia.com^
 ||estrategialuxogenia.net^
 ||estrategialuxogenia.ru^
 ||estrategiamolvera.net^
@@ -67989,7 +68021,6 @@
 ||etercom.media-toolbar.com^
 ||eterdosior.de^
 ||etereurm.org^
-||eterionzyvora.net^
 ||eterionzyvorareview.com^
 ||eterle.ru^
 ||eterminura.com^
@@ -68371,7 +68402,6 @@
 ||etherdetla.pro^
 ||etherdrop.top^
 ||etherdrops.com^
-||ethereal-attraction5d2d20e1r1r021d0f210df1000.surge.sh^
 ||etherealbamboo.com^
 ||etherealbazaar.site^
 ||etherealbloodhound.pro^
@@ -68461,7 +68491,6 @@
 ||ethereum-code1.online^
 ||ethereum-codeapp.com^
 ||ethereum-constantinople.com^
-||ethereum-cormax-ai.com^
 ||ethereum-cormax-platform.co^
 ||ethereum-cormax-platform.com^
 ||ethereum-cormax-platform.net^
@@ -68555,7 +68584,6 @@
 ||ethereum02cormax200x.com^
 ||ethereum13x-olux-app.com^
 ||ethereum13xolux-platform.com^
-||ethereum13xolux.net^
 ||ethereum13xolux.org^
 ||ethereum17xolux.com^
 ||ethereum17xolux.net^
@@ -68564,7 +68592,6 @@
 ||ethereum360.app^
 ||ethereum40cormax4000.com^
 ||ethereum4ever.com^
-||ethereum5voluxai.com^
 ||ethereum7000cormax17x.com^
 ||ethereum800cormax.com^
 ||ethereum900xcormaxv2.com^
@@ -69339,7 +69366,6 @@
 ||etroxpro2000.com^
 ||etroxproapp.com^
 ||etroytj33.fun^
-||etrozlynar.net^
 ||etrtyty5y4htrr.w3spaces.com^
 ||etruscaia.it^
 ||etrust.eu^
@@ -69380,7 +69406,6 @@
 ||etsudo-shimz.net^
 ||etsuji.com^
 ||etsuse-cure.000webhostapp.com^
-||etsy.88572.cfd^
 ||etsy.93248241.cfd^
 ||etsy.assert.help^
 ||etsy.bttn.io^
@@ -70995,7 +71020,6 @@
 ||evansorex-app-engine.com^
 ||evansorex-app-tech.com^
 ||evansorex-app.net^
-||evansorexappai.net^
 ||evansstdental.com^
 ||evansvillesurgical.net^
 ||evantaagartnercompany.demdex.net^
@@ -72597,7 +72621,6 @@
 ||evolu.adsdomaintracking.com^
 ||evolucaodigital.com^
 ||evolucent.com.au^
-||evolucion-fluxium-ai.com^
 ||evolucion-fluxium-solution.com^
 ||evolucion-fluxium.net^
 ||evolucion-fluxiumsolution.com^
@@ -72941,6 +72964,7 @@
 ||ewcms.643845878836e70001c8038c.click^
 ||ewcnmtw.top^
 ||ewcrlfnvbz.neliver.com^
+||ewd.gl8r.ru^
 ||ewd109.neoplus.adsl.tpnet.pl^
 ||ewdcol.site^
 ||ewderhovered.qpon^
@@ -74456,7 +74480,6 @@
 ||exodus-wallet.net^
 ||exodus-wallet.org^
 ||exodus-wallets.boxmode.io^
-||exodus-wallett.pages.dev^
 ||exodus-web.com^
 ||exodus-web.company^
 ||exodus-web.net^
@@ -78229,6 +78252,7 @@
 ||f768342170bdeca4c94bfe207bc80f95.org^
 ||f775.thehour.com^
 ||f77dc185410241.beer^
+||f78.ju8r.ru^
 ||f782fb5291023.beer^
 ||f785270161024.beer^
 ||f78f61fdc10281.beer^
@@ -79008,7 +79032,6 @@
 ||facebook-fanpage-likes.com^
 ||facebook-fanpage-maslanka.grupki.com^
 ||facebook-fb-terms.com^
-||facebook-feedback9hqg.rollout.site^
 ||facebook-follower-kaufen.com^
 ||facebook-freelike.ml^
 ||facebook-group-lookalike.com^
@@ -79809,7 +79832,6 @@
 ||facebookphonenumbercom.blogspot.de^
 ||facebookphonenumbercom.blogspot.fr^
 ||facebookphonenumbercom.blogspot.in^
-||facebookpics.muzzymusic.co.zw^
 ||facebookpiratage.com^
 ||facebookpirateruncompte.com^
 ||facebookplay.urlwtmurl.com^
@@ -84459,7 +84481,6 @@
 ||falvero.top^
 ||falvextrader.net^
 ||falvextrader57.com^
-||falvextraderai.com^
 ||falvo-1denar.biz^
 ||falvorantipexu7q38.online^
 ||falxreacher.digital^
@@ -85334,6 +85355,7 @@
 ||faq.algolia.com^
 ||faq.brandnewapp.pro^
 ||faq.carpediem.fr^
+||faq.dnqdl.cn^
 ||faq.elasticbeanstalk-r-dw-1.net.daraz.com^
 ||faq.mainpean.de^
 ||faq.net.daraz.com^
@@ -86041,7 +86063,6 @@
 ||fasiomergerd.weebly.com^
 ||fasjadsfiwin.com^
 ||fasliaf.click^
-||faslkdomgod.com^
 ||fasmoretime.ga^
 ||fasnacht-in-basel.online^
 ||fasnacht-tv.com^
@@ -86089,7 +86110,6 @@
 ||fast-email-login.com^
 ||fast-email-support.online^
 ||fast-essay.com^
-||fast-facts.info^
 ||fast-fake.info^
 ||fast-free-proxy.cn^
 ||fast-free-proxy.gq^
@@ -89457,7 +89477,6 @@
 ||fawn.k8li.online^
 ||fawnersomehow.qpon^
 ||fawnor-kezil.net^
-||fawnorkezil-ai.com^
 ||fawnorkezil.com^
 ||fawnorkezil.net^
 ||fawnorkezilai.com^
@@ -90944,7 +90963,6 @@
 ||fdf96bba78a9249ca4e.com^
 ||fdfamen.com^
 ||fdfda.zhuzhai.com^
-||fdfdfddsss.weebly.com^
 ||fdfdtupgrade10.ml^
 ||fdfdtupgrade10.tk^
 ||fdfe4ed62699.cdn4.forter.com^
@@ -92907,7 +92925,6 @@
 ||fenorixtrader-ai-app.com^
 ||fenorixtrader-ai-system.com^
 ||fenorixtrader-ai.com^
-||fenorixtrader-ai.net^
 ||fenorixtrader8-ai-platform.com^
 ||fenorixtrader84ai-official.com^
 ||fenorixtrader84ai.com^
@@ -93264,7 +93281,6 @@
 ||feronixflow-5-7-ai.net^
 ||feronixflow57-ai.com^
 ||feronixtrader.net^
-||feronixtraderapp.com^
 ||feronquandrista.cyou^
 ||feronyv.com^
 ||feropmeratre.weebly.com^
@@ -93826,7 +93842,6 @@
 ||fexonixtrader-69-flex.com^
 ||fexonixtrader-app.com^
 ||fexonixtrader.ru^
-||fexonixtrader69flex.com^
 ||fexonixtrader69flex.net^
 ||fexonixtraderai.com^
 ||fexonixtraderapp.net^
@@ -94496,7 +94511,6 @@
 ||fghrthn.cz.cc^
 ||fghstre.sanantoniowaterproofing.com^
 ||fghtrrasovlsu.com^
-||fghtstbshdzbfzdfbvbdzfvsdfvdf.weebly.com^
 ||fghuhiolugkyfjthddtjfykgjlhk.000webhostapp.com^
 ||fgi521.webwave.dev^
 ||fgi90.com^
@@ -94657,6 +94671,7 @@
 ||fh792290.bget.ru^
 ||fh7wbx.hair^
 ||fh8l1d95kg.hotelmahalindia.com^
+||fh9.mi7x.ru^
 ||fha-adminsupport.com^
 ||fha-rate-help.com^
 ||fha-updates-email.com^
@@ -98200,7 +98215,6 @@
 ||finance-pilot.org^
 ||finance-plus.biz^
 ||finance-profit-bot.com^
-||finance-profit-bot.online^
 ||finance-reporting.org^
 ||finance-reports.info^
 ||finance-reports.net^
@@ -98273,7 +98287,6 @@
 ||financelegend-app.com^
 ||financelegend-app.net^
 ||financelegend.ru^
-||financelegendai.com^
 ||financelegendai.net^
 ||financelegendapp.org^
 ||financelegendappai.com^
@@ -99371,7 +99384,6 @@
 ||finesseindia.com^
 ||finesses.us^
 ||finesseserendipidade-app.com^
-||finesseserendipidade.net^
 ||finest-datings-show-here.com^
 ||finest-datings.com^
 ||finest-real-show-here.com^
@@ -99804,7 +99816,6 @@
 ||finquorax.net^
 ||finquorix.com^
 ||finquorix.net^
-||finquorpartners.net^
 ||finquorpartnersapp.com^
 ||finrefgh.com^
 ||finreporter.net^
@@ -99859,13 +99870,11 @@
 ||fintolorix.com^
 ||fintolorix.org^
 ||fintorx-app.com^
-||fintorx.net^
 ||fintorxapp.com^
 ||fintorxplatform-com.cryptofinancetrack.com^
 ||fintorxplatform-com.financecryptoworld.com^
 ||fintorxsoftware.com^
 ||fintox-oro.net^
-||fintoxoro.com^
 ||fintoxoro.net^
 ||fintoxoroapp.com^
 ||fintr4ck.xyz^
@@ -102048,34 +102057,3 @@
 ||fixconcretebestfileclicks.top^
 ||fixconcretedealappclicks.icu^
 ||fixconcretedealappclicks.top^
-||fixconcretedealfileclicks.icu^
-||fixconcretedealfileclicks.top^
-||fixconcretegreatappclicks.icu^
-||fixconcretegreatappclicks.top^
-||fixconcretegreatfileclicks.icu^
-||fixconcretetypeappclicks.icu^
-||fixconcretetypeappclicks.top^
-||fixconcretetypefileclicks.icu^
-||fixconcretetypefileclicks.top^
-||fixconnectionswindows10.com^
-||fixcounter.com^
-||fixcounter.com^$third-party
-||fixcredit.co.cc^
-||fixcrediterrors.com^
-||fixdealadvanceappclicks.icu^
-||fixdealadvanceappclicks.top^
-||fixdealadvancefileclicks.top^
-||fixdealakamaiappclicks.icu^
-||fixdealakamaiappclicks.top^
-||fixdealalwaysappclicks.icu^
-||fixdealalwaysappclicks.top^
-||fixdealalwaysfileclicks.icu^
-||fixdealalwaysfileclicks.top^
-||fixdealalwaystheclicks.icu^
-||fixdealappleappclicks.icu^
-||fixdealappleappclicks.top^
-||fixdealaptitudeappclicks.icu^
-||fixdealaptitudeappclicks.top^
-||fixdealaptitudetheclicks.icu^
-||fixdealaskappclicks.icu^
-||fixdealaskappclicks.top^

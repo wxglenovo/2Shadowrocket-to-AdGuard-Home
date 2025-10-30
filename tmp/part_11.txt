@@ -1,3 +1,12 @@
+||server.ad.logic.viasat.io^
+||server.adapta.org^
+||server.adcplasp.com.br^
+||server.addtocart.com.bd^
+||server.adeasy.ru^
+||server.adeisemarcondes.com.br^
+||server.adeusprisaodeventre.com.br^
+||server.adform.net^
+||server.adformdsp.net^
 ||server.adjectivebd.com^
 ||server.adrianoleonardi.com.br^
 ||server.adrianscalper.com^
@@ -1653,7 +1662,6 @@
 ||server.salesleadersgroup.com.br^
 ||server.samadahmad.com^
 ||server.samaramarques.com.br^
-||server.samc0ndubai.com^
 ||server.sammymenswear.com^
 ||server.samratcarcare.ae^
 ||server.sanaascents.com^
@@ -8855,12 +8863,12 @@
 ||shaddersagent-system.com^
 ||shaddersagent.net^
 ||shaddersagent.ru^
-||shaddersagentapp.com^
 ||shaddersagentapp.net^
 ||shaddersagentsystem.com^
 ||shadebobs.com^
 ||shadecrafteclipse.co^
 ||shadeorbit.pro^
+||shaderm.com^
 ||shadesandblinds.com^
 ||shadesexpo.com^
 ||shadeship.com^
@@ -10345,6 +10353,7 @@
 ||shareyourcontents.com^
 ||shareyourride.info^
 ||shareyoutubevideos.com^
+||sharezbjkb.pages.dev^
 ||sharezip.quizizz.com^
 ||sharezips.info^
 ||sharezips.net^
@@ -10419,7 +10428,6 @@
 ||sharktunnelips.tk^
 ||sharkysproxy.com^
 ||sharleo.com^
-||sharlinnadar.github.io^
 ||sharlock.ml^
 ||sharlotka38.ru^
 ||sharm.com.bd^
@@ -11579,7 +11587,6 @@
 ||shift70hiprex.com^
 ||shift70hiprexapp.com^
 ||shift800hiprex.com^
-||shift81xhiprex.com^
 ||shift8xhiprex.net^
 ||shift8xhiprex.pro^
 ||shift8xhiprexai.com^
@@ -15620,7 +15627,6 @@
 ||sigma-fantom.net^
 ||sigma-prime.com^
 ||sigma-ravex.com^
-||sigma-seicho.com^
 ||sigma-statistics-push.proxima.nie.easebar.com^
 ||sigma-value.com^
 ||sigma-value.net^
@@ -21598,7 +21604,6 @@
 ||skyandroid.2cnt.net^
 ||skyapi.live.net^
 ||skyassetcrest.com^
-||skyassetcrest.net^
 ||skyauction.122.2o7.net^
 ||skybersoft.com^
 ||skybest-proxysjp.tk^
@@ -24282,7 +24287,6 @@
 ||smartbit-boost-app.net^
 ||smartbit-boost.com^
 ||smartbit-boost.org^
-||smartbitboost-app.com^
 ||smartbitboost-app.net^
 ||smartbitboost-engine.com^
 ||smartbitboost-platform.com^
@@ -24874,7 +24878,6 @@
 ||smartstats.com^
 ||smartstockai-app.com^
 ||smartstockai-system.com^
-||smartstockaiapp.com^
 ||smartstockaiapp.net^
 ||smartstocksai-app.com^
 ||smartstocksai-app.net^
@@ -25134,7 +25137,6 @@
 ||smbc-cardj23.club^
 ||smbc-cardjb9.club^
 ||smbc-cardjzu.club^
-||smbc-cardk15.club^
 ||smbc-cardljw.club^
 ||smbc-cardlo6.club^
 ||smbc-cardlzn.club^
@@ -25146,7 +25148,6 @@
 ||smbc-cardsk5.club^
 ||smbc-cardslw.club^
 ||smbc-cardsu7.club^
-||smbc-cardthb.club^
 ||smbc-cardutx.club^
 ||smbc-cardvnd.club^
 ||smbc-cardw2i.club^
@@ -25201,7 +25202,6 @@
 ||smbcrad.link^
 ||smbcraeds.mom^
 ||smbcrd.sbs^
-||smbcrdvps.sbs^
 ||smbcrdvpss.sbs^
 ||smbcregi.com^
 ||smbcregister.com^
@@ -30854,6 +30854,7 @@
 ||smutty.com/n.js
 ||smuttysix.us^
 ||smuucatbrc.com^
+||smuxil.cfd^
 ||smuyphsl.smu.edu.sg^
 ||smv.to^
 ||smvip8.cn^
@@ -31645,7 +31646,6 @@
 ||snathbedroll.click^
 ||snathenine.us^
 ||snathone.us^
-||snatoisheretyfcxzxx.weebly.com^
 ||snawkaroki.com^
 ||snaxbgzg.bid^
 ||snaxlofon.store^
@@ -34092,7 +34092,6 @@
 ||softcon.icu^
 ||softcondor.pro^
 ||softcore.xxxcounter.com^
-||softcore01.github.io^
 ||softcorporation.com.br^
 ||softcoupon.info^
 ||softcourier.com^
@@ -35437,7 +35436,6 @@
 ||solichd.ga^
 ||soliciel.com^
 ||solicita.info^
-||solicitacaocomresgate.com^
 ||solicitarempleo.net^
 ||solicitatutc.webcindario.com^
 ||solicited.clawed.info^
@@ -35685,7 +35683,6 @@
 ||solonixedge27ai.net^
 ||solonixtrader-91-zen.com^
 ||solonixtrader.net^
-||solonixtrader91-zen.com^
 ||solonixtrader91zen.net^
 ||solonixtraderai.com^
 ||solonomi.com^
@@ -36144,7 +36141,6 @@
 ||solvicks-trenor-app.com^
 ||solvicks-trenor-app.net^
 ||solvickstrenor-system.com^
-||solvickstrenor.net^
 ||solvickstrenorapp.com^
 ||solvickstrenorapp.net^
 ||solvickstrenortech.com^
@@ -36160,7 +36156,6 @@
 ||solviontrust-software.com^
 ||solviontrust.com^
 ||solviontrust.net^
-||solviontrustai.com^
 ||solviora.ink^
 ||solviora.rest^
 ||solviro.cfd^
@@ -39559,6 +39554,7 @@
 ||spanfeller-foodanddrink.t.domdex.com^
 ||spanfeller-sports.t.domdex.com^
 ||spania.no^
+||spaniardinformationbookworm.com^
 ||spanids.dictionary.com^
 ||spanids.reference.com^
 ||spanids.thesaurus.com^
@@ -40568,7 +40564,6 @@
 ||spectraventura.icu^
 ||spectrax-app.net^
 ||spectrax-system.com^
-||spectraxai.com^
 ||spectraxapp.com^
 ||spectraxbot-platform.com^
 ||spectraxtrading.com^
@@ -41550,7 +41545,6 @@
 ||spice-route.info^
 ||spice-sugar.net^
 ||spicebitflow.com^
-||spicebitflow.net^
 ||spicebitflow.pro^
 ||spicebitflowsystem-com.cryptofinancetrack.com^
 ||spicebitflowsystem-com.financecryptoworld.com^
@@ -42398,6 +42392,7 @@
 ||spnxagbfh.com^
 ||spo-ring.msedge.net^
 ||spoals.fr.fo^
+||spoar.org.in^
 ||spoaven.top^
 ||spob.org.br^
 ||spocccesoi.pro^
@@ -43179,7 +43174,6 @@
 ||spot18xsanorex.com^
 ||spot18xsanorex.net^
 ||spot19x-adipex.com^
-||spot19xadipex.com^
 ||spot19xadipex.net^
 ||spot19xadipexai.com^
 ||spot19xadipexapp.com^
@@ -43195,7 +43189,6 @@
 ||spot4xavur.com^
 ||spot5.info^
 ||spot5000-lasix.com^
-||spot5000lasix.com^
 ||spot5000lasix.cyou^
 ||spot5000lasix.net^
 ||spot5000lasix.pro^
@@ -43204,7 +43197,6 @@
 ||spot63exalgo.com^
 ||spot6xeryndapp.net^
 ||spot7000exalgo.com^
-||spot7000prolia.com^
 ||spot71lasix.com^
 ||spot770ewaun-spot770ewaun-app.com^
 ||spot770ewaun.net^
@@ -43233,7 +43225,6 @@
 ||spotadipex8v80.org^
 ||spotadipex9000.com^
 ||spotadipex9000.net^
-||spotadipexai.com^
 ||spotadipexapp.net^
 ||spotadipexsoft.com^
 ||spotadipexsoftware.com^
@@ -43562,7 +43553,6 @@
 ||spotlasix7-1.com^
 ||spotlasix71.net^
 ||spotlasix71app.net^
-||spotlasixapp.com^
 ||spotlasixapp.net^
 ||spotlasixplatform.com^
 ||spotlasixsolution.com^
@@ -43659,7 +43649,6 @@
 ||spotrelpax50.net^
 ||spotrelpax50.ru^
 ||spotrelpaxai.com^
-||spotrelpaxai.net^
 ||spotrelpaxaiapp.com^
 ||spotrelpaxaiapp.net^
 ||spotrelpaxaisoft.com^
@@ -43684,7 +43673,6 @@
 ||spotsanorex8018x8000.com^
 ||spotsanorex8018x8000app.com^
 ||spotsanorex8018x8000app.net^
-||spotsanorexapp.com^
 ||spotsanorexapp.net^
 ||spotsanorexsoft.com^
 ||spotsanzo.com^
@@ -48614,7 +48602,6 @@
 ||ssa.tameson.fr^
 ||ssa.tameson.nl^
 ||ssa.tlc.com^
-||ssaaa8383ssaaa83.weebly.com^
 ||ssabaki12.com^
 ||ssac-parts.com^
 ||ssac.suning.com^
@@ -49922,10 +49909,8 @@
 ||sso-secureserver.mikaelspreitz.com^
 ||sso-start-trzurio-enn.pages.dev^
 ||sso-trzr-suit-secure-crypt-assest.pages.dev^
-||sso-trzrr--logon.pages.dev^
 ||sso-universite-paris-saclay.weebly.com^
 ||sso-uohold-en.pages.dev^
-||sso-uphold-en-learn.pages.dev^
 ||sso.admicro.vn^
 ||sso.anbtr.com^
 ||sso.canada.com^
@@ -53225,7 +53210,6 @@
 ||stable-tradescore-software.com^
 ||stable-whitelist.app^
 ||stable-yield-boost.com^
-||stable-yield-boost.net^
 ||stable-yield-boostapp.com^
 ||stable.app.optimizely.com^
 ||stable.icecyber.org^
@@ -53377,7 +53361,6 @@
 ||staemccommunlty.ga^
 ||staemcommnunity.com^
 ||staemcommunitry.com^
-||staemcomunnity.cc^
 ||staencommunity.com^
 ||staerk-paycore.net^
 ||staf.cc^
@@ -62421,7 +62404,6 @@
 ||steakeffort.com^
 ||steakhousehollister.com^
 ||steaksaas.com^
-||stealcommunilty.icu^
 ||stealify.online^
 ||stealing-valuable.co.cc^
 ||stealman.zzz.com.ua^
@@ -62656,7 +62638,6 @@
 ||steamcommrunity.com^
 ||steamcommu.com^
 ||steamcommuhity.com^
-||steamcommuhnity.ru^
 ||steamcommuinlty.com^
 ||steamcommuity.ga^
 ||steamcommujtliy.com^
@@ -63149,7 +63130,6 @@
 ||stelas.de^
 ||stelastraveldiary.com^
 ||stelazsietterem.hu^
-||stelglencoinsai.com^
 ||stelglencoinsreview.com^
 ||stelioskanakis.gr^
 ||stelkepl.tk^
@@ -66360,7 +66340,6 @@
 ||strategos.biz^
 ||strategy-profit.info^
 ||strategy-tech.com^
-||strategy-verify-38192507.pages.dev^
 ||strategy.batmobi.net^
 ||strategy.beacon.qq.com^
 ||strategy.com^
@@ -67437,7 +67416,6 @@
 ||stroy-aliance.ru^
 ||stroy-asfalt.com.ua^
 ||stroy-h.ru^
-||stroy-portall.ru^
 ||stroy-tehno.ru^
 ||stroy-tex.com^
 ||stroy.deltac.ru^
@@ -68401,7 +68379,6 @@
 ||sturdy-groft.net^
 ||sturdy.tk^
 ||sturdyarrival.com^
-||sturdygroft.com^
 ||sturdygroft.net^
 ||sturdynotwithstandingpersuasive.info^
 ||sturdysnail.com^
@@ -68495,7 +68472,6 @@
 ||stxml.d2.co.nz^
 ||stxmumxjxbeud.store^
 ||stxtrade.com^
-||sty.ink^
 ||sty.zkmobi.com^
 ||stydi.duckdns.org^
 ||stygg.xyz^
@@ -69278,6 +69254,7 @@
 ||subscria.com^
 ||subscribable-object.000webhostapp.com^
 ||subscribe-free.info^
+||subscribe-knives-coordinator-actors.trycloudflare.com^
 ||subscribe.adpinfo.com^
 ||subscribe.car.org^
 ||subscribe.dnv.com^
@@ -72794,7 +72771,6 @@
 ||supplyvisor.com^
 ||supplyvurex-solution.com^
 ||supplyvurex.com^
-||supplyvurex.net^
 ||supplyvurexapp.net^
 ||supplyvurexplatform.com^
 ||supplyvurexsolution.com^
@@ -72822,7 +72798,6 @@
 ||support--icloud.online^
 ||support--iphone.online^
 ||support--salezhelp.com^
-||support--upholdf-com.pages.dev^
 ||support-00bz0.stream^
 ||support-00ha.stream^
 ||support-00hb.stream^
@@ -74557,7 +74532,6 @@
 ||support-book.com^
 ||support-bork.ru^
 ||support-brdge-trzor.pages.dev^
-||support-bridge-trezrdowload.pages.dev^
 ||support-brotherdrivers.com^
 ||support-buscar-app.com^
 ||support-buscar-id.com^
@@ -82109,7 +82083,6 @@
 ||suvsee.com^
 ||suvset.sohu.com^
 ||suvsurf.tk^
-||suvv-casefb757287.vercel.app^
 ||suvvihvbskvnii.com^
 ||suvworks.com^
 ||suwa.it^
@@ -82355,6 +82328,7 @@
 ||svc.fn0.m-pathy.com^
 ||svc.fn1.m-pathy.com^
 ||svc.group^
+||svc.lo9q.ru^
 ||svc.mobilexsoft.com^
 ||svc.ondeck.com.au^
 ||svc.tn0.m-pathy.com^
@@ -83018,7 +82992,6 @@
 ||swap-50x-proair-500.com^
 ||swap-50x-proair.net^
 ||swap-53-exalgo.com^
-||swap-70-arlex.online^
 ||swap-71-lasix.com^
 ||swap-77xaxixer.net^
 ||swap-7v-sanorex.com^
@@ -83052,7 +83025,6 @@
 ||swap-exalgo-platform.net^
 ||swap-exalgo-xp-v300.com^
 ||swap-exalgo-xp.com^
-||swap-exalgo-xp.net^
 ||swap-exalgo.co^
 ||swap-exalgo.com^
 ||swap-exalgo.net^
@@ -83079,7 +83051,6 @@
 ||swap-lotemax.net^
 ||swap-lotemax70.com^
 ||swap-maxair.net^
-||swap-pancake.github.io^
 ||swap-pro-relpax.com^
 ||swap-prolia-7000.com^
 ||swap-renova-100.com^
@@ -83126,7 +83097,6 @@
 ||swap20relpaxreview.com^
 ||swap20sanorex.com^
 ||swap21lasix.com^
-||swap23relpax.com^
 ||swap23relpax.net^
 ||swap30proair3000.com^
 ||swap4000adipex.net^
@@ -83164,7 +83134,6 @@
 ||swap8vadipex-system.com^
 ||swap900renova.com^
 ||swap90lotemax.com^
-||swap9x-lotemax.com^
 ||swap9xlotemax.com^
 ||swap9xlotemax.net^
 ||swap9xlotemaxai.com^
@@ -83206,7 +83175,6 @@
 ||swapexalgo.co^
 ||swapexalgo.net^
 ||swapexalgo50005x53.com^
-||swapexalgoaiapp.com^
 ||swapexalgoplatform.com^
 ||swapexalgoxp-soft.com^
 ||swapexalgoxp-system.com^
@@ -83306,7 +83274,6 @@
 ||swappushk.xyz^
 ||swappushv.top^
 ||swappushw.top^
-||swappushz.top^
 ||swaprelpax23.com^
 ||swaprelpaxai.com^
 ||swaprenova-50.com^
@@ -83338,7 +83305,6 @@
 ||swapskillful.tk^
 ||swapsolutions.limited^
 ||swapstation.top^
-||swaptrad.net.uniswap-trade.net^
 ||swaptrap.live^
 ||swapv1proair.com^
 ||swapv1proair.net^
@@ -83967,7 +83933,6 @@
 ||swiftcryptofx.com^
 ||swiftcryptos.com^
 ||swiftcurrentwas.tk^
-||swiftdevchain.firebaseapp.com^
 ||swiftdigitallab.com^
 ||swiftdog.com^
 ||swiftdog.net^
@@ -84011,7 +83976,6 @@
 ||swiftlyone.us^
 ||swiftlyproxy.info^
 ||swiftmainacefix.firebaseapp.com^
-||swiftmainacefix.web.app^
 ||swiftmining.win^
 ||swiftmining.win^$third-party
 ||swiftmoves.info^
@@ -84647,12 +84611,10 @@
 ||switchamrix100.com^
 ||switchamrix100v24.com^
 ||switchamrix2.com^
-||switchamrix20360.com^
 ||switchamrix20app.com^
 ||switchamrix24.com^
 ||switchamrix30013v.com^
 ||switchamrixai10.com^
-||switchamrixaimodel10.com^
 ||switchamrixapp.com^
 ||switchamrixapp.net^
 ||switchamrixcap.net^
@@ -84984,6 +84946,7 @@
 ||swzarndhxqz.work^
 ||swzhb.com^
 ||swzizkjqe.bid^
+||swznsculrj.ralor.cfd^
 ||swzrrsepta.review^
 ||swzrtm.unclereco.com^
 ||swzyfkbkdv.bid^
@@ -86137,7 +86100,6 @@
 ||synex-tradeai.com^
 ||synex-tradeai.net^
 ||synextrade-ai.com^
-||synextrade-ai.online^
 ||synextradeai.pro^
 ||synextradeaiapp.com^
 ||synexus.com.au^
@@ -87345,6 +87307,7 @@
 ||system32update.com.s3-website.eu-central-1.amazonaws.com^
 ||system32update.com^
 ||system32update.info^
+||system360.inistrack.net^
 ||system37.chiccams.com^
 ||system3forex-123.tk^
 ||system4.support^
@@ -89903,6 +89866,7 @@
 ||t3rmiinal.xyz^
 ||t3rminall.pw^
 ||t3rminel.guru^
+||t3s.hy6o.ru^
 ||t3ss1.lol^
 ||t3t0je3qiqqt03u.bid^
 ||t3technicalsupport.com^
@@ -89963,6 +89927,7 @@
 ||t5hl.31e854642.online^
 ||t5jzz.qlvfyxtzjh5.bapb.gdn^
 ||t5lvv.572642551.cn^
+||t5m.60nma5.ru^
 ||t5news.com^
 ||t5pl.lol^
 ||t5vo.kqag6.ru^
@@ -90017,6 +89982,7 @@
 ||t7cp4fldl.com^
 ||t7dq5o.webwave.dev^
 ||t7k5rbrmq7.kameleoon.eu^
+||t7p.v3ix.online^
 ||t7pl.lat^
 ||t7qrb.voluumtrk.com^
 ||t7rackclouddirect.space^
@@ -90221,7 +90187,6 @@
 ||tabici.com^
 ||tabidhooroo.cyou^
 ||tabigeinin.com^
-||tabiloner.info^
 ||tabimsa.com^
 ||tabishpak.com^
 ||tabitab.com^
@@ -91577,7 +91542,6 @@
 ||tagumpay-ai.com^
 ||tagumpay-ai.net^
 ||tagumpayai.net^
-||tagumpayai.online^
 ||tagumpayai.pro^
 ||tagveam.ml^
 ||tagvector.cfd^
@@ -92309,7 +92273,6 @@
 ||takt-crimea.ru^
 ||taktahost.com^
 ||taktikyverix.com^
-||taktikyverix.net^
 ||taktooceniamypolacy.club^
 ||taktvermogen.org^
 ||taku-kusuka.com^
@@ -92741,7 +92704,6 @@
 ||talonextrader-83core.net^
 ||talonextrader.net^
 ||talonextrader8-3core.com^
-||talonextrader83-core.com^
 ||talonextraderai.com^
 ||talonix-sphere.net^
 ||talonixfunds.com^
@@ -94329,7 +94291,6 @@
 ||tarifdoc.de^
 ||tarife.de.intellitxt.com^
 ||tarifflesspvvtxwa.download^
-||tariffs-ai.com^
 ||tariffsai.net^
 ||tarifliste.com^
 ||tarifunwei.pro^
@@ -94346,7 +94307,6 @@
 ||tarionvelestra.icu^
 ||tariq.com.au^
 ||tariqintl.com^
-||tariqon-sync-gpt.com^
 ||tariqonsyncgptapp.com^
 ||tariqul.ieltsbook.xyz^
 ||tariuniverse.com^
@@ -95155,7 +95115,6 @@
 ||tauruswealth.com.sg^
 ||tausch-link.de^
 ||tauscher-gmbh.us^
-||tauschvirexar.net^
 ||tausiapp.co.ke^
 ||taut-nature.com^
 ||tautegorical.16sbez6178himwnt.pasporttofun.download^
@@ -102079,3 +102038,22 @@
 ||teddygirls.cc^
 ||teddyhart.nl^
 ||teddymobile.cn^
+||teddynet.net^
+||teddyni.com^
+||teddynine.us^
+||teddysfour.us^
+||teddyshatsworld.pl^
+||tedescomartins.hospedagemdesites.ws^
+||tedet.ac.th^
+||tedfdfd.pages.dev^
+||tedgesinund.ru^
+||tedglynn.com^
+||tedhemtefortti.xyz^
+||tedhilarlymcken.org^
+||tedhoweverbu.org^
+||tedicratut.000webhostapp.com^
+||tediehellu.pro^
+||tedigocomosehace.com^
+||tedilp.gq^
+||tedingthenrew.com^
+||tediolique.pro^

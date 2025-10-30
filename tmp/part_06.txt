@@ -1,3 +1,34 @@
+||fixconcretedealfileclicks.icu^
+||fixconcretedealfileclicks.top^
+||fixconcretegreatappclicks.icu^
+||fixconcretegreatappclicks.top^
+||fixconcretegreatfileclicks.icu^
+||fixconcretetypeappclicks.icu^
+||fixconcretetypeappclicks.top^
+||fixconcretetypefileclicks.icu^
+||fixconcretetypefileclicks.top^
+||fixconnectionswindows10.com^
+||fixcounter.com^
+||fixcounter.com^$third-party
+||fixcredit.co.cc^
+||fixcrediterrors.com^
+||fixdealadvanceappclicks.icu^
+||fixdealadvanceappclicks.top^
+||fixdealadvancefileclicks.top^
+||fixdealakamaiappclicks.icu^
+||fixdealakamaiappclicks.top^
+||fixdealalwaysappclicks.icu^
+||fixdealalwaysappclicks.top^
+||fixdealalwaysfileclicks.icu^
+||fixdealalwaysfileclicks.top^
+||fixdealalwaystheclicks.icu^
+||fixdealappleappclicks.icu^
+||fixdealappleappclicks.top^
+||fixdealaptitudeappclicks.icu^
+||fixdealaptitudeappclicks.top^
+||fixdealaptitudetheclicks.icu^
+||fixdealaskappclicks.icu^
+||fixdealaskappclicks.top^
 ||fixdealasktheclicks.icu^
 ||fixdealcloudappclicks.icu^
 ||fixdealcloudappclicks.top^
@@ -522,7 +553,6 @@
 ||fixmitchell.com^
 ||fixmobilealert.gq^
 ||fixmortgage.tk^
-||fixmy-nflix.info^
 ||fixmyapples.com^
 ||fixmyappleusa.com^
 ||fixmydormbed.com^
@@ -1561,7 +1591,6 @@
 ||flamkris.online^
 ||flammerans.com^
 ||flamming.us^
-||flamonetedge.net^
 ||flamtrex-gen.com^
 ||flamtrexgen-platform.com^
 ||flamtrexgen-system.com^
@@ -2428,7 +2457,6 @@
 ||flexbit-boost-app.com^
 ||flexbit-boost-app.net^
 ||flexbit-boost-system.com^
-||flexbit-boost.online^
 ||flexbit-boost.pro^
 ||flexbitboost-app.com^
 ||flexbitboost-soft.com^
@@ -2931,7 +2959,6 @@
 ||flixtrial.com^
 ||flixy-app.com^
 ||flixyapp.net^
-||flixyfortai.com^
 ||flixyfortreview.com^
 ||flixyshop-ss.checkoutera.com^
 ||flizik.com^
@@ -3907,7 +3934,6 @@
 ||fluxentequity.ru^
 ||fluxentprime.com^
 ||fluxentra.online^
-||fluxfield.store^
 ||fluxhatch.site^
 ||fluxhaven.blog^
 ||fluxhaven.online^
@@ -9846,6 +9872,7 @@
 ||foul.pbphgwbr.in^
 ||foulbfemmi.pro^
 ||fouled.stream^
+||fouleegleechy.com^
 ||foulierne.qpon^
 ||fouling.stream^
 ||foulishschwa.click^
@@ -12142,7 +12169,6 @@
 ||franchyo.ru^
 ||franciacampeon.duckdns.org^
 ||francie-trade-gpt.com^
-||franciel-trade-gpt.com^
 ||francimboz.pro^
 ||francis-china.com^
 ||franciscanhope.org^
@@ -19189,7 +19215,6 @@
 ||from-me-and.tk^
 ||from-nature.tk^
 ||from-pc.online^
-||from-redirect.web.app^
 ||from-register23.d3v-fanpag3.cf^
 ||from-restaurantsips.tk^
 ||from-support-teamm.info^
@@ -21452,7 +21477,6 @@
 ||fuegodevida.com^
 ||fuegoflores.com^
 ||fuegopotex.net^
-||fuegopotex.org^
 ||fuegopotexreview.com^
 ||fuegoweb.weebly.com^
 ||fueguillos.cl^
@@ -22186,7 +22210,6 @@
 ||functionary-coders.000webhostapp.com^
 ||functionmania.com^
 ||functionpoint.evergage.com^
-||functions-page.vercel.app^
 ||functionsreturn.com^
 ||functionsslate.cyou^
 ||functionsspot.cyou^
@@ -22203,7 +22226,6 @@
 ||fund-fusion-95.net^
 ||fund-fusion-app.com^
 ||fund-fusion.net^
-||fund-fusion95-app.com^
 ||fund-glubinka.com^
 ||fund-qryon.net^
 ||fund-rescue-experts.com^
@@ -22631,7 +22653,6 @@
 ||funmusic.es^
 ||funn.graphiq.com^
 ||funnel-assets.startappservice.com^
-||funnel-delta.com^
 ||funnel-delta.net^
 ||funnel-epsilon.com^
 ||funnel-epsilonplatform.com^
@@ -23548,7 +23569,6 @@
 ||futuredent.co.uk^
 ||futuredirty.cn^
 ||futuredorm.com^
-||futuree-insight.info^
 ||futureearth.click^
 ||futureexplorations.online^
 ||futureexpress.net.bd^
@@ -23998,6 +24018,7 @@
 ||fv2cheats.com^
 ||fv3.failiem.lv^
 ||fv4kmi.top^
+||fv5.ka2s.ru^
 ||fv5seguros.com.br^
 ||fv8.failiem.lv^
 ||fv9-1.failiem.lv^
@@ -25652,6 +25673,7 @@
 ||g00.co^
 ||g00.msn.com^
 ||g00d.da-5-v.ru^
+||g00d.s7li.online^
 ||g00dw3ath3rg00dt1me.top^
 ||g00g13dr1v3d0c.viewdns.net^
 ||g00gle.sytes.net^
@@ -25938,6 +25960,7 @@
 ||g41i.icu^
 ||g42-profit-tech.com^
 ||g42-profit.com^
+||g42.n5ol.ru^
 ||g42profit-app.com^
 ||g4666654.weebly.com^
 ||g48ky2.tvcjp.gq^
@@ -25974,7 +25997,6 @@
 ||g4p.grt02.com^
 ||g4p.redtram.com^
 ||g4rm0n.had.su^
-||g4rwtustimeh.info^
 ||g4thanksgiving8.tk^
 ||g4u71y.cn^$domain=lurenshu.net|m.630shu.com
 ||g4unlo1ynhsf71bql2h57352ct.net^
@@ -26060,9 +26082,11 @@
 ||g7ridvalueengine.space^
 ||g7t9j4f.sbs^
 ||g7wenden.de^
+||g7x.7g37b.ru^
 ||g8.7a-xz.ru^
 ||g8.cnzz.com^
 ||g8.ldef4.ru^
+||g8.ye-t5c.ru^
 ||g81ykq.webwave.dev^
 ||g8715710740.co^
 ||g877855hrg.ru.com^
@@ -26281,6 +26305,7 @@
 ||gabrielefuchs.com^
 ||gabrielfaller.com.br^
 ||gabrielforget.com^
+||gabrielhenrique3493.github.io^
 ||gabrielhernandeztinajero.com^
 ||gabriellalovecats.com^
 ||gabrielleprx.info^
@@ -26529,6 +26554,7 @@
 ||gaestehaus-kellner.de^
 ||gaetafoundation.org^
 ||gaetanorinaldo.it^
+||gaetheydeys.rest^
 ||gaev.com.ar^
 ||gaf-company.clean.to^
 ||gaf.ae^
@@ -26890,7 +26916,6 @@
 ||galantor-trader.com^
 ||galantortrader-app.com^
 ||galantortrader-solution.com^
-||galantortraderapp.com^
 ||galantortradersystem.com^
 ||galapagos.globat.com^
 ||galapagosforyou.com^
@@ -27369,7 +27394,6 @@
 ||galvonixnova45ai.com^
 ||galvonixtrader-30-flex.com^
 ||galvonixtrader.net^
-||galvonixtrader30flex.com^
 ||galvperfins.qpon^
 ||galvronestavira.site^
 ||galwayairport.com^
@@ -28581,7 +28605,6 @@
 ||gamk.hit.gemius.pl^
 ||gamlen000.000webhostapp.com^
 ||gamli.eystrahorn.is^
-||gamma-aspect-ai.com^
 ||gamma-aspectapp.com^
 ||gamma-aspectplatform.com^
 ||gamma-elevatrix.net^
@@ -30361,7 +30384,6 @@
 ||gauqt.tryperiod.com^
 ||gauradehota.ro^
 ||gaurangmarulkar.com^
-||gaurav-sonawane09.github.io^
 ||gauravkishore.com^
 ||gauravmoney.myblogtoolbar.com^
 ||gauravmusic.in^
@@ -34855,7 +34877,6 @@
 ||get-going.top^
 ||get-great-prizesnow1.com^
 ||get-great-prizesnow7.life^
-||get-guide-exodss-wallet.pages.dev^
 ||get-gx.co/*sub2=$document
 ||get-gx.net^
 ||get-gx.net^$document
@@ -38505,6 +38526,7 @@
 ||ggimg.tapas.net^
 ||ggionline.in^
 ||ggishipping.com^
+||ggjesqselwcpj.online^
 ||ggjknged.top^
 ||ggjs.d17.cc^
 ||ggjsegnbriqhnz.com^
@@ -43793,6 +43815,7 @@
 ||glthubse.info^
 ||gltpstgjnyb.com^
 ||gltrak.com^
+||glu.po5m.ru^
 ||gluae.ae^
 ||glucagon.pw^
 ||glucan.pw^
@@ -43859,7 +43882,6 @@
 ||glumbic-stack-tech.com^
 ||glumbic-stack.com^
 ||glumbic-stack.net^
-||glumbicpluck.com^
 ||glumbicpluck.net^
 ||glumbicstack-platform.com^
 ||glumbicstack.net^
@@ -53125,6 +53147,7 @@
 ||go.siway.fr^
 ||go.sixbrain.ai^
 ||go.sixsidesupply.com^
+||go.sizingfox.com^
 ||go.sjgiants.com^
 ||go.sk.stripchat.global^
 ||go.skanska.se^
@@ -57181,12 +57204,10 @@
 ||goldlash.md^
 ||goldledgerix-software.com^
 ||goldledgerix-system.com^
-||goldledgerix.net^
 ||goldledgerixplatform.top^
 ||goldledgerixsolution.com^
 ||goldlet.tk^
 ||goldlichtnexor.com^
-||goldlightning.net^
 ||goldlightningapp.com^
 ||goldlightningreview.com^
 ||goldlighton.com^
@@ -59683,6 +59704,7 @@
 ||gorgoravvi.pro^
 ||gorgy.publicvm.com^
 ||goriest-reaches.000webhostapp.com^
+||gorigesairam.github.io^
 ||gorilaz.biz^
 ||gorilla.celcyon.com^
 ||gorilla.go2cloud.org^
@@ -61112,6 +61134,7 @@
 ||gp.ziikd.pw^
 ||gp123.cc/20*ad/
 ||gp2.ro^
+||gp3.po5m.ru^
 ||gp387a.sazzip.com^
 ||gp6pvb.top^
 ||gp9h38j0-1be8c19e8d375846d2f2adca107b0b9372068bc8-sac.d.aa.online-metrix.net^
@@ -61654,7 +61677,6 @@
 ||gpt-permax7pro.com^
 ||gpt-permaxplatform.com^
 ||gpt-permaxsoftware.com^
-||gpt-pro-lispro.com^
 ||gpt-segal-infosfera.com^
 ||gpt-seguro-app.com^
 ||gpt-seguro.com^
@@ -61732,7 +61754,6 @@
 ||gpt50euraxplatform.com^
 ||gpt50lispro.com^
 ||gpt6000adipex-solution.com^
-||gpt6000adipex.com^
 ||gpt6000adipex.net^
 ||gpt7.com^
 ||gpt7000-eurax-engine.com^
@@ -61789,7 +61810,6 @@
 ||gptcoinova-ai.com^
 ||gptcoinovaai.net^
 ||gptcoinovaai.ru^
-||gptcoinovaaiapp.com^
 ||gptcoinovaaiapp.net^
 ||gptcointralabsreview.com^
 ||gptcomercio.com^
@@ -61798,7 +61818,6 @@
 ||gptcomercioopticore.com^
 ||gptcomercioopticore.net^
 ||gptcomercioopticoreapp.com^
-||gptcryptifyflujos.com^
 ||gptcryptifyflujos.net^
 ||gptdefinity2-platform.com^
 ||gptdefinity20.com^
@@ -61806,9 +61825,7 @@
 ||gptdigitroncoins.com^
 ||gptdigitroncoins.net^
 ||gptdriftlink.net^
-||gptdriftlinkai.com^
 ||gptecno.it^
-||gptemberpulse.com^
 ||gptemberpulse.net^
 ||gptembertradeai.com^
 ||gpteurax.net^
@@ -61833,7 +61850,6 @@
 ||gpticketshop.com^
 ||gptifex-xp.com^
 ||gptifex.net^
-||gptifex30.com^
 ||gptifexai.com^
 ||gptifexaiapp.com^
 ||gptifexapp.com^
@@ -61863,15 +61879,12 @@
 ||gptmentax.co^
 ||gptmentax.com^
 ||gptmentax.net^
-||gptmentax818x800.com^
 ||gptmentaxapp.com^
 ||gptmentaxapp.net^
 ||gptmentaxappai.com^
 ||gptmentaxplatform.com^
 ||gptnexotradenexreview.com^
 ||gptoleeekac.bid^
-||gptorbitbyte.com^
-||gptpazalventaja.com^
 ||gptpazalventaja.net^
 ||gptpermax-ai.com^
 ||gptpermax-xp-tech.com^
@@ -61912,8 +61925,6 @@
 ||gptx7eurax.com^
 ||gptx7eurax.net^
 ||gptx9booster.com^
-||gptx9eurax.com^
-||gptx9eurax.net^
 ||gptx9euraxapp.com^
 ||gptxpifex-app.com^
 ||gptxpifex.net^
@@ -62584,7 +62595,6 @@
 ||grallictaiping.cfd^
 ||gralossortoob.net^
 ||gralto-certeza.net^
-||graltocerteza.com^
 ||gralvinderopquazzisomato.space^
 ||gram-network.net^
 ||gram-network.org^
@@ -65707,7 +65717,6 @@
 ||grok-ai-gpt.com^
 ||grok-ai-system.com^
 ||grok-ai-trading.com^
-||grok-aiapp.com^
 ||grok-tradeai.com^
 ||grok-tradeai.net^
 ||grok3-app.net^
@@ -67246,6 +67255,7 @@
 ||gsctechinology.com^
 ||gsctsypyrrsxw.online^
 ||gsd.cbdsfinest.de^
+||gsd.ka2s.ru^
 ||gsdcbsjh55xsc.top^
 ||gsddcgesleqfx.net^
 ||gsdeverything.com^
@@ -74149,6 +74159,7 @@
 ||gzsporey.com^
 ||gzsule.com^
 ||gzsztz.com^
+||gzt.lo9q.ru^
 ||gztianfu.net^
 ||gztongmei.net^
 ||gzts188.com^
@@ -74425,6 +74436,7 @@
 ||h06.xyz^
 ||h061-195-074-061.kwins.net^
 ||h067.broadband.quicknet.se^
+||h07.bo3l.ru^
 ||h075.broadband.quicknet.se^
 ||h079.broadband.quicknet.se^
 ||h08.xyz^
@@ -74641,6 +74653,7 @@
 ||h250p-nj545.ads.tremorhub.com^
 ||h250p-y3urn.ads.tremorhub.com^
 ||h264-rt.tk^
+||h27.mi7x.ru^
 ||h28.hserv.com.br^
 ||h28.ro^
 ||h2812932937292sjshskz.com^
@@ -74670,6 +74683,7 @@
 ||h2s2.com^
 ||h2sry.site^
 ||h2v.4md69.ru^
+||h2v.7g37b.ru^
 ||h2v.8vl8u.ru^
 ||h2vx.1s-1n.ru^
 ||h3.3x6-7.ru^
@@ -74842,6 +74856,7 @@
 ||h7.u79p.ru^
 ||h7.y742au.ru^
 ||h7.y83v.ru^
+||h71.ye-t5c.ru^
 ||h72-7za-77.net^
 ||h722.tk^
 ||h728.cn^
@@ -77089,6 +77104,7 @@
 ||haminia9.xyz^
 ||hamission.com^
 ||hamitalkilts.com^
+||hamitescanful.com^
 ||hamjgkzgycmur.com^
 ||hamjjuqb.info^
 ||hamku.com^
@@ -78533,6 +78549,7 @@
 ||hardunion.tk^
 ||hardusa.tk^
 ||hardvssoftgolfballs.com^
+||hardware-added-mba-night.trycloudflare.com^
 ||hardware-io-trezor-us.pages.dev^
 ||hardware-koinbase-pro.pages.dev^
 ||hardware-mag.de.intellitxt.com^
@@ -79493,7 +79510,6 @@
 ||hausaufgaben-referate.de^
 ||hausaufgaben.de^
 ||hausbesetzung-mallorca.com^
-||hausbetreuung-mallorca.com^
 ||hauscopas.blogspot.com^
 ||hausderintegration.de^
 ||hausderjugend.at^
@@ -80356,7 +80372,6 @@
 ||hbmp.adtelligent.com^
 ||hbnair.co.za^
 ||hbndc.org^
-||hbndknfhhsddjh.weebly.com^
 ||hbnkergqccreatress.download^
 ||hbnqcbfgsjfa.com^
 ||hbnqg.quickbeauty.com^
@@ -84907,6 +84922,7 @@
 ||helpdesk-support-alertx2.info^
 ||helpdesk-support.com^
 ||helpdesk-tech.com^
+||helpdesk-tiscali.weebly.com^
 ||helpdesk-umwedu.weebly.com^
 ||helpdesk-unas.weebly.com^
 ||helpdesk.ad4game.com^
@@ -85226,7 +85242,6 @@
 ||helproxy.tk^
 ||helps-122.verifikasi-fanpage-suport982.cf^
 ||helps-account.my1.ru^
-||helps-bridge-support.pages.dev^
 ||helps-business.pages.dev^
 ||helps-businesscenters.pages.dev^
 ||helps-businesspolicy-center.pages.dev^
@@ -86865,7 +86880,6 @@
 ||heymatic.com^$third-party
 ||heymelby.com^
 ||heymelpoto.com^
-||heymint.org^
 ||heymintbot.com^
 ||heymintbot.xyz^
 ||heymysistermonwhat-com.umbler.net^
@@ -87690,7 +87704,6 @@
 ||hgmjnsnddaydream.review^
 ||hgmtechnology.com^
 ||hgmzheldmvurn.space^
-||hgner.link^
 ||hgnew.tk^
 ||hgnftgngjegoghjegv.com^
 ||hgnpw.info^
@@ -90416,7 +90429,6 @@
 ||highlands-chainixapp.com^
 ||highlands-chainixapp.net^
 ||highlandschainix-engine.com^
-||highlandschainix.com^
 ||highlandschainix.net^
 ||highlandschainix.pro^
 ||highlandschainixapp.com^
@@ -93510,6 +93522,7 @@
 ||hlotiwnz.com^
 ||hloyfocus.ga^
 ||hloyloppqpvnmd.com^
+||hlp.wi0x.ru^
 ||hlpfq.sigmasports.com^
 ||hlpidkr.ru^
 ||hlpnowp-c.com^
@@ -94483,7 +94496,6 @@
 ||hodltrust.com^
 ||hodmen2.godaddysites.com^
 ||hodnotavelsor.com^
-||hodnotavelsor.net^
 ||hodor-collect.arabam.com^
 ||hodowlafanaberia.pl^
 ||hodowlaskalia.pl^
@@ -94565,6 +94577,7 @@
 ||hogarycamping.com.uy^
 ||hogasoq.in^
 ||hogaya.pk^
+||hogazerm.dreamhosters.com^
 ||hogbacks.us^
 ||hogdekempen.nl^
 ||hogei.info^
@@ -95282,16 +95295,13 @@
 ||home-income-secrets.com^
 ||home-inspectionshouston.com^
 ||home-inspectors-in-houston.com^
-||home-io-coinbas--start.pages.dev^
 ||home-ipaypal.com^
 ||home-jobs-reports.biz^
 ||home-joy.com^
 ||home-ldgerlivlogin.pages.dev^
 ||home-ledge-login-live.pages.dev^
 ||home-ledger-com-strt.pages.dev^
-||home-leeger-livsso.pages.dev^
 ||home-live-haixing.com^
-||home-live-leder-io-en.pages.dev^
 ||home-live-leisusports.com^
 ||home-made-videos.com^
 ||home-manage-apps-paypal.com^
@@ -95331,7 +95341,6 @@
 ||home-theater-world.com^
 ||home-trezor-io-start.vercel.app^
 ||home-trezor-strt.pages.dev^
-||home-trezor-wallet-faq.pages.dev^
 ||home-trezorstrt.pages.dev^
 ||home-update-ledge-guide.pages.dev^
 ||home-update-support.com^
@@ -95991,11 +96000,11 @@
 ||hometrade-nomura.02mh91.top^
 ||hometrade-nomura.0gwj25.top^
 ||hometrade-nomura.4sjk7oo0.top^
+||hometrade-nomura.7wywyw.top^
 ||hometrade-nomura.bi2rtu.top^
 ||hometrade-nomura.e7upjc.top^
 ||hometrade-nomura.fs-sytc.com^
 ||hometrade-nomura.gf03zq.top^
-||hometrade-nomura.gl6p00.top^
 ||hometrade-nomura.jml8dk.top^
 ||hometrade-nomura.kd6xrm.top^
 ||hometrade-nomura.nygvh3.top^
@@ -96004,10 +96013,13 @@
 ||hometrade-nomura.unj2rl.top^
 ||hometrade-nomura.v82v88.top^
 ||hometrade-nomura.vwj1vz.top^
+||hometrade-nomura.w40aam.top^
+||hometrade-nomura.wb43hv.top^
 ||hometrade-nomura.wbyysn.top^
 ||hometrade-nomura.we9gd6.top^
 ||hometrade-nomura.wmulh1.top^
 ||hometrade-nomura.wseo31.top^
+||hometrade-nomura.xaint8.top^
 ||hometrade-nomura.xlod6u.top^
 ||hometrade-nomura.y9kec7.top^
 ||hometrade-nomura.yb0qaf.top^
@@ -97201,7 +97213,6 @@
 ||horizongrid.cfd^
 ||horizonhubheadline.com^
 ||horizonie.122.2o7.net^
-||horizonis-quethar.net^
 ||horizonisquethar.net^
 ||horizonisquetharapp.com^
 ||horizonisquetharengine.com^
@@ -102046,36 +102057,3 @@
 ||hrm.healthgrades.com^
 ||hrm.novaon.asia^
 ||hrm2.novaon.asia^
-||hrmann01.webtrekk.net^
-||hrmatic.pl^
-||hrmaznaczenie.pl^
-||hrmdw8da.net^
-||hrmentor.in^
-||hrmetrics.co.in^
-||hrmhw.com^
-||hrmm.info^
-||hrmonline.co.za^
-||hrmovie.com^
-||hrmpjn.apartmentno3.com^
-||hrmqqrvqaxvzb.com^
-||hrmram.com^
-||hrms.notifysrv.com^
-||hrmweb.com^
-||hrnecek.com^
-||hrnepredi.pro^
-||hrnewsend.com^
-||hrnhcu.kapiva.in^
-||hrnklivlbhf.com^
-||hrnotificati0n.info^
-||hrnrj.gekub.yi.org^
-||hrnxdtg.cn^
-||hrnyprox.co.cc^
-||hrogrpee.de^
-||hrohse.ririnco.jp^
-||hromasoma.com^
-||hromeraner.top^
-||hronboard.actonservice.com^
-||hronil.top^
-||hronom-mhb-dhcp.net.daraz.com^
-||hronom-stage-toonjoa.net.daraz.com^
-||hronom.rail.net.daraz.com^

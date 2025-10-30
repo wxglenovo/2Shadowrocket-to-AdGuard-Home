@@ -7,7 +7,6 @@ on:
     - cron: "0 6 * * *"
     - cron: "0 12 * * *"
     - cron: "0 18 * * *"
-
     # 每 22 分钟轮替分片验证
     - cron: "*/22 * * * *"
 
@@ -131,4 +130,5 @@ jobs:
 
           git add tmp/last_part.txt dist/validated_part_*.txt tmp/part_*.txt logs/ merged_rules.txt
           git commit -m "🤖 Auto update: validated part $PART" || echo "No changes to commit"
+          git pull --rebase origin main || echo "⚠ Pull failed or nothing to rebase"
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main

@@ -7,11 +7,10 @@ on:
     - cron: "0 12 * * *"
     - cron: "0 18 * * *"
     - cron: "*/22 * * * *"
-
   workflow_dispatch:
     inputs:
       part:
-        description: '手动验证指定分片 1~16'
+        description: '手动验证分片 1~16'
         required: false
         default: ''
 
@@ -23,6 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       PYTHONUNBUFFERED: 1
+
     steps:
       - uses: actions/checkout@v4
         with:
@@ -32,46 +32,52 @@ jobs:
         with:
           python-version: '3.12'
 
-      - run: pip install --upgrade requests dnspython
+      - name: Install dependencies
+        run: pip install --upgrade requests dnspython
 
       - name: Determine PART index
         id: detect
         shell: bash
         run: |
           mkdir -p tmp
-          LAST_PART_FILE="tmp/last_part.txt"
-          git fetch origin main
-          git checkout origin/main -- tmp/last_part.txt || echo "⚠ tmp/last_part.txt 不存在"
+          LAST_FILE="tmp/last_part.txt"
 
-          PART_INPUT="${{ github.event.inputs.part }}"
-          if [ -n "$PART_INPUT" ]; then
-            PART="$PART_INPUT"
+          git fetch origin main
+          git checkout origin/main -- tmp/last_part.txt || true
+
+          if [ -n "${{ github.event.inputs.part }}" ]; then
+            PART="${{ github.event.inputs.part }}"
+            echo "🛠 手动指定分片：$PART"
           else
-            if [ -f "$LAST_PART_FILE" ]; then
-              LAST_PART=$(cat "$LAST_PART_FILE")
-              PART=$(( (LAST_PART % 16) + 1 ))
+            if [ -f "$LAST_FILE" ]; then
+              LAST=$(cat "$LAST_FILE")
+              PART=$(( (LAST % 16) + 1 ))
             else
               PART=1
             fi
+            echo "⏱ 自动轮替分片：$PART"
           fi
-          echo $PART > $LAST_PART_FILE
+
+          echo "$PART" > tmp/last_part.txt
           echo "part=$PART" >> $GITHUB_OUTPUT
 
-      - name: Force download rules
+      - name: Force download rules at schedule times
         shell: bash
         run: |
-          HOUR=$(date -u +"%H")
-          if [[ "$HOUR" == "00" || "$HOUR" == "06" || "$HOUR" == "12" || "$HOUR" == "18" ]]; then
+          CURRENT_HOUR=$(date -u +"%H")
+          echo "⏱ 当前 UTC 小时：$CURRENT_HOUR"
+          if [[ "$CURRENT_HOUR" == "00" || "$CURRENT_HOUR" == "06" || "$CURRENT_HOUR" == "12" || "$CURRENT_HOUR" == "18" ]]; then
+            echo "🚀 到点，强制更新规则源和分片"
             python split_and_check_16.py --force-update
+          else
+            echo "⏩ 非下载时间，不强制更新"
           fi
 
-      - name: Ensure part exists
+      - name: Ensure rules & first part exist
         shell: bash
-        env:
-          PART: ${{ steps.detect.outputs.part }}
         run: |
-          FILE=$(printf "tmp/part_%02d.txt" "$PART")
-          if [ ! -f "$FILE" ]; then
+          if [ ! -f merged_rules.txt ] || [ ! -f tmp/part_01.txt ]; then
+            echo "⚠ 缺失分片或规则源，自动生成"
             python split_and_check_16.py --force-update
           fi
 
@@ -80,17 +86,26 @@ jobs:
         env:
           PART: ${{ steps.detect.outputs.part }}
         run: |
-          mkdir -p logs
-          python split_and_check_16.py --part "$PART" | tee logs/validated_part_$PART.log
+          mkdir -p logs dist
+          echo "⏱ 开始验证分片 $PART ..."
+          python split_and_check_16.py --part "$PART" | tee logs/part_${PART}.log
 
-      - name: Commit & Push
+      - name: Commit & Push results
         shell: bash
         env:
           PART: ${{ steps.detect.outputs.part }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add tmp/last_part.txt dist/validated_part_*.txt tmp/part_*.txt logs/ merged_rules.txt delete_counter.json
-          git commit -m "🤖 Auto update: validated part $PART" || echo "No changes"
-          git pull --rebase origin main || echo "⚠ Pull failed"
+
+          SUMMARY_FILE="dist/validated_part_$(printf '%02d' $PART).txt"
+          if [ -f "$SUMMARY_FILE" ]; then
+            SUMMARY_INFO=$(grep -E "总数|新增|删除" "$SUMMARY_FILE" || true)
+          else
+            SUMMARY_INFO="(no summary found)"
+          fi
+
+          git add tmp/last_part.txt dist/validated_part_*.txt tmp/part_*.txt logs/ merged_rules.txt
+          git commit -m "🤖 Auto update: validated part $PART  
+${SUMMARY_INFO}" || echo "No changes"
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main

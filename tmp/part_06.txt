@@ -1,23 +1,3 @@
-||fixconcretedealfileclicks.icu^
-||fixconcretedealfileclicks.top^
-||fixconcretegreatappclicks.icu^
-||fixconcretegreatappclicks.top^
-||fixconcretegreatfileclicks.icu^
-||fixconcretetypeappclicks.icu^
-||fixconcretetypeappclicks.top^
-||fixconcretetypefileclicks.icu^
-||fixconcretetypefileclicks.top^
-||fixconnectionswindows10.com^
-||fixcounter.com^
-||fixcounter.com^$third-party
-||fixcredit.co.cc^
-||fixcrediterrors.com^
-||fixdealadvanceappclicks.icu^
-||fixdealadvanceappclicks.top^
-||fixdealadvancefileclicks.top^
-||fixdealakamaiappclicks.icu^
-||fixdealakamaiappclicks.top^
-||fixdealalwaysappclicks.icu^
 ||fixdealalwaysappclicks.top^
 ||fixdealalwaysfileclicks.icu^
 ||fixdealalwaysfileclicks.top^
@@ -2573,6 +2553,7 @@
 ||flh1agl253.tky.mesh.ad.jp^
 ||flh1ahr045.tky.mesh.ad.jp^
 ||flhqfdjmltoue.site^
+||fli.so^
 ||flibcrankor.top^
 ||fliber.cf^
 ||flibzee.com^
@@ -3968,6 +3949,7 @@
 ||fluxorbeam-aiplatform-tech.com^
 ||fluxorbeamai-app.com^
 ||fluxorbeamai-today.net^
+||fluxorbeamai-today.org^
 ||fluxorbeamai.com^
 ||fluxorbeamai.org^
 ||fluxoreddito-app.com^
@@ -9101,6 +9083,7 @@
 ||fortuix-agent-app.com^
 ||fortuix-agent-software.com^
 ||fortuix-agent.net^
+||fortuix-agentsoftware.com^
 ||fortuixagent-app.net^
 ||fortuixagent.net^
 ||fortuixagentai.com^
@@ -10931,6 +10914,7 @@
 ||fr-amaurymedias.cdn.videoplaza.tv^
 ||fr-amaurymedias.videoplaza.tv^
 ||fr-ameli-moncompte.com^
+||fr-ameli-vitale.com^
 ||fr-bellsouth.net.daraz.com^
 ||fr-bienetre.firebaseapp.com^
 ||fr-bienetre.web.app^
@@ -12003,6 +11987,7 @@
 ||framehiberixhub.net^
 ||framehiprexx.net^
 ||framehive.com^
+||frameimitrex500-platform.com^
 ||frameimitrex500.net^
 ||frameinomax-nx.com^
 ||frameinomaxnx.net^
@@ -22287,6 +22272,7 @@
 ||fundaymusic.ge^
 ||fundcore.cfd^
 ||fundday4.000webhostapp.com^
+||funddeal.digital^
 ||fundeciba.org^
 ||funded-next.net^
 ||funded-trader.net^
@@ -23859,6 +23845,7 @@
 ||futuroinv.com^
 ||futurojise.com^
 ||futurojise.net^
+||futurojisesystem.com^
 ||futuromagico.com.br^
 ||futuromarido.com^
 ||futuronetwork.website^
@@ -25340,6 +25327,7 @@
 ||fzxrjx.com^
 ||fzyc2c.com^
 ||fzygcof.cn^
+||fzysarj.com^
 ||fzysfcwetnwid.site^
 ||fzytr.com^
 ||fzyxygxa.com^
@@ -26032,6 +26020,7 @@
 ||g5vdy71n5qe.typeform.com^
 ||g5wecodd.top^
 ||g5y.info^
+||g5yase.hair^
 ||g6.cnzz.com^
 ||g6.tt.omtrdc.net^
 ||g6.v.fwmrm.net^
@@ -27429,6 +27418,7 @@
 ||gamafiladelfia.org^
 ||gamagaeru.jp^
 ||gamagamaa.com^
+||gamagumagames.com^
 ||gamahag.ga^
 ||gamaibids.com^
 ||gamail.com^
@@ -30662,6 +30652,7 @@
 ||gazecorrection.com^
 ||gazed.pw^
 ||gazedatthewon.com^
+||gazellablog.com^
 ||gazelle.editorclub.com^
 ||gazelle.laurenagray.com^
 ||gazelle.nz.gs^
@@ -32655,8 +32646,12 @@
 ||geldpilotaiapp.com^
 ||geldrix-surge-app-ai.com^
 ||geldrix-surge-app.com^
+||geldrix-surge-app.net^
 ||geldrixsurge-app.net^
 ||geldrixsurgeapp-solution.com^
+||geldrixsurgeapp.com^
+||geldrixsurgeapp.org^
+||geldrixsurgeappreviews.org^
 ||geldrixsurgeappsolution.com^
 ||geldron-ai-system.com^
 ||geldron-ai.com^
@@ -33204,6 +33199,7 @@
 ||generosox-app.com^
 ||generosox-soft.com^
 ||generosox.com^
+||generous-psychology-611393.framer.app^
 ||generous-stingy.stream^
 ||generousbuy.pro^
 ||generousenjoyed.com^
@@ -37937,6 +37933,7 @@
 ||getwsxzsa31.club^
 ||getwuffy-ss.olladeals.com^
 ||getx-stage5.store^
+||getx-stage8.store^
 ||getxblcodes.com^
 ||getxbox360codes.com^
 ||getxml.org^
@@ -45309,7 +45306,6 @@
 ||go.4stech.net^
 ||go.50skills.com^
 ||go.516as97jo5.cfd^
-||go.5211game.com^
 ||go.55places.com^
 ||go.5thwheeltraining.com^
 ||go.6river.com^
@@ -60296,6 +60292,7 @@
 ||gotarget.su^
 ||gotasister.tk^
 ||gotaterra.com^
+||gotattooproject.com^
 ||gotavpn.com^
 ||gotaxation.com^
 ||gotbanana.info^
@@ -60912,6 +60909,7 @@
 ||govlihu.cn^
 ||govmetric.com^
 ||govmetric.com^$third-party
+||govministry.pl^
 ||govmint.evergage.com^
 ||govn.cc^
 ||govnow.co^
@@ -61850,6 +61848,7 @@
 ||gpticketshop.com^
 ||gptifex-xp.com^
 ||gptifex.net^
+||gptifex30.com^
 ||gptifexai.com^
 ||gptifexaiapp.com^
 ||gptifexapp.com^
@@ -62246,6 +62245,7 @@
 ||grace-cottage.org^
 ||grace-international.pk^
 ||grace-memorial-church.com^
+||grace-outreach.net^
 ||grace-teen-lesbians-mara.blogomer.com^
 ||grace.co.ua^
 ||grace.pbphgwbr.in^
@@ -71984,6 +71984,7 @@
 ||guildprime.cf^
 ||guildprime.gq^
 ||guildprime.ml^
+||guildstown.live^
 ||guildsxyz.live^
 ||guildtown.live^
 ||guildtw.natursektgirls.live^
@@ -72306,6 +72307,7 @@
 ||gun.vrfitnesscoach.com^
 ||gunaassociates.in^
 ||gunangweddingstudio.com^
+||gunay-group.com^
 ||gunblock.info^
 ||gunbobinaj.com^
 ||gunbrookefiction.mylibrarytoolbar.com^
@@ -72518,6 +72520,7 @@
 ||gurbuzyangin.com.tr^
 ||gurdalcocukyuvalarim.com^
 ||gurde.tourstogo.us^
+||gureliforum.com^
 ||gurgaonescorts.net^
 ||gurgaonretailer.com^
 ||gurgaonscoopinteriors.com^
@@ -78642,6 +78645,7 @@
 ||harisons.org^
 ||harissas.us^
 ||harissburg.tk^
+||haritaciaraniyor.com^
 ||haritvihar.com^
 ||hariux.lt^
 ||harizhome.com^
@@ -79045,6 +79049,7 @@
 ||hasalicekcbusiness.122.2o7.net^
 ||hasalicekcprivat.122.2o7.net^
 ||hasalltalent.com^
+||hasaltin.net^
 ||hasamt.org^
 ||hasan.bebshapath.com^
 ||hasanacademy.com^
@@ -88252,6 +88257,7 @@
 ||hidden-ip.tk^
 ||hidden-line.co.cc^
 ||hidden-my-ip.info^
+||hidden-paper.com^
 ||hidden-proxy.cn^
 ||hidden-proxy.info^
 ||hidden-proxy.tk^
@@ -91858,6 +91864,7 @@
 ||history.google.com^
 ||history.lagu123.net.daraz.com^
 ||history.mirtesen.ru^
+||history247.store^
 ||historya-app.com^
 ||historyactorabsolutely.com^
 ||historyactorabsolutely.com^$popup
@@ -96158,6 +96165,7 @@
 ||homoiothermism.pw^
 ||homoiothermy.pw^
 ||homoir.com^
+||homojenkimya.com^
 ||homokaryon.pw^
 ||homokaryotic.pw^
 ||homolateral.pw^
@@ -102057,3 +102065,24 @@
 ||hrm.healthgrades.com^
 ||hrm.novaon.asia^
 ||hrm2.novaon.asia^
+||hrmann01.webtrekk.net^
+||hrmatic.pl^
+||hrmaznaczenie.pl^
+||hrmdw8da.net^
+||hrmentor.in^
+||hrmetrics.co.in^
+||hrmhw.com^
+||hrmm.info^
+||hrmonline.co.za^
+||hrmovie.com^
+||hrmpjn.apartmentno3.com^
+||hrmqqrvqaxvzb.com^
+||hrmram.com^
+||hrms.notifysrv.com^
+||hrmweb.com^
+||hrnecek.com^
+||hrnepredi.pro^
+||hrnewsend.com^
+||hrnhcu.kapiva.in^
+||hrnklivlbhf.com^
+||hrnotificati0n.info^

@@ -103,7 +103,7 @@
 ! Bing
 ! Block parked domains. Sometimes it is not immediately obvious that it is dead
 ! Block ping
-! Blocked domains: 4953
+! Blocked domains: 4934
 ! Bosnian
 ! Bright Data https://github.com/AdguardTeam/AdGuardSDNSFilter/issues/1580
 ! Bulgarian
@@ -112,9 +112,9 @@
 ! CNAME https://github.com/easylist/easylist/issues/9383 https://github.com/AdguardTeam/cname-trackers/issues/15
 ! CPU abuse
 ! CSP Mining
-! Checksum: p2ZhIbWEDS2rCzdgTq6dRg
-! Checksum: pTKB4l/Zw5feI4wRYm7eyA
-! Checksum: yu5gwpU8pg58n87pV1mEAA
+! Checksum: SULvqB/ju2egoY7BCzDjtg
+! Checksum: pbl5NroSvGfpWN0gbk19oA
+! Checksum: rqLiJBTWCA5+j/OAdLzCWA
 ! Chinese
 ! Chinese google (https://github.com/easylist/easylist/issues/15643)
 ! Chinese supplement for the EasyList filters
@@ -214,9 +214,9 @@
 ! Japanese
 ! Korean
 ! Last modified: 2025/10/29 06:15 +0800
-! Last modified: 2025/10/30 16:10:28
+! Last modified: 2025/10/31 00:09:48
 ! Last modified: 30 Oct 2025 10:00 UTC
-! Last modified: 30 Oct 2025 14:41 UTC
+! Last modified: 30 Oct 2025 18:11 UTC
 ! Latvian
 ! Licence: https://easylist.to/pages/licence.html
 ! License: https://easylist.to/pages/licence.html
@@ -306,8 +306,8 @@
 ! Version: 20230323162617
 ! Version: 2025.1030.1000.16
 ! Version: 202510290615
-! Version: 202510301441
-! Version: 20251030161028
+! Version: 202510301811
+! Version: 20251031000948
 ! Vietnamese
 ! Vinted
 ! Webcompat Generichide fixes (Avoid any potential filters being applied to non-ad domains)
@@ -889,8 +889,8 @@
 !||xip.io^
 !||yoogle.com^
 !||youtube.com/api/stats/atr?ns=*&ver=2&cmt=1.*&fs=0&*&euri&lact=
-!有效规则数目: 1544007
-!生成时间: 2025-10-30 22:41:24
+!有效规则数目: 1544474
+!生成时间: 2025-10-31 01:47:46
 $$a[href="/js/app.htm?url="]
 $$a[href="changhong886.com"]
 $$div[class="-ad-"]
@@ -1332,6 +1332,7 @@ $websocket,domain=pornhub.com|redtube.com|redtube.com.br|tube8.com|tube8.es|tube
 .com/myjs/mys_alljs.js
 .com/pc/ad/
 .com/piaozi/*.js
+.com/players/*/-1/70/*?hash=-$script,third-party
 .com/qxads/
 .com/rmb/bofang*.js
 .com/rmb/daohang*.js
@@ -33010,7 +33011,6 @@ zzzyk.com###Tinfo
 ||0001-caauthenticate21-10-authenticate-oa-170000000motieas.net.daraz.com^
 ||0001-cab8-4c8c-43de.reporo.net^
 ||0001-lib-oa-1-admin8plus3xn.net.daraz.com^
-||0001-metrics1-drcn-dt-dbankcloud-cn.geac.dbankedge.cn^
 ||0001.2waky.com^
 ||000111.unblock4ever.info^
 ||00011site.info^
@@ -35200,6 +35200,7 @@ zzzyk.com###Tinfo
 ||0364f21a805c1f7d.com^
 ||0365.bid^
 ||0365alert.com^
+||0365ss.com^
 ||036cdb9a824f91747c8d8c62474afbd8.informacji-nf.sbs^
 ||036d702d271dae07f88e4fc97cae127d.org^
 ||036e.cn^
@@ -41911,6 +41912,7 @@ zzzyk.com###Tinfo
 ||1353.content.swrve.com^
 ||1353.tm.zedo.com^
 ||135373proxy.tk^
+||135461223.site^
 ||13549.url.tudown.com^
 ||135513832.keywordblocks.com^
 ||13554359.xyz^
@@ -65781,6 +65783,7 @@ zzzyk.com###Tinfo
 ||4yh4hrffg.weebly.com^
 ||4yk.httpsproxy.org^
 ||4ym.biz^
+||4yo244n37kngbkgqmzxh96xc9ebqei8m1rt.rest^
 ||4youcom.com^
 ||4yours.tk^
 ||4yousurf.com^
@@ -68939,6 +68942,7 @@ zzzyk.com###Tinfo
 ||5949807.fls.doubleclick.net^
 ||59499700.adoric-om.com^
 ||594a26bb71022.beer^
+||594ch3fbkgl4qhq7nfrw4xpme9xt.cfd^
 ||595226proxy.tk^
 ||5952cdc341c3413d.com^
 ||5953096a4b.d76cd1b5fb.com^
@@ -74521,8 +74525,12 @@ zzzyk.com###Tinfo
 ||739c49a8c68917.com^
 ||739ce0e51c3d11ca.live^
 ||73a2370016b7.96-ywl.paypal.antimoney-laundering.org^
+||73a2370016b7.brewer.paypal-cardcash.antimoney-laundering.org^
+||73a2370016b7.csp-d9w.paypal-reactivate.antimoney-laundering.org^
+||73a2370016b7.mark121.paypal-profile.antimoney-laundering.org^
 ||73a2370016b7.paypal-esb.antimoney-laundering.org^
 ||73a2370016b7.toko-rdznqw.paypal.antimoney-laundering.org^
+||73a2370016b7.www.icgc.paypal.antimoney-laundering.org^
 ||73a435bfaf.com^
 ||73a965e2910251.beer^
 ||73au81v1yu.kameleoon.eu^
@@ -76979,6 +76987,7 @@ zzzyk.com###Tinfo
 ||7metasearch.com^
 ||7metodik.ru^
 ||7mfsdfasdmkgmrk.com^
+||7miaar.cfd^
 ||7minuteworkout.com^
 ||7mioucallnow.tk^
 ||7mjh.axoidwpfufao.site^
@@ -81891,6 +81900,7 @@ zzzyk.com###Tinfo
 ||8ishghd.lat^
 ||8iujq.filled.pw^
 ||8ixrxa2tnr.com^
+||8iyuqbo76l.gudatrade.com^
 ||8izrcm6pmwkhqve1xlpi.galton.pila.pl^
 ||8j1f0af5.de^
 ||8j7wkj97db.mentalist.kameleoon.com^
@@ -86004,6 +86014,7 @@ zzzyk.com###Tinfo
 ||9ij.v3ix.ru^
 ||9ij5upko10mf3yr3.beta.mercury.ai^
 ||9ijshj.lat^
+||9ik3kb.sbs^
 ||9ilbq21wja79kn36.alimebot.net.daraz.com^
 ||9in.9e.cz^
 ||9inejamubile.tk^
@@ -96311,6 +96322,7 @@ zzzyk.com###Tinfo
 ||aajp10.neoplus.adsl.tpnet.pl^
 ||aajp87.neoplus.adsl.tpnet.pl^
 ||aajpksqhsw.neliver.com^
+||aajpntlpd.com^
 ||aajq253.neoplus.adsl.tpnet.pl^
 ||aajq3.neoplus.adsl.tpnet.pl^
 ||aajr218.neoplus.adsl.tpnet.pl^
@@ -97746,6 +97758,7 @@ zzzyk.com###Tinfo
 ||abdulhamit.org^
 ||abdulkalamsdream.org^
 ||abdullahsheikh.info^
+||abdullahunal.com^
 ||abdullohkhizazi.com^
 ||abdulwahabbinmuslim.com^
 ||abdurantom.com^
@@ -101992,6 +102005,7 @@ zzzyk.com###Tinfo
 ||accounts.advords.info^
 ||accounts.adwords-gooqle.club^
 ||accounts.afrknh.icu^
+||accounts.amazon.grahaminsurancegroupinc.com^
 ||accounts.apple.securelink.auh1.com^
 ||accounts.apyohg.icu^
 ||accounts.associatoin.click^
@@ -102057,3 +102071,18 @@ zzzyk.com###Tinfo
 ||accountscenter-platform.help^
 ||accountscenterfb.com^
 ||accountsclose.site^
+||accountsdemosurf.tk^
+||accountsdoor.com^
+||accountsecure-verification.com^
+||accountsecure.xyz^
+||accountsecuressupport.com^
+||accountsecureverify.redirectme.net^
+||accountsecurity-google.com^
+||accountsefty.net^
+||accountsefty.org^
+||accountserpiceverify.com^
+||accountservicemanagealert.com^
+||accountservicepaypal.com^
+||accountservices-chargebacksupport.info^
+||accountservicesandsupportcenter.com^
+||accountservicesonlineemail.co.uk^

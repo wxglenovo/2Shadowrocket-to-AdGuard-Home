@@ -47,6 +47,7 @@ jobs:
           mkdir -p tmp
           LAST_PART_FILE="tmp/last_part.txt"
 
+          # 拉取仓库最新的 last_part.txt
           git fetch origin main
           git checkout origin/main -- tmp/last_part.txt || echo "⚠ tmp/last_part.txt 不存在"
 
@@ -65,6 +66,7 @@ jobs:
             echo "⏱ 自动轮替分片：$PART"
           fi
 
+          # 保存下一次使用
           echo $PART > $LAST_PART_FILE
           echo "part=$PART" >> $GITHUB_OUTPUT
 
@@ -101,6 +103,7 @@ jobs:
           PART_FILE=$(printf "tmp/part_%02d.txt" "$PART")
           if [ ! -f "$PART_FILE" ]; then
             echo "⚠ 当前分片缺失：$PART_FILE"
+            echo "🔄 自动下载规则源并生成分片"
             python split_and_check_16.py --force-update
           else
             echo "✅ 当前分片存在：$PART_FILE"
@@ -116,6 +119,7 @@ jobs:
           OUTPUT=$(python split_and_check_16.py --part "$PART")
           echo "$OUTPUT" | tee logs/split_check_part_${PART}.log
 
+          # 提取统计数字
           TOTAL=$(echo "$OUTPUT" | grep "总数" | awk '{print $2}' | tr -d ',')
           NEW=$(echo "$OUTPUT" | grep "新增" | awk '{print $2}' | tr -d ',')
           DEL=$(echo "$OUTPUT" | grep "删除" | awk '{print $2}' | tr -d ',')

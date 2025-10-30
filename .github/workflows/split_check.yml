@@ -125,13 +125,21 @@ jobs:
         env:
           PART: ${{ steps.detect.outputs.part }}
         run: |
+          # 配置 Git 用户
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
           # 提取 Python 输出里的 COMMIT_STATS
           STATS=$(grep "COMMIT_STATS" logs/split_check_part_${PART}.log | tail -n1 | sed 's/COMMIT_STATS: //')
 
+          # 添加文件
           git add tmp/last_part.txt dist/validated_part_*.txt tmp/part_*.txt logs/ merged_rules.txt
+
+          # 提交 commit，如果没有改动则跳过
           git commit -m "🤖 Auto update: validated part $PART → $STATS" || echo "No changes to commit"
+
+          # 拉取远程最新并 rebase（防止冲突）
           git pull --rebase origin main || echo "⚠ Pull failed or nothing to rebase"
+
+          # 推送到远程
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main

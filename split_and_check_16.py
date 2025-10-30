@@ -30,7 +30,6 @@ def process_part(part):
             final_rules.add(rule)
             if rule in delete_counter:
                 print(f"🔄 验证成功，清零删除计数: {rule}")
-            # 验证成功清零计数
             new_delete_counter[rule] = 0
         else:
             count = delete_counter.get(rule, 0) + 1
@@ -49,6 +48,7 @@ def process_part(part):
         f.write("\n".join(sorted(final_rules)))
 
     total_count = len(final_rules)
+    # 原有输出
     print(f"✅ 分片 {part} 完成: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
-    # commit 信息显示统计
-    print(f"💾 Commit 信息: 分片 {part} → 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
+    # 新增输出，用于 workflow commit
+    print(f"COMMIT_STATS: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")

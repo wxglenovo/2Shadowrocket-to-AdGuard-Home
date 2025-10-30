@@ -1,3 +1,4 @@
+
 name: Split & DNS Check
 
 on:
@@ -45,6 +46,7 @@ jobs:
         shell: bash
         run: |
           mkdir -p tmp
+
           LAST_PART_FILE="tmp/last_part.txt"
 
           # 拉取仓库最新的 last_part.txt
@@ -68,6 +70,7 @@ jobs:
 
           # 保存下一次使用
           echo $PART > $LAST_PART_FILE
+
           echo "part=$PART" >> $GITHUB_OUTPUT
 
       - name: Force download rules at schedule times
@@ -116,18 +119,7 @@ jobs:
         run: |
           mkdir -p logs
           echo "⏱ 开始验证分片 $PART"
-          OUTPUT=$(python split_and_check_16.py --part "$PART")
-          echo "$OUTPUT" | tee logs/split_check_part_${PART}.log
-
-          # 提取统计数字
-          TOTAL=$(echo "$OUTPUT" | grep "总数" | awk '{print $2}' | tr -d ',')
-          NEW=$(echo "$OUTPUT" | grep "新增" | awk '{print $2}' | tr -d ',')
-          DEL=$(echo "$OUTPUT" | grep "删除" | awk '{print $2}' | tr -d ',')
-
-          echo "📊 分片 $PART 统计: 总数 $TOTAL, 新增 $NEW, 删除 $DEL"
-          echo "TOTAL=$TOTAL" >> $GITHUB_ENV
-          echo "NEW=$NEW" >> $GITHUB_ENV
-          echo "DEL=$DEL" >> $GITHUB_ENV
+          python split_and_check_16.py --part "$PART" | tee logs/split_check_part_${PART}.log
 
       - name: Commit & Push Validated Rules
         shell: bash
@@ -137,7 +129,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          git add tmp/last_part.txt dist/validated_part_*.txt tmp/part_*.txt logs/ merged_rules.txt delete_counter.json
-          git commit -m "🤖 Auto update: validated part $PART | 总数 $TOTAL, 新增 $NEW, 删除 $DEL" || echo "No changes to commit"
+          git add tmp/last_part.txt dist/validated_part_*.txt tmp/part_*.txt logs/ merged_rules.txt
+          git commit -m "🤖 Auto update: validated part $PART" || echo "No changes to commit"
           git pull --rebase origin main || echo "⚠ Pull failed or nothing to rebase"
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main

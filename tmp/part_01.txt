@@ -112,9 +112,9 @@
 ! CNAME https://github.com/easylist/easylist/issues/9383 https://github.com/AdguardTeam/cname-trackers/issues/15
 ! CPU abuse
 ! CSP Mining
-! Checksum: 6L3nGx+UaqISDx5uVpFCjw
-! Checksum: AbMTLfG2EKPmmuojrxu0EQ
-! Checksum: lon9sxLxj9L8w5R7EjfURQ
+! Checksum: ++jJQeukubsmCuAC2Gu5UQ
+! Checksum: 8f6ywArbsLTzMlwYdY0U+w
+! Checksum: kdhFqnXRT4wacAjgc2iFQg
 ! Chinese
 ! Chinese google (https://github.com/easylist/easylist/issues/15643)
 ! Chinese supplement for the EasyList filters
@@ -216,7 +216,7 @@
 ! Last modified: 2025/10/29 06:15 +0800
 ! Last modified: 2025/10/30 16:10:28
 ! Last modified: 30 Oct 2025 10:00 UTC
-! Last modified: 30 Oct 2025 11:51 UTC
+! Last modified: 30 Oct 2025 12:01 UTC
 ! Latvian
 ! Licence: https://easylist.to/pages/licence.html
 ! License: https://easylist.to/pages/licence.html
@@ -306,7 +306,7 @@
 ! Version: 20230323162617
 ! Version: 2025.1030.1000.16
 ! Version: 202510290615
-! Version: 202510301151
+! Version: 202510301201
 ! Version: 20251030161028
 ! Vietnamese
 ! Vinted

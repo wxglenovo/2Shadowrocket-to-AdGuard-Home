@@ -7,7 +7,7 @@ import dns.resolver
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import json
 
-URLS_TXT = "urls.txt"   # 规则源地址
+URLS_TXT = "urls.txt"
 TMP_DIR = "tmp"
 DIST_DIR = "dist"
 MASTER_RULE = "merged_rules.txt"
@@ -21,9 +21,8 @@ os.makedirs(DIST_DIR, exist_ok=True)
 
 def download_all_sources():
     if not os.path.exists(URLS_TXT):
-        print("❌ urls.txt 不存在，无法获取规则源")
+        print("❌ urls.txt 不存在")
         return False
-    print("📥 开始下载所有规则源...")
     merged = set()
     with open(URLS_TXT, "r", encoding="utf-8") as f:
         urls = [u.strip() for u in f if u.strip()]
@@ -38,26 +37,25 @@ def download_all_sources():
                     merged.add(line)
         except Exception as e:
             print(f"⚠ 下载失败 {url}: {e}")
-    print(f"✅ 下载完成，共合并 {len(merged)} 条规则")
     with open(MASTER_RULE, "w", encoding="utf-8") as f:
         f.write("\n".join(sorted(merged)))
+    print(f"✅ 下载完成，共 {len(merged)} 条规则")
     return True
 
 def split_parts():
     if not os.path.exists(MASTER_RULE):
-        print("⚠ 缺少合并规则文件，无法切片")
+        print("⚠ 缺少合并规则文件")
         return False
     with open(MASTER_RULE, "r", encoding="utf-8") as f:
         rules = [l.strip() for l in f if l.strip()]
     total = len(rules)
     per_part = (total + PARTS - 1) // PARTS
-    print(f"🪓 正在分片 {total} 条，每片约 {per_part}")
     for i in range(PARTS):
         part_rules = rules[i * per_part:(i + 1) * per_part]
-        filename = os.path.join(TMP_DIR, f"part_{i + 1:02d}.txt")
+        filename = os.path.join(TMP_DIR, f"part_{i+1:02d}.txt")
         with open(filename, "w", encoding="utf-8") as f:
             f.write("\n".join(part_rules))
-        print(f"📄 分片 {i + 1}: {len(part_rules)} 条 → {filename}")
+        print(f"📄 分片 {i+1}: {len(part_rules)} 条 → {filename}")
     return True
 
 def check_domain(rule):
@@ -78,22 +76,17 @@ def dns_validate(lines):
     valid = []
     with ThreadPoolExecutor(max_workers=DNS_WORKERS) as executor:
         futures = {executor.submit(check_domain, rule): rule for rule in lines}
-        total = len(lines)
-        done = 0
         for future in as_completed(futures):
-            done += 1
             result = future.result()
             if result:
                 valid.append(result)
-            if done % 500 == 0:
-                print(f"✅ 已验证 {done}/{total} 条，有效 {len(valid)} 条")
     print(f"✅ 分片验证完成，有效 {len(valid)} 条")
     return valid
 
 def process_part(part):
     part_file = os.path.join(TMP_DIR, f"part_{int(part):02d}.txt")
     if not os.path.exists(part_file):
-        print(f"⚠ 分片 {part} 缺失，自动重新下载并切片")
+        print(f"⚠ 分片 {part} 缺失，自动下载规则源并切片")
         download_all_sources()
         split_parts()
     if not os.path.exists(part_file):
@@ -106,7 +99,7 @@ def process_part(part):
 
     out_file = os.path.join(DIST_DIR, f"validated_part_{int(part):02d}.txt")
 
-    # 读取上一轮删除计数
+    # 读取 delete_counter.json
     if os.path.exists(DELETE_COUNT_FILE):
         with open(DELETE_COUNT_FILE, "r", encoding="utf-8") as f:
             delete_counter = json.load(f)
@@ -122,7 +115,7 @@ def process_part(part):
             delete_counter[rule] = count
             if count >= 4:
                 print(f"删除规则：{rule}")
-                continue  # 删除规则
+                continue  # 真正删除
         else:
             delete_counter[rule] = 0  # 验证成功清零
         updated_rules.append(rule)
@@ -139,7 +132,7 @@ def process_part(part):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--part", help="验证指定分片 1~16")
-    parser.add_argument("--force-update", action="store_true", help="强制重新下载所有规则源并切片")
+    parser.add_argument("--force-update", action="store_true", help="强制下载所有规则源并切片")
     args = parser.parse_args()
 
     if args.force_update:

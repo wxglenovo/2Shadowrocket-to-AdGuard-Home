@@ -13,7 +13,6 @@ TMP_DIR = "tmp"
 DIST_DIR = "dist"
 MASTER_RULE = "merged_rules.txt"
 PARTS = 16
-DNS_BATCH_SIZE = 800
 CONCURRENCY = 50
 DELETE_COUNT_FILE = os.path.join(DIST_DIR, "delete_counter.json")
 
@@ -99,36 +98,38 @@ def process_part(part):
     valid = dns_validate(lines)
     print(f"✅ 分片验证完成，有效 {len(valid)} 条")
 
-    # 连续删除机制
-    delete_counter = {}
-    counter_file = DELETE_COUNT_FILE
-    if os.path.exists(counter_file):
-        with open(counter_file, "r", encoding="utf-8") as f:
+    # 读取上一轮删除计数
+    if os.path.exists(DELETE_COUNT_FILE):
+        with open(DELETE_COUNT_FILE, "r", encoding="utf-8") as f:
             delete_counter = json.load(f)
+    else:
+        delete_counter = {}
 
     to_delete = set(lines) - set(valid)
     updated_rules = []
+
     for rule in lines:
         if rule in to_delete:
             count = delete_counter.get(rule, 0) + 1
             delete_counter[rule] = count
             if count >= 4:
                 print(f"删除规则：{rule}")
-                continue
+                continue  # 删除规则
         else:
-            delete_counter[rule] = 0
+            delete_counter[rule] = 0  # 验证成功清零
         updated_rules.append(rule)
 
     out_file = os.path.join(DIST_DIR, f"validated_part_{int(part):02d}.txt")
     with open(out_file, "w", encoding="utf-8") as f:
         f.write("\n".join(updated_rules))
 
-    with open(counter_file, "w", encoding="utf-8") as f:
+    with open(DELETE_COUNT_FILE, "w", encoding="utf-8") as f:
         json.dump(delete_counter, f, indent=2, ensure_ascii=False)
 
     print(f"✅ 分片 {part} 更新完成 → {out_file}")
 
 if __name__ == "__main__":
+    import argparse
     parser = argparse.ArgumentParser()
     parser.add_argument("--part", help="验证指定分片 1~16")
     parser.add_argument("--force-update", action="store_true", help="强制重新下载所有规则源并切片")

@@ -14,6 +14,7 @@ MASTER_RULE = "merged_rules.txt"
 PARTS = 16
 DNS_WORKERS = 50
 DNS_TIMEOUT = 2
+BATCH_SIZE = 500
 DELETE_COUNTER_FILE = os.path.join(DIST_DIR, "delete_counter.json")
 DELETE_THRESHOLD = 4
 
@@ -75,19 +76,21 @@ def check_domain(rule):
         return None
 
 def dns_validate(lines):
-    print(f"🚀 启动 {DNS_WORKERS} 并发验证")
+    print(f"🚀 启动 {DNS_WORKERS} 并发验证，分批 {BATCH_SIZE} 条")
     valid = []
-    with ThreadPoolExecutor(max_workers=DNS_WORKERS) as executor:
-        futures = {executor.submit(check_domain, rule): rule for rule in lines}
-        total = len(lines)
+    total = len(lines)
+    for i in range(0, total, BATCH_SIZE):
+        batch = lines[i:i+BATCH_SIZE]
         done = 0
-        for future in as_completed(futures):
-            done += 1
-            result = future.result()
-            if result:
-                valid.append(result)
-            if done % 500 == 0:
-                print(f"✅ 已验证 {done}/{total} 条，有效 {len(valid)} 条")
+        with ThreadPoolExecutor(max_workers=DNS_WORKERS) as executor:
+            futures = {executor.submit(check_domain, rule): rule for rule in batch}
+            for future in as_completed(futures):
+                done += 1
+                result = future.result()
+                if result:
+                    valid.append(result)
+                if done % 100 == 0 or done == len(batch):
+                    print(f"✅ 批次 {i//BATCH_SIZE+1} 已验证 {done}/{len(batch)} 条，有效 {len(valid)} 条")
     print(f"✅ 分片验证完成，有效 {len(valid)} 条")
     return valid
 
@@ -123,7 +126,6 @@ def process_part(part):
 
     delete_counter = load_delete_counter()
     new_delete_counter = {}
-
     final_rules = set()
     removed_count = 0
     added_count = 0
@@ -147,8 +149,7 @@ def process_part(part):
     with open(out_file, "w", encoding="utf-8") as f:
         f.write("\n".join(sorted(final_rules)))
 
-    print(f"🤖 Auto update: validated part {part}")
-    print(f"总数 {len(final_rules)}, 新增 {added_count}, 删除 {removed_count}")
+    print(f"✅ 分片 {part} 完成: 总数 {len(final_rules)}, 新增 {added_count}, 删除 {removed_count}")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -161,6 +162,7 @@ if __name__ == "__main__":
         split_parts()
 
     if not os.path.exists(MASTER_RULE) or not os.path.exists(os.path.join(TMP_DIR, "part_01.txt")):
+        print("⚠ 缺少规则或分片，自动拉取")
         download_all_sources()
         split_parts()
 

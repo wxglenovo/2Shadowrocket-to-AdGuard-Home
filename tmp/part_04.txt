@@ -1,11 +1,3 @@
-||chitinsans.icu^
-||chitinseuclase.help^
-||chitling.stream^
-||chitlins.stream^
-||chito.com.cn^
-||chito.se^
-||chitonsgirns.qpon^
-||chitosan.stream^
 ||chitose-printing.com^
 ||chitownballoons.com^
 ||chitownentertainers.com^
@@ -2487,7 +2479,6 @@
 ||cimarketingforms.aig.com^
 ||cimarketingforms.cimarketing.aig.com^
 ||cimatradecore-tech.com^
-||cimatradecore.com^
 ||cimatradecore.net^
 ||cimatradecore.org^
 ||cimatradecoreapp.com^
@@ -12803,7 +12794,6 @@
 ||cloudafai.com^
 ||cloudafrik.com^
 ||cloudaliexamontcar31.net.daraz.com^
-||cloudaltflow.net^
 ||cloudaltflow.ru^
 ||cloudanna.com^
 ||cloudanti-virus.com^
@@ -16705,7 +16695,6 @@
 ||cobrowseeast.touchcommerce.com^
 ||cobrowsing-ha.iadvize.com^
 ||cobrowsing.iadvize.com^
-||cobrozernis.com^
 ||cobrozernis.net^
 ||cobrozernisapp.com^
 ||cobrozernisapp.net^
@@ -19970,7 +19959,6 @@
 ||cognitivlabs.com^$third-party
 ||cognitrix-stock.net^
 ||cognitrix-stockapp.com^
-||cognitrixstock.com^
 ||cognitrixstock.net^
 ||cogniux.com^
 ||cognivi.org^
@@ -20220,6 +20208,7 @@
 ||coinbasenews.co.uk^
 ||coinbaseonecard.online^
 ||coinbaseonecard.store^
+||coinbaseoq.xyz^
 ||coinbasepay.info^
 ||coinbasepro-giveaway.com^
 ||coinbasepro10000.webcindario.com^
@@ -20662,7 +20651,6 @@
 ||coinxback.com^
 ||coinxo.com^
 ||coinxo.tech^
-||coinxybrin.com^
 ||coinxybrin.net^
 ||coinyandex.com^
 ||coinz.biz^
@@ -36399,7 +36387,6 @@
 ||corefive.co.uk^
 ||coreflare.cfd^
 ||coreflarelab.cfd^
-||coreflash.cfd^
 ||coreflick.cfd^
 ||coreflick.pro^
 ||coreflux.cfd^
@@ -43515,7 +43502,6 @@
 ||creativhelp.de^
 ||creativiart.com.br^
 ||creativiklab.com^
-||creativisensibili.it^
 ||creativity-exist.co.cc^
 ||creativity-nodeix-ai.com^
 ||creativity-nodeix-app.com^
@@ -43590,7 +43576,6 @@
 ||crecimiento-glamvex-ai.net^
 ||crecimiento-glamvex-app.net^
 ||crecimiento-glamvex-tech.com^
-||crecimiento-glamvex.net^
 ||crecimiento-glamvex.pro^
 ||crecimiento-glowture-ai.com^
 ||crecimiento-glowture-app.com^
@@ -43599,7 +43584,6 @@
 ||crecimientoglamvex-app.com^
 ||crecimientoglamvex.org^
 ||crecimientoglamvexapp.net^
-||crecimientoglowture.net^
 ||crecimientoglowtureai.com^
 ||crecimientoglowtureapp.com^
 ||crecipes.info^
@@ -43890,7 +43874,6 @@
 ||creditossonline.webcindario.com^
 ||creditovk.spb.ru^
 ||creditoxyvarreview.com^
-||creditoyelvor.net^
 ||creditoyelvorapp.com^
 ||creditpath.cfd^
 ||creditperformance.com.br^
@@ -43965,7 +43948,6 @@
 ||credityoutube.net^
 ||crediunion1alaska.web.app^
 ||credivo-sync-ai-tech.com^
-||credivo-sync-ai.com^
 ||credivo-sync-ai.net^
 ||credivo-sync-ai.org^
 ||credivo-syncai.com^
@@ -44515,10 +44497,8 @@
 ||cript.to/z-
 ||criptauro-flex-app.com^
 ||criptauro-flex.net^
-||criptauroflex.net^
 ||criptauroflexai.com^
 ||criptauroflexapp.com^
-||cripto-giro-ai.net^
 ||cripto-miner.com^
 ||cripto-rastrox.net^
 ||cripto-valuta.net^
@@ -44636,7 +44616,6 @@
 ||cristalinacasadapiscina.com.br^
 ||cristaltrade.com^
 ||cristaltraderium-tech.com^
-||cristaltraderiumai.com^
 ||cristaltraderiumreview.com^
 ||cristaltraderiumtech.com^
 ||cristalturismo.com^
@@ -46855,7 +46834,6 @@
 ||cryoutloud.dynu.net^
 ||cryp-o.online^
 ||cryp.trade^
-||crypharismax8.com^
 ||crypharismax86.net^
 ||cryplister.com^
 ||crypoz.com^
@@ -47441,7 +47419,6 @@
 ||cryptotab.net^
 ||cryptotabs.ru^
 ||cryptotact-app.com^
-||cryptotactai.net^
 ||cryptotactapp.net^
 ||cryptotactbot.com^
 ||cryptotaskl.top^
@@ -47505,7 +47482,6 @@
 ||cryptox-app-ai.net^
 ||cryptox-app.com^
 ||cryptox-soft.com^
-||cryptoxandrelis.net^
 ||cryptoxandrelis.pro^
 ||cryptoxapp-engine.com^
 ||cryptoxapp-solution.com^
@@ -47674,7 +47650,6 @@
 ||crythonisdrivegptai.com^
 ||crythonisdrivegptapp.com^
 ||crytpofinance.com^
-||cryvon-wealth-app.net^
 ||cryvon-wealthapp.com^
 ||cryvonexteralith.com^
 ||cryvonexteralith74.net^
@@ -50227,7 +50202,6 @@
 ||cudjgcnwoo-s.icu^
 ||cudjntck.com^
 ||cudohkaqu.lg.maxgrowth.ru^
-||cudownydomek.com^
 ||cudownyogrod.com^
 ||cudownyogrodek.shop^
 ||cudrergaitchee.net^
@@ -53662,7 +53636,6 @@
 ||cybernetprox.tk^
 ||cybernetsec.com^
 ||cybernews.com/images/tools/*/banner/
-||cybernewsdigest.com^
 ||cybernewyear.tk^
 ||cybernexo.pro^
 ||cybernexus.site^
@@ -54157,7 +54130,6 @@
 ||cyphix-edge.net^
 ||cyphix-edgeapp.com^
 ||cyphix-immediate.pro^
-||cyphixedge-ai.com^
 ||cyphixedge-software.com^
 ||cyphixedge-solution.com^
 ||cyphixedge.com^
@@ -54199,7 +54171,6 @@
 ||cyralis-negociacao-app.com^
 ||cyralis-negociacao.com^
 ||cyralis-negociacao.net^
-||cyralisnegociacao.net^
 ||cyralisnegociacao.org^
 ||cyralonixtech.com^
 ||cyravolenta.cfd^
@@ -64429,7 +64400,6 @@
 ||data-ssl.stepstone.nl^
 ||data-ssl.stepstone.pl^
 ||data-ssl.totaljobs.com^
-||data-stream.info^
 ||data-stream.level.agency^
 ||data-token.com^
 ||data-track-global.yingxiong.com^
@@ -67841,7 +67811,6 @@
 ||dawnii.com^
 ||dawningsoft.com^
 ||dawnleaf.icu^
-||dawnlightvelmoryn.net^
 ||dawnmariesnailstudio.com^
 ||dawnmarriottstylist.com^
 ||dawnmen-town.info^
@@ -74351,7 +74320,6 @@
 ||deltaapprovalcenter.com^
 ||deltaaspect.net^
 ||deltabehavioralhealth.org^
-||deltabetrix.net^
 ||deltabit.online^
 ||deltaboiler.com^
 ||deltabravo.net/admax/
@@ -75002,7 +74970,6 @@
 ||demononthebooks.co.cc^
 ||demonproxy.com^
 ||demonrimpa.pro^
-||demonstories.top^
 ||demonstrated-was.tk^
 ||demonstrated.mask.wtf.la^
 ||demonstratesnow.tk^
@@ -82691,7 +82658,6 @@
 ||digitalpush.org^$third-party
 ||digitalqualitymark.online^
 ||digitalquilzax-app.com^
-||digitalquilzax.com^
 ||digitalquilzax.pro^
 ||digitalquilzaxapp.com^
 ||digitalquilzaxapp.net^
@@ -82884,7 +82850,6 @@
 ||digno-provecho-ai.com^
 ||digno-provecho-ai.net^
 ||dignoprovecho.com^
-||dignoprovechoai.net^
 ||dignoprovechoai.org^
 ||dignoprovechoaiapp.com^
 ||dignow.org^
@@ -83478,7 +83443,6 @@
 ||dinamicafortuna.net^
 ||dinamicaindustrial.com.br^
 ||dinamicainvexon-app.com^
-||dinamicainvexon.net^
 ||dinamicainvexon.org^
 ||dinamicainvexonapp.com^
 ||dinamicamelyra.com^
@@ -95709,7 +95673,6 @@
 ||dovonexvisionapp.com^
 ||dovonixtrader-61-nova.com^
 ||dovonixtrader.net^
-||dovonixtraderai.com^
 ||dovramelti3u8q9pjh.space^
 ||dovri.bid^
 ||dow.luokeby.com^
@@ -98234,7 +98197,6 @@
 ||dpd-mojmine.anfengb.com^
 ||dpd-mojmore.ksalc.com^
 ||dpd-mojmore.lxczg.com^
-||dpd-mojupdate.dqdtr.com^
 ||dpd-mojwiecej.mqhbd.com^
 ||dpd-mojwiecej.suxwh.com^
 ||dpd-myapp.lxmpb.com^
@@ -99273,7 +99235,6 @@
 ||dralter.co.za^
 ||dralthar-triunfo-app.com^
 ||dralthar-triunfo.net^
-||dralthartriunfo.com^
 ||dralthartriunfo.net^
 ||dralthartriunforeview.com^
 ||dralux.top^
@@ -101492,7 +101453,6 @@
 ||drowsiness.pbphgwbr.in^
 ||droxin-wise.net^
 ||droxinwise.net^
-||droxinwiseai.com^
 ||droxinwisereview.com^
 ||droxo-vizz-app.com^
 ||droxo-vizz.net^
@@ -102086,3 +102046,14 @@
 ||ds-email.gardenschool.edu.my^
 ||ds-email.grg.nsw.edu.au^
 ||ds-email.mercedes.wa.edu.au^
+||ds-email.meriden.nsw.edu.au^
+||ds-email.pacificenrolments.education^
+||ds-email.plc.vic.edu.au^
+||ds-email.waterfrontmontessori.com^
+||ds-erp.com^
+||ds-i.com^
+||ds-ll.serving-sys.com^
+||ds-m.addthisedge.com.edgekey.net^
+||ds-motorsport.com^
+||ds-original.com^
+||ds-overseas.com^

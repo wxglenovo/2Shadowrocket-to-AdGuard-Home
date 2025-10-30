@@ -1,27 +1,3 @@
-||fixdealalwaysappclicks.top^
-||fixdealalwaysfileclicks.icu^
-||fixdealalwaysfileclicks.top^
-||fixdealalwaystheclicks.icu^
-||fixdealappleappclicks.icu^
-||fixdealappleappclicks.top^
-||fixdealaptitudeappclicks.icu^
-||fixdealaptitudeappclicks.top^
-||fixdealaptitudetheclicks.icu^
-||fixdealaskappclicks.icu^
-||fixdealaskappclicks.top^
-||fixdealasktheclicks.icu^
-||fixdealcloudappclicks.icu^
-||fixdealcloudappclicks.top^
-||fixdealcloudfileclicks.icu^
-||fixdealcloudfileclicks.top^
-||fixdealcloudtheclicks.icu^
-||fixdealconcreteappclicks.icu^
-||fixdealconcreteappclicks.top^
-||fixdealconcretefileclicks.icu^
-||fixdealconcretefileclicks.top^
-||fixdealdlappclicks.icu^
-||fixdealdlappclicks.top^
-||fixdealdlfileclicks.top^
 ||fixdealdltheclicks.icu^
 ||fixdealdowngradeappclicks.icu^
 ||fixdealdowngradeappclicks.top^
@@ -966,6 +942,7 @@
 ||fjisu2.com/js/huimi-
 ||fjitr.malijunaki.si^
 ||fjjf-file-3i2.890m.com^
+||fjjf-wahtsapp.com^
 ||fjjkh.thelostestate.com^
 ||fjjkq.cn^
 ||fjjnxn.top^
@@ -2268,7 +2245,6 @@
 ||fleckydyassic.help^
 ||fleconomnipuer.com^
 ||flection.us^
-||flectorio-immediato.net^
 ||flectorio-inmediato.net^
 ||flectorioimmediatoreview.com^
 ||flectorioinmediato-soft.com^
@@ -2447,7 +2423,6 @@
 ||flexcore-accordis-ai.com^
 ||flexcore-accordis-tech.com^
 ||flexcoreaccordis-system.com^
-||flexcoreaccordis.net^
 ||flexdbrodude.duckdns.org^
 ||flexdeal.net^
 ||flexdesksupport.com^
@@ -3889,7 +3864,6 @@
 ||flux9.space^
 ||fluxaction.click^
 ||fluxads.com^
-||fluxanalyzify.com^
 ||fluxaro.digital^
 ||fluxarray.com^
 ||fluxbit.click^
@@ -3906,7 +3880,6 @@
 ||fluxdream-flow-ai.com^
 ||fluxdreamflow-system.com^
 ||fluxdreamflow.com^
-||fluxdreamflow.net^
 ||fluxdreamflowapp.com^
 ||fluxendra.online^
 ||fluxent-prime.net^
@@ -3921,7 +3894,6 @@
 ||fluxhouse.tk^
 ||fluxing.stream^
 ||fluxingdirely.help^
-||fluxion-drift-gpt.net^
 ||fluxion-driftgpt.net^
 ||fluxion-oil.pro^
 ||fluxion-oilsystem.com^
@@ -3965,7 +3937,6 @@
 ||fluxorium-corporation.net^
 ||fluxorium-corporationapp.com^
 ||fluxoriumcorporation-app.com^
-||fluxorvisionex.net^
 ||fluxpanel.cfd^
 ||fluxpanel.website^
 ||fluxpatch.site^
@@ -9152,7 +9123,6 @@
 ||fortune-phantom-app.com^
 ||fortune-phantom-app.net^
 ||fortune-phantom.net^
-||fortune-phantom.online^
 ||fortune-phantom.pro^
 ||fortune-phantomsolution.com^
 ||fortune.bisexpert.ru^
@@ -19847,7 +19817,6 @@
 ||frowzily.us^
 ||froxi.com^
 ||froxi.info^
-||froxiainversion.com^
 ||froxies.info^
 ||froxsee.com^
 ||froxty.info^
@@ -22646,7 +22615,6 @@
 ||funnel-gamma.net^
 ||funnel-l5-zurex.com^
 ||funnel-me.com^
-||funnel-sigma.com^
 ||funnel-sigma.net^
 ||funnel-virexa-soft.com^
 ||funnel-virexa.net^
@@ -23726,7 +23694,6 @@
 ||futuresurftkgss.tk^
 ||futuresurge.tk^
 ||futuresurgeflux.net^
-||futuresurgefluxapp.com^
 ||futuresurgery.tk^
 ||futuresweb.tk^
 ||futuresxmas.tk^
@@ -27190,7 +27157,6 @@
 ||gallerikatinka.com^
 ||gallerisymbol.dk^
 ||galleriurup.dk^
-||gallervolymiserare.net^
 ||gallervolymiserareapp.net^
 ||gallery-cisco-capwap-rpc.net.daraz.com^
 ||gallery-metrics.api.brightcove.com^
@@ -28602,7 +28568,6 @@
 ||gamma-ember-ai.com^
 ||gamma-ember-ai.net^
 ||gamma-ember-system.com^
-||gamma-ember.net^
 ||gamma-emberengine.com^
 ||gamma-embersystem.com^
 ||gamma-fantom.com^
@@ -28731,7 +28696,6 @@
 ||ganancia-airfluxsoft.com^
 ||gananciaairflux-app.com^
 ||gananciaairflux-app.net^
-||gananciaairflux.net^
 ||gananciaairflux.org^
 ||gananciaairfluxapp.com^
 ||gananciaairfluxapp.net^
@@ -32645,7 +32609,6 @@
 ||geldionexpro.org^
 ||geldpilotaiapp.com^
 ||geldrix-surge-app-ai.com^
-||geldrix-surge-app.com^
 ||geldrix-surge-app.net^
 ||geldrixsurge-app.net^
 ||geldrixsurgeapp-solution.com^
@@ -32910,7 +32873,6 @@
 ||genaktiver-abonnement.com^
 ||genalixtrader.net^
 ||genalixtrader78nova.com^
-||genalixtraderai.com^
 ||genalixtraderapp.com^
 ||genalixtraderapp.net^
 ||genalixtradersolution.com^
@@ -32920,7 +32882,6 @@
 ||genavextrader-45-ai.com^
 ||genavextrader-45-nova.com^
 ||genavextrader45ai.com^
-||genavextrader45nova.com^
 ||genbalar.com^
 ||genbazen.top^
 ||genbexcnre.firebaseapp.com^
@@ -38135,6 +38096,7 @@
 ||gfcnc.de^
 ||gfcovers.se^
 ||gfcsruathroaty.review^
+||gfculinary.com^
 ||gfcuxnaek.ru^
 ||gfd.huigoushop.com^
 ||gfd.personalminister.org^
@@ -40346,7 +40308,6 @@
 ||giquhome.com/0/sendEventV2
 ||giqvmjiccwwys.bid^
 ||gir.driveropti.net^
-||gira-doreix-ai.com^
 ||gira-doreix.net^
 ||giradoreix-solution.com^
 ||giradoreix.net^
@@ -41096,7 +41057,6 @@
 ||gix-dera.net^
 ||gixa.weebly.com^
 ||gixaro-pevuku.pics^
-||gixdera-ai.com^
 ||gixdera-app.com^
 ||gixdera-soft.com^
 ||gixdera.net^
@@ -43715,7 +43675,6 @@
 ||glowmiko.com^
 ||glowmirror.cfd^
 ||glowomax-revenue.net^
-||glowomaxrevenue.com^
 ||glowomaxrevenue.net^
 ||glowoncheap.site^
 ||glowpanel.website^
@@ -43878,7 +43837,6 @@
 ||glumbic-stack-app.com^
 ||glumbic-stack-tech.com^
 ||glumbic-stack.com^
-||glumbic-stack.net^
 ||glumbicpluck.net^
 ||glumbicstack-platform.com^
 ||glumbicstack.net^
@@ -57357,7 +57315,6 @@
 ||goldsmith.support^
 ||goldsodamachine.com^
 ||goldsoy.com^
-||goldspicbenefit.com^
 ||goldspicbenefit.net^
 ||goldspla.nextmp.net^
 ||goldsplaques.com^
@@ -59616,7 +59573,6 @@
 ||goraps.com^
 ||gorasoft.net^
 ||goratimurl.com^
-||goratradeixai.com^
 ||gorb82.myjino.ru^
 ||gorblekeepers.qpon^
 ||gorbleusca.pro^
@@ -61560,7 +61516,6 @@
 ||gpt-3vadipex-app.com^
 ||gpt-3vadipex.com^
 ||gpt-500-alora.net^
-||gpt-500-app.com^
 ||gpt-500-ifex.com^
 ||gpt-500alora-system.com^
 ||gpt-500ifex.com^
@@ -61568,7 +61523,6 @@
 ||gpt-7g-fintoria.net^
 ||gpt-83-iplex.com^
 ||gpt-9-lispro-solution.com^
-||gpt-90-lisproai.com^
 ||gpt-9000-adipex.com^
 ||gpt-adipex-3v.com^
 ||gpt-adipex-90.com^
@@ -61604,7 +61558,6 @@
 ||gpt-coinora-pulses.net^
 ||gpt-coinova-ai.net^
 ||gpt-cointra-labs-app.com^
-||gpt-cointra-labs.net^
 ||gpt-cointralabs.com^
 ||gpt-comercio-opticore-app.com^
 ||gpt-comercio.net^
@@ -61658,7 +61611,6 @@
 ||gpt-mentax.net^
 ||gpt-mentax8x.com^
 ||gpt-mentaxapp.com^
-||gpt-nexo-tradenex.com^
 ||gpt-nexo-tradenex.net^
 ||gpt-pazal-ventaja.net^
 ||gpt-permax-70-pro.com^
@@ -61701,8 +61653,6 @@
 ||gpt10-eurax-system.com^
 ||gpt100euraxsystem.com^
 ||gpt100xlispro.com^
-||gpt100xplore.net^
-||gpt14xmentax.com^
 ||gpt17xlispromodel30.com^
 ||gpt1xpump.com^
 ||gpt1xpump.net^
@@ -61713,12 +61663,10 @@
 ||gpt30-mentax.com^
 ||gpt3000-ifex.com^
 ||gpt3000-ifexsolution.com^
-||gpt3000ifex.net^
 ||gpt3000ifexapp.com^
 ||gpt3000ifexapp.net^
 ||gpt3000lispro13x.com^
 ||gpt30adipex.net^
-||gpt30adipexai.com^
 ||gpt30adipexapp.com^
 ||gpt30mentax-platform.com^
 ||gpt30mentax.com^
@@ -61766,7 +61714,6 @@
 ||gpt83iplex.net^
 ||gpt8iplex.com^
 ||gpt9.com^
-||gpt9000adipexapp.com^
 ||gpt90adipex.com^
 ||gpt90lispro.com^
 ||gpt9aplus.com^
@@ -61779,7 +61726,6 @@
 ||gptadipex.net^
 ||gptadipex30.net^
 ||gptadipex30003v.com^
-||gptadipex9000.com^
 ||gptadipex9000.net^
 ||gptadipex9v90.com^
 ||gptadipexapp.com^
@@ -61797,7 +61743,6 @@
 ||gptalora03.com^
 ||gptalora50-xp.com^
 ||gptaloraai-software.com^
-||gptaloraai.com^
 ||gptaloraapp.com^
 ||gptaloraplatform.com^
 ||gptaltronphase3.com^
@@ -61819,13 +61764,10 @@
 ||gptcryptifyflujos.net^
 ||gptdefinity2-platform.com^
 ||gptdefinity20.com^
-||gptdefinity20.net^
-||gptdigitroncoins.com^
 ||gptdigitroncoins.net^
 ||gptdriftlink.net^
 ||gptecno.it^
 ||gptemberpulse.net^
-||gptembertradeai.com^
 ||gpteurax.net^
 ||gpteurax1.com^
 ||gpteurax13x.com^
@@ -61903,12 +61845,10 @@
 ||gptprolispro.net^
 ||gptprolispro.ru^
 ||gptsb.thrivecausemetics.com^
-||gptsegalinfosfera.net^
 ||gptseguro.net^
 ||gptseguroapp.com^
 ||gptseguroapp.net^
 ||gptselection.com^
-||gptsenalestradis.net^
 ||gptserax.net^
 ||gptseraxsoft.com^
 ||gptsforce.com^
@@ -63364,8 +63304,6 @@
 ||gravitec.net^$third-party
 ||graviteocup.us^
 ||graviton-profit.app^
-||gravitonhorizon1000.net^
-||gravitonprofitapp.com^
 ||gravitonprofitapp.net^
 ||gravitonprofitplatform.com^
 ||gravitonprofitsoftware.com^
@@ -64764,7 +64702,6 @@
 ||greenpimp.info^
 ||greenpinelending.net^
 ||greenpips.info^
-||greenplanetprofit.com^
 ||greenplanetvehicles.com^
 ||greenplastic.com^
 ||greenplasticdua.com^
@@ -65726,7 +65663,6 @@
 ||grokai-app.net^
 ||grokaiapp.net^
 ||grokaitrading.net^
-||grokappai.com^
 ||groklymed.com^
 ||groksoft.net^
 ||grokster.com^
@@ -71229,7 +71165,6 @@
 ||guadagni-online-ebay-affiliazioni.stripchats.io^
 ||guadagno-relmar-app.net^
 ||guadagno-relmar.net^
-||guadagnorelmar.com^
 ||guadagnorelmar.net^
 ||guadagnorelmarapp.com^
 ||guadagnorelmarsystem.com^
@@ -76969,7 +76904,6 @@
 ||halswell-house.com^
 ||haltarone.com^
 ||haltblock.info^
-||halten-sync-app.com^
 ||halten-sync-app.net^
 ||halten-sync.com^
 ||halten-syncapp.com^
@@ -78723,7 +78657,6 @@
 ||harmony-bitspire.net^
 ||harmony-central.us.intellitxt.com^
 ||harmony-inside.info^
-||harmony-momentumray.com^
 ||harmony.eco^
 ||harmony38.com^
 ||harmony573.top^
@@ -79449,7 +79382,6 @@
 ||hauchi.com.tw^
 ||hauchiwu.com^$popup
 ||haudesbu.co.cc^
-||hauevo.shop^
 ||haugenhovpleie.no^
 ||haughtie.com^
 ||haughtythirteenth.com^
@@ -79904,7 +79836,6 @@
 ||hawksproxy.co.cc^
 ||hawkspy.info^
 ||hawktechnologies.ca^
-||hawktradeai.com^
 ||hawkweed.us^
 ||hawkwoodproductions.co.uk^
 ||hawky.mine.nu^
@@ -85440,7 +85371,6 @@
 ||hemenindir.to^
 ||hemenkapindaa.online^
 ||hemensohbet.net^
-||hemenvolarix64nova.com^
 ||hemesyqydy.space^
 ||hemetfour.stream^
 ||hemetwo.stream^
@@ -95405,7 +95335,6 @@
 ||home.hit.stat24.com^
 ||home.hotelbroadripple.com^
 ||home.housequotenow.com^
-||home.hyphaenesys.com^
 ||home.ibmsupports.com^
 ||home.imeps.co.kr^
 ||home.inq.com^
@@ -102086,3 +102015,45 @@
 ||hrnhcu.kapiva.in^
 ||hrnklivlbhf.com^
 ||hrnotificati0n.info^
+||hrnrj.gekub.yi.org^
+||hrnxdtg.cn^
+||hrnyprox.co.cc^
+||hrogrpee.de^
+||hrohse.ririnco.jp^
+||hromasoma.com^
+||hromeraner.top^
+||hronboard.actonservice.com^
+||hronil.top^
+||hronom-mhb-dhcp.net.daraz.com^
+||hronom-stage-toonjoa.net.daraz.com^
+||hronom.rail.net.daraz.com^
+||hronom.stageconbert2mp3.net.daraz.com^
+||hronom.stagekatmoviehd.net.daraz.com^
+||hronom.staging-cointoon.net.daraz.com^
+||hroot.cyntaxerror.com^
+||hroplagism.com^
+||hrorxufknjdm.com^
+||hrosita.com^
+||hrosxummertine.weebly.com^
+||hrouvebucheapskate.download^
+||hroxi.com^
+||hroxy.com^
+||hrp-inc.com^
+||hrpa.co1.qualtrics.com^
+||hrpa.org.in^
+||hrpayrollsupport.com^
+||hrpcs.org^
+||hrphl.amymyersmd.com^
+||hrpil6.xo.je^
+||hrppu9wjkiw2oxj18uutbgu1icnw41510287750.nuid.imrworldwide.com^
+||hrprwf.proteinocean.com^
+||hrqek.origoshoes.com^
+||hrqmbugn.xyz^
+||hrqxinwvlaxxt.com^
+||hrrnva.com^
+||hrrrzwz.cn^
+||hrryumrafhzjs.site^
+||hrs-nord-korea.top^
+||hrs.actonservice.com^
+||hrsdanismanlik.com^
+||hrsde.widget.criteo.com^

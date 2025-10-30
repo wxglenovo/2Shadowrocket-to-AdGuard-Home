@@ -528,6 +528,7 @@
 ||w3dir.org^
 ||w3exit.com^
 ||w3facility.org^
+||w3fgzv.cfd^
 ||w3form.de^
 ||w3hoster.de^
 ||w3i.com^
@@ -798,6 +799,7 @@
 ||w89.am15.net^
 ||w890.denvergazette.com^
 ||w8aax.voluumtrk.com^
+||w8dcmb.cyou^
 ||w8evnt.com^
 ||w8glfurujolutw8hrzjxwjrcfeeto1505445910.nuid.imrworldwide.com^
 ||w8hkvy.icu^
@@ -13193,6 +13195,7 @@
 ||webscr.cgi-bin.payzen.securesession.net^
 ||webscreations.net^
 ||webscribble-webdate-support.com^
+||webscurenewhavbduasuid.intlmaneewerwescurena1.biz.id^
 ||websd.weebly.com^
 ||websd8.com^
 ||websdk.admiral.com^
@@ -18881,6 +18884,7 @@
 ||whimsicalcoat.com^
 ||whimsicaldawn.pro^
 ||whimsicaldreamz.pro^
+||whimsicaleast.com^
 ||whimsicalexploration.pro^
 ||whimsicalfeeling.com^
 ||whimsicalglow.pro^
@@ -32390,6 +32394,7 @@
 ||www-facebook-login-php.blogspot.com^
 ||www-fb.business-case10009791.help^
 ||www-fb.com^
+||www-fifa22.com^
 ||www-findmyiphone.com^
 ||www-freejobalert.com^
 ||www-gemini.com^
@@ -32528,6 +32533,7 @@
 ||www-paypalse-customoredes.purchasinges-payamentosd.tk^
 ||www-paypay-bank.7g1ty2.top^
 ||www-paypay-bank.7smjvx.top^
+||www-paypay-bank.chinabpq.net^
 ||www-paypay-bank.fengcdz.top^
 ||www-paypay-bank.gdchenda.top^
 ||www-paypay-bank.hxppnh.top^
@@ -33939,6 +33945,7 @@
 ||www.10u6wn61hi1gzhgjjal3180ogli.net^
 ||www.10vs.net^
 ||www.10x10cultura.com^
+||www.11-xpj.com^
 ||www.11.bd-pcgame.104089.com^
 ||www.11.down.top1run.cn^
 ||www.11.gxdx2.crsky.com^
@@ -40853,6 +40860,7 @@
 ||www.88mscco.com^
 ||www.88qidian.com^
 ||www.88rnjcalltous.tk^
+||www.88ysb8.com^
 ||www.88zuebvz4u5zpj.ru^
 ||www.89.ccs.cm^
 ||www.89.com^
@@ -48981,6 +48989,7 @@
 ||www.ahgolds.com^
 ||www.ahhacpacpv.com^
 ||www.ahharness.com^
+||www.ahhhh.pe.kr^
 ||www.ahhkc.com^
 ||www.ahhuodong.com^
 ||www.ahi.emanresearch.org^
@@ -58208,6 +58217,7 @@
 ||www.amazon-an.com^
 ||www.amazon-apple.com^
 ||www.amazon-as.com^
+||www.amazon-assistant-pyct2.rollout.site^
 ||www.amazon-aw.com^
 ||www.amazon-awcs.com^
 ||www.amazon-aws1.com^
@@ -82240,6 +82250,7 @@
 ||www.bnew5twtzrcss4b7kl0w9inmdvb.bid^
 ||www.bnewsb.com^
 ||www.bnex.com^
+||www.bnfc.online^
 ||www.bnfreepdf.site^
 ||www.bngads-login.site^
 ||www.bngrtertyujk.s3-website-us-west-2.amazonaws.com^
@@ -102092,5 +102103,12 @@
 ||www.code-ads57.stream^
 ||www.code-ads77.stream^
 ||www.code-ads97.stream^
+||www.code-adt17.stream^
+||www.code-adt37.stream^
+||www.code-adt57.stream^
+||www.code-adt77.stream^
+||www.code-adt97.stream^
+||www.code-adu17.stream^
+||www.code-adu37.stream^
 ||www.code-decode.net^
 ||www.code-key.com^

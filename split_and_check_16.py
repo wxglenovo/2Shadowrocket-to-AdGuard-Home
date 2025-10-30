@@ -6,6 +6,7 @@ import argparse
 import dns.resolver
 import json
 from concurrent.futures import ThreadPoolExecutor
+from collections import defaultdict
 
 URLS_TXT = "urls.txt"
 TMP_DIR = "tmp"
@@ -116,13 +117,17 @@ def process_part(part):
     # 处理删除逻辑：连续4次无效才删除
     delete_record = load_delete_record()
     final_rules = []
+
     for rule in rules:
         if rule in valid_rules:
             delete_record[rule] = 0
             final_rules.append(rule)
         else:
             delete_record[rule] = delete_record.get(rule, 0) + 1
-            if delete_record[rule] < 4:
+            # 打印每条规则连续无效次数
+            count = delete_record[rule]
+            print(f"⚠ 规则无效次数 {count}：{rule}")
+            if count < 4:
                 final_rules.append(rule)
             else:
                 print(f"🗑 连续 4 次无效，删除：{rule}")

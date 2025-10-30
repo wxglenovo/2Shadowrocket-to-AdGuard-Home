@@ -26,7 +26,6 @@ jobs:
       PYTHONUNBUFFERED: 1
 
     steps:
-
       - name: Checkout
         uses: actions/checkout@v4
 
@@ -35,68 +34,28 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Install Dependencies
+      - name: Install dependencies
         run: pip install --upgrade requests dnspython
 
-      - name: Decide PART and maybe re-split
+      - name: Run split and DNS check
         shell: bash
         run: |
-          mkdir -p tmp dist logs
-          LAST_PART_FILE=".last_part"
-          FORCE_UPDATE=false
-
-          # ✅ 判断是否需要强制更新
-          CURRENT_HOUR=$(date -u +"%H")
-          if [ "$CURRENT_HOUR" = "00" ] || [ "$CURRENT_HOUR" = "06" ] || [ "$CURRENT_HOUR" = "12" ] || [ "$CURRENT_HOUR" = "18" ]; then
-              FORCE_UPDATE=true
-          fi
-
-          # ✅ 当前用户是否手动指定 part
-          if [ -n "${{ github.event.inputs.part }}" ]; then
-              PART="${{ github.event.inputs.part }}"
-              echo "🛠 手动验证分片 $PART"
+          PART_INPUT="${{ github.event.inputs.part }}"
+          if [ -n "$PART_INPUT" ]; then
+              echo "🛠 手动触发，验证分片 $PART_INPUT"
+              python split_and_check_16.py --force-update --part "$PART_INPUT"
           else
-              # ✅ 自动轮替
-              if [ -f "$LAST_PART_FILE" ]; then
-                  LAST_PART=$(cat "$LAST_PART_FILE")
-                  PART=$(( (LAST_PART % 16) + 1 ))
-              else
-                  PART=1
-              fi
-              echo "⏱ 自动轮替分片：$PART"
-          fi
-
-          # ✅ 存储下次分片
-          echo "$PART" > "$LAST_PART_FILE"
-
-          # ✅ 格式化文件名
-          PART_FILE=$(printf "tmp/part_%02d.txt" "$PART")
-
-          # ✅ 缺片自动下载
-          if [ ! -f "$PART_FILE" ] || [ "$FORCE_UPDATE" = true ]; then
-              echo "⚠ 缺少分片 或 到达强制更新时间，重新拉取规则与切片"
-              python split_and_check_16.py --force-update
-          fi
-
-          echo "✅ 选定分片文件：$PART_FILE"
-          echo "PART=$PART" >> $GITHUB_ENV
-
-      - name: Run DNS check on selected part
-        shell: bash
-        run: |
-          echo "⏱ 开始验证分片 $PART"
-          python split_and_check_16.py --part "$PART"
-
-      - name: Safe Delete Bad Rules (连续 4 次失败)
-        shell: bash
-        run: |
-          python check_validated_and_safe_delete.py
+              python split_and_check_16.py
 
       - name: Commit & Push Validated Rules
         shell: bash
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add dist/validated_part_*.txt dist/rule_fail_count.json tmp/part_*.txt logs/ || true
-          git commit -m "✅ Auto update (part $PART) | Safe delete rules (4 strikes)" || echo "No changes"
-          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
+
+          if ls dist/validated_part_*.txt 1> /dev/null 2>&1; then
+              git add dist/validated_part_*.txt tmp/part_*.txt logs/
+              git commit -m "🤖 Auto update: validated part" || echo "No changes"
+              git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
+          else
+              echo "⚠ 没有验证结果文件，跳过 commit & push"

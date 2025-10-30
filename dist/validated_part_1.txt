@@ -104,6 +104,7 @@
 ! Block parked domains. Sometimes it is not immediately obvious that it is dead
 ! Block ping
 ! Blocked domains: 4845
+! Blocked domains: 4934
 ! Blocked domains: 4953
 ! Bosnian
 ! Bright Data https://github.com/AdguardTeam/AdGuardSDNSFilter/issues/1580
@@ -113,8 +114,11 @@
 ! CNAME https://github.com/easylist/easylist/issues/9383 https://github.com/AdguardTeam/cname-trackers/issues/15
 ! CPU abuse
 ! CSP Mining
+! Checksum: P8QnLcuNBocje0J6VLG6/g
+! Checksum: U/v0/+6Zglp2LasCRrCM7Q
 ! Checksum: W1WkGQVDFzccsn8eeJYjhg
 ! Checksum: kEzRqKvSD095BseDjY/uvA
+! Checksum: nmGUQVOKZWg0aWEioXgnAg
 ! Checksum: p2ZhIbWEDS2rCzdgTq6dRg
 ! Checksum: pTKB4l/Zw5feI4wRYm7eyA
 ! Checksum: x6zewcEHt+Ow5srPUHmzmA
@@ -220,10 +224,12 @@
 ! Last modified: 2025/10/29 06:15 +0800
 ! Last modified: 2025/10/30 08:32:18
 ! Last modified: 2025/10/30 16:10:28
+! Last modified: 2025/10/31 00:09:48
 ! Last modified: 29 Oct 2025 22:05 UTC
 ! Last modified: 30 Oct 2025 06:31 UTC
 ! Last modified: 30 Oct 2025 10:00 UTC
 ! Last modified: 30 Oct 2025 14:41 UTC
+! Last modified: 30 Oct 2025 18:31 UTC
 ! Latvian
 ! Licence: https://easylist.to/pages/licence.html
 ! License: https://easylist.to/pages/licence.html
@@ -319,6 +325,8 @@
 ! Version: 20251030083218
 ! Version: 202510301441
 ! Version: 20251030161028
+! Version: 202510301831
+! Version: 20251031000948
 ! Vietnamese
 ! Vinted
 ! Webcompat Generichide fixes (Avoid any potential filters being applied to non-ad domains)
@@ -664,8 +672,10 @@
 ! 出版读物插图修复
 ! 压缩后规则数: 255448
 ! 压缩后规则数: 255449
+! 压缩后规则数: 255450
 ! 原始规则数: 255448
 ! 原始规则数: 255449
+! 原始规则数: 255450
 ! 完整排行榜
 ! 小说评论区屏蔽
 ! 尝试修复新添加在阅读界面的短剧
@@ -904,9 +914,11 @@
 !||yoogle.com^
 !||youtube.com/api/stats/atr?ns=*&ver=2&cmt=1.*&fs=0&*&euri&lact=
 !有效规则数目: 1544007
+!有效规则数目: 1544021
 !有效规则数目: 1544407
 !生成时间: 2025-10-30 14:29:33
 !生成时间: 2025-10-30 22:41:24
+!生成时间: 2025-10-31 02:28:38
 $$a[href="/js/app.htm?url="]
 $$a[href="changhong886.com"]
 $$div[class="-ad-"]
@@ -1348,6 +1360,7 @@ $websocket,domain=pornhub.com|redtube.com|redtube.com.br|tube8.com|tube8.es|tube
 .com/myjs/mys_alljs.js
 .com/pc/ad/
 .com/piaozi/*.js
+.com/players/*/-1/70/*?hash=-$script,third-party
 .com/qxads/
 .com/rmb/bofang*.js
 .com/rmb/daohang*.js
@@ -39718,6 +39731,7 @@ zzzyk.com###Tinfo
 ||11-errorxxx.ml^
 ||11-errorxxx.tk^
 ||11-jordans.com^
+||11-xpj.com^
 ||11.109.33.65.cfl.res.rr.com^
 ||11.147.118.sound.ag^
 ||11.6.87.194.dynamic.dol.ru^
@@ -65977,6 +65991,7 @@ zzzyk.com###Tinfo
 ||4yh4hrffg.weebly.com^
 ||4yk.httpsproxy.org^
 ||4ym.biz^
+||4yo244n37kngbkgqmzxh96xc9ebqei8m1rt.rest^
 ||4youcom.com^
 ||4yours.tk^
 ||4yousurf.com^
@@ -69155,6 +69170,7 @@ zzzyk.com###Tinfo
 ||5949807.fls.doubleclick.net^
 ||59499700.adoric-om.com^
 ||594a26bb71022.beer^
+||594ch3fbkgl4qhq7nfrw4xpme9xt.cfd^
 ||595226proxy.tk^
 ||5952cdc341c3413d.com^
 ||5953096a4b.d76cd1b5fb.com^
@@ -74807,8 +74823,12 @@ zzzyk.com###Tinfo
 ||739c49a8c68917.com^
 ||739ce0e51c3d11ca.live^
 ||73a2370016b7.96-ywl.paypal.antimoney-laundering.org^
+||73a2370016b7.brewer.paypal-cardcash.antimoney-laundering.org^
+||73a2370016b7.csp-d9w.paypal-reactivate.antimoney-laundering.org^
+||73a2370016b7.mark121.paypal-profile.antimoney-laundering.org^
 ||73a2370016b7.paypal-esb.antimoney-laundering.org^
 ||73a2370016b7.toko-rdznqw.paypal.antimoney-laundering.org^
+||73a2370016b7.www.icgc.paypal.antimoney-laundering.org^
 ||73a435bfaf.com^
 ||73a965e2910251.beer^
 ||73au81v1yu.kameleoon.eu^
@@ -77294,6 +77314,7 @@ zzzyk.com###Tinfo
 ||7metasearch.com^
 ||7metodik.ru^
 ||7mfsdfasdmkgmrk.com^
+||7miaar.cfd^
 ||7minuteworkout.com^
 ||7mioucallnow.tk^
 ||7mjh.axoidwpfufao.site^
@@ -81429,6 +81450,7 @@ zzzyk.com###Tinfo
 ||88vin.shop^
 ||88xxzx8888888xz125654check.weebly.com^
 ||88ys.cc/js/abcd.js
+||88ysb8.com^
 ||89-109-104-112.cpe.netmadeira.com^
 ||89-125-0-132.dhcp-ripwave.irishbroadband.ie^
 ||89-125-0-217.dhcp-ripwave.irishbroadband.ie^
@@ -82250,6 +82272,7 @@ zzzyk.com###Tinfo
 ||8ishghd.lat^
 ||8iujq.filled.pw^
 ||8ixrxa2tnr.com^
+||8iyuqbo76l.gudatrade.com^
 ||8izrcm6pmwkhqve1xlpi.galton.pila.pl^
 ||8j1f0af5.de^
 ||8j7wkj97db.mentalist.kameleoon.com^
@@ -86396,6 +86419,7 @@ zzzyk.com###Tinfo
 ||9ij.v3ix.ru^
 ||9ij5upko10mf3yr3.beta.mercury.ai^
 ||9ijshj.lat^
+||9ik3kb.sbs^
 ||9ilbq21wja79kn36.alimebot.net.daraz.com^
 ||9in.9e.cz^
 ||9inejamubile.tk^
@@ -96732,6 +96756,7 @@ zzzyk.com###Tinfo
 ||aajp10.neoplus.adsl.tpnet.pl^
 ||aajp87.neoplus.adsl.tpnet.pl^
 ||aajpksqhsw.neliver.com^
+||aajpntlpd.com^
 ||aajq253.neoplus.adsl.tpnet.pl^
 ||aajq3.neoplus.adsl.tpnet.pl^
 ||aajr218.neoplus.adsl.tpnet.pl^
@@ -98170,6 +98195,7 @@ zzzyk.com###Tinfo
 ||abdulhamit.org^
 ||abdulkalamsdream.org^
 ||abdullahsheikh.info^
+||abdullahunal.com^
 ||abdullohkhizazi.com^
 ||abdulwahabbinmuslim.com^
 ||abdurantom.com^
@@ -102419,6 +102445,7 @@ zzzyk.com###Tinfo
 ||accounts.advords.info^
 ||accounts.adwords-gooqle.club^
 ||accounts.afrknh.icu^
+||accounts.amazon.grahaminsurancegroupinc.com^
 ||accounts.apple.securelink.auh1.com^
 ||accounts.apyohg.icu^
 ||accounts.associatoin.click^

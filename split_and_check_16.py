@@ -1,182 +1,153 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+"""
+split_and_check_16.py
+用于 AdGuard Home 大型规则的分片、下载、DNS 有效性验证、增量更新统计。
+"""
+
 import os
-import requests
+import re
+import sys
+import time
 import argparse
 import dns.resolver
-import json
+import requests
+from datetime import datetime
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
+# 规则源
 URLS_TXT = "urls.txt"
 TMP_DIR = "tmp"
 DIST_DIR = "dist"
-MERGED_RULE = "merged_rules.txt"
+MASTER_RULE = "merged_rules.txt"
 PARTS = 16
-DNS_BATCH_SIZE = 50
-DELETE_CONFIRM_TIMES = 4
-DELETE_COUNTER_FILE = "delete_counter.json"
 
-def load_delete_counter():
-    if os.path.exists(DELETE_COUNTER_FILE):
-        with open(DELETE_COUNTER_FILE, "r", encoding="utf-8") as f:
-            return json.load(f)
-    return {}
+# DNS 线程池
+DNS_THREADS = 100
+DNS_TIMEOUT = 2
 
-def save_delete_counter(counter):
-    with open(DELETE_COUNTER_FILE, "w", encoding="utf-8") as f:
-        json.dump(counter, f, ensure_ascii=False, indent=2)
+def safe_domain(line: str):
+    """提取域名"""
+    line = line.strip()
+    if not line or line.startswith("#"):
+        return None
+    line = re.sub(r"^\|\|", "", line)
+    line = re.sub(r"\^$", "", line)
+    if re.match(r"^[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$", line):
+        return line.lower()
+    return None
 
-def download_rules():
-    print("📥 开始下载规则源...")
+def fetch_rules():
+    """下载并合并所有规则"""
     if not os.path.exists(URLS_TXT):
         print(f"❌ 找不到 {URLS_TXT}")
-        return []
+        sys.exit(1)
 
-    rules = []
-    with open(URLS_TXT, "r", encoding="utf-8") as f:
-        for url in f:
-            url = url.strip()
-            if not url:
-                continue
-            print(f"Downloading {url}")
-            try:
-                r = requests.get(url, timeout=15)
-                if r.status_code == 200:
-                    for line in r.text.splitlines():
-                        line = line.strip()
-                        if line and not line.startswith("#"):
-                            rules.append(line)
-            except Exception as e:
-                print(f"❌ 下载失败：{url} - {e}")
-    print(f"✅ 下载完成，总规则数: {len(rules)}")
-    return rules
-
-def merge_rules():
     os.makedirs(TMP_DIR, exist_ok=True)
-    os.makedirs(DIST_DIR, exist_ok=True)
+    all_rules = set()
+    with open(URLS_TXT, "r", encoding="utf-8") as f:
+        urls = [x.strip() for x in f if x.strip()]
 
-    rules = download_rules()
-    rules = sorted(set(rules))
+    for url in urls:
+        print(f"📥 下载：{url}")
+        try:
+            res = requests.get(url, timeout=15)
+            res.raise_for_status()
+            for line in res.text.splitlines():
+                d = safe_domain(line)
+                if d:
+                    all_rules.add(d)
+        except Exception as e:
+            print(f"⚠️ 无法下载 {url}: {e}")
 
-    with open(MERGED_RULE, "w", encoding="utf-8") as f:
-        f.write("\n".join(rules))
+    with open(MASTER_RULE, "w", encoding="utf-8") as f:
+        for d in sorted(all_rules):
+            f.write(d + "\n")
 
-    print(f"✅ 合并完成: {len(rules)} 条规则")
+    print(f"✅ 合并完成，共 {len(all_rules)} 条规则。")
+    return len(all_rules)
 
-    size = len(rules)
-    part_len = size // PARTS + 1
-
+def split_rules():
+    """按 16 份分片"""
+    with open(MASTER_RULE, "r", encoding="utf-8") as f:
+        all_lines = [x.strip() for x in f if x.strip()]
+    chunk_size = len(all_lines) // PARTS + 1
     for i in range(PARTS):
-        part = rules[i * part_len:(i + 1) * part_len]
-        part_file = os.path.join(TMP_DIR, f"part_{i+1:02d}.txt")
-        with open(part_file, "w", encoding="utf-8") as f:
-            f.write("\n".join(part))
-        print(f"📦 分片 {i+1:02d} → {len(part)} 条")
+        start = i * chunk_size
+        end = start + chunk_size
+        part_lines = all_lines[start:end]
+        out_file = os.path.join(TMP_DIR, f"part_{i+1:02d}.txt")
+        with open(out_file, "w", encoding="utf-8") as f:
+            f.write("\n".join(part_lines))
+        print(f"🧩 生成分片 {i+1:02d}：{len(part_lines)} 条")
 
 def dns_check(domain):
+    """DNS 检查"""
     resolver = dns.resolver.Resolver()
-    resolver.timeout = 2
-    resolver.lifetime = 2
+    resolver.lifetime = DNS_TIMEOUT
+    resolver.timeout = DNS_TIMEOUT
     try:
-        resolver.resolve(domain)
+        resolver.resolve(domain, "A")
         return True
-    except:
+    except Exception:
         return False
 
-def validate_rules(rules):
-    valid = []
-    for rule in rules:
-        d = rule.replace("||", "").replace("^", "")
-        if "." not in d:
-            continue
-        if dns_check(d):
-            valid.append(rule)
-    return valid
+def validate_part(part_index):
+    """验证某个分片的域名有效性"""
+    os.makedirs(DIST_DIR, exist_ok=True)
+    part_file = os.path.join(TMP_DIR, f"part_{part_index:02d}.txt")
+    out_file = os.path.join(DIST_DIR, f"validated_part_{part_index:02d}.txt")
 
-def process_part(part):
-    part_file = os.path.join(TMP_DIR, f"part_{part:02d}.txt")
     if not os.path.exists(part_file):
-        print(f"❌ 分片不存在: {part_file}")
+        print(f"❌ 未找到 {part_file}")
         return
 
     with open(part_file, "r", encoding="utf-8") as f:
-        rules = [i.strip() for i in f if i.strip()]
+        domains = [x.strip() for x in f if x.strip()]
 
-    total_before = len(rules)
-    print(f"⏳ 分片 {part:02d} 共 {total_before} 条，开始 DNS 验证...")
-
-    # 批量验证
-    valid = []
-    batch = []
-    for r in rules:
-        batch.append(r)
-        if len(batch) >= DNS_BATCH_SIZE:
-            valid.extend(validate_rules(batch))
-            batch = []
-    if batch:
-        valid.extend(validate_rules(batch))
-
-    valid = sorted(set(valid))
-    total_after = len(valid)
-    removed_count = total_before - total_after
-
-    # ===== 连续删除计数 =====
-    counter = load_delete_counter()
-    part_key = f"part_{part:02d}"
-    delete_ratio = removed_count / total_before if total_before else 0
-
-    if delete_ratio > 0.10:  # 删除比例超过 10% 才计次数
-        counter[part_key] = counter.get(part_key, 0) + 1
-    else:
-        counter[part_key] = 0  # 重置
-    save_delete_counter(counter)
-
-    # 第四次连续删除才生效
-    if counter[part_key] < DELETE_CONFIRM_TIMES:
-        print(f"⚠ 分片 {part:02d} 删除 {removed_count} 条，但未达到 {DELETE_CONFIRM_TIMES} 次确认，不写入。")
-        valid = rules  # 保留原内容
-        removed_count = 0
-
-    # 写入结果文件
-    out_file = os.path.join(DIST_DIR, f"validated_part_{part:02d}.txt")
-    with open(out_file, "w", encoding="utf-8") as f:
-        f.write("\n".join(valid))
-
-    # 统计新增
-    # 新增 = dist 最新 - merged_rules
-    merged = []
-    if os.path.exists(MERGED_RULE):
-        with open(MERGED_RULE, "r", encoding="utf-8") as f:
-            merged = set(i.strip() for i in f if i.strip())
-
-    old_rules = []
+    prev = set()
     if os.path.exists(out_file):
         with open(out_file, "r", encoding="utf-8") as f:
-            old_rules = set(i.strip() for i in f if i.strip())
+            prev = {x.strip() for x in f if x.strip() and not x.startswith("总数")}
 
-    added_count = len(old_rules - merged)
+    valid = set()
+    print(f"🔍 正在验证分片 {part_index:02d} 共 {len(domains)} 条...")
 
-    print(f"✅ 分片 {part:02d} 完成 → 总 {len(valid)}, 新增 {added_count}, 删除 {removed_count}")
+    with ThreadPoolExecutor(max_workers=DNS_THREADS) as executor:
+        futures = {executor.submit(dns_check, d): d for d in domains}
+        for i, fut in enumerate(as_completed(futures)):
+            d = futures[fut]
+            if fut.result():
+                valid.add(d)
+            if i % 500 == 0 and i:
+                print(f"  已验证 {i}/{len(domains)}")
 
-    # ✅ 写入 GITHUB_ENV 让 workflow 获取统计
-    if "GITHUB_ENV" in os.environ:
-        with open(os.environ["GITHUB_ENV"], "a") as env:
-            env.write(f"PART_STATS=总数 {len(valid)}, 新增 {added_count}, 删除 {removed_count}\n")
+    added = len(valid - prev)
+    removed = len(prev - valid)
+
+    with open(out_file, "w", encoding="utf-8") as f:
+        f.write(f"总数: {len(valid)}\n新增: {added}\n删除: {removed}\n\n")
+        for d in sorted(valid):
+            f.write(d + "\n")
+
+    print(f"✅ 分片 {part_index:02d} 验证完成：总数 {len(valid)} | 新增 {added} | 删除 {removed}")
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--part", type=int, help="验证分片 1 ~ 16")
-    parser.add_argument("--force-update", action="store_true", help="强制重新下载并分片")
+    parser.add_argument("--part", type=int, help="指定验证分片号 1~16")
+    parser.add_argument("--force-update", action="store_true", help="强制下载与分片")
     args = parser.parse_args()
 
-    if args.force-update:
-        merge_rules()
-        print("✅ 已强制更新规则源 & 分片")
+    if args.force_update:
+        print("🚀 强制更新规则源...")
+        fetch_rules()
+        split_rules()
         return
 
     if args.part:
-        process_part(args.part)
+        validate_part(args.part)
     else:
-        print("❌ 必须指定 --part 或 --force-update")
+        print("⚠ 未指定分片。使用 --part 运行验证。")
 
 if __name__ == "__main__":
     main()

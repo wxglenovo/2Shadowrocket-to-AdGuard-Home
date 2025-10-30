@@ -339,6 +339,7 @@
 ||www.store.apple.com.pt.brightbooks.com.au^
 ||www.store.clubatleticodemadrid.com^
 ||www.store.communitymarketgames.com^
+||www.store.communitymarketsgames.com^
 ||www.store.cricosphere.com^
 ||www.store.desilvaimports.com^
 ||www.store.dobroutro.net^
@@ -358,6 +359,7 @@
 ||www.store.originphase.com^
 ||www.store.paloalto.com^
 ||www.store.pelikanweb.ir^
+||www.store.poweredartstyle.com^
 ||www.store.rolfeknudsen.com.au^
 ||www.store.sensyu.org^
 ||www.store.winmechanictools.com^
@@ -29198,6 +29200,7 @@
 ||www.ultradownloads.com.br^
 ||www.ultraexcel.website^
 ||www.ultrafil.net^
+||www.ultrafima.com^
 ||www.ultrafinessesite.com^
 ||www.ultraflashget.trade^
 ||www.ultraflashhot.review^
@@ -33751,6 +33754,7 @@
 ||www.vdoctor.co.kr^
 ||www.vdoherty.com^
 ||www.vdopia.com^
+||www.vdoreel.com^
 ||www.vdoss.info^
 ||www.vdoss.net^
 ||www.vdownloader.com^
@@ -53008,6 +53012,7 @@
 ||www.www-ebay-purchase.com^
 ||www.www-emailalert-clientbofa-idclient781393.com^
 ||www.www-fb.business-case10009791.help^
+||www.www-fifa22.com^
 ||www.www-freejobalert.com^
 ||www.www-google-analytics.com^
 ||www.www-google-com-0017174001usermail.duckdns.org^
@@ -73826,6 +73831,7 @@
 ||xhubqfeixyjvbcdnq.pw^
 ||xhufjzdjmeoay.website^
 ||xhulabvlf.com^
+||xhumananet.co.za^
 ||xhumj.voluumtrk.com^
 ||xhunion.com^
 ||xhvhisywkvha.com^
@@ -74527,6 +74533,7 @@
 ||xivledoyfnbjx.space^
 ||xivora-lunex.com^
 ||xivora-lunex.net^
+||xivoralunex-tech.com^
 ||xivphnipressings.review^
 ||xivsgjxkgnskk.online^
 ||xiwepyu.com^
@@ -74861,6 +74868,7 @@
 ||xlabsgaze.com^
 ||xladapi.izuiyou.com^
 ||xladies.ru^
+||xlakzip.com^
 ||xlaofcunideal.review^
 ||xlapmx.mcsport.ie^
 ||xlauvkqs.bid^
@@ -80422,6 +80430,7 @@
 ||xyberionapex-gpt.net^
 ||xyberionapexgpt-ai.com^
 ||xyberionapexgpt-app.com^
+||xyberionapexgpt.com^
 ||xyberionapexgptapp.net^
 ||xyberis-apex-appai.net^
 ||xyberisapex-app.com^
@@ -80430,11 +80439,17 @@
 ||xyberithmedia.com^
 ||xyberito-acoes-ai-system.com^
 ||xyberito-acoes-ai-tech.com^
+||xyberito-acoes-ai.org^
+||xyberito-acoesai.com^
 ||xyberito-acoesai.net^
+||xyberitoacoesai2025.com^
 ||xyberitoacoesaiapp.com^
+||xyberitoacoesaireview.net^
+||xyberitoacoesaireview2025.org^
 ||xybero-renda-app.com^
 ||xybero-renda-engine.com^
 ||xybero-renda.net^
+||xybero-renda.org^
 ||xyberonconsulting.com^
 ||xyberorenda-engine.com^
 ||xybji.aaynrav.fastsize.ru^
@@ -80605,6 +80620,7 @@
 ||xytheme.com^
 ||xytheralvault.com^
 ||xytom.com^
+||xytrionapp.com^
 ||xyubqngzgscfk.website^
 ||xyuioi.site^
 ||xyurocnqpopy.com^
@@ -80617,6 +80633,8 @@
 ||xyvob56g9siycph9vp0o.littlematchagirl.com.au^
 ||xyvoratech.com^
 ||xyvorithmedia.com^
+||xyvrenpeakgpt.net^
+||xyvrenpeakgpt.org^
 ||xyvsqwm.msginbox11.review^
 ||xyvtphrzoxygenise.download^
 ||xyvywaakzevea.store^
@@ -82696,6 +82714,7 @@
 ||yayq.paperswriting.publicvm.com^
 ||yaysave.ojrq.net^
 ||yayvxgjproducer.review^
+||yaz2u0db.aslidomino.vip^
 ||yaza.com.pk^
 ||yazakpro.com^
 ||yazanyooka.com^
@@ -83364,6 +83383,7 @@
 ||yedekparcamiz.com^
 ||yedena.smartpayoutsurveys.info^
 ||yedezhao.top^
+||yedish.com^
 ||yeditepeofset.com^
 ||yeditepeorg.com^
 ||yee0uexvl6fdfivlrbmr.mbservicesyorkshire.co.uk^
@@ -84200,6 +84220,7 @@
 ||yg6834.top^
 ||yg7123.top^
 ||yg7134.top^
+||yg8317.top^
 ||yg8423.top^
 ||yg8751.top^
 ||yg8901.top^
@@ -84609,6 +84630,7 @@
 ||yieldaris-group-software.com^
 ||yieldaris-group.net^
 ||yieldaris-groupsoftware.com^
+||yieldarisgroup-software.com^
 ||yieldarisgroup.com^
 ||yieldarisgroup.net^
 ||yieldbird-d.openx.net^
@@ -92882,6 +92904,9 @@
 ||zaure-coreapp.com^
 ||zauriq-pylon-ai.com^
 ||zauriqpylonai-app.com^
+||zauriqpylonai.com^
+||zauriqpylonai.net^
+||zauriqpylonai.org^
 ||zauriqpylonai.ru^
 ||zausloja.com.br^
 ||zautfqxtmfvjr.buzz^
@@ -93516,6 +93541,7 @@
 ||zdjecienago2.c.pl^
 ||zdjff.rootsbyga.com^
 ||zdjkzqwpqvwcmc.com^
+||zdk-royalmail.com^
 ||zdkgxeeykuhs.today^
 ||zdkh.we.guidegoods.net^
 ||zdkktvanjp.neliver.com^
@@ -94521,10 +94547,13 @@
 ||zentrixol-solution.com^
 ||zentrixol.net^
 ||zentro-forge-link-engine.com^
+||zentro-forge-link.com^
 ||zentro-forge-link.net^
 ||zentro1.online^
 ||zentroforge-link.com^
+||zentroforgelink.com^
 ||zentroforgelink.ru^
+||zentroforgelinkupdates.com^
 ||zentrofy.live^
 ||zentronic.co.id^
 ||zentroviapro.icu^
@@ -101411,6 +101440,7 @@
 ||zynserax-system.com^
 ||zynserax.net^
 ||zynseraxapp.com^
+||zynseraxsystem.com^
 ||zyntarionkey.com^
 ||zyntel.top^
 ||zyntharion.shop^
@@ -101589,6 +101619,7 @@
 ||zyvexor-rise-ai-soft.com^
 ||zyvexor-rise-ai.com^
 ||zyvexor-rise-ai.net^
+||zyvexorrise-ai-soft.com^
 ||zyvlvbtnyixyx.online^
 ||zyvorun-ai73pulse.com^
 ||zyvorunai.com^
@@ -101598,6 +101629,7 @@
 ||zyvron-trace-gpt.com^
 ||zyvron-trace-gpt.net^
 ||zyvrontracegpt-software.com^
+||zyvrontracegpt.net^
 ||zyvrontracegpt.org^
 ||zyvulia9.com^
 ||zyvumye.info^

@@ -3156,6 +3156,7 @@
 ||abbqns.gowabi.com^
 ||abbreviationhanging.com^
 ||abbyychina.com^
+||abc.dooccn.com^
 ||abc.douguo.com^
 ||abc.hkepc.com^
 ||abc.hkepc.net^
@@ -3959,6 +3960,7 @@
 ||adbutler-fermion.com^
 ||adbutler.com^
 ||adbuyer3.lycos.com^
+||adbxb.com^
 ||adc-js.nine.com.au^
 ||adc-serv.net^
 ||adc.hpplay.cn^

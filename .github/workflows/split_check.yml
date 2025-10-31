@@ -2,10 +2,12 @@ name: Split & DNS Check
 
 on:
   schedule:
+    # 每天 UTC 0:00、6:00、12:00、18:00 强制更新 urls.txt 并生成分片
     - cron: "0 0 * * *"
     - cron: "0 6 * * *"
     - cron: "0 12 * * *"
     - cron: "0 18 * * *"
+    # 每 22 分钟轮替分片验证
     - cron: "*/22 * * * *"
 
   workflow_dispatch:
@@ -23,32 +25,33 @@ jobs:
     runs-on: ubuntu-latest
     env:
       PYTHONUNBUFFERED: 1
+      REPO_URL: https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+      - name: Safe checkout using mirror fetch (fix hang)
+        run: |
+          rm -rf repo
+          mkdir repo
+          cd repo
+
+          git init
+          git remote add origin $REPO_URL
+
+          echo "🔄 Fetching latest main ..."
+          git fetch --depth=1 origin main
+          git checkout -f main
 
       - name: Setup Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.12'
+        run: |
+          pip install --upgrade requests dnspython
 
-      - name: Install dependencies
-        run: pip install --upgrade requests dnspython
-
-      # 自动轮替分片 / 手动指定分片
       - name: Determine PART index
         id: detect
         shell: bash
         run: |
+          cd repo
           mkdir -p tmp
-
           LAST_PART_FILE="tmp/last_part.txt"
-
-          git fetch origin main
-          git checkout origin/main -- tmp/last_part.txt || echo "⚠ tmp/last_part.txt 不存在"
 
           PART_INPUT="${{ github.event.inputs.part }}"
 
@@ -68,72 +71,71 @@ jobs:
           echo $PART > $LAST_PART_FILE
           echo "part=$PART" >> $GITHUB_OUTPUT
 
-      # 定时强制下载
       - name: Force download rules at schedule times
         shell: bash
         run: |
+          cd repo
           CURRENT_HOUR=$(date -u +"%H")
           if [[ "$CURRENT_HOUR" == "00" || "$CURRENT_HOUR" == "06" || "$CURRENT_HOUR" == "12" || "$CURRENT_HOUR" == "18" ]]; then
-            echo "✅ 强制下载规则源并切片"
+            echo "✅ 强制下载规则源并生成所有分片"
             python split_and_check_16.py --force-update
           else
             echo "⏩ 非下载时间，不强制更新"
           fi
 
-      # 如果缺合并规则或分片 → 自动生成
       - name: Ensure rules and first part exist
         shell: bash
         run: |
+          cd repo
           if [ ! -f "merged_rules.txt" ] || [ ! -f "tmp/part_01.txt" ]; then
-            echo "⚠ 缺失规则或分片，自动重新生成"
+            echo "⚠ 缺少规则或分片 → 自动重新生成"
             python split_and_check_16.py --force-update
           else
-            echo "✅ 规则和分片存在"
+            echo "✅ 规则和首片存在"
           fi
 
-      # 当前分片缺失也会自动生成
       - name: Ensure current part file exists
         shell: bash
         env:
           PART: ${{ steps.detect.outputs.part }}
         run: |
+          cd repo
           PART_FILE=$(printf "tmp/part_%02d.txt" "$PART")
           if [ ! -f "$PART_FILE" ]; then
-            echo "⚠ 当前分片缺失：$PART_FILE → 自动重新生成"
+            echo "⚠ 当前分片缺失：$PART_FILE"
             python split_and_check_16.py --force-update
           else
-            echo "✅ 当前分片存在：$PART_FILE"
+            echo "✅ 当前分片存在"
           fi
 
-      # ✅ 改成正确三参数调用方式
       - name: Run DNS validation
         shell: bash
         env:
           PART: ${{ steps.detect.outputs.part }}
         run: |
+          cd repo
           mkdir -p logs
-
-          PART_FILE=$(printf "tmp/part_%02d.txt" "$PART")
-          VALIDATED_OUT=$(printf "dist/validated_part_%02d.txt" "$PART")
-          LOG_FILE=$(printf "logs/validate_part_%02d.log" "$PART")
-
+          LOG_FILE="logs/split_check_part_${PART}.log"
           echo "⏱ 开始验证分片 $PART"
-          python validate.py "$PART_FILE" "$VALIDATED_OUT" "$LOG_FILE"
+          python split_and_check_16.py --part "$PART" | tee "$LOG_FILE"
 
-      # ✅ 提取统计数并加入 commit 信息
-      - name: Commit & Push Results
+      - name: Commit & Push Validated Rules
         shell: bash
         env:
           PART: ${{ steps.detect.outputs.part }}
+          REPO_URL: ${{ env.REPO_URL }}
         run: |
+          cd repo
+
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # 查找最后一行统计
-          STATS_LINE=$(grep -o "COMMIT_STATS: .*" logs/validate_part_${PART}.log | tail -1)
+          git add tmp/last_part.txt dist/validated_part_*.txt tmp/part_*.txt logs/ merged_rules.txt delete_counter.json || true
 
-          git add tmp/last_part.txt dist/validated_part_*.txt tmp/part_*.txt logs/ merged_rules.txt
-          git commit -m "🤖 Auto update Part $PART ($STATS_LINE)" || echo "No changes to commit"
+          if git diff --cached --quiet; then
+            echo "✅ 无变化，跳过提交"
+            exit 0
+          fi
 
-          git pull --rebase origin main || echo "⚠ pull 失败，无需 rebase"
-          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
+          git commit -m "🤖 Auto update: validated part $PART ✅ total/update/remove shown in log"
+          git push "$REPO_URL" HEAD:main --force

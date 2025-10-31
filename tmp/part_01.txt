@@ -112,9 +112,9 @@
 ! CNAME https://github.com/easylist/easylist/issues/9383 https://github.com/AdguardTeam/cname-trackers/issues/15
 ! CPU abuse
 ! CSP Mining
-! Checksum: J1a9q0VjWM0PEITYnTMyVw
-! Checksum: WiewYzxFfMRCrLN3vck7aw
-! Checksum: yRBe9GahFYYbCaYou+kXJg
+! Checksum: U+5M40PPDaVr3HPb8tQePg
+! Checksum: ZkNE8c+J3VIxPqRfuM6UoA
+! Checksum: kjhnwLzLWPm4DMGgM01Mgw
 ! Chinese
 ! Chinese google (https://github.com/easylist/easylist/issues/15643)
 ! Chinese supplement for the EasyList filters
@@ -214,9 +214,9 @@
 ! Japanese
 ! Korean
 ! Last modified: 2025/10/29 06:15 +0800
-! Last modified: 2025/10/31 00:09:48
+! Last modified: 2025/10/31 08:31:05
 ! Last modified: 30 Oct 2025 22:03 UTC
-! Last modified: 31 Oct 2025 00:11 UTC
+! Last modified: 31 Oct 2025 00:21 UTC
 ! Latvian
 ! Licence: https://easylist.to/pages/licence.html
 ! License: https://easylist.to/pages/licence.html
@@ -306,8 +306,8 @@
 ! Version: 20230323162617
 ! Version: 2025.1030.2203.03
 ! Version: 202510290615
-! Version: 20251031000948
-! Version: 202510310011
+! Version: 202510310021
+! Version: 20251031083105
 ! Vietnamese
 ! Vinted
 ! Webcompat Generichide fixes (Avoid any potential filters being applied to non-ad domains)

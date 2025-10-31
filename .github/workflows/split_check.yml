@@ -84,13 +84,14 @@ jobs:
             python split_and_check_16.py --force-update
           else
             echo "✅ 当前分片存在：$PART_FILE"
+          fi
 
       - name: Run DNS validation
         shell: bash
         env:
           PART: ${{ steps.detect.outputs.part }}
         run: |
-          mkdir -p logs
+          mkdir -p logs dist tmp
           PART_FILE=$(printf "tmp/part_%02d.txt" "$PART")
           VALIDATED_FILE=$(printf "dist/validated_part_%02d.txt" "$PART")
           LOG_FILE=$(printf "logs/split_check_part_%02d.log" "$PART")

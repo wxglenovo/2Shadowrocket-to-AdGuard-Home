@@ -46,10 +46,8 @@ jobs:
         run: |
           mkdir -p tmp
           LAST_PART_FILE="tmp/last_part.txt"
-
           git fetch origin main
           git checkout origin/main -- tmp/last_part.txt || echo "⚠ tmp/last_part.txt 不存在"
-
           PART_INPUT="${{ github.event.inputs.part }}"
           if [ -n "$PART_INPUT" ]; then
             PART="$PART_INPUT"
@@ -63,7 +61,6 @@ jobs:
             fi
             echo "⏱ 自动轮替分片：$PART"
           fi
-
           echo $PART > $LAST_PART_FILE
           echo "part=$PART" >> $GITHUB_OUTPUT
 
@@ -114,8 +111,9 @@ jobs:
           PART_FILE=$(printf "tmp/part_%02d.txt" "$PART")
           VALIDATED_FILE=$(printf "dist/validated_part_%02d.txt" "$PART")
           LOG_FILE=$(printf "logs/split_check_part_%02d.log" "$PART")
-          python validate.py "$PART_FILE" "$VALIDATED_FILE" "$LOG_FILE"
-          cat "$LOG_FILE"
+          python split_and_check_16.py --part "$PART" | tee "$LOG_FILE"
+          COMMIT_STATS=$(grep "COMMIT_STATS:" "$LOG_FILE" | tail -n1 | sed 's/COMMIT_STATS: //')
+          echo "$COMMIT_STATS"
 
       - name: Commit & Push Validated Rules
         shell: bash
@@ -125,6 +123,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add tmp/last_part.txt dist/validated_part_*.txt tmp/part_*.txt logs/ merged_rules.txt
-          git commit -m "🤖 Auto update: validated part $PART" || echo "No changes to commit"
+          COMMIT_MSG=$(grep "validated part $PART" logs/split_check_part_${PART}.log | tail -n1)
+          git commit -m "🤖 Auto update: $COMMIT_MSG" || echo "No changes to commit"
           git pull --rebase origin main || echo "⚠ Pull failed or nothing to rebase"
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main

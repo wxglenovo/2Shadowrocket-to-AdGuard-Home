@@ -1,3 +1,5 @@
+
+
 name: Split & DNS Check
 
 on:
@@ -126,12 +128,8 @@ jobs:
           PART: ${{ steps.detect.outputs.part }}
         run: |
           # 配置 Git 用户
-          echo "🛠 配置 Git 用户"
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-
-          # 确认配置是否成功
-          git config --list
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
 
           # 提取 Python 输出里的 COMMIT_STATS
           STATS=$(grep "COMMIT_STATS" logs/split_check_part_${PART}.log | tail -n1 | sed 's/COMMIT_STATS: //')
@@ -145,5 +143,5 @@ jobs:
           # 拉取远程最新并 rebase（防止冲突）
           git pull --rebase origin main || echo "⚠ Pull failed or nothing to rebase"
 
-          # 推送到远程，增加 --verbose 获取详细调试信息
-          git push -v https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
+          # 推送到远程
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main

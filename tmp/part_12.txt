@@ -1,3 +1,5 @@
+||tectrade.bg^
+||tectrix.info^
 ||tectrixsix.us^
 ||tectroid.com^
 ||tectumone.us^
@@ -102138,5 +102140,3 @@
 ||w-appel-absence.weebly.com^
 ||w-auth-wf.firebaseapp.com^
 ||w-auth-wf.web.app^
-||w-azure.pro^
-||w-banorte-com-mx124215.pastelescoral.com^

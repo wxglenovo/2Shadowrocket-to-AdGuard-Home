@@ -1,3 +1,5 @@
+||w-azure.pro^
+||w-banorte-com-mx124215.pastelescoral.com^
 ||w-banorte.com^
 ||w-bdesigns.co.uk^
 ||w-canon-printer.com^
@@ -102138,5 +102140,3 @@
 ||www.code-abi37.stream^
 ||www.code-abi57.stream^
 ||www.code-abi77.stream^
-||www.code-abi97.stream^
-||www.code-abj17.stream^

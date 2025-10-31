@@ -1,3 +1,5 @@
+||server.60recheiosincriveis.com^
+||server.7bangladesh.com^
 ||server.a2baceleradora.com.br^
 ||server.a2digitalmkt.com.br^
 ||server.aadcomed.com^
@@ -102138,5 +102140,3 @@
 ||tectirisim.pro^
 ||tectonicnine.us^
 ||tectoz.tk^
-||tectrade.bg^
-||tectrix.info^

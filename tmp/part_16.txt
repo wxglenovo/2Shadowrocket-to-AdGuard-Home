@@ -1,3 +1,5 @@
+||www.stingcool-com.myshopify.com^
+||www.stingcool.com^
 ||www.stingereditions.com^
 ||www.stingereincendiu.ro^
 ||www.stingertek.com^
@@ -102016,6 +102018,7 @@
 ||zztuu.cn^
 ||zztxdown.com^
 ||zztxr.cn^
+||zztxt.net/Public/wapbiquge/js/static.js
 ||zztysp.com^
 ||zzuml.nordicware.com^
 ||zzup.com/ad.php

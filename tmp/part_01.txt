@@ -112,9 +112,9 @@
 ! CNAME https://github.com/easylist/easylist/issues/9383 https://github.com/AdguardTeam/cname-trackers/issues/15
 ! CPU abuse
 ! CSP Mining
-! Checksum: ISg5pvbIDXjtb2qyGx5OTw
-! Checksum: KzTWFqwfow0xHE5YcZEfyg
-! Checksum: R/zEN4bdTwsm1L/bytj23g
+! Checksum: 61GD5OtScnvCCTM5M5NOuA
+! Checksum: J0rtykIUeLWbndJv0k6a0A
+! Checksum: bqjD9H5Ez92qaP/F2HbqAw
 ! Chinese
 ! Chinese google (https://github.com/easylist/easylist/issues/15643)
 ! Chinese supplement for the EasyList filters
@@ -216,7 +216,7 @@
 ! Last modified: 2025/10/29 06:15 +0800
 ! Last modified: 2025/10/31 08:31:05
 ! Last modified: 31 Oct 2025 05:11 UTC
-! Last modified: 31 Oct 2025 06:31 UTC
+! Last modified: 31 Oct 2025 06:51 UTC
 ! Latvian
 ! Licence: https://easylist.to/pages/licence.html
 ! License: https://easylist.to/pages/licence.html
@@ -306,7 +306,7 @@
 ! Version: 20230323162617
 ! Version: 2025.1031.0511.39
 ! Version: 202510290615
-! Version: 202510310631
+! Version: 202510310651
 ! Version: 20251031083105
 ! Vietnamese
 ! Vinted
@@ -890,7 +890,7 @@
 !||yoogle.com^
 !||youtube.com/api/stats/atr?ns=*&ver=2&cmt=1.*&fs=0&*&euri&lact=
 !有效规则数目: 1543416
-!生成时间: 2025-10-31 14:29:43
+!生成时间: 2025-10-31 14:54:13
 $$a[href="/js/app.htm?url="]
 $$a[href="changhong886.com"]
 $$div[class="-ad-"]

@@ -175,6 +175,7 @@ def process_part(part):
     
     # 💾 输出给 workflow 用作 commit 信息
     print(f"🤖 part {part} → COMMIT_STATS: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
+    # 确保 COMMIT_STATS 输出到控制台
 
 # ===============================
 # 主函数

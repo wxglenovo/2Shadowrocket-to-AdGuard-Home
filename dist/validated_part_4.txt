@@ -343,7 +343,6 @@
 ||christianlouboutin-heels.org^
 ||christianlouboutin-outlet.com.co^
 ||christianlouboutin-outlet.me^
-||christianlouboutin2017.top^
 ||christianlouboutinboots.cn^
 ||christianlouboutincloutlet.com^
 ||christianlouboutininc.top^
@@ -6343,6 +6342,7 @@
 ||client.dokee.cn^
 ||client.dotomi.com^
 ||client.download-sponsor.de^
+||client.download.175pt.net^
 ||client.earnapp.com^
 ||client.everlinks.net^
 ||client.foxydeal.com^
@@ -9837,7 +9837,6 @@
 ||cocoli.co.cc^
 ||cocomedia.ca^
 ||cocomongjeju.com^
-||cocomputewww.watchdogdns.duckdns.org^
 ||cocondi.com^
 ||coconia.net^
 ||coconutfarmers.com^
@@ -9969,6 +9968,7 @@
 ||codeground.net^
 ||codegur.com^
 ||codei.net^
+||codeinesprite.duckdns.org^
 ||codeinetablets.com^
 ||codeineurope.eu^
 ||codejqueryid.com^
@@ -12532,6 +12532,7 @@
 ||company-target.com^$third-party
 ||company.aozora.nagoya^
 ||company.com.ph^
+||company.fm^
 ||company.site^
 ||company0rdercheck.weebly.com^
 ||companycapitalofficeinvestor.shop^
@@ -12867,6 +12868,7 @@
 ||computerkingdom.co^
 ||computerkolkata.com^
 ||computermaniac2k.blogspot.com^
+||computermediapk.com^
 ||computermegamart.com^
 ||computermumbai.com^
 ||computernama.ownsthis.com^
@@ -13399,6 +13401,7 @@
 ||config.yypdf.cn^
 ||config01.homepc.it^
 ||config1.cmpassport.com^
+||config1.duckdns.org^
 ||config2.cmpassport.com^
 ||config2.mparticle.com^
 ||configbin-api-radar.apidocskeeleootstrap.0-030.net.daraz.com^
@@ -16255,7 +16258,6 @@
 ||coopalleanza.co1.qualtrics.com^
 ||coopbank.tt.omtrdc.net^
 ||coopcentro.fin.ec^
-||coopcoyutla.org.mx^
 ||coopctr.com.br^
 ||coopedifcusano.it^
 ||coopepanel.pro^
@@ -19255,6 +19257,7 @@
 ||crashlyticsreports-pa.googleapis.com^
 ||crashmakers.com^
 ||crashplus.pl^
+||crashsafari.com^
 ||crashstats-collector.opera.com^
 ||crashtide.com^
 ||crashtm.org^
@@ -25286,6 +25289,7 @@
 ||d.mob.com^
 ||d.mobikom24.tv^
 ||d.mobilebanner.ru^
+||d.mobpartner.mobi^
 ||d.moeiteloosindemedia.nl^
 ||d.monetate.net^
 ||d.moneyme.com.au^
@@ -28865,6 +28869,7 @@
 ||dashboard.tinypass.com^
 ||dashboard.trafficforce.com^
 ||dashboard.ttpsdk.info^
+||dashboard.viewtraff.com^
 ||dashboard.vungle.com^
 ||dashboard.webengage.com^
 ||dashboard.wheelio-app.com^
@@ -38228,7 +38233,6 @@
 ||development.leadershipwa.org.au^
 ||development.manz.pt^
 ||development.me.thequad.com^
-||development.oregon4biz.com^
 ||development.susteen.nl^
 ||development2.com^
 ||developmentgoat.com^
@@ -39104,6 +39108,7 @@
 ||dgnlrpth-a.today^
 ||dgnrkluiozosx.online^
 ||dgo176.neoplus.adsl.tpnet.pl^
+||dgp.cc^
 ||dgpj.cv^
 ||dgpojly4j1.neliver.com^
 ||dgpot.com^
@@ -45336,6 +45341,7 @@
 ||dooooon.byethost4.com^
 ||doop.pl^
 ||dooplix.com^
+||door-step.duckdns.org^
 ||door2windows.com^
 ||doordoor.co.cc^
 ||doordu.com^
@@ -45930,7 +45936,6 @@
 ||down.cleanv.com^
 ||down.cltz.cn^
 ||down.cncrk.com^
-||down.cngr.cn^
 ||down.diannaodian.com^
 ||down.didiwl.com^
 ||down.dll-down.com^
@@ -46085,7 +46090,6 @@
 ||downinthecountry.com^
 ||downjacketonline.com^
 ||downlaod.com^
-||downlaod.xiaocen.com^
 ||downldcl.adtoolsinc.com^
 ||downlinepress.com^
 ||download--free.ucoz.com^

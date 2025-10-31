@@ -40,7 +40,3 @@ def dns_validate(lines, workers=50):
     print(f"✅ 分片验证完成，有效 {len(valid)} 条")
     sys.stdout.flush()
     return valid
-
-def load_delete_counter():
-    if os.path.exists(DELETE_COUNTER_FILE):
-        with open(DELETE_COUNTER_FILE, "r",

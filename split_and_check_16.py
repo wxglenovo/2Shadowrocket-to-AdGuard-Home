@@ -1,13 +1,5 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-
-"""
-split_and_check_16.py
-- 下载并合并规则源 (urls.txt)
-- 切分为 PARTS 个分片写到 tmp/part_XX.txt
-- 提供 --part <n> 验证单个分片并写入 dist/validated_part_XX.txt
-- 提供 --force-update 强制重新下载并切片
-"""
+# -*- coding: utf-8 -*- 
 
 import os
 import json
@@ -16,25 +8,26 @@ import argparse
 import dns.resolver
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-# ========== 配置 ==========
-URLS_TXT = "urls.txt"
+# ===============================
+# 配置
+# ===============================
+URLS_TXT = "urls.txt"               # 存放规则源地址
 TMP_DIR = "tmp"
 DIST_DIR = "dist"
-MASTER_RULE = "merged_rules.txt"
+MASTER_RULE = "merged_rules.txt"    # 合并后的规则文件
 PARTS = 16
-
 DNS_WORKERS = 50
-BATCH_SIZE = 500
 DNS_TIMEOUT = 2
-
 DELETE_COUNTER_FILE = os.path.join(DIST_DIR, "delete_counter.json")
 DELETE_THRESHOLD = 4
 
-# ensure dirs
+# 创建目录
 os.makedirs(TMP_DIR, exist_ok=True)
 os.makedirs(DIST_DIR, exist_ok=True)
 
-# ========== 下载与合并规则 ==========
+# ===============================
+# 下载与合并规则
+# ===============================
 def download_all_sources():
     if not os.path.exists(URLS_TXT):
         print("❌ urls.txt 不存在")
@@ -46,7 +39,7 @@ def download_all_sources():
     for url in urls:
         print(f"🌐 获取 {url}")
         try:
-            r = requests.get(url, timeout=30)
+            r = requests.get(url, timeout=20)
             r.raise_for_status()
             for line in r.text.splitlines():
                 line = line.strip()
@@ -59,7 +52,9 @@ def download_all_sources():
         f.write("\n".join(sorted(merged)))
     return True
 
-# ========== 分片 ==========
+# ===============================
+# 分片
+# ===============================
 def split_parts():
     if not os.path.exists(MASTER_RULE):
         print("⚠ 缺少合并规则文件")
@@ -77,30 +72,16 @@ def split_parts():
         print(f"📄 分片 {i+1}: {len(part_rules)} 条 → {filename}")
     return True
 
-# ========== DNS 验证 ==========
-def _extract_domain_from_rule(rule: str) -> str:
-    # 常见规则有 ||domain^ 、|http://... 、 plain domain 等，尽量提取可解析部分
-    r = rule.strip()
-    # remove anchors and options
-    if r.startswith("||"):
-        r = r[2:]
-    elif r.startswith("|"):
-        r = r[1:]
-    # cut at ^ or / or $
-    for sep in ["^", "/", "$", ":" , " "]:
-        if sep in r:
-            r = r.split(sep)[0]
-    # remove leading wildcards
-    r = r.lstrip("*")
-    return r
-
+# ===============================
+# DNS 验证
+# ===============================
 def check_domain(rule):
-    domain = _extract_domain_from_rule(rule)
-    if not domain:
-        return None
     resolver = dns.resolver.Resolver()
     resolver.timeout = DNS_TIMEOUT
     resolver.lifetime = DNS_TIMEOUT
+    domain = rule.lstrip("|").split("^")[0].replace("*", "")
+    if not domain:
+        return None
     try:
         resolver.resolve(domain)
         return rule
@@ -108,137 +89,99 @@ def check_domain(rule):
         return None
 
 def dns_validate(lines):
-    total = len(lines)
+    print(f"🚀 启动 {DNS_WORKERS} 并发验证")
     valid = []
-    print(f"🚀 启动 DNS 验证：并发 {DNS_WORKERS}，每批 {BATCH_SIZE} 条，总 {total} 条")
-    for start in range(0, total, BATCH_SIZE):
-        batch = lines[start:start + BATCH_SIZE]
-        batch_valid = []
-        with ThreadPoolExecutor(max_workers=DNS_WORKERS) as executor:
-            futures = {executor.submit(check_domain, rule): rule for rule in batch}
-            done = 0
-            for fut in as_completed(futures):
-                done += 1
-                res = fut.result()
-                if res:
-                    batch_valid.append(res)
-                if done % 50 == 0 or done == len(batch):
-                    print(f"  ✅ 当前批 {start//BATCH_SIZE + 1}: 已验证 {done}/{len(batch)} 条，本批有效 {len(batch_valid)}, 累计有效 {len(valid)+len(batch_valid)}")
-        valid.extend(batch_valid)
-    print(f"✅ 分片验证完成，总有效 {len(valid)} 条")
+    total = len(lines)
+    done = 0
+    
+    with ThreadPoolExecutor(max_workers=DNS_WORKERS) as executor:
+        futures = {executor.submit(check_domain, rule): rule for rule in lines}
+        
+        for future in as_completed(futures):
+            done += 1
+            result = future.result()
+            if result:
+                valid.append(result)
+            
+            # 每500条验证进度
+            if done % 500 == 0:
+                print(f"✅ 已验证 {done}/{total} 条，有效 {len(valid)} 条")
+                
+    print(f"✅ 分片验证完成，有效 {len(valid)} 条")
     return valid
 
-# ========== delete_counter.json 读写（合并写，封顶） ==========
+# ===============================
+# 删除计数管理
+# ===============================
 def load_delete_counter():
     if os.path.exists(DELETE_COUNTER_FILE):
-        try:
-            with open(DELETE_COUNTER_FILE, "r", encoding="utf-8") as f:
-                return json.load(f)
-        except:
-            return {}
+        with open(DELETE_COUNTER_FILE, "r", encoding="utf-8") as f:
+            return json.load(f)
     return {}
 
-def save_delete_counter_merge(new_counter: dict):
-    """
-    将 new_counter 写回 DELETE_COUNTER_FILE，但要与磁盘上已有的旧计数合并：
-    - 对每个规则取 max(old, new)
-    - 对每个规则封顶为 DELETE_THRESHOLD
-    """
-    old = load_delete_counter()
-    merged = old.copy()
-    for k, v in new_counter.items():
-        # old may have higher; take max
-        merged[k] = max(merged.get(k, 0), v)
-        # cap
-        merged[k] = min(merged[k], DELETE_THRESHOLD)
-    # ensure all values capped
-    for k in list(merged.keys()):
-        merged[k] = min(merged[k], DELETE_THRESHOLD)
+def save_delete_counter(counter):
     with open(DELETE_COUNTER_FILE, "w", encoding="utf-8") as f:
-        json.dump(merged, f, indent=2, ensure_ascii=False)
+        json.dump(counter, f, indent=2, ensure_ascii=False)
 
-# ========== 分片处理 ==========
+# ===============================
+# 分片处理
+# ===============================
 def process_part(part):
     part_file = os.path.join(TMP_DIR, f"part_{int(part):02d}.txt")
     if not os.path.exists(part_file):
-        print(f"⚠ 分片 {part} 缺失，尝试重新下载并切片")
+        print(f"⚠ 分片 {part} 缺失，重新下载并切片")
         download_all_sources()
         split_parts()
     if not os.path.exists(part_file):
         print("❌ 分片仍不存在，终止")
         return
 
-    lines = [l.strip() for l in open(part_file, "r", encoding="utf-8").read().splitlines() if l.strip()]
+    lines = open(part_file, "r", encoding="utf-8").read().splitlines()
     print(f"⏱ 验证分片 {part}，共 {len(lines)} 条规则")
+    valid = set(dns_validate(lines))
+    out_file = os.path.join(DIST_DIR, f"validated_part_{part}.txt")
 
-    valid_set = set(dns_validate(lines))
-    out_file = os.path.join(DIST_DIR, f"validated_part_{int(part):02d}.txt")
-
-    # read old validated rules (if any)
     old_rules = set()
     if os.path.exists(out_file):
         with open(out_file, "r", encoding="utf-8") as f:
             old_rules = set([l.strip() for l in f if l.strip()])
 
-    # load global delete counter
     delete_counter = load_delete_counter()
-    # start new counter as copy of old so other rules not lost
-    new_counter = delete_counter.copy()
+    new_delete_counter = {}
 
     final_rules = set()
     removed_count = 0
     added_count = 0
 
-    all_rules = old_rules | set(lines)
-
-    for rule in all_rules:
-        if rule in valid_set:
+    for rule in old_rules | set(lines):
+        if rule in valid:
             final_rules.add(rule)
-            # reset count
-            if delete_counter.get(rule, 0) > 0:
+            if rule in delete_counter:
                 print(f"🔄 验证成功，清零删除计数: {rule}")
-            new_counter[rule] = 0
+            new_delete_counter[rule] = 0
         else:
-            old_cnt = delete_counter.get(rule, 0)
-            new_cnt = min(old_cnt + 1, DELETE_THRESHOLD)
-            new_counter[rule] = new_cnt
-            print(f"⚠ 连续删除计数 {new_cnt}/{DELETE_THRESHOLD}: {rule}")
-
-            # if reach threshold -> truly remove (do not add to final_rules)
-            if new_cnt >= DELETE_THRESHOLD:
-                # count removal only when it crosses threshold now (old_cnt < threshold)
-                if old_cnt < DELETE_THRESHOLD:
-                    removed_count += 1
-                # do NOT add to final_rules
+            count = delete_counter.get(rule, 0) + 1
+            new_delete_counter[rule] = count
+            print(f"⚠ 连续删除计数 {count}/{DELETE_THRESHOLD}: {rule}")
+            if count >= DELETE_THRESHOLD:
+                removed_count += 1
             else:
                 final_rules.add(rule)
-
-        # added count (newly valid and not present in old_rules)
-        if rule not in old_rules and rule in valid_set:
+        if rule not in old_rules and rule in valid:
             added_count += 1
 
-    # write merged delete_counter.json (merge to avoid overwriting other runs)
-    save_delete_counter_merge(new_counter)
+    save_delete_counter(new_delete_counter)
 
-    # ensure dist dir, write validated file (sorted)
-    os.makedirs(DIST_DIR, exist_ok=True)
     with open(out_file, "w", encoding="utf-8") as f:
-        for r in sorted(final_rules):
-            f.write(r + "\n")
+        f.write("\n".join(sorted(final_rules)))
 
     total_count = len(final_rules)
-    stats_line = f"COMMIT_STATS: validated part {part} → 总 {total_count}, 新增 {added_count}, 删除 {removed_count}"
-    # print both for logs
-    print(f"validated part {part} → 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
-    print(stats_line)
-    # also flush to stderr to increase chance workflow grep capture
-    try:
-        import sys
-        print(stats_line, file=sys.stderr)
-    except:
-        pass
+    print(f"✅ 分片 {part} 完成: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
+    print(f"COMMIT_STATS: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
 
-# ========== main ==========
+# ===============================
+# 主函数
+# ===============================
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--part", help="验证指定分片 1~16")

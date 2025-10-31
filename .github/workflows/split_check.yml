@@ -71,6 +71,7 @@ jobs:
             python split_and_check_16.py --force-update
           else
             echo "⏩ 非下载时间，不强制更新"
+          fi
 
       - name: Ensure current part exists
         shell: bash

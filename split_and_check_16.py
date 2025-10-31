@@ -113,15 +113,16 @@ def load_delete_counter():
     if not os.path.exists(DIST_DIR):
         os.makedirs(DIST_DIR)
     
-    # 如果文件不存在，创建一个空的 JSON 文件
+    # 检查 delete_counter.json 是否存在
     if os.path.exists(DELETE_COUNTER_FILE):
+        print(f"🔄 加载现有的删除计数文件: {DELETE_COUNTER_FILE}")
         with open(DELETE_COUNTER_FILE, "r", encoding="utf-8") as f:
             return json.load(f)
     else:
-        # 如果文件不存在，创建空文件并返回空字典
+        # 如果文件不存在，创建并返回一个空字典
+        print(f"🔄 删除计数文件不存在，创建新的: {DELETE_COUNTER_FILE}")
         with open(DELETE_COUNTER_FILE, "w", encoding="utf-8") as f:
             json.dump({}, f, indent=2, ensure_ascii=False)
-        print(f"🔄 创建空的删除计数文件: {DELETE_COUNTER_FILE}")
         return {}
 
 def save_delete_counter(counter):
@@ -129,6 +130,7 @@ def save_delete_counter(counter):
     if not os.path.exists(DIST_DIR):
         os.makedirs(DIST_DIR)
     
+    # 保存删除计数文件
     with open(DELETE_COUNTER_FILE, "w", encoding="utf-8") as f:
         json.dump(counter, f, indent=2, ensure_ascii=False)
     print(f"🔄 已保存删除计数到 {DELETE_COUNTER_FILE}")

@@ -1,71 +1,3 @@
-||accountscard.info^
-||accountscenter-platform.help^
-||accountscenterfb.com^
-||accountsclose.site^
-||accountsdemosurf.tk^
-||accountsdoor.com^
-||accountsecure-verification.com^
-||accountsecure.xyz^
-||accountsecuressupport.com^
-||accountsecureverify.redirectme.net^
-||accountsecurity-google.com^
-||accountsefty.net^
-||accountsefty.org^
-||accountserpiceverify.com^
-||accountservicemanagealert.com^
-||accountservicepaypal.com^
-||accountservices-chargebacksupport.info^
-||accountservicesandsupportcenter.com^
-||accountservicesonlineemail.co.uk^
-||accountsettingcenterrr.weebly.com^
-||accountsettingnew-supportcenter-verifypages.pages.dev^
-||accountsfacebok.start.page^
-||accountsforex.cz.cc^
-||accountsforex.tk^
-||accountsforexfree.tk^
-||accountsglenbrook225.org^
-||accountsgoog1e.com^
-||accountsguru.info^
-||accountsinfo.net^
-||accountsinsight.com^
-||accountsllsouth.northamerica.net.daraz.com^
-||accountslogin.services^
-||accountslogs.com^
-||accountsmages.dotcloudapp.com^
-||accountsmicrosoft.com^
-||accountsnapchat.com^
-||accountsnapchat.net^
-||accountsoftware.in^
-||accountspaypal.info^
-||accountsplaza.net^
-||accountsreceivablesupport.com^
-||accountssale.com^
-||accountssnapchat.online^
-||accountssystem.tk^
-||accountssystemlink.tk^
-||accountstatement87.com^
-||accountsummery-updates.com^
-||accountsupp.cf^
-||accountsupport-6377382.info^
-||accountsupport-7283547.info^
-||accountsupport-8948364.info^
-||accountsupport-9273728.info^
-||accountsupport-suspicious.solutions^
-||accountsupport.review^
-||accountsupport1.com^
-||accountsupporthelp.com^
-||accountsupportlogin.com^
-||accountsupportpro.com^
-||accountsupports.com^
-||accountsupportservice.info^
-||accountsupportteam.com^
-||accountsuspiciousunusual-loginactivity.paypal.com.usofatch.com^
-||accountsverify.com^
-||accountsw-adwordse.info^
-||accountswindy.com^
-||accountsx.bounceme.net^
-||accountsyncalert.date^
-||accountsyncalert.download^
 ||accountsyncalert.win^
 ||accountt-supported.com^
 ||accounttinder.com^
@@ -142,6 +74,7 @@
 ||accrochage.stream^
 ||accrochilo.pro^
 ||accrual-elthor.net^
+||accrualelthor.com^
 ||accrualelthor.net^
 ||accrualelthorreview.com^
 ||accrued.clawed.info^
@@ -227,7 +160,6 @@
 ||acctnotice404.000webhostapp.com^
 ||acctp.ru^
 ||acctpleuron.cyou^
-||acctplugs.com^
 ||acctreconfirm.atspace.cc^
 ||acctrecover344431.000webhostapp.com^
 ||acctrecovery440.000webhostapp.com^
@@ -2108,6 +2040,8 @@
 ||action-immediate-safe-leak.autos^
 ||action-jgbuoff34zsemfutem.faith^
 ||action-movies-channel.blogspot.com^
+||action-safe-data-detected.top^
+||action-safe-trusted-issue.top^
 ||action-update.com^
 ||action.adoffice.11st.co.kr^
 ||action.advisorycloud.com^
@@ -2205,6 +2139,8 @@
 ||actions-latb.taboola.com^
 ||actions-nj.taboola.com^
 ||actions-sg.taboola.com^
+||actionsafeinfodetected.top^
+||actionsafetrustedissue.top^
 ||actionscript.us.intellitxt.com^
 ||actionscriptcousin.ru^
 ||actionsessionsafedetected.autos^
@@ -2228,6 +2164,7 @@
 ||actiune-vyna-ai.com^
 ||actiune-vyna-app.com^
 ||actiune-vyna-app.net^
+||actiune-vyna.net^
 ||actiunevyna-app.com^
 ||actiunevyna-app.net^
 ||actiunevyna.net^
@@ -20843,6 +20780,7 @@
 ||ader215.neoplus.adsl.tpnet.pl^
 ||aderamus.org^
 ||aderbpiall.pro^
+||aderbsmemb.com^
 ||aderiincet.pro^
 ||aderimerit.pro^
 ||aderort.site^
@@ -22143,6 +22081,7 @@
 ||adler-altflow.net^
 ||adler-eventservice.com^
 ||adler.su^
+||adleraltflow.net^
 ||adleraltflow.pro^
 ||adlerbo.info^
 ||adlerlegal.in^
@@ -37275,6 +37214,7 @@
 ||aethermaze.site^
 ||aethermotive.cfd^
 ||aethernestfunds.com^
+||aethernexal.com^
 ||aethernode.online^
 ||aethernova.online^
 ||aetheron-edge-gpt.net^
@@ -39296,6 +39236,7 @@
 ||afriflatry.co^
 ||afrifoot.fr^
 ||afrifund-capitalx.com^
+||afrifundcapital-x-app.com^
 ||afrifundcapital-x-system.com^
 ||afrifundcapital-x-tech.com^
 ||afrifundcapital-x.com^
@@ -41710,9 +41651,11 @@
 ||ai-shugairiinvestments.com^
 ||ai-soundproofing.com^
 ||ai-stock-profit.net^
+||ai-stock-trader.com^
 ||ai-studio.jp^
 ||ai-support.info^
 ||ai-sweets.com^
+||ai-talent-gpt.com^
 ||ai-talent-gpt.net^
 ||ai-tech-solution.com^
 ||ai-trader-app.com^
@@ -41808,6 +41751,7 @@
 ||aiarbitrage-app.com^
 ||aiarbitrage-app.net^
 ||aiarbitrage-system.com^
+||aiarbitrageai.com^
 ||aiarbitrageapp.net^
 ||aiarbitragereview.com^
 ||aiarbitrix-app.com^
@@ -43056,6 +43000,7 @@
 ||airerrorcode.com^
 ||airesdeldelta.com.ar^
 ||airesis.blog^
+||airevolutionapp.net^
 ||airexplode.tk^
 ||airezero.host^
 ||airfanhydro.net^
@@ -43514,8 +43459,10 @@
 ||aister-bot.net^
 ||aisterbot.com^
 ||aisterbot.org^
+||aisterbotapp.com^
 ||aisti.net^
 ||aistidafa.com^
+||aistockprofits.org^
 ||aistocktrader.net^
 ||aisunucsy.today^
 ||aisupagecenter2025.site^
@@ -43563,7 +43510,6 @@
 ||aitoroliveira.com^
 ||aitotop.com^*/collect.js?
 ||aitpl.org^
-||aitptest.com^
 ||aitrade.pics^
 ||aitrader-app.net^
 ||aitraderapp.com^
@@ -43911,7 +43857,6 @@
 ||ajkrls.com^
 ||ajkrls.com^$popup
 ||ajks.in^
-||ajksnskdff.top^
 ||ajkstrength.com^
 ||ajkzd9h.com^
 ||ajlenergysolutions.com^
@@ -44811,6 +44756,7 @@
 ||aktivasarnix-soft.com^
 ||aktivasarnix-solution.com^
 ||aktivasarnix-solutions.com^
+||aktivasarnix.com^
 ||aktivasarnix.net^
 ||aktivasports.com^
 ||aktivate.co.ke^
@@ -46752,6 +46698,7 @@
 ||alebilet.conformation-1801.shop^
 ||alebilet.dsw-podrw.shop^
 ||alebilet.firmowe-id-20294.cfd^
+||alebilet.fun^
 ||alebilet.gorace-oferty-sprzedazy.icu^
 ||alebilet.i-oferty608522.shop^
 ||alebilet.i-oferty69348129128.cfd^
@@ -46908,6 +46855,7 @@
 ||alebilet.oferta-1025612.cfd^
 ||alebilet.oferta-112.top^
 ||alebilet.oferta-1131549.shop^
+||alebilet.oferta-1151911.icu^
 ||alebilet.oferta-1201529.cfd^
 ||alebilet.oferta-1205672.sbs^
 ||alebilet.oferta-1321967.icu^
@@ -47619,6 +47567,7 @@
 ||alebilet.pl-32413162123oferta.icu^
 ||alebilet.pl-324335264.icu^
 ||alebilet.pl-32526oferta.shop^
+||alebilet.pl-33222.icu^
 ||alebilet.pl-33436-on.top^
 ||alebilet.pl-3423534423.sbs^
 ||alebilet.pl-34531.cfd^
@@ -47881,6 +47830,7 @@
 ||alebilet.pl-8886789.cfd^
 ||alebilet.pl-8927373oferta.sbs^
 ||alebilet.pl-8930434.icu^
+||alebilet.pl-894284.cfd^
 ||alebilet.pl-895218167.sbs^
 ||alebilet.pl-901375.icu^
 ||alebilet.pl-901648.icu^
@@ -47955,6 +47905,7 @@
 ||alebilet.pl-93583.cfd^
 ||alebilet.pl-9371004.icu^
 ||alebilet.pl-9383636373oferta.icu^
+||alebilet.pl-938842.cfd^
 ||alebilet.pl-940959.icu^
 ||alebilet.pl-9412935262oferta.icu^
 ||alebilet.pl-942142.icu^
@@ -48302,6 +48253,7 @@
 ||alebilet.pl-kategorie4348764927.icu^
 ||alebilet.pl-kategorie47126784187738124.shop^
 ||alebilet.pl-kategorie5127694613.icu^
+||alebilet.pl-kategorie5172573.icu^
 ||alebilet.pl-kategorie51782319852512673.shop^
 ||alebilet.pl-kategorie51872490176536468.shop^
 ||alebilet.pl-kategorie53427565.icu^
@@ -49447,6 +49399,7 @@
 ||alebilet.pl-oferta44126.cyou^
 ||alebilet.pl-oferta44126.icu^
 ||alebilet.pl-oferta4412923.pl^
+||alebilet.pl-oferta4413696.icu^
 ||alebilet.pl-oferta442311.icu^
 ||alebilet.pl-oferta4423618.icu^
 ||alebilet.pl-oferta4424381.icu^
@@ -49774,6 +49727,7 @@
 ||alebilet.pl-oferta5767560.cfd^
 ||alebilet.pl-oferta5774991.icu^
 ||alebilet.pl-oferta5780262.icu^
+||alebilet.pl-oferta57856785.shop^
 ||alebilet.pl-oferta5789345.icu^
 ||alebilet.pl-oferta579062.cfd^
 ||alebilet.pl-oferta57930.icu^
@@ -49852,6 +49806,7 @@
 ||alebilet.pl-oferta61862.sbs^
 ||alebilet.pl-oferta6192.pl^
 ||alebilet.pl-oferta61940.pl^
+||alebilet.pl-oferta6196343.icu^
 ||alebilet.pl-oferta6197406.pl^
 ||alebilet.pl-oferta619836.cfd^
 ||alebilet.pl-oferta6199067.cfd^
@@ -50119,6 +50074,7 @@
 ||alebilet.pl-oferta74265834.icu^
 ||alebilet.pl-oferta7437653.icu^
 ||alebilet.pl-oferta7439782.sbs^
+||alebilet.pl-oferta7444108.com^
 ||alebilet.pl-oferta744423.cfd^
 ||alebilet.pl-oferta7445653.cfd^
 ||alebilet.pl-oferta7448922.icu^
@@ -50466,6 +50422,7 @@
 ||alebilet.pl-oferta8418782.cfd^
 ||alebilet.pl-oferta84188581.icu^
 ||alebilet.pl-oferta841922.icu^
+||alebilet.pl-oferta8419296.icu^
 ||alebilet.pl-oferta8419512.icu^
 ||alebilet.pl-oferta84214.icu^
 ||alebilet.pl-oferta842399413.shop^
@@ -50527,6 +50484,7 @@
 ||alebilet.pl-oferta8509828.shop^
 ||alebilet.pl-oferta85173123.icu^
 ||alebilet.pl-oferta85192361.icu^
+||alebilet.pl-oferta8520522.icu^
 ||alebilet.pl-oferta85210.icu^
 ||alebilet.pl-oferta85231.icu^
 ||alebilet.pl-oferta85235.cfd^
@@ -56799,6 +56757,7 @@
 ||algoavonexfin-app.com^
 ||algobasey.com^
 ||algoblaze-platform.com^
+||algoblazeai.com^
 ||algoblazeai.net^
 ||algoblazeapp.com^
 ||algoblazeapp.net^
@@ -58677,6 +58636,7 @@
 ||allegro.conformation-168.shop^
 ||allegro.conformation-1801.shop^
 ||allegro.dsw-podrw.shop^
+||allegro.farmindustrymachines.com^
 ||allegro.firmowe-id-20294.cfd^
 ||allegro.ghgy675eeygt.sbs^
 ||allegro.gmb.pl^
@@ -58817,6 +58777,7 @@
 ||allegro.oferta-1025612.cfd^
 ||allegro.oferta-112.top^
 ||allegro.oferta-1131549.shop^
+||allegro.oferta-1151911.icu^
 ||allegro.oferta-1201529.cfd^
 ||allegro.oferta-1205672.sbs^
 ||allegro.oferta-1321967.icu^
@@ -59525,6 +59486,7 @@
 ||allegro.pl-32413162123oferta.icu^
 ||allegro.pl-324335264.icu^
 ||allegro.pl-32526oferta.shop^
+||allegro.pl-33222.icu^
 ||allegro.pl-33436-on.top^
 ||allegro.pl-33922.cfd^
 ||allegro.pl-3423534423.sbs^
@@ -59782,6 +59744,7 @@
 ||allegro.pl-8927373oferta.sbs^
 ||allegro.pl-89278.cfd^
 ||allegro.pl-8930434.icu^
+||allegro.pl-894284.cfd^
 ||allegro.pl-895218167.sbs^
 ||allegro.pl-901375.icu^
 ||allegro.pl-901648.icu^
@@ -60200,6 +60163,7 @@
 ||allegro.pl-kategorie4348764927.icu^
 ||allegro.pl-kategorie47126784187738124.shop^
 ||allegro.pl-kategorie5127694613.icu^
+||allegro.pl-kategorie5172573.icu^
 ||allegro.pl-kategorie51782319852512673.shop^
 ||allegro.pl-kategorie51872490176536468.shop^
 ||allegro.pl-kategorie53427565.icu^
@@ -61366,6 +61330,7 @@
 ||allegro.pl-oferta44126.cyou^
 ||allegro.pl-oferta44126.icu^
 ||allegro.pl-oferta4412923.pl^
+||allegro.pl-oferta4413696.icu^
 ||allegro.pl-oferta442311.icu^
 ||allegro.pl-oferta4423618.icu^
 ||allegro.pl-oferta4424381.icu^
@@ -61687,6 +61652,7 @@
 ||allegro.pl-oferta5767560.cfd^
 ||allegro.pl-oferta5774991.icu^
 ||allegro.pl-oferta5780262.icu^
+||allegro.pl-oferta57856785.shop^
 ||allegro.pl-oferta5789345.icu^
 ||allegro.pl-oferta579062.cfd^
 ||allegro.pl-oferta57930.icu^
@@ -61763,6 +61729,7 @@
 ||allegro.pl-oferta61862.sbs^
 ||allegro.pl-oferta6192.pl^
 ||allegro.pl-oferta61940.pl^
+||allegro.pl-oferta6196343.icu^
 ||allegro.pl-oferta6197406.pl^
 ||allegro.pl-oferta619836.cfd^
 ||allegro.pl-oferta6199067.cfd^
@@ -62026,6 +61993,7 @@
 ||allegro.pl-oferta74265834.icu^
 ||allegro.pl-oferta7437653.icu^
 ||allegro.pl-oferta7439782.sbs^
+||allegro.pl-oferta7444108.com^
 ||allegro.pl-oferta744423.cfd^
 ||allegro.pl-oferta7445653.cfd^
 ||allegro.pl-oferta7448922.icu^
@@ -62373,6 +62341,7 @@
 ||allegro.pl-oferta8418782.cfd^
 ||allegro.pl-oferta84188581.icu^
 ||allegro.pl-oferta841922.icu^
+||allegro.pl-oferta8419296.icu^
 ||allegro.pl-oferta8419512.icu^
 ||allegro.pl-oferta84214.icu^
 ||allegro.pl-oferta842399413.shop^
@@ -62433,6 +62402,7 @@
 ||allegro.pl-oferta8509828.shop^
 ||allegro.pl-oferta85173123.icu^
 ||allegro.pl-oferta85192361.icu^
+||allegro.pl-oferta8520522.icu^
 ||allegro.pl-oferta85231.icu^
 ||allegro.pl-oferta85235.cfd^
 ||allegro.pl-oferta85235.sbs^
@@ -64028,6 +63998,7 @@
 ||allegrolokalnie.12789498.shop^
 ||allegrolokalnie.189723520-vsa87a-1398124.shop^
 ||allegrolokalnie.1902738.store^
+||allegrolokalnie.19230539.xyz^
 ||allegrolokalnie.19261.cfd^
 ||allegrolokalnie.192728101.sbs^
 ||allegrolokalnie.192773e629y227.cyou^
@@ -64052,7 +64023,6 @@
 ||allegrolokalnie.2867c-2834b.rest^
 ||allegrolokalnie.287xc7cxxbzxz.cyou^
 ||allegrolokalnie.2927793.cyou^
-||allegrolokalnie.29287289.cfd^
 ||allegrolokalnie.2937291273.sbs^
 ||allegrolokalnie.300552.shop^
 ||allegrolokalnie.30198xh.cfd^
@@ -64246,6 +64216,7 @@
 ||allegrolokalnie.842712.icu^
 ||allegrolokalnie.843534.sbs^
 ||allegrolokalnie.8517251251.pl^
+||allegrolokalnie.85176-u83g035.xyz^
 ||allegrolokalnie.85915.cfd^
 ||allegrolokalnie.859yj0-5173d86.xyz^
 ||allegrolokalnie.860442300.sbs^
@@ -64433,6 +64404,7 @@
 ||allegrolokalnie.id8764148921.shop^
 ||allegrolokalnie.id8791244.shop^
 ||allegrolokalnie.id87941240.shop^
+||allegrolokalnie.id910322.icu^
 ||allegrolokalnie.id93218.rest^
 ||allegrolokalnie.il-4-5275736.xyz^
 ||allegrolokalnie.il-6-5275736.xyz^
@@ -64706,6 +64678,7 @@
 ||allegrolokalnie.nowa-oferta.cfd^
 ||allegrolokalnie.nowa-oferta2191281.icu^
 ||allegrolokalnie.nowaoferta.sbs^
+||allegrolokalnie.o-961126y-356.xyz^
 ||allegrolokalnie.oamn1590212.pl^
 ||allegrolokalnie.ob-21051591.cfd^
 ||allegrolokalnie.ob-790353721.cfd^
@@ -64737,6 +64710,7 @@
 ||allegrolokalnie.oferta-1025612.cfd^
 ||allegrolokalnie.oferta-112.top^
 ||allegrolokalnie.oferta-1131549.shop^
+||allegrolokalnie.oferta-1151911.icu^
 ||allegrolokalnie.oferta-1201529.cfd^
 ||allegrolokalnie.oferta-1205672.sbs^
 ||allegrolokalnie.oferta-1321967.icu^
@@ -65826,6 +65800,7 @@
 ||allegrolokalnie.pl-27325.sbs^
 ||allegrolokalnie.pl-2738297.cfd^
 ||allegrolokalnie.pl-2791.cfd^
+||allegrolokalnie.pl-279104.icu^
 ||allegrolokalnie.pl-27925-personal.shop^
 ||allegrolokalnie.pl-2794.cfd^
 ||allegrolokalnie.pl-2809225-on.top^
@@ -65864,6 +65839,7 @@
 ||allegrolokalnie.pl-32413162123oferta.icu^
 ||allegrolokalnie.pl-324335264.icu^
 ||allegrolokalnie.pl-32526oferta.shop^
+||allegrolokalnie.pl-33222.icu^
 ||allegrolokalnie.pl-33436-on.top^
 ||allegrolokalnie.pl-33922.cfd^
 ||allegrolokalnie.pl-3423534423.sbs^
@@ -66095,6 +66071,7 @@
 ||allegrolokalnie.pl-618.cyou^
 ||allegrolokalnie.pl-61838.sbs^
 ||allegrolokalnie.pl-619.icu^
+||allegrolokalnie.pl-619231.icu^
 ||allegrolokalnie.pl-62189.cfd^
 ||allegrolokalnie.pl-6243.cfd^
 ||allegrolokalnie.pl-6248153.sbs^
@@ -67160,6 +67137,7 @@
 ||allegrolokalnie.pl-kategorie4348764927.icu^
 ||allegrolokalnie.pl-kategorie47126784187738124.shop^
 ||allegrolokalnie.pl-kategorie5127694613.icu^
+||allegrolokalnie.pl-kategorie5172573.icu^
 ||allegrolokalnie.pl-kategorie51782319852512673.shop^
 ||allegrolokalnie.pl-kategorie51872490176536468.shop^
 ||allegrolokalnie.pl-kategorie53427565.icu^
@@ -68397,6 +68375,7 @@
 ||allegrolokalnie.pl-oferta44126.cyou^
 ||allegrolokalnie.pl-oferta44126.icu^
 ||allegrolokalnie.pl-oferta4412923.pl^
+||allegrolokalnie.pl-oferta4413696.icu^
 ||allegrolokalnie.pl-oferta442311.icu^
 ||allegrolokalnie.pl-oferta4423618.icu^
 ||allegrolokalnie.pl-oferta4424381.icu^
@@ -68760,6 +68739,7 @@
 ||allegrolokalnie.pl-oferta5767560.cfd^
 ||allegrolokalnie.pl-oferta5774991.icu^
 ||allegrolokalnie.pl-oferta5780262.icu^
+||allegrolokalnie.pl-oferta57856785.shop^
 ||allegrolokalnie.pl-oferta5789345.icu^
 ||allegrolokalnie.pl-oferta579062.cfd^
 ||allegrolokalnie.pl-oferta5792261.icu^
@@ -68845,6 +68825,7 @@
 ||allegrolokalnie.pl-oferta61862.sbs^
 ||allegrolokalnie.pl-oferta6192.pl^
 ||allegrolokalnie.pl-oferta61940.pl^
+||allegrolokalnie.pl-oferta6196343.icu^
 ||allegrolokalnie.pl-oferta6197406.pl^
 ||allegrolokalnie.pl-oferta619836.cfd^
 ||allegrolokalnie.pl-oferta6199067.cfd^
@@ -69140,6 +69121,7 @@
 ||allegrolokalnie.pl-oferta74265834.icu^
 ||allegrolokalnie.pl-oferta7437653.icu^
 ||allegrolokalnie.pl-oferta7439782.sbs^
+||allegrolokalnie.pl-oferta7444108.com^
 ||allegrolokalnie.pl-oferta744423.cfd^
 ||allegrolokalnie.pl-oferta7445653.cfd^
 ||allegrolokalnie.pl-oferta7448922.icu^
@@ -69518,6 +69500,7 @@
 ||allegrolokalnie.pl-oferta8418782.cfd^
 ||allegrolokalnie.pl-oferta84188581.icu^
 ||allegrolokalnie.pl-oferta841922.icu^
+||allegrolokalnie.pl-oferta8419296.icu^
 ||allegrolokalnie.pl-oferta8419512.icu^
 ||allegrolokalnie.pl-oferta84214.icu^
 ||allegrolokalnie.pl-oferta842399413.shop^
@@ -69580,6 +69563,7 @@
 ||allegrolokalnie.pl-oferta8509828.shop^
 ||allegrolokalnie.pl-oferta85173123.icu^
 ||allegrolokalnie.pl-oferta85192361.icu^
+||allegrolokalnie.pl-oferta8520522.icu^
 ||allegrolokalnie.pl-oferta85231.icu^
 ||allegrolokalnie.pl-oferta85234.cfd^
 ||allegrolokalnie.pl-oferta85235.cfd^
@@ -69855,6 +69839,7 @@
 ||allegrolokalnie.pl-oferta918519.icu^
 ||allegrolokalnie.pl-oferta9185792.cfd^
 ||allegrolokalnie.pl-oferta918679.icu^
+||allegrolokalnie.pl-oferta918680.icu^
 ||allegrolokalnie.pl-oferta918690.cfd^
 ||allegrolokalnie.pl-oferta9187822.icu^
 ||allegrolokalnie.pl-oferta918830.cfd^
@@ -72266,6 +72251,7 @@
 ||almaco.com.co^
 ||almacopio.com^
 ||almacos.us^
+||almacrynox.net^
 ||almacrynoxapp.com^
 ||almacrynoxapp.net^
 ||almadarmedical.com^
@@ -72297,6 +72283,7 @@
 ||almanhukuku.ozyegin.edu.tr^
 ||almanodeix.net^
 ||almanodeix.pro^
+||almanodeix.tech^
 ||almanpureed.com^
 ||almanpycnid.cyou^
 ||almansoorigroup.ae^
@@ -72888,6 +72875,7 @@
 ||alphaedgeapp.net^
 ||alphaedgemarkethq.digitalhuner.com^
 ||alphaedgenova.net^
+||alphaelevatron.com^
 ||alphaemirates.com^
 ||alphaenergiapps.com^
 ||alphaeuro.alphalan.fr^
@@ -72916,6 +72904,7 @@
 ||alphaketamine.com^
 ||alphalabs.vc^
 ||alphaleasing.com.mx^
+||alphaleateve.com^
 ||alphaleateve.net^
 ||alphaleateve.pro^
 ||alphaleateveapp.com^
@@ -74959,7 +74948,6 @@
 ||amazon-apple.com^
 ||amazon-as.com^
 ||amazon-as.store^
-||amazon-assistant-pyct2.rollout.site^
 ||amazon-aw.com^
 ||amazon-awcs.com^
 ||amazon-aws1.com^
@@ -78311,6 +78299,7 @@
 ||analisis-luxogenia.net^
 ||analisis.io^
 ||analisisdeelecciones.info^
+||analisisluxogenia.com^
 ||analisisluxogenia.net^
 ||analisisreig.cat^
 ||analista.jakstore.co^
@@ -83403,6 +83392,7 @@
 ||animaljamcodes.info^
 ||animaljamcodes2014.com^
 ||animalknown.tk^
+||animallovers.info^
 ||animally.stream^
 ||animalmagicgallery.com^
 ||animalmasksale.com^
@@ -89154,6 +89144,7 @@
 ||apexcapital-markets.com^
 ||apexcapitalai-tech.com^
 ||apexcapitalai.com^
+||apexcapitalai.net^
 ||apexcapitalmarkets.net^
 ||apexcapitalmarkets.ru^
 ||apexcar.com.sg^
@@ -89225,6 +89216,7 @@
 ||apextravel.com.br^
 ||apextwo.com^
 ||apextwo.com^$third-party
+||apexvornys.com^
 ||apexvornys.net^
 ||apexwap.tk^
 ||apexwind.lat^
@@ -90050,7 +90042,6 @@
 ||api.boomtrain.com^
 ||api.botad.kr^
 ||api.botafogofrsocialolimpico.com.br^
-||api.bots.business^
 ||api.bounceexchange.com^
 ||api.boutiquedanath.com.br^
 ||api.boxever.com^
@@ -92337,6 +92328,7 @@
 ||apkusa.com^
 ||apkwhatsapp.com^
 ||apkzycdn.funugame.com^
+||apl-garden.xyz^
 ||apl.112.2o7.net^
 ||apl.com.pk^
 ||apl.headlines.pw^
@@ -99950,6 +99942,7 @@
 ||appsto30.beget.tech^
 ||appstorages.com^
 ||appstore-account.site^
+||appstore-ap.ple-id-092384.com^
 ||appstore-apple-com.services^
 ||appstore-applecom.app^
 ||appstore-confirmations-order123565.com^
@@ -100255,6 +100248,7 @@
 ||apro-iivechecker.com^
 ||apro-livechecker.xyz^
 ||apro88.com^
+||aprobaciontdconline.hstn.me^
 ||aprobadobdv.webcindario.com^
 ||aproccessing.firebaseapp.com^
 ||aproccessing.web.app^
@@ -100894,6 +100888,7 @@
 ||aquaaggs.7eer.net^
 ||aquaai-app.net^
 ||aquaai-solution.com^
+||aquaaiapp.net^
 ||aquaaiofficial.com^
 ||aquaaston.evergage.com^
 ||aquablind.com^
@@ -101617,6 +101612,7 @@
 ||arbi-court.com^
 ||arbi-vexor-system.com^
 ||arbiflow-solution.com^
+||arbiflow.net^
 ||arbiflowai.net^
 ||arbiflowapp.com^
 ||arbigo.com^
@@ -101677,10 +101673,12 @@
 ||arbitroxapp.net^
 ||arbitroxsolution.com^
 ||arbitrsylcor-app.com^
+||arbitrsylcor.net^
 ||arbitrsylcor.org^
 ||arbitrsylcorapp.net^
 ||arbitrsylcorsystem.com^
 ||arbitrum-token-bridge-cqjggprvn-offchain-labs.vercel.app^
+||arbitrvelthorin.net^
 ||arbitrvelthorinai.com^
 ||arbitrvelthorinapp.com^
 ||arbitrvelthorinapp.net^
@@ -101849,6 +101847,7 @@
 ||arcanetiger.pro^
 ||arcanetrade-app.com^
 ||arcanetrade-tech.com^
+||arcanetrade.net^
 ||arcanevault.com^
 ||arcangelgabriel2828.duckdns.org^
 ||arcangelgabriel2830.duckdns.org^
@@ -102082,3 +102081,62 @@
 ||archivospc.com^
 ||archiware.ir^
 ||archiwerk-kassai.de^
+||archiwum-zzmk.cba.pl^
+||archkraft.gb.net^
+||archku.ac.bd^
+||archleaderpro.info^
+||archletgingras.digital^
+||archlineinternational.com^
+||archly.stream^
+||archmod.com^
+||archneed.com^
+||archon-216-68-47-211.fuse.net^
+||archoumqres.gq^
+||archpod.in^
+||archpoint.by^
+||archproxs.tk^
+||archproxs123.tk^
+||archryazan.ru^
+||archself.com^
+||archsmarter.usesfathom.com^
+||archst.it^
+||archswimming.com^
+||archsys.drew-taylor.com^
+||archtable.com^
+||archtics-shows.evyy.net^
+||archtlm.1fr1.net^
+||archtopmakers.com^
+||archvestnik.ru^
+||archwagyarth.digital^
+||archwaycarpetscrm.co.uk^
+||archwiadomosci.com^
+||archworld.co^
+||archzana.com^
+||arcicalonetal.pro^
+||arcidaefullfed.host^
+||arcilic.co.cc^
+||arcipelagodelgusto.it^
+||arcireal.com^
+||arcittechnology.com^
+||arcivribra.com^
+||arcked.stream^
+||arclabindo.com^
+||arclerdesk.com^
+||arclien.com^
+||arclight.vimeo.com^
+||arclim.com.br^
+||arclk.net/trax?
+||arcnyc.com^
+||arco.az.pl^
+||arcoanticoristorante.it^
+||arcoarquitetura.arq.br^
+||arcocoffee.com^
+||arcoelectrico.cl^
+||arcofoodservice.com^
+||arcoiris.com.np^
+||arcoirisa.loan^
+||arcomobi.affise.com^
+||arcomobi.g2afse.com^
+||arcomobi.go2affise.com^
+||arcomtechnologies.com^
+||arcon.net.pk^

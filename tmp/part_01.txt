@@ -112,9 +112,9 @@
 ! CNAME https://github.com/easylist/easylist/issues/9383 https://github.com/AdguardTeam/cname-trackers/issues/15
 ! CPU abuse
 ! CSP Mining
-! Checksum: 4hVYPcp1wk/YTguLZ7jQvw
-! Checksum: SulC1PJgPXi4mPDuYYgB6w
-! Checksum: U7VlOgc7Q9WaCTMCnSbDeg
+! Checksum: ISg5pvbIDXjtb2qyGx5OTw
+! Checksum: K2l9RIBHtGJK0PL1zqSstA
+! Checksum: R/zEN4bdTwsm1L/bytj23g
 ! Chinese
 ! Chinese google (https://github.com/easylist/easylist/issues/15643)
 ! Chinese supplement for the EasyList filters
@@ -216,8 +216,8 @@
 ! Last modified: 2025/10/29 06:15 +0800
 ! Last modified: 2025/10/31 08:31:05
 ! Last modified: 31 Oct 2025 05:11 UTC
-! Last modified: 31 Oct 2025 06:11 UTC
 ! Last modified: 31 Oct 2025 06:21 UTC
+! Last modified: 31 Oct 2025 06:31 UTC
 ! Latvian
 ! Licence: https://easylist.to/pages/licence.html
 ! License: https://easylist.to/pages/licence.html
@@ -307,8 +307,8 @@
 ! Version: 20230323162617
 ! Version: 2025.1031.0511.39
 ! Version: 202510290615
-! Version: 202510310611
 ! Version: 202510310621
+! Version: 202510310631
 ! Version: 20251031083105
 ! Vietnamese
 ! Vinted
@@ -891,8 +891,8 @@
 !||xip.io^
 !||yoogle.com^
 !||youtube.com/api/stats/atr?ns=*&ver=2&cmt=1.*&fs=0&*&euri&lact=
-!有效规则数目: 1542487
-!生成时间: 2025-10-31 13:48:54
+!有效规则数目: 1543416
+!生成时间: 2025-10-31 14:29:43
 $$a[href="/js/app.htm?url="]
 $$a[href="changhong886.com"]
 $$div[class="-ad-"]
@@ -39661,7 +39661,6 @@ zzzyk.com###Tinfo
 ||11-errorxxx.ml^
 ||11-errorxxx.tk^
 ||11-jordans.com^
-||11-xpj.com^
 ||11.109.33.65.cfl.res.rr.com^
 ||11.147.118.sound.ag^
 ||11.6.87.194.dynamic.dol.ru^
@@ -41620,7 +41619,6 @@ zzzyk.com###Tinfo
 ||12np.tlnk.io^
 ||12o-open-mx.weebly.com^
 ||12on-seguranca239802.j.layershift.co.uk^
-||12online-mobillepay.com^
 ||12pc.info^
 ||12place.com^
 ||12plan.com^
@@ -41911,7 +41909,6 @@ zzzyk.com###Tinfo
 ||1353.content.swrve.com^
 ||1353.tm.zedo.com^
 ||135373proxy.tk^
-||135461223.site^
 ||13549.url.tudown.com^
 ||135513832.keywordblocks.com^
 ||13554359.xyz^
@@ -59051,7 +59048,6 @@ zzzyk.com###Tinfo
 ||3650535.com^
 ||3650933.com^
 ||3650967a610281.beer^
-||3651234.com^
 ||3651330.com^
 ||3651353.com^
 ||3651355.com^
@@ -64920,7 +64916,6 @@ zzzyk.com###Tinfo
 ||4f824cbd219fc280.com^
 ||4f8675bc0214dd78.com^
 ||4f872p63.top^
-||4f8d4eb6-c0c4-4029-8674-69587a7ee2a9.wpfeedback.co^
 ||4f8f-baf5-1641-348a.reporo.net^
 ||4f91a0ab51024.beer^
 ||4f941a91590f2c1f0.com^
@@ -74532,10 +74527,6 @@ zzzyk.com###Tinfo
 ||7395b53b810261.beer^
 ||739c49a8c68917.com^
 ||739ce0e51c3d11ca.live^
-||73a2370016b7.assessws.paypal-transfer.antimoney-laundering.org^
-||73a2370016b7.csp-d9w.paypal-reactivate.antimoney-laundering.org^
-||73a2370016b7.info.iut2.paypal-on-the-go.antimoney-laundering.org^
-||73a2370016b7.s0115.paypal-database.antimoney-laundering.org^
 ||73a435bfaf.com^
 ||73a965e2910251.beer^
 ||73au81v1yu.kameleoon.eu^
@@ -77789,7 +77780,6 @@ zzzyk.com###Tinfo
 ||807af9ef710272.beer^
 ||807dbdfe41023.beer^
 ||807df2a0610272.beer^
-||807xpj.com^
 ||808-fitness.com-oo4.net^
 ||808.tianya.cn^
 ||808.tianyaui.cn^
@@ -81104,7 +81094,6 @@ zzzyk.com###Tinfo
 ||88vin.shop^
 ||88xxzx8888888xz125654check.weebly.com^
 ||88ys.cc/js/abcd.js
-||88ysb8.com^
 ||89-109-104-112.cpe.netmadeira.com^
 ||89-125-0-132.dhcp-ripwave.irishbroadband.ie^
 ||89-125-0-217.dhcp-ripwave.irishbroadband.ie^
@@ -81499,6 +81488,7 @@ zzzyk.com###Tinfo
 ||8b53ef875f21a00d.com^
 ||8b62ddc457.c046100d82.com^
 ||8b64dce031022.beer^
+||8b70k3i5awvgshy.plto920dl20a-28ad.pl^
 ||8b729138310272.beer^
 ||8b75c1fe010281.beer^
 ||8b77d90e45.1b60887cd1.com^
@@ -81904,7 +81894,6 @@ zzzyk.com###Tinfo
 ||8ishghd.lat^
 ||8iujq.filled.pw^
 ||8ixrxa2tnr.com^
-||8iyuqbo76l.gudatrade.com^
 ||8izrcm6pmwkhqve1xlpi.galton.pila.pl^
 ||8j1f0af5.de^
 ||8j7wkj97db.mentalist.kameleoon.com^
@@ -86409,6 +86398,7 @@ zzzyk.com###Tinfo
 ||9v8n0m6j58.top^
 ||9vad.com^
 ||9val.msk.ru^
+||9vbz.wlocl.pl^
 ||9versemedia.com^
 ||9vot.com^
 ||9vp4.top^
@@ -102082,3 +102072,71 @@ zzzyk.com###Tinfo
 ||accountsafety.com^
 ||accountsalert.com^
 ||accountsbilling-resolve.com^
+||accountscard.info^
+||accountscenter-platform.help^
+||accountscenterfb.com^
+||accountsclose.site^
+||accountsdemosurf.tk^
+||accountsdoor.com^
+||accountsecure-verification.com^
+||accountsecure.xyz^
+||accountsecuressupport.com^
+||accountsecureverify.redirectme.net^
+||accountsecurity-google.com^
+||accountsefty.net^
+||accountsefty.org^
+||accountserpiceverify.com^
+||accountservicemanagealert.com^
+||accountservicepaypal.com^
+||accountservices-chargebacksupport.info^
+||accountservicesandsupportcenter.com^
+||accountservicesonlineemail.co.uk^
+||accountsettingcenterrr.weebly.com^
+||accountsettingnew-supportcenter-verifypages.pages.dev^
+||accountsfacebok.start.page^
+||accountsforex.cz.cc^
+||accountsforex.tk^
+||accountsforexfree.tk^
+||accountsglenbrook225.org^
+||accountsgoog1e.com^
+||accountsguru.info^
+||accountsinfo.net^
+||accountsinsight.com^
+||accountsllsouth.northamerica.net.daraz.com^
+||accountslogin.services^
+||accountslogs.com^
+||accountsmages.dotcloudapp.com^
+||accountsmicrosoft.com^
+||accountsnapchat.com^
+||accountsnapchat.net^
+||accountsoftware.in^
+||accountspaypal.info^
+||accountsplaza.net^
+||accountsreceivablesupport.com^
+||accountssale.com^
+||accountssnapchat.online^
+||accountssystem.tk^
+||accountssystemlink.tk^
+||accountstatement87.com^
+||accountsummery-updates.com^
+||accountsupp.cf^
+||accountsupport-6377382.info^
+||accountsupport-7283547.info^
+||accountsupport-8948364.info^
+||accountsupport-9273728.info^
+||accountsupport-suspicious.solutions^
+||accountsupport.review^
+||accountsupport1.com^
+||accountsupporthelp.com^
+||accountsupportlogin.com^
+||accountsupportpro.com^
+||accountsupports.com^
+||accountsupportservice.info^
+||accountsupportteam.com^
+||accountsuspiciousunusual-loginactivity.paypal.com.usofatch.com^
+||accountsverify.com^
+||accountsw-adwordse.info^
+||accountswindy.com^
+||accountsx.bounceme.net^
+||accountsyncalert.date^
+||accountsyncalert.download^

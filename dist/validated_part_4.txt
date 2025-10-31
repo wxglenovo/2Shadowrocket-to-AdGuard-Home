@@ -1802,6 +1802,7 @@
 ||cityss.az1.qualtrics.com^
 ||citystandard.ru^
 ||citystopper.com^
+||citytocity.co.ke^
 ||citytosurfmobilecafe.com.au^
 ||citytrw.com^
 ||cityvida.com^
@@ -1811,7 +1812,6 @@
 ||citywesthoa.com^
 ||citywidebreakingnews.com^
 ||citywideindy.com^
-||cityyogasc.com^
 ||cityzero.com^
 ||ciu-sdi-hq.ca^
 ||ciuc.info^
@@ -1820,16 +1820,14 @@
 ||ciuvo.com^
 ||ciuvroktof.neliver.com^
 ||civati.superchatlive.com^
+||civc.co.uk^
 ||civetsyeh.shop^
 ||civicmillion.com^
 ||civicsurf.co.cc^
-||civiitbbaeuvi.online^
-||civilactually.com^
 ||civildiriv.com^
 ||civilengineeringiit.com^
 ||civilhir.net^
 ||civilizationglimpsecontraction.com^
-||civilizationperspirationhoroscope.com^
 ||civilrightsmuseum.org^
 ||civisanalytics.com^
 ||civisflagg.pro^
@@ -1898,7 +1896,6 @@
 ||cjikpufjlcxht.fun^
 ||cjiub.styleedit.com^
 ||cjk-epc.org^
-||cjklbmgh.com^
 ||cjknmicnxw.info^
 ||cjlconsults.com^
 ||cjlekm.correiodopovo.com.br^
@@ -6343,7 +6340,6 @@
 ||client.dokee.cn^
 ||client.dotomi.com^
 ||client.download-sponsor.de^
-||client.download.175pt.net^
 ||client.earnapp.com^
 ||client.everlinks.net^
 ||client.foxydeal.com^
@@ -7734,7 +7730,6 @@
 ||cloud.novidades.serasa.com.br^
 ||cloud.ntua.edu.tw^
 ||cloud.octopusenergy.de^
-||cloud.odexperience.wal-mart.com^
 ||cloud.odexperience.walmart.com^
 ||cloud.offersbahiaprinciperesidences.com^
 ||cloud.onecrmsfpoc.com^
@@ -8327,6 +8322,7 @@
 ||clubmusic.caucasus.net^
 ||clubnauticobogliasco.it^
 ||clubnauticsantfeliu.com^
+||clubofmalw.ws^
 ||cluboneseven.net^
 ||clubpartner-cdn.bejav.assets.net.daraz.com^
 ||clubpenguinclub.com^
@@ -9838,7 +9834,6 @@
 ||cocoli.co.cc^
 ||cocomedia.ca^
 ||cocomongjeju.com^
-||cocomputewww.watchdogdns.duckdns.org^
 ||cocondi.com^
 ||coconia.net^
 ||coconutfarmers.com^
@@ -9970,7 +9965,6 @@
 ||codeground.net^
 ||codegur.com^
 ||codei.net^
-||codeinesprite.duckdns.org^
 ||codeinetablets.com^
 ||codeineurope.eu^
 ||codejqueryid.com^
@@ -11428,6 +11422,7 @@
 ||collector.xhchannel.com^
 ||collector.xhofficial.com^
 ||collector.xhwide1.com^
+||collector1.duckdns.org^
 ||collector1.sooplive.co.kr^
 ||collector1.xhamster.com^
 ||collector1.xhamster.desi^
@@ -11910,7 +11905,6 @@
 ||comcst.net^
 ||comdados.com^
 ||comdatex.de^
-||comduoliprudential.com.watchdogdns.duckdns.org^
 ||come-and-enjoy.co.cc^
 ||come-fully.co.cc^
 ||come-get-s0me.com^
@@ -12869,7 +12863,6 @@
 ||computerkingdom.co^
 ||computerkolkata.com^
 ||computermaniac2k.blogspot.com^
-||computermediapk.com^
 ||computermegamart.com^
 ||computermumbai.com^
 ||computernama.ownsthis.com^
@@ -15669,6 +15662,7 @@
 ||conv.tubemogul.com^
 ||conv.youdao.com^
 ||convaaccio.pro^
+||convac123.duckdns.org^
 ||convammp.taboola.com^
 ||convchmp.taboola.com^
 ||convead.io^
@@ -15854,7 +15848,6 @@
 ||cooch.tv^$popup,third-party
 ||coocomall.com^
 ||coodawei.cn^
-||cooempresas3.duckdns.org^
 ||cooempresasltda3.duckdns.org^
 ||cooeyeddarbs.com^
 ||cooghreari.pro^
@@ -16038,7 +16031,6 @@
 ||cookies.unidadeditorial.es^
 ||cookies.us.jll.com^
 ||cookies.wpcarey.com^
-||cookies32560.duckdns.org^
 ||cookies641570.duckdns.org^
 ||cookiescript.cloud.provincia.tn.it^
 ||cookiescript.info^
@@ -16079,6 +16071,7 @@
 ||cookwriteukb.info^
 ||cool-artwork.com^
 ||cool-cool-bang.co.cc^
+||cool-finderssex.com^
 ||cool-group.net^
 ||cool-hacks.com^
 ||cool-hd-wallpaper-desktop.blogspot.com^
@@ -16134,7 +16127,6 @@
 ||coolestbasis.com^
 ||coolestcatcare.com^
 ||coolestdigital.com^
-||coolestmedia.net^
 ||coolestpod.com^
 ||coolestreactionstems.com^
 ||coolevent.net^
@@ -16412,6 +16404,7 @@
 ||copywatches.co^
 ||copywritertechsupport.com^
 ||coqce.lyfe.com^
+||coqianlong.watchdogdns.duckdns.org^
 ||coqivmhwkcywq.online^
 ||coquettes.free.fr^
 ||coquilegion.org^
@@ -18884,7 +18877,6 @@
 ||cr1ps.ucgalleries.com^
 ||cr2srl.com.ar^
 ||cr3ative.com^
-||cr4cker6.duckdns.org^
 ||cr4sh.go.ro^
 ||cr4ve.com^
 ||cr7.info^
@@ -19261,7 +19253,6 @@
 ||crashlyticsreports-pa.googleapis.com^
 ||crashmakers.com^
 ||crashplus.pl^
-||crashsafari.com^
 ||crashstats-collector.opera.com^
 ||crashtide.com^
 ||crashtm.org^
@@ -23140,7 +23131,6 @@
 ||cuoprrappa.pro^
 ||cuordicrai.it^
 ||cuoss.com^
-||cup-cream.duckdns.org^
 ||cup-n-coin.com^
 ||cup-t.com^
 ||cup.enkido.org^
@@ -23454,7 +23444,6 @@
 ||custom.kurras.sa^
 ||custom.lumos.tech^
 ||custom.mcbbooks.co.uk^
-||custom.mobpartner.mobi^
 ||custom.mystery.city^
 ||custom.nibonno.com^
 ||custom.r-grill.de^
@@ -25296,7 +25285,6 @@
 ||d.mob.com^
 ||d.mobikom24.tv^
 ||d.mobilebanner.ru^
-||d.mobpartner.mobi^
 ||d.moeiteloosindemedia.nl^
 ||d.monetate.net^
 ||d.moneyme.com.au^
@@ -28461,7 +28449,6 @@
 ||daogem.io^
 ||daohang1.oss-cn-beijing.aliyuncs.com^
 ||daoiq.com^
-||daokers.org^
 ||daoomsal.de^
 ||daorufa.com^
 ||daostack.onuniverse.com^
@@ -28613,9 +28600,7 @@
 ||darkcapybara.pro^
 ||darkcarder.com^
 ||darkcodex.com^
-||darkcomentsaved.duckdns.org^
 ||darkcomet-rat.com^
-||darkdc39.duckdns.org^
 ||darkdeceptions.com^
 ||darkdesign.co.cc^
 ||darkenedplane.com^
@@ -33905,7 +33890,6 @@
 ||dbo.ca.gov^
 ||dbonline.it^
 ||dbowl.com^
-||dboy.duckdns.org^
 ||dboynyz.pdns.cz^
 ||dbpbyh.americanas.com.br^
 ||dbpmg.wodify.com^
@@ -34086,7 +34070,6 @@
 ||dc121677.com^
 ||dc14.arabsh.com^
 ||dc148.4shared.com^
-||dc14oct.duckdns.org^
 ||dc15.arabsh.com^
 ||dc16888888.com^
 ||dc168cc6a2fe73d3.com^
@@ -34558,7 +34541,6 @@
 ||ddosopzzed.neliver.com^
 ||ddosproje.weebly.com^
 ||ddot.xyz^
-||ddoutlook.ezweb123.com^
 ||ddoxsecures24.surge.sh^
 ||ddp.com.pe^
 ||ddp226.neoplus.adsl.tpnet.pl^
@@ -34704,7 +34686,6 @@
 ||de.adxxx.com^
 ||de.ag^
 ||de.as.cp61.ott.cibntv.net^
-||de.as.pptv.com^
 ||de.aznudelive.com^
 ||de.bca-news.com^
 ||de.betano.com^
@@ -35269,7 +35250,6 @@
 ||decoded.ro^
 ||decoderactive.com^
 ||decodeseries.automatad.com^
-||decoding92001.duckdns.org^
 ||decodorebasic.pl^
 ||decodownload.blogspot.com^
 ||decoflow.com.ar^
@@ -36848,7 +36828,6 @@
 ||denge.biz^
 ||dengebilisim.com^
 ||dengecelik.com^
-||dengedns.duckdns.org^
 ||dengemuhasebe.com^
 ||dengges.blogspot.com^
 ||dengi-pod-zalog-nedvizhimosti.ru^
@@ -39204,7 +39183,6 @@
 ||dhakaiaajamdani.com^
 ||dhakaimbut.pro^
 ||dhakanewsnetwork.com^
-||dhakasouthcity.gov.bd^
 ||dhakaweb.net^
 ||dhal3.com^
 ||dhalez.com^
@@ -46789,7 +46767,6 @@
 ||downloadwarez.org^
 ||downloadwarezhere.blogspot.com^
 ||downloadweb.org^
-||downloadwho.com^
 ||downloadwithoutsin.blogspot.com^
 ||downloadwizard.com^
 ||downloadxml.changhong.upgrade2.huan.tv^
@@ -47760,6 +47737,7 @@
 ||dreamweaverscreate.pro^
 ||dreamwords-staging.hcmprod-staff.net.daraz.com^
 ||dreamworld.net^
+||dreamx.duckdns.org^
 ||dreamy-hamilton.196-251-72-149.plesk.page^
 ||dreamy-keller.196-251-72-149.plesk.page^
 ||dreamyalogic.com^
@@ -48368,7 +48346,6 @@
 ||drshohel.net^
 ||drshuxu.com^
 ||drsidneypearce.med.br^
-||drsketchy.ph^
 ||drskinaid.com^
 ||drskobic.com^
 ||drslabbertandwilliams.co.za^

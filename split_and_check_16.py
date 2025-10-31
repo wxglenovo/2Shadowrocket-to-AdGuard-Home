@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*- 
 
 import os
 import json
@@ -141,8 +141,8 @@ def process_part(part):
         with open(out_file, "r", encoding="utf-8") as f:
             old_rules = set([l.strip() for l in f if l.strip()])
 
-    delete_counter = load_delete_counter()
-    new_delete_counter = {}
+    delete_counter = load_delete_counter()  # 加载删除计数器
+    new_delete_counter = {}  # 新的删除计数器
 
     final_rules = set()
     removed_count = 0
@@ -153,8 +153,9 @@ def process_part(part):
             final_rules.add(rule)
             if rule in delete_counter:
                 print(f"🔄 验证成功，清零删除计数: {rule}")
-            new_delete_counter[rule] = 0
+            new_delete_counter[rule] = 0  # 规则验证通过时清零删除计数
         else:
+            # 删除计数累加
             count = delete_counter.get(rule, 0) + 1
             new_delete_counter[rule] = count
             print(f"⚠ 连续删除计数 {count}/{DELETE_THRESHOLD}: {rule}")
@@ -163,11 +164,13 @@ def process_part(part):
             else:
                 final_rules.add(rule)
 
+        # 新增规则通过验证的情况
         if rule not in old_rules and rule in valid:
             added_count += 1
 
-    save_delete_counter(new_delete_counter)
+    save_delete_counter(new_delete_counter)  # 保存更新后的删除计数
 
+    # 输出最终规则
     with open(out_file, "w", encoding="utf-8") as f:
         f.write("\n".join(sorted(final_rules)))
 

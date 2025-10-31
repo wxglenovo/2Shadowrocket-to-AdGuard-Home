@@ -7,6 +7,7 @@ import requests
 import argparse
 import dns.resolver
 from concurrent.futures import ThreadPoolExecutor, as_completed
+import sys
 
 # ===============================
 # 配置
@@ -103,6 +104,7 @@ def dns_validate(lines):
             if done % 500 == 0:
                 print(f"✅ 已验证 {done}/{total} 条，有效 {len(valid)} 条")
     print(f"✅ 分片验证完成，有效 {len(valid)} 条")
+    sys.stdout.flush()  # 强制刷新输出流
     return valid
 
 # ===============================
@@ -173,9 +175,9 @@ def process_part(part):
     total_count = len(final_rules)
     print(f"✅ 分片 {part} 完成: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
     
-    # 💾 输出给 workflow 用作 commit 信息
+    # 强制刷新标准输出
     print(f"🤖 part {part} → COMMIT_STATS: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
-    # 确保 COMMIT_STATS 输出到控制台
+    sys.stdout.flush()  # 强制刷新输出流
 
 # ===============================
 # 主函数

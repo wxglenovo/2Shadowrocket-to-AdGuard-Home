@@ -2,15 +2,20 @@ name: Split & DNS Check
 
 on:
   schedule:
-    # 每天 UTC 0:00、6:00、12:00、18:00 强制更新 urls.txt 并生成分片
     - cron: "0 0 * * *"
     - cron: "0 6 * * *"
     - cron: "0 12 * * *"
     - cron: "0 18 * * *"
-    # 每 22 分钟轮替分片验证
-    - cron: "*/22 * * * *"
-
+    - cron: "*/22 * * * *"  # 每 22 分钟轮替分片
   workflow_dispatch:
+    inputs:
+      part:
+        description: '手动验证指定分片 1~16'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
 
 jobs:
   build:
@@ -21,40 +26,62 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
-          python-version: 3.12
+          python-version: '3.12'
 
       - name: Install dependencies
-        run: pip install dnspython requests
+        run: pip install --upgrade requests dnspython
 
-      - name: Create directories
-        run: mkdir -p tmp dist logs
-
-      - name: Determine current part
-        id: part
+      - name: Determine PART
+        id: detect
+        shell: bash
         run: |
-          TOTAL=16
+          mkdir -p tmp
+          LAST_PART_FILE="tmp/last_part.txt"
+          PART_INPUT="${{ github.event.inputs.part }}"
+          if [ -n "$PART_INPUT" ]; then
+            PART="$PART_INPUT"
+          else
+            if [ -f "$LAST_PART_FILE" ]; then
+              LAST_PART=$(cat "$LAST_PART_FILE")
+              PART=$(( (LAST_PART % 16) + 1 ))
+            else
+              PART=1
+            fi
+          fi
+          echo $PART > $LAST_PART_FILE
+          echo "part=$PART" >> $GITHUB_OUTPUT
+
+      - name: Force download rules at schedule times
+        shell: bash
+        run: |
           CURRENT_HOUR=$(date -u +"%H")
-          CURRENT_MIN=$(date -u +"%M")
-          # 计算分片编号轮替
-          PART=$(( (10#$CURRENT_HOUR*60 + 10#$CURRENT_MIN)/22 % TOTAL + 1 ))
-          echo "PART=$PART" >> $GITHUB_ENV
+          if [[ "$CURRENT_HOUR" == "00" || "$CURRENT_HOUR" == "06" || "$CURRENT_HOUR" == "12" || "$CURRENT_HOUR" == "18" ]]; then
+            python split_and_check_16.py --force-update
+          fi
 
-      - name: Run validation
+      - name: Run DNS validation
+        shell: bash
+        env:
+          PART: ${{ steps.detect.outputs.part }}
         run: |
-          PART_FILE=$(printf "tmp/part_%02d.txt" "$PART")
-          VALIDATED_FILE=$(printf "dist/validated_part_%02d.txt" "$PART")
-          LOG_FILE=$(printf "logs/split_check_part_%02d.log" "$PART")
-          python validate.py "$PART_FILE" "$VALIDATED_FILE" "$LOG_FILE"
-          cat "$LOG_FILE"
+          mkdir -p logs
+          python split_and_check_16.py --part "$PART" | tee logs/split_check_part_${PART}.log
 
-      - name: Commit changes
+      - name: Commit & Push Validated Rules
+        shell: bash
+        env:
+          PART: ${{ steps.detect.outputs.part }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add dist tmp logs
-          git commit -m "Auto update part $PART [skip ci]" || echo "No changes to commit"
-          git push
+          git add tmp/last_part.txt dist/validated_part_*.txt tmp/part_*.txt logs/ merged_rules.txt
+          stats=$(grep COMMIT_STATS logs/split_check_part_${PART}.log)
+          git commit -m "🤖 Auto update part $PART | $stats" || echo "No changes to commit"
+          git pull --rebase origin main || echo "⚠ Pull failed or nothing to rebase"
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main

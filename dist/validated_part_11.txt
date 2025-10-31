@@ -11380,6 +11380,7 @@
 ||sevetv.ro^
 ||sevgi-sohbet.com^
 ||sevgidugunsalonu.net^
+||sevgilialbum.com^
 ||sevgim.info^
 ||sevgimanaokullari.com^
 ||sevi.pl^
@@ -13232,6 +13233,7 @@
 ||sgtm.arteconiltuostile.com^
 ||sgtm.artedeltessuto.com^
 ||sgtm.artelmanila.com^
+||sgtm.arukereso.hu^
 ||sgtm.ashrynatural.sa^
 ||sgtm.atc.co.nz^
 ||sgtm.atg.se^
@@ -13319,6 +13321,7 @@
 ||sgtm.boardsox.com.au^
 ||sgtm.bobgerace.com^
 ||sgtm.bobvila.com^
+||sgtm.boconcept.com^
 ||sgtm.boletea.com.mx^
 ||sgtm.boletosvictoriamusic.com^
 ||sgtm.bolha.com^
@@ -13444,6 +13447,7 @@
 ||sgtm.cortinadecor.com^
 ||sgtm.cosmetica.far.br^
 ||sgtm.cosmicbags.com.bd^
+||sgtm.countrysidehomes.com^
 ||sgtm.courtreserve.com^
 ||sgtm.coworkingsmart.com.br^
 ||sgtm.craftcollection.bg^
@@ -13504,6 +13508,7 @@
 ||sgtm.dolcegabbana.com^
 ||sgtm.dolomia.it^
 ||sgtm.domino.ua^
+||sgtm.dormerpramet.com^
 ||sgtm.doshiva.com^
 ||sgtm.doubleneat.com^
 ||sgtm.dpmanual.com^
@@ -13684,6 +13689,7 @@
 ||sgtm.goods-mate.com^
 ||sgtm.gorilla-agency.uk^
 ||sgtm.goshopright.com^
+||sgtm.goudse.nl^
 ||sgtm.govx.com^
 ||sgtm.gramadobet.net.br^
 ||sgtm.grambanglastore.com^
@@ -13697,6 +13703,7 @@
 ||sgtm.gronelforsyning.dk^
 ||sgtm.groovex.golf^
 ||sgtm.grupposicav2000.com^
+||sgtm.gtm.eset.com^
 ||sgtm.gut-gunstig.at^
 ||sgtm.gut-gunstig.de^
 ||sgtm.guttelus.no^
@@ -13724,6 +13731,7 @@
 ||sgtm.hobbyplotter.nl^
 ||sgtm.hogeschoolrotterdam.nl^
 ||sgtm.hojskolerne.dk^
+||sgtm.holidayhomes.co.uk^
 ||sgtm.holidayhomes.com^
 ||sgtm.hollandandbarrett.com^
 ||sgtm.hollandandbarrett.nl^
@@ -13827,6 +13835,7 @@
 ||sgtm.jcrew.com^
 ||sgtm.jdwilliams.co.uk^
 ||sgtm.jetbrains.com^
+||sgtm.jh-profishop.de^
 ||sgtm.jmanta.com^
 ||sgtm.joaairsolutions.com^
 ||sgtm.joabarefoot.com^
@@ -13846,6 +13855,7 @@
 ||sgtm.jyskenergi.dk^
 ||sgtm.k8s.data.prod.leboncoin.io^
 ||sgtm.kaffekassan.se^
+||sgtm.kaiserkraft.ch^
 ||sgtm.kaiserkraft.co.uk^
 ||sgtm.kaiserkraft.de^
 ||sgtm.kalimba-sanza.com^
@@ -14339,6 +14349,7 @@
 ||sgtm.simonandschuster.com^
 ||sgtm.simonevaccari.it^
 ||sgtm.simplelifeatacado.com.br^
+||sgtm.simplybe.co.uk^
 ||sgtm.simtop.co.il^
 ||sgtm.sindiabeteschallenge.com^
 ||sgtm.sinnerup.de^
@@ -14404,6 +14415,7 @@
 ||sgtm.stgermainmysteryschool.com^
 ||sgtm.stgis.at^
 ||sgtm.stihl.de^
+||sgtm.stihl.fr^
 ||sgtm.stihl.ru^
 ||sgtm.stihlusa.com^
 ||sgtm.stilkompagniet.dk^
@@ -14545,6 +14557,7 @@
 ||sgtm.us.cavaier.com^
 ||sgtm.us.puremama.com^
 ||sgtm.useceleb.com.br^
+||sgtm.userway.org^
 ||sgtm.usimmigrationassistance.com^
 ||sgtm.valeriosolari.com^
 ||sgtm.vanessarificitattoo.com^
@@ -14560,6 +14573,7 @@
 ||sgtm.veabagno.it^
 ||sgtm.veloretti.com^
 ||sgtm.veluxusa.com^
+||sgtm.venchi.com^
 ||sgtm.venderbys.dk^
 ||sgtm.vendo.at^
 ||sgtm.venezianico.com^
@@ -16715,6 +16729,7 @@
 ||shaylarentube.com^
 ||shayleon.com^
 ||shaynedachs.com^
+||shaypy.xyz^
 ||shaysave.com^
 ||shayu.offerstrack.net^
 ||shaza-ind.com^
@@ -26821,6 +26836,7 @@
 ||skillgridx.top^
 ||skillgrowth.site^
 ||skillguide.info^
+||skillhobbies.info^
 ||skillignite.info^
 ||skilligranite.cfd^
 ||skilljam.com^
@@ -27508,6 +27524,7 @@
 ||skunkcreative.com^
 ||skunkedgryde.com^
 ||skunkrox.com^
+||skunku.top^
 ||skuogpegytbpoyz7d.com^
 ||skupadhyay.com^
 ||skupinaseven.info^
@@ -28454,6 +28471,7 @@
 ||sleazyone.us^
 ||sledatnfc.aluxom.com^
 ||sledconveniencestuff.com^
+||sledfoolinfo.com^
 ||sledfulinaugur.shop^
 ||sledgecqztklv.website^
 ||sledged.stream^
@@ -29586,6 +29604,7 @@
 ||sm.t65p.ru^
 ||sm.toutiao.com^
 ||sm.trb.com^
+||sm.ty9a.ru^
 ||sm.uploads.im^
 ||sm01.tklivechat.com^
 ||sm0artprimesystem.online^
@@ -31183,6 +31202,43 @@
 ||smbc-cardwn2.club^
 ||smbc-cardxfs.club^
 ||smbc-cardzga.club^
+||smbc-co-jp.crwwo.cn^
+||smbc-co-jp.czxze.cn^
+||smbc-co-jp.dyqxl.cn^
+||smbc-co-jp.goejp.cn^
+||smbc-co-jp.grvca.cn^
+||smbc-co-jp.hjuce.cn^
+||smbc-co-jp.htole.cn^
+||smbc-co-jp.jegli.cn^
+||smbc-co-jp.jyeks.cn^
+||smbc-co-jp.jyxbe.cn^
+||smbc-co-jp.kejdt.cn^
+||smbc-co-jp.kgalw.cn^
+||smbc-co-jp.kmtiu.cn^
+||smbc-co-jp.koplm.cn^
+||smbc-co-jp.mbhlt.cn^
+||smbc-co-jp.nxozu.cn^
+||smbc-co-jp.oelsx.cn^
+||smbc-co-jp.orwkd.cn^
+||smbc-co-jp.pqzxr.cn^
+||smbc-co-jp.ptoxy.cn^
+||smbc-co-jp.qtevy.cn^
+||smbc-co-jp.rjxgo.cn^
+||smbc-co-jp.rvour.cn^
+||smbc-co-jp.rxeoq.cn^
+||smbc-co-jp.spkyy.cn^
+||smbc-co-jp.tqpyx.cn^
+||smbc-co-jp.ugcss.cn^
+||smbc-co-jp.uspyc.cn^
+||smbc-co-jp.utbbm.cn^
+||smbc-co-jp.utrfn.cn^
+||smbc-co-jp.uvfzc.cn^
+||smbc-co-jp.vjsfu.cn^
+||smbc-co-jp.vlvet.cn^
+||smbc-co-jp.wbhuz.cn^
+||smbc-co-jp.ykegx.cn^
+||smbc-co-jp.zbxvp.cn^
+||smbc-co-jp.zuoom.cn^
 ||smbc-crad.xljrha.top^
 ||smbc-login.link^
 ||smbc-qax.unqork.io^
@@ -31316,6 +31372,7 @@
 ||sme.vidible.tv^
 ||sme8cejgzzy5ylfw.panel.net.daraz.com^
 ||smeal.qualtrics.com^
+||smearconventional.com^
 ||smeare.com^
 ||smeargamel.pro^
 ||smeariest-hats.000webhostapp.com^
@@ -36854,6 +36911,7 @@
 ||smugmugextras.biz^
 ||smugnine.us^
 ||smugo.cf^
+||smugpsstplus.com^
 ||smugpurple.pro^
 ||smugzofrant.pro^
 ||smulpapentocht.be^
@@ -37280,6 +37338,7 @@
 ||snap-kionexneo.com^
 ||snap-levora-app.com^
 ||snap-levoraapp.com^
+||snap-pixel.onrender.com^
 ||snap.adsrvr.org^
 ||snap.cba.pl^
 ||snap.com^
@@ -37678,6 +37737,7 @@
 ||snathone.us^
 ||snatoisheretyfcxzxx.weebly.com^
 ||snawkaroki.com^
+||snawsstarted.com^
 ||snaxbgzg.bid^
 ||snaxlofon.store^
 ||snazan-portbit-app.com^
@@ -37690,6 +37750,7 @@
 ||snazzyecho.pro^
 ||snazzyfour.us^
 ||snazzyinspo.pro^
+||snazzypoodle.com^
 ||snazzypulse.pro^
 ||snazzyrealm.pro^
 ||snazzysanppy.com^
@@ -43985,6 +44046,7 @@
 ||sotmal.com^
 ||sotmesc.org^
 ||sotngiical.live^
+||sotnmfhfwqcn.com^
 ||soto.3dn.ru^
 ||sotokoya.co.cc^
 ||soton-avocat.com^
@@ -44385,6 +44447,7 @@
 ||sourire2reda.org^
 ||sourishboree.cfd^
 ||sourissue.com^
+||sourjpa.beer^
 ||sourlemonbitesback.pro^
 ||sourmath.com^
 ||sourmet.com^
@@ -50307,6 +50370,7 @@
 ||sprzedazmieszkan.info^
 ||sprzedazoix.eu^
 ||sprzedazy-oferta98453.icu^
+||sps-analytics-training.s3.amazonaws.com^
 ||sps-jump.com^
 ||sps.springserve.com^
 ||sps01.office.ctm.net^
@@ -51026,6 +51090,7 @@
 ||squadsupport.guru^
 ||squadweb.online^
 ||squadwebsupport.us^
+||squafu.xyz^
 ||squag.com^
 ||squagtrepp.pro^
 ||squairel.com^
@@ -54751,6 +54816,7 @@
 ||ssauve.com^
 ||ssavision.com.br^
 ||ssb-apac1.smartadserver.com^
+||ssb-eu.smartadserver.com^
 ||ssb-euw1.smartadserver.com^
 ||ssb-euw2.smartadserver.com^
 ||ssb-global.smartadserver.com^
@@ -58856,6 +58922,7 @@
 ||ssvmschool.com^
 ||ssvnshop.com^
 ||ssvolkkihcyp.com^
+||ssvslse.top^
 ||ssvss.online^
 ||ssvtez.thelovery.co^
 ||ssvu.org^
@@ -59648,6 +59715,7 @@
 ||staging-dopsacademyartner.net.daraz.com^
 ||staging-e-vcdn.anthill.vn^
 ||staging-e.anthill.vn^
+||staging-ec.walkme.com^
 ||staging-engine.fyber.com^
 ||staging-geblog.b2ldigitalprojects.com^
 ||staging-go.getsquire.com^
@@ -63831,6 +63899,7 @@
 ||stat.alloha.tv^
 ||stat.alltforforaldrar.se^
 ||stat.altalex.com^
+||stat.amebame.com^
 ||stat.analytiall.com^
 ||stat.api.2gis.ru^
 ||stat.api.4399.com/crossdomain.xml
@@ -63886,6 +63955,7 @@
 ||stat.detelefoongids.nl^
 ||stat.devote.se^
 ||stat.discogs.com^
+||stat.dns.sb^
 ||stat.doc88.com^
 ||stat.dongqiudi.com^
 ||stat.download.xunlei.com^
@@ -66717,6 +66787,7 @@
 ||stats.honeywell.com^
 ||stats.hosting24.com^
 ||stats.hotwire.dev^
+||stats.hounslow.gov.uk^
 ||stats.how.wtf^
 ||stats.hprofits.com^
 ||stats.hpz-scharnhausen.de^
@@ -67028,7 +67099,9 @@
 ||stats.milenio.com^
 ||stats.milieuinfo.be^
 ||stats.millanusa.com^
+||stats.minddnd.com^
 ||stats.mindhive.ca^
+||stats.minetest.net^
 ||stats.mint.ca^
 ||stats.mirror.co.uk^
 ||stats.mirrorfootball.co.uk^
@@ -67127,6 +67200,7 @@
 ||stats.onepagelove.com^
 ||stats.onetime.com^
 ||stats.online-convert.com^
+||stats.open.online^
 ||stats.openload.co^
 ||stats.opensurge2d.org^
 ||stats.openvpn.net^
@@ -67499,6 +67573,7 @@
 ||stats.stylight.de^
 ||stats.stylight.it^
 ||stats.sublimesecurity.com^
+||stats.subvid.ai^
 ||stats.suedtirolerjobs.it^
 ||stats.suenicholls.com^
 ||stats.suite101.com^
@@ -69356,6 +69431,7 @@
 ||stemydigital.shop^
 ||sten.buenaonda-holidays.com^
 ||stena.md^
+||stenaline.demdex.net^
 ||stenargaggler.digital^
 ||stenblog.com^
 ||stenburyfederation.co.uk^
@@ -70351,6 +70427,7 @@
 ||stirtonburrow.co.uk^
 ||stirupthegiftwithin.com^
 ||stiscorp.com^
+||stisfmye.xyz^
 ||stit.buenaonda-holidays.com^
 ||stitare.sk^
 ||stitch.pbphgwbr.in^
@@ -73822,6 +73899,7 @@
 ||studentadvantagecard.co.uk^
 ||studentaffairsfit.com^
 ||studentaid.tk^
+||studentandlife.info^
 ||studentarena.info^
 ||studentat25.info^
 ||studentbackr.com^
@@ -74164,6 +74242,7 @@
 ||studiosaptera.com^
 ||studioscience44.site^
 ||studiosciencehub.space^
+||studiosdivider.shop^
 ||studioseri.lat^
 ||studiosfilm.stream^
 ||studiosnapdigital.com^
@@ -74249,6 +74328,7 @@
 ||studyable.tk^
 ||studyaccess.info^
 ||studyadvance.life^
+||studyandleisure.info^
 ||studyat.waseda.jp^
 ||studyatschool.com^
 ||studybar.net^
@@ -74535,6 +74615,7 @@
 ||stw5i8wuis6cdzqoa.science^
 ||stwchicago.org^
 ||stwcozfiavhh.bid^
+||stwdqkalzbqfg.online^
 ||stwg.wishup.gifts^
 ||stwholesaleinc.com^
 ||stwilight.info^
@@ -75536,6 +75617,7 @@
 ||subuh-langitcerah.online^
 ||suburban-sanitation.com^
 ||suburbanabolishflare.com^
+||suburbanregret.com^
 ||suburbanselfreliance.com^
 ||suburbe.nz.gs^
 ||suburbexplore.tk^
@@ -76244,6 +76326,7 @@
 ||suhofquran.com^
 ||suhprdfb.bid^
 ||suhubuktijp.com^
+||suhukukburosu.com^
 ||suhunsoo.uk^
 ||suhusushi.com^
 ||suhutogel.net^
@@ -76607,6 +76690,7 @@
 ||sulumorbusinessservices.com^
 ||sulusanitarium.com^
 ||sulvo.co^
+||sulvtmap.xyz^
 ||sulwerphoto.com^
 ||sulyok-t.hu^
 ||sum41.biz^
@@ -87837,6 +87921,7 @@
 ||surveysavvy.com^
 ||surveyscout.com^
 ||surveyscout.com^$third-party
+||surveyserver.nextcloud.com^
 ||surveysforgifts.org^
 ||surveysformoneyblog.com^
 ||surveysforquickcash.com^
@@ -95730,6 +95815,7 @@
 ||t06.rbnt.org^
 ||t07.rbnt.org^
 ||t08.rbnt.org^
+||t08.y3-68c.ru^
 ||t09.rbnt.org^
 ||t0cab.tk^
 ||t0cv7pmo2y.com^
@@ -95950,6 +96036,7 @@
 ||t2ask0net-com.webs.com^
 ||t2click.com^
 ||t2email.22bet.com^
+||t2gh5.je9t.online^
 ||t2greenws.com.au^
 ||t2jw.kynh0.ru^
 ||t2lgo.com^
@@ -95966,6 +96053,7 @@
 ||t2tt.sa097.com^
 ||t2w.1lt22.ru^
 ||t2w.8y5o8a8.ru^
+||t2w9.kat31o.ru^
 ||t2xb.7-09f.ru^
 ||t2y16t3g.download^
 ||t2zc6vo8zj2ch6sh6kvu5vq8cjz4iv8v2aj1ckjy8zktaj8vm6visk6als8l.me^
@@ -96109,6 +96197,7 @@
 ||t6rminal.club^
 ||t6ryt56.info^
 ||t6taqq1vap6.bid^
+||t6y.hab77u.ru^
 ||t7.ctze0.ru^
 ||t7.formalyzer.com^
 ||t7.hasefa.ru^
@@ -96201,6 +96290,7 @@
 ||t9uhncbrj.iceyavod.com^
 ||t9web.co.uk^
 ||t9x4.7kf1u.ru^
+||t9x4.der14i.ru^
 ||t9z.net^
 ||ta-ca.fr^
 ||ta-collector.centurygame.com^
@@ -97137,6 +97227,7 @@
 ||tagging.wellen-trading.de^
 ||tagging.woodtex.be^
 ||tagging.work21.nl^
+||tagging5-eu.truecaller.com^
 ||taggrove.info^
 ||taggrs.io^
 ||taggrs.io^$third-party
@@ -97195,6 +97286,7 @@
 ||tagmanager.marktplaats.nl^
 ||tagmanager.meh.com^
 ||tagmanager.morningsave.com^
+||tagmanager.smartadserver.com.edgesuite.net^
 ||tagmanager.smartadserver.com^
 ||tagmanager.toast.com^
 ||tagmanager.yodobashi.com^
@@ -97662,6 +97754,7 @@
 ||tagserverv3.touchcommerce.com^
 ||tagservice.maximus.mobkoi.com^
 ||tagshost.com^
+||tagsoviet.com^
 ||tagsrv.adk2.co^
 ||tagsrvcs.com^
 ||tagsrvcs.com^$third-party
@@ -97746,6 +97839,7 @@
 ||tahoesurf.tk^
 ||tahograf.md^
 ||tahograf52.com^
+||tahonakronen.qpon^
 ||tahonathg.com^
 ||tahoun.com^
 ||tahr.componentsui.com^
@@ -100533,6 +100627,7 @@
 ||tarrinc.go2cloud.org^
 ||tarringfourgon.digital^
 ||tarrowwauch.cyou^
+||tarrybelow.com^
 ||tarrybocking.qpon^
 ||tarryfiber.host^
 ||tarryforex.co.cc^
@@ -101869,6 +101964,7 @@
 ||tbppmi.com^
 ||tbr-d.com^
 ||tbraille.com.br^
+||tbrwcczf.top^
 ||tbrwhqnle.bid^
 ||tbrx.tracking.taptica.com^
 ||tbrzzxyvkz.com^

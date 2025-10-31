@@ -131,6 +131,6 @@ jobs:
 
           git add tmp/last_part.txt dist/validated_part_*.txt tmp/part_*.txt logs/ merged_rules.txt dist/delete_counter.json
           STATS=$(grep "COMMIT_STATS" logs/split_check_part_${PART}.log || echo "总 ?, 新增 ?, 删除 ?")
-          git commit -m "🤖  validated part $PART → $STATS" || echo "No changes to commit"
+          git commit -m "🤖 part $PART → $STATS" || echo "No changes to commit"
           git pull --rebase origin main || echo "⚠ Pull failed or nothing to rebase"
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main

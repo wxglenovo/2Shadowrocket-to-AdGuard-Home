@@ -13,7 +13,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 # ===============================
 URLS_TXT = "urls.txt"               # 存放规则源地址
 TMP_DIR = "tmp"
-DIST_DIR = "dist"                   # 修改为小写 dist 目录
+DIST_DIR = "dist"
 MASTER_RULE = "merged_rules.txt"    # 合并后的规则文件
 PARTS = 16
 DNS_WORKERS = 50
@@ -21,18 +21,9 @@ DNS_TIMEOUT = 2
 DELETE_COUNTER_FILE = os.path.join(DIST_DIR, "delete_counter.json")
 DELETE_THRESHOLD = 4
 
-# 确保 dist 目录存在并且具有写权限
-if not os.path.exists(DIST_DIR):
-    print(f"⚠ {DIST_DIR} 目录不存在，正在创建目录")
-    os.makedirs(DIST_DIR, exist_ok=True)
-else:
-    print(f"📂 {DIST_DIR} 目录已存在")
-
-# 确保 dist 目录有写权限
-if not os.access(DIST_DIR, os.W_OK):
-    print(f"❌ 没有写入权限：{DIST_DIR}")
-else:
-    print(f"✅ 具有写入权限：{DIST_DIR}")
+# 创建目录
+os.makedirs(TMP_DIR, exist_ok=True)
+os.makedirs(DIST_DIR, exist_ok=True)
 
 # ===============================
 # 下载与合并规则
@@ -118,26 +109,29 @@ def dns_validate(lines):
 # 删除计数管理
 # ===============================
 def load_delete_counter():
-    """加载删除计数器"""
-    if not os.path.exists(DELETE_COUNTER_FILE):
-        print(f"🔄 文件不存在：{DELETE_COUNTER_FILE}. 创建新文件。")
-        # 强制创建一个空字典文件
+    # 确保 dist 目录存在
+    if not os.path.exists(DIST_DIR):
+        os.makedirs(DIST_DIR)
+    
+    # 如果文件不存在，创建一个空的 JSON 文件
+    if os.path.exists(DELETE_COUNTER_FILE):
+        with open(DELETE_COUNTER_FILE, "r", encoding="utf-8") as f:
+            return json.load(f)
+    else:
+        # 如果文件不存在，创建空文件并返回空字典
         with open(DELETE_COUNTER_FILE, "w", encoding="utf-8") as f:
             json.dump({}, f, indent=2, ensure_ascii=False)
-        print("📂 delete_counter.json 文件已创建")
+        print(f"🔄 创建空的删除计数文件: {DELETE_COUNTER_FILE}")
         return {}
 
-    with open(DELETE_COUNTER_FILE, "r", encoding="utf-8") as f:
-        counter = json.load(f)
-        print(f"🔄 加载已有删除计数：{counter}")  # 调试日志，查看计数文件内容
-        return counter
-
 def save_delete_counter(counter):
-    """保存删除计数器"""
-    print(f"💾 正在保存删除计数：{counter}")  # 调试日志，确认保存的计数
+    # 确保 dist 目录存在
+    if not os.path.exists(DIST_DIR):
+        os.makedirs(DIST_DIR)
+    
     with open(DELETE_COUNTER_FILE, "w", encoding="utf-8") as f:
         json.dump(counter, f, indent=2, ensure_ascii=False)
-    print(f"💾 已保存删除计数：{counter}")  # 确认保存成功
+    print(f"🔄 已保存删除计数到 {DELETE_COUNTER_FILE}")
 
 # ===============================
 # 分片处理
@@ -176,23 +170,18 @@ def process_part(part):
                 print(f"🔄 验证成功，清零删除计数: {rule}")
             new_delete_counter[rule] = 0
         else:
-            # 当前规则的删除计数应累计
-            current_count = delete_counter.get(rule, 0)  # 获取当前的删除计数
-            count = current_count + 1  # 累加计数
-            new_delete_counter[rule] = count  # 更新计数
-            print(f"⚠ 连续删除计数 {count}/{DELETE_THRESHOLD}: {rule}")  # 调试输出
+            count = delete_counter.get(rule, 0) + 1
+            new_delete_counter[rule] = count
+            print(f"⚠ 连续删除计数 {count}/{DELETE_THRESHOLD}: {rule}")
             if count >= DELETE_THRESHOLD:
                 removed_count += 1
             else:
                 final_rules.add(rule)
-
         if rule not in old_rules and rule in valid:
             added_count += 1
 
-    # 保存更新后的计数器
     save_delete_counter(new_delete_counter)
 
-    # 保存验证后的规则
     with open(out_file, "w", encoding="utf-8") as f:
         f.write("\n".join(sorted(final_rules)))
 

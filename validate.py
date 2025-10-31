@@ -1,23 +1,34 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-validate.py
-快速调用： python validate.py <part_number>
-会调用 split_and_check_16.py 的 process_part 功能（通过 subprocess 风格运行）
-"""
-
-import sys
 import os
-import subprocess
+import dns.resolver
 
-if len(sys.argv) != 2:
-    print("Usage: python validate.py <part_number>")
-    sys.exit(1)
+def validate_rule(rule, validated_file, log_file):
+    resolver = dns.resolver.Resolver()
+    resolver.timeout = 5
+    resolver.lifetime = 5
 
-part = sys.argv[1]
+    domain = rule.split('^')[0].replace("*", "")
+    try:
+        resolver.resolve(domain)
+        with open(validated_file, "a", encoding="utf-8") as f_valid:
+            f_valid.write(rule + "\n")
+    except:
+        with open(log_file, "a", encoding="utf-8") as f_log:
+            f_log.write(f"Failed to resolve: {domain} - {rule}\n")
 
-# call split_and_check_16.py --part <part>
-cmd = [sys.executable, "split_and_check_16.py", "--part", str(part)]
-print("Running:", " ".join(cmd))
-ret = subprocess.run(cmd)
-sys.exit(ret.returncode)
+if __name__ == "__main__":
+    import sys
+    if len(sys.argv) != 4:
+        print("Usage: python validate.py <part_X.txt> <validated_part_X.txt> <log_file>")
+        sys.exit(1)
+
+    part_file = sys.argv[1]
+    validated_file = sys.argv[2]
+    log_file = sys.argv[3]
+
+    if os.path.exists(part_file):
+        with open(part_file, "r", encoding="utf-8") as f:
+            rules = f.readlines()
+            for rule in rules:
+                validate_rule(rule.strip(), validated_file, log_file)
+    else:
+        print(f"File {part_file} does not exist")

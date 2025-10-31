@@ -13,7 +13,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 # ===============================
 URLS_TXT = "urls.txt"               # 存放规则源地址
 TMP_DIR = "tmp"
-DIST_DIR = "dist"
+DIST_DIR = "dist"                   # 修改为小写 dist 目录
 MASTER_RULE = "merged_rules.txt"    # 合并后的规则文件
 PARTS = 16
 DNS_WORKERS = 50
@@ -21,9 +21,9 @@ DNS_TIMEOUT = 2
 DELETE_COUNTER_FILE = os.path.join(DIST_DIR, "delete_counter.json")
 DELETE_THRESHOLD = 4
 
-# 创建目录
+# 创建目录，确保 dist 目录存在
 os.makedirs(TMP_DIR, exist_ok=True)
-os.makedirs(DIST_DIR, exist_ok=True)
+os.makedirs(DIST_DIR, exist_ok=True)  # 确保 dist 目录存在
 
 # ===============================
 # 下载与合并规则
@@ -112,7 +112,9 @@ def load_delete_counter():
     """加载删除计数器"""
     if not os.path.exists(DELETE_COUNTER_FILE):
         print(f"🔄 文件不存在：{DELETE_COUNTER_FILE}. 创建新文件。")
-        save_delete_counter({})  # 创建一个空字典
+        # 强制创建一个空字典文件
+        with open(DELETE_COUNTER_FILE, "w", encoding="utf-8") as f:
+            json.dump({}, f, indent=2, ensure_ascii=False)
         return {}
 
     with open(DELETE_COUNTER_FILE, "r", encoding="utf-8") as f:

@@ -1,24 +1,23 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-import sys
+import sys, os
 from split_and_check_16 import dns_validate, load_delete_counter, save_delete_counter
-import os, json
 
 if len(sys.argv)<4:
     print("Usage: python validate.py <part_X.txt> <validated_part_X.txt> <log_file>")
     sys.exit(1)
 
-part_file = sys.argv[1]
-validated_file = sys.argv[2]
-log_file = sys.argv[3]
+part_file=sys.argv[1]
+validated_file=sys.argv[2]
+log_file=sys.argv[3]
 
-lines = open(part_file,"r",encoding="utf-8").read().splitlines()
-valid_rules = set(dns_validate(lines))
-old_rules = set()
+lines=open(part_file,"r",encoding="utf-8").read().splitlines()
+valid_rules=set(dns_validate(lines,batch_size=500))
+old_rules=set()
 if os.path.exists(validated_file):
     with open(validated_file,"r",encoding="utf-8") as f:
-        old_rules = set([l.strip() for l in f if l.strip()])
-delete_counter = load_delete_counter()
+        old_rules=set([l.strip() for l in f if l.strip()])
+delete_counter=load_delete_counter()
 new_delete_counter={}
 final_rules=set()
 removed_count=0

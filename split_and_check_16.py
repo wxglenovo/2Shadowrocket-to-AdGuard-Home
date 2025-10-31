@@ -109,31 +109,26 @@ def dns_validate(lines):
 # 删除计数管理
 # ===============================
 def load_delete_counter():
-    # 确保 dist 目录存在
-    if not os.path.exists(DIST_DIR):
-        os.makedirs(DIST_DIR)
-    
-    # 检查 delete_counter.json 是否存在
     if os.path.exists(DELETE_COUNTER_FILE):
-        print(f"🔄 加载现有的删除计数文件: {DELETE_COUNTER_FILE}")
-        with open(DELETE_COUNTER_FILE, "r", encoding="utf-8") as f:
-            return json.load(f)
+        try:
+            with open(DELETE_COUNTER_FILE, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                if not isinstance(data, dict):
+                    data = {}
+                return data
+        except Exception as e:
+            print(f"⚠ 读取 delete_counter.json 失败，创建新文件: {e}")
+            return {}
     else:
-        # 如果文件不存在，创建并返回一个空字典
-        print(f"🔄 删除计数文件不存在，创建新的: {DELETE_COUNTER_FILE}")
+        print("⚠ delete_counter.json 不存在，创建新文件")
         with open(DELETE_COUNTER_FILE, "w", encoding="utf-8") as f:
             json.dump({}, f, indent=2, ensure_ascii=False)
         return {}
 
 def save_delete_counter(counter):
-    # 确保 dist 目录存在
-    if not os.path.exists(DIST_DIR):
-        os.makedirs(DIST_DIR)
-    
-    # 保存删除计数文件
     with open(DELETE_COUNTER_FILE, "w", encoding="utf-8") as f:
         json.dump(counter, f, indent=2, ensure_ascii=False)
-    print(f"🔄 已保存删除计数到 {DELETE_COUNTER_FILE}")
+    print(f"✅ 删除计数已保存到 {DELETE_COUNTER_FILE}")
 
 # ===============================
 # 分片处理
@@ -168,13 +163,10 @@ def process_part(part):
     for rule in old_rules | set(lines):
         if rule in valid:
             final_rules.add(rule)
-            if rule in delete_counter:
-                print(f"🔄 验证成功，清零删除计数: {rule}")
             new_delete_counter[rule] = 0
         else:
             count = delete_counter.get(rule, 0) + 1
             new_delete_counter[rule] = count
-            print(f"⚠ 连续删除计数 {count}/{DELETE_THRESHOLD}: {rule}")
             if count >= DELETE_THRESHOLD:
                 removed_count += 1
             else:
@@ -189,7 +181,6 @@ def process_part(part):
 
     total_count = len(final_rules)
     print(f"✅ 分片 {part} 完成: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
-    # 💾 输出给 workflow 用作 commit 信息
     print(f"COMMIT_STATS: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
 
 # ===============================

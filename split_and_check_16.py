@@ -109,14 +109,20 @@ def dns_validate(lines):
 # 删除计数管理
 # ===============================
 def load_delete_counter():
+    """加载删除计数器"""
     if os.path.exists(DELETE_COUNTER_FILE):
         with open(DELETE_COUNTER_FILE, "r", encoding="utf-8") as f:
-            return json.load(f)
+            counter = json.load(f)
+            print(f"🔄 加载已有删除计数：{counter}")  # 调试日志，查看计数文件内容
+            return counter
+    print("🔄 删除计数文件不存在，初始化为空字典")
     return {}
 
 def save_delete_counter(counter):
+    """保存删除计数器"""
     with open(DELETE_COUNTER_FILE, "w", encoding="utf-8") as f:
         json.dump(counter, f, indent=2, ensure_ascii=False)
+    print(f"💾 已保存删除计数：{counter}")  # 调试日志，确认保存
 
 # ===============================
 # 分片处理
@@ -156,19 +162,22 @@ def process_part(part):
             new_delete_counter[rule] = 0
         else:
             # 当前规则的删除计数应累计
-            current_count = delete_counter.get(rule, 0)
-            count = current_count + 1
-            new_delete_counter[rule] = count
-            print(f"⚠ 连续删除计数 {count}/{DELETE_THRESHOLD}: {rule}")
+            current_count = delete_counter.get(rule, 0)  # 获取当前的删除计数
+            count = current_count + 1  # 累加计数
+            new_delete_counter[rule] = count  # 更新计数
+            print(f"⚠ 连续删除计数 {count}/{DELETE_THRESHOLD}: {rule}")  # 调试输出
             if count >= DELETE_THRESHOLD:
                 removed_count += 1
             else:
                 final_rules.add(rule)
+
         if rule not in old_rules and rule in valid:
             added_count += 1
 
+    # 保存更新后的计数器
     save_delete_counter(new_delete_counter)
 
+    # 保存验证后的规则
     with open(out_file, "w", encoding="utf-8") as f:
         f.write("\n".join(sorted(final_rules)))
 

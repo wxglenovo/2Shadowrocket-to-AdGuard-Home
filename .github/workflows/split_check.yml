@@ -145,5 +145,5 @@ jobs:
           # 拉取远程最新并 rebase（防止冲突）
           git pull --rebase origin main || echo "⚠ Pull failed or nothing to rebase"
 
-          # 推送到远程
-          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
+          # 推送到远程，增加 --verbose 获取详细调试信息
+          git push -v https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main

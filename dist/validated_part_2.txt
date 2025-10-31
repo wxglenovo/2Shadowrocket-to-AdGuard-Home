@@ -20420,6 +20420,7 @@
 ||addresemip.pro^
 ||address-normalization.apidocskeeleootstrap.0-030.net.daraz.com^
 ||address-pages-acount.hol.es^
+||address-validation.com^
 ||address.9hz.com^
 ||address.ipv6.la^
 ||address.xham.live^
@@ -24493,6 +24494,7 @@
 ||adpubs.yaolan.com^
 ||adpulse.ads.targetnet.com^
 ||adpulse.ir^
+||adpulsex.com^
 ||adpunemploymentclaims.sharefile.com^
 ||adpuserexperience.co1.qualtrics.com^
 ||adpush.cn^
@@ -35050,6 +35052,7 @@
 ||advertiserconnection.azurewebsites.net^
 ||advertiserjob.com^
 ||advertisers-client-support-assessment-quality.pages.dev^
+||advertisers-client-support-assessment-violence.pages.dev^
 ||advertisers-client-support-impersonation-harassment.pages.dev^
 ||advertisers-openx.com^
 ||advertisers.adasiaholdings.com^
@@ -39908,6 +39911,7 @@
 ||agedproxy.com^
 ||agedvalue.pro^
 ||agedwhores.com^
+||agedycsmjwbtt.website^
 ||ageevjvw.net^
 ||ageexe.datascienceitalia.com^
 ||agefree.ru^
@@ -41772,6 +41776,7 @@
 ||ai-traderchain.com^
 ||ai-trading-esn.com^
 ||ai-tradingesn.com^
+||ai-trez-io--login.pages.dev^
 ||ai-xvi.firebaseapp.com^
 ||ai-xvi.web.app^
 ||ai-zevex-solution.com^
@@ -43068,6 +43073,7 @@
 ||airdrop-live.com^
 ||airdrop-masterbot.app^
 ||airdrop-payai.network^
+||airdrop-storefun.com^
 ||airdrop.credit^
 ||airdrop.delivery^
 ||airdrop.systems^
@@ -43101,6 +43107,8 @@
 ||airdrpalert.cfd^
 ||airdrpalert.icu^
 ||airdrpalert.sbs^
+||airdrpsalert.life^
+||airdrpsalert.locker^
 ||airducts.info^
 ||airdynamics.com.sg^
 ||airederas.stream^
@@ -43941,6 +43949,7 @@
 ||ajilogistic.com^
 ||ajimei.bookonline.com.cn^
 ||ajingying.bookonline.com.cn^
+||ajinkyaxroadrockers.github.io^
 ||ajinomoto.d1.sc.omtrdc.net^
 ||ajinshengshudian.bookonline.com.cn^
 ||ajirkxs.cc^
@@ -46218,6 +46227,7 @@
 ||alaweb.info^
 ||alaweercapital.com^
 ||alawficom.mycitytoolbar.com^
+||alaxak.locker^
 ||alaxtralalax.com^
 ||alaxvong.com^
 ||alayhamtechnologies.com^
@@ -50752,6 +50762,7 @@
 ||alebilet.pl-oferta8913346.icu^
 ||alebilet.pl-oferta8915281.icu^
 ||alebilet.pl-oferta8925846.icu^
+||alebilet.pl-oferta893234.rest^
 ||alebilet.pl-oferta893345.cfd^
 ||alebilet.pl-oferta89345.top^
 ||alebilet.pl-oferta893457.cfd^
@@ -51556,7 +51567,9 @@
 ||alebilet.pl-ver57-id7164-cfi1369u-cid790.sbs^
 ||alebilet.pl-wyroznione.icu^
 ||alebilet.pl-wyroznione.sbs^
+||alebilet.pl-zamowienie765425776432123568999009865212790.cfd^
 ||alebilet.pl-zamowienie765425776432123568999009865212790.icu^
+||alebilet.pl-zamowienie765425776432123568999009865212790.sbs^
 ||alebilet.pl-zamowienie92754.cfd^
 ||alebilet.pl00327przedmiot.icu^
 ||alebilet.pl00430oferta.cfd^
@@ -56881,6 +56894,7 @@
 ||algoamrix300.net^
 ||algoamrixapp.com^
 ||algoavonexfin-app.com^
+||algobasey.com^
 ||algoblaze-platform.com^
 ||algoblazeai.com^
 ||algoblazeai.net^
@@ -56893,6 +56907,7 @@
 ||algodealpro-engine.com^
 ||algodealpro.net^
 ||algodon.net^
+||algodreamy.com^
 ||algoetricsy.com^
 ||algoetricsy.net^
 ||algoetricsy.online^
@@ -56922,6 +56937,7 @@
 ||algometer.us^
 ||algometries.us^
 ||algometry.us^
+||algonera.com^
 ||algonetwork.com^
 ||algonovafx.net^
 ||algonovafxsoftware.com^
@@ -62673,6 +62689,7 @@
 ||allegro.pl-oferta8913346.icu^
 ||allegro.pl-oferta8915281.icu^
 ||allegro.pl-oferta8925846.icu^
+||allegro.pl-oferta893234.rest^
 ||allegro.pl-oferta893345.cfd^
 ||allegro.pl-oferta89345.top^
 ||allegro.pl-oferta893457.cfd^
@@ -63500,7 +63517,9 @@
 ||allegro.pl-wyroznione.icu^
 ||allegro.pl-wyroznione.sbs^
 ||allegro.pl-y829.shop^
+||allegro.pl-zamowienie765425776432123568999009865212790.cfd^
 ||allegro.pl-zamowienie765425776432123568999009865212790.icu^
+||allegro.pl-zamowienie765425776432123568999009865212790.sbs^
 ||allegro.pl-zamowienie92754.cfd^
 ||allegro.pl.lokalnie.me^
 ||allegro.pl.shiotem.pl^
@@ -64882,6 +64901,7 @@
 ||allegrolokalnie.oferta-2710815.top^
 ||allegrolokalnie.oferta-2731708.shop^
 ||allegrolokalnie.oferta-274913.shop^
+||allegrolokalnie.oferta-28037685.click^
 ||allegrolokalnie.oferta-2855984.icu^
 ||allegrolokalnie.oferta-285746534.cfd^
 ||allegrolokalnie.oferta-29406912571.cfd^
@@ -64993,6 +65013,7 @@
 ||allegrolokalnie.oferta-7482.cfd^
 ||allegrolokalnie.oferta-74962.cfd^
 ||allegrolokalnie.oferta-764381.shop^
+||allegrolokalnie.oferta-76502598.click^
 ||allegrolokalnie.oferta-7740566.icu^
 ||allegrolokalnie.oferta-7824082.icu^
 ||allegrolokalnie.oferta-78429.cfd^
@@ -65138,6 +65159,7 @@
 ||allegrolokalnie.oferta217837.sbs^
 ||allegrolokalnie.oferta21783841.sbs^
 ||allegrolokalnie.oferta217845.icu^
+||allegrolokalnie.oferta2238276.sbs^
 ||allegrolokalnie.oferta2263341.sbs^
 ||allegrolokalnie.oferta2263422.sbs^
 ||allegrolokalnie.oferta2263983.sbs^
@@ -65334,6 +65356,10 @@
 ||allegrolokalnie.oferty-kategoria-proponowane-dla-ciebie-rozne-21.sbs^
 ||allegrolokalnie.oferty-kategoria-proponowane-dla-ciebie-rozne-22.sbs^
 ||allegrolokalnie.oferty-kategoria-proponowane-dla-ciebie-rozne-23.sbs^
+||allegrolokalnie.oferty-kategoria-proponowane-dla-ciebie-rozne-24.sbs^
+||allegrolokalnie.oferty-kategoria-proponowane-dla-ciebie-rozne-25.sbs^
+||allegrolokalnie.oferty-kategoria-proponowane-dla-ciebie-rozne-26.sbs^
+||allegrolokalnie.oferty-kategoria-proponowane-dla-ciebie-rozne-27.sbs^
 ||allegrolokalnie.oferty-kategoria-proponowane-dla-ciebie-rozne-3.sbs^
 ||allegrolokalnie.oferty-kategoria-proponowane-dla-ciebie-rozne-4.sbs^
 ||allegrolokalnie.oferty-kategoria-proponowane-dla-ciebie-rozne-6.sbs^
@@ -65786,6 +65812,7 @@
 ||allegrolokalnie.pl-1232149324oferta.icu^
 ||allegrolokalnie.pl-123905.cfd^
 ||allegrolokalnie.pl-123959.cfd^
+||allegrolokalnie.pl-1263489.icu^
 ||allegrolokalnie.pl-1278356.icu^
 ||allegrolokalnie.pl-1278907.icu^
 ||allegrolokalnie.pl-1278909.icu^
@@ -66023,6 +66050,7 @@
 ||allegrolokalnie.pl-387765.cfd^
 ||allegrolokalnie.pl-387785.cfd^
 ||allegrolokalnie.pl-38848.shop^
+||allegrolokalnie.pl-3892032.digital^
 ||allegrolokalnie.pl-39.cfd^
 ||allegrolokalnie.pl-3937252932.cfd^
 ||allegrolokalnie.pl-3963.cfd^
@@ -66198,6 +66226,7 @@
 ||allegrolokalnie.pl-618.cyou^
 ||allegrolokalnie.pl-61838.sbs^
 ||allegrolokalnie.pl-619.icu^
+||allegrolokalnie.pl-619231.icu^
 ||allegrolokalnie.pl-62189.cfd^
 ||allegrolokalnie.pl-6243.cfd^
 ||allegrolokalnie.pl-6248153.sbs^
@@ -66374,6 +66403,7 @@
 ||allegrolokalnie.pl-795218167.sbs^
 ||allegrolokalnie.pl-798678658.shop^
 ||allegrolokalnie.pl-80221.cfd^
+||allegrolokalnie.pl-810027.icu^
 ||allegrolokalnie.pl-81022992-personal.shop^
 ||allegrolokalnie.pl-81249.cfd^
 ||allegrolokalnie.pl-812927.cfd^
@@ -67909,6 +67939,7 @@
 ||allegrolokalnie.pl-oferta1869289.shop^
 ||allegrolokalnie.pl-oferta1870593.shop^
 ||allegrolokalnie.pl-oferta1878677.cfd^
+||allegrolokalnie.pl-oferta187920.icu^
 ||allegrolokalnie.pl-oferta188151571.cfd^
 ||allegrolokalnie.pl-oferta1888172.sbs^
 ||allegrolokalnie.pl-oferta1893529.cfd^
@@ -69141,6 +69172,7 @@
 ||allegrolokalnie.pl-oferta70124.icu^
 ||allegrolokalnie.pl-oferta7017697.icu^
 ||allegrolokalnie.pl-oferta702097799.sbs^
+||allegrolokalnie.pl-oferta7023846109.cfd^
 ||allegrolokalnie.pl-oferta7025273.icu^
 ||allegrolokalnie.pl-oferta70270927263.cyou^
 ||allegrolokalnie.pl-oferta70270927263125.sbs^
@@ -69455,6 +69487,7 @@
 ||allegrolokalnie.pl-oferta7909849.icu^
 ||allegrolokalnie.pl-oferta791027.icu^
 ||allegrolokalnie.pl-oferta7913011.icu^
+||allegrolokalnie.pl-oferta7914823.sbs^
 ||allegrolokalnie.pl-oferta79213517634782647362865089327580323.cfd^
 ||allegrolokalnie.pl-oferta7921935.sbs^
 ||allegrolokalnie.pl-oferta792347.icu^
@@ -69550,6 +69583,7 @@
 ||allegrolokalnie.pl-oferta82353672782635671819.cfd^
 ||allegrolokalnie.pl-oferta82391.cfd^
 ||allegrolokalnie.pl-oferta823948.icu^
+||allegrolokalnie.pl-oferta82431181.cfd^
 ||allegrolokalnie.pl-oferta82445749.icu^
 ||allegrolokalnie.pl-oferta82445769.icu^
 ||allegrolokalnie.pl-oferta825265312.shop^
@@ -69846,6 +69880,7 @@
 ||allegrolokalnie.pl-oferta891868.icu^
 ||allegrolokalnie.pl-oferta8925846.icu^
 ||allegrolokalnie.pl-oferta893224.cfd^
+||allegrolokalnie.pl-oferta893234.rest^
 ||allegrolokalnie.pl-oferta893345.cfd^
 ||allegrolokalnie.pl-oferta89345.top^
 ||allegrolokalnie.pl-oferta893457.cfd^
@@ -69958,8 +69993,11 @@
 ||allegrolokalnie.pl-oferta918263644.cfd^
 ||allegrolokalnie.pl-oferta91827334.sbs^
 ||allegrolokalnie.pl-oferta918273644.shop^
+||allegrolokalnie.pl-oferta918482.top^
 ||allegrolokalnie.pl-oferta918519.icu^
 ||allegrolokalnie.pl-oferta9185792.cfd^
+||allegrolokalnie.pl-oferta918679.icu^
+||allegrolokalnie.pl-oferta918680.icu^
 ||allegrolokalnie.pl-oferta918690.cfd^
 ||allegrolokalnie.pl-oferta9187822.icu^
 ||allegrolokalnie.pl-oferta918830.cfd^
@@ -70815,7 +70853,9 @@
 ||allegrolokalnie.pl-zakupy58392.icu^
 ||allegrolokalnie.pl-zakupysmart-24h.shop^
 ||allegrolokalnie.pl-zamow-smart.cfd^
+||allegrolokalnie.pl-zamowienie765425776432123568999009865212790.cfd^
 ||allegrolokalnie.pl-zamowienie765425776432123568999009865212790.icu^
+||allegrolokalnie.pl-zamowienie765425776432123568999009865212790.sbs^
 ||allegrolokalnie.pl-zamowienie92754.cfd^
 ||allegrolokalnie.pl00284przedmiot.icu^
 ||allegrolokalnie.pl00327przedmiot.icu^
@@ -71712,6 +71752,7 @@
 ||allocameroun.com^
 ||allocaphd.pro^
 ||allocate-meteora.app^
+||allocate-payai.network^
 ||allocate.solutions^
 ||allocated.clawed.info^
 ||allocated.mask.wtf.la^
@@ -73080,9 +73121,11 @@
 ||alpharion-matrix-gpt.net^
 ||alpharion-matrix-gpttech.com^
 ||alpharion-matrixgpt-tech.com^
+||alpharion-matrixgpt.org^
 ||alpharionet.cyou^
 ||alpharionmatrix.com^
 ||alpharionmatrix.net^
+||alpharionmatrixgpt.net^
 ||alpharionmatrixgpt.org^
 ||alpharockgroup.com^
 ||alphasalesrecruitment.com^
@@ -73123,6 +73166,7 @@
 ||alphatronindia.com^
 ||alphaunblocker.info^
 ||alphaunit03labs.sbs^
+||alphaupsell.s3.ap-northeast-2.amazonaws.com^
 ||alphavelaxa-tech.com^
 ||alphavelaxa.net^
 ||alphavestoria.icu^
@@ -75094,6 +75138,7 @@
 ||amazon-cc.com^
 ||amazon-central-inc.com^
 ||amazon-check.org^
+||amazon-clone-zeta-bice.vercel.app^
 ||amazon-clue-service.com^
 ||amazon-co-jp-account-update-89ikomdj930king-jgng.jp^
 ||amazon-co-jp-account-update-eamil.com^
@@ -83605,6 +83650,7 @@
 ||animaljamcodes.info^
 ||animaljamcodes2014.com^
 ||animalknown.tk^
+||animallovers.info^
 ||animally.stream^
 ||animalmagicgallery.com^
 ||animalmasksale.com^
@@ -83763,6 +83809,7 @@
 ||anineproxlas.tk^
 ||aningalan.com^
 ||aninggaidrew.ru^
+||aninhaclar.github.io^
 ||aninhamiranda.com^
 ||aninik.me^
 ||anink.net^
@@ -85817,6 +85864,7 @@
 ||antalyalaraklima.com^
 ||antalyalitransfer.com^
 ||antalyaozguremlak.com^
+||antalyasatilikev.com^
 ||antalyatente.net^
 ||antalyatk.com^
 ||antalyayedekparca.com^
@@ -86944,6 +86992,7 @@
 ||antiviruskits.com^
 ||antiviruslatam.com^
 ||antiviruslinks.com^
+||antiviruslisans.com^
 ||antiviruslisansi.com^
 ||antivirusllc.com^
 ||antivirusmania.com^
@@ -88699,6 +88748,7 @@
 ||aouyg.000webhostapp.com^
 ||aovajfmsy.com^
 ||aoverton.000webhostapp.com^
+||aovk.cn^
 ||aovkop1ceh.neliver.com^
 ||aovoasbmjf.com^
 ||aovvxqppx4.neliver.com^
@@ -93133,6 +93183,7 @@
 ||app-beta.brandclub.com^
 ||app-bitbanlk-cc.weebly.com^
 ||app-bittrex.com^
+||app-blockfi-en-login.pages.dev^
 ||app-bnkr.b-cdn.net/js/lv.js
 ||app-bpichinchaec.webcindario.com^
 ||app-br5s.glide.page^
@@ -93231,6 +93282,8 @@
 ||app-kuwfgpb1l1aa13p6dj.party^
 ||app-l.marketo.com^
 ||app-le-com-cloud-i-tunes8912312.com^
+||app-ledgerr-live-login.pages.dev^
+||app-ledgr-wallet.pages.dev^
 ||app-like-instagram.com^
 ||app-link-stage.funfull.com^
 ||app-link-test.inkl.com^
@@ -93283,6 +93336,7 @@
 ||app-nation.marketo.com^
 ||app-nazwva.quams.com.au^
 ||app-nclex.kingofthecurve.org^
+||app-ndax-log-in.pages.dev^
 ||app-netflix-br.com^
 ||app-netflix.ratedyork.tk^
 ||app-nrbm-5iab.taobao-baiduad.xyz^
@@ -93441,6 +93495,7 @@
 ||app-ume-whatsappcc.com^
 ||app-unlocked-verify.com^
 ||app-update-v-data.com^
+||app-upholds-cdn.pages.dev^
 ||app-ups.com^
 ||app-use88aception.start.page^
 ||app-utd.nl^
@@ -99809,12 +99864,14 @@
 ||apps-infor.com^
 ||apps-initportalsupports.com^
 ||apps-install13.com^
+||apps-kraken-us-en.pages.dev^
 ||apps-lclodid.com-webbapps-onlie92921.uk^
 ||apps-live-haixing.com^
 ||apps-live-leisu.com^
 ||apps-login-services.info^
 ||apps-login.com^
 ||apps-n-warez.blogspot.com^
+||apps-ndax-log-in.pages.dev^
 ||apps-noticeservicepayment3114.com^
 ||apps-payment-error11.com^
 ||apps-payment-update-78643.com^
@@ -100473,6 +100530,7 @@
 ||apro-iivechecker.com^
 ||apro-livechecker.xyz^
 ||apro88.com^
+||aprobaciontdconline.hstn.me^
 ||aprobadobdv.webcindario.com^
 ||aproccessing.firebaseapp.com^
 ||aproccessing.web.app^

@@ -8,9 +8,6 @@ import argparse
 import dns.resolver
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-# ===============================
-# 配置
-# ===============================
 URLS_TXT = "urls.txt"
 TMP_DIR = "tmp"
 DIST_DIR = "dist"
@@ -18,16 +15,13 @@ MASTER_RULE = "merged_rules.txt"
 PARTS = 16
 DNS_WORKERS = 50
 DNS_TIMEOUT = 2
-BATCH_SIZE = 500                  # 每批验证数量
 DELETE_COUNTER_FILE = os.path.join(DIST_DIR, "delete_counter.json")
 DELETE_THRESHOLD = 4
 
 os.makedirs(TMP_DIR, exist_ok=True)
 os.makedirs(DIST_DIR, exist_ok=True)
 
-# ===============================
-# 下载与合并规则
-# ===============================
+# 下载规则源
 def download_all_sources():
     if not os.path.exists(URLS_TXT):
         print("❌ urls.txt 不存在")
@@ -52,9 +46,7 @@ def download_all_sources():
         f.write("\n".join(sorted(merged)))
     return True
 
-# ===============================
 # 分片
-# ===============================
 def split_parts():
     if not os.path.exists(MASTER_RULE):
         print("⚠ 缺少合并规则文件")
@@ -72,9 +64,7 @@ def split_parts():
         print(f"📄 分片 {i+1}: {len(part_rules)} 条 → {filename}")
     return True
 
-# ===============================
 # DNS 验证
-# ===============================
 def check_domain(rule):
     resolver = dns.resolver.Resolver()
     resolver.timeout = DNS_TIMEOUT
@@ -89,29 +79,22 @@ def check_domain(rule):
         return None
 
 def dns_validate(lines):
+    print(f"🚀 启动 {DNS_WORKERS} 并发验证")
     valid = []
-    total = len(lines)
-    print(f"🚀 启动 {DNS_WORKERS} 并发验证，总共 {total} 条规则")
-
-    for i in range(0, total, BATCH_SIZE):
-        batch = lines[i:i + BATCH_SIZE]
-        batch_valid = []
-        with ThreadPoolExecutor(max_workers=DNS_WORKERS) as executor:
-            futures = {executor.submit(check_domain, rule): rule for rule in batch}
-            done = 0
-            for future in as_completed(futures):
-                done += 1
-                result = future.result()
-                if result:
-                    batch_valid.append(result)
-        valid.extend(batch_valid)
-        print(f"✅ 已验证 {min(i+BATCH_SIZE,total)}/{total} 条, 本批有效 {len(batch_valid)}, 累计有效 {len(valid)}")
-    print(f"✅ 分片验证完成，总有效 {len(valid)} 条")
+    with ThreadPoolExecutor(max_workers=DNS_WORKERS) as executor:
+        futures = {executor.submit(check_domain, rule): rule for rule in lines}
+        total = len(lines)
+        done = 0
+        for future in as_completed(futures):
+            done += 1
+            result = future.result()
+            if result:
+                valid.append(result)
+            if done % 500 == 0 or done == total:
+                print(f"✅ 已验证 {done}/{total} 条，有效 {len(valid)} 条")
     return valid
 
-# ===============================
-# 删除计数管理
-# ===============================
+# 删除计数
 def load_delete_counter():
     if os.path.exists(DELETE_COUNTER_FILE):
         with open(DELETE_COUNTER_FILE, "r", encoding="utf-8") as f:
@@ -122,9 +105,7 @@ def save_delete_counter(counter):
     with open(DELETE_COUNTER_FILE, "w", encoding="utf-8") as f:
         json.dump(counter, f, indent=2, ensure_ascii=False)
 
-# ===============================
 # 分片处理
-# ===============================
 def process_part(part):
     part_file = os.path.join(TMP_DIR, f"part_{int(part):02d}.txt")
     if not os.path.exists(part_file):
@@ -147,6 +128,7 @@ def process_part(part):
 
     delete_counter = load_delete_counter()
     new_delete_counter = {}
+
     final_rules = set()
     removed_count = 0
     added_count = 0
@@ -155,9 +137,12 @@ def process_part(part):
         if rule in valid:
             final_rules.add(rule)
             new_delete_counter[rule] = 0
+            if rule in delete_counter:
+                print(f"🔄 验证成功，清零删除计数: {rule}")
         else:
             count = delete_counter.get(rule, 0) + 1
             new_delete_counter[rule] = count
+            print(f"⚠ 连续删除计数 {count}/{DELETE_THRESHOLD}: {rule}")
             if count >= DELETE_THRESHOLD:
                 removed_count += 1
             else:
@@ -172,13 +157,11 @@ def process_part(part):
 
     total_count = len(final_rules)
     print(f"✅ 分片 {part} 完成: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
-    # 💾 输出 commit 信息
     print(f"COMMIT_STATS: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
 
-# ===============================
 # 主函数
-# ===============================
 if __name__ == "__main__":
+    import argparse
     parser = argparse.ArgumentParser()
     parser.add_argument("--part", help="验证指定分片 1~16")
     parser.add_argument("--force-update", action="store_true", help="强制重新下载规则源并切片")

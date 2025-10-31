@@ -43,10 +43,4 @@ def dns_validate(lines, workers=50):
 
 def load_delete_counter():
     if os.path.exists(DELETE_COUNTER_FILE):
-        with open(DELETE_COUNTER_FILE, "r", encoding="utf-8") as f:
-            return json.load(f)
-    return {}
-
-def save_delete_counter(counter):
-    with open(DELETE_COUNTER_FILE, "w", encoding="utf-8") as f:
-        json.dump(counter, f, indent=2, ensure_ascii=False)
+        with open(DELETE_COUNTER_FILE, "r",

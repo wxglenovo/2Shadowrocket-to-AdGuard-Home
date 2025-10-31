@@ -83,11 +83,14 @@ jobs:
           DELETION_COUNT_FILE="tmp/deletion_count.txt"
           RULE_ID="${PART}"
 
+          # 检查删除计数文件是否存在
           if [ -f "$DELETION_COUNT_FILE" ]; then
             DELETION_COUNT=$(grep "$RULE_ID" "$DELETION_COUNT_FILE" | awk '{print $2}')
           else
             DELETION_COUNT=0
           fi
+
+          echo "🔄 当前删除计数: $DELETION_COUNT"  # 输出当前计数，调试用
 
           if [ "$DELETION_COUNT" -lt 4 ]; then
             DELETION_COUNT=$((DELETION_COUNT + 1))

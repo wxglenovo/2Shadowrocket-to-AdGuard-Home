@@ -45,13 +45,12 @@ jobs:
         shell: bash
         run: |
           mkdir -p tmp
-
           LAST_PART_FILE="tmp/last_part.txt"
+
           git fetch origin main
           git checkout origin/main -- tmp/last_part.txt || echo "⚠ tmp/last_part.txt 不存在"
 
           PART_INPUT="${{ github.event.inputs.part }}"
-
           if [ -n "$PART_INPUT" ]; then
             PART="$PART_INPUT"
             echo "🛠 手动指定分片：$PART"
@@ -77,6 +76,7 @@ jobs:
             python split_and_check_16.py --force-update
           else
             echo "⏩ 非下载时间，不强制更新"
+          fi
 
       - name: Ensure rules and first part exist
         shell: bash
@@ -84,12 +84,12 @@ jobs:
           MERGED_FILE="merged_rules.txt"
           TMP_DIR="tmp"
           FIRST_PART="$TMP_DIR/part_01.txt"
-
           if [ ! -f "$MERGED_FILE" ] || [ ! -f "$FIRST_PART" ]; then
             echo "⚠ 缺少规则文件或分片，自动拉取规则源并生成分片"
             python split_and_check_16.py --force-update
           else
             echo "✅ 规则文件和分片存在"
+          fi
 
       - name: Ensure current part file exists
         shell: bash
@@ -103,6 +103,7 @@ jobs:
             python split_and_check_16.py --force-update
           else
             echo "✅ 当前分片存在：$PART_FILE"
+          fi
 
       - name: Run DNS validation
         shell: bash
@@ -110,8 +111,11 @@ jobs:
           PART: ${{ steps.detect.outputs.part }}
         run: |
           mkdir -p logs dist tmp
-          echo "⏱ 开始验证分片 $PART"
-          python split_and_check_16.py --part "$PART" | tee logs/split_check_part_${PART}.log
+          PART_FILE=$(printf "tmp/part_%02d.txt" "$PART")
+          VALIDATED_FILE=$(printf "dist/validated_part_%02d.txt" "$PART")
+          LOG_FILE=$(printf "logs/split_check_part_%02d.log" "$PART")
+          python validate.py "$PART_FILE" "$VALIDATED_FILE" "$LOG_FILE"
+          cat "$LOG_FILE"
 
       - name: Commit & Push Validated Rules
         shell: bash
@@ -120,9 +124,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          git add tmp/last_part.txt dist/validated_part_*.txt tmp/part_*.txt logs/ merged_rules.txt dist/delete_counter.json
-          COMMIT_MSG=$(grep "COMMIT_STATS:" logs/split_check_part_${PART}.log | tail -1 | sed 's/COMMIT_STATS: //')
-          git commit -m "🤖 Auto update: validated part $PART → $COMMIT_MSG" || echo "No changes to commit"
+          git add tmp/last_part.txt dist/validated_part_*.txt tmp/part_*.txt logs/ merged_rules.txt
+          git commit -m "🤖 Auto update: validated part $PART" || echo "No changes to commit"
           git pull --rebase origin main || echo "⚠ Pull failed or nothing to rebase"
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main

@@ -5,7 +5,9 @@ import os
 import json
 import dns.resolver
 import sys
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
+# 配置
 DELETE_THRESHOLD = 4
 DELETE_COUNTER_FILE = "dist/delete_counter.json"
 
@@ -24,8 +26,6 @@ def check_domain(rule):
 
 def dns_validate(lines, workers=50):
     valid = []
-    from concurrent.futures import ThreadPoolExecutor, as_completed
-
     with ThreadPoolExecutor(max_workers=workers) as executor:
         futures = {executor.submit(check_domain, rule): rule for rule in lines}
         total = len(lines)
@@ -41,9 +41,7 @@ def dns_validate(lines, workers=50):
     sys.stdout.flush()
     return valid
 
-# ===============================
 # 删除计数管理
-# ===============================
 def load_delete_counter():
     if os.path.exists(DELETE_COUNTER_FILE):
         with open(DELETE_COUNTER_FILE, "r", encoding="utf-8") as f:
@@ -54,11 +52,8 @@ def save_delete_counter(counter):
     with open(DELETE_COUNTER_FILE, "w", encoding="utf-8") as f:
         json.dump(counter, f, indent=2, ensure_ascii=False)
 
-# ===============================
-# 分片处理
-# ===============================
 def process_part(part):
-    part_file = os.path.join(TMP_DIR, f"part_{int(part):02d}.txt")
+    part_file = os.path.join("tmp", f"part_{int(part):02d}.txt")
     if not os.path.exists(part_file):
         print(f"⚠ 分片 {part} 缺失，重新下载并切片")
         download_all_sources()
@@ -70,14 +65,13 @@ def process_part(part):
     lines = open(part_file, "r", encoding="utf-8").read().splitlines()
     print(f"⏱ 验证分片 {part}，共 {len(lines)} 条规则")
     valid = set(dns_validate(lines))
-    out_file = os.path.join(DIST_DIR, f"validated_part_{part}.txt")
+    out_file = os.path.join("dist", f"validated_part_{part}.txt")
 
     old_rules = set()
     if os.path.exists(out_file):
         with open(out_file, "r", encoding="utf-8") as f:
             old_rules = set([l.strip() for l in f if l.strip()])
 
-    # 加载删除计数器
     delete_counter = load_delete_counter()
     new_delete_counter = {}
 
@@ -85,7 +79,6 @@ def process_part(part):
     removed_count = 0
     added_count = 0
 
-    # 遍历所有规则，处理删除计数
     for rule in old_rules | set(lines):
         if rule in valid:
             final_rules.add(rule)
@@ -93,7 +86,6 @@ def process_part(part):
                 print(f"🔄 验证成功，清零删除计数: {rule}")
             new_delete_counter[rule] = 0
         else:
-            # 累加删除计数
             count = delete_counter.get(rule, 0) + 1
             new_delete_counter[rule] = count
             print(f"⚠ 连续删除计数 {count}/{DELETE_THRESHOLD}: {rule}")
@@ -104,7 +96,6 @@ def process_part(part):
         if rule not in old_rules and rule in valid:
             added_count += 1
 
-    # 保存删除计数器
     save_delete_counter(new_delete_counter)
 
     with open(out_file, "w", encoding="utf-8") as f:

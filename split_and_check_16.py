@@ -172,8 +172,9 @@ def process_part(part):
 
     total_count = len(final_rules)
     print(f"✅ 分片 {part} 完成: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
+    
     # 💾 输出给 workflow 用作 commit 信息
-    print(f"COMMIT_STATS: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
+    print(f"🤖 part {part} → COMMIT_STATS: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
 
 # ===============================
 # 主函数

@@ -1,3 +1,5 @@
+||portuguesamaluca.com.br^
+||portuguese-bakery.com^
 ||portuguese.ircfast.com^
 ||portugueseforforeigners.com^
 ||portunit.host^
@@ -102080,5 +102082,3 @@
 ||server.amigotech.com.br^
 ||server.amolbooks.com^
 ||server.amourbd.store^
-||server.ampliocompany.com^
-||server.amzportugal.pt^

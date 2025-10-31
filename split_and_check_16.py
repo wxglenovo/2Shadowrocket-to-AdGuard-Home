@@ -21,6 +21,18 @@ DNS_TIMEOUT = 2
 DELETE_COUNTER_FILE = os.path.join(DIST_DIR, "delete_counter.json")
 DELETE_THRESHOLD = 4
 
+# 确保 dist 目录存在并且具有写权限
+if not os.path.exists(DIST_DIR):
+    print(f"⚠ {DIST_DIR} 目录不存在")
+else:
+    print(f"📂 {DIST_DIR} 目录存在")
+
+# 确保 dist 目录有写权限
+if not os.access(DIST_DIR, os.W_OK):
+    print(f"❌ 没有写入权限：{DIST_DIR}")
+else:
+    print(f"✅ 具有写入权限：{DIST_DIR}")
+
 # 创建目录，确保 dist 目录存在
 os.makedirs(TMP_DIR, exist_ok=True)
 os.makedirs(DIST_DIR, exist_ok=True)  # 确保 dist 目录存在
@@ -115,6 +127,7 @@ def load_delete_counter():
         # 强制创建一个空字典文件
         with open(DELETE_COUNTER_FILE, "w", encoding="utf-8") as f:
             json.dump({}, f, indent=2, ensure_ascii=False)
+        print("📂 delete_counter.json 文件已创建")
         return {}
 
     with open(DELETE_COUNTER_FILE, "r", encoding="utf-8") as f:
@@ -124,9 +137,10 @@ def load_delete_counter():
 
 def save_delete_counter(counter):
     """保存删除计数器"""
+    print(f"💾 正在保存删除计数：{counter}")  # 调试日志，确认保存的计数
     with open(DELETE_COUNTER_FILE, "w", encoding="utf-8") as f:
         json.dump(counter, f, indent=2, ensure_ascii=False)
-    print(f"💾 已保存删除计数：{counter}")  # 调试日志，确认保存
+    print(f"💾 已保存删除计数：{counter}")  # 确认保存成功
 
 # ===============================
 # 分片处理

@@ -1,3 +1,5 @@
+||dscon.in^
+||dscsa.org.au^
 ||dsct1.com^
 ||dscustomtoolboxes.com.au^
 ||dscvajilla.cl^
@@ -102080,5 +102082,3 @@
 ||fixerrorpedia.com^
 ||fixerrorresolved.co.in^
 ||fixerrorsafe.com^
-||fixerrorscan.com^
-||fixerrorsinassoftware.com^

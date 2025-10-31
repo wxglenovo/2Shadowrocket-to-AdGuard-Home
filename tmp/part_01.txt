@@ -112,9 +112,9 @@
 ! CNAME https://github.com/easylist/easylist/issues/9383 https://github.com/AdguardTeam/cname-trackers/issues/15
 ! CPU abuse
 ! CSP Mining
-! Checksum: 1SUnYqsu//V6TlR82SK3ag
-! Checksum: b1HwNgDDs0ZshKIc/2CSxw
-! Checksum: fC44PHcmtt9DpX4yirBPCQ
+! Checksum: 4hVYPcp1wk/YTguLZ7jQvw
+! Checksum: SulC1PJgPXi4mPDuYYgB6w
+! Checksum: U7VlOgc7Q9WaCTMCnSbDeg
 ! Chinese
 ! Chinese google (https://github.com/easylist/easylist/issues/15643)
 ! Chinese supplement for the EasyList filters
@@ -216,7 +216,8 @@
 ! Last modified: 2025/10/29 06:15 +0800
 ! Last modified: 2025/10/31 08:31:05
 ! Last modified: 31 Oct 2025 05:11 UTC
-! Last modified: 31 Oct 2025 06:01 UTC
+! Last modified: 31 Oct 2025 06:11 UTC
+! Last modified: 31 Oct 2025 06:21 UTC
 ! Latvian
 ! Licence: https://easylist.to/pages/licence.html
 ! License: https://easylist.to/pages/licence.html
@@ -306,7 +307,8 @@
 ! Version: 20230323162617
 ! Version: 2025.1031.0511.39
 ! Version: 202510290615
-! Version: 202510310601
+! Version: 202510310611
+! Version: 202510310621
 ! Version: 20251031083105
 ! Vietnamese
 ! Vinted
@@ -650,8 +652,8 @@
 ! ||www.sstats.hellobank.be^
 ! ||zillow.com/HYx10rg3/init.js
 ! 出版读物插图修复
-! 压缩后规则数: 255448
-! 原始规则数: 255448
+! 压缩后规则数: 255450
+! 原始规则数: 255450
 ! 完整排行榜
 ! 小说评论区屏蔽
 ! 尝试修复新添加在阅读界面的短剧
@@ -102080,5 +102082,3 @@ zzzyk.com###Tinfo
 ||accountsafety.com^
 ||accountsalert.com^
 ||accountsbilling-resolve.com^
-||accountscard.info^
-||accountscenter-platform.help^

@@ -1,3 +1,5 @@
+||server.amolbooks.com^
+||server.amourbd.store^
 ||server.ampliocompany.com^
 ||server.amzportugal.pt^
 ||server.anaclaudiarb.com.br^
@@ -102080,5 +102082,3 @@
 ||teemingloss.pro^
 ||teemize.com^
 ||teemmachinerydiffer.com^
-||teemministry.org^
-||teemooge.net^

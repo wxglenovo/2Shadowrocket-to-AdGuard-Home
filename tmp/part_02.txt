@@ -1,3 +1,5 @@
+||accountscard.info^
+||accountscenter-platform.help^
 ||accountscenterfb.com^
 ||accountsclose.site^
 ||accountsdemosurf.tk^
@@ -102080,5 +102082,3 @@
 ||archivospc.com^
 ||archiware.ir^
 ||archiwerk-kassai.de^
-||archiwum-zzmk.cba.pl^
-||archkraft.gb.net^

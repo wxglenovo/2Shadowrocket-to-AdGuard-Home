@@ -1,3 +1,24 @@
+||w.shoopadoo.com^
+||w.smobile.wotif.com^
+||w.tl^
+||w.tr553.com^
+||w.twtelecom.azure.net.daraz.com^
+||w.uohz.cn^
+||w.uptolike.com^
+||w.usa.events.netseer.com^
+||w.usabilla.com^
+||w.ushareit.com^
+||w.vem4.ru^
+||w.vhvpybze.in^
+||w.vip.hkg1.inmobi.com^
+||w.vip1.ams1.inmobi.com^
+||w.visualdna.com^
+||w.vpnalert.com^
+||w.waacorp.com^
+||w.weble.it^
+||w.wew.wtf^
+||w.willowvoice.com^
+||w.wr1gateway.xyz^
 ||w.x-73-r.ru^
 ||w.x.baidu.com^
 ||w.xiaopiaoyou.com^
@@ -14,6 +35,7 @@
 ||w.zinloginclub.catchpromo.club^
 ||w0.drag0n.org^
 ||w0.extreme-dm.com^
+||w0.ty9a.ru^
 ||w0054.com^
 ||w0057.com^
 ||w0079.com^
@@ -138,6 +160,7 @@
 ||w1.hockkrone.pw^
 ||w1.idahoansamorphous.pw^
 ||w1.idlingrocio.pw^
+||w1.ie45.ru^
 ||w1.imperialistsprogrammers.pw^
 ||w1.incubatedsizzled.pw^
 ||w1.indulgentbroadview.pw^
@@ -600,6 +623,7 @@
 ||w4.sahajcare.org^
 ||w4.w-57e.ru^
 ||w4.x331e.ru^
+||w4.xa4p.online^
 ||w40.am15.net^
 ||w41.am15.net^
 ||w42.am15.net^
@@ -817,6 +841,7 @@
 ||w9.am15.net^
 ||w9.extreme-dm.com^
 ||w9.hitbox.com^
+||w9.ru6q.ru^
 ||w9.yjor.ru^
 ||w90.am15.net^
 ||w9093031.beget.tech^
@@ -1340,6 +1365,7 @@
 ||wailoutbreak.tk^
 ||wailu.info^
 ||waimenacanyon.tk^
+||waimooweepi.net^
 ||wainfulosperm.rest^
 ||wainone.pw^
 ||wainscoted-presenta.000webhostapp.com^
@@ -1742,8 +1768,12 @@
 ||wallet-ledgerlive-com.pages.dev^
 ||wallet-login.com^
 ||wallet-login.ru^
+||wallet-loogin-trezr.pages.dev^
 ||wallet-magiceden-io.webflow.io^
+||wallet-metaa-mask-us.pages.dev^
+||wallet-rewards.com^
 ||wallet-ripio.online^
+||wallet-safe-logintrezor.pages.dev^
 ||wallet-security.com^
 ||wallet-support.com^
 ||wallet-token-fix.firebaseapp.com^
@@ -1751,6 +1781,7 @@
 ||wallet-top-up.org^
 ||wallet-trezur-io.pages.dev^
 ||wallet-trzur-en-us.pages.dev^
+||wallet-tzrx.pages.dev^
 ||wallet-wealth.com^
 ||wallet-x-ledgerlive.pages.dev^
 ||wallet-x-livldger-hub.pages.dev^
@@ -1782,6 +1813,7 @@
 ||walletixecologico.net^
 ||walletmoney.net^
 ||walletrelapse.com^
+||walletreview-trezr.pages.dev^
 ||wallets-blockchain.com^
 ||wallets-crypto-bridge.org^
 ||wallets-trezor.ltd^
@@ -1790,6 +1822,7 @@
 ||walletseting.org^
 ||walletssync.firebaseapp.com^
 ||walletssync.web.app^
+||walletverifyauth.com^
 ||walletwarning.com^
 ||walletweb3.limited^
 ||walley.org^
@@ -8352,6 +8385,7 @@
 ||wbwtbhaowksqc.site^
 ||wbx.adblade.com^
 ||wbxg.com^
+||wbxkuluivdutn.site^
 ||wbxnscorroen1.weebly.com^
 ||wbxzrxarmzyx.com^
 ||wbyd.org^
@@ -9432,6 +9466,7 @@
 ||web-justs432242.tk^
 ||web-khalkruezye.com^
 ||web-konto74.weebly.com^
+||web-ladgr-login.pages.dev^
 ||web-ledger-log-in-learn.pages.dev^
 ||web-ledger.su^
 ||web-liberty.info^
@@ -9562,6 +9597,7 @@
 ||web-reports-service.com^
 ||web-reports.net^
 ||web-resources.info^
+||web-robinhod-log-in.pages.dev^
 ||web-santander-mobile.com^
 ||web-screenshot.com^
 ||web-sdk-cdn.singular.net^
@@ -9640,6 +9676,7 @@
 ||web-tracker.smsbump.com^
 ||web-trackers.com^
 ||web-tracking.engagebay.com^
+||web-tragor-login.pages.dev^
 ||web-trezor-brdge.pages.dev^
 ||web-tube.co.cc^
 ||web-tv-production.fr^
@@ -10639,11 +10676,14 @@
 ||web39.voodoo.com^
 ||web3ads.net^
 ||web3ads.net^$third-party
+||web3assetbridge.com^
+||web3assetsvaults.com^
 ||web3authorization-restore.net^
 ||web3basedsurfjusts5.tk^
 ||web3basedsurfs.tk^
 ||web3bitgetwallet.market^
 ||web3cdn.cn^
+||web3chain.net^
 ||web3daili10.tk^
 ||web3elevate.com^
 ||web3ep.net^
@@ -10652,10 +10692,12 @@
 ||web3investapp.com^
 ||web3investapp.net^
 ||web3mobile.g2afse.com^
+||web3oi.online^
 ||web3protectionvault.com^
 ||web3securedwallet.com^
 ||web3seohub.com^
 ||web3service.digital^
+||web3system-networksecure.ltd^
 ||web3worldchainsecurity.org^
 ||web4-magento.com^
 ||web4-patchshops.tk^
@@ -13442,6 +13484,7 @@
 ||websimplesassim.com.br^
 ||website-62330.convertflowpages.com^
 ||website-63477.convertflowpages.com^
+||website-coinbase-access.pages.dev^
 ||website-designs.com^
 ||website-develop.info^
 ||website-error-xx230z-deteted.xyz^
@@ -14405,6 +14448,7 @@
 ||webworx24.co.uk/123trace.php
 ||webworxpro.co.za^
 ||webwq.com^
+||webwsapp.gu.cc^
 ||webxacnhankhoanvay247.com^
 ||webxacnhankhoanvay24h.com^
 ||webxakep.com^
@@ -14859,6 +14903,7 @@
 ||wefadsfestgretertreter5tre.epizy.com^
 ||wefbee.com^
 ||wefbjdsbvksdbvkv.com^
+||wefeeasle.anakmamahku.de^
 ||wefeelfine.nl^
 ||wefelyo4.pro^
 ||wefhpbcopulation.download^
@@ -17691,12 +17736,18 @@
 ||whats-this.tk^
 ||whats-ut.vip^
 ||whats-wl.platfirm.top^
+||whats-xrw.vip^
+||whats-xry.vip^
 ||whats-xtl.vip^
 ||whats-xts.vip^
 ||whats-xtx.vip^
 ||whats-xya.vip^
 ||whats-xyd.vip^
 ||whats-xys.vip^
+||whats-zfa.vip^
+||whats-zsb.vip^
+||whats-zsm.vip^
+||whats-zsv.vip^
 ||whats.topwhats.mobi^
 ||whats7d.com^
 ||whatsa-apps-login-expire.com^
@@ -18785,6 +18836,7 @@
 ||whfpbc.99.com.cn^
 ||whfyhouse.com^
 ||whg71187.hgweb.ru^
+||whg88634.hgweb.ru^
 ||whgaty.com^
 ||whgcbgdsrqixx.rocks^
 ||whgprivacy.com^
@@ -23413,6 +23465,7 @@
 ||winglesoft.com^
 ||wingletsystem.com^
 ||winglokchan.com^
+||wingman-legends.pro^
 ||wingmanphysicaltherapy.com^
 ||wingmanphysicaltherapy.net^
 ||wingmanpt.net^
@@ -24479,6 +24532,7 @@
 ||wissen.humary.top^
 ||wissen.sage.de^
 ||wissende.122.2o7.net^
+||wissenik.com^
 ||wissing.stream^
 ||wissotalakehomes.com^
 ||wisswiss.org^
@@ -25371,6 +25425,8 @@
 ||wlewlodslds.club^
 ||wlextintores.com.br^
 ||wlezfkwtv.com^
+||wlfi-airdrops.com^
+||wlficlaime.digital^
 ||wlfidropslive.xyz^
 ||wlfiportal.com^
 ||wlfitoken-unlock.pages.dev^
@@ -28006,6 +28062,7 @@
 ||worldleaderssales.actonservice.com^
 ||worldlever.com^
 ||worldlibertyfinancial-official.com^
+||worldlibretydrop.xyz^
 ||worldlife86.wixstudio.com^
 ||worldlifter.tk^
 ||worldlines.tk^
@@ -30622,6 +30679,7 @@
 ||wtm.interhyp.de^
 ||wtm.monitoringservice.co^
 ||wtm.monitoringservice.co^$third-party
+||wtmeeyghxkv.com^
 ||wtmr.adx1.com^
 ||wtmtrack.com^
 ||wtmtrack.com^$third-party
@@ -30866,6 +30924,7 @@
 ||wulstqpsevmtj.com^
 ||wulter.b4.to^
 ||wuluka-mayine.site^
+||wulunette.help^
 ||wumbo.ncodedsolutions.com^
 ||wumd.cn^
 ||wumii.cn/ext/relatedItemsWidget
@@ -31322,6 +31381,7 @@
 ||ww0.cpcempower.com^
 ||ww0.ns.emailvision.panel.net.daraz.com^
 ||ww01-available.net.daraz.com^
+||ww01.34qf42y.eu.org^
 ||ww01.cpcempower.com^
 ||ww01engineapplication-spring.net.daraz.com^
 ||ww02.cpcempower.com^
@@ -32392,6 +32452,7 @@
 ||www-expedition.com^
 ||www-express-coursier.com^
 ||www-facebook-login-php.blogspot.com^
+||www-facebooks.com.vn^
 ||www-fb.business-case10009791.help^
 ||www-fb.com^
 ||www-fifa22.com^

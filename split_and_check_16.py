@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+
 import os
 import json
 import requests
@@ -16,8 +17,8 @@ DIST_DIR = "dist"
 MASTER_RULE = "merged_rules.txt"
 PARTS = 16
 DNS_WORKERS = 50
-DNS_BATCH_SIZE = 500
 DNS_TIMEOUT = 2
+BATCH_SIZE = 500                  # 每批验证数量
 DELETE_COUNTER_FILE = os.path.join(DIST_DIR, "delete_counter.json")
 DELETE_THRESHOLD = 4
 
@@ -88,22 +89,24 @@ def check_domain(rule):
         return None
 
 def dns_validate(lines):
-    print(f"🚀 启动 DNS 验证，每批 {DNS_BATCH_SIZE} 条规则，并发 {DNS_WORKERS}")
-    valid = set()
+    valid = []
     total = len(lines)
-    for start in range(0, total, DNS_BATCH_SIZE):
-        batch = lines[start:start+DNS_BATCH_SIZE]
-        done = 0
+    print(f"🚀 启动 {DNS_WORKERS} 并发验证，总共 {total} 条规则")
+
+    for i in range(0, total, BATCH_SIZE):
+        batch = lines[i:i + BATCH_SIZE]
+        batch_valid = []
         with ThreadPoolExecutor(max_workers=DNS_WORKERS) as executor:
             futures = {executor.submit(check_domain, rule): rule for rule in batch}
+            done = 0
             for future in as_completed(futures):
                 done += 1
                 result = future.result()
                 if result:
-                    valid.add(result)
-                if done % 50 == 0 or done == len(batch):
-                    print(f"✅ 当前批 {start//DNS_BATCH_SIZE+1}: 已验证 {done}/{len(batch)} 条，有效 {len(valid)} 条")
-    print(f"✅ 分片验证完成，有效 {len(valid)} 条")
+                    batch_valid.append(result)
+        valid.extend(batch_valid)
+        print(f"✅ 已验证 {min(i+BATCH_SIZE,total)}/{total} 条, 本批有效 {len(batch_valid)}, 累计有效 {len(valid)}")
+    print(f"✅ 分片验证完成，总有效 {len(valid)} 条")
     return valid
 
 # ===============================
@@ -134,7 +137,7 @@ def process_part(part):
 
     lines = open(part_file, "r", encoding="utf-8").read().splitlines()
     print(f"⏱ 验证分片 {part}，共 {len(lines)} 条规则")
-    valid = dns_validate(lines)
+    valid = set(dns_validate(lines))
     out_file = os.path.join(DIST_DIR, f"validated_part_{part}.txt")
 
     old_rules = set()
@@ -144,7 +147,6 @@ def process_part(part):
 
     delete_counter = load_delete_counter()
     new_delete_counter = {}
-
     final_rules = set()
     removed_count = 0
     added_count = 0
@@ -170,6 +172,7 @@ def process_part(part):
 
     total_count = len(final_rules)
     print(f"✅ 分片 {part} 完成: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
+    # 💾 输出 commit 信息
     print(f"COMMIT_STATS: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
 
 # ===============================

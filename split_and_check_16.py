@@ -23,19 +23,16 @@ DELETE_THRESHOLD = 4
 
 # 确保 dist 目录存在并且具有写权限
 if not os.path.exists(DIST_DIR):
-    print(f"⚠ {DIST_DIR} 目录不存在")
+    print(f"⚠ {DIST_DIR} 目录不存在，正在创建目录")
+    os.makedirs(DIST_DIR, exist_ok=True)
 else:
-    print(f"📂 {DIST_DIR} 目录存在")
+    print(f"📂 {DIST_DIR} 目录已存在")
 
 # 确保 dist 目录有写权限
 if not os.access(DIST_DIR, os.W_OK):
     print(f"❌ 没有写入权限：{DIST_DIR}")
 else:
     print(f"✅ 具有写入权限：{DIST_DIR}")
-
-# 创建目录，确保 dist 目录存在
-os.makedirs(TMP_DIR, exist_ok=True)
-os.makedirs(DIST_DIR, exist_ok=True)  # 确保 dist 目录存在
 
 # ===============================
 # 下载与合并规则

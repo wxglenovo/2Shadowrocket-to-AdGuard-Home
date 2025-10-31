@@ -2,14 +2,11 @@ name: Split & DNS Check
 
 on:
   schedule:
-    # 每天 UTC 0:00、6:00、12:00、18:00 强制更新 urls.txt 并生成分片
     - cron: "0 0 * * *"
     - cron: "0 6 * * *"
     - cron: "0 12 * * *"
     - cron: "0 18 * * *"
-    # 每 22 分钟轮替分片验证
     - cron: "*/22 * * * *"
-
   workflow_dispatch:
     inputs:
       part:
@@ -40,6 +37,12 @@ jobs:
       - name: Install dependencies
         run: pip install --upgrade requests dnspython
 
+      - name: Fetch delete_counter.json
+        run: |
+          mkdir -p dist
+          git fetch origin main
+          git checkout origin/main -- dist/delete_counter.json || echo "⚠ delete_counter.json 不存在"
+
       - name: Determine PART index
         id: detect
         shell: bash
@@ -48,10 +51,10 @@ jobs:
           LAST_PART_FILE="tmp/last_part.txt"
           git fetch origin main
           git checkout origin/main -- tmp/last_part.txt || echo "⚠ tmp/last_part.txt 不存在"
+
           PART_INPUT="${{ github.event.inputs.part }}"
           if [ -n "$PART_INPUT" ]; then
             PART="$PART_INPUT"
-            echo "🛠 手动指定分片：$PART"
           else
             if [ -f "$LAST_PART_FILE" ]; then
               LAST_PART=$(cat "$LAST_PART_FILE")
@@ -59,7 +62,6 @@ jobs:
             else
               PART=1
             fi
-            echo "⏱ 自动轮替分片：$PART"
           fi
           echo $PART > $LAST_PART_FILE
           echo "part=$PART" >> $GITHUB_OUTPUT
@@ -69,10 +71,7 @@ jobs:
         run: |
           CURRENT_HOUR=$(date -u +"%H")
           if [[ "$CURRENT_HOUR" == "00" || "$CURRENT_HOUR" == "06" || "$CURRENT_HOUR" == "12" || "$CURRENT_HOUR" == "18" ]]; then
-            echo "✅ 强制下载规则源并生成所有分片"
             python split_and_check_16.py --force-update
-          else
-            echo "⏩ 非下载时间，不强制更新"
           fi
 
       - name: Ensure rules and first part exist
@@ -82,24 +81,7 @@ jobs:
           TMP_DIR="tmp"
           FIRST_PART="$TMP_DIR/part_01.txt"
           if [ ! -f "$MERGED_FILE" ] || [ ! -f "$FIRST_PART" ]; then
-            echo "⚠ 缺少规则文件或分片，自动拉取规则源并生成分片"
             python split_and_check_16.py --force-update
-          else
-            echo "✅ 规则文件和分片存在"
-          fi
-
-      - name: Ensure current part file exists
-        shell: bash
-        env:
-          PART: ${{ steps.detect.outputs.part }}
-        run: |
-          PART_FILE=$(printf "tmp/part_%02d.txt" "$PART")
-          if [ ! -f "$PART_FILE" ]; then
-            echo "⚠ 当前分片缺失：$PART_FILE"
-            echo "🔄 自动下载规则源并生成分片"
-            python split_and_check_16.py --force-update
-          else
-            echo "✅ 当前分片存在：$PART_FILE"
           fi
 
       - name: Run DNS validation
@@ -107,13 +89,8 @@ jobs:
         env:
           PART: ${{ steps.detect.outputs.part }}
         run: |
-          mkdir -p logs dist tmp
-          PART_FILE=$(printf "tmp/part_%02d.txt" "$PART")
-          VALIDATED_FILE=$(printf "dist/validated_part_%02d.txt" "$PART")
-          LOG_FILE=$(printf "logs/split_check_part_%02d.log" "$PART")
-          python split_and_check_16.py --part "$PART" | tee "$LOG_FILE"
-          COMMIT_STATS=$(grep "COMMIT_STATS:" "$LOG_FILE" | tail -n1 | sed 's/COMMIT_STATS: //')
-          echo "$COMMIT_STATS"
+          mkdir -p logs
+          python split_and_check_16.py --part "$PART" | tee logs/split_check_part_${PART}.log
 
       - name: Commit & Push Validated Rules
         shell: bash
@@ -122,8 +99,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add tmp/last_part.txt dist/validated_part_*.txt tmp/part_*.txt logs/ merged_rules.txt
-          COMMIT_MSG=$(grep "validated part $PART" logs/split_check_part_${PART}.log | tail -n1)
-          git commit -m "🤖 Auto update: $COMMIT_MSG" || echo "No changes to commit"
+          git add tmp/last_part.txt dist/validated_part_*.txt dist/delete_counter.json tmp/part_*.txt logs/ merged_rules.txt
+          git commit -m "🤖 Auto update: validated part $PART" || echo "No changes to commit"
           git pull --rebase origin main || echo "⚠ Pull failed or nothing to rebase"
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main

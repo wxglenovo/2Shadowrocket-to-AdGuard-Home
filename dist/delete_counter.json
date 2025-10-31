@@ -2,14 +2,21 @@
 # 删除计数管理
 # ===============================
 def load_delete_counter():
-    # 检查是否存在 delete_counter.json 文件，如果不存在，返回一个空字典
+    # 检查是否存在 delete_counter.json 文件
     if os.path.exists(DELETE_COUNTER_FILE):
-        with open(DELETE_COUNTER_FILE, "r", encoding="utf-8") as f:
-            return json.load(f)
+        try:
+            with open(DELETE_COUNTER_FILE, "r", encoding="utf-8") as f:
+                # 尝试加载文件内容
+                return json.load(f)
+        except json.JSONDecodeError:
+            # 如果文件内容格式不正确或为空，初始化为一个空字典
+            print("⚠ delete_counter.json 文件格式不正确，重新初始化为空字典")
+            save_delete_counter({})
+            return {}
     else:
-        # 如果文件不存在，返回一个空字典并创建该文件
+        # 如果文件不存在，初始化为空字典
         print("⚠ delete_counter.json 文件不存在，初始化为空字典")
-        save_delete_counter({})  # 初始化为空字典并创建文件
+        save_delete_counter({})
         return {}
 
 def save_delete_counter(counter):

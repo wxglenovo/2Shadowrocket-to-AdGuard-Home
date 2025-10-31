@@ -112,9 +112,9 @@
 ! CNAME https://github.com/easylist/easylist/issues/9383 https://github.com/AdguardTeam/cname-trackers/issues/15
 ! CPU abuse
 ! CSP Mining
-! Checksum: Fw/qWL1mADgUqxxT1sw11g
-! Checksum: PqSG0ub71Z7Vht2dLAV+Kw
-! Checksum: so2DPCgfeFwCFNSXYGYGEg
+! Checksum: J1a9q0VjWM0PEITYnTMyVw
+! Checksum: WiewYzxFfMRCrLN3vck7aw
+! Checksum: yRBe9GahFYYbCaYou+kXJg
 ! Chinese
 ! Chinese google (https://github.com/easylist/easylist/issues/15643)
 ! Chinese supplement for the EasyList filters
@@ -216,7 +216,7 @@
 ! Last modified: 2025/10/29 06:15 +0800
 ! Last modified: 2025/10/31 00:09:48
 ! Last modified: 30 Oct 2025 22:03 UTC
-! Last modified: 31 Oct 2025 00:01 UTC
+! Last modified: 31 Oct 2025 00:11 UTC
 ! Latvian
 ! Licence: https://easylist.to/pages/licence.html
 ! License: https://easylist.to/pages/licence.html
@@ -306,8 +306,8 @@
 ! Version: 20230323162617
 ! Version: 2025.1030.2203.03
 ! Version: 202510290615
-! Version: 202510310001
 ! Version: 20251031000948
+! Version: 202510310011
 ! Vietnamese
 ! Vinted
 ! Webcompat Generichide fixes (Avoid any potential filters being applied to non-ad domains)
@@ -42807,6 +42807,7 @@ zzzyk.com###Tinfo
 ||14ec42662a7baf1c.com^
 ||14eed214b1021.beer^
 ||14f72b5f81022.beer^
+||14f768ef60.com^
 ||14fb53b119f7324f1abebba3225167fa.com^
 ||14fefmsjd.de^
 ||14h.pw^
@@ -81716,6 +81717,7 @@ zzzyk.com###Tinfo
 ||8e523c50f1023.beer^
 ||8e62b1c702dcba4d.com^
 ||8e688aab72.d162882c98.com^
+||8e6c021d8f.com^
 ||8e6c137d9f9159a6.com^
 ||8e6ddd01ce5e0a0a.com^
 ||8e6eafecc652a81e.com^
@@ -86259,6 +86261,7 @@ zzzyk.com###Tinfo
 ||9pen.info^
 ||9pf9o.fifth.pw^
 ||9pi.info^
+||9pi2q3cipu1fj3h.cfd^
 ||9pl23gzv-458c55ed44815d8b4c304e7f58389dbe4bb82ead-am1.d.aa.online-metrix.net^
 ||9pl23gzv-b0d6c1c5f8bbf7ec0282a4bfa2a27d98ba6f46d3-am1.d.aa.online-metrix.net^
 ||9plvhh.cfd^
@@ -102065,6 +102068,3 @@ zzzyk.com###Tinfo
 ||accountsalert.com^
 ||accountsbilling-resolve.com^
 ||accountscard.info^
-||accountscenter-platform.help^
-||accountscenterfb.com^
-||accountsclose.site^

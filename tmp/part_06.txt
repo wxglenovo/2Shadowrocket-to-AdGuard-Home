@@ -1,3 +1,6 @@
+||fixedmeth.cfd^
+||fixedmyerror.net^
+||fixedmypc.co.in^
 ||fixedmypopup.co.in^
 ||fixedmyslowpc.co.in^
 ||fixedname.pro^
@@ -102065,6 +102068,3 @@
 ||hs38ma.cyou^
 ||hs4rs.voluumtrk.com^
 ||hs640.com/js/jquery.js
-||hs89.cn^
-||hs8n8qg8gr.biz^
-||hs9.net^

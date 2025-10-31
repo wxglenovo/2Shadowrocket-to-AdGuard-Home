@@ -1,3 +1,6 @@
+||accountscenter-platform.help^
+||accountscenterfb.com^
+||accountsclose.site^
 ||accountsdemosurf.tk^
 ||accountsdoor.com^
 ||accountsecure-verification.com^
@@ -102065,6 +102068,3 @@
 ||archiv.chip.de^
 ||archiv.promatis.de^
 ||archive-host.com^
-||archive.adjust.io^
-||archive.coolerads.com^
-||archive.ddm.org.au^

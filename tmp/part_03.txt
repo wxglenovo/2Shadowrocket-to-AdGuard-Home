@@ -1,3 +1,6 @@
+||archive.adjust.io^
+||archive.coolerads.com^
+||archive.ddm.org.au^
 ||archive.dempseyuniform.com^
 ||archive.exchange4media.com^
 ||archive.jonrothbard.com^
@@ -102065,6 +102068,3 @@
 ||chivvied.stream^
 ||chivvies.stream^
 ||chivygyp.stream^
-||chiwangmov.com^
-||chiwr.club^
-||chixg.com^

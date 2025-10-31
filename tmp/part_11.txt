@@ -1,3 +1,8 @@
+||server.amamentacaosempalpites.com.br^
+||server.amandaeliaadv.com.br^
+||server.amari-hochwasser.at^
+||server.amazonisunglasses.com.br^
+||server.ambientamoveisplanejados.com.br^
 ||server.ameeloja.com.br^
 ||server.ami-renault.be^
 ||server.amigodaprevencao.com^
@@ -102063,8 +102068,3 @@
 ||teelfour.us^
 ||teelsfive.us^
 ||teemarko.com^
-||teemeevoug.net^
-||teemful-offers.com^
-||teeming-refuse.pro^
-||teeming-service.com^
-||teemingloss.pro^

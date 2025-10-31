@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
 
 import os
 import json
@@ -160,12 +160,9 @@ def process_part(part):
             print(f"⚠ 连续删除计数 {count}/{DELETE_THRESHOLD}: {rule}")
             if count >= DELETE_THRESHOLD:
                 removed_count += 1
-                # 删除计数达到 4 次或以上，才真正删除
-                if rule in final_rules:
-                    final_rules.remove(rule)
-                print(f"❌ 删除规则：{rule}")
             else:
                 final_rules.add(rule)
+
         if rule not in old_rules and rule in valid:
             added_count += 1
 
@@ -176,7 +173,6 @@ def process_part(part):
 
     total_count = len(final_rules)
     print(f"✅ 分片 {part} 完成: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
-    # 💾 输出给 workflow 用作 commit 信息
     print(f"🤖 part {part} → COMMIT_STATS: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
 
 # ===============================

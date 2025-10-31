@@ -11,10 +11,10 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 # ===============================
 # 配置
 # ===============================
-URLS_TXT = "urls.txt"               # 存放规则源地址
+URLS_TXT = "urls.txt"
 TMP_DIR = "tmp"
 DIST_DIR = "dist"
-MASTER_RULE = "merged_rules.txt"    # 合并后的规则文件
+MASTER_RULE = "merged_rules.txt"
 PARTS = 16
 DNS_WORKERS = 50
 DNS_TIMEOUT = 2
@@ -150,8 +150,6 @@ def process_part(part):
     for rule in old_rules | set(lines):
         if rule in valid:
             final_rules.add(rule)
-            if rule in delete_counter:
-                print(f"🔄 验证成功，清零删除计数: {rule}")
             new_delete_counter[rule] = 0
         else:
             count = delete_counter.get(rule, 0) + 1
@@ -166,13 +164,12 @@ def process_part(part):
 
     save_delete_counter(new_delete_counter)
 
+    total_count = len(final_rules)
     with open(out_file, "w", encoding="utf-8") as f:
         f.write("\n".join(sorted(final_rules)))
 
-    total_count = len(final_rules)
-    print(f"✅ 分片 {part} 完成: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
-    # 💾 输出给 workflow 用作 commit 信息
-    print(f"COMMIT_STATS: validated part {part} → 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
+    # ✅ 输出格式严格按要求
+    print(f"validated part {part} → 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
 
 # ===============================
 # 主函数

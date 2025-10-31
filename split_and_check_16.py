@@ -141,8 +141,8 @@ def process_part(part):
         with open(out_file, "r", encoding="utf-8") as f:
             old_rules = set([l.strip() for l in f if l.strip()])
 
-    delete_counter = load_delete_counter()  # 加载删除计数器
-    new_delete_counter = {}  # 新的删除计数器
+    delete_counter = load_delete_counter()
+    new_delete_counter = {}
 
     final_rules = set()
     removed_count = 0
@@ -160,9 +160,10 @@ def process_part(part):
             new_delete_counter[rule] = count
             print(f"⚠ 连续删除计数 {count}/{DELETE_THRESHOLD}: {rule}")
             if count >= DELETE_THRESHOLD:
+                # 删除计数达到4次及以上才删除规则
                 removed_count += 1
             else:
-                final_rules.add(rule)
+                final_rules.add(rule)  # 删除计数未达到阈值时保留规则
 
         # 新增规则通过验证的情况
         if rule not in old_rules and rule in valid:

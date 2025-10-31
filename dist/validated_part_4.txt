@@ -1821,15 +1821,14 @@
 ||ciuvo.com^
 ||ciuvroktof.neliver.com^
 ||civati.superchatlive.com^
-||civc.co.uk^
 ||civetsyeh.shop^
 ||civicmillion.com^
 ||civicsurf.co.cc^
-||civilactually.com^
 ||civildiriv.com^
 ||civilengineeringiit.com^
 ||civilhir.net^
 ||civilizationglimpsecontraction.com^
+||civilizationperspirationhoroscope.com^
 ||civilrightsmuseum.org^
 ||civisanalytics.com^
 ||civisflagg.pro^
@@ -2323,6 +2322,7 @@
 ||clarkgault.com^
 ||clarkigentillevieux.firebaseapp.com^
 ||clarkigentillevieux.web.app^
+||clarkkent.sslblindado.com^
 ||clarkreliance.net^
 ||clarksshoes-outlet.com^
 ||clarksusa.btttag.com^
@@ -4676,7 +4676,6 @@
 ||click.mail.hotelcustomercare.com^
 ||click.mail.hotels.com^
 ||click.mail.hrtraininngs.com^
-||click.mail.interapothek.es^
 ||click.mail.jobomas.com^
 ||click.mail.kipling-usa.com^
 ||click.mail.knowdiabetesbyheart.org^
@@ -6343,7 +6342,6 @@
 ||client.dokee.cn^
 ||client.dotomi.com^
 ||client.download-sponsor.de^
-||client.download.175pt.net^
 ||client.earnapp.com^
 ||client.everlinks.net^
 ||client.foxydeal.com^
@@ -6758,7 +6756,6 @@
 ||clk1011.com^
 ||clk1012.com^
 ||clk1013.com^
-||clk1014.com^
 ||clk1015.com^
 ||clk1016.com^
 ||clk1017.com^
@@ -8305,6 +8302,7 @@
 ||clubdicecasino.com^
 ||clubdo.free.fr^
 ||clubeamigosdopedrosegundo.com.br^
+||clubecnc.com^
 ||clubedeleiloes.xhamsterlive.info^
 ||clubedgecasino.com^
 ||clubepescar.com^
@@ -8327,6 +8325,7 @@
 ||clubmusic.caucasus.net^
 ||clubnauticobogliasco.it^
 ||clubnauticsantfeliu.com^
+||clubofmalw.ws^
 ||cluboneseven.net^
 ||clubpartner-cdn.bejav.assets.net.daraz.com^
 ||clubpenguinclub.com^
@@ -9697,7 +9696,6 @@
 ||cobaltads.com^
 ||cobaltbloomcapital.com^
 ||cobaltchupacabra.pro^
-||cobalten.com^
 ||cobaltforgeai.com^
 ||cobaltforgeai.net^
 ||cobaltglowai.net^
@@ -12533,6 +12531,7 @@
 ||company-target.com^$third-party
 ||company.aozora.nagoya^
 ||company.com.ph^
+||company.fm^
 ||company.site^
 ||company0rdercheck.weebly.com^
 ||companycapitalofficeinvestor.shop^
@@ -13262,7 +13261,6 @@
 ||conemaxil.firebaseapp.com^
 ||conemaxil.web.app^
 ||conenectedithcons.org^
-||cones.duckdns.org^
 ||conesoftdobrasil.com^
 ||conestogawaterproofing.com^
 ||conestreshow.com^
@@ -13402,6 +13400,7 @@
 ||config.yypdf.cn^
 ||config01.homepc.it^
 ||config1.cmpassport.com^
+||config1.duckdns.org^
 ||config2.cmpassport.com^
 ||config2.mparticle.com^
 ||configbin-api-radar.apidocskeeleootstrap.0-030.net.daraz.com^
@@ -15410,8 +15409,6 @@
 ||contentservices.ascendloans.com^
 ||contentservices.brightlending.com^
 ||contentservices.clearairlending.com^
-||contentsfeed.com^
-||contentsfeed.com^$third-party
 ||contentshack.com^
 ||contentspotions.com^
 ||contentspread.net^
@@ -15671,7 +15668,6 @@
 ||conv.tubemogul.com^
 ||conv.youdao.com^
 ||convaaccio.pro^
-||convac123.duckdns.org^
 ||convammp.taboola.com^
 ||convchmp.taboola.com^
 ||convead.io^
@@ -15857,6 +15853,7 @@
 ||cooch.tv^$popup,third-party
 ||coocomall.com^
 ||coodawei.cn^
+||cooempresas3.duckdns.org^
 ||cooempresasltda3.duckdns.org^
 ||cooeyeddarbs.com^
 ||cooghreari.pro^
@@ -16135,6 +16132,7 @@
 ||coolestbasis.com^
 ||coolestcatcare.com^
 ||coolestdigital.com^
+||coolestmedia.net^
 ||coolestpod.com^
 ||coolestreactionstems.com^
 ||coolevent.net^
@@ -17976,6 +17974,7 @@
 ||cp.mcafee.com^
 ||cp.net.daraz.com^
 ||cp.normstar.net^
+||cp.novanet.vn^
 ||cp.official-coupons.com^
 ||cp.official-deals.co.uk^
 ||cp.onicon.ru^
@@ -19036,7 +19035,6 @@
 ||cracks.leukestart.nl^
 ||cracks.me.uk^
 ||cracks.net^
-||cracks.ph^
 ||cracks.thebugs.ws^
 ||cracks.verzamelgids.nl^
 ||cracks.vg^
@@ -19198,7 +19196,6 @@
 ||craktraffic.com^$third-party
 ||cralmovais.info^
 ||cralodas.com.ua^
-||crambo2.duckdns.org^
 ||crambusstiffer.com^
 ||cramdev.com^
 ||cramfinalizesluice.com^
@@ -19261,6 +19258,7 @@
 ||crashlyticsreports-pa.googleapis.com^
 ||crashmakers.com^
 ||crashplus.pl^
+||crashsafari.com^
 ||crashstats-collector.opera.com^
 ||crashtide.com^
 ||crashtm.org^
@@ -23006,6 +23004,8 @@
 ||culturallascondes.cl^
 ||culturalmixology.com^
 ||culturalperspective97.biz^
+||culturaltracking.ru^
+||culturaltracking.ru^$third-party
 ||culturalumnezia.ch^
 ||culturalvideo.tv^
 ||culturalway.it^
@@ -23138,6 +23138,7 @@
 ||cuoprrappa.pro^
 ||cuordicrai.it^
 ||cuoss.com^
+||cup-cream.duckdns.org^
 ||cup-n-coin.com^
 ||cup-t.com^
 ||cup.enkido.org^
@@ -23451,7 +23452,6 @@
 ||custom.kurras.sa^
 ||custom.lumos.tech^
 ||custom.mcbbooks.co.uk^
-||custom.mobpartner.mobi^
 ||custom.mystery.city^
 ||custom.nibonno.com^
 ||custom.r-grill.de^
@@ -25292,7 +25292,6 @@
 ||d.mob.com^
 ||d.mobikom24.tv^
 ||d.mobilebanner.ru^
-||d.mobpartner.mobi^
 ||d.moeiteloosindemedia.nl^
 ||d.monetate.net^
 ||d.moneyme.com.au^
@@ -25365,6 +25364,7 @@
 ||d.scorecardresearch.com^
 ||d.searchdonkeyapp.com^
 ||d.seksohub.com^
+||d.sevas-s.com^
 ||d.shamela.ws^
 ||d.shareaholic.com^
 ||d.shiny24.com^
@@ -26046,7 +26046,6 @@
 ||d2.httpuse.xyz^
 ||d2.leadlander.com^
 ||d2.sc.omtrdc.net^
-||d2.sevas-s.com^
 ||d2.shared.global.fastly.net^
 ||d2.sina.com.cn^
 ||d2.sina.com.cn^$object,script
@@ -26982,6 +26981,7 @@
 ||d3zr5ye.cn^
 ||d4.adsplay.net^
 ||d4.cumshots.ws^
+||d4.sevas-s.com^
 ||d4.sina.com.cn^
 ||d4.sina.com.cn^$object,script
 ||d4.zedo.com^
@@ -28050,6 +28050,7 @@
 ||dalerogers.me^
 ||dalestretching.com^
 ||daleth.co.za^
+||daleysbookshop.co.uk^
 ||dalfmidewin.shop^
 ||dalga-water.firebaseapp.com^
 ||dalga-water.web.app^
@@ -28611,7 +28612,6 @@
 ||darkcarder.com^
 ||darkcodex.com^
 ||darkcomet-rat.com^
-||darkdc39.duckdns.org^
 ||darkdeceptions.com^
 ||darkdesign.co.cc^
 ||darkenedplane.com^
@@ -33142,6 +33142,7 @@
 ||datasecure.org^
 ||dataseek.com.br^
 ||dataserver.adhigh.net^
+||dataserver.bagypack.com^
 ||datasgpools.com^
 ||datasink.linkfox.com^
 ||datasink.ziniao.com^
@@ -33269,7 +33270,6 @@
 ||dateypro.com^
 ||dateyraicroff.godaddysites.com^
 ||datfu.com^
-||datggvoyages.comduoliprudential.com.watchdogdns.duckdns.org^
 ||datibano.com^
 ||dating-2000.com^
 ||dating-affair.com^
@@ -34541,6 +34541,7 @@
 ||ddnhuofkxm.neliver.com^
 ||ddnk.advertur.ru^
 ||ddns.name^
+||ddns81.airdns.org^
 ||ddnslive.com^
 ||ddnsrat.ddns.net^
 ||ddnwshqu41.neliver.com^
@@ -35263,6 +35264,7 @@
 ||decoded.ro^
 ||decoderactive.com^
 ||decodeseries.automatad.com^
+||decoding92001.duckdns.org^
 ||decodorebasic.pl^
 ||decodownload.blogspot.com^
 ||decoflow.com.ar^
@@ -35980,7 +35982,6 @@
 ||delete-me.branchcustom.xyz^
 ||delete-waxing.com^
 ||delete.atea.fi^
-||delete.certified-toolbar.com^
 ||delete.ml^
 ||delete05032026.shop^
 ||deleted-hddrive-safety-error7.flu.cc^
@@ -36842,7 +36843,6 @@
 ||denge.biz^
 ||dengebilisim.com^
 ||dengecelik.com^
-||dengedns.duckdns.org^
 ||dengemuhasebe.com^
 ||dengges.blogspot.com^
 ||dengi-pod-zalog-nedvizhimosti.ru^
@@ -40253,6 +40253,7 @@
 ||digital1.50webs.com^
 ||digital1.kornit.com^
 ||digital2cloud.com^
+||digital303.sslblindado.com^
 ||digital3rivers-e.firebaseapp.com^
 ||digital3rivers-e.web.app^
 ||digital4adro.hit.gemius.pl^
@@ -42046,7 +42047,6 @@
 ||dispiunoxi.pro^
 ||dispjutr.nl^
 ||display-ad-rgt0me85.kgslb.com^
-||display-tm.everesttech.net^
 ||display.360totalsecurity.com^
 ||display.ad.daum.net^
 ||display.additionalmedia.com^
@@ -42066,7 +42066,6 @@
 ||display.ravm.tv^
 ||display.rtb-serve.com^
 ||display.studio^
-||display.tubemogul.com^
 ||display.xad.com^
 ||displayad.layer-ad.org^
 ||displayad.lotteon.com^
@@ -43607,7 +43606,6 @@
 ||dmslog.com^
 ||dmslz.lidcrew.co^
 ||dmsm.xyz^
-||dmsocialspy.com^
 ||dmsph.com^
 ||dmsresearch.d1.sc.omtrdc.net^
 ||dmsta.com^
@@ -43978,7 +43976,6 @@
 ||do-haguenau.com^
 ||do-not-tracker.org^
 ||do-porn-stars.fastredirect.com^
-||do-search.com^
 ||do.equitone.com^
 ||do.exaai.chat^
 ||do.onthe.io^
@@ -45351,6 +45348,7 @@
 ||dooooon.byethost4.com^
 ||doop.pl^
 ||dooplix.com^
+||door-step.duckdns.org^
 ||door2windows.com^
 ||doordoor.co.cc^
 ||doordu.com^
@@ -46787,7 +46785,6 @@
 ||downloadwarez.org^
 ||downloadwarezhere.blogspot.com^
 ||downloadweb.org^
-||downloadwho.com^
 ||downloadwithoutsin.blogspot.com^
 ||downloadwizard.com^
 ||downloadxml.changhong.upgrade2.huan.tv^
@@ -47076,6 +47073,7 @@
 ||dppxjnchvfoae.website^
 ||dppzmgxpxwnnk.space^
 ||dpqatrzfoub708k-p.linkomo.fr^
+||dprakash.wapka.mobi^
 ||dprd.gresikkab.go.id^
 ||dprdcilegon.org^
 ||dprdtangerang.org^
@@ -48320,7 +48318,6 @@
 ||drp-tracker.applift.com^
 ||drpampe.com^
 ||drpatriciabrown.net^
-||drpc.duckdns.org^
 ||drpeneurope.com^
 ||drpennystock.com^
 ||drpep.crossoversymmetry.com^
@@ -48367,6 +48364,7 @@
 ||drshohel.net^
 ||drshuxu.com^
 ||drsidneypearce.med.br^
+||drsketchy.ph^
 ||drskinaid.com^
 ||drskobic.com^
 ||drslabbertandwilliams.co.za^

@@ -17,6 +17,7 @@ DIST_DIR = "dist"
 MASTER_RULE = "merged_rules.txt"
 PARTS = 16
 DNS_WORKERS = 50
+DNS_BATCH_SIZE = 500
 DNS_TIMEOUT = 2
 DELETE_COUNTER_FILE = os.path.join(DIST_DIR, "delete_counter.json")
 DELETE_THRESHOLD = 4
@@ -88,19 +89,20 @@ def check_domain(rule):
         return None
 
 def dns_validate(lines):
-    print(f"🚀 启动 {DNS_WORKERS} 并发验证")
+    print(f"🚀 启动 {DNS_WORKERS} 并发验证，每批 {DNS_BATCH_SIZE} 条")
     valid = []
-    with ThreadPoolExecutor(max_workers=DNS_WORKERS) as executor:
-        futures = {executor.submit(check_domain, rule): rule for rule in lines}
-        total = len(lines)
-        done = 0
-        for future in as_completed(futures):
-            done += 1
-            result = future.result()
-            if result:
-                valid.append(result)
-            if done % 500 == 0:
-                print(f"✅ 已验证 {done}/{total} 条，有效 {len(valid)} 条")
+    total = len(lines)
+    for i in range(0, total, DNS_BATCH_SIZE):
+        batch = lines[i:i+DNS_BATCH_SIZE]
+        with ThreadPoolExecutor(max_workers=DNS_WORKERS) as executor:
+            futures = {executor.submit(check_domain, rule): rule for rule in batch}
+            done = 0
+            for future in as_completed(futures):
+                done += 1
+                result = future.result()
+                if result:
+                    valid.append(result)
+            print(f"✅ 已验证 {i+len(batch)}/{total} 条，有效 {len(valid)} 条")
     print(f"✅ 分片验证完成，有效 {len(valid)} 条")
     return valid
 
@@ -154,7 +156,6 @@ def process_part(part):
         else:
             count = delete_counter.get(rule, 0) + 1
             new_delete_counter[rule] = count
-            print(f"⚠ 连续删除计数 {count}/{DELETE_THRESHOLD}: {rule}")
             if count >= DELETE_THRESHOLD:
                 removed_count += 1
             else:
@@ -164,12 +165,12 @@ def process_part(part):
 
     save_delete_counter(new_delete_counter)
 
-    total_count = len(final_rules)
     with open(out_file, "w", encoding="utf-8") as f:
         f.write("\n".join(sorted(final_rules)))
 
-    # ✅ 输出格式严格按要求
+    total_count = len(final_rules)
     print(f"validated part {part} → 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
+    print(f"COMMIT_STATS: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
 
 # ===============================
 # 主函数

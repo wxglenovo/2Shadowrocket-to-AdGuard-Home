@@ -2,11 +2,12 @@ name: Split & DNS Check
 
 on:
   schedule:
-    # 每天 UTC 0:00、6:00、12:00、18:00 强制更新 urls.txt 并生成分片
+    # 每天 UTC 0:00、6:00、12:00、18:00 强制更新并切片
     - cron: "0 0 * * *"
     - cron: "0 6 * * *"
     - cron: "0 12 * * *"
     - cron: "0 18 * * *"
+
     # 每 22 分钟轮替分片验证
     - cron: "*/22 * * * *"
 
@@ -23,119 +24,76 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      PYTHONUNBUFFERED: 1
-      REPO_URL: https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
 
     steps:
-      - name: Safe checkout using mirror fetch (fix hang)
-        run: |
-          rm -rf repo
-          mkdir repo
-          cd repo
-
-          git init
-          git remote add origin $REPO_URL
-
-          echo "🔄 Fetching latest main ..."
-          git fetch --depth=1 origin main
-          git checkout -f main
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Install python deps
         run: |
-          pip install --upgrade requests dnspython
+          pip install requests dnspython
 
-      - name: Determine PART index
-        id: detect
-        shell: bash
+      # -----------------------------------
+      # 下载 URLs & 合并规则 & 切片
+      # 仅在整点 0/6/12/18 执行
+      # -----------------------------------
+      - name: Download & Merge & Split
+        if: startsWith(github.event.schedule, '0 ')
         run: |
-          cd repo
-          mkdir -p tmp
-          LAST_PART_FILE="tmp/last_part.txt"
+          mkdir -p tmp dist logs
 
-          PART_INPUT="${{ github.event.inputs.part }}"
+          echo "📥 下载源列表 urls.txt ..."
+          python download_merge_split.py
 
-          if [ -n "$PART_INPUT" ]; then
-            PART="$PART_INPUT"
-            echo "🛠 手动指定分片：$PART"
+          echo "✅ 切片完成"
+
+      # -----------------------------------
+      # 自动选择分片编号（轮替模式）
+      # github.run_number % 16 → 得到 1~16
+      # -----------------------------------
+      - name: Determine shard index
+        id: shard
+        run: |
+          PART=${{ github.event.inputs.part }}
+          if [ -z "$PART" ]; then
+            idx=$(( ($GITHUB_RUN_NUMBER % 16) + 1 ))
           else
-            if [ -f "$LAST_PART_FILE" ]; then
-              LAST_PART=$(cat "$LAST_PART_FILE")
-              PART=$(( (LAST_PART % 16) + 1 ))
-            else
-              PART=1
-            fi
-            echo "⏱ 自动轮替分片：$PART"
+            idx=$PART
           fi
+          echo "shard=$idx" >> $GITHUB_OUTPUT
+          echo "当前验证分片：$idx"
 
-          echo $PART > $LAST_PART_FILE
-          echo "part=$PART" >> $GITHUB_OUTPUT
-
-      - name: Force download rules at schedule times
-        shell: bash
+      # -----------------------------------
+      # 验证分片 - 传入 3 个参数
+      # validate.py <part> <validated> <log>
+      # -----------------------------------
+      - name: Validate shard
         run: |
-          cd repo
-          CURRENT_HOUR=$(date -u +"%H")
-          if [[ "$CURRENT_HOUR" == "00" || "$CURRENT_HOUR" == "06" || "$CURRENT_HOUR" == "12" || "$CURRENT_HOUR" == "18" ]]; then
-            echo "✅ 强制下载规则源并生成所有分片"
-            python split_and_check_16.py --force-update
-          else
-            echo "⏩ 非下载时间，不强制更新"
-          fi
+          mkdir -p logs dist tmp
 
-      - name: Ensure rules and first part exist
-        shell: bash
+          P=${{ steps.shard.outputs.shard }}
+          PART_FILE="tmp/part_${P}.txt"
+          OUT_FILE="dist/validated_part_${P}.txt"
+          LOG_FILE="logs/part_${P}.log"
+
+          echo "⏱ 开始验证分片 $P"
+          python validate.py "$PART_FILE" "$OUT_FILE" "$LOG_FILE"
+
+      # -----------------------------------
+      # 提交结果
+      # -----------------------------------
+      - name: Commit & Push
         run: |
-          cd repo
-          if [ ! -f "merged_rules.txt" ] || [ ! -f "tmp/part_01.txt" ]; then
-            echo "⚠ 缺少规则或分片 → 自动重新生成"
-            python split_and_check_16.py --force-update
-          else
-            echo "✅ 规则和首片存在"
-          fi
-
-      - name: Ensure current part file exists
-        shell: bash
-        env:
-          PART: ${{ steps.detect.outputs.part }}
-        run: |
-          cd repo
-          PART_FILE=$(printf "tmp/part_%02d.txt" "$PART")
-          if [ ! -f "$PART_FILE" ]; then
-            echo "⚠ 当前分片缺失：$PART_FILE"
-            python split_and_check_16.py --force-update
-          else
-            echo "✅ 当前分片存在"
-          fi
-
-      - name: Run DNS validation
-        shell: bash
-        env:
-          PART: ${{ steps.detect.outputs.part }}
-        run: |
-          cd repo
-          mkdir -p logs
-          LOG_FILE="logs/split_check_part_${PART}.log"
-          echo "⏱ 开始验证分片 $PART"
-          python split_and_check_16.py --part "$PART" | tee "$LOG_FILE"
-
-      - name: Commit & Push Validated Rules
-        shell: bash
-        env:
-          PART: ${{ steps.detect.outputs.part }}
-          REPO_URL: ${{ env.REPO_URL }}
-        run: |
-          cd repo
-
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          git add tmp/last_part.txt dist/validated_part_*.txt tmp/part_*.txt logs/ merged_rules.txt delete_counter.json || true
-
-          if git diff --cached --quiet; then
-            echo "✅ 无变化，跳过提交"
-            exit 0
-          fi
-
-          git commit -m "🤖 Auto update: validated part $PART ✅ total/update/remove shown in log"
-          git push "$REPO_URL" HEAD:main --force
+          git add dist logs || exit 0
+          git commit -m "✅ 分片验证完成: part_${{ steps.shard.outputs.shard }}" || exit 0
+          git push

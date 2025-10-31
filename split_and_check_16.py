@@ -156,7 +156,8 @@ def process_part(part):
             new_delete_counter[rule] = 0
         else:
             # 当前规则的删除计数应累计
-            count = delete_counter.get(rule, 0) + 1
+            current_count = delete_counter.get(rule, 0)
+            count = current_count + 1
             new_delete_counter[rule] = count
             print(f"⚠ 连续删除计数 {count}/{DELETE_THRESHOLD}: {rule}")
             if count >= DELETE_THRESHOLD:

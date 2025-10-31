@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
 
 import os
 import json
@@ -91,22 +91,17 @@ def check_domain(rule):
 def dns_validate(lines):
     print(f"🚀 启动 {DNS_WORKERS} 并发验证")
     valid = []
-    total = len(lines)
-    done = 0
-    
     with ThreadPoolExecutor(max_workers=DNS_WORKERS) as executor:
         futures = {executor.submit(check_domain, rule): rule for rule in lines}
-        
+        total = len(lines)
+        done = 0
         for future in as_completed(futures):
             done += 1
             result = future.result()
             if result:
                 valid.append(result)
-            
-            # 每500条验证进度
             if done % 500 == 0:
                 print(f"✅ 已验证 {done}/{total} 条，有效 {len(valid)} 条")
-                
     print(f"✅ 分片验证完成，有效 {len(valid)} 条")
     return valid
 
@@ -177,6 +172,7 @@ def process_part(part):
 
     total_count = len(final_rules)
     print(f"✅ 分片 {part} 完成: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
+    # 💾 输出给 workflow 用作 commit 信息
     print(f"COMMIT_STATS: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
 
 # ===============================

@@ -1,34 +1,52 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*- 
+
 import os
+import json
 import dns.resolver
+import sys
 
-def validate_rule(rule, validated_file, log_file):
+DELETE_THRESHOLD = 4
+DELETE_COUNTER_FILE = "dist/delete_counter.json"
+
+def check_domain(rule):
     resolver = dns.resolver.Resolver()
-    resolver.timeout = 5
-    resolver.lifetime = 5
-
-    domain = rule.split('^')[0].replace("*", "")
+    resolver.timeout = 2
+    resolver.lifetime = 2
+    domain = rule.lstrip("|").split("^")[0].replace("*", "")
+    if not domain:
+        return None
     try:
         resolver.resolve(domain)
-        with open(validated_file, "a", encoding="utf-8") as f_valid:
-            f_valid.write(rule + "\n")
+        return rule
     except:
-        with open(log_file, "a", encoding="utf-8") as f_log:
-            f_log.write(f"Failed to resolve: {domain} - {rule}\n")
+        return None
 
-if __name__ == "__main__":
-    import sys
-    if len(sys.argv) != 4:
-        print("Usage: python validate.py <part_X.txt> <validated_part_X.txt> <log_file>")
-        sys.exit(1)
+def dns_validate(lines, workers=50):
+    valid = []
+    from concurrent.futures import ThreadPoolExecutor, as_completed
 
-    part_file = sys.argv[1]
-    validated_file = sys.argv[2]
-    log_file = sys.argv[3]
+    with ThreadPoolExecutor(max_workers=workers) as executor:
+        futures = {executor.submit(check_domain, rule): rule for rule in lines}
+        total = len(lines)
+        done = 0
+        for future in as_completed(futures):
+            done += 1
+            result = future.result()
+            if result:
+                valid.append(result)
+            if done % 500 == 0:
+                print(f"✅ 已验证 {done}/{total} 条，有效 {len(valid)} 条")
+    print(f"✅ 分片验证完成，有效 {len(valid)} 条")
+    sys.stdout.flush()
+    return valid
 
-    if os.path.exists(part_file):
-        with open(part_file, "r", encoding="utf-8") as f:
-            rules = f.readlines()
-            for rule in rules:
-                validate_rule(rule.strip(), validated_file, log_file)
-    else:
-        print(f"File {part_file} does not exist")
+def load_delete_counter():
+    if os.path.exists(DELETE_COUNTER_FILE):
+        with open(DELETE_COUNTER_FILE, "r", encoding="utf-8") as f:
+            return json.load(f)
+    return {}
+
+def save_delete_counter(counter):
+    with open(DELETE_COUNTER_FILE, "w", encoding="utf-8") as f:
+        json.dump(counter, f, indent=2, ensure_ascii=False)

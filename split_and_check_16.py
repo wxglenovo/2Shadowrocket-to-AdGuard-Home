@@ -110,15 +110,15 @@ def dns_validate(lines):
 # ===============================
 def load_delete_counter():
     """加载删除计数器"""
-    if os.path.exists(DELETE_COUNTER_FILE):
-        with open(DELETE_COUNTER_FILE, "r", encoding="utf-8") as f:
-            counter = json.load(f)
-            print(f"🔄 加载已有删除计数：{counter}")  # 调试日志，查看计数文件内容
-            return counter
-    print("🔄 删除计数文件不存在，初始化为空字典")
-    # 如果文件不存在，初始化为空字典并保存
-    save_delete_counter({})
-    return {}
+    if not os.path.exists(DELETE_COUNTER_FILE):
+        print(f"🔄 文件不存在：{DELETE_COUNTER_FILE}. 创建新文件。")
+        save_delete_counter({})  # 创建一个空字典
+        return {}
+
+    with open(DELETE_COUNTER_FILE, "r", encoding="utf-8") as f:
+        counter = json.load(f)
+        print(f"🔄 加载已有删除计数：{counter}")  # 调试日志，查看计数文件内容
+        return counter
 
 def save_delete_counter(counter):
     """保存删除计数器"""

@@ -112,15 +112,13 @@ def load_delete_counter():
     if os.path.exists(DELETE_COUNTER_FILE):
         try:
             with open(DELETE_COUNTER_FILE, "r", encoding="utf-8") as f:
-                data = json.load(f)
-                if not isinstance(data, dict):
-                    data = {}
-                return data
-        except Exception as e:
-            print(f"⚠ 读取 delete_counter.json 失败，创建新文件: {e}")
+                return json.load(f)
+        except:
+            print(f"⚠ {DELETE_COUNTER_FILE} 解析失败，重建空计数")
             return {}
     else:
-        print("⚠ delete_counter.json 不存在，创建新文件")
+        print(f"⚠ {DELETE_COUNTER_FILE} 不存在，创建新文件")
+        os.makedirs(DIST_DIR, exist_ok=True)
         with open(DELETE_COUNTER_FILE, "w", encoding="utf-8") as f:
             json.dump({}, f, indent=2, ensure_ascii=False)
         return {}
@@ -128,7 +126,6 @@ def load_delete_counter():
 def save_delete_counter(counter):
     with open(DELETE_COUNTER_FILE, "w", encoding="utf-8") as f:
         json.dump(counter, f, indent=2, ensure_ascii=False)
-    print(f"✅ 删除计数已保存到 {DELETE_COUNTER_FILE}")
 
 # ===============================
 # 分片处理
@@ -163,12 +160,16 @@ def process_part(part):
     for rule in old_rules | set(lines):
         if rule in valid:
             final_rules.add(rule)
+            if rule in delete_counter and delete_counter[rule] > 0:
+                print(f"🔄 验证成功，清零删除计数: {rule}")
             new_delete_counter[rule] = 0
         else:
             count = delete_counter.get(rule, 0) + 1
             new_delete_counter[rule] = count
+            print(f"⚠ 连续删除计数 {count}/{DELETE_THRESHOLD}: {rule}")
             if count >= DELETE_THRESHOLD:
                 removed_count += 1
+                # 不加入 final_rules
             else:
                 final_rules.add(rule)
         if rule not in old_rules and rule in valid:

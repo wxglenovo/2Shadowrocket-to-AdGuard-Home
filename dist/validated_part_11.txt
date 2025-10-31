@@ -2,7 +2,6 @@
 ||server.adapta.org^
 ||server.adcplasp.com.br^
 ||server.addtocart.com.bd^
-||server.adeasy.ru^
 ||server.adeisemarcondes.com.br^
 ||server.adeusprisaodeventre.com.br^
 ||server.adform.net^
@@ -686,7 +685,6 @@
 ||server.faculdadeimes.org.br^
 ||server.faelcrispim.com.br^
 ||server.fahimmart.com^
-||server.fairyshop.xyz^
 ||server.falacenter.com.br^
 ||server.falahfoodbd.com^
 ||server.falaqplace.com.bd^

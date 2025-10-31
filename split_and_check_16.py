@@ -116,6 +116,8 @@ def load_delete_counter():
             print(f"🔄 加载已有删除计数：{counter}")  # 调试日志，查看计数文件内容
             return counter
     print("🔄 删除计数文件不存在，初始化为空字典")
+    # 如果文件不存在，初始化为空字典并保存
+    save_delete_counter({})
     return {}
 
 def save_delete_counter(counter):

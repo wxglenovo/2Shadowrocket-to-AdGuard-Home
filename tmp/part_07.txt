@@ -1,5 +1,3 @@
-||hsa-microtech.de^
-||hsa.wageworks.info^
 ||hsaawk.com^
 ||hsad.goldenplanet.co.kr^
 ||hsadmin.clickability.com^
@@ -102140,3 +102138,5 @@
 ||livezilla.net^
 ||livezim8.000webhostapp.com^
 ||livezombymil.com^
+||livezombymil.com^$popup
+||livgro.top^

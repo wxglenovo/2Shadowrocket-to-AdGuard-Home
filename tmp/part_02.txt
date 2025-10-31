@@ -1,5 +1,3 @@
-||accountsyncalert.win^
-||accountt-supported.com^
 ||accounttinder.com^
 ||accountunmovedscramble.com^
 ||accountupdat.webcindario.com^
@@ -102140,3 +102138,5 @@
 ||arcomobi.go2affise.com^
 ||arcomtechnologies.com^
 ||arcon.net.pk^
+||arcon.pa.gov.br^
+||arcondicionadoicm.com.br^

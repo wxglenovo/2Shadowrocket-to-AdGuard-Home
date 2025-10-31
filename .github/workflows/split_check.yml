@@ -40,6 +40,12 @@ jobs:
       - name: Install dependencies
         run: pip install --upgrade requests dnspython
 
+      - name: Configure Git user
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --list  # 输出配置内容，用于调试
+
       - name: Determine PART index
         id: detect
         shell: bash

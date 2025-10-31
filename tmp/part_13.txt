@@ -1,3 +1,4 @@
+||w.zenback.jp^
 ||w.zeroredirect.com^
 ||w.zeroredirect1.com^
 ||w.zeroredirect2.com^
@@ -8342,6 +8343,7 @@
 ||wbwtbhaowksqc.site^
 ||wbx.adblade.com^
 ||wbxg.com^
+||wbxkuluivdutn.site^
 ||wbxnscorroen1.weebly.com^
 ||wbxzrxarmzyx.com^
 ||wbyd.org^
@@ -24443,6 +24445,7 @@
 ||wissen.humary.top^
 ||wissen.sage.de^
 ||wissende.122.2o7.net^
+||wissenik.com^
 ||wissing.stream^
 ||wissotalakehomes.com^
 ||wisswiss.org^
@@ -27177,7 +27180,6 @@
 ||work-surf.info^
 ||work-torrent.info^
 ||work-within.tk^
-||work-youtube.com^
 ||work-youtube.info^
 ||work.3dmgame.com/js/statistics.js
 ||work.a-poster.info^
@@ -27586,7 +27588,6 @@
 ||workresponseduration.com^
 ||workroomnimble.com^
 ||works-2proxy.tk^
-||works-youtube.com^
 ||worksair.com^
 ||worksand-thebible.tk^
 ||worksbest.freeservers.com^
@@ -30581,6 +30582,7 @@
 ||wtm.interhyp.de^
 ||wtm.monitoringservice.co^
 ||wtm.monitoringservice.co^$third-party
+||wtmeeyghxkv.com^
 ||wtmr.adx1.com^
 ||wtmtrack.com^
 ||wtmtrack.com^$third-party
@@ -102057,3 +102059,12 @@
 ||www.code-adt97.stream^
 ||www.code-adu17.stream^
 ||www.code-adu37.stream^
+||www.code-adu57.stream^
+||www.code-adu77.stream^
+||www.code-adw57.stream^
+||www.code-adw77.stream^
+||www.code-adw97.stream^
+||www.code-adx17.stream^
+||www.code-adx37.stream^
+||www.code-adx57.stream^
+||www.code-adx77.stream^

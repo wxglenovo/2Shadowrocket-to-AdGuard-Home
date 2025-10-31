@@ -1,15 +1,3 @@
-||accounts.xanaxtechnology.com^
-||accounts.ycskbf.icu^
-||accounts.zaasbl.icu^
-||accounts2133manageidverifywebappid.com^
-||accounts8.com^
-||accountsafety.com^
-||accountsalert.com^
-||accountsbilling-resolve.com^
-||accountscard.info^
-||accountscenter-platform.help^
-||accountscenterfb.com^
-||accountsclose.site^
 ||accountsdemosurf.tk^
 ||accountsdoor.com^
 ||accountsecure-verification.com^
@@ -4212,7 +4200,6 @@
 ||ad-generation.jp^
 ||ad-generator.info^
 ||ad-goi.com^
-||ad-google.online^
 ||ad-groups.com^
 ||ad-guru.com^
 ||ad-hatena.com^
@@ -24481,6 +24468,7 @@
 ||adpubs.yaolan.com^
 ||adpulse.ads.targetnet.com^
 ||adpulse.ir^
+||adpulsex.com^
 ||adpunemploymentclaims.sharefile.com^
 ||adpuserexperience.co1.qualtrics.com^
 ||adpush.cn^
@@ -36651,7 +36639,6 @@
 ||aed7dca148.com^
 ||aed98e7f810261.beer^
 ||aedaenotmtuthotndsorraisepa.com^
-||aedasmyjyepni.store^
 ||aedc5120d10251.beer^
 ||aeddecor.com.br^
 ||aedelavenir.com^
@@ -37128,7 +37115,6 @@
 ||aeros10.tk^
 ||aeros11.tk^
 ||aeros12.tk^
-||aerosatemeers.rest^
 ||aerosfera.ru^
 ||aerosmither.tk^
 ||aerosmoth.tk^
@@ -37539,7 +37525,6 @@
 ||afabnormalism.baby^
 ||afaboston.org^
 ||afabs.com^
-||afabtgbgcmwmf.store^
 ||afabumtunpo.com^
 ||afac.mopo.jp^
 ||afac5b7c-4677-47e1-ab00-183081826bdd-00-3s6b38s5gqjlw.janeway.replit.dev^
@@ -39402,7 +39387,6 @@
 ||afruc.org^
 ||afruetdxrbxz.com^
 ||afrykanium-zoo.pl^
-||afrzbwdlmrmuk.store^
 ||afs.adjust-net.jp^
 ||afs.ero-advertising.com^
 ||afs.googlesyndication.com^
@@ -39708,7 +39692,6 @@
 ||agamagcargoan.com^
 ||agamakejawen.blogspot.com^
 ||agamarama.com^
-||agamasniggly.rest^
 ||agamedent.com^
 ||agamehack.chat.ru^
 ||agameing.icu^
@@ -39849,7 +39832,6 @@
 ||agdeeto.ru^
 ||agdev.112.2o7.net^
 ||agdhc.bookonline.com.cn^
-||agdhugmcwuwmf.store^
 ||agdoewhybofgr.site^
 ||agdolkvcuqi.com^
 ||agdosortione.com^
@@ -41222,7 +41204,6 @@
 ||ahgolds.com^
 ||ahgpiumykrvtj.site^
 ||ahgvk.truthtreatments.com^
-||ahgvzaemkowbb.store^
 ||ahh-teens.com^
 ||ahh8.cn^
 ||ahhacpacpv.com^
@@ -43033,6 +43014,7 @@
 ||airdrop-live.com^
 ||airdrop-masterbot.app^
 ||airdrop-payai.network^
+||airdrop-storefun.com^
 ||airdrop.credit^
 ||airdrop.delivery^
 ||airdrop.systems^
@@ -43061,6 +43043,7 @@
 ||airdropvert.info^
 ||airdropxneo.blogspot.com^
 ||airdropxrp.blogspot.com^
+||airdrpsalert.locker^
 ||airducts.info^
 ||airdynamics.com.sg^
 ||airederas.stream^
@@ -43393,7 +43376,6 @@
 ||airtergo.stream^
 ||airtherica.stream^
 ||airths.stream^
-||airthstaffer.rest^
 ||airticketfree.co^
 ||airtickethelp.com^
 ||airtickets365.qgr.ph^
@@ -44043,7 +44025,6 @@
 ||ajtoxed.info^
 ||ajtps.axiapr.com^
 ||ajtrabalhos.blogspot.com^
-||ajtsyywnsxrwl.store^
 ||ajttqxeqg.com^
 ||ajtxoo.academiaassai.com.br^
 ||ajtzgipb45.neliver.com^
@@ -45452,7 +45433,6 @@
 ||alarash.com^
 ||alaravisionrealestate.dubaii.me^
 ||alarayconcepts.com^
-||alarbus.nutmeatdruxy.shop^
 ||alardmachine.com^
 ||alarebiya.net^
 ||alareentading-catalog.page.tl^
@@ -46096,7 +46076,6 @@
 ||alarmy.bydgoszcz.pl^
 ||alartdesk.ukit.me^
 ||alarti.shop^
-||alarummock.rest^
 ||alarums.stream^
 ||alaryerst.stream^
 ||alas4kanmfa6a4mubte.com^
@@ -50695,6 +50674,7 @@
 ||alebilet.pl-oferta8913346.icu^
 ||alebilet.pl-oferta8915281.icu^
 ||alebilet.pl-oferta8925846.icu^
+||alebilet.pl-oferta893234.rest^
 ||alebilet.pl-oferta893345.cfd^
 ||alebilet.pl-oferta89345.top^
 ||alebilet.pl-oferta893457.cfd^
@@ -51498,7 +51478,9 @@
 ||alebilet.pl-ver57-id7164-cfi1369u-cid790.sbs^
 ||alebilet.pl-wyroznione.icu^
 ||alebilet.pl-wyroznione.sbs^
+||alebilet.pl-zamowienie765425776432123568999009865212790.cfd^
 ||alebilet.pl-zamowienie765425776432123568999009865212790.icu^
+||alebilet.pl-zamowienie765425776432123568999009865212790.sbs^
 ||alebilet.pl-zamowienie92754.cfd^
 ||alebilet.pl00327przedmiot.icu^
 ||alebilet.pl00430oferta.cfd^
@@ -56823,6 +56805,7 @@
 ||algoamrix300.net^
 ||algoamrixapp.com^
 ||algoavonexfin-app.com^
+||algobasey.com^
 ||algoblaze-platform.com^
 ||algoblazeai.net^
 ||algoblazeapp.com^
@@ -56834,6 +56817,7 @@
 ||algodealpro-engine.com^
 ||algodealpro.net^
 ||algodon.net^
+||algodreamy.com^
 ||algoetricsy.com^
 ||algoetricsy.net^
 ||algoetricsy.online^
@@ -56863,6 +56847,7 @@
 ||algometer.us^
 ||algometries.us^
 ||algometry.us^
+||algonera.com^
 ||algonetwork.com^
 ||algonovafx.net^
 ||algonovafxsoftware.com^
@@ -62601,6 +62586,7 @@
 ||allegro.pl-oferta8913346.icu^
 ||allegro.pl-oferta8915281.icu^
 ||allegro.pl-oferta8925846.icu^
+||allegro.pl-oferta893234.rest^
 ||allegro.pl-oferta893345.cfd^
 ||allegro.pl-oferta89345.top^
 ||allegro.pl-oferta893457.cfd^
@@ -63427,7 +63413,9 @@
 ||allegro.pl-wyroznione.icu^
 ||allegro.pl-wyroznione.sbs^
 ||allegro.pl-y829.shop^
+||allegro.pl-zamowienie765425776432123568999009865212790.cfd^
 ||allegro.pl-zamowienie765425776432123568999009865212790.icu^
+||allegro.pl-zamowienie765425776432123568999009865212790.sbs^
 ||allegro.pl-zamowienie92754.cfd^
 ||allegro.pl.lokalnie.me^
 ||allegro.pl.shiotem.pl^
@@ -64803,6 +64791,7 @@
 ||allegrolokalnie.oferta-2710815.top^
 ||allegrolokalnie.oferta-2731708.shop^
 ||allegrolokalnie.oferta-274913.shop^
+||allegrolokalnie.oferta-28037685.click^
 ||allegrolokalnie.oferta-2855984.icu^
 ||allegrolokalnie.oferta-285746534.cfd^
 ||allegrolokalnie.oferta-29406912571.cfd^
@@ -64914,6 +64903,7 @@
 ||allegrolokalnie.oferta-7482.cfd^
 ||allegrolokalnie.oferta-74962.cfd^
 ||allegrolokalnie.oferta-764381.shop^
+||allegrolokalnie.oferta-76502598.click^
 ||allegrolokalnie.oferta-7740566.icu^
 ||allegrolokalnie.oferta-7824082.icu^
 ||allegrolokalnie.oferta-78429.cfd^
@@ -65059,6 +65049,7 @@
 ||allegrolokalnie.oferta217837.sbs^
 ||allegrolokalnie.oferta21783841.sbs^
 ||allegrolokalnie.oferta217845.icu^
+||allegrolokalnie.oferta2238276.sbs^
 ||allegrolokalnie.oferta2263341.sbs^
 ||allegrolokalnie.oferta2263422.sbs^
 ||allegrolokalnie.oferta2263983.sbs^
@@ -65255,6 +65246,10 @@
 ||allegrolokalnie.oferty-kategoria-proponowane-dla-ciebie-rozne-21.sbs^
 ||allegrolokalnie.oferty-kategoria-proponowane-dla-ciebie-rozne-22.sbs^
 ||allegrolokalnie.oferty-kategoria-proponowane-dla-ciebie-rozne-23.sbs^
+||allegrolokalnie.oferty-kategoria-proponowane-dla-ciebie-rozne-24.sbs^
+||allegrolokalnie.oferty-kategoria-proponowane-dla-ciebie-rozne-25.sbs^
+||allegrolokalnie.oferty-kategoria-proponowane-dla-ciebie-rozne-26.sbs^
+||allegrolokalnie.oferty-kategoria-proponowane-dla-ciebie-rozne-27.sbs^
 ||allegrolokalnie.oferty-kategoria-proponowane-dla-ciebie-rozne-3.sbs^
 ||allegrolokalnie.oferty-kategoria-proponowane-dla-ciebie-rozne-4.sbs^
 ||allegrolokalnie.oferty-kategoria-proponowane-dla-ciebie-rozne-6.sbs^
@@ -65707,6 +65702,7 @@
 ||allegrolokalnie.pl-1232149324oferta.icu^
 ||allegrolokalnie.pl-123905.cfd^
 ||allegrolokalnie.pl-123959.cfd^
+||allegrolokalnie.pl-1263489.icu^
 ||allegrolokalnie.pl-1278356.icu^
 ||allegrolokalnie.pl-1278907.icu^
 ||allegrolokalnie.pl-1278909.icu^
@@ -65943,6 +65939,7 @@
 ||allegrolokalnie.pl-387763.cfd^
 ||allegrolokalnie.pl-387765.cfd^
 ||allegrolokalnie.pl-387785.cfd^
+||allegrolokalnie.pl-3892032.digital^
 ||allegrolokalnie.pl-39.cfd^
 ||allegrolokalnie.pl-3937252932.cfd^
 ||allegrolokalnie.pl-3963.cfd^
@@ -66294,6 +66291,7 @@
 ||allegrolokalnie.pl-795218167.sbs^
 ||allegrolokalnie.pl-798678658.shop^
 ||allegrolokalnie.pl-80221.cfd^
+||allegrolokalnie.pl-810027.icu^
 ||allegrolokalnie.pl-81022992-personal.shop^
 ||allegrolokalnie.pl-81249.cfd^
 ||allegrolokalnie.pl-812927.cfd^
@@ -67829,6 +67827,7 @@
 ||allegrolokalnie.pl-oferta1869289.shop^
 ||allegrolokalnie.pl-oferta1870593.shop^
 ||allegrolokalnie.pl-oferta1878677.cfd^
+||allegrolokalnie.pl-oferta187920.icu^
 ||allegrolokalnie.pl-oferta188151571.cfd^
 ||allegrolokalnie.pl-oferta1888172.sbs^
 ||allegrolokalnie.pl-oferta1893529.cfd^
@@ -69058,6 +69057,7 @@
 ||allegrolokalnie.pl-oferta70124.icu^
 ||allegrolokalnie.pl-oferta7017697.icu^
 ||allegrolokalnie.pl-oferta702097799.sbs^
+||allegrolokalnie.pl-oferta7023846109.cfd^
 ||allegrolokalnie.pl-oferta7025273.icu^
 ||allegrolokalnie.pl-oferta70270927263.cyou^
 ||allegrolokalnie.pl-oferta70270927263125.sbs^
@@ -69372,6 +69372,7 @@
 ||allegrolokalnie.pl-oferta7909849.icu^
 ||allegrolokalnie.pl-oferta791027.icu^
 ||allegrolokalnie.pl-oferta7913011.icu^
+||allegrolokalnie.pl-oferta7914823.sbs^
 ||allegrolokalnie.pl-oferta79213517634782647362865089327580323.cfd^
 ||allegrolokalnie.pl-oferta7921935.sbs^
 ||allegrolokalnie.pl-oferta792347.icu^
@@ -69467,6 +69468,7 @@
 ||allegrolokalnie.pl-oferta82353672782635671819.cfd^
 ||allegrolokalnie.pl-oferta82391.cfd^
 ||allegrolokalnie.pl-oferta823948.icu^
+||allegrolokalnie.pl-oferta82431181.cfd^
 ||allegrolokalnie.pl-oferta82445749.icu^
 ||allegrolokalnie.pl-oferta82445769.icu^
 ||allegrolokalnie.pl-oferta825265312.shop^
@@ -69761,6 +69763,7 @@
 ||allegrolokalnie.pl-oferta891868.icu^
 ||allegrolokalnie.pl-oferta8925846.icu^
 ||allegrolokalnie.pl-oferta893224.cfd^
+||allegrolokalnie.pl-oferta893234.rest^
 ||allegrolokalnie.pl-oferta893345.cfd^
 ||allegrolokalnie.pl-oferta89345.top^
 ||allegrolokalnie.pl-oferta893457.cfd^
@@ -69873,8 +69876,10 @@
 ||allegrolokalnie.pl-oferta918263644.cfd^
 ||allegrolokalnie.pl-oferta91827334.sbs^
 ||allegrolokalnie.pl-oferta918273644.shop^
+||allegrolokalnie.pl-oferta918482.top^
 ||allegrolokalnie.pl-oferta918519.icu^
 ||allegrolokalnie.pl-oferta9185792.cfd^
+||allegrolokalnie.pl-oferta918679.icu^
 ||allegrolokalnie.pl-oferta918690.cfd^
 ||allegrolokalnie.pl-oferta9187822.icu^
 ||allegrolokalnie.pl-oferta918830.cfd^
@@ -70729,7 +70734,9 @@
 ||allegrolokalnie.pl-zakupy58392.icu^
 ||allegrolokalnie.pl-zakupysmart-24h.shop^
 ||allegrolokalnie.pl-zamow-smart.cfd^
+||allegrolokalnie.pl-zamowienie765425776432123568999009865212790.cfd^
 ||allegrolokalnie.pl-zamowienie765425776432123568999009865212790.icu^
+||allegrolokalnie.pl-zamowienie765425776432123568999009865212790.sbs^
 ||allegrolokalnie.pl-zamowienie92754.cfd^
 ||allegrolokalnie.pl00284przedmiot.icu^
 ||allegrolokalnie.pl00327przedmiot.icu^
@@ -71624,7 +71631,6 @@
 ||allocallme.com^
 ||allocameroun.com^
 ||allocaphd.pro^
-||allocate-meteora.app^
 ||allocate.solutions^
 ||allocated.clawed.info^
 ||allocated.mask.wtf.la^
@@ -72574,7 +72580,6 @@
 ||alohazing.com^
 ||alohookah.online^
 ||aloins.stream^
-||aloinskelter.rest^
 ||aloisia.money-for-you-2021.ru^
 ||aloja-aqui.com^
 ||alojaapcp.com^
@@ -72604,7 +72609,6 @@
 ||aloneglossary.net^
 ||alonehepatitisenough.com^
 ||aloneintheweb.com^
-||alonelytugboat.rest^
 ||alonemeasure.net^
 ||aloneproxy.com^
 ||aloneproxy.info^
@@ -72856,6 +72860,7 @@
 ||alphaai-app.net^
 ||alphaai-bot.com^
 ||alphaai-solution.com^
+||alphaaiapp.net^
 ||alphaapi.autoads.asia^
 ||alphaarena-live.com^
 ||alphaautumn.0-030.net.daraz.com^
@@ -72987,9 +72992,11 @@
 ||alpharion-matrix-gpt.net^
 ||alpharion-matrix-gpttech.com^
 ||alpharion-matrixgpt-tech.com^
+||alpharion-matrixgpt.org^
 ||alpharionet.cyou^
 ||alpharionmatrix.com^
 ||alpharionmatrix.net^
+||alpharionmatrixgpt.net^
 ||alpharionmatrixgpt.org^
 ||alpharockgroup.com^
 ||alphasalesrecruitment.com^
@@ -74515,7 +74522,6 @@
 ||amala-wav.com^
 ||amalakale.com^
 ||amalblysk.eu^
-||amalettbeltis.rest^
 ||amalettdird.cyou^
 ||amalfi-wedding-planner.com^
 ||amalfitano.ltd^
@@ -76509,7 +76515,6 @@
 ||amiciinmoto.it^
 ||amiclubwearcoupons.info^
 ||amicoshopping.com^
-||amicoustubular.rest^
 ||amicronpile.shop^
 ||amicsdelkayak.net^
 ||amicusadr.com^
@@ -77052,7 +77057,6 @@
 ||amolemroz.ir^
 ||amolesramsons.cfd^
 ||amolewmagram.112.2o7.net^
-||amolishloos.rest^
 ||amolrathod.com^
 ||amomacplus.com.br^
 ||amoment.ws^
@@ -81897,7 +81901,6 @@
 ||anchorwheelmotel.com.au^
 ||anchorychanted.cfd^
 ||anchoryourday.com^
-||anchovyjem.rest^
 ||anchylose.us^
 ||anchylosis.us^
 ||anchylostomiasis.stream^
@@ -83365,7 +83368,6 @@
 ||anidrotic.stream^
 ||aniekelate.blogspot.com^
 ||anielka.info^
-||anientesodom.rest^
 ||anieto2k.com^
 ||anifranchise.com^
 ||anijjm.winkelstraat.nl^
@@ -85642,6 +85644,7 @@
 ||antalyalaraklima.com^
 ||antalyalitransfer.com^
 ||antalyaozguremlak.com^
+||antalyasatilikev.com^
 ||antalyatente.net^
 ||antalyatk.com^
 ||antalyayedekparca.com^
@@ -86769,6 +86772,7 @@
 ||antiviruskits.com^
 ||antiviruslatam.com^
 ||antiviruslinks.com^
+||antiviruslisans.com^
 ||antiviruslisansi.com^
 ||antivirusllc.com^
 ||antivirusmania.com^
@@ -88523,6 +88527,7 @@
 ||aouyg.000webhostapp.com^
 ||aovajfmsy.com^
 ||aoverton.000webhostapp.com^
+||aovk.cn^
 ||aovkop1ceh.neliver.com^
 ||aovoasbmjf.com^
 ||aovvxqppx4.neliver.com^
@@ -88533,7 +88538,6 @@
 ||aoweiwewma.pro^
 ||aowenchina.com^
 ||aowjaqfbeethq.online^
-||aowknpuiqtymi.store^
 ||aowlet.com^
 ||aowpy4.com^
 ||aowui.com^
@@ -96457,7 +96461,6 @@
 ||apple-teamsupport.net^
 ||apple-tech-support.com^
 ||apple-tech.com^
-||apple-tech.us^
 ||apple-techsupport.com^
 ||apple-teddy.com^
 ||apple-teh.ru^
@@ -100857,7 +100860,6 @@
 ||aqocbcnfxkuw.com^
 ||aqoceunhboxed.review^
 ||aqodwthjaq.com^
-||aqofvhkgyakxc.store^
 ||aqorez.yamo.bio^
 ||aqori.com^
 ||aqornnfwxmua.com^
@@ -101655,6 +101657,7 @@
 ||arbionis-app-ai.com^
 ||arbionis-app.com^
 ||arbionis-app.net^
+||arbionisai.com^
 ||arbionisai.net^
 ||arbionisapp.com^
 ||arbionisapp.net^
@@ -101752,7 +101755,6 @@
 ||arboretum.hu^
 ||arborise.stream^
 ||arbors.stream^
-||arborsestus.rest^
 ||arbortraud.pro^
 ||arbourrenewal.com^
 ||arboutounevez.tk^
@@ -102057,3 +102059,12 @@
 ||architekten-gm.de^
 ||architektkrakow.com.pl^
 ||architektur-und-mehr.de^
+||architektura.krzystolik.pl^
+||architonus.com^
+||architown.ru^
+||archiv.chip.de^
+||archiv.promatis.de^
+||archive-host.com^
+||archive.adjust.io^
+||archive.coolerads.com^
+||archive.ddm.org.au^

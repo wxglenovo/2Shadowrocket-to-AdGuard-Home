@@ -12,11 +12,13 @@ validated_file=sys.argv[2]
 log_file=sys.argv[3]
 
 lines=open(part_file,"r",encoding="utf-8").read().splitlines()
-valid_rules=set(dns_validate(lines,batch_size=500))
+valid_rules=set(dns_validate(lines))
+
 old_rules=set()
 if os.path.exists(validated_file):
     with open(validated_file,"r",encoding="utf-8") as f:
         old_rules=set([l.strip() for l in f if l.strip()])
+
 delete_counter=load_delete_counter()
 new_delete_counter={}
 final_rules=set()
@@ -44,4 +46,5 @@ with open(validated_file,"w",encoding="utf-8") as f:
     f.write("\n".join(sorted(final_rules)))
 with open(log_file,"w",encoding="utf-8") as f:
     f.write(f"总 {len(final_rules)}, 新增 {added_count}, 删除 {removed_count}\n")
+
 print(f"✅ 验证完成: 总 {len(final_rules)}, 新增 {added_count}, 删除 {removed_count}")

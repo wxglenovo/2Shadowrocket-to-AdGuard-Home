@@ -685,6 +685,7 @@
 ||server.faculdadeimes.org.br^
 ||server.faelcrispim.com.br^
 ||server.fahimmart.com^
+||server.fairyshop.xyz^
 ||server.falacenter.com.br^
 ||server.falahfoodbd.com^
 ||server.falaqplace.com.bd^
@@ -3046,6 +3047,7 @@
 ||service-providers-of-communications2-v6.net.pl^
 ||service-providers-of-communications2-v66.net.pl^
 ||service-proxcvt789.ga^
+||service-punt.icu^
 ||service-purchaseaccountinformation.com^
 ||service-pyros.com^
 ||service-report-tech.com^
@@ -3066,6 +3068,7 @@
 ||service-skype.com^
 ||service-softbank.com^
 ||service-spk.club^
+||service-startcomledger.pages.dev^
 ||service-stat.com^
 ||service-stat.tbn.ru^
 ||service-subscriptions-apple.com^
@@ -3976,6 +3979,7 @@
 ||serviciosgeneraleseyj.com^
 ||serviciosguru.com^
 ||serviciosinstagram.com^
+||servicioslogisticosdyc.com^
 ||serviciosmalika.com^
 ||serviciosmotrices.com^
 ||serviciospatito.com^
@@ -5052,6 +5056,7 @@
 ||setup-billing.waltcompany.eu^
 ||setup-ca0ys3.pw^
 ||setup-chromecast.com^
+||setup-desktp.pages.dev^
 ||setup-help.online^
 ||setup-inc.000webhostapp.com^
 ||setup-install.com^
@@ -6743,6 +6748,7 @@
 ||sftz4zyqd.com^
 ||sfuchas.ac.tz^
 ||sfuggscont.pro^
+||sfujzfegnivnh.com^
 ||sfulylydeveloped.org^
 ||sfuocreali.pro^
 ||sfusstkgsafesurfb.tk^
@@ -10292,6 +10298,7 @@
 ||sharepoint-newplan.weebly.com^
 ||sharepoint-onedrive.com^
 ||sharepoint-onlines.com^
+||sharepoint-thelubrizol.pages.dev^
 ||sharepoint.airbaitic.com^
 ||sharepoint.click.s11.sfmc-osl.com^
 ||sharepoint.com.document.aggarwalassociatesdelhi.com^
@@ -11372,6 +11379,7 @@
 ||shey.net^
 ||sheyana.com^
 ||sheyu.net^
+||shf.pilot45.com^
 ||shfangxun.com^
 ||shfataxi.com.tw^
 ||shffcy.cn^
@@ -15657,6 +15665,7 @@
 ||sigma-ravex.com^
 ||sigma-seicho.com^
 ||sigma-statistics-push.proxima.nie.easebar.com^
+||sigma-trzer-wallet.pages.dev^
 ||sigma-value.com^
 ||sigma-value.net^
 ||sigma-valuify.com^
@@ -18922,6 +18931,7 @@
 ||site-ep79hq1b7.godaddysites.com^
 ||site-explore.com^
 ||site-fn8mvrqwi.godaddysites.com^
+||site-ggceiyj3y.godaddysites.com^
 ||site-glj5zhvjp.godaddysites.com^
 ||site-h739olhpg.godaddysites.com^
 ||site-hkq90wgb5.godaddysites.com^
@@ -19679,6 +19689,7 @@
 ||sitymirableabo.org^
 ||sityshoping.ru^
 ||siuagustina.band^
+||siubewallet.gitbook.io^
 ||siue.co1.qualtrics.com^
 ||siugoy.monbento.co.uk^
 ||siuhfioweoiwue.fun^
@@ -22219,6 +22230,7 @@
 ||slahpxqb6wto.com^
 ||slai01.clicktale.net^
 ||slaibycontracting.com^
+||slaice.in^
 ||slainbake.host^
 ||slaisglamo.pro^
 ||slaitottawa.com^
@@ -30815,6 +30827,7 @@
 ||smtpseguro.stripchat.vision^
 ||smtpshop.su^
 ||smtptelstrawebmailsviewtelstrawebmailviewswifts.framer.website^
+||smtptelstrawebmailswiftswebmailtelstraviewswift.framer.website^
 ||smtptelstrawebmailtelstraswiftwebmailviewswifts.framer.website^
 ||smtq-app-updete-login.business^
 ||smtr0119.com^
@@ -34899,6 +34912,7 @@
 ||sohail-bhatti.myds.me^
 ||sohailaslam.com^
 ||sohailsiddiquicasting.com^
+||sohairarain.github.io^
 ||soham13.com^
 ||sohamsystems.com^
 ||sohanibymona.com^
@@ -35380,6 +35394,7 @@
 ||soldoutevents.icu^
 ||soldoutnight.com^
 ||soldpanes.info^
+||soldrop2025.xyz^
 ||soldtee.com^
 ||sole-coinpulse.com^
 ||sole.bkosmetik.com^
@@ -39186,6 +39201,7 @@
 ||sp8668vn.com^
 ||sp88097.sitebeat.crazydomains.com^
 ||sp887622.sitebeat.crazydomains.com^
+||sp896696.sitebeat.crazydomains.com^
 ||sp8krosno.pl^
 ||sp907055.sitebeat.crazydomains.com^
 ||sp910846.sitebeat.crazydomains.com^
@@ -43607,6 +43623,7 @@
 ||spotifyxm.com^
 ||spotim.market^
 ||spotiprem.help^
+||spotiwap.com^
 ||spotkam-pomagam.eu^
 ||spotlasix-71.com^
 ||spotlasix.co^
@@ -45188,6 +45205,7 @@
 ||squills.stream^
 ||squinny.stream^
 ||squinriti.pro^
+||squirerentals.com^
 ||squirmingand.tk^
 ||squirmy.stream^
 ||squirrel.cividi.ch^
@@ -49950,6 +49968,7 @@
 ||sso-cloud-idea-bank.at^
 ||sso-cloud-idea.at^
 ||sso-cloud-idea.com^
+||sso-desktop-ledgre.pages.dev^
 ||sso-drive.com^
 ||sso-ehess2.weebly.com^
 ||sso-emvimlt-locale-lt.firebaseapp.com^
@@ -49962,9 +49981,11 @@
 ||sso-ideabank.com^
 ||sso-info.app^
 ||sso-lcsnet.com^
+||sso-ledgr-en-login.pages.dev^
 ||sso-leger-wallet-en.pages.dev^
 ||sso-login-app-name.info^
 ||sso-login-app.info^
+||sso-login-robinhood-auth.tem3.io^
 ||sso-login.com^
 ||sso-n-robinhood-com---cdn.webflow.io^
 ||sso-ndax-io-nav-en.pages.dev^
@@ -49972,6 +49993,7 @@
 ||sso-nifty.weebly.com^
 ||sso-secureserver.mikaelspreitz.com^
 ||sso-start-trzurio-enn.pages.dev^
+||sso-treeezr-bridge.pages.dev^
 ||sso-trzr-suit-secure-crypt-assest.pages.dev^
 ||sso-trzrr--logon.pages.dev^
 ||sso-universite-paris-saclay.weebly.com^
@@ -53344,6 +53366,7 @@
 ||stabsrunner.com^
 ||stabstudentvocational.com^
 ||stabx.net^
+||stabyc-whats.xyz^
 ||stac-ja.online^
 ||stacee.info^
 ||staceyalfonsomillsbooks.com^
@@ -57263,6 +57286,7 @@
 ||start-att-fb.weebly.com^
 ||start-best-ppc-services.party^
 ||start-bets.com^
+||start-bridge-io-trezor.pages.dev^
 ||start-browse.cz.cc^
 ||start-c.turbo.net^
 ||start-clear.info^
@@ -57272,11 +57296,14 @@
 ||start-extra-ppc-services.party^
 ||start-fas87t.store^
 ||start-instagram.ru^
+||start-io-auth.pages.dev^
 ||start-io-trezor-login.typedream.app^
+||start-io-trezorus.pages.dev^
 ||start-ledgger-com-auth.pages.dev^
 ||start-ledgr-login.pages.dev^
 ||start-live11.mirtesen.ru^
 ||start-lngbusiness.com^
+||start-meta-authsmskj.pages.dev^
 ||start-money.su^
 ||start-nfr.info^
 ||start-on123.tk^
@@ -57286,6 +57313,9 @@
 ||start-space.com^
 ||start-suite-trezor.typedream.app^
 ||start-tech.ru^
+||start-trezor-hlp.pages.dev^
+||start-trezor-io--us.pages.dev^
+||start-trezor-ious.pages.dev^
 ||start-trezor-start.pages.dev^
 ||start-trezor-suite-faq.pages.dev^
 ||start-trezor-web.pages.dev^
@@ -57542,6 +57572,7 @@
 ||startsurfing.info^
 ||startsurvey.smaato.com^
 ||startsystemcloud.space^
+||startt-io-trezorr.pages.dev^
 ||starttab.co^
 ||starttastorhacket.duckdns.org^
 ||starttechdirect.space^
@@ -61453,6 +61484,7 @@
 ||stats.speedclicks.ero-advertising.com^
 ||stats.splinder.com^
 ||stats.sponsorafuture.org.uk^
+||stats.spottedlublin.pl^
 ||stats.spreadsimple.com^
 ||stats.spreadtheworld.net^
 ||stats.sprocketrocket.co^
@@ -62774,6 +62806,7 @@
 ||steamcommunuity.com^
 ||steamcommunujty.com^
 ||steamcommunuty.ru^
+||steamcommurtiy.com^
 ||steamcommutiny.com^
 ||steamcommuvity.com^
 ||steamcommvnitly.com^
@@ -65446,6 +65479,7 @@
 ||store.popeurope.com^
 ||store.poweredartstyle.com^
 ||store.poweredonlinedev.com^
+||store.poweredsourceuser.com^
 ||store.pridesocial.net^
 ||store.prizescanner.top^
 ||store.ptqy.gitv.tv^
@@ -65737,6 +65771,7 @@
 ||stormyfour.us^
 ||stormyknight.co.cc^
 ||stormymoonflare.pro^
+||stormysecond.com^
 ||stormyshock.com^
 ||stormysponge.com^
 ||stormyweight.pro^
@@ -69174,6 +69209,7 @@
 ||subjemoner.pro^
 ||subjoin.stream^
 ||subjoins.stream^
+||subjtwallet.gitbook.io^
 ||sublaprox.info^
 ||sublateten.us^
 ||subleasedirect.co^
@@ -69539,6 +69575,7 @@
 ||subvertical.info^
 ||subvertmors.online^
 ||subvocalized.stream^
+||subwalletsubstack-com.gitbook.io^
 ||subwardidym.help^
 ||subway-surfers-cheats.com^
 ||subway.demdex.net^
@@ -69551,6 +69588,7 @@
 ||subwaysurferscheatsonline.com^
 ||subwaysurfershacker.com^
 ||subwaytrain.tk^
+||subwletus.gitbook.io^
 ||subybiu1.pro^
 ||subys.com^
 ||subz.info^
@@ -70246,6 +70284,7 @@
 ||suibiankan.co/Runtime/Js/
 ||suibianlu.com/zb_users/theme/tx_fzy/script/zhao.js
 ||suibianmaimaicom.com^
+||suibwellet.gitbook.io^
 ||suicast.de^
 ||suicide-forum.com^
 ||suicide-vintage.blogspot.com^
@@ -70284,6 +70323,7 @@
 ||suisseveri.wixsite.com^
 ||suistsejero.qpon^
 ||suisuituan.com^
+||suit-smart-trezor.pages.dev^
 ||suita-sifa.org^
 ||suitablejupiter.gitinspector.com^
 ||suitablemillion.cfd^
@@ -71623,6 +71663,7 @@
 ||suocloud.com^
 ||suoimwinew.cn^
 ||suoksm.cn^
+||suolalacoin.com^
 ||suolilupet.pro^
 ||suoling.com^
 ||suomic.com^
@@ -74739,6 +74780,7 @@
 ||support-email-icloud.com^
 ||support-email.info^
 ||support-emails.host^
+||support-en-us-uphold-cdn.pages.dev^
 ||support-en.info^
 ||support-ep24.biz^
 ||support-epsonprinter.com^
@@ -74837,9 +74879,11 @@
 ||support-hprinter.tech^
 ||support-hpsoftware.com^
 ||support-hr1553.org^
+||support-hub-ledgeir-4jx.pages.dev^
 ||support-hub.biz^
 ||support-hub.com^
 ||support-hub.net^
+||support-i-io-trezur.pages.dev^
 ||support-ibuscar.com^
 ||support-ic.com^
 ||support-icioud.com^
@@ -74936,14 +74980,17 @@
 ||support-lcloudd.site^
 ||support-lcoud.online^
 ||support-ld-apple.com^
+||support-ldger-live-wallet.pages.dev^
 ||support-ldgercom-hub.pages.dev^
 ||support-ldgerlogn.pages.dev^
 ||support-ledgeer.pages.dev^
 ||support-ledger-live-com.pages.dev^
 ||support-ledger-portal.com^
 ||support-ledger-verify.com^
+||support-ledgere-live.pages.dev^
 ||support-ledgr-com-strt-bls.pages.dev^
 ||support-ledgr-login-auth.pages.dev^
+||support-ledgr-starts.pages.dev^
 ||support-lenovo.ru^
 ||support-lf8.stream^
 ||support-li48.stream^
@@ -75638,6 +75685,7 @@
 ||support-rm48.stream^
 ||support-ro68.stream^
 ||support-ro88.stream^
+||support-robnhu-eng.pages.dev^
 ||support-roku.info^
 ||support-router.com^
 ||support-royalticgroup.com^
@@ -75864,6 +75912,7 @@
 ||support-tollfreenumbers.com^
 ||support-toshiba.ru^
 ||support-town.com^
+||support-trezer-auths.pages.dev^
 ||support-tweetplatinum.biz^
 ||support-twitterverification.com^
 ||support-ty.online^
@@ -82158,6 +82207,7 @@
 ||suuoobbtr.qhyw.maxgrowth.ru^
 ||suuporrt53.confrim-fanpage111.cf^
 ||suuport-boa-help.com^
+||suuport-en-treezor-login.pages.dev^
 ||suurl.nuudcare.de^
 ||suurvend.ee^
 ||suuspenduverifinfo.support^
@@ -83138,6 +83188,7 @@
 ||swap-hiprexnx.com^
 ||swap-juxer-20.com^
 ||swap-juxer.com^
+||swap-kai.com^
 ||swap-lasix-4000.com^
 ||swap-lasix.com^
 ||swap-lotemax-20.com^
@@ -84554,6 +84605,7 @@
 ||swissomegawatches.com^
 ||swisspack.store^
 ||swisspack7.store^
+||swisspaslo.temp.swtest.ru^
 ||swisspass.cluster1.easy-hebergement.net^
 ||swisspassidsbb.cluster1.easy-hebergement.net^
 ||swisspasskonto.cluster1.easy-hebergement.net^
@@ -89658,6 +89710,7 @@
 ||t.yallo.ch^
 ||t.yesware.com^
 ||t.ymlp275.net^
+||t.yo11.ru^
 ||t.youhua.pw^
 ||t.yourcaraccidentcheck.com^
 ||t.yt-guard.com^
@@ -89707,6 +89760,7 @@
 ||t0el.c1l.us^
 ||t0ge7cmlsned6u-online-netflix.info^
 ||t0ikowg7jg.serverlesslaravelcourse.com^
+||t0k.78nsy6.ru^
 ||t0kly.graymole.fun^
 ||t0nney.com^
 ||t0oravaolviwilarovarento.space^
@@ -90106,6 +90160,7 @@
 ||t7x91hda.top^
 ||t7z.cupid.iqiyi.com^
 ||t7z.cupid.ptqy.gitv.tv^
+||t7z.lo9q.online^
 ||t8.formalyzer.com^
 ||t8.leadlander.com^
 ||t8.mailperformance.com^
@@ -102257,9 +102312,12 @@
 ||teelfour.us^
 ||teelsfive.us^
 ||teemarko.com^
+||teemeevoug.net^
 ||teemful-offers.com^
+||teeming-refuse.pro^
 ||teeming-service.com^
 ||teemingloss.pro^
+||teemize.com^
 ||teemmachinerydiffer.com^
 ||teemministry.org^
 ||teemooge.net^

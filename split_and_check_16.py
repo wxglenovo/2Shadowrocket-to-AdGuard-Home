@@ -8,10 +8,13 @@ import argparse
 import dns.resolver
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-URLS_TXT = "urls.txt"
+# ===============================
+# 配置
+# ===============================
+URLS_TXT = "urls.txt"               # 存放规则源地址
 TMP_DIR = "tmp"
 DIST_DIR = "dist"
-MASTER_RULE = "merged_rules.txt"
+MASTER_RULE = "merged_rules.txt"    # 合并后的规则文件
 PARTS = 16
 DNS_WORKERS = 50
 DNS_TIMEOUT = 2
@@ -21,7 +24,9 @@ DELETE_THRESHOLD = 4
 os.makedirs(TMP_DIR, exist_ok=True)
 os.makedirs(DIST_DIR, exist_ok=True)
 
-# 下载规则源
+# ===============================
+# 下载与合并规则
+# ===============================
 def download_all_sources():
     if not os.path.exists(URLS_TXT):
         print("❌ urls.txt 不存在")
@@ -46,7 +51,9 @@ def download_all_sources():
         f.write("\n".join(sorted(merged)))
     return True
 
+# ===============================
 # 分片
+# ===============================
 def split_parts():
     if not os.path.exists(MASTER_RULE):
         print("⚠ 缺少合并规则文件")
@@ -64,7 +71,9 @@ def split_parts():
         print(f"📄 分片 {i+1}: {len(part_rules)} 条 → {filename}")
     return True
 
+# ===============================
 # DNS 验证
+# ===============================
 def check_domain(rule):
     resolver = dns.resolver.Resolver()
     resolver.timeout = DNS_TIMEOUT
@@ -90,11 +99,14 @@ def dns_validate(lines):
             result = future.result()
             if result:
                 valid.append(result)
-            if done % 500 == 0 or done == total:
+            if done % 500 == 0:
                 print(f"✅ 已验证 {done}/{total} 条，有效 {len(valid)} 条")
+    print(f"✅ 分片验证完成，有效 {len(valid)} 条")
     return valid
 
-# 删除计数
+# ===============================
+# 删除计数管理
+# ===============================
 def load_delete_counter():
     if os.path.exists(DELETE_COUNTER_FILE):
         with open(DELETE_COUNTER_FILE, "r", encoding="utf-8") as f:
@@ -105,7 +117,9 @@ def save_delete_counter(counter):
     with open(DELETE_COUNTER_FILE, "w", encoding="utf-8") as f:
         json.dump(counter, f, indent=2, ensure_ascii=False)
 
+# ===============================
 # 分片处理
+# ===============================
 def process_part(part):
     part_file = os.path.join(TMP_DIR, f"part_{int(part):02d}.txt")
     if not os.path.exists(part_file):
@@ -136,9 +150,9 @@ def process_part(part):
     for rule in old_rules | set(lines):
         if rule in valid:
             final_rules.add(rule)
-            new_delete_counter[rule] = 0
             if rule in delete_counter:
                 print(f"🔄 验证成功，清零删除计数: {rule}")
+            new_delete_counter[rule] = 0
         else:
             count = delete_counter.get(rule, 0) + 1
             new_delete_counter[rule] = count
@@ -157,11 +171,13 @@ def process_part(part):
 
     total_count = len(final_rules)
     print(f"✅ 分片 {part} 完成: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
-    print(f"COMMIT_STATS: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
+    # 💾 输出给 workflow 用作 commit 信息
+    print(f"COMMIT_STATS: validated part {part} → 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
 
+# ===============================
 # 主函数
+# ===============================
 if __name__ == "__main__":
-    import argparse
     parser = argparse.ArgumentParser()
     parser.add_argument("--part", help="验证指定分片 1~16")
     parser.add_argument("--force-update", action="store_true", help="强制重新下载规则源并切片")

@@ -6,7 +6,7 @@ on:
     - cron: "0 6 * * *"
     - cron: "0 12 * * *"
     - cron: "0 18 * * *"
-    - cron: "*/12 * * * *"
+    - cron: "*/22 * * * *"
   workflow_dispatch:
     inputs:
       part:
@@ -24,40 +24,30 @@ jobs:
       PYTHONUNBUFFERED: 1
 
     steps:
-      # ------------------------------
-      # 1️⃣ 获取仓库代码
-      # ------------------------------
+      # 1️⃣ Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      # ------------------------------
-      # 2️⃣ 安装 Python
-      # ------------------------------
+      # 2️⃣ Setup Python
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.12'
 
-      # ------------------------------
-      # 3️⃣ 安装依赖
-      # ------------------------------
+      # 3️⃣ Install dependencies
       - name: Install dependencies
         run: |
           pip install --upgrade requests dnspython
 
-      # ------------------------------
-      # 4️⃣ 配置 Git 用户
-      # ------------------------------
+      # 4️⃣ Configure Git
       - name: Configure Git
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-      # ------------------------------
-      # 5️⃣ 确定当前分片 PART
-      # ------------------------------
+      # 5️⃣ Determine PART index
       - name: Determine PART index
         id: detect
         shell: bash
@@ -82,9 +72,7 @@ jobs:
           echo $PART > $LAST_PART_FILE
           echo "part=$PART" >> $GITHUB_OUTPUT
 
-      # ------------------------------
-      # 6️⃣ 定时强制下载规则
-      # ------------------------------
+      # 6️⃣ Force download rules at schedule times
       - name: Force download rules at schedule times
         shell: bash
         run: |
@@ -96,9 +84,7 @@ jobs:
             echo "⏩ 非下载时间，不强制更新"
           fi
 
-      # ------------------------------
-      # 7️⃣ 确保规则文件和分片存在
-      # ------------------------------
+      # 7️⃣ Ensure rules and first part exist
       - name: Ensure rules and first part exist
         shell: bash
         run: |
@@ -110,10 +96,9 @@ jobs:
             python split_and_check_16.py --force-update
           else
             echo "✅ 规则文件和分片存在"
+          fi
 
-      # ------------------------------
-      # 8️⃣ 验证当前分片 DNS
-      # ------------------------------
+      # 8️⃣ Run DNS validation for current part
       - name: Run DNS validation for current part
         shell: bash
         env:
@@ -123,9 +108,7 @@ jobs:
           echo "⏱ 开始验证分片 $PART"
           python split_and_check_16.py --part "$PART" | tee logs/split_check_part_${PART}.log
 
-      # ------------------------------
-      # 9️⃣ 提交验证后的规则
-      # ------------------------------
+      # 9️⃣ Commit & Push Validated Rules
       - name: Commit & Push Validated Rules
         shell: bash
         env:
@@ -134,7 +117,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # 提取 COMMIT_STATS，若日志缺失使用默认值 0,0,0
+          # 提取 COMMIT_STATS
           STATS=$(grep "COMMIT_STATS" logs/split_check_part_${PART}.log 2>/dev/null | tail -n1 | sed 's/COMMIT_STATS: //' || echo "0,0,0")
 
           # 添加需要提交的文件

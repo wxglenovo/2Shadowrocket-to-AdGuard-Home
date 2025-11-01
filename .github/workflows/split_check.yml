@@ -4,12 +4,12 @@ name: Split & DNS Check
 # 触发条件
 # -----------------------------
 on:
-  schedule:  # 定时任务
-    - cron: "0 0 * * *"
-    - cron: "0 6 * * *"
-    - cron: "0 12 * * *"
-    - cron: "0 18 * * *"
-    - cron: "*/22 * * * *"
+  schedule:
+    - cron: "0 0 * * *"   # 每天 00:00 UTC
+    - cron: "0 6 * * *"   # 每天 06:00 UTC
+    - cron: "0 12 * * *"  # 每天 12:00 UTC
+    - cron: "0 18 * * *"  # 每天 18:00 UTC
+    - cron: "*/22 * * * *" # 每 22 分钟一次
   workflow_dispatch:
     inputs:
       part:
@@ -27,24 +27,39 @@ jobs:
       PYTHONUNBUFFERED: 1
 
     steps:
+      # -----------------------------
+      # 1. 检出仓库
+      # -----------------------------
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
+      # -----------------------------
+      # 2. 设置 Python 环境
+      # -----------------------------
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.12'
 
+      # -----------------------------
+      # 3. 安装依赖
+      # -----------------------------
       - name: Install dependencies
         run: pip install --upgrade requests dnspython
 
+      # -----------------------------
+      # 4. 配置 Git
+      # -----------------------------
       - name: Configure Git
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
+      # -----------------------------
+      # 5. 确定当前分片 (PART)
+      # -----------------------------
       - name: Determine PART index
         id: detect
         run: |
@@ -77,12 +92,10 @@ jobs:
           MERGED_FILE="merged_rules.txt"
           FIRST_PART="tmp/part_01.txt"
 
-          # 每天四次强制更新
           if [[ "$CURRENT_HOUR" == "00" || "$CURRENT_HOUR" == "06" || "$CURRENT_HOUR" == "12" || "$CURRENT_HOUR" == "18" ]]; then
-            echo "✅ 强制下载规则源并生成所有分片"
+            echo "✅ 定时强制下载规则源并生成所有分片"
             python3 split_and_check_16.py --force
           else
-            # 非下载时间，仅当 tmp/part_01.txt 或合并文件缺失时才拉取
             if [ ! -f "$FIRST_PART" ] || [ ! -f "$MERGED_FILE" ]; then
               echo "⚠ tmp 分片或合并文件不存在 → 拉取一次"
               python3 split_and_check_16.py --force
@@ -91,17 +104,9 @@ jobs:
             fi
           fi
 
-      - name: Ensure rules and first part exist
-        run: |
-          MERGED_FILE="merged_rules.txt"
-          FIRST_PART="tmp/part_01.txt"
-          if [ ! -f "$MERGED_FILE" ] || [ ! -f "$FIRST_PART" ]; then
-            echo "⚠ 缺少规则文件或分片 → 重新拉取"
-            python3 split_and_check_16.py --force
-          else
-            echo "✅ 规则文件和分片存在"
-          fi
-
+      # -----------------------------
+      # 7. 确保 delete_counter.json 存在
+      # -----------------------------
       - name: Ensure delete_counter.json exists
         run: |
           mkdir -p dist
@@ -112,6 +117,9 @@ jobs:
             echo "✅ delete_counter.json 已存在"
           fi
 
+      # -----------------------------
+      # 8. 对当前分片进行 DNS 验证
+      # -----------------------------
       - name: Run DNS validation for current part
         env:
           PART: ${{ steps.detect.outputs.part }}
@@ -120,6 +128,9 @@ jobs:
           echo "⏱ 开始验证分片 $PART"
           python3 split_and_check_16.py --part "$PART" | tee logs/split_check_part_${PART}.log
 
+      # -----------------------------
+      # 9. 提交并推送验证后的规则
+      # -----------------------------
       - name: Commit & Push Validated Rules
         env:
           PART: ${{ steps.detect.outputs.part }}

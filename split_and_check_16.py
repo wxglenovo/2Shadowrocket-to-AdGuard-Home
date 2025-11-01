@@ -20,7 +20,7 @@ DNS_WORKERS = 50
 DNS_TIMEOUT = 2
 DELETE_COUNTER_FILE = os.path.join(DIST_DIR, "delete_counter.json")
 DELETE_THRESHOLD = 4
-BATCH_PROGRESS = 500  # 每多少条输出一次进度
+BATCH_LOG_SIZE = 500  # 每批输出一次已验证数量
 
 # 创建目录
 os.makedirs(TMP_DIR, exist_ok=True)
@@ -90,21 +90,20 @@ def check_domain(rule):
         return None
 
 def dns_validate(lines):
-    print(f"🚀 启动 {DNS_WORKERS} 并发验证")
     valid = []
+    total = len(lines)
+    done = 0
+    batch_logs = []
     with ThreadPoolExecutor(max_workers=DNS_WORKERS) as executor:
         futures = {executor.submit(check_domain, rule): rule for rule in lines}
-        total = len(lines)
-        done = 0
         for future in as_completed(futures):
             done += 1
             result = future.result()
             if result:
                 valid.append(result)
-            if done % BATCH_PROGRESS == 0 or done == total:
+            if done % BATCH_LOG_SIZE == 0 or done == total:
                 print(f"✅ 已验证 {done}/{total} 条，有效 {len(valid)} 条")
-    print(f"✅ 分片 DNS 验证完成，有效 {len(valid)} 条")
-    return set(valid)
+    return valid
 
 # ===============================
 # 删除计数管理
@@ -142,10 +141,9 @@ def process_part(part):
 
     lines = open(part_file, "r", encoding="utf-8").read().splitlines()
     print(f"⏱ 验证分片 {part}，共 {len(lines)} 条规则")
-
-    valid = dns_validate(lines)
-
+    valid_set = set(dns_validate(lines))
     out_file = os.path.join(DIST_DIR, f"validated_part_{part}.txt")
+
     old_rules = set()
     if os.path.exists(out_file):
         with open(out_file, "r", encoding="utf-8") as f:
@@ -156,10 +154,10 @@ def process_part(part):
     final_rules = set()
     removed_count = 0
     added_count = 0
-    warn_list = []
+    warn_lines = []
 
     for rule in old_rules | set(lines):
-        if rule in valid:
+        if rule in valid_set:
             final_rules.add(rule)
             new_delete_counter[rule] = 0
         else:
@@ -169,9 +167,9 @@ def process_part(part):
                 removed_count += 1
             else:
                 final_rules.add(rule)
-            warn_list.append((count, rule))
-
-        if rule not in old_rules and rule in valid:
+            if count < DELETE_THRESHOLD:
+                warn_lines.append(f"⚠ 连续删除计数 {count}/{DELETE_THRESHOLD}: {rule}")
+        if rule not in old_rules and rule in valid_set:
             added_count += 1
 
     save_delete_counter(new_delete_counter)
@@ -179,13 +177,13 @@ def process_part(part):
     with open(out_file, "w", encoding="utf-8") as f:
         f.write("\n".join(sorted(final_rules)))
 
-    total_count = len(final_rules)
-    print(f"✅ 分片 {part} 完成: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
-    print(f"COMMIT_STATS: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
+    # ✅ 输出统计
+    print(f"✅ 分片 {part} 完成: 总 {len(final_rules)}, 新增 {added_count}, 删除 {removed_count}")
+    print(f"COMMIT_STATS: 总 {len(final_rules)}, 新增 {added_count}, 删除 {removed_count}")
 
-    # 统一输出警告：只有未达到阈值的显示正常计数，达到阈值也显示
-    for count, rule in warn_list:
-        print(f"⚠ 连续删除计数 {count}/{DELETE_THRESHOLD}: {rule}")
+    # ⚠ 输出连续删除计数在统计之后
+    for line in warn_lines:
+        print(line)
 
 # ===============================
 # 主函数
@@ -194,6 +192,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--part", help="验证指定分片 1~16")
     parser.add_argument("--force-update", action="store_true", help="强制重新下载规则源并切片")
+    parser.add_argument("--concurrent", action="store_true", help="开启并发验证")
     args = parser.parse_args()
 
     if args.force_update:

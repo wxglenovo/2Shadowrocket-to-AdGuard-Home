@@ -4,13 +4,13 @@ name: Split & DNS Check
 # 触发条件
 # -----------------------------
 on:
-  schedule:
+  schedule:  # 定时任务
     - cron: "0 0 * * *"   # 每天 00:00 UTC
     - cron: "0 6 * * *"   # 每天 06:00 UTC
     - cron: "0 12 * * *"  # 每天 12:00 UTC
     - cron: "0 18 * * *"  # 每天 18:00 UTC
     - cron: "*/22 * * * *" # 每 22 分钟一次
-  workflow_dispatch:
+  workflow_dispatch:      # 手动触发
     inputs:
       part:
         description: '手动验证指定分片 1~16'
@@ -27,6 +27,7 @@ jobs:
       PYTHONUNBUFFERED: 1
 
     steps:
+
       # -----------------------------
       # 1. 检出仓库
       # -----------------------------
@@ -84,28 +85,35 @@ jobs:
           echo "part=$PART" >> $GITHUB_OUTPUT
 
       # -----------------------------
-      # 6. 定时强制下载规则（修改点 ✅）
+      # 6. 定时强制下载规则源
+      # ✅ 改动：只在每天 00/06/12/18 强制覆盖 tmp/part_**.txt
       # -----------------------------
       - name: Force download rules at schedule times
         run: |
           CURRENT_HOUR=$(date -u +"%H")
-          MERGED_FILE="merged_rules.txt"
-          FIRST_PART="tmp/part_01.txt"
-
           if [[ "$CURRENT_HOUR" == "00" || "$CURRENT_HOUR" == "06" || "$CURRENT_HOUR" == "12" || "$CURRENT_HOUR" == "18" ]]; then
-            echo "✅ 定时强制下载规则源并生成所有分片"
-            python3 split_and_check_16.py --force
+            echo "✅ 定时下载规则源并覆盖分片"
+            python3 split_and_check_16.py --force-update
           else
-            if [ ! -f "$FIRST_PART" ] || [ ! -f "$MERGED_FILE" ]; then
-              echo "⚠ tmp 分片或合并文件不存在 → 拉取一次"
-              python3 split_and_check_16.py --force
-            else
-              echo "⏩ tmp 分片已存在，不重复下载"
-            fi
+            echo "⏩ 非定时触发，有 tmp/part_**.txt 则不下载"
           fi
 
       # -----------------------------
-      # 7. 确保 delete_counter.json 存在
+      # 7. 确保规则文件及首个分片存在
+      # -----------------------------
+      - name: Ensure rules and first part exist
+        run: |
+          MERGED_FILE="merged_rules.txt"
+          FIRST_PART="tmp/part_01.txt"
+          if [ ! -f "$MERGED_FILE" ] || [ ! -f "$FIRST_PART" ]; then
+            echo "⚠ 缺少规则文件或分片 → 重新拉取"
+            python3 split_and_check_16.py --force-update
+          else
+            echo "✅ 规则文件和分片存在"
+          fi
+
+      # -----------------------------
+      # 8. 确保 delete_counter.json 存在
       # -----------------------------
       - name: Ensure delete_counter.json exists
         run: |
@@ -118,7 +126,7 @@ jobs:
           fi
 
       # -----------------------------
-      # 8. 对当前分片进行 DNS 验证
+      # 9. 当前分片 DNS 验证
       # -----------------------------
       - name: Run DNS validation for current part
         env:
@@ -129,7 +137,7 @@ jobs:
           python3 split_and_check_16.py --part "$PART" | tee logs/split_check_part_${PART}.log
 
       # -----------------------------
-      # 9. 提交并推送验证后的规则
+      # 10. 提交 & 推送验证后的规则
       # -----------------------------
       - name: Commit & Push Validated Rules
         env:

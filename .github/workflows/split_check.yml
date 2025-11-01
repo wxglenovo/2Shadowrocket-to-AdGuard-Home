@@ -41,6 +41,7 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
       - name: Determine PART index
         id: detect
         shell: bash
@@ -64,6 +65,7 @@ jobs:
           
           echo $PART > $LAST_PART_FILE
           echo "part=$PART" >> $GITHUB_OUTPUT
+
       - name: Force download rules at schedule times
         shell: bash
         run: |
@@ -73,7 +75,7 @@ jobs:
             python split_and_check_16.py --force-update
           else
             echo "⏩ 非下载时间，不强制更新"
-          fi
+
       - name: Ensure rules and first part exist
         shell: bash
         run: |
@@ -84,7 +86,7 @@ jobs:
             python split_and_check_16.py --force-update
           else
             echo "✅ 规则文件和分片存在"
-          fi
+
       - name: Run DNS validation for current part
         shell: bash
         env:
@@ -93,6 +95,7 @@ jobs:
           mkdir -p logs
           echo "⏱ 开始验证分片 $PART"
           python split_and_check_16.py --part "$PART" | tee logs/split_check_part_${PART}.log
+
       - name: Commit & Push Validated Rules
         shell: bash
         env:
@@ -101,7 +104,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           
-          STATS=$(grep "COMMIT_STATS" logs/split_check_part_${PART}.log | tail -n1 | sed 's/COMMIT_STATS: //')
+          # 提取 COMMIT_STATS，若日志缺失使用默认值
+          STATS=$(grep "COMMIT_STATS" logs/split_check_part_${PART}.log 2>/dev/null | tail -n1 | sed 's/COMMIT_STATS: //' || echo "0,0,0")
           
           git add tmp/last_part.txt dist/validated_part_*.txt dist/delete_counter.json merged_rules.txt
           git commit -m "🤖 part $PART → $STATS" || echo "No changes to commit"

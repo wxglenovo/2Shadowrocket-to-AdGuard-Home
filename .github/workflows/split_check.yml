@@ -1,4 +1,4 @@
-name: Split & DNS Check
+name: Split & DNS Check (Concurrent)
 
 on:
   schedule:
@@ -18,7 +18,7 @@ permissions:
   contents: write
 
 jobs:
-  dns_check:
+  build:
     runs-on: ubuntu-latest
     env:
       PYTHONUNBUFFERED: 1
@@ -37,8 +37,7 @@ jobs:
           python-version: '3.12'
 
       - name: Install dependencies
-        run: |
-          pip install --upgrade requests dnspython tqdm
+        run: pip install --upgrade requests dnspython tqdm
 
       - name: Configure Git
         run: |
@@ -51,6 +50,7 @@ jobs:
           mkdir -p tmp
           LAST_PART_FILE="tmp/last_part.txt"
           PART_INPUT="${{ github.event.inputs.part }}"
+
           if [ -n "$PART_INPUT" ]; then
             PART="$PART_INPUT"
             echo "🛠 手动指定分片：$PART"
@@ -63,19 +63,29 @@ jobs:
             fi
             echo "⏱ 自动轮替分片：$PART"
           fi
+
           echo "$PART" > "$LAST_PART_FILE"
           echo "part=$PART" >> $GITHUB_OUTPUT
 
+      - name: Force download rules at schedule times
+        run: |
+          CURRENT_HOUR=$(date -u +"%H")
+          if [[ "$CURRENT_HOUR" == "00" || "$CURRENT_HOUR" == "06" || "$CURRENT_HOUR" == "12" || "$CURRENT_HOUR" == "18" ]]; then
+            echo "✅ 强制下载规则源并生成所有分片"
+            python3 split_and_check_16.py --force-update
+          else
+            echo "⏩ 非下载时间，不强制更新"
+          fi
+
       - name: Ensure rules and first part exist
         run: |
-          MERGED_FILE="merged_rules.txt"
           FIRST_PART="tmp/part_01.txt"
-          mkdir -p tmp dist
-          if [ ! -f "$MERGED_FILE" ] || [ ! -f "$FIRST_PART" ]; then
-            echo "⚠ 缺少规则文件或分片 → 下载 & 生成"
+          if [ ! -f "merged_rules.txt" ] || [ ! -f "$FIRST_PART" ]; then
+            echo "⚠ 缺少规则文件或分片 → 重新拉取"
             python3 split_and_check_16.py --force-update
           else
             echo "✅ 规则文件和分片存在"
+          fi
 
       - name: Ensure delete_counter.json exists
         run: |
@@ -85,13 +95,16 @@ jobs:
             echo "✅ 创建 dist/delete_counter.json"
           else
             echo "✅ delete_counter.json 已存在"
+          fi
 
       - name: Run DNS validation for current part (Concurrent)
         env:
           PART: ${{ steps.detect.outputs.part }}
+          DNS_WORKERS: ${{ env.DNS_WORKERS }}
+          DNS_BATCH_SIZE: ${{ env.DNS_BATCH_SIZE }}
         run: |
           mkdir -p logs
-          echo "⏱ 开始验证分片 $PART"
+          echo "⏱ 开始并发验证分片 $PART (并发 $DNS_WORKERS，每批 $DNS_BATCH_SIZE 条)"
           python3 split_and_check_16.py --part "$PART" --concurrent | tee logs/split_check_part_${PART}.log
 
       - name: Commit & Push Validated Rules

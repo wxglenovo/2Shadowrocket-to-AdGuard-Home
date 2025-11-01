@@ -104,12 +104,39 @@ jobs:
           echo "⏱ 开始验证分片 $PART"
           python3 split_and_check_16.py --part "$PART" | tee logs/split_check_part_${PART}.log
 
+      - name: Merge all parts
+        run: |
+          echo "🔗 合并所有分片生成 dist/all_parts_merged.txt"
+          python3 - <<'EOF'
+import os
+
+TMP_DIR = "tmp"
+DIST_DIR = "dist"
+PARTS = 16
+os.makedirs(DIST_DIR, exist_ok=True)
+
+all_rules = []
+for i in range(1, PARTS + 1):
+    part_file = os.path.join(TMP_DIR, f"part_{i:02d}.txt")
+    if not os.path.exists(part_file):
+        continue
+    with open(part_file, "r", encoding="utf-8") as f:
+        lines = [line.strip() for line in f if line.strip()]
+        all_rules.extend(lines)
+all_rules = sorted(set(all_rules))
+
+merged_file = os.path.join(DIST_DIR, "all_parts_merged.txt")
+with open(merged_file, "w", encoding="utf-8") as f:
+    f.write("\n".join(all_rules))
+print(f"✅ 合并完成，总计 {len(all_rules)} 条规则")
+EOF
+
       - name: Commit & Push Validated Rules
         env:
           PART: ${{ steps.detect.outputs.part }}
         run: |
           STATS=$(grep "COMMIT_STATS" logs/split_check_part_${PART}.log | tail -n1 | sed 's/COMMIT_STATS: //')
-          git add tmp/last_part.txt dist/validated_part_*.txt dist/delete_counter.json merged_rules.txt
+          git add tmp/last_part.txt dist/validated_part_*.txt dist/delete_counter.json dist/all_parts_merged.txt merged_rules.txt
           git commit -m "🤖 part $PART → $STATS" || echo "No changes to commit"
           git pull --rebase origin main || echo "⚠ Pull failed"
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main || echo "⚠ Push failed"

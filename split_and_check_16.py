@@ -1,3 +1,5 @@
+
+
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
@@ -16,7 +18,7 @@ TMP_DIR = "tmp"
 DIST_DIR = "dist"
 MASTER_RULE = "merged_rules.txt"    # 合并后的规则文件
 PARTS = 16
-DNS_WORKERS = int(os.environ.get("DNS_WORKERS", 50))
+DNS_WORKERS = 50
 DNS_TIMEOUT = 2
 DELETE_COUNTER_FILE = os.path.join(DIST_DIR, "delete_counter.json")
 DELETE_THRESHOLD = 4
@@ -43,7 +45,7 @@ def download_all_sources():
             r.raise_for_status()
             for line in r.text.splitlines():
                 line = line.strip()
-                if line and not line.startswith("#") and not line.startswith("!"):
+                if line and not line.startswith("#"):
                     merged.add(line)
         except Exception as e:
             print(f"⚠ 下载失败 {url}: {e}")
@@ -100,7 +102,7 @@ def dns_validate(lines):
             result = future.result()
             if result:
                 valid.append(result)
-            if done % 500 == 0 or done == total:
+            if done % 500 == 0:
                 print(f"✅ 已验证 {done}/{total} 条，有效 {len(valid)} 条")
     print(f"✅ 分片验证完成，有效 {len(valid)} 条")
     return valid
@@ -117,6 +119,7 @@ def load_delete_counter():
             print(f"⚠ {DELETE_COUNTER_FILE} 解析失败，重建空计数")
             return {}
     else:
+        print(f"⚠ {DELETE_COUNTER_FILE} 不存在，创建新文件")
         os.makedirs(DIST_DIR, exist_ok=True)
         with open(DELETE_COUNTER_FILE, "w", encoding="utf-8") as f:
             json.dump({}, f, indent=2, ensure_ascii=False)
@@ -151,23 +154,26 @@ def process_part(part):
 
     delete_counter = load_delete_counter()
     new_delete_counter = {}
+
     final_rules = set()
     removed_count = 0
     added_count = 0
-    warning_list = []
 
     for rule in old_rules | set(lines):
         if rule in valid:
             final_rules.add(rule)
+            if rule in delete_counter and delete_counter[rule] > 0:
+                print(f"🔄 验证成功，清零删除计数: {rule}")
             new_delete_counter[rule] = 0
         else:
             count = delete_counter.get(rule, 0) + 1
             new_delete_counter[rule] = count
-            if count < DELETE_THRESHOLD:
-                final_rules.add(rule)
-            else:
+            print(f"⚠ 连续删除计数 {count}/{DELETE_THRESHOLD}: {rule}")
+            if count >= DELETE_THRESHOLD:
                 removed_count += 1
-            warning_list.append(f"⚠ 连续删除计数 {count}/{DELETE_THRESHOLD}: {rule}")
+                # 不加入 final_rules
+            else:
+                final_rules.add(rule)
         if rule not in old_rules and rule in valid:
             added_count += 1
 
@@ -176,13 +182,6 @@ def process_part(part):
     with open(out_file, "w", encoding="utf-8") as f:
         f.write("\n".join(sorted(final_rules)))
 
-    # 先输出已验证统计
-    print(f"✅ 已验证 {len(valid)}/{len(lines)} 条，有效 {len(final_rules)} 条")
-    # 再统一输出连续删除计数
-    for w in warning_list:
-        print(w)
-
-    # 最终统计
     total_count = len(final_rules)
     print(f"✅ 分片 {part} 完成: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
     print(f"COMMIT_STATS: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
@@ -194,7 +193,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--part", help="验证指定分片 1~16")
     parser.add_argument("--force-update", action="store_true", help="强制重新下载规则源并切片")
-    parser.add_argument("--concurrent", action="store_true", help="并发验证")
     args = parser.parse_args()
 
     if args.force_update:
@@ -208,6 +206,3 @@ if __name__ == "__main__":
 
     if args.part:
         process_part(args.part)
-    else:
-        for p in range(1, PARTS+1):
-            process_part(p)

@@ -11,22 +11,22 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 # ===============================
 # 配置
 # ===============================
-URLS_TXT = "urls.txt"
-TMP_DIR = "tmp"
-DIST_DIR = "dist"
-MASTER_RULE = "merged_rules.txt"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # ✅ 修改：使用绝对路径，防止 workflow cwd 错误
+TMP_DIR = os.path.join(BASE_DIR, "tmp")               # ✅ 修改：保证 tmp 目录在仓库根目录
+DIST_DIR = os.path.join(BASE_DIR, "dist")
+URLS_TXT = os.path.join(BASE_DIR, "urls.txt")
+MASTER_RULE = os.path.join(BASE_DIR, "merged_rules.txt")
 PARTS = 16
 DNS_WORKERS = 50
 DNS_TIMEOUT = 2
 DELETE_COUNTER_FILE = os.path.join(DIST_DIR, "delete_counter.json")
 DELETE_THRESHOLD = 4
 
-# ✅ 确保目录存在（改动）
 os.makedirs(TMP_DIR, exist_ok=True)
 os.makedirs(DIST_DIR, exist_ok=True)
 
 # ===============================
-# 下载并合并规则
+# 下载与合并规则
 # ===============================
 def download_all_sources():
     if not os.path.exists(URLS_TXT):
@@ -61,13 +61,10 @@ def split_parts():
         return False
     with open(MASTER_RULE, "r", encoding="utf-8") as f:
         rules = [l.strip() for l in f if l.strip()]
+    print(f"DEBUG: rules count = {len(rules)}")  # ✅ 调试信息
     total = len(rules)
     per_part = (total + PARTS - 1) // PARTS
     print(f"🪓 分片 {total} 条，每片约 {per_part}")
-
-    # ✅ 强制确保 tmp 目录存在
-    os.makedirs(TMP_DIR, exist_ok=True)
-
     for i in range(PARTS):
         part_rules = rules[i * per_part:(i + 1) * per_part]
         filename = os.path.join(TMP_DIR, f"part_{i+1:02d}.txt")
@@ -132,17 +129,14 @@ def save_delete_counter(counter):
         json.dump(counter, f, indent=2, ensure_ascii=False)
 
 # ===============================
-# 分片处理（保证连续失败计数累积）
+# 分片处理
 # ===============================
 def process_part(part):
     part_file = os.path.join(TMP_DIR, f"part_{int(part):02d}.txt")
-
-    # ✅ 如果分片不存在，则强制下载规则并分片
     if not os.path.exists(part_file):
         print(f"⚠ 分片 {part} 缺失，重新下载并切片")
         download_all_sources()
         split_parts()
-    
     if not os.path.exists(part_file):
         print("❌ 分片仍不存在，终止")
         return
@@ -158,7 +152,9 @@ def process_part(part):
             old_rules = set([l.strip() for l in f if l.strip()])
 
     delete_counter = load_delete_counter()
-    new_delete_counter = delete_counter.copy()  # ✅ 保留旧计数
+
+    # ✅ 核心修改：不覆盖整个 delete_counter，而是继承旧内容
+    new_delete_counter = delete_counter.copy()
 
     final_rules = set()
     removed_count = 0
@@ -178,6 +174,7 @@ def process_part(part):
             new_delete_counter[rule] = new_count
             print(f"⚠ 连续验证失败计数 {new_count}/{DELETE_THRESHOLD}: {rule}")
 
+            # ✅ 达阈值才真删除，否则继续保留
             if new_count < DELETE_THRESHOLD:
                 final_rules.add(rule)
             else:
@@ -201,17 +198,16 @@ if __name__ == "__main__":
     parser.add_argument("--force-update", action="store_true", help="强制重新下载规则源并切片")
     args = parser.parse_args()
 
-    # ✅ 强制更新
+    # ✅ 强制更新时下载并切片
     if args.force_update:
         download_all_sources()
         split_parts()
 
-    # ✅ 如果 rules 或首个分片不存在，自动拉取
-    if not os.path.exists(MASTER_RULE) or not os.path.exists(os.path.join(TMP_DIR, "part_01.txt")):
+    # ✅ 初次缺规则或分片时自动下载
+    if not os.path.exists(MASTER_RULE) or not all(os.path.exists(os.path.join(TMP_DIR, f"part_{i:02d}.txt")) for i in range(1, PARTS+1)):
         print("⚠ 缺少规则或分片，自动拉取")
         download_all_sources()
         split_parts()
 
-    # ✅ 如果指定分片，则处理该分片
     if args.part:
         process_part(args.part)

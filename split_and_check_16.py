@@ -1,5 +1,3 @@
-
-
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
@@ -13,17 +11,16 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 # ===============================
 # 配置
 # ===============================
-URLS_TXT = "urls.txt"               # 存放规则源地址
+URLS_TXT = "urls.txt"
 TMP_DIR = "tmp"
 DIST_DIR = "dist"
-MASTER_RULE = "merged_rules.txt"    # 合并后的规则文件
+MASTER_RULE = "merged_rules.txt"
 PARTS = 16
 DNS_WORKERS = 50
 DNS_TIMEOUT = 2
 DELETE_COUNTER_FILE = os.path.join(DIST_DIR, "delete_counter.json")
 DELETE_THRESHOLD = 4
 
-# 创建目录
 os.makedirs(TMP_DIR, exist_ok=True)
 os.makedirs(DIST_DIR, exist_ok=True)
 
@@ -162,16 +159,12 @@ def process_part(part):
     for rule in old_rules | set(lines):
         if rule in valid:
             final_rules.add(rule)
-            if rule in delete_counter and delete_counter[rule] > 0:
-                print(f"🔄 验证成功，清零删除计数: {rule}")
             new_delete_counter[rule] = 0
         else:
             count = delete_counter.get(rule, 0) + 1
             new_delete_counter[rule] = count
-            print(f"⚠ 连续删除计数 {count}/{DELETE_THRESHOLD}: {rule}")
             if count >= DELETE_THRESHOLD:
                 removed_count += 1
-                # 不加入 final_rules
             else:
                 final_rules.add(rule)
         if rule not in old_rules and rule in valid:
@@ -195,12 +188,8 @@ if __name__ == "__main__":
     parser.add_argument("--force-update", action="store_true", help="强制重新下载规则源并切片")
     args = parser.parse_args()
 
-    if args.force_update:
-        download_all_sources()
-        split_parts()
-
-    if not os.path.exists(MASTER_RULE) or not os.path.exists(os.path.join(TMP_DIR, "part_01.txt")):
-        print("⚠ 缺少规则或分片，自动拉取")
+    # 先确保规则和分片存在
+    if args.force_update or not os.path.exists(MASTER_RULE) or not os.path.exists(os.path.join(TMP_DIR, "part_01.txt")):
         download_all_sources()
         split_parts()
 

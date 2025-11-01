@@ -1,4 +1,4 @@
-name: Split & DNS Check
+name: Split & DNS Check 
 
 on:
   schedule:
@@ -66,7 +66,7 @@ jobs:
           echo "$PART" > "$LAST_PART_FILE"
           echo "part=$PART" >> $GITHUB_OUTPUT
 
-      - name: Ensure rules exist
+      - name: Ensure rules and first part exist
         run: |
           MERGED_FILE="merged_rules.txt"
           FIRST_PART="tmp/part_01.txt"
@@ -86,13 +86,13 @@ jobs:
           else
             echo "✅ delete_counter.json 已存在"
 
-      - name: Run DNS validation for current part
+      - name: Run DNS validation for current part (Concurrent)
         env:
           PART: ${{ steps.detect.outputs.part }}
         run: |
           mkdir -p logs
           echo "⏱ 开始验证分片 $PART"
-          python3 split_and_check_16.py --part "$PART" | tee logs/split_check_part_${PART}.log
+          python3 split_and_check_16.py --part "$PART" --concurrent | tee logs/split_check_part_${PART}.log
 
       - name: Commit & Push Validated Rules
         env:

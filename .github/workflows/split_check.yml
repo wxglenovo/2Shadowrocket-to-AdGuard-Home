@@ -28,6 +28,10 @@ jobs:
     runs-on: ubuntu-latest
     env:
       PYTHONUNBUFFERED: 1  # 输出实时刷新
+      PARTS: 16            # 🔹 修改说明：分片数可通过环境变量统一管理
+      TMP_DIR: tmp
+      DIST_DIR: dist
+      LOG_DIR: logs        # 🔹 修改说明：统一日志目录
 
     steps:
 
@@ -62,24 +66,28 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
       # -----------------------------
-      # 5. 确定当前分片 (PART)
+      # 5. 创建必要目录
+      # -----------------------------
+      - name: Create directories
+        run: |
+          mkdir -p ${{ env.TMP_DIR }} ${{ env.DIST_DIR }} ${{ env.LOG_DIR }}
+
+      # -----------------------------
+      # 6. 确定当前分片 (PART)
       # -----------------------------
       - name: Determine PART index
         id: detect
         run: |
-          mkdir -p tmp
-          LAST_PART_FILE="tmp/last_part.txt"
+          LAST_PART_FILE="${{ env.TMP_DIR }}/last_part.txt"
           PART_INPUT="${{ github.event.inputs.part }}"
 
           if [ -n "$PART_INPUT" ]; then
-            # 手动指定分片
             PART="$PART_INPUT"
             echo "🛠 手动指定分片：$PART"
           else
-            # 自动轮替分片
             if [ -f "$LAST_PART_FILE" ]; then
               LAST_PART=$(cat "$LAST_PART_FILE")
-              PART=$(( (LAST_PART % 16) + 1 ))
+              PART=$(( (LAST_PART % ${{ env.PARTS }}) + 1 ))  # 🔹 修改说明：支持动态分片数
             else
               PART=1
             fi
@@ -90,66 +98,63 @@ jobs:
           echo "part=$PART" >> $GITHUB_OUTPUT
 
       # -----------------------------
-      # 6. 定时强制下载规则
+      # 7. 定时强制下载规则
       # -----------------------------
       - name: Force download rules at schedule times
         run: |
           CURRENT_HOUR=$(date -u +"%H")
           if [[ "$CURRENT_HOUR" == "00" || "$CURRENT_HOUR" == "06" || "$CURRENT_HOUR" == "12" || "$CURRENT_HOUR" == "18" ]]; then
             echo "✅ 强制下载规则源并生成所有分片"
-            python3 split_and_check_16.py --force
+            python3 split_and_check_16.py --force-update  # 🔹 修改说明：参数统一为最新 Python 脚本增量更新版本
           else
             echo "⏩ 非下载时间，不强制更新"
           fi
 
       # -----------------------------
-      # 7. 确保规则文件及首个分片存在
+      # 8. 确保规则文件及首个分片存在
       # -----------------------------
       - name: Ensure rules and first part exist
         run: |
           MERGED_FILE="merged_rules.txt"
-          FIRST_PART="tmp/part_01.txt"
+          FIRST_PART="${{ env.TMP_DIR }}/part_01.txt"
           if [ ! -f "$MERGED_FILE" ] || [ ! -f "$FIRST_PART" ]; then
             echo "⚠ 缺少规则文件或分片 → 重新拉取"
-            python3 split_and_check_16.py --force
+            python3 split_and_check_16.py --force-update  # 🔹 参数同步
           else
             echo "✅ 规则文件和分片存在"
           fi
 
       # -----------------------------
-      # 8. 确保 delete_counter.json 存在
+      # 9. 确保 delete_counter.json 存在
       # -----------------------------
       - name: Ensure delete_counter.json exists
         run: |
-          mkdir -p dist
-          if [ ! -f dist/delete_counter.json ]; then
-            echo "{}" > dist/delete_counter.json
+          if [ ! -f ${{ env.DIST_DIR }}/delete_counter.json ]; then
+            echo "{}" > ${{ env.DIST_DIR }}/delete_counter.json
             echo "✅ 创建 dist/delete_counter.json"
           else
             echo "✅ delete_counter.json 已存在"
           fi
 
       # -----------------------------
-      # 9. 对当前分片进行 DNS 验证
+      # 10. 对当前分片进行 DNS 验证
       # -----------------------------
       - name: Run DNS validation for current part
         env:
           PART: ${{ steps.detect.outputs.part }}
         run: |
-          mkdir -p logs
           echo "⏱ 开始验证分片 $PART"
-          python3 split_and_check_16.py --part "$PART" | tee logs/split_check_part_${PART}.log
+          python3 split_and_check_16.py --part "$PART" | tee ${{ env.LOG_DIR }}/split_check_part_${PART}.log
 
       # -----------------------------
-      # 10. 提交并推送验证后的规则
+      # 11. 提交并推送验证后的规则
       # -----------------------------
       - name: Commit & Push Validated Rules
         env:
           PART: ${{ steps.detect.outputs.part }}
         run: |
-          # 提取日志统计信息
-          STATS=$(grep "COMMIT_STATS" logs/split_check_part_${PART}.log | tail -n1 | sed 's/COMMIT_STATS: //')
-          git add tmp/last_part.txt dist/validated_part_*.txt dist/delete_counter.json merged_rules.txt
+          STATS=$(grep "COMMIT_STATS" ${{ env.LOG_DIR }}/split_check_part_${PART}.log | tail -n1 | sed 's/COMMIT_STATS: //')
+          git add ${{ env.TMP_DIR }}/last_part.txt ${{ env.DIST_DIR }}/validated_part_*.txt ${{ env.DIST_DIR }}/delete_counter.json merged_rules.txt
           git commit -m "🤖 part $PART → $STATS" || echo "No changes to commit"
-          git pull --rebase origin main || echo "⚠ Pull failed"
+          git pull --rebase --autostash origin main || echo "⚠ Pull failed"  # 🔹 修改说明：增加 --autostash 避免冲突中断
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main || echo "⚠ Push failed"

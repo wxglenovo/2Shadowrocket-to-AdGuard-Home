@@ -102109,7 +102109,6 @@ zzzyk.com###Tinfo
 ||ad.cctv.com^
 ||ad.cdnjm.cn^
 ||ad.cyapi.cn^
-||ad.dev.360.cn^
 ||ad.docer.wps.cn^
 ||ad.duomi.com^
 ||ad.exyws.org^
@@ -102175,7 +102174,6 @@ zzzyk.com###Tinfo
 ||adashx4sg.ut.taobao.com^
 ||adashx4yt.m.taobao.com^
 ||adashxgc.ut.taobao.com^
-||adbana.com^
 ||adbehavior.wsa.ximalaya.com^
 ||adbehavior.ximalaya.com^
 ||adblock.sina.cn^

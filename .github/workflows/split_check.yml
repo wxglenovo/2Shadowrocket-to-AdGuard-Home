@@ -72,72 +72,87 @@ jobs:
           PART_INPUT="${{ github.event.inputs.part }}"
 
           if [ -n "$PART_INPUT" ]; then
-            # 手动指定分片
             PART="$PART_INPUT"
+            echo "🛠 手动指定分片：$PART"
           else
-            # 自动轮替分片
             if [ -f "$LAST_PART_FILE" ]; then
               LAST_PART=$(cat "$LAST_PART_FILE")
               PART=$(( (LAST_PART % 16) + 1 ))
             else
               PART=1
             fi
+            echo "⏱ 自动轮替分片：$PART"
           fi
 
           echo "$PART" > "$LAST_PART_FILE"
           echo "part=$PART" >> $GITHUB_OUTPUT
 
       # -----------------------------
-      # 6. 每天四次定时下载规则（覆盖 part_**.txt）
+      # 6. 判断是否需要强制下载规则
       # -----------------------------
       - name: Force download rules at schedule times
         run: |
+          mkdir -p tmp
           CURRENT_HOUR=$(date -u +"%H")
-          if [[ "$CURRENT_HOUR" == "00" || "$CURRENT_HOUR" == "06" || "$CURRENT_HOUR" == "12" || "$CURRENT_HOUR" == "18" ]]; then
-            # ✅ 每天四次下载规则并覆盖分片
-            python3 split_and_check_16.py --force-update
-          fi  # ✅ 修复 if 闭合
-
-      # -----------------------------
-      # 7. 确保规则文件和首个分片存在
-      # -----------------------------
-      - name: Ensure rules and first part exist
-        run: |
           MERGED_FILE="merged_rules.txt"
           FIRST_PART="tmp/part_01.txt"
-          if [ ! -f "$MERGED_FILE" ] || [ ! -f "$FIRST_PART" ]; then
-            python3 split_and_check_16.py --force-update
-          fi  # ✅ 修复 if 闭合
+
+          # ✅ 改动：仅每天四次下载规则源，覆盖 tmp/part_**.txt
+          if [[ "$CURRENT_HOUR" == "00" || "$CURRENT_HOUR" == "06" || "$CURRENT_HOUR" == "12" || "$CURRENT_HOUR" == "18" ]]; then
+            echo "✅ 强制下载规则源并生成所有分片"
+            python3 split_and_check_16.py --force
+          else
+            # ✅ 改动：非下载时间，如果 tmp/part_01.txt 存在，则不下载
+            if [ -f "$FIRST_PART" ]; then
+              echo "⏩ tmp 分片已存在，不重新下载"
+            else
+              echo "⚠ tmp 目录缺少 part 文件，尝试下载并生成分片"
+              python3 split_and_check_16.py --force || echo "❌ 下载或生成分片失败，请检查原因"
+            fi
+          fi
 
       # -----------------------------
-      # 8. 确保 delete_counter.json 存在
+      # 7. 确保 delete_counter.json 存在
       # -----------------------------
       - name: Ensure delete_counter.json exists
         run: |
           mkdir -p dist
           if [ ! -f dist/delete_counter.json ]; then
             echo "{}" > dist/delete_counter.json
+            echo "✅ 创建 dist/delete_counter.json"
+          else
+            echo "✅ delete_counter.json 已存在"
           fi
 
       # -----------------------------
-      # 9. 对当前分片进行 DNS 验证
+      # 8. 对当前分片进行 DNS 验证
       # -----------------------------
       - name: Run DNS validation for current part
         env:
           PART: ${{ steps.detect.outputs.part }}
         run: |
           mkdir -p logs
+          echo "⏱ 开始验证分片 $PART"
           python3 split_and_check_16.py --part "$PART" | tee logs/split_check_part_${PART}.log
 
       # -----------------------------
-      # 10. 提交并推送验证后的规则
+      # 9. 提交并推送验证后的规则
       # -----------------------------
       - name: Commit & Push Validated Rules
         env:
           PART: ${{ steps.detect.outputs.part }}
         run: |
+          # ✅ 改动：去掉 pull，以防止 Git pull 报错（未提交更改冲突）
           STATS=$(grep "COMMIT_STATS" logs/split_check_part_${PART}.log | tail -n1 | sed 's/COMMIT_STATS: //')
           git add tmp/last_part.txt dist/validated_part_*.txt dist/delete_counter.json merged_rules.txt
           git commit -m "🤖 part $PART → $STATS" || echo "No changes to commit"
-          git pull --rebase origin main || echo "⚠ Pull failed"
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main || echo "⚠ Push failed"
+
+      # -----------------------------
+      # 10. 日志输出原因
+      # -----------------------------
+      - name: Log tmp directory state
+        run: |
+          echo "📂 当前 tmp 目录内容："
+          ls -l tmp || echo "⚠ tmp 目录为空或无法访问"
+          echo "ℹ 如果 tmp/part_**.txt 无法生成，请检查脚本权限或网络下载失败"

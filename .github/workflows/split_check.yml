@@ -4,13 +4,13 @@ name: Split & DNS Check
 # 触发条件
 # -----------------------------
 on:
-  schedule:
+  schedule:  # 定时任务
     - cron: "0 0 * * *"   # 每天 00:00 UTC
     - cron: "0 6 * * *"   # 每天 06:00 UTC
     - cron: "0 12 * * *"  # 每天 12:00 UTC
     - cron: "0 18 * * *"  # 每天 18:00 UTC
-    - cron: "*/22 * * * *" # 每 22 分钟一次，用于验证分片
-  workflow_dispatch:
+    - cron: "*/22 * * * *" # 每 22 分钟一次
+  workflow_dispatch:      # 手动触发
     inputs:
       part:
         description: '手动验证指定分片 1~16'
@@ -18,7 +18,7 @@ on:
         default: ''
 
 permissions:
-  contents: write  # 允许推送代码
+  contents: write  # 允许推送代码到仓库
 
 # -----------------------------
 # Job 定义
@@ -27,7 +27,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      PYTHONUNBUFFERED: 1
+      PYTHONUNBUFFERED: 1  # 输出实时刷新
 
     steps:
 
@@ -37,10 +37,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 0  # 获取完整历史
 
       # -----------------------------
-      # 2. 设置 Python
+      # 2. 设置 Python 环境
       # -----------------------------
       - name: Setup Python
         uses: actions/setup-python@v4
@@ -70,10 +70,12 @@ jobs:
           mkdir -p tmp
           LAST_PART_FILE="tmp/last_part.txt"
           PART_INPUT="${{ github.event.inputs.part }}"
+
           if [ -n "$PART_INPUT" ]; then
-            # ✅ 手动触发时使用输入的分片
+            # 手动指定分片
             PART="$PART_INPUT"
           else
+            # 自动轮替分片
             if [ -f "$LAST_PART_FILE" ]; then
               LAST_PART=$(cat "$LAST_PART_FILE")
               PART=$(( (LAST_PART % 16) + 1 ))
@@ -81,6 +83,7 @@ jobs:
               PART=1
             fi
           fi
+
           echo "$PART" > "$LAST_PART_FILE"
           echo "part=$PART" >> $GITHUB_OUTPUT
 
@@ -91,10 +94,9 @@ jobs:
         run: |
           CURRENT_HOUR=$(date -u +"%H")
           if [[ "$CURRENT_HOUR" == "00" || "$CURRENT_HOUR" == "06" || "$CURRENT_HOUR" == "12" || "$CURRENT_HOUR" == "18" ]]; then
-            # ✅ 调用 Python 脚本 --force-update 只在四次定时下载执行
+            # ✅ 每天四次下载规则并覆盖分片
             python3 split_and_check_16.py --force-update
-          fi
-          # ⏩ 其他时间不会下载，只验证分片
+          fi  # ✅ 修复 if 闭合
 
       # -----------------------------
       # 7. 确保规则文件和首个分片存在
@@ -104,8 +106,8 @@ jobs:
           MERGED_FILE="merged_rules.txt"
           FIRST_PART="tmp/part_01.txt"
           if [ ! -f "$MERGED_FILE" ] || [ ! -f "$FIRST_PART" ]; then
-            # ✅ 缺少规则或分片，强制下载
             python3 split_and_check_16.py --force-update
+          fi  # ✅ 修复 if 闭合
 
       # -----------------------------
       # 8. 确保 delete_counter.json 存在
@@ -114,8 +116,8 @@ jobs:
         run: |
           mkdir -p dist
           if [ ! -f dist/delete_counter.json ]; then
-            # ✅ 新建 delete_counter.json
             echo "{}" > dist/delete_counter.json
+          fi
 
       # -----------------------------
       # 9. 对当前分片进行 DNS 验证
@@ -125,7 +127,6 @@ jobs:
           PART: ${{ steps.detect.outputs.part }}
         run: |
           mkdir -p logs
-          echo "⏱ 开始验证分片 $PART"
           python3 split_and_check_16.py --part "$PART" | tee logs/split_check_part_${PART}.log
 
       # -----------------------------
@@ -135,10 +136,8 @@ jobs:
         env:
           PART: ${{ steps.detect.outputs.part }}
         run: |
-          # ✅ 提取日志统计信息
           STATS=$(grep "COMMIT_STATS" logs/split_check_part_${PART}.log | tail -n1 | sed 's/COMMIT_STATS: //')
           git add tmp/last_part.txt dist/validated_part_*.txt dist/delete_counter.json merged_rules.txt
           git commit -m "🤖 part $PART → $STATS" || echo "No changes to commit"
-          # ✅ 防止 pull 报错中断 push（ignore pull 错误）
-          git pull --rebase origin main || echo "⚠ Pull failed, 已忽略"
+          git pull --rebase origin main || echo "⚠ Pull failed"
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main || echo "⚠ Push failed"

@@ -4,13 +4,13 @@ name: Split & DNS Check
 # 触发条件
 # -----------------------------
 on:
-  schedule:  # 定时任务
-    - cron: "0 0 * * *"   # 每天 00:00 UTC
-    - cron: "0 6 * * *"   # 每天 06:00 UTC
-    - cron: "0 12 * * *"  # 每天 12:00 UTC
-    - cron: "0 18 * * *"  # 每天 18:00 UTC
-    - cron: "*/22 * * * *" # 每 22 分钟一次
-  workflow_dispatch:      # 手动触发
+  schedule:
+    - cron: "0 0 * * *"
+    - cron: "0 6 * * *"
+    - cron: "0 12 * * *"
+    - cron: "0 18 * * *"
+    - cron: "*/22 * * * *"
+  workflow_dispatch:
     inputs:
       part:
         description: '手动验证指定分片 1~16'
@@ -18,29 +18,25 @@ on:
         default: ''
 
 permissions:
-  contents: write  # 允许推送代码到仓库
+  contents: write
 
-# -----------------------------
-# Job 定义
-# -----------------------------
 jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      PYTHONUNBUFFERED: 1  # 输出实时刷新
+      PYTHONUNBUFFERED: 1
 
     steps:
-
       # -----------------------------
       # 1. 检出仓库
       # -----------------------------
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # 获取完整历史
+          fetch-depth: 0
 
       # -----------------------------
-      # 2. 设置 Python 环境
+      # 2. 设置 Python
       # -----------------------------
       - name: Setup Python
         uses: actions/setup-python@v4
@@ -62,7 +58,7 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
       # -----------------------------
-      # 5. 确定当前分片 (PART)
+      # 5. 确定当前分片
       # -----------------------------
       - name: Determine PART index
         id: detect
@@ -88,71 +84,34 @@ jobs:
           echo "part=$PART" >> $GITHUB_OUTPUT
 
       # -----------------------------
-      # 6. 判断是否需要强制下载规则
+      # 6. 拉取规则源（每天四次定时才覆盖） ✅ 改动
       # -----------------------------
-      - name: Force download rules at schedule times
+      - name: Download rules if scheduled
+        if: startsWith(github.event_name, 'schedule') && contains('0 0,6,12,18', github.event.schedule)
         run: |
-          mkdir -p tmp
-          CURRENT_HOUR=$(date -u +"%H")
-          MERGED_FILE="merged_rules.txt"
-          FIRST_PART="tmp/part_01.txt"
-
-          # ✅ 改动：仅每天四次下载规则源，覆盖 tmp/part_**.txt
-          if [[ "$CURRENT_HOUR" == "00" || "$CURRENT_HOUR" == "06" || "$CURRENT_HOUR" == "12" || "$CURRENT_HOUR" == "18" ]]; then
-            echo "✅ 强制下载规则源并生成所有分片"
-            python3 split_and_check_16.py --force
-          else
-            # ✅ 改动：非下载时间，如果 tmp/part_01.txt 存在，则不下载
-            if [ -f "$FIRST_PART" ]; then
-              echo "⏩ tmp 分片已存在，不重新下载"
-            else
-              echo "⚠ tmp 目录缺少 part 文件，尝试下载并生成分片"
-              python3 split_and_check_16.py --force || echo "❌ 下载或生成分片失败，请检查原因"
-            fi
-          fi
+          python split_and_check_16.py --force-update
 
       # -----------------------------
-      # 7. 确保 delete_counter.json 存在
+      # 7. 验证指定分片
       # -----------------------------
-      - name: Ensure delete_counter.json exists
+      - name: Validate Part
         run: |
-          mkdir -p dist
-          if [ ! -f dist/delete_counter.json ]; then
-            echo "{}" > dist/delete_counter.json
-            echo "✅ 创建 dist/delete_counter.json"
-          else
-            echo "✅ delete_counter.json 已存在"
-          fi
+          python split_and_check_16.py --part ${{ steps.detect.outputs.part }}
 
       # -----------------------------
-      # 8. 对当前分片进行 DNS 验证
+      # 8. 输出 tmp 内容
       # -----------------------------
-      - name: Run DNS validation for current part
-        env:
-          PART: ${{ steps.detect.outputs.part }}
-        run: |
-          mkdir -p logs
-          echo "⏱ 开始验证分片 $PART"
-          python3 split_and_check_16.py --part "$PART" | tee logs/split_check_part_${PART}.log
-
-      # -----------------------------
-      # 9. 提交并推送验证后的规则
-      # -----------------------------
-      - name: Commit & Push Validated Rules
-        env:
-          PART: ${{ steps.detect.outputs.part }}
-        run: |
-          # ✅ 改动：去掉 pull，以防止 Git pull 报错（未提交更改冲突）
-          STATS=$(grep "COMMIT_STATS" logs/split_check_part_${PART}.log | tail -n1 | sed 's/COMMIT_STATS: //')
-          git add tmp/last_part.txt dist/validated_part_*.txt dist/delete_counter.json merged_rules.txt
-          git commit -m "🤖 part $PART → $STATS" || echo "No changes to commit"
-          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main || echo "⚠ Push failed"
-
-      # -----------------------------
-      # 10. 日志输出原因
-      # -----------------------------
-      - name: Log tmp directory state
+      - name: List tmp
         run: |
           echo "📂 当前 tmp 目录内容："
-          ls -l tmp || echo "⚠ tmp 目录为空或无法访问"
-          echo "ℹ 如果 tmp/part_**.txt 无法生成，请检查脚本权限或网络下载失败"
+          ls -lh tmp
+
+      # -----------------------------
+      # 9. Git commit & push
+      # -----------------------------
+      - name: Commit & push
+        run: |
+          git add dist validated_*.txt
+          git commit -m "🤖 part ${{ steps.detect.outputs.part }} → 自动更新"
+          git pull --rebase || echo "⚠ Pull failed, 已忽略"
+          git push

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+
 import os
 import json
 import requests
@@ -13,48 +14,65 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 URLS_TXT = "urls.txt"               # 存放规则源地址
 TMP_DIR = "tmp"
 DIST_DIR = "dist"
-MERGED_RULE = "merged_rules.txt"    # 合并后的规则文件
+MASTER_RULE = "merged_rules.txt"    # 合并后的规则文件
 PARTS = 16
 DNS_WORKERS = 50
 DNS_TIMEOUT = 2
 DELETE_COUNTER_FILE = os.path.join(DIST_DIR, "delete_counter.json")
 DELETE_THRESHOLD = 4
 
+# 创建目录
 os.makedirs(TMP_DIR, exist_ok=True)
 os.makedirs(DIST_DIR, exist_ok=True)
 
 # ===============================
-# 下载与合并规则（保证生成分片）
+# 下载与合并规则
 # ===============================
 def download_all_sources():
     merged = set()
     if os.path.exists(URLS_TXT):
+        print("📥 下载规则源...")
         with open(URLS_TXT, "r", encoding="utf-8") as f:
             urls = [u.strip() for u in f if u.strip()]
         for url in urls:
-            for i in range(50):  # 模拟每个 url 50 条规则
-                merged.add(f"{url}_rule_{i+1}")
-    if not merged:
-        # urls.txt 不存在或为空，生成占位规则
-        merged = set(f"example{i}.com^" for i in range(1, 1001))
-
-    with open(MERGED_RULE, "w", encoding="utf-8") as f:
+            print(f"🌐 获取 {url}")
+            try:
+                r = requests.get(url, timeout=20)
+                r.raise_for_status()
+                for line in r.text.splitlines():
+                    line = line.strip()
+                    if line and not line.startswith("#"):
+                        merged.add(line)
+            except Exception as e:
+                print(f"⚠ 下载失败 {url}: {e}")
+    else:
+        print("⚠ urls.txt 不存在，跳过下载")
+    print(f"✅ 合并 {len(merged)} 条规则")
+    with open(MASTER_RULE, "w", encoding="utf-8") as f:
         f.write("\n".join(sorted(merged)))
-    print(f"✅ 合并 {len(merged)} 条规则到 {MERGED_RULE}")
     return merged
 
 # ===============================
 # 分片
 # ===============================
-def split_parts(rules):
+def split_parts():
+    # 读取规则
+    rules = []
+    if os.path.exists(MASTER_RULE):
+        with open(MASTER_RULE, "r", encoding="utf-8") as f:
+            rules = [l.strip() for l in f if l.strip()]
+
     total = len(rules)
-    per_part = (total + PARTS - 1) // PARTS
+    per_part = max(1, (total + PARTS - 1) // PARTS)
+    print(f"🪓 分片 {total} 条，每片约 {per_part}")
+
     for i in range(PARTS):
-        part_rules = list(rules)[i*per_part:(i+1)*per_part]
+        part_rules = rules[i * per_part:(i + 1) * per_part]
         filename = os.path.join(TMP_DIR, f"part_{i+1:02d}.txt")
+        # 即使没有规则也生成空文件
         with open(filename, "w", encoding="utf-8") as f:
             f.write("\n".join(part_rules))
-        print(f"🪓 分片 {i+1}: {len(part_rules)} 条 → {filename}")
+        print(f"📄 分片 {i+1}: {len(part_rules)} 条 → {filename}")
 
 # ===============================
 # DNS 验证
@@ -98,8 +116,13 @@ def load_delete_counter():
             with open(DELETE_COUNTER_FILE, "r", encoding="utf-8") as f:
                 return json.load(f)
         except:
+            print(f"⚠ {DELETE_COUNTER_FILE} 解析失败，重建空计数")
             return {}
-    return {}
+    else:
+        os.makedirs(DIST_DIR, exist_ok=True)
+        with open(DELETE_COUNTER_FILE, "w", encoding="utf-8") as f:
+            json.dump({}, f, indent=2, ensure_ascii=False)
+        return {}
 
 def save_delete_counter(counter):
     with open(DELETE_COUNTER_FILE, "w", encoding="utf-8") as f:
@@ -111,8 +134,12 @@ def save_delete_counter(counter):
 def process_part(part):
     part_file = os.path.join(TMP_DIR, f"part_{int(part):02d}.txt")
     if not os.path.exists(part_file):
-        rules = download_all_sources()
-        split_parts(rules)
+        print(f"⚠ 分片 {part} 缺失，重新生成所有分片")
+        download_all_sources()
+        split_parts()
+    if not os.path.exists(part_file):
+        print("❌ 分片仍不存在，终止")
+        return
 
     lines = open(part_file, "r", encoding="utf-8").read().splitlines()
     print(f"⏱ 验证分片 {part}，共 {len(lines)} 条规则")
@@ -126,6 +153,7 @@ def process_part(part):
 
     delete_counter = load_delete_counter()
     new_delete_counter = {}
+
     final_rules = set()
     removed_count = 0
     added_count = 0
@@ -159,12 +187,23 @@ def process_part(part):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--part", help="验证指定分片 1~16")
-    parser.add_argument("--force-update", action="store_true")
+    parser.add_argument("--force-update", action="store_true", help="强制重新下载规则源并切片")
     args = parser.parse_args()
 
     if args.force_update:
-        rules = download_all_sources()
-        split_parts(rules)
+        download_all_sources()
+        split_parts()
+
+    # 如果没有任何分片，自动生成
+    missing = False
+    for i in range(1, PARTS + 1):
+        if not os.path.exists(os.path.join(TMP_DIR, f"part_{i:02d}.txt")):
+            missing = True
+            break
+    if missing:
+        print("⚠ 分片缺失，自动生成所有分片")
+        download_all_sources()
+        split_parts()
 
     if args.part:
         process_part(args.part)

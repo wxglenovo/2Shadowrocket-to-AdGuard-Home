@@ -24,37 +24,34 @@ jobs:
       PYTHONUNBUFFERED: 1
 
     steps:
-      # ✅ 1 Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      # ✅ 2 Setup Python
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.12'
 
-      # ✅ 3 Install dependencies
       - name: Install dependencies
         run: pip install --upgrade requests dnspython
 
-      # ✅ 4 Configure Git
       - name: Configure Git
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-      # ✅ 5 Determine PART index (自动轮转 / 支持手动指定)
       - name: Determine PART index
         id: detect
         run: |
           mkdir -p tmp
           LAST_PART_FILE="tmp/last_part.txt"
           PART_INPUT="${{ github.event.inputs.part }}"
+
           if [ -n "$PART_INPUT" ]; then
             PART="$PART_INPUT"
+            echo "🛠 手动指定分片：$PART"
           else
             if [ -f "$LAST_PART_FILE" ]; then
               LAST_PART=$(cat "$LAST_PART_FILE")
@@ -62,92 +59,93 @@ jobs:
             else
               PART=1
             fi
+            echo "⏱ 自动轮替分片：$PART"
           fi
-          echo $PART > $LAST_PART_FILE
-          echo "part=$PART" >> $GITHUB_OUTPUT
-          echo "✅ 本次验证分片：$PART"
 
-      # ✅ 6 确保规则文件 & 16 个分片存在（自动修复 + 重试 2 次）
-      - name: Ensure rules & all 16 parts exist (Auto repair & retry)
-        shell: bash
-        env:
-          PART: ${{ steps.detect.outputs.part }}
+          echo "$PART" > "$LAST_PART_FILE"
+          echo "part=$PART" >> $GITHUB_OUTPUT
+
+      - name: Force download rules at schedule times
+        run: |
+          CURRENT_HOUR=$(date -u +"%H")
+          if [[ "$CURRENT_HOUR" == "00" || "$CURRENT_HOUR" == "06" || "$CURRENT_HOUR" == "12" || "$CURRENT_HOUR" == "18" ]]; then
+            echo "✅ 强制下载规则源并生成所有分片"
+            python3 split_and_check_16.py --force
+          else
+            echo "⏩ 非下载时间，不强制更新"
+          fi
+
+      - name: Ensure merged rules & tmp folder exist
         run: |
           MERGED_FILE="merged_rules.txt"
           TMP_DIR="tmp"
-          mkdir -p "$TMP_DIR"
 
-          check_parts() {
-            for i in {01..16}; do
-              if [ ! -f "$TMP_DIR/part_$i.txt" ]; then
-                return 1
-              fi
-            done
-            return 0
-          }
-
-          echo "🔍 检查 merged_rules.txt 是否存在"
-          FORCE_UPDATE=0
           if [ ! -f "$MERGED_FILE" ]; then
-            echo "⚠ 缺失 merged_rules.txt"
-            FORCE_UPDATE=1
+            echo "❌ merged_rules.txt 缺失 → 重新生成"
+            python3 split_and_check_16.py --force
           fi
 
-          echo "🔍 检查 16 个分片是否存在"
-          if ! check_parts; then
-            echo "⚠ 分片缺失，需强制更新"
-            FORCE_UPDATE=1
+          if [ ! -d "$TMP_DIR" ]; then
+            echo "❌ tmp 目录缺失 → 重新生成"
+            python3 split_and_check_16.py --force
           fi
 
-          CURRENT_HOUR=$(date -u +"%H")
-          if [[ "$CURRENT_HOUR" =~ ^(00|06|12|18)$ ]]; then
-            echo "🕒 固定时间 ${CURRENT_HOUR}，强制更新规则"
-            FORCE_UPDATE=1
-          fi
-
-          if [ $FORCE_UPDATE -eq 0 ]; then
-            echo "✅ 规则与分片均存在，无需修复"
-            exit 0
-          fi
-
-          echo "🔧 开始执行强制更新（最多重试 2 次）"
-          ATTEMPT=1
-          while [ $ATTEMPT -le 2 ]; do
-            echo "🔁 第 $ATTEMPT 次尝试生成分片..."
-            python split_and_check_16.py --force-update
-
-            echo "✅ 检查生成结果..."
-            if check_parts; then
-              echo "🎉 所有 16 个分片已成功生成 ✅"
-              exit 0
+      # ✅✅✅ 强制确保 16 个分片都存在
+      - name: Ensure all 16 parts exist
+        run: |
+          TMP_DIR="tmp"
+          missing=0
+          for i in $(seq -w 01 16); do
+            PART_FILE="$TMP_DIR/part_${i}.txt"
+            if [ ! -f "$PART_FILE" ]; then
+              echo "❌ 缺失：$PART_FILE"
+              missing=1
             fi
-
-            echo "⚠ 第 $ATTEMPT 次生成失败，准备重试..."
-            sleep 3
-            ATTEMPT=$((ATTEMPT + 1))
           done
 
-          echo "❌ 多次尝试仍未生成完整分片"
-          exit 1
+          if [ "$missing" -eq 1 ]; then
+            echo "⚠ 分片不完整，执行 --force 重建全部分片"
+            python3 split_and_check_16.py --force
+          else
+            echo "✅ 所有 16 个分片存在"
+          fi
 
-      # ✅ 7 执行指定分片验证
+      # ✅✅✅ 第二遍再验证数量是否正确（防脚本中途失败）
+      - name: Double check part count
+        run: |
+          COUNT=$(ls tmp/part_*.txt | wc -l)
+          echo "当前分片数量：$COUNT"
+          if [ "$COUNT" -ne 16 ]; then
+            echo "❌ 分片数量不足 16，再次执行 --force"
+            python3 split_and_check_16.py --force
+          else
+            echo "✅ 分片数量正确，继续"
+          fi
+
+      - name: Ensure delete_counter.json exists
+        run: |
+          mkdir -p dist
+          if [ ! -f dist/delete_counter.json ]; then
+            echo "{}" > dist/delete_counter.json
+            echo "✅ 创建 dist/delete_counter.json"
+          else
+            echo "✅ delete_counter.json 已存在"
+          fi
+
       - name: Run DNS validation for current part
         env:
           PART: ${{ steps.detect.outputs.part }}
         run: |
           mkdir -p logs
           echo "⏱ 开始验证分片 $PART"
-          python split_and_check_16.py --part "$PART" | tee logs/split_check_part_${PART}.log
+          python3 split_and_check_16.py --part "$PART" | tee logs/split_check_part_${PART}.log
 
-      # ✅ 8 Commit & Push 结果回仓库
       - name: Commit & Push Validated Rules
         env:
           PART: ${{ steps.detect.outputs.part }}
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          STATS=$(grep "COMMIT_STATS" logs/split_check_part_${PART}.log 2>/dev/null | tail -n1 | sed 's/COMMIT_STATS: //' || echo "0,0,0")
+          STATS=$(grep "COMMIT_STATS" logs/split_check_part_${PART}.log | tail -n1 | sed 's/COMMIT_STATS: //')
           git add tmp/last_part.txt dist/validated_part_*.txt dist/delete_counter.json merged_rules.txt
           git commit -m "🤖 part $PART → $STATS" || echo "No changes to commit"
-          git pull --rebase origin main || echo "⚠ Pull failed or nothing to rebase"
-          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
+          git pull --rebase origin main || echo "⚠ Pull failed"
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main || echo "⚠ Push failed"

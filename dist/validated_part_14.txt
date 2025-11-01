@@ -5884,3 +5884,12 @@
 ||trail.71baomu.com^
 ||trail.cleardocs.com^
 ||trail.dominiosistemas.com.br^
+||trail.sweetandmaxwell.co.uk^
+||trail.thomsonreuters.ca^
+||trail.thomsonreuters.cn^
+||trail.thomsonreuters.co.jp^
+||trail.thomsonreuters.co.kr^
+||trail.thomsonreuters.co.nz^
+||trail.thomsonreuters.co.uk^
+||trail.thomsonreuters.com.au^
+||trail.thomsonreuters.com.br^

@@ -1775,6 +1775,7 @@
 ||mzscparkeayvs.site^
 ||mzvjugwokrbyc.website^
 ||mzwkss.chiccousa.com^
+||mzwzo.cn^
 ||mzxun.com^
 ||mzy2014.com^
 ||mzzzpvllsjxpy.online^
@@ -5884,3 +5885,4 @@
 ||ot.obi.de^
 ||ot.obi.hu^
 ||ot.obi.pl^
+||ot.obi.si^

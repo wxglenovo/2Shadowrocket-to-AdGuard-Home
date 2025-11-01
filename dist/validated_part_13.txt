@@ -1713,6 +1713,7 @@
 ||snoutwastedeeply.com^
 ||snow001.com^
 ||snowdayonline.xyz^
+||snowflake.qq.com^
 ||snowldupes.digital^
 ||snowman.odencat.com^
 ||snowmanjo.com^
@@ -1788,6 +1789,7 @@
 ||soapsaichoakeem.net^
 ||soareddeeping.shop^
 ||soarfi.cn^
+||soarpower.com^
 ||soavoosumautow.net^
 ||sobakenchmaphk.com^
 ||sobar.baidu.com^
@@ -1797,6 +1799,7 @@
 ||sobesed.com^
 ||sobin.wang^
 ||sobmhbhxwka.com^
+||sobot.com^
 ||socde.com^
 ||socdm.com^
 ||social-bookmarking-tools.de^
@@ -4077,6 +4080,7 @@
 ||static.sellbuyshop.cn^
 ||static.smi2.net^
 ||static.snapmobile.asia^
+||static.tieba.baidu.com^
 ||static.topxgun.com^
 ||static.wauee.com^
 ||static.whatsapp.net.iberostar.com^

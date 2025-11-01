@@ -1227,6 +1227,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||fcghrjiduziwb.online^
 ||fcgnlxaxhou.com^
 ||fcgwwfcc.net^
+||fcilbhbadlxjf.online^
 ||fcizcj.burlingtonfreepress.com^
 ||fckxdb.hometogo.it^
 ||fclick.baidu.com^
@@ -1521,6 +1522,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||ffe390afd658c19dcbf707e0597b846d.de^
 ||fff3cd7d36.com^
 ||fffeeeq.com^
+||ffhkdfppqkezw.website^
 ||ffjevt.icu^
 ||ffjrpdfduteic.website^
 ||fflbpi.top^
@@ -1539,6 +1541,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||fftwljklhkigm.site^
 ||fftwttdqtpcwd.com^
 ||ffuodj.lanebryant.com^
+||ffvawxcyrtefbg.com^
 ||ffvmgevrid.com^
 ||ffxe.cn^
 ||ffyoo.com^
@@ -1562,6 +1565,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||fgk.baitaoidc.com^
 ||fgkrjcrtqb.net^
 ||fgkxluxqgpzzm.xyz^
+||fgkypavphswggv.net^
 ||fgllllfedeltb.website^
 ||fglpsbrqw.com^
 ||fglrgt.ruggable.com^
@@ -1637,6 +1641,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||fidjecdmjqvmnvn.xyz^
 ||fidk.cn^
 ||fieldconfig.com^
+||fieldtinypirate.com^
 ||fiercedibbles.click^
 ||fieryinjure.com^
 ||fieslobwg.com^
@@ -1827,6 +1832,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||fistevasionjoint.com^
 ||fitanalytics.com^
 ||fitbiomie.com^
+||fitchagleegiy.net^
 ||fitmessage.com^
 ||fitnessmapper.com^
 ||fitsagitateacid.com^

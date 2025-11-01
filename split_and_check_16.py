@@ -11,10 +11,10 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 # ===============================
 # 配置
 # ===============================
-URLS_TXT = "urls.txt"               # 存放规则源地址
+URLS_TXT = "urls.txt"
 TMP_DIR = "tmp"
 DIST_DIR = "dist"
-MASTER_RULE = "merged_rules.txt"    # 合并后的规则文件
+MASTER_RULE = "merged_rules.txt"
 PARTS = 16
 DNS_WORKERS = 50
 DNS_TIMEOUT = 2
@@ -30,14 +30,14 @@ os.makedirs(DIST_DIR, exist_ok=True)
 # ===============================
 def download_all_sources():
     if not os.path.exists(URLS_TXT):
-        print("❌ urls.txt 不存在，无法下载规则")
+        print("❌ urls.txt 不存在")
         return False
     print("📥 下载规则源...")
     merged = set()
     with open(URLS_TXT, "r", encoding="utf-8") as f:
         urls = [u.strip() for u in f if u.strip()]
     if not urls:
-        print("⚠ urls.txt 中没有 URL，生成空规则文件")
+        print("⚠ urls.txt 是空的")
     for url in urls:
         print(f"🌐 获取 {url}")
         try:
@@ -49,6 +49,10 @@ def download_all_sources():
                     merged.add(line)
         except Exception as e:
             print(f"⚠ 下载失败 {url}: {e}")
+    # 占位规则
+    if not merged:
+        print("⚠ 没有下载到规则，生成占位规则")
+        merged.add("example.com^")
     print(f"✅ 合并 {len(merged)} 条规则")
     with open(MASTER_RULE, "w", encoding="utf-8") as f:
         f.write("\n".join(sorted(merged)))
@@ -59,20 +63,21 @@ def download_all_sources():
 # ===============================
 def split_parts():
     if not os.path.exists(MASTER_RULE):
-        print("⚠ 缺少合并规则文件，创建空文件")
-        with open(MASTER_RULE, "w", encoding="utf-8") as f:
-            f.write("")
+        print("⚠ 缺少合并规则文件")
+        return False
     with open(MASTER_RULE, "r", encoding="utf-8") as f:
         rules = [l.strip() for l in f if l.strip()]
     total = len(rules)
     per_part = (total + PARTS - 1) // PARTS
-    print(f"🪓 分片 {total} 条规则，每片约 {per_part}")
+    print(f"🪓 分片 {total} 条，每片约 {per_part}")
     for i in range(PARTS):
-        part_rules = rules[i * per_part:(i + 1) * per_part]
+        start = i * per_part
+        end = (i + 1) * per_part
+        part_rules = rules[start:end] if start < total else []
         filename = os.path.join(TMP_DIR, f"part_{i+1:02d}.txt")
-        print(f"📄 写入分片 {i+1}: {len(part_rules)} 条 → {filename}")
         with open(filename, "w", encoding="utf-8") as f:
             f.write("\n".join(part_rules))
+        print(f"📄 分片 {i+1}: {len(part_rules)} 条 → {filename}")
     return True
 
 # ===============================
@@ -105,7 +110,7 @@ def dns_validate(lines):
                 valid.append(result)
             if done % 500 == 0:
                 print(f"✅ 已验证 {done}/{total} 条，有效 {len(valid)} 条")
-    print(f"✅ 分片验证完成，有效 {len(valid)} 条")
+    print(f"✅ 验证完成，有效 {len(valid)} 条")
     return valid
 
 # ===============================
@@ -120,7 +125,6 @@ def load_delete_counter():
             print(f"⚠ {DELETE_COUNTER_FILE} 解析失败，重建空计数")
             return {}
     else:
-        print(f"⚠ {DELETE_COUNTER_FILE} 不存在，创建新文件")
         os.makedirs(DIST_DIR, exist_ok=True)
         with open(DELETE_COUNTER_FILE, "w", encoding="utf-8") as f:
             json.dump({}, f, indent=2, ensure_ascii=False)
@@ -155,7 +159,6 @@ def process_part(part):
 
     delete_counter = load_delete_counter()
     new_delete_counter = {}
-
     final_rules = set()
     removed_count = 0
     added_count = 0
@@ -175,10 +178,8 @@ def process_part(part):
             added_count += 1
 
     save_delete_counter(new_delete_counter)
-
     with open(out_file, "w", encoding="utf-8") as f:
         f.write("\n".join(sorted(final_rules)))
-
     total_count = len(final_rules)
     print(f"✅ 分片 {part} 完成: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
     print(f"COMMIT_STATS: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
@@ -196,9 +197,7 @@ if __name__ == "__main__":
         download_all_sources()
         split_parts()
 
-    # 如果缺少合并规则或第一分片，自动下载
     if not os.path.exists(MASTER_RULE) or not os.path.exists(os.path.join(TMP_DIR, "part_01.txt")):
-        print("⚠ 缺少规则或分片，自动拉取")
         download_all_sources()
         split_parts()
 

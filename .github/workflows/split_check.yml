@@ -104,7 +104,7 @@ jobs:
         run: |
           mkdir -p logs
           echo "⏱ 开始验证分片 $PART"
-          python3 split_and_check_16.py --part "$PART" --concurrent | tee logs/split_check_part_${PART}.log
+          python3 split_and_check_16.py --part "$PART" | tee logs/split_check_part_${PART}.log
 
       - name: Commit & Push Validated Rules
         env:

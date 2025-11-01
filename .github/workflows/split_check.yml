@@ -47,12 +47,11 @@ jobs:
       - name: Determine PART index
         id: detect
         run: |
-          mkdir -p tmp dist
+          mkdir -p tmp
           LAST_PART_FILE="tmp/last_part.txt"
           PART_INPUT="${{ github.event.inputs.part }}"
           if [ -n "$PART_INPUT" ]; then
             PART="$PART_INPUT"
-            echo "🛠 手动指定分片：$PART"
           else
             if [ -f "$LAST_PART_FILE" ]; then
               LAST_PART=$(cat "$LAST_PART_FILE")
@@ -60,21 +59,17 @@ jobs:
             else
               PART=1
             fi
-            echo "⏱ 自动轮替分片：$PART"
           fi
           echo "$PART" > "$LAST_PART_FILE"
           echo "part=$PART" >> $GITHUB_OUTPUT
 
-      - name: Ensure rules exist & split into tmp/
+      - name: Ensure rules exist
         run: |
           MERGED_FILE="merged_rules.txt"
           FIRST_PART="tmp/part_01.txt"
           mkdir -p tmp dist
           if [ ! -f "$MERGED_FILE" ] || [ ! -f "$FIRST_PART" ]; then
-            echo "⚠ 缺少规则文件或分片 → 下载 & 生成"
             python3 split_and_check_16.py --force
-          else
-            echo "✅ 规则文件和 tmp/ 分片存在"
           fi
 
       - name: Ensure delete_counter.json exists
@@ -82,26 +77,20 @@ jobs:
           mkdir -p dist
           if [ ! -f dist/delete_counter.json ]; then
             echo "{}" > dist/delete_counter.json
-            echo "✅ 创建 dist/delete_counter.json"
-          else
-            echo "✅ delete_counter.json 已存在"
-          fi
 
-      - name: Run DNS validation for current part (Concurrent)
+      - name: Run DNS validation (Concurrent)
         env:
           PART: ${{ steps.detect.outputs.part }}
         run: |
           mkdir -p logs
-          echo "⏱ 开始验证分片 $PART"
           python3 split_and_check_16.py --part "$PART" --concurrent | tee logs/split_check_part_${PART}.log
 
       - name: Commit & Push Validated Rules
         env:
           PART: ${{ steps.detect.outputs.part }}
         run: |
-          LOG_FILE=logs/split_check_part_${PART}.log
-          STATS=$(grep "COMMIT_STATS" $LOG_FILE | tail -n1 | sed 's/COMMIT_STATS: //')
-          git add tmp/last_part.txt tmp/part_*.txt dist/validated_part_*.txt dist/delete_counter.json merged_rules.txt
-          git commit -m "🤖 Auto update: validated part $PART → $STATS" || echo "No changes to commit"
+          STATS=$(grep "COMMIT_STATS" logs/split_check_part_${PART}.log | tail -n1 | sed 's/COMMIT_STATS: //')
+          git add tmp/last_part.txt tmp/part_*.txt dist/delete_counter.json merged_rules.txt
+          git commit -m "🤖 Auto update: validated part $PART → $STATS" || echo "No changes"
           git pull --rebase origin main || echo "⚠ Pull failed"
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main || echo "⚠ Push failed"

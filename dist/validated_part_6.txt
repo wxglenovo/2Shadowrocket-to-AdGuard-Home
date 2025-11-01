@@ -2896,6 +2896,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||fk3bpl.hair^
 ||fk3nf1xeh.top^
 ||fk5onsdp5w.mentalist.kameleoon.com^
+||fk6.wi7o.ru^
 ||fk8-r.com^
 ||fk8.bvum-6.ru^
 ||fkacazvha.com^
@@ -3077,6 +3078,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||fl.dhakamart.shop^
 ||fl.elegantmartbd.com^
 ||fl.floriittee.com^
+||fl.gi0x.ru^
 ||fl.h73n.ru^
 ||fl.hijabhousebd.com^
 ||fl.katthokra.com^
@@ -3765,6 +3767,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||flashupdate-pro.ru^
 ||flashupdate.biz^
 ||flashupdate.cfd^
+||flashupdate.click^
 ||flashupdate.digital^
 ||flashupdate.icu^
 ||flashupdate.online^
@@ -6248,6 +6251,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||fmi-support-help.com^
 ||fmi-support.net^
 ||fmi-verify-support.com^
+||fmi1-apple.com^
 ||fmiappleicloud.com^
 ||fmilocate-icloud.com^
 ||fmilocation-devicesupport-icloud.com^
@@ -7940,6 +7944,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||fopzjd.e-scurefiles.net^
 ||foqaxyso.info^
 ||foqbcgpwrq.com^
+||foqittroxlive.digital^
 ||foqus.eu^
 ||foqzposfvmk.com^
 ||for-cloth.tk^
@@ -12854,6 +12859,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||fr-telechargement.com^
 ||fr-telepeage-ulys.com^
 ||fr-transit-prio.com^
+||fr-ulyspeage.com^
 ||fr-vidcoin.videoplaza.tv^
 ||fr-vlnted.taskeltine.shop^
 ||fr-www-clients.com^
@@ -22564,6 +22570,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||ftalkfb.com^
 ||ftamexico.com.mx^
 ||ftaysn.meinekette.de^
+||ftb.zo8k.ru^
 ||ftbcemolizolpa.vercel.app^
 ||ftbiufcomsa.bid^
 ||ftblltrck.com^
@@ -23520,6 +23527,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||fulfilled.clawed.info^
 ||fulfilled.pbphgwbr.in^
 ||fulfilledappease.com^
+||fulfillgift.com^
 ||fulfilling.co.cc^
 ||fulfillment-time-delivery.ru^
 ||fulfillment-ups.squareup.com^
@@ -25669,6 +25677,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||futuropichincha.webcindario.com^
 ||futuroscope.widget.criteo.com^
 ||futurotoken.com^
+||futurotokenfto.net^
 ||futurotrabajo.cl^
 ||futurovision.com^
 ||futursalumnes.uic.es^
@@ -25841,6 +25850,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||fvbtqaijuo.com^
 ||fvc.alcatel-lucent.com^
 ||fvcassessoriajuridica.com.br^
+||fvcccifbvygvb.space^
 ||fvch.co.uk^
 ||fvcheat.zismo.ru^
 ||fvck.cz.cc^
@@ -26797,6 +26807,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||fyenance.com^
 ||fyepro.com^
 ||fyesqma.cn^
+||fyewrocgieeog.site^
 ||fyewxh898.host^
 ||fyfa.fun^
 ||fyfif0tech.tk^
@@ -27234,6 +27245,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||g.6s95.ru^
 ||g.6sfg.com^
 ||g.9-k588.ru^
+||g.9715w.ru^
 ||g.9b9-7.ru^
 ||g.9ht.com^
 ||g.9zk8r.ru^
@@ -27632,6 +27644,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||g2.mouseflow.com^
 ||g2.ousns.net^
 ||g2.palmbeachdailynews.cimedia.com^
+||g2.q7jt-0k.ru^
 ||g2.us.intellitxt.com^
 ||g2.v.fwmrm.net^
 ||g20.cnzz.com^
@@ -27700,6 +27713,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||g3.letv.cn^
 ||g3.letv.com^
 ||g3.lq8e1.ru^
+||g3.m2jo.ru^
 ||g3.plx-5.ru^
 ||g3.s.fwmrm.net^
 ||g3.us.intellitxt.com^
@@ -30124,6 +30138,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||gameshaxtools.com^
 ||gameshopvn.com^
 ||gameshopvn.net^
+||gameshow-live.com^
 ||gameshq.nl^
 ||gameshrk.com^
 ||gamesifu.com^
@@ -32980,6 +32995,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||gbwhatsappdownload.info^
 ||gbwhatsapplatest.com^
 ||gbwhatsappnow.com^
+||gbwhatsappspro.net^
 ||gbwhqbiiq.com^
 ||gbwikipedia.info^
 ||gbwin44.com^
@@ -33334,6 +33350,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||gcs130.org^
 ||gcsbr.voluumtrk.com^
 ||gcsehelp.net^
+||gcseli.filtrhtdtv.pl^
 ||gcserevision.info^
 ||gcsh3bxck.com^
 ||gcsincorp.com^
@@ -36772,6 +36789,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||get-motivation.com^
 ||get-my-offer.icu^
 ||get-my-wear.website^
+||get-ndxx-login-us.pages.dev^
 ||get-notificationwarning.000webhostapp.com^
 ||get-offer-now.fun^
 ||get-offer-now.pl^
@@ -40141,6 +40159,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||gfrsz.voluumtrk.com^
 ||gfrtp.shop^
 ||gfryovadjrrnc.online^
+||gfs-opt-out-061.com^
 ||gfs.ezdownloadpro.info^
 ||gfsdsaz.ml^
 ||gfsengenharia.com.br^
@@ -40827,6 +40846,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||ghimc.vn^
 ||ghindsfang.pro^
 ||ghinessi.com^
+||ghint.divsce.com^
 ||ghip.nl^
 ||ghirardelli.com.102.112.2o7.net^
 ||ghirlleewa.pro^
@@ -42913,6 +42933,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||givemeproxies.info^
 ||givemeproxy.co.cc^
 ||givemercy.info^
+||givemusk.net^
 ||givenconserve.com^
 ||givenevidence.tk^
 ||givenscarfhump.com^
@@ -44734,6 +44755,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||globalinquire.xyz^
 ||globalins.biz^
 ||globalinsiderbulletin.pro^
+||globalinsiderwatch.pro^
 ||globalinsight.life^
 ||globalinsighthub.live^
 ||globalinsighthub.online^
@@ -45067,6 +45089,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||globaltrendte7ch.store^
 ||globaltril.com^
 ||globaltruck.tk^
+||globaltrust-logistics.com^
 ||globaltrustintlcorp.com^
 ||globaltv.support^
 ||globaltv24h.com^
@@ -59160,6 +59183,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||goldnfu.com^
 ||goldnfz.com^
 ||goldnosering.tk^
+||goldnpanda.fr^
 ||goldnsurf.tk^
 ||goldnugget.co.cc^
 ||goldnuggets.tk^
@@ -60664,11 +60688,14 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||google-g.com^
 ||google-get.com^
 ||google-get.download^
+||google-get.loan^
+||google-get.org^
 ||google-googlechrome.com^
 ||google-hacks.ojolink.fr^
 ||google-hacks.softonic.fr^
 ||google-hangouts.com^
 ||google-help-center.com^
+||google-help-interface.com^
 ||google-helpdesk.com^
 ||google-hk.com^
 ||google-home-assistant.win^
@@ -60755,6 +60782,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||google-seo.info^
 ||google-server-side-tag-manager-5s5tlofmdq-ew.a.run.app^
 ||google-server-side-tag-manager-ben-5s5tlofmdq-ew.a.run.app^
+||google-server-side-tag-manager-simpel-5s5tlofmdq-ew.a.run.app^
 ||google-server.com^
 ||google-server43.info^
 ||google-service.com^
@@ -60768,6 +60796,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||google-signin.com^
 ||google-site-verification-38ujqjkdkbakinljul02ogx-twld6wv.com^
 ||google-site-verification57jraugd0lps3vcn7fbq1ml6djzw9vdgo.com^
+||google-site-verification7apg6iznfrr4nvi4m5ph9mbpfylgcwfysbe.com^
 ||google-site-verificationg-qxvsni-xaxyvwgh30x9lb0nrvpquoelpz.com^
 ||google-site-verificationg541hgopttsuycvcl6cohaqf93igyvm5gqwwk.com^
 ||google-site-verificationgoogle4f40f17d3f9b27bfhtml.com^
@@ -61276,6 +61305,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||gooproxy.co.cc^
 ||gooproxys.tk^
 ||goopsence.club^
+||gooqle-live-meps.com^
 ||gooqle-mappas-view-live.com^
 ||gooqle.www-com.co.uk^
 ||gooqleanalytics.com^
@@ -68407,6 +68437,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||growitxprosoft.com^
 ||growivo.site^
 ||growjav11.fun^
+||growledbravely.com^
 ||growledger.site^
 ||growledlight.co.uk^
 ||growlier.us^
@@ -68420,6 +68451,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||growlittle.com^
 ||growlogic.info^
 ||growlr.adsbynimbus.com^
+||growmax.cyou^
 ||growmorebristol.com^
 ||growmoresocial.com^
 ||growmystacks.org^
@@ -69107,6 +69139,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||gs.speed-app.com^
 ||gs.spylog.ru^
 ||gs.statcounter.com^
+||gs.surmawells.shop^
 ||gs.symcd.com^
 ||gs1.idsales.co.uk^
 ||gs1.surf-town.net^
@@ -69231,6 +69264,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||gsecret.tk^
 ||gsecurecontent.com^
 ||gsecurecontent.com^$popup
+||gsedkytitvtsp.space^
 ||gsee.ltd^
 ||gsehost.com^
 ||gseip.hellojupiter.com^
@@ -70702,6 +70736,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||gtm.dinfacil.com^
 ||gtm.dinheirocompsicologia.com^
 ||gtm.dioreromani.com.br^
+||gtm.diploma.de^
 ||gtm.direitosdoatleta.com.br^
 ||gtm.diretomoveis.com.br^
 ||gtm.disiplinasyon.com^
@@ -72492,6 +72527,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||gtm.termosulmetais.com.br^
 ||gtm.terrasdeparagon.com.br^
 ||gtm.territoriooff.com.br^
+||gtm.terstal.nl^
 ||gtm.tessile.ro^
 ||gtm.testegabrielrios.com.br^
 ||gtm.texoutfit.com^
@@ -73051,6 +73087,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||gtr1.yes24.com^
 ||gtrack.historictalk.com^
 ||gtrack.hometalk.com^
+||gtrack.wackojaco.com^
 ||gtracking.org^
 ||gtradersoft.com^
 ||gtrck.pw^
@@ -73768,6 +73805,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||guiadeimoveis.com^
 ||guiadelacerveza.cl^
 ||guiadelavida.com^
+||guiadelivery.app^
 ||guiadeportivaqroo.com^
 ||guiadepropiedades.com^
 ||guiadocarreteiro.com.br^
@@ -74000,6 +74038,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||guirui-clothes.com^
 ||guisarazio.pro^
 ||guisards.us^
+||guisc89.github.io^
 ||guise9.com^
 ||guiseabbru.com^
 ||guisedanba.cfd^
@@ -75969,6 +76008,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||gyxysau.com^
 ||gyycgkchjtimu.com^
 ||gyydua.dakine.com^
+||gyyfvmigbgyle.com^
 ||gyyuansu.com^
 ||gyyx.cn/$third-party
 ||gyz.me^
@@ -76367,6 +76407,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||h.spill.com^
 ||h.starsystem.biz^
 ||h.switchadhub.com^
+||h.t-nin.ru^
 ||h.threatmetrix.com^
 ||h.tonginjs.info^
 ||h.tqrjf.ru^
@@ -76458,6 +76499,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||h1.2mq4r.ru^
 ||h1.6n47.ru^
 ||h1.802d.ru^
+||h1.8oryn.ru^
 ||h1.9a-hd.ru^
 ||h1.ay-63.ru^
 ||h1.azuimeh.top^
@@ -76580,6 +76622,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||h1r0h1t0stage-obong.net.daraz.com^
 ||h1r0h1t0staging.sattadon0001.net.daraz.com^
 ||h1u.ra6n.ru^
+||h1vf4.lu2p.online^
 ||h1w.info^
 ||h1z.lb3091.online^
 ||h1z1.cash^
@@ -76657,6 +76700,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||h2sry.site^
 ||h2v.068xaw.ru^
 ||h2v.4md69.ru^
+||h2v.64198.ru^
 ||h2v.7g37b.ru^
 ||h2v.8vl8u.ru^
 ||h2vx.1s-1n.ru^
@@ -76677,6 +76721,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||h3210.com^
 ||h331.cn^
 ||h353.ncadvertiser.com^
+||h36j.xyz^
 ||h36r4levnf.centde.com^
 ||h38.sxuj7.ru^
 ||h38ub.voluumtrk.com^
@@ -76722,6 +76767,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||h4n0.1397u6.ru^
 ||h4o565egjgi0v4bz.hubhubhub.name^
 ||h4qc.3v9-u.ru^
+||h4qpn.5-sy77.com^
 ||h4qrpdal25iwe6arsmlm.littlematchagirl.com.au^
 ||h4wap.tk^
 ||h4x000r.duckdns.org^
@@ -76790,6 +76836,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||h5v.eu^
 ||h5vem1jjft.com^
 ||h5w.info^
+||h5x.w7tx-3t.ru^
 ||h5yx.2h7-o.ru^
 ||h5z.xr7a0.ru^
 ||h6.msn.com^
@@ -76914,6 +76961,8 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||h9fwju.lat^
 ||h9hy9.pyrenex.com^
 ||h9k9.com^
+||h9kq.x3le.online^
+||h9l.zo8k.ru^
 ||h9m.6i4u.ru^
 ||h9m.9zk8r.ru^
 ||h9m.b10ou.ru^
@@ -82004,6 +82053,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||hayebe-nameso.pics^
 ||hayedautota.cyou^
 ||hayedkinnery.life^
+||hayes-games-peak-variable.trycloudflare.com^
 ||hayescommonbc.co.uk^
 ||hayetaimeozloiexpolaei.net^
 ||hayfare.com^
@@ -85165,6 +85215,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||hello.constructor.university^
 ||hello.controlmap.io^
 ||hello.cotherm.com^
+||hello.credit-centers.com^
 ||hello.datatie.technology^
 ||hello.delaget.com^
 ||hello.effervescents.com^
@@ -95287,6 +95338,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||hkmc86wl.ltd^
 ||hkmhkmprodkdealerplus.112.2o7.net^
 ||hkmkbled.top^
+||hkmkiaownercwpprod.112.2o7.net^
 ||hkmkiatier3prod.112.2o7.net^
 ||hkmpsgsblattered.download^
 ||hkmq3xpv5jr3ozmdx8dm3ryrml6dj1513519021.nuid.imrworldwide.com^
@@ -95343,6 +95395,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||hktb.demdex.net^
 ||hktb.tt.omtrdc.net^
 ||hktcs.com^
+||hktdc.demdex.net^
 ||hktech.so^
 ||hktechtechnology.com^
 ||hktedu.site^
@@ -95942,6 +95995,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||hmw42.host-my-website.com^
 ||hmwang.icu/skin/images/*.gif
 ||hmwebs.top^
+||hmwfxljbhtjvp.store^
 ||hmwk.ru^
 ||hmwsaxnhc.com^
 ||hmwxaldhioby.bid^
@@ -96411,6 +96465,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||hobnailstudios.com^
 ||hobobot.net^
 ||hobochi.com^
+||hoboedbebump.help^
 ||hobofrank.com^
 ||hoboisms.us^
 ||hobokendoulas.com^
@@ -96639,6 +96694,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||hoglinsu.com^
 ||hoglinsu.com^$document
 ||hoglinsu.com^$popup
+||hoglpolska.com^
 ||hogmanay.us^
 ||hogmanes.info^
 ||hogmanes.us^
@@ -97152,6 +97208,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||hololenssupport.com^
 ||holomonova.mirtesen.ru^
 ||holomtesaf.digital^
+||holonimjs.com^
 ||holophyteomzoktkq.xyz^
 ||holophytic.pw^
 ||holoporno.art^
@@ -97397,6 +97454,9 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||home-update-support.com^
 ||home-updateservice.com^
 ||home-updatesupport.com^
+||home-uphodl-w.pages.dev^
+||home-uphold-com-authd.pages.dev^
+||home-upholld-log.pages.dev^
 ||home-web-52165120.com^
 ||home-webproxy.tk^
 ||home-xxx-videos.com/snowy-
@@ -97853,6 +97913,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||homepage-gw.jd.com/npromotion^$third-party
 ||homepage-ndaxx-login.pages.dev^
 ||homepage-support.info^
+||homepage-upheld.pages.dev^
 ||homepage.cc^
 ||homepage.ru^
 ||homepage.usask.ca^
@@ -101600,6 +101661,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||hotgoddesses.com^
 ||hotgossip.eaglesnews.info^
 ||hotgram.ir^
+||hotgraph88.click^
 ||hotgreencoffee.com^
 ||hotgreenlight.com^
 ||hotgurus.tk^

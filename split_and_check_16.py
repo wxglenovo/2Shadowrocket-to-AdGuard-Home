@@ -11,16 +11,18 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 # ===============================
 # 配置
 # ===============================
-URLS_TXT = "urls.txt"
+URLS_TXT = "urls.txt"               # 存放规则源地址
 TMP_DIR = "tmp"
 DIST_DIR = "dist"
-MASTER_RULE = "merged_rules.txt"
+MASTER_RULE = "merged_rules.txt"    # 合并后的规则文件
 PARTS = 16
 DNS_WORKERS = 50
 DNS_TIMEOUT = 2
 DELETE_COUNTER_FILE = os.path.join(DIST_DIR, "delete_counter.json")
 DELETE_THRESHOLD = 4
+BATCH_PROGRESS = 500  # 每多少条输出一次进度
 
+# 创建目录
 os.makedirs(TMP_DIR, exist_ok=True)
 os.makedirs(DIST_DIR, exist_ok=True)
 
@@ -36,18 +38,19 @@ def download_all_sources():
     with open(URLS_TXT, "r", encoding="utf-8") as f:
         urls = [u.strip() for u in f if u.strip()]
     for url in urls:
+        print(f"🌐 获取 {url}")
         try:
             r = requests.get(url, timeout=20)
             r.raise_for_status()
             for line in r.text.splitlines():
                 line = line.strip()
-                if line and not line.startswith("#"):
+                if line and not line.startswith("#") and not line.startswith("!"):
                     merged.add(line)
         except Exception as e:
             print(f"⚠ 下载失败 {url}: {e}")
+    print(f"✅ 合并 {len(merged)} 条规则")
     with open(MASTER_RULE, "w", encoding="utf-8") as f:
         f.write("\n".join(sorted(merged)))
-    print(f"✅ 合并 {len(merged)} 条规则")
     return True
 
 # ===============================
@@ -61,16 +64,13 @@ def split_parts():
         rules = [l.strip() for l in f if l.strip()]
     total = len(rules)
     per_part = (total + PARTS - 1) // PARTS
+    print(f"🪓 分片 {total} 条，每片约 {per_part}")
     for i in range(PARTS):
         part_rules = rules[i * per_part:(i + 1) * per_part]
-        tmp_file = os.path.join(TMP_DIR, f"part_{i+1:02d}.txt")
-        dist_file = os.path.join(DIST_DIR, f"validated_part_{i+1:02d}.txt")
-        with open(tmp_file, "w", encoding="utf-8") as f:
+        filename = os.path.join(TMP_DIR, f"part_{i+1:02d}.txt")
+        with open(filename, "w", encoding="utf-8") as f:
             f.write("\n".join(part_rules))
-        if not os.path.exists(dist_file):
-            with open(dist_file, "w", encoding="utf-8") as f:
-                f.write("\n".join(part_rules))
-        print(f"📄 分片 {i+1}: {len(part_rules)} 条 → {tmp_file}")
+        print(f"📄 分片 {i+1}: {len(part_rules)} 条 → {filename}")
     return True
 
 # ===============================
@@ -90,8 +90,8 @@ def check_domain(rule):
         return None
 
 def dns_validate(lines):
+    print(f"🚀 启动 {DNS_WORKERS} 并发验证")
     valid = []
-    delayed_warn = []
     with ThreadPoolExecutor(max_workers=DNS_WORKERS) as executor:
         futures = {executor.submit(check_domain, rule): rule for rule in lines}
         total = len(lines)
@@ -99,14 +99,12 @@ def dns_validate(lines):
         for future in as_completed(futures):
             done += 1
             result = future.result()
-            rule = futures[future]
             if result:
                 valid.append(result)
-            else:
-                delayed_warn.append(rule)
-            if done % 500 == 0 or done == total:
+            if done % BATCH_PROGRESS == 0 or done == total:
                 print(f"✅ 已验证 {done}/{total} 条，有效 {len(valid)} 条")
-    return valid, delayed_warn
+    print(f"✅ 分片 DNS 验证完成，有效 {len(valid)} 条")
+    return set(valid)
 
 # ===============================
 # 删除计数管理
@@ -120,6 +118,7 @@ def load_delete_counter():
             print(f"⚠ {DELETE_COUNTER_FILE} 解析失败，重建空计数")
             return {}
     else:
+        os.makedirs(DIST_DIR, exist_ok=True)
         with open(DELETE_COUNTER_FILE, "w", encoding="utf-8") as f:
             json.dump({}, f, indent=2, ensure_ascii=False)
         return {}
@@ -134,16 +133,17 @@ def save_delete_counter(counter):
 def process_part(part):
     part_file = os.path.join(TMP_DIR, f"part_{int(part):02d}.txt")
     if not os.path.exists(part_file):
+        print(f"⚠ 分片 {part} 缺失，重新下载并切片")
         download_all_sources()
         split_parts()
     if not os.path.exists(part_file):
-        print("❌ 分片不存在，终止")
+        print("❌ 分片仍不存在，终止")
         return
 
     lines = open(part_file, "r", encoding="utf-8").read().splitlines()
     print(f"⏱ 验证分片 {part}，共 {len(lines)} 条规则")
 
-    valid, delayed_warn_rules = dns_validate(lines)
+    valid = dns_validate(lines)
 
     out_file = os.path.join(DIST_DIR, f"validated_part_{part}.txt")
     old_rules = set()
@@ -153,7 +153,6 @@ def process_part(part):
 
     delete_counter = load_delete_counter()
     new_delete_counter = {}
-
     final_rules = set()
     removed_count = 0
     added_count = 0
@@ -166,24 +165,27 @@ def process_part(part):
         else:
             count = delete_counter.get(rule, 0) + 1
             new_delete_counter[rule] = count
-            if count < DELETE_THRESHOLD:
-                final_rules.add(rule)
-                warn_list.append(f"⚠ 连续删除计数 {count}/{DELETE_THRESHOLD}: {rule}")
-            else:
+            if count >= DELETE_THRESHOLD:
                 removed_count += 1
+            else:
+                final_rules.add(rule)
+            warn_list.append((count, rule))
 
         if rule not in old_rules and rule in valid:
             added_count += 1
 
     save_delete_counter(new_delete_counter)
+
     with open(out_file, "w", encoding="utf-8") as f:
         f.write("\n".join(sorted(final_rules)))
 
-    print(f"✅ 分片 {part} 完成: 总 {len(final_rules)}, 新增 {added_count}, 删除 {removed_count}")
-    print(f"COMMIT_STATS: 总 {len(final_rules)}, 新增 {added_count}, 删除 {removed_count}")
-    # 所有连续删除计数警告统一输出在最后
-    for w in warn_list:
-        print(w)
+    total_count = len(final_rules)
+    print(f"✅ 分片 {part} 完成: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
+    print(f"COMMIT_STATS: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
+
+    # 统一输出警告：只有未达到阈值的显示正常计数，达到阈值也显示
+    for count, rule in warn_list:
+        print(f"⚠ 连续删除计数 {count}/{DELETE_THRESHOLD}: {rule}")
 
 # ===============================
 # 主函数
@@ -199,8 +201,12 @@ if __name__ == "__main__":
         split_parts()
 
     if not os.path.exists(MASTER_RULE) or not os.path.exists(os.path.join(TMP_DIR, "part_01.txt")):
+        print("⚠ 缺少规则或分片，自动拉取")
         download_all_sources()
         split_parts()
 
     if args.part:
         process_part(args.part)
+    else:
+        for i in range(1, PARTS + 1):
+            process_part(i)

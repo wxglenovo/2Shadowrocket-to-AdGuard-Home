@@ -1,4 +1,4 @@
-name: Split & DNS Check 
+name: Split & DNS Check (Concurrent)
 
 on:
   schedule:
@@ -50,7 +50,6 @@ jobs:
           mkdir -p tmp
           LAST_PART_FILE="tmp/last_part.txt"
           PART_INPUT="${{ github.event.inputs.part }}"
-          
           if [ -n "$PART_INPUT" ]; then
             PART="$PART_INPUT"
             echo "🛠 手动指定分片：$PART"
@@ -63,7 +62,6 @@ jobs:
             fi
             echo "⏱ 自动轮替分片：$PART"
           fi
-          
           echo "$PART" > "$LAST_PART_FILE"
           echo "part=$PART" >> $GITHUB_OUTPUT
 
@@ -71,9 +69,9 @@ jobs:
         run: |
           MERGED_FILE="merged_rules.txt"
           FIRST_PART="dist/validated_part_01.txt"
-          mkdir -p dist
-          if [ ! -f "$MERGED_FILE" ] or [ ! -f "$FIRST_PART" ]; then
-            echo "⚠ 缺少规则文件或分片 → 下载并生成"
+          mkdir -p dist tmp
+          if [ ! -f "$MERGED_FILE" ] || [ ! -f "$FIRST_PART" ]; then
+            echo "⚠ 缺少规则文件或分片 → 生成规则和分片"
             python3 split_and_check_16.py
           else
             echo "✅ 规则文件和分片存在"
@@ -81,6 +79,7 @@ jobs:
 
       - name: Ensure delete_counter.json exists
         run: |
+          mkdir -p dist
           if [ ! -f dist/delete_counter.json ]; then
             echo "{}" > dist/delete_counter.json
             echo "✅ 创建 dist/delete_counter.json"
@@ -88,7 +87,7 @@ jobs:
             echo "✅ delete_counter.json 已存在"
           fi
 
-      - name: Run DNS validation for current part
+      - name: Run DNS validation for current part (Concurrent)
         env:
           PART: ${{ steps.detect.outputs.part }}
         run: |

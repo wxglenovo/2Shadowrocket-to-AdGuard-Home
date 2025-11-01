@@ -4,12 +4,14 @@ import os
 import json
 import requests
 import dns.resolver
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 URLS_FILE = "urls.txt"
 TMP_DIR = "tmp"
 DIST_DIR = "dist"
 MERGED_FILE = "merged_rules.txt"
 DELETE_COUNTER_FILE = os.path.join(DIST_DIR, "delete_counter.json")
+
 PARTS = 16
 DNS_WORKERS = 50
 DNS_BATCH_SIZE = 300
@@ -78,7 +80,22 @@ def save_delete_counter(data):
         json.dump(data, f, indent=2)
 
 
-# ✅ DNS检查
+# ✅ DNS批量检查（并发）
+def dns_check_batch(domains):
+    results = {}
+    with ThreadPoolExecutor(max_workers=DNS_WORKERS) as executor:
+        future_to_domain = {
+            executor.submit(dns_check, d): d for d in domains
+        }
+        for future in as_completed(future_to_domain):
+            d = future_to_domain[future]
+            try:
+                results[d] = future.result()
+            except:
+                results[d] = False
+    return results
+
+
 def dns_check(domain):
     try:
         dns.resolver.resolve(domain, 'A', lifetime=3)
@@ -101,42 +118,45 @@ def validate_part(index):
 
     kept = []
     deleted = []
-    for rule in rules:
-        domain = rule.replace("||", "").replace("^", "")
-        ok = dns_check(domain)
 
-        if ok:
-            kept.append(rule)
-            if rule in delete_counter:
-                del delete_counter[rule]   # 成功解析则清零
-        else:
-            delete_counter[rule] = delete_counter.get(rule, 0) + 1
-            if delete_counter[rule] < 4:
+    # 批量 DNS 测试
+    for i in range(0, len(rules), DNS_BATCH_SIZE):
+        batch = rules[i:i + DNS_BATCH_SIZE]
+        domains = [r.replace("||", "").replace("^", "") for r in batch]
+        dns_results = dns_check_batch(domains)
+
+        for rule, domain in zip(batch, domains):
+            ok = dns_results[domain]
+            if ok:
                 kept.append(rule)
-                print(f"⚠ {rule} 连续删除计数 {delete_counter[rule]}/4")
+                if rule in delete_counter:
+                    del delete_counter[rule]
             else:
-                deleted.append(rule)
-                print(f"❌ {rule} 已连续 4 次失败 → 移除")
+                delete_counter[rule] = delete_counter.get(rule, 0) + 1
+                if delete_counter[rule] < 4:
+                    kept.append(rule)
+                else:
+                    deleted.append(rule)
 
+    # 保存结果
     with open(part_file, "w", encoding="utf-8") as f:
         f.write("\n".join(kept))
 
     save_delete_counter(delete_counter)
-    print(f"✅ 分片 {index} → 保留 {len(kept)}, 删除 {len(deleted)}")
+
+    print(f"✅ part {index:02d} → 总 {len(rules)}, 保留 {len(kept)}, 删除 {len(deleted)}")
 
 
 # ✅ 主流程
 if __name__ == "__main__":
     urls = load_urls()
 
-    # 没有 merged_rules.txt 则自动生成
     if not os.path.exists(MERGED_FILE):
         print("⚠ 没找到合并规则 → 自动下载")
         download_and_merge(urls)
         split_rules()
 
-    # 验证所有分片
     for i in range(1, PARTS + 1):
         validate_part(i)
 
-    print("✅ 所有分片处理完毕")
+    print("✅ 所有分片处理完毕 ✅")

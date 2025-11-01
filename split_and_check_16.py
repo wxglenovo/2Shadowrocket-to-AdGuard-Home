@@ -21,7 +21,6 @@ DNS_TIMEOUT = 2
 DELETE_COUNTER_FILE = os.path.join(DIST_DIR, "delete_counter.json")
 DELETE_THRESHOLD = 4
 
-# 创建目录
 os.makedirs(TMP_DIR, exist_ok=True)
 os.makedirs(DIST_DIR, exist_ok=True)
 
@@ -128,7 +127,7 @@ def save_delete_counter(counter):
         json.dump(counter, f, indent=2, ensure_ascii=False)
 
 # ===============================
-# 分片处理
+# 分片处理（修改点 ✅）
 # ===============================
 def process_part(part):
     part_file = os.path.join(TMP_DIR, f"part_{int(part):02d}.txt")
@@ -152,9 +151,7 @@ def process_part(part):
 
     delete_counter = load_delete_counter()
 
-    # ===============================
-    # ✅ 修改点：继承旧 delete_counter，不覆盖，连续失败累加
-    # ===============================
+    # ✅ 保留旧的 delete_counter，避免覆盖
     new_delete_counter = delete_counter.copy()
 
     final_rules = set()
@@ -166,7 +163,7 @@ def process_part(part):
     for rule in all_rules:
         if rule in valid:
             final_rules.add(rule)
-            new_delete_counter[rule] = 0  # 当前片验证成功 → 清零
+            new_delete_counter[rule] = 0  # ✅ 验证成功 → 清零
             if rule not in old_rules:
                 added_count += 1
         else:
@@ -199,7 +196,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     if args.force_update:
-        download_all_sources()
+        download_all_sources()  # ✅ 强制覆盖 tmp/part_**.txt
         split_parts()
 
     if not os.path.exists(MASTER_RULE) or not os.path.exists(os.path.join(TMP_DIR, "part_01.txt")):

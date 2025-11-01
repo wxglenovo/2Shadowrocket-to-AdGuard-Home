@@ -10,7 +10,7 @@ on:
     - cron: "0 12 * * *"  # 每天 12:00 UTC
     - cron: "0 18 * * *"  # 每天 18:00 UTC
     - cron: "*/22 * * * *" # 每 22 分钟一次
-  workflow_dispatch:      # 手动触发
+  workflow_dispatch:
     inputs:
       part:
         description: '手动验证指定分片 1~16'
@@ -18,16 +18,13 @@ on:
         default: ''
 
 permissions:
-  contents: write  # 允许推送代码到仓库
+  contents: write
 
-# -----------------------------
-# Job 定义
-# -----------------------------
 jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      PYTHONUNBUFFERED: 1  # 输出实时刷新
+      PYTHONUNBUFFERED: 1
 
     steps:
 
@@ -72,11 +69,9 @@ jobs:
           PART_INPUT="${{ github.event.inputs.part }}"
 
           if [ -n "$PART_INPUT" ]; then
-            # 手动指定分片
             PART="$PART_INPUT"
             echo "🛠 手动指定分片：$PART"
           else
-            # 自动轮替分片
             if [ -f "$LAST_PART_FILE" ]; then
               LAST_PART=$(cat "$LAST_PART_FILE")
               PART=$(( (LAST_PART % 16) + 1 ))
@@ -90,21 +85,20 @@ jobs:
           echo "part=$PART" >> $GITHUB_OUTPUT
 
       # -----------------------------
-      # 6. 定时强制下载规则
+      # 6. 定时下载规则源（每天四次）并覆盖分片
       # -----------------------------
       - name: Force download rules at schedule times
         run: |
           CURRENT_HOUR=$(date -u +"%H")
-          # ✅ 每天四次 UTC 定时下载，覆盖 tmp/part_**.txt
           if [[ "$CURRENT_HOUR" == "00" || "$CURRENT_HOUR" == "06" || "$CURRENT_HOUR" == "12" || "$CURRENT_HOUR" == "18" ]]; then
             echo "✅ 强制下载规则源并生成所有分片"
             python3 split_and_check_16.py --force-update
           else
-            echo "⏩ 非下载时间，tmp 目录已有分片就不再下载"
+            echo "⏩ 非下载时间，不强制更新"
           fi
 
       # -----------------------------
-      # 7. 确保规则文件及首个分片存在
+      # 7. 确保 rules 和首个分片存在（首次运行）
       # -----------------------------
       - name: Ensure rules and first part exist
         run: |
@@ -148,13 +142,29 @@ jobs:
         env:
           PART: ${{ steps.detect.outputs.part }}
         run: |
-          # ✅ 仅添加存在的 validated_part_*.txt，防止第一次运行报错
+          STATS=$(grep "COMMIT_STATS" logs/split_check_part_${PART}.log | tail -n1 | sed 's/COMMIT_STATS: //')
+          
+          # ✅ 添加文件，首次不存在也不会报错
           git add dist
           for f in dist/validated_part_*.txt; do
             [ -f "$f" ] && git add "$f"
           done
           git add merged_rules.txt tmp/last_part.txt
 
-          git commit -m "🤖 part $PART → 自动更新" || echo "⚠ 无可提交内容"
+          # ✅ commit message 使用日志 STATS
+          git commit -m "🤖 part $PART → $STATS" || echo "⚠ 无可提交内容"
+
+          # ✅ pull 失败时忽略
           git pull --rebase || echo "⚠ Pull failed, 已忽略"
+
+          # ✅ push
           git push || echo "⚠ Push failed"
+
+      # -----------------------------
+      # 11. 输出 tmp 目录内容（调试用）
+      # -----------------------------
+      - name: Show tmp directory
+        run: |
+          echo "📂 当前 tmp 目录内容："
+          ls -lh tmp || echo "⚠ tmp 目录不存在或无法访问"
+          echo "ℹ 如果 tmp/part_**.txt 无法生成，请检查 split_and_check_16.py 是否正常生成分片"

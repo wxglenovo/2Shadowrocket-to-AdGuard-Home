@@ -1,4 +1,3 @@
-
 name: Split & DNS Check
 
 on:
@@ -7,7 +6,7 @@ on:
     - cron: "0 6 * * *"
     - cron: "0 12 * * *"
     - cron: "0 18 * * *"
-    - cron: "*/22 * * * *"
+    - cron: "*/22 * * * *"  # 每 22 分钟执行一次
   workflow_dispatch:
     inputs:
       part:
@@ -45,12 +44,11 @@ jobs:
 
       - name: Determine PART index
         id: detect
-        shell: bash
         run: |
           mkdir -p tmp
           LAST_PART_FILE="tmp/last_part.txt"
           PART_INPUT="${{ github.event.inputs.part }}"
-          
+
           if [ -n "$PART_INPUT" ]; then
             PART="$PART_INPUT"
             echo "🛠 手动指定分片：$PART"
@@ -63,53 +61,54 @@ jobs:
             fi
             echo "⏱ 自动轮替分片：$PART"
           fi
-          
-          echo $PART > $LAST_PART_FILE
+
+          echo "$PART" > "$LAST_PART_FILE"
           echo "part=$PART" >> $GITHUB_OUTPUT
 
       - name: Force download rules at schedule times
-        shell: bash
         run: |
           CURRENT_HOUR=$(date -u +"%H")
           if [[ "$CURRENT_HOUR" == "00" || "$CURRENT_HOUR" == "06" || "$CURRENT_HOUR" == "12" || "$CURRENT_HOUR" == "18" ]]; then
             echo "✅ 强制下载规则源并生成所有分片"
-            python split_and_check_16.py --force-update
+            python3 split_and_check_16.py --force
           else
             echo "⏩ 非下载时间，不强制更新"
-          fi
 
       - name: Ensure rules and first part exist
-        shell: bash
         run: |
           MERGED_FILE="merged_rules.txt"
           FIRST_PART="tmp/part_01.txt"
           if [ ! -f "$MERGED_FILE" ] || [ ! -f "$FIRST_PART" ]; then
-            echo "⚠ 缺少规则文件或分片，自动拉取规则源并生成分片"
-            python split_and_check_16.py --force-update
+            echo "⚠ 缺少规则文件或分片 → 重新拉取"
+            python3 split_and_check_16.py --force
           else
             echo "✅ 规则文件和分片存在"
-          fi
+
+      - name: Ensure delete_counter.json exists
+        run: |
+          mkdir -p dist
+          if [ ! -f dist/delete_counter.json ]; then
+            echo "{}" > dist/delete_counter.json
+            echo "✅ 创建 dist/delete_counter.json"
+          else
+            echo "✅ delete_counter.json 已存在"
 
       - name: Run DNS validation for current part
-        shell: bash
         env:
           PART: ${{ steps.detect.outputs.part }}
         run: |
           mkdir -p logs
           echo "⏱ 开始验证分片 $PART"
-          python split_and_check_16.py --part "$PART" | tee logs/split_check_part_${PART}.log
+          python3 split_and_check_16.py --part "$PART" | tee logs/split_check_part_${PART}.log
 
       - name: Commit & Push Validated Rules
-        shell: bash
         env:
           PART: ${{ steps.detect.outputs.part }}
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          
           STATS=$(grep "COMMIT_STATS" logs/split_check_part_${PART}.log | tail -n1 | sed 's/COMMIT_STATS: //')
-          
+
           git add tmp/last_part.txt dist/validated_part_*.txt dist/delete_counter.json merged_rules.txt
-          git commit -m "🤖 Auto update: validated part $PART → $STATS" || echo "No changes to commit"
-          git pull --rebase origin main || echo "⚠ Pull failed or nothing to rebase"
-          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
+          git commit -m "🤖 part $PART → $STATS" || echo "No changes to commit"
+
+          git pull --rebase origin main || echo "⚠ Pull failed"
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main || echo "⚠ Push failed"

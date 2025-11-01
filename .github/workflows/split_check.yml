@@ -5,12 +5,12 @@ name: Split & DNS Check
 # -----------------------------
 on:
   schedule:
-    - cron: "0 0 * * *"
-    - cron: "0 6 * * *"
-    - cron: "0 12 * * *"
-    - cron: "0 18 * * *"
-    - cron: "*/22 * * * *"
-  workflow_dispatch:
+    - cron: "0 0 * * *"   # 每天 00:00 UTC
+    - cron: "0 6 * * *"   # 每天 06:00 UTC
+    - cron: "0 12 * * *"  # 每天 12:00 UTC
+    - cron: "0 18 * * *"  # 每天 18:00 UTC
+    - cron: "*/22 * * * *" # 每 22 分钟一次
+  workflow_dispatch:      # 手动触发
     inputs:
       part:
         description: '手动验证指定分片 1~16'
@@ -18,15 +18,19 @@ on:
         default: ''
 
 permissions:
-  contents: write
+  contents: write  # 允许推送代码到仓库
 
+# -----------------------------
+# Job 定义
+# -----------------------------
 jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      PYTHONUNBUFFERED: 1
+      PYTHONUNBUFFERED: 1  # 输出实时刷新
 
     steps:
+
       # -----------------------------
       # 1. 检出仓库
       # -----------------------------
@@ -58,7 +62,7 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
       # -----------------------------
-      # 5. 确定当前分片
+      # 5. 确定当前分片 (PART)
       # -----------------------------
       - name: Determine PART index
         id: detect
@@ -68,9 +72,11 @@ jobs:
           PART_INPUT="${{ github.event.inputs.part }}"
 
           if [ -n "$PART_INPUT" ]; then
+            # 手动指定分片
             PART="$PART_INPUT"
             echo "🛠 手动指定分片：$PART"
           else
+            # 自动轮替分片
             if [ -f "$LAST_PART_FILE" ]; then
               LAST_PART=$(cat "$LAST_PART_FILE")
               PART=$(( (LAST_PART % 16) + 1 ))
@@ -84,34 +90,71 @@ jobs:
           echo "part=$PART" >> $GITHUB_OUTPUT
 
       # -----------------------------
-      # 6. 拉取规则源（每天四次定时才覆盖） ✅ 改动
+      # 6. 定时强制下载规则
       # -----------------------------
-      - name: Download rules if scheduled
-        if: startsWith(github.event_name, 'schedule') && contains('0 0,6,12,18', github.event.schedule)
+      - name: Force download rules at schedule times
         run: |
-          python split_and_check_16.py --force-update
+          CURRENT_HOUR=$(date -u +"%H")
+          # ✅ 每天四次 UTC 定时下载，覆盖 tmp/part_**.txt
+          if [[ "$CURRENT_HOUR" == "00" || "$CURRENT_HOUR" == "06" || "$CURRENT_HOUR" == "12" || "$CURRENT_HOUR" == "18" ]]; then
+            echo "✅ 强制下载规则源并生成所有分片"
+            python3 split_and_check_16.py --force-update
+          else
+            echo "⏩ 非下载时间，tmp 目录已有分片就不再下载"
+          fi
 
       # -----------------------------
-      # 7. 验证指定分片
+      # 7. 确保规则文件及首个分片存在
       # -----------------------------
-      - name: Validate Part
+      - name: Ensure rules and first part exist
         run: |
-          python split_and_check_16.py --part ${{ steps.detect.outputs.part }}
+          MERGED_FILE="merged_rules.txt"
+          FIRST_PART="tmp/part_01.txt"
+          if [ ! -f "$MERGED_FILE" ] || [ ! -f "$FIRST_PART" ]; then
+            echo "⚠ 缺少规则文件或分片 → 重新拉取"
+            python3 split_and_check_16.py --force-update
+          else
+            echo "✅ 规则文件和分片存在"
+          fi
 
       # -----------------------------
-      # 8. 输出 tmp 内容
+      # 8. 确保 delete_counter.json 存在
       # -----------------------------
-      - name: List tmp
+      - name: Ensure delete_counter.json exists
         run: |
-          echo "📂 当前 tmp 目录内容："
-          ls -lh tmp
+          mkdir -p dist
+          if [ ! -f dist/delete_counter.json ]; then
+            echo "{}" > dist/delete_counter.json
+            echo "✅ 创建 dist/delete_counter.json"
+          else
+            echo "✅ delete_counter.json 已存在"
+          fi
 
       # -----------------------------
-      # 9. Git commit & push
+      # 9. 对当前分片进行 DNS 验证
       # -----------------------------
-      - name: Commit & push
+      - name: Run DNS validation for current part
+        env:
+          PART: ${{ steps.detect.outputs.part }}
         run: |
-          git add dist validated_*.txt
-          git commit -m "🤖 part ${{ steps.detect.outputs.part }} → 自动更新"
+          mkdir -p logs
+          echo "⏱ 开始验证分片 $PART"
+          python3 split_and_check_16.py --part "$PART" | tee logs/split_check_part_${PART}.log
+
+      # -----------------------------
+      # 10. 提交并推送验证后的规则
+      # -----------------------------
+      - name: Commit & Push Validated Rules
+        env:
+          PART: ${{ steps.detect.outputs.part }}
+        run: |
+          # ✅ 仅添加存在的 validated_part_*.txt，防止第一次运行报错
+          git add dist
+          for f in dist/validated_part_*.txt; do
+            [ -f "$f" ] && git add "$f"
+          done
+          git add merged_rules.txt tmp/last_part.txt
+
+          git commit -m "🤖 part $PART → 自动更新" || echo "⚠ 无可提交内容"
           git pull --rebase || echo "⚠ Pull failed, 已忽略"
-          git push
+          git push || echo "⚠ Push failed"

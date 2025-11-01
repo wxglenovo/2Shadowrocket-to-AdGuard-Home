@@ -2,18 +2,26 @@
 ! Blocked domains: 4935
 ! Checksum: GQmEJsuWB9gqS3bh2vicFQ
 ! Checksum: KG0pUm+QyAhOo4IoNzzHDA
+! Checksum: bXq9lQbgDtioUglvOxI9dA
 ! Checksum: lzVWX74G3BWDrKvIgr+X3Q
 ! Checksum: qHTpTngjxs0dLSdVAzKVeg
+! Checksum: qLiA2TLjR7JvXp/tzszQJQ
 ! Checksum: wHasbLCU/KxYIgcM8tffew
 ! Checksum: wciYVWX/RVc9J+UADZH4AA
+! Checksum: zcuX086GtF61CrCvb+Rw1w
 ! Last modified: 01 Nov 2025 10:06 UTC
 ! Last modified: 01 Nov 2025 14:12 UTC
+! Last modified: 01 Nov 2025 18:08 UTC
 ! Last modified: 01 Nov 2025 18:11 UTC
+! Last modified: 01 Nov 2025 23:21 UTC
 ! Last modified: 2025/11/02 00:08:01
 ! Number of entries: 48769
+! Number of entries: 48882
 ! Version: 2025.1101.1006.51
+! Version: 2025.1101.1808.36
 ! Version: 202511011412
 ! Version: 202511011811
+! Version: 202511012321
 ! Version: 20251102000801
 ! remove dube: wa.sugarandjade.com
 ! ||000scripps.hb.omtrdc.net^
@@ -22,12 +30,18 @@
 ! ||contactforms.53.com^
 ! ||wa.pjplace.com^
 ! 压缩后规则数: 254008
+! 压缩后规则数: 254197
 ! 原始规则数: 254008
+! 原始规则数: 254197
 !! browser.sentry-cdn.com
+!Total lines: 91670
+!Version: 20251102024226
 !有效规则数目: 1543566
 !有效规则数目: 1543585
+!有效规则数目: 1543708
 !生成时间: 2025-11-01 22:15:51
 !生成时间: 2025-11-02 01:45:45
+!生成时间: 2025-11-02 07:29:38
 $object,script,subdocument,third-party,websocket,xmlhttprequest,domain=haobetter.com|hutuxs.com|lakyworld.com|biquge543.com|biquge12345.com|biquge.ac|biquge321.com|zyywenxue.com|biquge77.net|xiakezw.com|shitouxs.com|yzbg.net|alexij.net|hshfm.com|biqugequ.org|biqiuge5.org|74xs.cc|fxxs3.com|hushuge.com|49gtk.cc|tongrenshe.cc|tbxs.org|efuxs.com|i3book.com|13xsw.com|genbiquge.com|xbiqige.cc|xiaoshuo.com.tw|quanbiqu.com|20me.net|622zw.com|jvbiquge.com|yebiquge.com|huananxs.top|fbqg.cc|taobiquge.com|xianguke.net|timaxs.com|piaotianxiaoshuo.com|tellgillian.com|82zg.com|erciyan.com|kbook8.com|87nb.com|0sxs.com|m-ia.net|cleavagecoverup.com|vipbiquge.com|68read.cc|83kss.cc|memduh.net|jpbqg7.com|ehuxs.com|qishupu.com|fmh18.net|biquge85.com|bqduo.cc|panguxs.org|131453.xyz|haitang30.com|ykxs.cc|ltxswu.org|vjungle.com|dbrxs.org|11bqg.com|xbotaodz.com|56xiaoshuo.net|kunnu.com|yushuwu.cloud|yourbiquge.com|biquge345.com|666biquge.com|qs1669.net|wxsck.com|biqutime.com|00ksw.com|0794.org|123dua.com|123wx.cc|126shu.org|12zw.net|13txt.net|147xiaoshuo.com|156zw.com|17k.com|1biqu.com|1kans.net|1pwx.com|1qxs.com|23hh.com|23qb.com|23qb.net|23sk.net|23us.tw|23wxx.com|23xstxt.net|24kxs.cc|2kxs.info|333uu.org|360xs.com|38kanshu.net|3yt.com|477zw.com|4xiaoshuo.net|50zw.co|50zw.com|50zww.net|51eshu.com|52bqg.org|52shuku123.org|52xs.net|56shuku.info|59xs.com|6666xsw.com|67shu.net|69kshu.win|69zww.com|7017k.net|777zw.net|779buy.com|77xsw.cc|8181zw.vip|81book.com|91zww.com|93xscc.com|99mk.net|9tiefu.com|a6ksw.net|abqg5200.com|aiwx.info|aixiashu.net|aixs.la|aikushuge.com|b520.cc|b5200.net|bbiquge.cc|bbiquge8.net|bequmo.com|bimixsw.com|biqivge.cc|biqudd.com|biqudu.tv|biquge365.net|biquge5200.net|biquge775.com|biquge98.net|xbiquge99.cc|biqugecd.com|biqugen.net|biqugeks.org|biqugewu.net|aidu123.com|biquluo.info|biqusk.com|biqutsxs.com|bisowu.cc|bisowu.net|55561.net|bokanx.com|booktxts.com|boquku.com|bqq999.cc|bqwxg8.com|bshuku.com|bxwx.live|bxwx00.com|changduzw.com|chenkuan.com|china-wuling.com|damengzhu1.com|ddbqgtxt.cc|diyibanzhu.buzz|diyibanzhu9.pro|dizishu.cc|dobiez.com|doupocangqiong.info|dpcq1.com|dpcq1.net|feibzw.com|fkxs.net|fxsc6.net|gaofuwu.org|gdbzkz.info|guanshuya.com|haitangmi.xyz|hongyeshuzhai.com|ibiquges.com|ibiquges.org|ibotaodz.org|idzs.org|ijjjxs.net|imianhuatang.info|ishisetianxia.com|ishubao.org|itshang.com|xvipxs.net|iwurexs.info|ixs.la|jcdf99.com|jieshengit.com|jiezhong.cc|jingwubook.com|jmshuwu.net|kanshushi.com|lewen123.com|lewenge.cc|lewxs.com|liewenn.com|liudatxt.org|longzu5.net|luoqiu.io|lzbao.net|maxreader.la|mcmssc.net|mingrenteahouse.com|msxsw.com|nuanyuehanxing.com|paoshu8.com|paoshuzw.com|piaotian.la|piaotian55.com|pksge.com|prpcoin.com|qiqidu.net|qishula.com|qishuta.info|qqxsw.so|quge66.com|ranwen.la|rizhaoxs.com|roushuwu6.com|sdhear.com|shanhaimiwenlu.com|shenshuxs.org|shu008.com|shubaowang.cc|shumi.la|shumil.co|shuquso.com|shuyy8.com|silukex.com|siluwx.org|sinodan.cc|sjks88.com|soduha.la|sthuojia.org|stxsw.com|sytxt.cc|tianzhangs.com|tpsge.info|trxs.cc|tutengzw.com|txtduo.com|txtwan.com|tysk.cc|u33.cc|u33.me|wenxuem.com|wenxuemi.cc|whzh-xs.com|woaidu.info|wodexiaoshuoh.com|wolaidu1.com|x23us.us|xbiqugela.com|xbiquke.com|xdingdian.cc|xhytd.com|xiashuyun.com|xiaxs.info|xinremenxs.com|xiushukong.com|xqianqian.cc|xs5200.com|xs7788.com|xsb-xs.com|xstt5.com|xszww8.net|xuanjiezhimen.org|xuanshu.org|xuessex.com|xwbxsw.com|xxbiqudu.com|xygwh.cc|xyuanzunxs.com|yemancomic.com|ygshu.com|yingsx.com|gytmh.com|ymxwx.com|yqd6.com|ysxs8.vip|yunxs.info|yuyougu.com|zhuishubox.com|zydu3.com|zzs5.info
 *adxvip.com^
 *bashare.cn*
@@ -63,6 +77,7 @@ $object,script,subdocument,third-party,websocket,xmlhttprequest,domain=haobetter
 @@||browser.sentry-cdn.com^$domain=acustica-audio.com|alphaxiv.org|dic.pixiv.net|doconcall.com.my|eco-clobber.co.uk|fundhero.io|marshmallow-qa.com|members.bifa.film|menshealth.com|ocado.com|podcasty.seznam.cz|roomster.com|shop.dns-net.de|spacemarket.com|timesprime.com|vivareal.com.br|womenshealthmag.com
 @@||c.mipcdn.com^$domain=77dushu.com|biqugecom.com|prpcoin.com|zhetian.org
 @@||c.mipcdn.com^$domain=prpcoin.com
+@@||camel3.live/lib/sensorsdata.full.min.js$~third-party
 @@||capitolbroadcasting.blueconic.net^$image,script,xmlhttprequest,domain=wral.com
 @@||captcha.su.baidu.com^
 @@||cdn.bootcss.com^$script,domain=59xs.com|biqudd.com|didaxiaoshuo.cc|rijutv.com|shudai.org|xhxswz.com|xsw55.com|ysxs8.com
@@ -1583,6 +1598,7 @@ wxsnsdy.video.qq.com^
 ||0.load5.biz^
 ||0.load8.biz^
 ||0.mol16.biz^
+||0.mol19.biz^
 ||0.mol5.biz^
 ||0.mol7.biz^
 ||0.mono3.biz^
@@ -3685,6 +3701,7 @@ wxsnsdy.video.qq.com^
 ||01-webmail-10-authenticate-oa-1.net.daraz.com^
 ||01-webstoreauthentiwebstorete21-10-authentiwebstorete-oa-1.net.daraz.com^
 ||01-winadmin-nym2.ad.corp.appnexus.com^
+||01-winbuild-nym2.ad.corp.appnexus.com^
 ||01-wwar21ww-f8.net.daraz.com^
 ||01-www1ib-oa-1-administrators-csr40.net.daraz.com^
 ||01.andorid-phone.jiaanan.com^
@@ -4056,6 +4073,7 @@ wxsnsdy.video.qq.com^
 ||05acb9b113.8767252cb9.com^
 ||05b29ae553.e68a481d7d.com^
 ||05baef6aae76bd68.com^
+||05block.com^
 ||05d502efa16cdb5e.com^
 ||05e238cedf8d44df.com^
 ||05e33838bf.2ff08844f2.com^
@@ -5783,6 +5801,7 @@ wxsnsdy.video.qq.com^
 ||100cheats.3dn.ru^
 ||100d-4992-5737-64d8.reporo.net^
 ||100dayloans.com^
+||100dollardoughnut.com^
 ||100dollars-seo.com^
 ||100ea.com^
 ||100errors.info^
@@ -7792,6 +7811,7 @@ wxsnsdy.video.qq.com^
 ||12finance.com^
 ||12gbfree.com^
 ||12h-twelvehorses.122.2o7.net^
+||12hack.com^
 ||12i.cn^
 ||12kk.nut.cc^
 ||12l5ywggu4wuxly4dfhmw9dp7tkvvzch.net.daraz.com^
@@ -8686,6 +8706,7 @@ wxsnsdy.video.qq.com^
 ||15950.editor-qa1.marketingcloudqaapis.com^
 ||159668.measurementapi.com^
 ||159692.measurementapi.com^
+||159753456.duckdns.org^
 ||1598sdasdss.blogspot.com^
 ||1599.connector-qa1.marketingcloudqaapis.com^
 ||1599.editor-qa1.marketingcloudqaapis.com^
@@ -9423,6 +9444,7 @@ wxsnsdy.video.qq.com^
 ||17mmc5g1n.com^
 ||17oez.voluumtrk.com^
 ||17proxy.com^
+||17q.com^
 ||17sp.com.cn^
 ||17tahun.com^
 ||17u.cn^
@@ -9780,6 +9802,7 @@ wxsnsdy.video.qq.com^
 ||189-46-121-245.dsl.telesp.net.br^
 ||189-46-13-178.dsl.telesp.net.br^
 ||189-46-135-243.dsl.telesp.net.br^
+||189-46-152-206.dsl.telesp.net.br^
 ||189-46-158-79.dsl.telesp.net.br^
 ||189-46-159-95.dsl.telesp.net.br^
 ||189-46-172-9.dsl.telesp.net.br^
@@ -9789,15 +9812,21 @@ wxsnsdy.video.qq.com^
 ||189-46-2-193.dsl.telesp.net.br^
 ||189-46-205-220.dsl.telesp.net.br^
 ||189-46-221-18.dsl.telesp.net.br^
+||189-46-221-30.dsl.telesp.net.br^
 ||189-46-231-208.dsl.telesp.net.br^
 ||189-46-231-230.dsl.telesp.net.br^
+||189-46-231-239.dsl.telesp.net.br^
 ||189-46-237-243.dsl.telesp.net.br^
 ||189-46-238-144.dsl.telesp.net.br^
 ||189-46-238-50.dsl.telesp.net.br^
 ||189-46-238-92.dsl.telesp.net.br^
+||189-46-239-253.dsl.telesp.net.br^
 ||189-46-240-188.dsl.telesp.net.br^
+||189-46-241-246.dsl.telesp.net.br^
 ||189-46-246-237.dsl.telesp.net.br^
 ||189-46-248-146.dsl.telesp.net.br^
+||189-46-249-150.dsl.telesp.net.br^
+||189-46-249-177.dsl.telesp.net.br^
 ||189-46-249-212.dsl.telesp.net.br^
 ||189-46-249-229.dsl.telesp.net.br^
 ||189-46-3-156.dsl.telesp.net.br^
@@ -9805,12 +9834,18 @@ wxsnsdy.video.qq.com^
 ||189-46-35-5.dsl.telesp.net.br^
 ||189-46-42-13.dsl.telesp.net.br^
 ||189-46-48-16.dsl.telesp.net.br^
+||189-46-49-253.dsl.telesp.net.br^
+||189-46-66-232.dsl.telesp.net.br^
 ||189-46-81-115.dsl.telesp.net.br^
 ||189-46-81-2.dsl.telesp.net.br^
 ||189-46-81-75.dsl.telesp.net.br^
+||189-46-84-33.dsl.telesp.net.br^
 ||189-46-87-233.dsl.telesp.net.br^
+||189-46-92-208.dsl.telesp.net.br^
+||189-46-93-226.dsl.telesp.net.br^
 ||189-46-99-195.dsl.telesp.net.br^
 ||189-47-135-3.dsl.telesp.net.br^
+||189-47-165-119.dsl.telesp.net.br^
 ||189-47-18-11.dsl.telesp.net.br^
 ||189-47-180-65.dsl.telesp.net.br^
 ||189-47-200-60.dsl.telesp.net.br^
@@ -9826,6 +9861,8 @@ wxsnsdy.video.qq.com^
 ||189-68-137-165.dsl.telesp.net.br^
 ||189-68-17-88.dsl.telesp.net.br^
 ||189-68-19-137.dsl.telesp.net.br^
+||189-68-192-26.dsl.telesp.net.br^
+||189-68-201-68.dsl.telesp.net.br^
 ||189-68-28-51.dsl.telesp.net.br^
 ||189-68-31-35.dsl.telesp.net.br^
 ||189-69-104-44.dsl.telesp.net.br^
@@ -12135,6 +12172,7 @@ wxsnsdy.video.qq.com^
 ||2025.webspecmail.com^
 ||2025blackfriday.com^
 ||2025growline2026.ru^
+||2025liquidation.shop^
 ||2025loja.webcindario.com^
 ||2025warning.com^
 ||2026.servegame.com^
@@ -14422,6 +14460,7 @@ wxsnsdy.video.qq.com^
 ||25kstartups.com^
 ||25obpfr.de^
 ||25serve.yourporngod.com^
+||25t.net^
 ||25thcenturytech.com^
 ||26.195.232.72.static.reverse.ltdomains.com^
 ||26.217.36.72.static.reverse.ltdomains.com^
@@ -15448,6 +15487,7 @@ wxsnsdy.video.qq.com^
 ||2mono.biz^
 ||2moto.co.uk^
 ||2motor.ru^
+||2mpekrveulopj9y.rest^
 ||2mycomputer.com^
 ||2mydns.net^
 ||2n15.com^
@@ -19157,6 +19197,7 @@ wxsnsdy.video.qq.com^
 ||4-178-106-83.cprapid.com^
 ||4-181-152-216.mtaonline.net^
 ||4-6.us^
+||4-72goc.cfd^
 ||4-all.org^
 ||4-bang.blogspot.com^
 ||4-f1zz.blogspot.com^
@@ -19480,6 +19521,9 @@ wxsnsdy.video.qq.com^
 ||407b69137fb61ca0.com^
 ||407c3166d708913f.com^
 ||407ec3a9fbd5.com^
+||407enter.top^
+||407etrbil.top^
+||407etrer.top^
 ||407ffc5e-58ef-4c5f-97e3-ed682179108e.express.conves.io^
 ||408-zigzagstrnginx.0-030.net.daraz.com^
 ||408.0-01-lib-oa-1-cf23region.net.daraz.com^
@@ -20380,6 +20424,7 @@ wxsnsdy.video.qq.com^
 ||4600114.fls.doubleclick.net^
 ||460173.ortb.adtelligent.com^
 ||460174.ortb.adtelligent.com^
+||4601f388-c532-490e-8236-ee121ac2127f-00-2wmrach7robjm.pike.replit.dev^
 ||460204582.keywordblocks.com^
 ||460365.ortb.adtelligent.com^
 ||4605355.fls.doubleclick.net^
@@ -20543,12 +20588,14 @@ wxsnsdy.video.qq.com^
 ||4719316.fls.doubleclick.net^
 ||4719629.fls.doubleclick.net^
 ||471a6f102f.bab3105053.com^
+||472-ca.cfd^
 ||4720210.fls.doubleclick.net^
 ||47206262.xyz^
 ||472104cbb2.8bd6421c3f.com^
 ||47235645.xyz^
 ||472614bcd69b421e.com^
 ||4728a5b2baa6e6b1.com^
+||472post.cfd^
 ||473-zzr-267.mktoresp.com^
 ||473057f8f5dae93c.com^
 ||4733010.fls.doubleclick.net^
@@ -22306,20 +22353,27 @@ wxsnsdy.video.qq.com^
 ||54.sub-75-213-167.myvzw.com^
 ||540-cgn-957.mktoresp.com^
 ||540-cqs-570.mktoresp.com^
+||54001eaa.dsl.pool.telekom.hu^
 ||54002534.dsl.pool.telekom.hu^
+||54002862.dsl.pool.telekom.hu^
 ||54002887.dsl.pool.telekom.hu^
+||540037f8.dsl.pool.telekom.hu^
 ||54004445.dsl.pool.telekom.hu^
 ||54004492.dsl.pool.telekom.hu^
 ||54004741.dsl.pool.telekom.hu^
+||5400494e.dsl.pool.telekom.hu^
 ||54004a0a.dsl.pool.telekom.hu^
 ||540061d1.dsl.pool.telekom.hu^
+||54006884.dsl.pool.telekom.hu^
 ||54006cfd.dsl.pool.telekom.hu^
 ||54009166.dsl.pool.telekom.hu^
+||54009657.dsl.pool.telekom.hu^
 ||540096d5.dsl.pool.telekom.hu^
 ||54009787.dsl.pool.telekom.hu^
 ||5400979e.dsl.pool.telekom.hu^
 ||540097b4.dsl.pool.telekom.hu^
 ||540097c6.dsl.pool.telekom.hu^
+||5400a847.dsl.pool.telekom.hu^
 ||5400a99e.dsl.pool.telekom.hu^
 ||5400c03e.dsl.pool.telekom.hu^
 ||5400c04d.dsl.pool.telekom.hu^
@@ -22327,20 +22381,24 @@ wxsnsdy.video.qq.com^
 ||5400c076.dsl.pool.telekom.hu^
 ||5400c0b1.dsl.pool.telekom.hu^
 ||5400c0b9.dsl.pool.telekom.hu^
+||5400c0cb.dsl.pool.telekom.hu^
 ||5400d2ae.dsl.pool.telekom.hu^
 ||5400ef7b.dsl.pool.telekom.hu^
 ||5400f7c4.dsl.pool.telekom.hu^
 ||5400fd0d.dsl.pool.telekom.hu^
 ||5400fd37.dsl.pool.telekom.hu^
+||5400fd6e.dsl.pool.telekom.hu^
 ||5400fd7f.dsl.pool.telekom.hu^
 ||5400fd97.dsl.pool.telekom.hu^
 ||5400fdf9.dsl.pool.telekom.hu^
 ||5402800.fls.doubleclick.net^
+||540300d4.catv.pool.telekom.hu^
 ||5403051e.catv.pool.telekom.hu^
 ||54030a0a.catv.pool.telekom.hu^
 ||540320cc.catv.pool.telekom.hu^
 ||54032bf0.catv.pool.telekom.hu^
 ||5403308a.catv.pool.telekom.hu^
+||54033e0a.catv.pool.telekom.hu^
 ||54034071.catv.pool.telekom.hu^
 ||540356f1.catv.pool.telekom.hu^
 ||54035976.catv.pool.telekom.hu^
@@ -22380,11 +22438,18 @@ wxsnsdy.video.qq.com^
 ||5403d4e0.catv.pool.telekom.hu^
 ||5403dd2c.catv.pool.telekom.hu^
 ||5403ea16.catv.pool.telekom.hu^
+||5403eb2e.catv.pool.telekom.hu^
+||5403ec7f.catv.pool.telekom.hu^
 ||5403ed49.catv.pool.telekom.hu^
 ||5403ed76.catv.pool.telekom.hu^
 ||5403f008.catv.pool.telekom.hu^
+||5403f097.catv.pool.telekom.hu^
+||5403f10c.catv.pool.telekom.hu^
+||5403f195.catv.pool.telekom.hu^
 ||5403f217.catv.pool.telekom.hu^
 ||5403f592.catv.pool.telekom.hu^
+||5403f735.catv.pool.telekom.hu^
+||5403f772.catv.pool.telekom.hu^
 ||5404448.fls.doubleclick.net^
 ||5405300.fls.doubleclick.net^
 ||5406-09eb-8338-dd7e.reporo.net^
@@ -24029,6 +24094,7 @@ wxsnsdy.video.qq.com^
 ||617pg.com^
 ||61806-92682.ws3.pph-server.de^
 ||61806aeebf74c217.com^
+||618199.com^
 ||6182251.collect.igodigital.com^
 ||6183.eu-api.swrve.com^
 ||6183.eu-content.swrve.com^
@@ -24413,6 +24479,7 @@ wxsnsdy.video.qq.com^
 ||6447cea6d49239c0.top^
 ||6448.sock-qa1.marketingcloudqaops.com^
 ||645-coj-341.mktoresp.com^
+||645.cc^
 ||6451bf269296e058.com^
 ||64523656fb41790c.com^
 ||6454.eu-api.swrve.com^
@@ -25425,6 +25492,7 @@ wxsnsdy.video.qq.com^
 ||7-7-7-partner.com^
 ||7-apple.com^
 ||7-electrical.co.uk^
+||7-erewards.shop^
 ||7-link.ru^
 ||7-marketing135.0-01-lib-oa-1-cf23region.net.daraz.com^
 ||7-mo.com^
@@ -25692,6 +25760,7 @@ wxsnsdy.video.qq.com^
 ||7116966.com^
 ||711983.com^
 ||711academy.com^
+||711kk.com^
 ||713-xsc-918.mktoresp.com^
 ||7130-c5e3-76e0-b5fe.reporo.net^
 ||7132.engine.mobileapptracking.com^
@@ -25999,6 +26068,7 @@ wxsnsdy.video.qq.com^
 ||7392.engine.mobileapptracking.com^
 ||739a73e3810301.beer^
 ||739cb8d35c760d95.com^
+||73a2370016b7.neuwallet.paypal-myidea.antimoney-laundering.org^
 ||73a2370016b7.wieselburg.paypal-update.antimoney-laundering.org^
 ||73cba33ee21bc616.com^
 ||73ccbff0179b984b.com^
@@ -27446,6 +27516,7 @@ wxsnsdy.video.qq.com^
 ||7jnw4jh4-9c25fc9a50ce263e1a46b93123c40ec8aaba3719-am1.d.aa.online-metrix.net^
 ||7jnw4jh4-9e72ca746c13c30827a06c76b6e7934791bdce5a-am1.d.aa.online-metrix.net^
 ||7jnw4jh4-a3146ae1e05c8538d2aa166b6d5346db6f5de443-am1.d.aa.online-metrix.net^
+||7jnw4jh4-a4881638bd31f66fc56614eccba89151eeb849f7-am1.d.aa.online-metrix.net^
 ||7jnw4jh4-a4e96033fed2f6d644a0dc019ab1ce070d067441-am1.d.aa.online-metrix.net^
 ||7jnw4jh4-a4f019f8b4a659af8d26dd4423228210dba5fad4-am1.d.aa.online-metrix.net^
 ||7jnw4jh4-abf1e402c169b4cad3eae3015f0e8c487e6eeef3-am1.d.aa.online-metrix.net^
@@ -29508,6 +29579,7 @@ wxsnsdy.video.qq.com^
 ||845464c1f3d9b60a.com^
 ||845626530.keywordblocks.com^
 ||845918-crypto.com^
+||845918-exodus.com^
 ||845918-gemini.com^
 ||845918t-coinbase.com^
 ||846-wed-421.mktoresp.com^
@@ -30037,6 +30109,7 @@ wxsnsdy.video.qq.com^
 ||87-229-16-210.saghysat.hu^
 ||87-229-17-147.saghysat.hu^
 ||87-229-18-138.saghysat.hu^
+||87-229-19-248.saghysat.hu^
 ||87-94-147-51.tampere.customers.dnainternet.fi^
 ||87-94-82-43.tampere.customers.dnainternet.fi^
 ||87-97-127-33.pool.invitel.hu^
@@ -30741,7 +30814,6 @@ wxsnsdy.video.qq.com^
 ||8jh9cvhk4jrg5.0-01-lib-oa-1-cf23region.net.daraz.com^
 ||8jk35km0r3.com^
 ||8jkad.voluumtrk.com^
-||8jkx.com^
 ||8k8k.me^
 ||8kbetviet.com^
 ||8keiurs2fbphe60-c.adktrack82.xyz^
@@ -30781,6 +30853,7 @@ wxsnsdy.video.qq.com^
 ||8p5o01qq-4d3a851d24eea4446a60248b1dc60fd4dffe9c80-am1.d.aa.online-metrix.net^
 ||8p5o01qq-5b1a7c3e58b8cd27023d2d33e9db6e8d3ef88c40-am1.d.aa.online-metrix.net^
 ||8p5o01qq-66e83a708c235b151ffbf91c7c30ddd02b22d47e-am1.d.aa.online-metrix.net^
+||8p8fray.duckdns.org^
 ||8pi.info^
 ||8po6fdwjsym3.com^
 ||8pok857d0.keywordblocks.com^
@@ -31270,6 +31343,7 @@ wxsnsdy.video.qq.com^
 ||9197.connector-qa1.marketingcloudqaapis.com^
 ||9198.engine.mobileapptracking.com^
 ||919cp.com^
+||919xpj.com^
 ||919yi.com^
 ||91adv.com.cn^
 ||91adv.com^
@@ -41343,6 +41417,7 @@ wxsnsdy.video.qq.com^
 ||aand49.neoplus.adsl.tpnet.pl^
 ||aandelen4u.nl^
 ||aandgtrading.com^
+||aandgx.com^
 ||aandrijfshop.nl^
 ||aandtdoorsltd.co.uk^
 ||aanetwork.vn^
@@ -42515,6 +42590,7 @@ wxsnsdy.video.qq.com^
 ||aboundinheritancecocktail.com^
 ||aboundplausibleeloquent.com^
 ||abourjeilysm.com^
+||about-blank.ws^
 ||about-dining.co.cc^
 ||about-forex.info^
 ||about-matter.co.cc^
@@ -43215,6 +43291,7 @@ wxsnsdy.video.qq.com^
 ||accenture.demdex.net^
 ||accenture.epoise.com^
 ||accenturetest.epoise.com^
+||accenvironmental.xyz^
 ||accepaccound.start.page^
 ||acceppudde.com^
 ||accept-ios-4f332.firebaseapp.com^
@@ -43564,6 +43641,24 @@ wxsnsdy.video.qq.com^
 ||account-settings.com^
 ||account-srvice.webcindario.com^
 ||account-summary-center.com^
+||account-support.com^
+||account-support.info^
+||account-suspended.com^
+||account-suspension-fr.wittlethangz2.com^
+||account-systems.com^
+||account-twitter.com^
+||account-update.proyectocolombia.com^
+||account-update1123.weebly.com^
+||account-updateid1005645261.serviceitinfo.org^
+||account-updates.com^
+||account-uptd.com^
+||account-verification-account.aba.ae^
+||account-verification-id3.appspot.com^
+||account-verifier.com^
+||account.0-01-lib-oa-1-cf23region.net.daraz.com^
+||account.allocations.world^
+||account.api.drift.com^
+||account.appreciations.life^
 ||accountancy.bppeloqua.com^
 ||accountantflowerrespiration.com^
 ||accountantpacketassail.com^
@@ -43749,7 +43844,6 @@ wxsnsdy.video.qq.com^
 ||acuteleukemie.info^
 ||acuteprone.com^
 ||acv.auhikari-norikae.com^
-||acv.aun-air-wifi.com^
 ||acv.aun-company.com^
 ||acv.aun-n-hikari.com^
 ||acv.aun-softbank-hikari.com^
@@ -43764,10 +43858,8 @@ wxsnsdy.video.qq.com^
 ||acv.mc-pharma.net^
 ||acv.me-hikari.net^
 ||acv.next-air-wifi.com^
-||acv.next-internet.info^
 ||acv.nft-hikari.net^
 ||acv.pikarahikari.net^
-||acv.softbank-hikaricollabo.com^
 ||acv.xn--dckf5a1e821s9i7b.com^
 ||acv.xn--lck7b0fy49k9y1b.com^
 ||acxajt.jimmykey.com^
@@ -43937,7 +44029,6 @@ wxsnsdy.video.qq.com^
 ||adb.kijk.nl^
 ||adb.superrtl.de^
 ||adb.toggoeltern.de^
-||adbana.com^
 ||adbard.net^
 ||adbeacon.com^
 ||adbedgeexp.aircanada.com^

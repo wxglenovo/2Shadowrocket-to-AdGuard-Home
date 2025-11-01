@@ -1,4 +1,4 @@
-name: Split & DNS Check
+name: Split & DNS Check (Concurrent)
 
 on:
   schedule:
@@ -18,11 +18,12 @@ permissions:
   contents: write
 
 jobs:
-  build:
+  concurrent-dns-check:
     runs-on: ubuntu-latest
     env:
       PYTHONUNBUFFERED: 1
-
+      DNS_WORKERS: 50
+      DNS_BATCH_SIZE: 500
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -35,7 +36,7 @@ jobs:
           python-version: '3.12'
 
       - name: Install dependencies
-        run: pip install --upgrade requests dnspython
+        run: pip install --upgrade requests dnspython tqdm
 
       - name: Configure Git
         run: |
@@ -74,7 +75,6 @@ jobs:
             python3 split_and_check_16.py
           else
             echo "✅ 规则文件和分片存在"
-          fi
 
       - name: Ensure delete_counter.json exists
         run: |
@@ -84,15 +84,16 @@ jobs:
             echo "✅ 创建 dist/delete_counter.json"
           else
             echo "✅ delete_counter.json 已存在"
-          fi
 
-      - name: Run DNS validation for current part
+      - name: Run concurrent DNS validation
         env:
           PART: ${{ steps.detect.outputs.part }}
+          DNS_WORKERS: ${{ env.DNS_WORKERS }}
+          DNS_BATCH_SIZE: ${{ env.DNS_BATCH_SIZE }}
         run: |
           mkdir -p logs
-          echo "⏱ 开始验证分片 $PART"
-          python3 split_and_check_16.py --part "$PART" | tee logs/split_check_part_${PART}.log
+          echo "🚀 启动 $DNS_WORKERS 并发验证，每批 $DNS_BATCH_SIZE 条"
+          python3 split_and_check_16.py --part "$PART" --concurrent | tee logs/split_check_part_${PART}.log
 
       - name: Commit & Push Validated Rules
         env:

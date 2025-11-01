@@ -1,4 +1,4 @@
-name: Split & DNS Check
+name: Split & DNS Check (Concurrent)
 
 on:
   schedule:
@@ -18,134 +18,67 @@ permissions:
   contents: write
 
 jobs:
-  build:
+  dns_check:
     runs-on: ubuntu-latest
     env:
       PYTHONUNBUFFERED: 1
+      DNS_WORKERS: 50
+      DNS_BATCH_SIZE: 500
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+      - name: Checkout
+        uses: actions/checkout@v3
 
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.12'
 
-      - name: Install dependencies
-        run: pip install --upgrade requests dnspython
+      - name: Install deps
+        run: pip install requests dnspython
 
-      - name: Configure Git
+      - name: Git config
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Determine PART index
+      - name: Detect PART
         id: detect
         run: |
           mkdir -p tmp
-          LAST_PART_FILE="tmp/last_part.txt"
-          PART_INPUT="${{ github.event.inputs.part }}"
-
-          if [ -n "$PART_INPUT" ]; then
-            PART="$PART_INPUT"
-            echo "🛠 手动指定分片：$PART"
+          FILE="tmp/last_part.txt"
+          if [ -n "${{ github.event.inputs.part }}" ]; then
+            PART="${{ github.event.inputs.part }}"
           else
-            if [ -f "$LAST_PART_FILE" ]; then
-              LAST_PART=$(cat "$LAST_PART_FILE")
-              PART=$(( (LAST_PART % 16) + 1 ))
+            if [ -f "$FILE" ]; then
+              LAST=$(cat "$FILE")
+              PART=$(( (LAST % 16) + 1 ))
             else
               PART=1
             fi
-            echo "⏱ 自动轮替分片：$PART"
           fi
-
-          echo "$PART" > "$LAST_PART_FILE"
+          echo "$PART" > "$FILE"
           echo "part=$PART" >> $GITHUB_OUTPUT
 
-      - name: Force download rules at schedule times
+      - name: Ensure rules exist
         run: |
-          CURRENT_HOUR=$(date -u +"%H")
-          if [[ "$CURRENT_HOUR" == "00" || "$CURRENT_HOUR" == "06" || "$CURRENT_HOUR" == "12" || "$CURRENT_HOUR" == "18" ]]; then
-            echo "✅ 强制下载规则源并生成所有分片"
-            python3 split_and_check_16.py --force
-          else
-            echo "⏩ 非下载时间，不强制更新"
+          FIRST_PART="tmp/part_01.txt"
+          if [ ! -f "$FIRST_PART" ]; then
+            echo "⚠ 未找到 tmp 分片 → 重新生成"
+            python3 split_and_check_16.py
           fi
 
-      - name: Ensure merged rules & tmp folder exist
-        run: |
-          MERGED_FILE="merged_rules.txt"
-          TMP_DIR="tmp"
-
-          if [ ! -f "$MERGED_FILE" ]; then
-            echo "❌ merged_rules.txt 缺失 → 重新生成"
-            python3 split_and_check_16.py --force
-          fi
-
-          if [ ! -d "$TMP_DIR" ]; then
-            echo "❌ tmp 目录缺失 → 重新生成"
-            python3 split_and_check_16.py --force
-          fi
-
-      # ✅✅✅ 强制确保 16 个分片都存在
-      - name: Ensure all 16 parts exist
-        run: |
-          TMP_DIR="tmp"
-          missing=0
-          for i in $(seq -w 01 16); do
-            PART_FILE="$TMP_DIR/part_${i}.txt"
-            if [ ! -f "$PART_FILE" ]; then
-              echo "❌ 缺失：$PART_FILE"
-              missing=1
-            fi
-          done
-
-          if [ "$missing" -eq 1 ]; then
-            echo "⚠ 分片不完整，执行 --force 重建全部分片"
-            python3 split_and_check_16.py --force
-          else
-            echo "✅ 所有 16 个分片存在"
-          fi
-
-      # ✅✅✅ 第二遍再验证数量是否正确（防脚本中途失败）
-      - name: Double check part count
-        run: |
-          COUNT=$(ls tmp/part_*.txt | wc -l)
-          echo "当前分片数量：$COUNT"
-          if [ "$COUNT" -ne 16 ]; then
-            echo "❌ 分片数量不足 16，再次执行 --force"
-            python3 split_and_check_16.py --force
-          else
-            echo "✅ 分片数量正确，继续"
-          fi
-
-      - name: Ensure delete_counter.json exists
-        run: |
-          mkdir -p dist
-          if [ ! -f dist/delete_counter.json ]; then
-            echo "{}" > dist/delete_counter.json
-            echo "✅ 创建 dist/delete_counter.json"
-          else
-            echo "✅ delete_counter.json 已存在"
-          fi
-
-      - name: Run DNS validation for current part
+      - name: Run validation
         env:
           PART: ${{ steps.detect.outputs.part }}
         run: |
-          mkdir -p logs
-          echo "⏱ 开始验证分片 $PART"
-          python3 split_and_check_16.py --part "$PART" | tee logs/split_check_part_${PART}.log
+          python3 split_and_check_16.py --part "$PART" | tee logs_part_$PART.txt
 
-      - name: Commit & Push Validated Rules
+      - name: Commit & Push
         env:
           PART: ${{ steps.detect.outputs.part }}
         run: |
-          STATS=$(grep "COMMIT_STATS" logs/split_check_part_${PART}.log | tail -n1 | sed 's/COMMIT_STATS: //')
-          git add tmp/last_part.txt dist/validated_part_*.txt dist/delete_counter.json merged_rules.txt
-          git commit -m "🤖 part $PART → $STATS" || echo "No changes to commit"
-          git pull --rebase origin main || echo "⚠ Pull failed"
-          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main || echo "⚠ Push failed"
+          git add tmp/ dist/
+          git commit -m "✅ part $PART Auto Validation" || echo "No change"
+          git pull --rebase origin main || true
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main || true

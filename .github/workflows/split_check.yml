@@ -24,29 +24,29 @@ jobs:
       PYTHONUNBUFFERED: 1
 
     steps:
-      # 1️⃣ Checkout repository
+      # ✅ 1 Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      # 2️⃣ Setup Python
+      # ✅ 2 Setup Python
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.12'
 
-      # 3️⃣ Install dependencies
+      # ✅ 3 Install dependencies
       - name: Install dependencies
         run: pip install --upgrade requests dnspython
 
-      # 4️⃣ Configure Git
+      # ✅ 4 Configure Git
       - name: Configure Git
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-      # 5️⃣ Determine PART index
+      # ✅ 5 Determine PART index (自动轮转 / 支持手动指定)
       - name: Determine PART index
         id: detect
         run: |
@@ -65,39 +65,72 @@ jobs:
           fi
           echo $PART > $LAST_PART_FILE
           echo "part=$PART" >> $GITHUB_OUTPUT
+          echo "✅ 本次验证分片：$PART"
 
-      # 6️⃣ Force update rules at fixed schedule times
-      - name: Force update rules at 00/06/12/18
+      # ✅ 6 确保规则文件 & 16 个分片存在（自动修复 + 重试 2 次）
+      - name: Ensure rules & all 16 parts exist (Auto repair & retry)
+        shell: bash
+        env:
+          PART: ${{ steps.detect.outputs.part }}
         run: |
-          CURRENT_HOUR=$(date -u +"%H")
-          mkdir -p tmp dist
-          if [[ "$CURRENT_HOUR" == "00" || "$CURRENT_HOUR" == "06" || "$CURRENT_HOUR" == "12" || "$CURRENT_HOUR" == "18" ]]; then
-            echo "✅ 固定时间更新规则源并生成分片"
-            python split_and_check_16.py --force-update
-          else
-            echo "⏩ 非固定更新时间，跳过强制更新"
+          MERGED_FILE="merged_rules.txt"
+          TMP_DIR="tmp"
+          mkdir -p "$TMP_DIR"
+
+          check_parts() {
+            for i in {01..16}; do
+              if [ ! -f "$TMP_DIR/part_$i.txt" ]; then
+                return 1
+              fi
+            done
+            return 0
+          }
+
+          echo "🔍 检查 merged_rules.txt 是否存在"
+          FORCE_UPDATE=0
+          if [ ! -f "$MERGED_FILE" ]; then
+            echo "⚠ 缺失 merged_rules.txt"
+            FORCE_UPDATE=1
           fi
 
-      # 7️⃣ Ensure parts exist (only if missing)
-      - name: Ensure rules and parts exist
-        run: |
-          mkdir -p tmp dist
-          MISSING=0
-          for i in {01..16}; do
-            if [ ! -f "tmp/part_$i.txt" ]; then
-              echo "⚠ tmp/part_$i.txt 缺失"
-              MISSING=1
+          echo "🔍 检查 16 个分片是否存在"
+          if ! check_parts; then
+            echo "⚠ 分片缺失，需强制更新"
+            FORCE_UPDATE=1
+          fi
+
+          CURRENT_HOUR=$(date -u +"%H")
+          if [[ "$CURRENT_HOUR" =~ ^(00|06|12|18)$ ]]; then
+            echo "🕒 固定时间 ${CURRENT_HOUR}，强制更新规则"
+            FORCE_UPDATE=1
+          fi
+
+          if [ $FORCE_UPDATE -eq 0 ]; then
+            echo "✅ 规则与分片均存在，无需修复"
+            exit 0
+          fi
+
+          echo "🔧 开始执行强制更新（最多重试 2 次）"
+          ATTEMPT=1
+          while [ $ATTEMPT -le 2 ]; do
+            echo "🔁 第 $ATTEMPT 次尝试生成分片..."
+            python split_and_check_16.py --force-update
+
+            echo "✅ 检查生成结果..."
+            if check_parts; then
+              echo "🎉 所有 16 个分片已成功生成 ✅"
+              exit 0
             fi
+
+            echo "⚠ 第 $ATTEMPT 次生成失败，准备重试..."
+            sleep 3
+            ATTEMPT=$((ATTEMPT + 1))
           done
 
-          if [ $MISSING -eq 1 ]; then
-            echo "⚠ 缺失分片，自动生成所有分片"
-            python split_and_check_16.py --force-update
-          else
-            echo "✅ 所有分片存在"
-          fi
+          echo "❌ 多次尝试仍未生成完整分片"
+          exit 1
 
-      # 8️⃣ Run DNS validation for current part
+      # ✅ 7 执行指定分片验证
       - name: Run DNS validation for current part
         env:
           PART: ${{ steps.detect.outputs.part }}
@@ -106,7 +139,7 @@ jobs:
           echo "⏱ 开始验证分片 $PART"
           python split_and_check_16.py --part "$PART" | tee logs/split_check_part_${PART}.log
 
-      # 9️⃣ Commit & Push Validated Rules
+      # ✅ 8 Commit & Push 结果回仓库
       - name: Commit & Push Validated Rules
         env:
           PART: ${{ steps.detect.outputs.part }}

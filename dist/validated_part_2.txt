@@ -8,7 +8,6 @@
 ||a.yellowurl.cn^
 ||a.youdao.com^
 ||a1.51shiti.cn^
-||a1.99933.cn^
 ||a1.aichagu.com^
 ||a1.bajiu.cn^
 ||a1.firefoxchina.cn^
@@ -30,7 +29,6 @@
 ||aa88691468.cn^
 ||aaoffice.cn^
 ||abc.douguo.com^
-||abcd.5lu.com^
 ||abcd.cnhuoche.com^
 ||abcd.zle.com^
 ||abcde4374968.cn^
@@ -46,13 +44,11 @@
 ||abtest3-misc-lf.zijieapi.com^
 ||ac.atpanel.com^
 ||ac.dun.163yun.com^
-||acc.3gbizhi.com^
 ||acc.jiangsujiaxue.com^
 ||accscdn.m.taobao.com^
 ||acgshenshicha.cn^
 ||acjs.aliyun.com^
 ||acookie.alimama.com^
-||acs.56.com^
 ||acs.agent.56.com^
 ||acs4baichuan.m.taobao.com^
 ||act.qq.com^
@@ -114,7 +110,6 @@
 ||ad.seeyouyima.com^
 ||ad.tencentmusic.com^
 ||ad.toutiao.com^
-||ad.us.sinaimg.cn^
 ||ad.v3mh.com^
 ||ad.weibo.com^
 ||ad.weplayer.cc^
@@ -306,7 +301,6 @@
 ||adlightning.com^
 ||adlink-api.huan.tv^
 ||adlink.net^
-||adlive.cn^
 ||adlive.io^
 ||adlocus.com^
 ||adlog.com.com^
@@ -1264,7 +1258,6 @@
 ||aerconditionat-arges.ro^
 ||aerezb.nepamall.com^
 ||aerialmistaken.com^
-||aerodynomach.com^
 ||aeroplaneversion.com^
 ||aeros02.tk^
 ||aeros12.tk^
@@ -4102,7 +4095,6 @@
 ||atmetagrossan.com^
 ||atmewtwochan.com^
 ||atmyeducat.org^
-||ato.tooopen.com^
 ||atodiler.com^
 ||atollskebobs.shop^
 ||atom-log.3.cn^
@@ -4699,7 +4691,6 @@
 ||b.itravel.southwest.com^
 ||b.iwanna.southwest.com^
 ||b.koodomobile.com^
-||b.kouke5.com^
 ||b.law.com^
 ||b.m.mynewplace.com^
 ||b.mail.tabcorp.com.au^
@@ -4746,7 +4737,6 @@
 ||b0rz2s5ik.com^
 ||b1-data.ads.heytapmobi.com^
 ||b1.b2b168.com^
-||b1.b2b168.net^
 ||b1.baomihua.com^
 ||b1.xiao84.com^
 ||b10.justacdn.net^

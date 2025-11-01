@@ -1,170 +1,217 @@
-name: Split & DNS Check
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 
-# -----------------------------
-# 触发条件
-# -----------------------------
-on:
-  schedule:
-    - cron: "0 0 * * *"   # 每天 00:00 UTC
-    - cron: "0 6 * * *"   # 每天 06:00 UTC
-    - cron: "0 12 * * *"  # 每天 12:00 UTC
-    - cron: "0 18 * * *"  # 每天 18:00 UTC
-    - cron: "*/22 * * * *" # 每 22 分钟一次
-  workflow_dispatch:
-    inputs:
-      part:
-        description: '手动验证指定分片 1~16'
-        required: false
-        default: ''
+import os
+import json
+import requests
+import argparse
+import dns.resolver
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
-permissions:
-  contents: write
+# ===============================
+# 配置
+# ===============================
+URLS_TXT = "urls.txt"
+TMP_DIR = "tmp"
+DIST_DIR = "dist"
+MASTER_RULE = "merged_rules.txt"
+PARTS = 16
+DNS_WORKERS = 50
+DNS_TIMEOUT = 2
+DELETE_COUNTER_FILE = os.path.join(DIST_DIR, "delete_counter.json")
+DELETE_THRESHOLD = 4
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    env:
-      PYTHONUNBUFFERED: 1
+# ✅ 确保目录存在（改动）
+os.makedirs(TMP_DIR, exist_ok=True)
+os.makedirs(DIST_DIR, exist_ok=True)
 
-    steps:
+# ===============================
+# 下载并合并规则
+# ===============================
+def download_all_sources():
+    if not os.path.exists(URLS_TXT):
+        print("❌ urls.txt 不存在")
+        return False
+    print("📥 下载规则源...")
+    merged = set()
+    with open(URLS_TXT, "r", encoding="utf-8") as f:
+        urls = [u.strip() for u in f if u.strip()]
+    for url in urls:
+        print(f"🌐 获取 {url}")
+        try:
+            r = requests.get(url, timeout=20)
+            r.raise_for_status()
+            for line in r.text.splitlines():
+                line = line.strip()
+                if line and not line.startswith("#"):
+                    merged.add(line)
+        except Exception as e:
+            print(f"⚠ 下载失败 {url}: {e}")
+    print(f"✅ 合并 {len(merged)} 条规则")
+    with open(MASTER_RULE, "w", encoding="utf-8") as f:
+        f.write("\n".join(sorted(merged)))
+    return True
 
-      # -----------------------------
-      # 1. 检出仓库
-      # -----------------------------
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+# ===============================
+# 分片
+# ===============================
+def split_parts():
+    if not os.path.exists(MASTER_RULE):
+        print("⚠ 缺少合并规则文件")
+        return False
+    with open(MASTER_RULE, "r", encoding="utf-8") as f:
+        rules = [l.strip() for l in f if l.strip()]
+    total = len(rules)
+    per_part = (total + PARTS - 1) // PARTS
+    print(f"🪓 分片 {total} 条，每片约 {per_part}")
 
-      # -----------------------------
-      # 2. 设置 Python
-      # -----------------------------
-      - name: Setup Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.12'
+    # ✅ 强制确保 tmp 目录存在
+    os.makedirs(TMP_DIR, exist_ok=True)
 
-      # -----------------------------
-      # 3. 安装依赖
-      # -----------------------------
-      - name: Install dependencies
-        run: pip install --upgrade requests dnspython
+    for i in range(PARTS):
+        part_rules = rules[i * per_part:(i + 1) * per_part]
+        filename = os.path.join(TMP_DIR, f"part_{i+1:02d}.txt")
+        with open(filename, "w", encoding="utf-8") as f:
+            f.write("\n".join(part_rules))
+        print(f"📄 分片 {i+1}: {len(part_rules)} 条 → {filename}")
+    return True
 
-      # -----------------------------
-      # 4. 配置 Git
-      # -----------------------------
-      - name: Configure Git
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+# ===============================
+# DNS 验证
+# ===============================
+def check_domain(rule):
+    resolver = dns.resolver.Resolver()
+    resolver.timeout = DNS_TIMEOUT
+    resolver.lifetime = DNS_TIMEOUT
+    domain = rule.lstrip("|").split("^")[0].replace("*", "")
+    if not domain:
+        return None
+    try:
+        resolver.resolve(domain)
+        return rule
+    except:
+        return None
 
-      # -----------------------------
-      # 5. 确定当前分片 (PART)
-      # -----------------------------
-      - name: Determine PART index
-        id: detect
-        run: |
-          mkdir -p tmp
-          LAST_PART_FILE="tmp/last_part.txt"
-          PART_INPUT="${{ github.event.inputs.part }}"
+def dns_validate(lines):
+    print(f"🚀 启动 {DNS_WORKERS} 并发验证")
+    valid = []
+    with ThreadPoolExecutor(max_workers=DNS_WORKERS) as executor:
+        futures = {executor.submit(check_domain, rule): rule for rule in lines}
+        total = len(lines)
+        done = 0
+        for future in as_completed(futures):
+            done += 1
+            result = future.result()
+            if result:
+                valid.append(result)
+            if done % 500 == 0:
+                print(f"✅ 已验证 {done}/{total} 条，有效 {len(valid)} 条")
+    print(f"✅ 分片验证完成，有效 {len(valid)} 条")
+    return valid
 
-          if [ -n "$PART_INPUT" ]; then
-            PART="$PART_INPUT"
-            echo "🛠 手动指定分片：$PART"
-          else
-            if [ -f "$LAST_PART_FILE" ]; then
-              LAST_PART=$(cat "$LAST_PART_FILE")
-              PART=$(( (LAST_PART % 16) + 1 ))
-            else
-              PART=1
-            fi
-            echo "⏱ 自动轮替分片：$PART"
-          fi
+# ===============================
+# 删除计数管理
+# ===============================
+def load_delete_counter():
+    if os.path.exists(DELETE_COUNTER_FILE):
+        try:
+            with open(DELETE_COUNTER_FILE, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except:
+            print(f"⚠ {DELETE_COUNTER_FILE} 解析失败，重建空计数")
+            return {}
+    else:
+        print(f"⚠ {DELETE_COUNTER_FILE} 不存在，创建新文件")
+        os.makedirs(DIST_DIR, exist_ok=True)
+        with open(DELETE_COUNTER_FILE, "w", encoding="utf-8") as f:
+            json.dump({}, f, indent=2, ensure_ascii=False)
+        return {}
 
-          echo "$PART" > "$LAST_PART_FILE"
-          echo "part=$PART" >> $GITHUB_OUTPUT
+def save_delete_counter(counter):
+    with open(DELETE_COUNTER_FILE, "w", encoding="utf-8") as f:
+        json.dump(counter, f, indent=2, ensure_ascii=False)
 
-      # -----------------------------
-      # 6. 定时下载规则源（每天四次）并覆盖分片
-      # -----------------------------
-      - name: Force download rules at schedule times
-        run: |
-          CURRENT_HOUR=$(date -u +"%H")
-          if [[ "$CURRENT_HOUR" == "00" || "$CURRENT_HOUR" == "06" || "$CURRENT_HOUR" == "12" || "$CURRENT_HOUR" == "18" ]]; then
-            echo "✅ 强制下载规则源并生成所有分片"
-            python3 split_and_check_16.py --force-update
-          else
-            echo "⏩ 非下载时间，不强制更新"
-          fi
+# ===============================
+# 分片处理（保证连续失败计数累积）
+# ===============================
+def process_part(part):
+    part_file = os.path.join(TMP_DIR, f"part_{int(part):02d}.txt")
 
-      # -----------------------------
-      # 7. 确保 rules 和首个分片存在（首次运行）
-      # -----------------------------
-      - name: Ensure rules and first part exist
-        run: |
-          MERGED_FILE="merged_rules.txt"
-          FIRST_PART="tmp/part_01.txt"
-          if [ ! -f "$MERGED_FILE" ] || [ ! -f "$FIRST_PART" ]; then
-            echo "⚠ 缺少规则文件或分片 → 重新拉取"
-            python3 split_and_check_16.py --force-update
-          else
-            echo "✅ 规则文件和分片存在"
-          fi
+    # ✅ 如果分片不存在，则强制下载规则并分片
+    if not os.path.exists(part_file):
+        print(f"⚠ 分片 {part} 缺失，重新下载并切片")
+        download_all_sources()
+        split_parts()
+    
+    if not os.path.exists(part_file):
+        print("❌ 分片仍不存在，终止")
+        return
 
-      # -----------------------------
-      # 8. 确保 delete_counter.json 存在
-      # -----------------------------
-      - name: Ensure delete_counter.json exists
-        run: |
-          mkdir -p dist
-          if [ ! -f dist/delete_counter.json ]; then
-            echo "{}" > dist/delete_counter.json
-            echo "✅ 创建 dist/delete_counter.json"
-          else
-            echo "✅ delete_counter.json 已存在"
-          fi
+    lines = open(part_file, "r", encoding="utf-8").read().splitlines()
+    print(f"⏱ 验证分片 {part}，共 {len(lines)} 条规则")
+    valid = set(dns_validate(lines))
+    out_file = os.path.join(DIST_DIR, f"validated_part_{part}.txt")
 
-      # -----------------------------
-      # 9. 对当前分片进行 DNS 验证
-      # -----------------------------
-      - name: Run DNS validation for current part
-        env:
-          PART: ${{ steps.detect.outputs.part }}
-        run: |
-          mkdir -p logs
-          echo "⏱ 开始验证分片 $PART"
-          python3 split_and_check_16.py --part "$PART" | tee logs/split_check_part_${PART}.log
+    old_rules = set()
+    if os.path.exists(out_file):
+        with open(out_file, "r", encoding="utf-8") as f:
+            old_rules = set([l.strip() for l in f if l.strip()])
 
-      # -----------------------------
-      # 10. 提交并推送验证后的规则
-      # -----------------------------
-      - name: Commit & Push Validated Rules
-        env:
-          PART: ${{ steps.detect.outputs.part }}
-        run: |
-          STATS=$(grep "COMMIT_STATS" logs/split_check_part_${PART}.log | tail -n1 | sed 's/COMMIT_STATS: //')
-          
-          # ✅ 添加文件，首次不存在也不会报错
-          git add dist
-          for f in dist/validated_part_*.txt; do
-            [ -f "$f" ] && git add "$f"
-          done
-          git add merged_rules.txt tmp/last_part.txt
+    delete_counter = load_delete_counter()
+    new_delete_counter = delete_counter.copy()  # ✅ 保留旧计数
 
-          # ✅ commit message 使用日志 STATS
-          git commit -m "🤖 part $PART → $STATS" || echo "⚠ 无可提交内容"
+    final_rules = set()
+    removed_count = 0
+    added_count = 0
 
-          # ✅ pull 失败时忽略
-          git pull --rebase || echo "⚠ Pull failed, 已忽略"
+    all_rules = old_rules | set(lines)
 
-          # ✅ push
-          git push || echo "⚠ Push failed"
+    for rule in all_rules:
+        if rule in valid:
+            final_rules.add(rule)
+            new_delete_counter[rule] = 0  # ✅ 当前片验证成功 → 清零
+            if rule not in old_rules:
+                added_count += 1
+        else:
+            old_count = delete_counter.get(rule, 0)
+            new_count = old_count + 1
+            new_delete_counter[rule] = new_count
+            print(f"⚠ 连续验证失败计数 {new_count}/{DELETE_THRESHOLD}: {rule}")
 
-      # -----------------------------
-      # 11. 输出 tmp 目录内容（调试用）
-      # -----------------------------
-      - name: Show tmp directory
-        run: |
-          echo "📂 当前 tmp 目录内容："
-          ls -lh tmp || echo "⚠ tmp 目录不存在或无法访问"
-          echo "ℹ 如果 tmp/part_**.txt 无法生成，请检查 split_and_check_16.py 是否正常生成分片"
+            if new_count < DELETE_THRESHOLD:
+                final_rules.add(rule)
+            else:
+                removed_count += 1
+
+    save_delete_counter(new_delete_counter)
+
+    with open(out_file, "w", encoding="utf-8") as f:
+        f.write("\n".join(sorted(final_rules)))
+
+    total_count = len(final_rules)
+    print(f"✅ 分片 {part} 完成: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
+    print(f"COMMIT_STATS: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
+
+# ===============================
+# 主函数
+# ===============================
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--part", help="验证指定分片 1~16")
+    parser.add_argument("--force-update", action="store_true", help="强制重新下载规则源并切片")
+    args = parser.parse_args()
+
+    # ✅ 强制更新
+    if args.force_update:
+        download_all_sources()
+        split_parts()
+
+    # ✅ 如果 rules 或首个分片不存在，自动拉取
+    if not os.path.exists(MASTER_RULE) or not os.path.exists(os.path.join(TMP_DIR, "part_01.txt")):
+        print("⚠ 缺少规则或分片，自动拉取")
+        download_all_sources()
+        split_parts()
+
+    # ✅ 如果指定分片，则处理该分片
+    if args.part:
+        process_part(args.part)

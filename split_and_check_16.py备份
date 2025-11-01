@@ -1,3 +1,4 @@
+
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
@@ -110,9 +111,18 @@ def dns_validate(lines):
 # ===============================
 def load_delete_counter():
     if os.path.exists(DELETE_COUNTER_FILE):
-        with open(DELETE_COUNTER_FILE, "r", encoding="utf-8") as f:
-            return json.load(f)
-    return {}
+        try:
+            with open(DELETE_COUNTER_FILE, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except:
+            print(f"⚠ {DELETE_COUNTER_FILE} 解析失败，重建空计数")
+            return {}
+    else:
+        print(f"⚠ {DELETE_COUNTER_FILE} 不存在，创建新文件")
+        os.makedirs(DIST_DIR, exist_ok=True)
+        with open(DELETE_COUNTER_FILE, "w", encoding="utf-8") as f:
+            json.dump({}, f, indent=2, ensure_ascii=False)
+        return {}
 
 def save_delete_counter(counter):
     with open(DELETE_COUNTER_FILE, "w", encoding="utf-8") as f:
@@ -151,7 +161,7 @@ def process_part(part):
     for rule in old_rules | set(lines):
         if rule in valid:
             final_rules.add(rule)
-            if rule in delete_counter:
+            if rule in delete_counter and delete_counter[rule] > 0:
                 print(f"🔄 验证成功，清零删除计数: {rule}")
             new_delete_counter[rule] = 0
         else:
@@ -160,6 +170,7 @@ def process_part(part):
             print(f"⚠ 连续删除计数 {count}/{DELETE_THRESHOLD}: {rule}")
             if count >= DELETE_THRESHOLD:
                 removed_count += 1
+                # 不加入 final_rules
             else:
                 final_rules.add(rule)
         if rule not in old_rules and rule in valid:
@@ -172,7 +183,6 @@ def process_part(part):
 
     total_count = len(final_rules)
     print(f"✅ 分片 {part} 完成: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
-    # 💾 输出给 workflow 用作 commit 信息
     print(f"COMMIT_STATS: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
 
 # ===============================

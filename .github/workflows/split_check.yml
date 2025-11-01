@@ -24,41 +24,32 @@ jobs:
       PYTHONUNBUFFERED: 1
 
     steps:
-      # 1️⃣ Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      # 2️⃣ Setup Python
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.12'
 
-      # 3️⃣ Install dependencies
       - name: Install dependencies
-        run: |
-          pip install --upgrade requests dnspython
+        run: pip install --upgrade requests dnspython
 
-      # 4️⃣ Configure Git
       - name: Configure Git
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-      # 5️⃣ Determine PART index (轮替或手动)
       - name: Determine PART index
         id: detect
-        shell: bash
         run: |
           mkdir -p tmp
           LAST_PART_FILE="tmp/last_part.txt"
           PART_INPUT="${{ github.event.inputs.part }}"
-
           if [ -n "$PART_INPUT" ]; then
             PART="$PART_INPUT"
-            echo "🛠 手动指定分片：$PART"
           else
             if [ -f "$LAST_PART_FILE" ]; then
               LAST_PART=$(cat "$LAST_PART_FILE")
@@ -66,62 +57,36 @@ jobs:
             else
               PART=1
             fi
-            echo "⏱ 自动轮替分片：$PART"
           fi
-
           echo $PART > $LAST_PART_FILE
           echo "part=$PART" >> $GITHUB_OUTPUT
 
-      # 6️⃣ Force download rules at schedule times
       - name: Force download rules at schedule times
-        shell: bash
         run: |
           CURRENT_HOUR=$(date -u +"%H")
           if [[ "$CURRENT_HOUR" == "00" || "$CURRENT_HOUR" == "06" || "$CURRENT_HOUR" == "12" || "$CURRENT_HOUR" == "18" ]]; then
-            echo "✅ 强制下载规则源并生成所有分片"
             python split_and_check_16.py --force-update
-          else
-            echo "⏩ 非下载时间，不强制更新"
           fi
 
-      # 7️⃣ Ensure rules and first part exist
       - name: Ensure rules and first part exist
-        shell: bash
         run: |
           python split_and_check_16.py --force-update
-          echo "✅ 已确保规则文件和分片存在"
 
-      # 8️⃣ Run DNS validation for current part
       - name: Run DNS validation for current part
-        shell: bash
         env:
           PART: ${{ steps.detect.outputs.part }}
         run: |
-          set -e
           mkdir -p logs
-          echo "⏱ 开始验证分片 $PART"
           python split_and_check_16.py --part "$PART" | tee logs/split_check_part_${PART}.log
 
-      # 9️⃣ Commit & Push Validated Rules (支持冲突自动处理)
       - name: Commit & Push Validated Rules
-        shell: bash
         env:
           PART: ${{ steps.detect.outputs.part }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          # 提取 COMMIT_STATS
           STATS=$(grep "COMMIT_STATS" logs/split_check_part_${PART}.log 2>/dev/null | tail -n1 | sed 's/COMMIT_STATS: //' || echo "0,0,0")
-
-          # 添加文件并提交
           git add tmp/last_part.txt dist/validated_part_*.txt dist/delete_counter.json merged_rules.txt
           git commit -m "🤖 part $PART → $STATS" || echo "No changes to commit"
-
-          # 自动 stash 本地更改，pull 最新远程，rebase，然后 pop 回本地更改
-          git stash
           git pull --rebase origin main || echo "⚠ Pull failed or nothing to rebase"
-          git stash pop || echo "⚠ No stashed changes to pop"
-
-          # 推送到远程
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main

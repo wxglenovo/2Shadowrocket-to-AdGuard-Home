@@ -1,3 +1,4 @@
+
 name: Split & DNS Check
 
 on:
@@ -35,7 +36,7 @@ jobs:
           python-version: '3.12'
 
       - name: Install dependencies
-        run: pip install --upgrade requests dnspython tqdm
+        run: pip install --upgrade requests dnspython
 
       - name: Configure Git
         run: |
@@ -96,25 +97,20 @@ jobs:
             echo "✅ delete_counter.json 已存在"
           fi
 
-      - name: Run DNS validation for current part (High Concurrency)
+      - name: Run DNS validation for current part
         env:
           PART: ${{ steps.detect.outputs.part }}
         run: |
           mkdir -p logs
-          echo "⏱ 开始高并发验证分片 $PART (50 并发，每批 500 条)"
-          python3 split_and_check_16.py --part "$PART" --workers 50 --batch-size 500 | tee logs/split_check_part_${PART}.log
-
-      - name: Merge all parts
-        run: |
-          echo "🔗 合并所有分片生成 dist/all_parts_merged.txt"
-          python3 split_and_check_16.py --merge
+          echo "⏱ 开始验证分片 $PART"
+          python3 split_and_check_16.py --part "$PART" | tee logs/split_check_part_${PART}.log
 
       - name: Commit & Push Validated Rules
         env:
           PART: ${{ steps.detect.outputs.part }}
         run: |
           STATS=$(grep "COMMIT_STATS" logs/split_check_part_${PART}.log | tail -n1 | sed 's/COMMIT_STATS: //')
-          git add tmp/last_part.txt dist/validated_part_*.txt dist/delete_counter.json dist/all_parts_merged.txt merged_rules.txt
+          git add tmp/last_part.txt dist/validated_part_*.txt dist/delete_counter.json merged_rules.txt
           git commit -m "🤖 part $PART → $STATS" || echo "No changes to commit"
           git pull --rebase origin main || echo "⚠ Pull failed"
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main || echo "⚠ Push failed"

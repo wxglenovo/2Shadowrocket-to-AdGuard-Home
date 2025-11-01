@@ -4,13 +4,13 @@ name: Split & DNS Check
 # 触发条件
 # -----------------------------
 on:
-  schedule:
+  schedule:  # 定时任务
     - cron: "0 0 * * *"   # 每天 00:00 UTC
     - cron: "0 6 * * *"   # 每天 06:00 UTC
     - cron: "0 12 * * *"  # 每天 12:00 UTC
     - cron: "0 18 * * *"  # 每天 18:00 UTC
     - cron: "*/22 * * * *" # 每 22 分钟一次
-  workflow_dispatch:
+  workflow_dispatch:      # 手动触发
     inputs:
       part:
         description: '手动验证指定分片 1~16'
@@ -20,11 +20,14 @@ on:
 permissions:
   contents: write
 
+# -----------------------------
+# Job 定义
+# -----------------------------
 jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      PYTHONUNBUFFERED: 1
+      PYTHONUNBUFFERED: 1  # 输出实时刷新
 
     steps:
 
@@ -85,47 +88,37 @@ jobs:
           echo "part=$PART" >> $GITHUB_OUTPUT
 
       # -----------------------------
-      # 6. 定时下载规则源（每天四次）并覆盖分片
+      # 6. 打印 tmp 目录，检查分片是否存在
       # -----------------------------
-      - name: Force download rules at schedule times
+      - name: Check tmp parts
+        run: |
+          echo "📂 当前 tmp 目录内容："
+          ls -lh tmp || echo "⚠ tmp 目录不存在"
+          MISSING=0
+          for i in $(seq -w 01 16); do
+            if [ ! -f "tmp/part_${i}.txt" ]; then
+              echo "⚠ tmp/part_${i}.txt 缺失"
+              MISSING=1
+            fi
+          done
+          echo "missing=$MISSING" >> $GITHUB_OUTPUT
+
+      # -----------------------------
+      # 7. 强制下载规则源（每天四次定时执行）或缺失分片
+      # -----------------------------
+      - name: Force download rules if scheduled or missing
         run: |
           CURRENT_HOUR=$(date -u +"%H")
-          if [[ "$CURRENT_HOUR" == "00" || "$CURRENT_HOUR" == "06" || "$CURRENT_HOUR" == "12" || "$CURRENT_HOUR" == "18" ]]; then
-            echo "✅ 强制下载规则源并生成所有分片"
+          MISSING=${{ steps.check_tmp_parts.outputs.missing }}
+          if [[ "$CURRENT_HOUR" == "00" || "$CURRENT_HOUR" == "06" || "$CURRENT_HOUR" == "12" || "$CURRENT_HOUR" == "18" || "$MISSING" == "1" ]]; then
+            echo "✅ 强制下载规则源并生成分片"
             python3 split_and_check_16.py --force-update
           else
-            echo "⏩ 非下载时间，不强制更新"
+            echo "⏩ 非下载时间且分片存在，不强制更新"
           fi
 
       # -----------------------------
-      # 7. 确保 rules 和首个分片存在（首次运行）
-      # -----------------------------
-      - name: Ensure rules and first part exist
-        run: |
-          MERGED_FILE="merged_rules.txt"
-          FIRST_PART="tmp/part_01.txt"
-          if [ ! -f "$MERGED_FILE" ] || [ ! -f "$FIRST_PART" ]; then
-            echo "⚠ 缺少规则文件或分片 → 重新拉取"
-            python3 split_and_check_16.py --force-update
-          else
-            echo "✅ 规则文件和分片存在"
-          fi
-
-      # -----------------------------
-      # 8. 确保 delete_counter.json 存在
-      # -----------------------------
-      - name: Ensure delete_counter.json exists
-        run: |
-          mkdir -p dist
-          if [ ! -f dist/delete_counter.json ]; then
-            echo "{}" > dist/delete_counter.json
-            echo "✅ 创建 dist/delete_counter.json"
-          else
-            echo "✅ delete_counter.json 已存在"
-          fi
-
-      # -----------------------------
-      # 9. 对当前分片进行 DNS 验证
+      # 8. 对当前分片进行 DNS 验证
       # -----------------------------
       - name: Run DNS validation for current part
         env:
@@ -136,35 +129,14 @@ jobs:
           python3 split_and_check_16.py --part "$PART" | tee logs/split_check_part_${PART}.log
 
       # -----------------------------
-      # 10. 提交并推送验证后的规则
+      # 9. 提交并推送验证后的规则
       # -----------------------------
       - name: Commit & Push Validated Rules
         env:
           PART: ${{ steps.detect.outputs.part }}
         run: |
           STATS=$(grep "COMMIT_STATS" logs/split_check_part_${PART}.log | tail -n1 | sed 's/COMMIT_STATS: //')
-          
-          # ✅ 添加文件，首次不存在也不会报错
-          git add dist
-          for f in dist/validated_part_*.txt; do
-            [ -f "$f" ] && git add "$f"
-          done
-          git add merged_rules.txt tmp/last_part.txt
-
-          # ✅ commit message 使用日志 STATS
-          git commit -m "🤖 part $PART → $STATS" || echo "⚠ 无可提交内容"
-
-          # ✅ pull 失败时忽略
-          git pull --rebase || echo "⚠ Pull failed, 已忽略"
-
-          # ✅ push
-          git push || echo "⚠ Push failed"
-
-      # -----------------------------
-      # 11. 输出 tmp 目录内容（调试用）
-      # -----------------------------
-      - name: Show tmp directory
-        run: |
-          echo "📂 当前 tmp 目录内容："
-          ls -lh tmp || echo "⚠ tmp 目录不存在或无法访问"
-          echo "ℹ 如果 tmp/part_**.txt 无法生成，请检查 split_and_check_16.py 是否正常生成分片"
+          git add tmp/last_part.txt dist/validated_part_*.txt dist/delete_counter.json merged_rules.txt
+          git commit -m "🤖 part $PART → $STATS" || echo "No changes to commit"
+          git pull --rebase origin main || echo "⚠ Pull failed, 已忽略"
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main || echo "⚠ Push failed, 已忽略"

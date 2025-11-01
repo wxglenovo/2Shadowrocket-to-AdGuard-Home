@@ -1640,6 +1640,7 @@ https://raw.githubusercontent.com/wxglenovo/AdGuardHome-Filter/refs/heads/main/A
 ||fidhkhqccgqkh.website^
 ||fidjecdmjqvmnvn.xyz^
 ||fidk.cn^
+||fidxillyibuxe.space^
 ||fieldconfig.com^
 ||fieldtinypirate.com^
 ||fiercedibbles.click^

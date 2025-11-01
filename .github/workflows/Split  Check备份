@@ -1,3 +1,4 @@
+
 name: Split & DNS Check
 
 on:
@@ -24,24 +25,29 @@ jobs:
       PYTHONUNBUFFERED: 1
 
     steps:
+      # ✅ 拉取仓库
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
+      # ✅ Python 环境
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.12'
 
+      # ✅ 安装依赖
       - name: Install dependencies
         run: pip install --upgrade requests dnspython
 
+      # ✅ Git 信息
       - name: Configure Git
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
+      # ✅ 自动/手动分片切换
       - name: Determine PART index
         id: detect
         run: |
@@ -65,37 +71,39 @@ jobs:
           echo "$PART" > "$LAST_PART_FILE"
           echo "part=$PART" >> $GITHUB_OUTPUT
 
+      # ✅ 每 6 小时强制更新规则源
       - name: Force download rules at schedule times
         run: |
           CURRENT_HOUR=$(date -u +"%H")
           if [[ "$CURRENT_HOUR" == "00" || "$CURRENT_HOUR" == "06" || "$CURRENT_HOUR" == "12" || "$CURRENT_HOUR" == "18" ]]; then
-            echo "✅ 强制下载规则源并生成所有分片"
+            echo "✅ 强制拉取规则源并生成所有分片"
             python3 split_and_check_16.py --force
           else
-            echo "⏩ 非下载时间，不强制更新"
+            echo "⏩ 非定时刷新时段，跳过强制更新"
           fi
 
+      # ✅ 如果首次运行则必须生成
       - name: Ensure rules and first part exist
         run: |
-          MERGED_FILE="merged_rules.txt"
-          FIRST_PART="tmp/part_01.txt"
-          if [ ! -f "$MERGED_FILE" ] || [ ! -f "$FIRST_PART" ]; then
-            echo "⚠ 缺少规则文件或分片 → 重新拉取"
+          if [ ! -f "merged_rules.txt" ] || [ ! -f "tmp/part_01.txt" ]; then
+            echo "⚠ 缺少规则文件 → 重新拉取"
             python3 split_and_check_16.py --force
           else
-            echo "✅ 规则文件和分片存在"
+            echo "✅ 规则文件与分片存在"
           fi
 
+      # ✅ 必须有全局连续失败计数仓库
       - name: Ensure delete_counter.json exists
         run: |
           mkdir -p dist
           if [ ! -f dist/delete_counter.json ]; then
             echo "{}" > dist/delete_counter.json
-            echo "✅ 创建 dist/delete_counter.json"
+            echo "✅ 创建 dist/delete_counter.json（全局连续失败计数）"
           else
             echo "✅ delete_counter.json 已存在"
           fi
 
+      # ✅ 执行 DNS 验证
       - name: Run DNS validation for current part
         env:
           PART: ${{ steps.detect.outputs.part }}
@@ -104,12 +112,13 @@ jobs:
           echo "⏱ 开始验证分片 $PART"
           python3 split_and_check_16.py --part "$PART" | tee logs/split_check_part_${PART}.log
 
+      # ✅ Commit & Push
       - name: Commit & Push Validated Rules
         env:
           PART: ${{ steps.detect.outputs.part }}
         run: |
           STATS=$(grep "COMMIT_STATS" logs/split_check_part_${PART}.log | tail -n1 | sed 's/COMMIT_STATS: //')
           git add tmp/last_part.txt dist/validated_part_*.txt dist/delete_counter.json merged_rules.txt
-          git commit -m "🤖 part $PART → $STATS" || echo "No changes to commit"
-          git pull --rebase origin main || echo "⚠ Pull failed"
-          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main || echo "⚠ Push failed"
+          git commit -m "✅ 分片 $PART | 连续失败记录已更新 | $STATS" || echo "ℹ️ 无需提交"
+          git pull --rebase origin main || echo "⚠ Pull 失败（已忽略）"
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main || echo "⚠ Push 失败"

@@ -20761,6 +20761,7 @@
 ||adfrika.com^
 ||adfrika.com^$third-party
 ||adfrog.info^
+||adfront.auction.co.kr^
 ||adfront.org^
 ||adfrontiers.com^
 ||adfruendumvino.be^
@@ -103955,6 +103956,7 @@
 ||auteboon.net^
 ||auth-em.hismarttv.com^
 ||auth-eu.hismarttv.com^
+||auth-launcher-em.hismarttv.com^
 ||auth-launcher-eu.hismarttv.com^
 ||auth-launcher-na.hismarttv.com^
 ||auth-launcher-sa.hismarttv.com^

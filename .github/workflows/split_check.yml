@@ -26,59 +26,82 @@ jobs:
       DNS_BATCH_SIZE: 500
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.12'
 
-      - name: Install deps
-        run: pip install requests dnspython
+      - name: Install dependencies
+        run: pip install --upgrade requests dnspython tqdm
 
-      - name: Git config
+      - name: Configure Git
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Detect PART
+      - name: Determine PART index
         id: detect
         run: |
-          mkdir -p tmp
-          FILE="tmp/last_part.txt"
-          if [ -n "${{ github.event.inputs.part }}" ]; then
-            PART="${{ github.event.inputs.part }}"
+          mkdir -p tmp dist
+          LAST_PART_FILE="tmp/last_part.txt"
+          PART_INPUT="${{ github.event.inputs.part }}"
+          if [ -n "$PART_INPUT" ]; then
+            PART="$PART_INPUT"
+            echo "🛠 手动指定分片：$PART"
           else
-            if [ -f "$FILE" ]; then
-              LAST=$(cat "$FILE")
-              PART=$(( (LAST % 16) + 1 ))
+            if [ -f "$LAST_PART_FILE" ]; then
+              LAST_PART=$(cat "$LAST_PART_FILE")
+              PART=$(( (LAST_PART % 16) + 1 ))
             else
               PART=1
             fi
+            echo "⏱ 自动轮替分片：$PART"
           fi
-          echo "$PART" > "$FILE"
+          echo "$PART" > "$LAST_PART_FILE"
           echo "part=$PART" >> $GITHUB_OUTPUT
 
-      - name: Ensure rules exist
+      - name: Ensure rules exist & split into tmp/
         run: |
+          MERGED_FILE="merged_rules.txt"
           FIRST_PART="tmp/part_01.txt"
-          if [ ! -f "$FIRST_PART" ]; then
-            echo "⚠ 未找到 tmp 分片 → 重新生成"
-            python3 split_and_check_16.py
+          mkdir -p tmp dist
+          if [ ! -f "$MERGED_FILE" ] || [ ! -f "$FIRST_PART" ]; then
+            echo "⚠ 缺少规则文件或分片 → 下载 & 生成"
+            python3 split_and_check_16.py --force
+          else
+            echo "✅ 规则文件和 tmp/ 分片存在"
           fi
 
-      - name: Run validation
-        env:
-          PART: ${{ steps.detect.outputs.part }}
+      - name: Ensure delete_counter.json exists
         run: |
-          python3 split_and_check_16.py --part "$PART" | tee logs_part_$PART.txt
+          mkdir -p dist
+          if [ ! -f dist/delete_counter.json ]; then
+            echo "{}" > dist/delete_counter.json
+            echo "✅ 创建 dist/delete_counter.json"
+          else
+            echo "✅ delete_counter.json 已存在"
+          fi
 
-      - name: Commit & Push
+      - name: Run DNS validation for current part (Concurrent)
         env:
           PART: ${{ steps.detect.outputs.part }}
         run: |
-          git add tmp/ dist/
-          git commit -m "✅ part $PART Auto Validation" || echo "No change"
-          git pull --rebase origin main || true
-          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main || true
+          mkdir -p logs
+          echo "⏱ 开始验证分片 $PART"
+          python3 split_and_check_16.py --part "$PART" --concurrent | tee logs/split_check_part_${PART}.log
+
+      - name: Commit & Push Validated Rules
+        env:
+          PART: ${{ steps.detect.outputs.part }}
+        run: |
+          LOG_FILE=logs/split_check_part_${PART}.log
+          STATS=$(grep "COMMIT_STATS" $LOG_FILE | tail -n1 | sed 's/COMMIT_STATS: //')
+          git add tmp/last_part.txt tmp/part_*.txt dist/validated_part_*.txt dist/delete_counter.json merged_rules.txt
+          git commit -m "🤖 Auto update: validated part $PART → $STATS" || echo "No changes to commit"
+          git pull --rebase origin main || echo "⚠ Pull failed"
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main || echo "⚠ Push failed"

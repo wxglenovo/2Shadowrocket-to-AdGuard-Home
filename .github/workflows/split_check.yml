@@ -35,7 +35,8 @@ jobs:
           python-version: '3.12'
 
       - name: Install dependencies
-        run: pip install --upgrade requests dnspython
+        run: |
+          pip install --upgrade requests dnspython
 
       - name: Configure Git
         run: |
@@ -75,6 +76,7 @@ jobs:
             python split_and_check_16.py --force-update
           else
             echo "⏩ 非下载时间，不强制更新"
+          fi
 
       - name: Ensure rules and first part exist
         shell: bash
@@ -103,11 +105,18 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          
-          # 提取 COMMIT_STATS，若日志缺失使用默认值
+
+          # 提取 COMMIT_STATS，若日志缺失使用默认值 0,0,0
           STATS=$(grep "COMMIT_STATS" logs/split_check_part_${PART}.log 2>/dev/null | tail -n1 | sed 's/COMMIT_STATS: //' || echo "0,0,0")
-          
+
+          # 添加需要提交的文件
           git add tmp/last_part.txt dist/validated_part_*.txt dist/delete_counter.json merged_rules.txt
+
+          # 提交更改
           git commit -m "🤖 part $PART → $STATS" || echo "No changes to commit"
+
+          # 拉取最新代码并 rebase
           git pull --rebase origin main || echo "⚠ Pull failed or nothing to rebase"
+
+          # 推送到仓库
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main

@@ -18,7 +18,7 @@ MASTER_RULE = "merged_rules.txt"
 PARTS = 16
 DNS_WORKERS = 50
 DNS_TIMEOUT = 2
-DELETE_COUNTER_FILE = os.path.join(DIST_DIR, "delete_counter.json")
+DELETE_COUNTER_FILE = os.path.join(DIST_DIR, "delete_counter.json")  # ✅ 更新计数文件，不是删除
 DELETE_THRESHOLD = 4
 
 # 创建目录
@@ -59,29 +59,17 @@ def split_parts():
     if not os.path.exists(MASTER_RULE):
         print("⚠ 缺少合并规则文件")
         return False
-
-    # ✅ 确保 tmp 目录存在
-    os.makedirs(TMP_DIR, exist_ok=True)
-
     with open(MASTER_RULE, "r", encoding="utf-8") as f:
         rules = [l.strip() for l in f if l.strip()]
-
     total = len(rules)
     per_part = (total + PARTS - 1) // PARTS
     print(f"🪓 分片 {total} 条，每片约 {per_part}")
-
     for i in range(PARTS):
         part_rules = rules[i * per_part:(i + 1) * per_part]
         filename = os.path.join(TMP_DIR, f"part_{i+1:02d}.txt")
-
-        # ✅ 确保目录存在
-        os.makedirs(os.path.dirname(filename), exist_ok=True)
-
         with open(filename, "w", encoding="utf-8") as f:
             f.write("\n".join(part_rules))
-
         print(f"📄 分片 {i+1}: {len(part_rules)} 条 → {filename}")
-
     return True
 
 # ===============================
@@ -118,7 +106,7 @@ def dns_validate(lines):
     return valid
 
 # ===============================
-# 删除计数管理
+# 删除计数管理（更新计数）
 # ===============================
 def load_delete_counter():
     if os.path.exists(DELETE_COUNTER_FILE):
@@ -140,17 +128,16 @@ def save_delete_counter(counter):
         json.dump(counter, f, indent=2, ensure_ascii=False)
 
 # ===============================
-# 分片处理
+# 分片处理（最终版 ✅）
 # ===============================
 def process_part(part):
     part_file = os.path.join(TMP_DIR, f"part_{int(part):02d}.txt")
 
-    # ✅ 如果分片缺失则下载并切片
+    # ✅ 如果分片不存在才下载
     if not os.path.exists(part_file):
-        print(f"⚠ 分片 {part} 缺失，下载规则并生成分片")
+        print(f"⚠ 分片 {part} 缺失，首次拉取规则源")
         download_all_sources()
         split_parts()
-
     if not os.path.exists(part_file):
         print("❌ 分片仍不存在，终止")
         return
@@ -167,7 +154,7 @@ def process_part(part):
 
     delete_counter = load_delete_counter()
 
-    # ✅ 保留旧计数，避免覆盖
+    # ✅ 核心修改：继承旧计数，避免覆盖
     new_delete_counter = delete_counter.copy()
 
     final_rules = set()
@@ -179,7 +166,8 @@ def process_part(part):
     for rule in all_rules:
         if rule in valid:
             final_rules.add(rule)
-            new_delete_counter[rule] = 0  # ✅ 当前分片验证成功 → 清零
+            # ✅ 当前片验证成功 → 清零计数
+            new_delete_counter[rule] = 0
             if rule not in old_rules:
                 added_count += 1
         else:
@@ -187,6 +175,8 @@ def process_part(part):
             new_count = old_count + 1
             new_delete_counter[rule] = new_count
             print(f"⚠ 连续验证失败计数 {new_count}/{DELETE_THRESHOLD}: {rule}")
+
+            # ✅ 达阈值才真正删除，否则继续保留
             if new_count < DELETE_THRESHOLD:
                 final_rules.add(rule)
             else:
@@ -207,15 +197,15 @@ def process_part(part):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--part", help="验证指定分片 1~16")
-    parser.add_argument("--force-update", action="store_true", help="强制重新下载规则源并切片")
+    parser.add_argument("--force", action="store_true", help="强制重新下载规则源并切片")  # ✅ 改名为 --force 对应 workflow
     args = parser.parse_args()
 
-    # ✅ 强制更新时覆盖 tmp/part_**.txt
-    if args.force_update:
+    # ✅ 强制下载并分片
+    if args.force:
         download_all_sources()
         split_parts()
 
-    # ✅ 缺少规则或首片时自动拉取
+    # ✅ 首次执行，如果缺少规则或分片，自动拉取
     if not os.path.exists(MASTER_RULE) or not os.path.exists(os.path.join(TMP_DIR, "part_01.txt")):
         print("⚠ 缺少规则或分片，自动拉取")
         download_all_sources()

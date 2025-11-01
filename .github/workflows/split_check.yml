@@ -24,24 +24,29 @@ jobs:
       PYTHONUNBUFFERED: 1
 
     steps:
+      # 1️⃣ Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
+      # 2️⃣ Setup Python
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.12'
 
+      # 3️⃣ Install dependencies
       - name: Install dependencies
         run: pip install --upgrade requests dnspython
 
+      # 4️⃣ Configure Git
       - name: Configure Git
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
+      # 5️⃣ Determine PART index
       - name: Determine PART index
         id: detect
         run: |
@@ -61,24 +66,47 @@ jobs:
           echo $PART > $LAST_PART_FILE
           echo "part=$PART" >> $GITHUB_OUTPUT
 
-      - name: Force download rules at schedule times
+      # 6️⃣ Force update rules at fixed schedule times
+      - name: Force update rules at 00/06/12/18
         run: |
           CURRENT_HOUR=$(date -u +"%H")
+          mkdir -p tmp dist
           if [[ "$CURRENT_HOUR" == "00" || "$CURRENT_HOUR" == "06" || "$CURRENT_HOUR" == "12" || "$CURRENT_HOUR" == "18" ]]; then
+            echo "✅ 固定时间更新规则源并生成分片"
             python split_and_check_16.py --force-update
+          else
+            echo "⏩ 非固定更新时间，跳过强制更新"
           fi
 
-      - name: Ensure rules and first part exist
+      # 7️⃣ Ensure parts exist (only if missing)
+      - name: Ensure rules and parts exist
         run: |
-          python split_and_check_16.py --force-update
+          mkdir -p tmp dist
+          MISSING=0
+          for i in {01..16}; do
+            if [ ! -f "tmp/part_$i.txt" ]; then
+              echo "⚠ tmp/part_$i.txt 缺失"
+              MISSING=1
+            fi
+          done
 
+          if [ $MISSING -eq 1 ]; then
+            echo "⚠ 缺失分片，自动生成所有分片"
+            python split_and_check_16.py --force-update
+          else
+            echo "✅ 所有分片存在"
+          fi
+
+      # 8️⃣ Run DNS validation for current part
       - name: Run DNS validation for current part
         env:
           PART: ${{ steps.detect.outputs.part }}
         run: |
           mkdir -p logs
+          echo "⏱ 开始验证分片 $PART"
           python split_and_check_16.py --part "$PART" | tee logs/split_check_part_${PART}.log
 
+      # 9️⃣ Commit & Push Validated Rules
       - name: Commit & Push Validated Rules
         env:
           PART: ${{ steps.detect.outputs.part }}

@@ -1,4 +1,4 @@
-name: Split & DNS Check (Concurrent)
+name: Split & DNS Check 
 
 on:
   schedule:

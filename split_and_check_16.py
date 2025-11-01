@@ -1,3 +1,4 @@
+
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
@@ -100,7 +101,7 @@ def dns_validate(lines):
             result = future.result()
             if result:
                 valid.append(result)
-            if done % 500 == 0 or done == total:
+            if done % 500 == 0:
                 print(f"✅ 已验证 {done}/{total} 条，有效 {len(valid)} 条")
     print(f"✅ 分片验证完成，有效 {len(valid)} 条")
     return valid
@@ -128,7 +129,7 @@ def save_delete_counter(counter):
         json.dump(counter, f, indent=2, ensure_ascii=False)
 
 # ===============================
-# 分片处理（增量验证）
+# 分片处理
 # ===============================
 def process_part(part):
     part_file = os.path.join(TMP_DIR, f"part_{int(part):02d}.txt")
@@ -142,39 +143,41 @@ def process_part(part):
 
     lines = open(part_file, "r", encoding="utf-8").read().splitlines()
     print(f"⏱ 验证分片 {part}，共 {len(lines)} 条规则")
-
+    valid = set(dns_validate(lines))
     out_file = os.path.join(DIST_DIR, f"validated_part_{part}.txt")
 
-    old_valid = set()
+    old_rules = set()
     if os.path.exists(out_file):
         with open(out_file, "r", encoding="utf-8") as f:
-            old_valid = set([l.strip() for l in f if l.strip()])
+            old_rules = set([l.strip() for l in f if l.strip()])
 
     delete_counter = load_delete_counter()
     new_delete_counter = {}
 
-    # 只验证新增或计数不为0的规则
-    to_validate = [rule for rule in lines if rule not in old_valid or delete_counter.get(rule, 0) > 0]
-    valid_new = set(dns_validate(to_validate))
+    final_rules = set()
+    removed_count = 0
+    added_count = 0
 
-    # 合并旧有效 + 新验证
-    final_rules = old_valid | valid_new
-
-    # 更新删除计数
-    for rule in final_rules:
-        if rule in valid_new:
+    for rule in old_rules | set(lines):
+        if rule in valid:
+            final_rules.add(rule)
+            if rule in delete_counter and delete_counter[rule] > 0:
+                print(f"🔄 验证成功，清零删除计数: {rule}")
             new_delete_counter[rule] = 0
         else:
-            count = delete_counter.get(rule, 0)
+            count = delete_counter.get(rule, 0) + 1
             new_delete_counter[rule] = count
+            print(f"⚠ 连续删除计数 {count}/{DELETE_THRESHOLD}: {rule}")
+            if count >= DELETE_THRESHOLD:
+                removed_count += 1
+                # 不加入 final_rules
+            else:
+                final_rules.add(rule)
+        if rule not in old_rules and rule in valid:
+            added_count += 1
 
     save_delete_counter(new_delete_counter)
 
-    # 统计新增/删除
-    added_count = len(final_rules - old_valid)
-    removed_count = sum(1 for rule in old_valid if rule not in final_rules)
-
-    # 保存最终分片
     with open(out_file, "w", encoding="utf-8") as f:
         f.write("\n".join(sorted(final_rules)))
 
@@ -202,6 +205,3 @@ if __name__ == "__main__":
 
     if args.part:
         process_part(args.part)
-    else:
-        for p in range(1, PARTS+1):
-            process_part(p)

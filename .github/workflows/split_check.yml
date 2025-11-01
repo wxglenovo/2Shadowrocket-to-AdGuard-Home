@@ -35,7 +35,7 @@ jobs:
           python-version: '3.12'
 
       - name: Install dependencies
-        run: pip install --upgrade requests dnspython
+        run: pip install --upgrade requests dnspython tqdm
 
       - name: Configure Git
         run: |
@@ -96,40 +96,18 @@ jobs:
             echo "✅ delete_counter.json 已存在"
           fi
 
-      - name: Run DNS validation for current part
+      - name: Run DNS validation for current part (High Concurrency)
         env:
           PART: ${{ steps.detect.outputs.part }}
         run: |
           mkdir -p logs
-          echo "⏱ 开始验证分片 $PART"
-          python3 split_and_check_16.py --part "$PART" | tee logs/split_check_part_${PART}.log
+          echo "⏱ 开始高并发验证分片 $PART (50 并发，每批 500 条)"
+          python3 split_and_check_16.py --part "$PART" --workers 50 --batch-size 500 | tee logs/split_check_part_${PART}.log
 
       - name: Merge all parts
         run: |
           echo "🔗 合并所有分片生成 dist/all_parts_merged.txt"
-          python3 - <<'EOF'
-import os
-
-TMP_DIR = "tmp"
-DIST_DIR = "dist"
-PARTS = 16
-os.makedirs(DIST_DIR, exist_ok=True)
-
-all_rules = []
-for i in range(1, PARTS + 1):
-    part_file = os.path.join(TMP_DIR, f"part_{i:02d}.txt")
-    if not os.path.exists(part_file):
-        continue
-    with open(part_file, "r", encoding="utf-8") as f:
-        lines = [line.strip() for line in f if line.strip()]
-        all_rules.extend(lines)
-all_rules = sorted(set(all_rules))
-
-merged_file = os.path.join(DIST_DIR, "all_parts_merged.txt")
-with open(merged_file, "w", encoding="utf-8") as f:
-    f.write("\n".join(all_rules))
-print(f"✅ 合并完成，总计 {len(all_rules)} 条规则")
-EOF
+          python3 split_and_check_16.py --merge
 
       - name: Commit & Push Validated Rules
         env:

@@ -4,13 +4,13 @@ name: Split & DNS Check
 # 触发条件
 # -----------------------------
 on:
-  schedule:  # 定时任务
-    - cron: "0 0 * * *"   # 每天 00:00 UTC
-    - cron: "0 6 * * *"   # 每天 06:00 UTC
-    - cron: "0 12 * * *"  # 每天 12:00 UTC
-    - cron: "0 18 * * *"  # 每天 18:00 UTC
+  schedule:
+    - cron: "0 0 * * *"    # 每天 00:00 UTC
+    - cron: "0 6 * * *"    # 每天 06:00 UTC
+    - cron: "0 12 * * *"   # 每天 12:00 UTC
+    - cron: "0 18 * * *"   # 每天 18:00 UTC
     - cron: "*/22 * * * *" # 每 22 分钟一次
-  workflow_dispatch:      # 手动触发
+  workflow_dispatch:
     inputs:
       part:
         description: '手动验证指定分片 1~16'
@@ -18,13 +18,16 @@ on:
         default: ''
 
 permissions:
-  contents: write
+  contents: write  # 允许推送代码到仓库
 
+# -----------------------------
+# Job 定义
+# -----------------------------
 jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      PYTHONUNBUFFERED: 1
+      PYTHONUNBUFFERED: 1  # 输出实时刷新
 
     steps:
 
@@ -34,7 +37,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 0  # 获取完整历史
 
       # -----------------------------
       # 2. 设置 Python 环境
@@ -69,9 +72,11 @@ jobs:
           PART_INPUT="${{ github.event.inputs.part }}"
 
           if [ -n "$PART_INPUT" ]; then
+            # 手动指定分片
             PART="$PART_INPUT"
             echo "🛠 手动指定分片：$PART"
           else
+            # 自动轮替分片
             if [ -f "$LAST_PART_FILE" ]; then
               LAST_PART=$(cat "$LAST_PART_FILE")
               PART=$(( (LAST_PART % 16) + 1 ))
@@ -85,17 +90,23 @@ jobs:
           echo "part=$PART" >> $GITHUB_OUTPUT
 
       # -----------------------------
-      # 6. 定时强制下载规则源
-      # ✅ 改动：只在每天 00/06/12/18 强制覆盖 tmp/part_**.txt
+      # 6. 定时下载规则源（每天 00/06/12/18）覆盖 tmp/part_**.txt
       # -----------------------------
       - name: Force download rules at schedule times
         run: |
+          mkdir -p tmp
           CURRENT_HOUR=$(date -u +"%H")
           if [[ "$CURRENT_HOUR" == "00" || "$CURRENT_HOUR" == "06" || "$CURRENT_HOUR" == "12" || "$CURRENT_HOUR" == "18" ]]; then
-            echo "✅ 定时下载规则源并覆盖分片"
-            python3 split_and_check_16.py --force-update
+            echo "✅ 定时下载规则源并生成所有分片"
+            python3 split_and_check_16.py --force
           else
-            echo "⏩ 非定时触发，有 tmp/part_**.txt 则不下载"
+            # ✅ 非下载时间，如果 tmp/part_**.txt 存在则不下载
+            if ls tmp/part_*.txt 1> /dev/null 2>&1; then
+              echo "⏩ tmp 目录已有分片，不下载"
+            else
+              echo "⚠ tmp 目录无分片，首次拉取规则源"
+              python3 split_and_check_16.py --force
+            fi
           fi
 
       # -----------------------------
@@ -107,7 +118,7 @@ jobs:
           FIRST_PART="tmp/part_01.txt"
           if [ ! -f "$MERGED_FILE" ] || [ ! -f "$FIRST_PART" ]; then
             echo "⚠ 缺少规则文件或分片 → 重新拉取"
-            python3 split_and_check_16.py --force-update
+            python3 split_and_check_16.py --force
           else
             echo "✅ 规则文件和分片存在"
           fi
@@ -126,7 +137,7 @@ jobs:
           fi
 
       # -----------------------------
-      # 9. 当前分片 DNS 验证
+      # 9. 对当前分片进行 DNS 验证
       # -----------------------------
       - name: Run DNS validation for current part
         env:
@@ -137,7 +148,7 @@ jobs:
           python3 split_and_check_16.py --part "$PART" | tee logs/split_check_part_${PART}.log
 
       # -----------------------------
-      # 10. 提交 & 推送验证后的规则
+      # 10. 提交并推送验证后的规则
       # -----------------------------
       - name: Commit & Push Validated Rules
         env:
@@ -146,5 +157,8 @@ jobs:
           STATS=$(grep "COMMIT_STATS" logs/split_check_part_${PART}.log | tail -n1 | sed 's/COMMIT_STATS: //')
           git add tmp/last_part.txt dist/validated_part_*.txt dist/delete_counter.json merged_rules.txt
           git commit -m "🤖 part $PART → $STATS" || echo "No changes to commit"
-          git pull --rebase origin main || echo "⚠ Pull failed"
+
+          # ✅ 修改：使用 --autostash 避免 pull 报错
+          git pull --rebase --autostash origin main || echo "⚠ Pull failed"
+
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main || echo "⚠ Push failed"

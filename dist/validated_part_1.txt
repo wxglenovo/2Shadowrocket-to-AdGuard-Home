@@ -1742,7 +1742,6 @@
 ||a2m.cn^
 ||a2put.chinaz.com^
 ||a2tw6yoodsag.com^
-||a2wx.icu^
 ||a2zapk.com^
 ||a3.ikafan.com^
 ||a3.jandan.net^
@@ -3773,7 +3772,6 @@
 ||ad.fx168api.com^
 ||ad.gameley.com^
 ||ad.ganji.com^
-||ad.gmw.cn^
 ||ad.gt^
 ||ad.guru^
 ||ad.house365.com^

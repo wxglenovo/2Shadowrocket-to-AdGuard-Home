@@ -4360,7 +4360,6 @@
 ||cc.pennstatehealth.org^
 ||cc.swiftype.com^
 ||cc.sys.miui.com^
-||cc.xwscg.com^
 ||cc1ej6d0e.com^
 ||cc3.ifeng.com^
 ||ccaas.avaya.com^
@@ -4921,7 +4920,6 @@
 ||choupsee.com^
 ||chouraip.com^
 ||choymp.pooldawg.com^
-||chpadblock.com^
 ||chpspb.bubbleroom.fi^
 ||chrczt.vite-envogue.de^
 ||chrisbenoitkane.edgeone.app^

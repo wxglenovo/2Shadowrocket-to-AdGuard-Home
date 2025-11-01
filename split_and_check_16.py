@@ -1,5 +1,3 @@
-
-
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
@@ -58,11 +56,20 @@ def download_all_sources():
 # 分片
 # ===============================
 def split_parts():
-    if not os.path.exists(MASTER_RULE):
-        print("⚠ 缺少合并规则文件")
-        return False
+    # 确保 MASTER_RULE 存在，否则先下载
+    if not os.path.exists(MASTER_RULE) or os.path.getsize(MASTER_RULE) == 0:
+        print("⚠ 缺少合并规则文件或为空，自动下载...")
+        download_all_sources()
+
+    # 读取规则
     with open(MASTER_RULE, "r", encoding="utf-8") as f:
         rules = [l.strip() for l in f if l.strip()]
+
+    if not rules:
+        print("❌ MASTER_RULE 为空，无法分片")
+        return False
+
+    os.makedirs(TMP_DIR, exist_ok=True)
     total = len(rules)
     per_part = (total + PARTS - 1) // PARTS
     print(f"🪓 分片 {total} 条，每片约 {per_part}")
@@ -77,15 +84,16 @@ def split_parts():
 # ===============================
 # DNS 验证
 # ===============================
+resolver = dns.resolver.Resolver()
+resolver.timeout = DNS_TIMEOUT
+resolver.lifetime = DNS_TIMEOUT
+
 def check_domain(rule):
-    resolver = dns.resolver.Resolver()
-    resolver.timeout = DNS_TIMEOUT
-    resolver.lifetime = DNS_TIMEOUT
-    domain = rule.lstrip("|").split("^")[0].replace("*", "")
+    domain = rule.lstrip("|").split("^")[0].replace("*", "").strip()
     if not domain:
         return None
     try:
-        resolver.resolve(domain)
+        resolver.resolve(domain, "A")
         return rule
     except:
         return None
@@ -102,7 +110,7 @@ def dns_validate(lines):
             result = future.result()
             if result:
                 valid.append(result)
-            if done % 500 == 0:
+            if done % 500 == 0 or done == total:
                 print(f"✅ 已验证 {done}/{total} 条，有效 {len(valid)} 条")
     print(f"✅ 分片验证完成，有效 {len(valid)} 条")
     return valid
@@ -135,12 +143,12 @@ def save_delete_counter(counter):
 def process_part(part):
     part_file = os.path.join(TMP_DIR, f"part_{int(part):02d}.txt")
     if not os.path.exists(part_file):
-        print(f"⚠ 分片 {part} 缺失，重新下载并切片")
+        print(f"⚠ 分片 {part} 缺失，自动下载并切片")
         download_all_sources()
         split_parts()
-    if not os.path.exists(part_file):
-        print("❌ 分片仍不存在，终止")
-        return
+        if not os.path.exists(part_file):
+            print("❌ 分片仍不存在，终止")
+            return
 
     lines = open(part_file, "r", encoding="utf-8").read().splitlines()
     print(f"⏱ 验证分片 {part}，共 {len(lines)} 条规则")
@@ -199,6 +207,7 @@ if __name__ == "__main__":
         download_all_sources()
         split_parts()
 
+    # 确保 MASTER_RULE 和 part_01 存在
     if not os.path.exists(MASTER_RULE) or not os.path.exists(os.path.join(TMP_DIR, "part_01.txt")):
         print("⚠ 缺少规则或分片，自动拉取")
         download_all_sources()

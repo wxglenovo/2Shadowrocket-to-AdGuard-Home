@@ -13,13 +13,12 @@ TMP_DIR = "tmp"
 DIST_DIR = "dist"
 MERGED_FILE = "merged_rules.txt"
 PARTS = 16
-DNS_WORKERS = 60  # ⚡ 高并发 DNS
+DNS_WORKERS = 60
 DELETE_COUNTER_FILE = os.path.join(DIST_DIR, "delete_counter.json")
 
 os.makedirs(TMP_DIR, exist_ok=True)
 os.makedirs(DIST_DIR, exist_ok=True)
 
-# ✅ 加载删除计数器（不会覆盖旧数据）
 def load_delete_counter():
     if os.path.exists(DELETE_COUNTER_FILE):
         try:
@@ -29,13 +28,11 @@ def load_delete_counter():
             return {}
     return {}
 
-# ✅ 保存删除计数器（增量保存，每次验证都会更新）
 def save_delete_counter(counter):
     with open(DELETE_COUNTER_FILE, "w", encoding="utf-8") as f:
         json.dump(counter, f, indent=2, ensure_ascii=False)
     print(f"✅ 已更新删除计数器 → {DELETE_COUNTER_FILE}")
 
-# ✅ 下载所有源并合并
 def download_all_sources():
     if not os.path.exists(URLS_TXT):
         print("❌ urls.txt 不存在！")
@@ -67,7 +64,6 @@ def download_all_sources():
 
     print(f"✅ 已写入合并规则: {MERGED_FILE} 共 {len(all_rules)} 条")
 
-# ✅ 分片
 def split_parts():
     if not os.path.exists(MERGED_FILE):
         print("❌ merged_rules.txt 不存在，无法分片")
@@ -86,7 +82,6 @@ def split_parts():
             f.write("\n".join(part_rules))
         print(f"📦 生成分片 {i+1:02d}，{len(part_rules)} 条")
 
-# ✅ DNS 验证函数
 def dns_check(domain):
     try:
         dns.resolver.resolve(domain, "A")
@@ -104,7 +99,6 @@ def extract_domain(rule):
         rule = rule.replace("*", "")
     return rule
 
-# ✅ 处理分片
 def process_part(part_index):
     part_file = os.path.join(TMP_DIR, f"part_{part_index:02d}.txt")
     if not os.path.exists(part_file):
@@ -120,7 +114,6 @@ def process_part(part_index):
     with open(part_file, "r", encoding="utf-8") as f:
         rules = [l.strip() for l in f if l.strip()]
 
-    # 并发验证
     results = {}
     with ThreadPoolExecutor(max_workers=DNS_WORKERS) as executor:
         future_to_rule = {executor.submit(dns_check, extract_domain(rule)): rule for rule in rules}
@@ -130,7 +123,6 @@ def process_part(part_index):
             results[rule] = ok
 
     for rule, ok in results.items():
-        domain = extract_domain(rule)
         if ok:
             delete_counter[rule] = 0
             valid_rules.append(rule)
@@ -139,12 +131,11 @@ def process_part(part_index):
             print(f"⚠ 连续删除计数 {delete_counter[rule]}/4: {rule}")
 
             if delete_counter[rule] >= 4:
-                print(f"🗑 已失败 4 次，永久删除: {rule}")
+                print(f"🗑 永久删除: {rule}")
                 removed_rules.append(rule)
             else:
                 valid_rules.append(rule)
 
-    # ✅ 保存计数
     save_delete_counter(delete_counter)
 
     out_file = os.path.join(DIST_DIR, f"validated_part_{part_index:02d}.txt")
@@ -152,23 +143,22 @@ def process_part(part_index):
         f.write("\n".join(valid_rules))
 
     print(f"✅ 分片验证完成，有效 {len(valid_rules)} 条")
-    print(f"🗑 永久删除 {len(removed_rules)} 条规则")
-    print(f"📁 输出文件: {out_file}")
-
+    print(f"🗑 永久删除 {len(removed_rules)} 条")
+    print(f"📁 输出: {out_file}")
     print(f"COMMIT_STATS: Valid={len(valid_rules)} Removed={len(removed_rules)}")
 
-# ✅ CLI 参数
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--part", type=int, help="验证指定分片 1~16")
-    parser.add_argument("--force-update", action="store_true", help="重新下载规则源并分片")
+    parser.add_argument("--part", type=int, help="验证指定分片")
+    parser.add_argument("--force-update", action="store_true", help="重新下载并分片")
     args = parser.parse_args()
 
-    if args.force-update or not os.path.exists(MERGED_FILE):
+    # ✅ 修复关键问题： force-update → force_update
+    if args.force_update or not os.path.exists(MERGED_FILE):
         download_all_sources()
         split_parts()
 
     if args.part:
         process_part(args.part)
     else:
-        print("✅ 全部准备就绪，可手动指定分片运行")
+        print("✅ 规则已经准备完毕，可手动执行 --part 1~16")

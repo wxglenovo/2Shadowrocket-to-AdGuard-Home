@@ -6,7 +6,7 @@ on:
     - cron: "0 6 * * *"
     - cron: "0 12 * * *"
     - cron: "0 18 * * *"
-    - cron: "*/22 * * * *"  # 每 22 分钟执行一次
+    - cron: "*/22 * * * *"  # 每 22 分钟运行一次
   workflow_dispatch:
     inputs:
       part:
@@ -48,7 +48,7 @@ jobs:
           mkdir -p tmp
           LAST_PART_FILE="tmp/last_part.txt"
           PART_INPUT="${{ github.event.inputs.part }}"
-
+          
           if [ -n "$PART_INPUT" ]; then
             PART="$PART_INPUT"
             echo "🛠 手动指定分片：$PART"
@@ -61,7 +61,7 @@ jobs:
             fi
             echo "⏱ 自动轮替分片：$PART"
           fi
-
+          
           echo "$PART" > "$LAST_PART_FILE"
           echo "part=$PART" >> $GITHUB_OUTPUT
 
@@ -73,6 +73,7 @@ jobs:
             python3 split_and_check_16.py --force
           else
             echo "⏩ 非下载时间，不强制更新"
+          fi
 
       - name: Ensure rules and first part exist
         run: |
@@ -83,6 +84,7 @@ jobs:
             python3 split_and_check_16.py --force
           else
             echo "✅ 规则文件和分片存在"
+          fi
 
       - name: Ensure delete_counter.json exists
         run: |
@@ -92,6 +94,7 @@ jobs:
             echo "✅ 创建 dist/delete_counter.json"
           else
             echo "✅ delete_counter.json 已存在"
+          fi
 
       - name: Run DNS validation for current part
         env:
@@ -108,6 +111,7 @@ jobs:
           STATS=$(grep "COMMIT_STATS" logs/split_check_part_${PART}.log | tail -n1 | sed 's/COMMIT_STATS: //')
 
           git add tmp/last_part.txt dist/validated_part_*.txt dist/delete_counter.json merged_rules.txt
+
           git commit -m "🤖 part $PART → $STATS" || echo "No changes to commit"
 
           git pull --rebase origin main || echo "⚠ Pull failed"

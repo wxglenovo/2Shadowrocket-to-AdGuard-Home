@@ -18,12 +18,13 @@ permissions:
   contents: write
 
 jobs:
-  concurrent-dns-check:
+  dns_check:
     runs-on: ubuntu-latest
     env:
       PYTHONUNBUFFERED: 1
       DNS_WORKERS: 50
       DNS_BATCH_SIZE: 500
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -69,30 +70,30 @@ jobs:
       - name: Ensure rules exist
         run: |
           MERGED_FILE="merged_rules.txt"
-          FIRST_PART="tmp/part_01.txt"
-          if [ ! -f "$MERGED_FILE" ] || [ ! -f "$FIRST_PART" ]; then
-            echo "⚠ 缺少规则文件或分片 → 自动生成"
+          FIRST_PART="dist/validated_part_01.txt"
+          mkdir -p dist
+          if [ ! -f "$MERGED_FILE" ] or [ ! -f "$FIRST_PART" ]; then
+            echo "⚠ 缺少规则文件或分片 → 下载并生成"
             python3 split_and_check_16.py
           else
             echo "✅ 规则文件和分片存在"
+          fi
 
       - name: Ensure delete_counter.json exists
         run: |
-          mkdir -p dist
           if [ ! -f dist/delete_counter.json ]; then
             echo "{}" > dist/delete_counter.json
             echo "✅ 创建 dist/delete_counter.json"
           else
             echo "✅ delete_counter.json 已存在"
+          fi
 
-      - name: Run concurrent DNS validation
+      - name: Run DNS validation for current part
         env:
           PART: ${{ steps.detect.outputs.part }}
-          DNS_WORKERS: ${{ env.DNS_WORKERS }}
-          DNS_BATCH_SIZE: ${{ env.DNS_BATCH_SIZE }}
         run: |
           mkdir -p logs
-          echo "🚀 启动 $DNS_WORKERS 并发验证，每批 $DNS_BATCH_SIZE 条"
+          echo "⏱ 开始验证分片 $PART"
           python3 split_and_check_16.py --part "$PART" --concurrent | tee logs/split_check_part_${PART}.log
 
       - name: Commit & Push Validated Rules
@@ -100,9 +101,7 @@ jobs:
           PART: ${{ steps.detect.outputs.part }}
         run: |
           STATS=$(grep "COMMIT_STATS" logs/split_check_part_${PART}.log | tail -n1 | sed 's/COMMIT_STATS: //')
-          
           git add tmp/last_part.txt dist/validated_part_*.txt dist/delete_counter.json merged_rules.txt
           git commit -m "🤖 part $PART → $STATS" || echo "No changes to commit"
-          
           git pull --rebase origin main || echo "⚠ Pull failed"
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main || echo "⚠ Push failed"

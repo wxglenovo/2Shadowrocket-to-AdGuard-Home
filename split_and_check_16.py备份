@@ -19,6 +19,8 @@ PARTS = 16
 DNS_WORKERS = 50
 DNS_TIMEOUT = 2
 DELETE_COUNTER_FILE = os.path.join(DIST_DIR, "delete_counter.json")
+
+# ✅ 新逻辑：阈值 = 4 （计数 >=4 删除）
 DELETE_THRESHOLD = 4
 
 # 创建目录
@@ -128,7 +130,7 @@ def save_delete_counter(counter):
         json.dump(counter, f, indent=2, ensure_ascii=False)
 
 # ===============================
-# 分片处理（关键修复点 ✅）
+# 分片处理（最终逻辑已改）
 # ===============================
 def process_part(part):
     part_file = os.path.join(TMP_DIR, f"part_{int(part):02d}.txt")
@@ -151,33 +153,45 @@ def process_part(part):
             old_rules = set([l.strip() for l in f if l.strip()])
 
     delete_counter = load_delete_counter()
-
-    # ✅ 核心修改：不覆盖整个 delete_counter，而是继承旧内容
     new_delete_counter = delete_counter.copy()
 
     final_rules = set()
     removed_count = 0
     added_count = 0
 
+    # ✅ old_rules ∪ 当前分片的所有规则
     all_rules = old_rules | set(lines)
 
     for rule in all_rules:
+
+        # ✅ 验证成功 → 保留 & 重置计数 = 0
         if rule in valid:
             final_rules.add(rule)
-            new_delete_counter[rule] = 0  # ✅ 当前片验证成功 → 清零
+            ### ✅ 改动：成功一次 → 计数重置为 0
+            new_delete_counter[rule] = 0
+
+            # ✅ 新增的有效规则
             if rule not in old_rules:
                 added_count += 1
-        else:
-            old_count = delete_counter.get(rule, 0)
-            new_count = old_count + 1
-            new_delete_counter[rule] = new_count
-            print(f"⚠ 连续验证失败计数 {new_count}/{DELETE_THRESHOLD}: {rule}")
 
-            # ✅ 达阈值才真删除，否则继续保留
-            if new_count < DELETE_THRESHOLD:
-                final_rules.add(rule)
+        else:
+            # 获取旧计数，没有则认为第一次失败
+            old_count = delete_counter.get(rule, None)
+
+            ### ✅ 改动：如果不存在旧计数，新增时计数 = 4
+            if old_count is None:
+                new_count = 4
             else:
+                new_count = old_count + 1        # ✅ 失败一次 +1
+
+            new_delete_counter[rule] = new_count
+            print(f"⚠ 连续失败计数 = {new_count} ：{rule}")
+
+            # ✅ 核心逻辑：计数 >= 4 → 删除，不保留
+            if new_count >= DELETE_THRESHOLD:
                 removed_count += 1
+            else:
+                final_rules.add(rule)  # ✅ 未达阈值继续保留
 
     save_delete_counter(new_delete_counter)
 

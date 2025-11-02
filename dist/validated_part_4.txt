@@ -189,6 +189,9 @@
 ||choymp.pooldawg.com^
 ||choyonika.com^
 ||chozva.com^
+||chpadblock.com^
+||chpadblock.com^$document
+||chpadblock.com^$popup
 ||chpi.info^
 ||chpok.site^
 ||chpspb.bubbleroom.fi^
@@ -459,6 +462,7 @@
 ||chu-nicefrweb.weebly.com^
 ||chuabenh24h.blogspot.com^
 ||chuang-yi.com.cn^
+||chuanganqinet.com^
 ||chuangjulm.cn^
 ||chuangyekm.com^
 ||chuangyi-die.com^
@@ -1827,6 +1831,7 @@
 ||cjiub.styleedit.com^
 ||cjk-epc.org^
 ||cjknmicnxw.info^
+||cjlconsults.com^
 ||cjlekm.correiodopovo.com.br^
 ||cjlog.com^
 ||cjlrazh4ka.neliver.com^
@@ -1845,6 +1850,7 @@
 ||cjohftnninpfu.online^
 ||cjoint.com^
 ||cjol.d1.sc.omtrdc.net^
+||cjomena.sportsontheweb.net^
 ||cjonleixfp.neliver.com^
 ||cjoverkill.com^
 ||cjpalace.co.kr^
@@ -1862,8 +1868,12 @@
 ||cjt1sdniw8.neliver.com^
 ||cjt4vfd6uk.neliver.com^
 ||cjtomemtcgdwq.click^
+||cjtows.com^
 ||cjtxlfpkisctv.site^
+||cjudex.fittinglab.co.kr^
 ||cjuforex.co.cc^
+||cjulor.marimekko.jp^
+||cjutqvopetliy.space^
 ||cjuzydnvklnq.today^
 ||cjvdfw.com^
 ||cjvqwr.glamira.ca^
@@ -1872,7 +1882,6 @@
 ||cjxvihiv.shop^
 ||cjyobsh05x.neliver.com^
 ||cjywchymhq.neliver.com^
-||ck-cdn.com^
 ||ck-cdn.com^$third-party
 ||ck-finanzberatung.de^
 ||ck.ads.heytapmobi.com^
@@ -1881,6 +1890,7 @@
 ||ck.bastardzingaro.com^
 ||ck.brandreachsys.com^
 ||ck.co.th^
+||ck.connatix.com^
 ||ck.deine-massanfertigung.de^
 ||ck.gl2021.info^
 ||ck.gl2022.info^
@@ -1892,12 +1902,13 @@
 ||ck.ncclick.co.kr^
 ||ck.softforum.co.kr^
 ||ck.solocpm.com^
+||ck.storematch.jp^
 ||ck.thrillbucks.com^
 ||ck.zzipps.com^
 ||ck0.hol.es^
 ||ck056004-wordpress-5me27.tw1.ru^
 ||ck1.bnwqdudbwqxxbiqwnjdwnqw.cfd^
-||ck4g3p2x92.com^
+||ck286359-wordpress-1467a.tw1.ru^
 ||ck54.com^
 ||ck662998-wordpress-iugdc.tw1.ru^
 ||ck7jchmdqd.neliver.com^
@@ -1932,7 +1943,6 @@
 ||ckfqfo6mvu.neliver.com^
 ||ckgazibaba.org.mk^
 ||ckgmoofq3l.neliver.com^
-||ckgroundan.org^
 ||ckhfv.bangnbody.com^
 ||ckhillulshshg.site^
 ||ckhtqypqrwuqv.online^
@@ -1952,9 +1962,7 @@
 ||ckm.it^
 ||ckmap.mediav.com^
 ||ckministry.com^
-||ckmmrkvshzbqx.world^
 ||ckmvinadelmar.cl^
-||cknd8dw8eg-default-cn.rum.aliyuncs.com^
 ||ckniqtz1w9.neliver.com^
 ||cko.fintechsurge.com^
 ||cko.gisec.ae^
@@ -1986,6 +1994,7 @@
 ||ckw.nut.cc^
 ||ckwo.gekub.yi.org^
 ||ckwsctk47k.neliver.com^
+||ckxwejun.shop^
 ||ckydlxzejeepc.rocks^
 ||ckygge.mohd.it^
 ||ckyhec.maxisport.com^
@@ -2001,6 +2010,7 @@
 ||cl-data-f.ads.heytapmobi.com^
 ||cl-data-id.ads.heytapmobi.com^
 ||cl-data-in.ads.heytapmobi.com^
+||cl-data-sg.ads.heytapmobi.com^
 ||cl-data.ads.heytapmobi.com^
 ||cl-dm.com^
 ||cl-eu2.k5a.io^
@@ -2123,6 +2133,7 @@
 ||clair.iad-03.braze.com^
 ||clairefrederick.com^
 ||clairelaurens.com^
+||claireritter.cmail-oln040092069015.outbound.protection.sketchwefair-watduoliprudential.com.watchdogdns.duckdns.org^
 ||clairevaessen.nl^
 ||clairevaultix.com^
 ||clairevignola.com^
@@ -2223,6 +2234,7 @@
 ||clarkfamilybuilders.com^
 ||clarkgault.com^
 ||clarkigentillevieux.firebaseapp.com^
+||clarkkent.sslblindado.com^
 ||clarkreliance.net^
 ||clarksshoes-outlet.com^
 ||clarksusa.btttag.com^
@@ -2533,6 +2545,7 @@
 ||cleanairexperts.com^
 ||cleanairmax.com^
 ||cleanairwoodworks.com^
+||cleanallspyware.com^
 ||cleanantivirus.com^
 ||cleanbomber.co.cc^
 ||cleanbrowser.com^
@@ -2567,6 +2580,7 @@
 ||cleaningmystical.com^
 ||cleaningplus.pk^
 ||cleaningprof.ru^
+||cleaningservices-pretoria.com^
 ||cleaningshop.com.au^
 ||cleanique.co.uk^
 ||cleanlevel.shop^
@@ -2732,6 +2746,7 @@
 ||cleelumnski.info^
 ||cleen.ru^
 ||cleeves.ie^
+||clefhotel.com^
 ||cleftvagueflatten.com^
 ||cleiatiles.com^
 ||clemediran.pro^
@@ -2741,8 +2756,11 @@
 ||clementeretifica.com.br^
 ||clementerevelchion.com^
 ||clemson.qualtrics.com^
+||clenaghans.com^
 ||clenchedfavouritemailman.com^
+||clenchedquarterbackluxuriant.com^
 ||clenchedyouthmatching.com^
+||clenny.co.cc^
 ||clente.com^
 ||clentrk.com^$popup
 ||cleomespros.shop^
@@ -3907,6 +3925,7 @@
 ||click.email.ranchomissionviejo.com^
 ||click.email.rccl.com^
 ||click.email.reason.org^
+||click.email.rejectshop.com.au^
 ||click.email.renfrobrands.com^
 ||click.email.researcher-app.com^
 ||click.email.reserve1870.com^
@@ -5176,6 +5195,7 @@
 ||click.sej.co.jp^
 ||click.selectshops-email.ca^
 ||click.seller.ebay.com^
+||click.senate.go.th^
 ||click.send.demio.com^
 ||click.send.grammarly.com^
 ||click.send.krewards.com^
@@ -7047,6 +7067,7 @@
 ||cloud.consumermarketing.time.com^
 ||cloud.contact-bromptonbikehire.com^
 ||cloud.contactmyeasysante.com^
+||cloud.contacto.volkswagen.mx^
 ||cloud.contactoaxahk.com^
 ||cloud.contactvauxhall.co.uk^
 ||cloud.contenu-information.com^
@@ -8128,6 +8149,7 @@
 ||clrxbaiqzz.neliver.com^
 ||cls.vrvm.com^
 ||clsc.info^
+||clshkv.labirint.ru^
 ||clshoesshopping.com^
 ||clslogistics.com^
 ||clsproxy.com^
@@ -8188,6 +8210,7 @@
 ||clubdicecasino.com^
 ||clubdo.free.fr^
 ||clubeamigosdopedrosegundo.com.br^
+||clubecnc.com^
 ||clubedeleiloes.xhamsterlive.info^
 ||clubedgecasino.com^
 ||clubepescar.com^
@@ -9438,7 +9461,6 @@
 ||co-sentry.wps.cn^
 ||co-st-sl.vivoglobal.com^
 ||co-star.net^
-||co-stsdk.vivoglobal.com^
 ||co-suka.co.cc^
 ||co-timesync.vivoglobal.com^
 ||co-vcode-api.vivoglobal.com^
@@ -9714,6 +9736,7 @@
 ||cockfbiasc.pro^
 ||cockleswhose.help^
 ||cockpit.symplr.de^
+||cockpitadministration.com^
 ||cockpiteconomicspayroll.com^
 ||cockroach.head4work.com.au^
 ||cockshuttvillage.com^
@@ -9885,6 +9908,7 @@
 ||codeineurope.eu^
 ||codejqueryid.com^
 ||codejumps.com^
+||codelabbeijing.cn^
 ||codelaboratories.com^
 ||codelabstt-demo.com^
 ||codeldoors.com^
@@ -10523,6 +10547,7 @@
 ||colegiohosanna.com^
 ||colegiolacaridad.com^
 ||colegiolasamericas.org.mx^
+||colegiomallinckrodt.edu.ar^
 ||colegiomauriciorugendas.cl^
 ||colegiomayorciudaddebuga.edu.co^
 ||colegionobel.com^
@@ -12844,6 +12869,7 @@
 ||comsertim.ro^
 ||comservice.org^
 ||comsip.org.mw^
+||comsolar.cn^
 ||comsoon.co.cc^
 ||comspace01.webtrekk.net^
 ||comsprague.com^
@@ -13504,6 +13530,7 @@
 ||conheca.vindi.com.br^
 ||conhive.com^
 ||conicsfizzles.com^
+||conidiafoggara.com^
 ||coniferalfalfa.rest^
 ||coninco3c.vn^
 ||conjeller-chikemon.com^
@@ -16137,6 +16164,7 @@
 ||cooltown.dk^
 ||cooltoy.ca^
 ||cooltunnel.com^
+||coolwallpapers.org^
 ||coolwarez.com^
 ||coolwebsearch.com^
 ||coolwebsearch.info^
@@ -16314,6 +16342,7 @@
 ||copywatches.co^
 ||copywritertechsupport.com^
 ||coqce.lyfe.com^
+||coqianlong.watchdogdns.duckdns.org^
 ||coqivmhwkcywq.online^
 ||coqqxn.xyz^
 ||coquettes.free.fr^
@@ -21662,6 +21691,7 @@
 ||csiez.trygreensalt.com^
 ||csikszentmihaly.ro^
 ||csingednectedtwtelecom.azure.net.daraz.com^
+||csinszka.enzokft.hu^
 ||csinterinc.com^
 ||csitaxpanama.com^
 ||csj-ath.be^
@@ -21674,6 +21704,7 @@
 ||csjsrovnju.neliver.com^
 ||csjuq.com^
 ||csjyg.com^
+||csk.ru^
 ||csk.vietnamddns.com^
 ||cskcnipgkq.club^
 ||cskirsd.cc^
@@ -22455,6 +22486,7 @@
 ||ctliiminc.jdevcloud.com^
 ||ctlpyp.lactoclear.co.kr^
 ||ctlxht.akeso.co.kr^
+||ctm-media.com^
 ||ctmail.dns-dns.com^
 ||ctmconsulting.pk^
 ||ctmessage.myphambachlien.com.vn^
@@ -23014,6 +23046,7 @@
 ||cuoprrappa.pro^
 ||cuordicrai.it^
 ||cuoss.com^
+||cup-cream.duckdns.org^
 ||cup-n-coin.com^
 ||cup-t.com^
 ||cup.enkido.org^
@@ -24454,6 +24487,7 @@
 ||cycleworksgraphics.com^
 ||cycling.sexfortokens.com^
 ||cycling.unbounce.com^
+||cyclinghere.com^
 ||cyclingpromotion.com.au^
 ||cyclingrace.ru^
 ||cyclingsport.info^
@@ -24933,6 +24967,7 @@
 ||d-markets.net^$third-party
 ||d-mcafee.com^
 ||d-men.com^
+||d-men.net^
 ||d-ok.com^
 ||d-outlook3930034.firebaseapp.com^
 ||d-outlook3930034.web.app^
@@ -25439,6 +25474,7 @@
 ||d1180od816jent.cloudfront.net^
 ||d1198dzygjftam.cloudfront.net^
 ||d119d3f2510301.beer^
+||d11a.info^
 ||d11bdev7tcn7wh.cloudfront.net^
 ||d11enq2rymy0yl.cloudfront.net^
 ||d11hjbdxxtogg5.cloudfront.net^
@@ -25471,6 +25507,7 @@
 ||d138am4hd4ke4y.cloudfront.net^
 ||d13dhn7ldhrcf6.cloudfront.net^
 ||d13gni3sfor862.cloudfront.net^
+||d13i9p5451i433.cloudfront.net^
 ||d13j11nqjt0s84.cloudfront.net^
 ||d13jhr4vol1304.cloudfront.net^
 ||d13k7prax1yi04.cloudfront.net^
@@ -26436,6 +26473,7 @@
 ||d3.btttag.com^
 ||d3.downshouji.cn^
 ||d3.sc.omtrdc.net^
+||d3.sevas-s.com^
 ||d3.sina.com.cn^
 ||d3.sina.com.cn^$object,script
 ||d3.yengo.com^
@@ -26550,6 +26588,7 @@
 ||d37byya7cvg7qr.cloudfront.net^
 ||d37fcfd9.ngrok.io^
 ||d37gvrvc0wt4s1.cloudfront.net^
+||d37j8pfxu2iogi.cloudfront.net^
 ||d37pempw0ijqri.cloudfront.net^
 ||d37s9vd5t6mov7.cloudfront.net^
 ||d37sevptuztre3.cloudfront.net^
@@ -27650,6 +27689,7 @@
 ||dagrafic.com^
 ||dagro.info^
 ||dagroupindia.com^
+||dagumax.localbox.org^
 ||daguniversity.com^
 ||daguogroup.com^
 ||dagursal.com^
@@ -27801,6 +27841,7 @@
 ||dailylawtimes.com^
 ||dailylifeenergy.sc-specialhost.com^
 ||dailylifehub.com^
+||dailylifesciences.com^
 ||dailylinked.cambaddies.com^
 ||dailylivenews0811.ru^
 ||dailylivenews2611.ru^
@@ -28000,6 +28041,7 @@
 ||dalerogers.me^
 ||dalestretching.com^
 ||daleth.co.za^
+||daleysbookshop.co.uk^
 ||dalfmidewin.shop^
 ||dalga-water.firebaseapp.com^
 ||dalga-water.web.app^
@@ -28292,6 +28334,7 @@
 ||daniels-mode.de^
 ||daniels.co.za^
 ||danielscow.com^
+||danielsharris.com^
 ||danielsmoving.actonservice.com^
 ||danielsongroup.ca^
 ||danieltan.evplayer.com^
@@ -28557,7 +28600,9 @@
 ||darkc0met22.loseyourip.com^
 ||darkcapybara.pro^
 ||darkcarder.com^
+||darkcode.duckdns.org^
 ||darkcodex.com^
+||darkcomentsaved.duckdns.org^
 ||darkcomet-rat.com^
 ||darkdeceptions.com^
 ||darkdesign.co.cc^
@@ -30818,6 +30863,7 @@
 ||data-e9489e7e40.citkomm.de^
 ||data-e957dcbbbe.tele5.de^
 ||data-e9983e832a.boyens-medien.de^
+||data-e9b83554f9.moserholding.com^
 ||data-e9eee8419a.si-shk.de^
 ||data-ea06a9645c.bauhof-online.de^
 ||data-ea24093e1a.die-wirtschaft.at^
@@ -33216,6 +33262,7 @@
 ||dateypro.com^
 ||dateyraicroff.godaddysites.com^
 ||datfu.com^
+||datggvoyages.comduoliprudential.com.watchdogdns.duckdns.org^
 ||datibano.com^
 ||dating-2000.com^
 ||dating-affair.com^
@@ -33431,6 +33478,7 @@
 ||david-bowie.co.cc^
 ||david-faber.de^
 ||david-fairchild.com^
+||david.com.np^
 ||david.miamibeachhomefinder.com^
 ||david925.shop^
 ||davidallancates.com^
@@ -35650,6 +35698,7 @@
 ||definedbootnervous.com^
 ||definedcreative.com^
 ||defineenterprise.com^
+||definehost.com^
 ||definite-limits.com^
 ||definitedishing.food^
 ||definitelynotavirus.download^
@@ -35932,6 +35981,7 @@
 ||delete-me.branchcustom.xyz^
 ||delete-waxing.com^
 ||delete.atea.fi^
+||delete.certified-toolbar.com^
 ||delete.ml^
 ||delete05032026.shop^
 ||deleted-hddrive-safety-error7.flu.cc^
@@ -36354,6 +36404,7 @@
 ||delta.com.gt^
 ||delta.demdex.net^
 ||delta.dxhost.net^
+||delta.edu.np^
 ||delta.mediafort.ru^
 ||delta.money^
 ||delta.rbauto.ru^
@@ -36633,6 +36684,7 @@
 ||demo.testlabz.com^
 ||demo.themegate.com^
 ||demo.trgovski.com^
+||demo.vgrish.ru^
 ||demo.vinawebsite.vn^
 ||demo.wabulk.com^
 ||demo.webaccess.mx^
@@ -36761,6 +36813,7 @@
 ||denebola.info^
 ||denegmagnit.ru^
 ||denemetakvimi.net^
+||deneng.com.cn^
 ||denengsepi.co.cc^
 ||denercarno.pro^
 ||denetec.mx^
@@ -36912,6 +36965,7 @@
 ||dentistisrael.com^
 ||dentistmerchantservices.com^
 ||dentistsinyourarea.com^
+||dentistsouthyarra.com.au^
 ||dentmia.com^
 ||dentolegalconsultant.com^
 ||dentolegalconsultant.org^
@@ -37441,6 +37495,7 @@
 ||designdungeon.in^
 ||designed.flu.cc^
 ||designedthisfor.us^
+||designedtoappeal.com^
 ||designelapas.lapassemarie.com^
 ||designer-living.evyy.net^
 ||designer.dynamic-dns.net^
@@ -38168,6 +38223,7 @@
 ||development.leadershipwa.org.au^
 ||development.manz.pt^
 ||development.me.thequad.com^
+||development.oregon4biz.com^
 ||development.susteen.nl^
 ||development2.com^
 ||developmentgoat.com^
@@ -38608,6 +38664,7 @@
 ||dexonixtraderreview.com^
 ||dexoro-vanta-ai.com^
 ||dexphvl55p.neliver.com^
+||dexplatform.com^
 ||dexpredict.com^
 ||dexpredict.com^$popup
 ||dexproxy.co.cc^
@@ -39245,6 +39302,7 @@
 ||dhl-co.com^
 ||dhl-dhe.cc^
 ||dhl-homeredirections.moodyslab.com^
+||dhl-nebraska-express.4ove.com^
 ||dhl-negombo.com^
 ||dhl-news.com^
 ||dhl.135320.com^
@@ -39555,6 +39613,7 @@
 ||diamondgroups.com.br^
 ||diamondking.co^
 ||diamondmc.com^
+||diamondmedia.click^
 ||diamondnightingale.pro^
 ||diamondnorthcu.com.102.112.2o7.net^
 ||diamondores.com^
@@ -41989,7 +42048,6 @@
 ||dispiunoxi.pro^
 ||dispjutr.nl^
 ||display-ad-rgt0me85.kgslb.com^
-||display.360totalsecurity.com^
 ||display.ad.daum.net^
 ||display.additionalmedia.com^
 ||display.adhudong.com^
@@ -42147,6 +42205,7 @@
 ||distiltag.com^$third-party
 ||distinctabsencehitherto.com^
 ||distinctbookkeeping.com^
+||distinctdearly.com^
 ||distinctfreight.co.zw^
 ||distinctionsrace.mojo-markets.com^
 ||distinctiveblog.ir^
@@ -42280,6 +42339,7 @@
 ||divadlobezhranic.cz^
 ||divalane.com^
 ||divalriapp.pro^
+||divamakeover.in^
 ||divan.adtelligent.com^
 ||divano.com.do^
 ||divapton.biz^
@@ -42875,6 +42935,7 @@
 ||dl.am^
 ||dl.amazonmusic.com^
 ||dl.apkcap.com^
+||dl.application98.ir^
 ||dl.appnext.com^
 ||dl.appzona.org^
 ||dl.autopay.eu^
@@ -43971,6 +44032,7 @@
 ||doblazikena.com^
 ||doblevia.org^
 ||dobleviainfo.com^
+||doblonspiltock.com^
 ||dobozuzlet.hu^
 ||dobra-bramka-sms.pl^
 ||dobramu.za.pl^
@@ -45176,6 +45238,7 @@
 ||donorsstair.cyou^
 ||donorstuffed.com^
 ||donorstuffed.com^$popup
+||donotbealone.com^
 ||donotenter.co.cc^
 ||donothingmoney.com^
 ||donotreply-support.com^
@@ -45975,6 +46038,7 @@
 ||down140.mclick.mobi^
 ||down141.mclick.mobi^
 ||down1oad.ru^
+||down1oads.com^
 ||down2.3ddown.com^
 ||down2.abckantu.com^
 ||down2.feiyang163.com^
@@ -46016,6 +46080,7 @@
 ||downfile.pcclear.co.kr^
 ||downfocus.com^
 ||downfribad.pro^
+||downhomeexpo.com^
 ||downhq.com^
 ||downiestatistics.com^
 ||downily.com^
@@ -46386,6 +46451,7 @@
 ||download.poolking.in^
 ||download.portableapps.com^
 ||download.power-url.de^
+||download.pplive.com^
 ||download.ppstream.com^
 ||download.presidentialbuzz.com^
 ||download.productivityboss.com^
@@ -46634,6 +46700,7 @@
 ||downloadplex.com^
 ||downloadpokemonxandy.com^
 ||downloadprivate.com^
+||downloadprovider.me^
 ||downloadrecipesearch.com^
 ||downloadrevenues.com^
 ||downloadricochetpc.shockwave.com^
@@ -46676,6 +46743,7 @@
 ||downloads1.vertivco.com^
 ||downloads25119.downloadsdir.com^
 ||downloads98.tbuy.biz^
+||downloadsafe.org^
 ||downloadsafe.us^
 ||downloadsales.com^
 ||downloadsdir.com^
@@ -46705,6 +46773,7 @@
 ||downloadwarez.org^
 ||downloadwarezhere.blogspot.com^
 ||downloadweb.org^
+||downloadwho.com^
 ||downloadwithoutsin.blogspot.com^
 ||downloadwizard.com^
 ||downloadxml.changhong.upgrade2.huan.tv^
@@ -46873,6 +46942,7 @@
 ||dpd-com.vip^
 ||dpd-delivery.dtcqsc.com^
 ||dpd-delivery.wfxfys.com^
+||dpd-error.zztlqx.com^
 ||dpd-info.bestyg.com^
 ||dpd-info.yphfg.com^
 ||dpd-komorka.zrdyy.com^
@@ -47388,6 +47458,7 @@
 ||dramatickoala.pro^
 ||dramaticmushroom.pro^
 ||dramericancar.com.br^
+||dramione.org^
 ||dramirmolaei.com^
 ||dramix-vero-app.com^
 ||dramix-vero-app.net^
@@ -48301,6 +48372,7 @@
 ||drshohel.net^
 ||drshuxu.com^
 ||drsidneypearce.med.br^
+||drsketchy.ph^
 ||drskinaid.com^
 ||drskobic.com^
 ||drslabbertandwilliams.co.za^
@@ -48362,6 +48434,7 @@
 ||drugtests.net^
 ||druhklsjgsri.urest.org^
 ||druhu.amerisleep.com^
+||druic.mytxt.cc^
 ||druid-router.data.districtm.io^
 ||druis.mytxt.cc^
 ||drukarnia.lodz.pl^

@@ -396,7 +396,6 @@
 ||webvisor.ru^
 ||webvitals.luxnet.ua^
 ||webwap.org^
-||webwebfenxi.189.cn^
 ||webwidget.shanon-services.com^
 ||webxmr.com^
 ||weby.aaas.org^
@@ -872,7 +871,6 @@
 ||wkdjprbtixvnx.website^
 ||wkerjleoderlg.online^
 ||wkfjbrmbkdiqa.online^
-||wkgqf.cn^
 ||wkjvzljmxdzni.top^
 ||wklwyt.springer.com^
 ||wknhsa6m.cn^
@@ -1413,6 +1411,11 @@
 ||www.jmine.cn^
 ||www.mashangyoushu.cn^
 ||www.q4ee.top^
+||www.skateshred.com^
+||www.skatetoschool.com^
+||www.skating-gima.it^
+||www.skatinginthesquare.co.uk^
+||www.skattabrain.com^
 ||www.skcnc.org^
 ||www.skcnimfibivt35otaq80.mbservicesyorkshire.co.uk^
 ||www.skdinternationalschool.org^
@@ -1745,6 +1748,7 @@
 ||www.smanca.sch.id^
 ||www.smanemagresik.sch.id^
 ||www.smapple-sapporo.com^
+||www.smaragd.hu^
 ||www.smariduta.sch.id^
 ||www.smart-7-innovative.com^
 ||www.smart-business-365.com^
@@ -2062,7 +2066,6 @@
 ||www.smmila.pl^
 ||www.smmlaboratory.com^
 ||www.smmok-in.ru^
-||www.smmok-yt.ru^
 ||www.smmok14.ru^
 ||www.smmpoint.com^
 ||www.smmprice.ru^
@@ -2455,6 +2458,7 @@
 ||www.soft-profess.narod.ru^
 ||www.soft-quick.info^
 ||www.soft-style.com^
+||www.soft.ewan.pl^
 ||www.soft.lego-web.ru^
 ||www.soft.zhidou168.com^
 ||www.soft4click.com^
@@ -2711,6 +2715,7 @@
 ||www.solucionesenit.com^
 ||www.solucionesinformaticas.com.mx^
 ||www.solucionestics.com^
+||www.solucionesya.duckdns.org^
 ||www.solucoesempresarial.com^
 ||www.solucoesinfotec.com.br^
 ||www.soluction.com^
@@ -2778,6 +2783,7 @@
 ||www.somesneaker.com^
 ||www.somethat.com^
 ||www.somethingapparel.com^
+||www.somethinglurking.duckdns.org^
 ||www.somethingslightlydifferent.co.uk^
 ||www.somethingsweirdo.blogspot.com^
 ||www.sometra.com^
@@ -2877,6 +2883,7 @@
 ||www.soporte.pro^
 ||www.soportegsdockesoporte.net.daraz.com^
 ||www.soportek.cl^
+||www.soportes.duckdns.org^
 ||www.soportetecnico.duckdns.org^
 ||www.sopr.by^
 ||www.soproges.com^
@@ -2884,7 +2891,6 @@
 ||www.sorana-id.blogspot.com^
 ||www.sorban-nusantara.com^
 ||www.sorbancsaba.hu^
-||www.sorbaypoc.com^
 ||www.sorbonne.eu.com^
 ||www.sorcererguild.com^
 ||www.sorclan.za.pl^
@@ -2911,7 +2917,6 @@
 ||www.sosacres.com^
 ||www.sosbanheiras.com.br^
 ||www.soscasareparacoes.pt^
-||www.sosclient.duckdns.org^
 ||www.sosdoudou.com^
 ||www.sosenfantsburkinafaso.fr^
 ||www.sosenki.com.ua^
@@ -3339,7 +3344,6 @@
 ||www.spelmi1112200012owlb00.yolasite.com^
 ||www.spembedded.com^
 ||www.spendhope.net^
-||www.spendibenestore.it^
 ||www.speromarketinggroup.com^
 ||www.sperse.com^
 ||www.spettacolochespettacolo.com^
@@ -3432,10 +3436,11 @@
 ||www.spm.it^
 ||www.spmk.ru^
 ||www.spn-twr-14.com^
-||www.spoilmyhouse.com^
+||www.spn1.ru^
 ||www.spokanemusicschool.com^
 ||www.spokenwords.com.au^
 ||www.spokeo.pl^
+||www.spokeshow.net^
 ||www.spoleczniak.pl^
 ||www.spoleto.com.br^
 ||www.spolszczenia-gier.com.pl^
@@ -3464,6 +3469,7 @@
 ||www.sport-equipments.shop^
 ||www.sport-plus.pl^
 ||www.sport.plumts.com^
+||www.sport11socc.top^
 ||www.sport4miass.ru^
 ||www.sportalent.com^
 ||www.sportaltourism.com^
@@ -3504,6 +3510,7 @@
 ||www.sportschuetzen-havixbeck.de^
 ||www.sportsdoc.co.za^
 ||www.sportsevents365.com^
+||www.sportsexperience.co.nz^
 ||www.sportsillustated.com^
 ||www.sportsinsiderpicks.com^
 ||www.sportsinteraction.com^
@@ -3526,12 +3533,14 @@
 ||www.spot-gadget.blogspot.com^
 ||www.spot-loan.net^
 ||www.spot10.net^
+||www.spotcity.net^
 ||www.spotdewasa.blogspot.com^
 ||www.spotguide.net^
 ||www.spothigh.net^
 ||www.spotify-br.com^
 ||www.spotify-competition.com^
 ||www.spotify-download.com^
+||www.spotify-forum.com^
 ||www.spotify-music.ru^
 ||www.spotify-podcast.com^
 ||www.spotify-webplayer.com^
@@ -3567,6 +3576,7 @@
 ||www.spotifystats.com^
 ||www.spotifyt.com^
 ||www.spotifywebplayer.net^
+||www.spotifyxm.com^
 ||www.spotlessweb.com^
 ||www.spotlighteu.com^
 ||www.spotngentot.blogspot.com^
@@ -3683,6 +3693,7 @@
 ||www.spytector.com^
 ||www.spytrackers.com^
 ||www.spyviper.com^
+||www.spyware-browser.com^
 ||www.spyware-removal-guideline.com^
 ||www.spyware-review.net^
 ||www.spyware-techie.com^
@@ -3788,9 +3799,7 @@
 ||www.srhralliance.or.ke^
 ||www.sribalajitransports.biz^
 ||www.sricominfotech.com^
-||www.srienterprises.net^
 ||www.sriitahfizdarululum.edu.my^
-||www.srijancounselling.com^
 ||www.srijanschool.com^
 ||www.srikartikeyaganasabha.org^
 ||www.sripadma.in^
@@ -3799,6 +3808,7 @@
 ||www.srisaradabrahmavidyakendra.com^
 ||www.srisatyasaiedubpl.org^
 ||www.srisawarakrabi.com^
+||www.srithaimarketing.com^
 ||www.srivara.com^
 ||www.srix.ru^
 ||www.srkgs.pl^
@@ -3827,7 +3837,6 @@
 ||www.srvk.org.rs^
 ||www.srvpub.com^
 ||www.srvtrkxx2.com^
-||www.srwtrd.blogspot.am^
 ||www.srxykt.com^
 ||www.ss-01.com^
 ||www.ss-dating-23.com^
@@ -3921,7 +3930,6 @@
 ||www.ssutton.com^
 ||www.ssvmschool.com^
 ||www.ssvu.org^
-||www.ssws77.kl.com.ua^
 ||www.ssyssyss.narod.ru^
 ||www.st-andrewsenf.co.uk^
 ||www.st-giraffe.homepage.t-online.de^
@@ -3944,7 +3952,6 @@
 ||www.stachadwokat.pl^
 ||www.staciesansone.com^
 ||www.stacirenee.com^
-||www.stacjavapera.com^
 ||www.stacjazgierz.pl^
 ||www.stack-sonar.com^
 ||www.stackcommerce.com^
@@ -4008,7 +4015,6 @@
 ||www.stampfinance.co.uk^
 ||www.stampile-sibiu.ro^
 ||www.stamplive.com^
-||www.stancheggera502.apanorama.ws^
 ||www.standardessays.com^
 ||www.standardinternet.com^
 ||www.standardpets.com^
@@ -4104,7 +4110,6 @@
 ||www.starogard.otoz.pl^
 ||www.staroil.info^
 ||www.starparkingsolution.com^
-||www.starpass.extafiles.com^
 ||www.starpass.gratuitfile.com^
 ||www.starpathholdings.com^
 ||www.starpay.de^
@@ -4152,6 +4157,7 @@
 ||www.startpage.org^
 ||www.startr.com^
 ||www.startreck.com^
+||www.startscanner.com^
 ||www.startstudio.it^
 ||www.startsurfing.com^
 ||www.startupactive.com^
@@ -5297,6 +5303,7 @@
 ||www.sunfuji.com^
 ||www.sungazer.com.au^
 ||www.sungcenter.com^
+||www.sungito.duckdns.org^
 ||www.sungkwanma.com^
 ||www.sunglass4u.com^
 ||www.sunglasses-rayban.org^
@@ -5492,6 +5499,7 @@
 ||www.supersnacks.rocks^
 ||www.supersonic.com^
 ||www.supersonicdeal.com^
+||www.supersopro.com.br^
 ||www.supersupport.com^
 ||www.supersupport.solutions^
 ||www.supertechs.co^
@@ -7235,6 +7243,7 @@
 ||www.tcmservices.net^
 ||www.tcnewhimki.ru^
 ||www.tcoapp.com^
+||www.tcoqianlong.watchdogdns.duckdns.org^
 ||www.tcows.com^
 ||www.tcpermaculture.com^
 ||www.tcretail.com^
@@ -8346,6 +8355,7 @@
 ||www.thanhhoafc.vn^
 ||www.thanhnam-tools.com^
 ||www.thanhnienhaivl.blogspot.com^
+||www.thanhtamresort.com.vn^
 ||www.thanhtung-39.blogspot.com^
 ||www.thanjal.com^
 ||www.thankgoditshalal.com^
@@ -9330,6 +9340,7 @@
 ||www.thompsonlawgroup.com^
 ||www.thongtingiupviec.blogspot.com^
 ||www.thoosje.com^
+||www.thopps.duckdns.org^
 ||www.thoribella.com^
 ||www.thorium.space^
 ||www.thorneywork.co.uk^
@@ -10421,6 +10432,7 @@
 ||www.torrentdownloads.net^
 ||www.torrente.brands.brandcollections.ru^
 ||www.torrentfrancais.com^
+||www.torrentfreak.duckdns.org^
 ||www.torrenthound.com^
 ||www.torrentland.com^
 ||www.torrentmafia.org^
@@ -11644,6 +11656,7 @@
 ||www.tube6.com^
 ||www.tube6sour.com^
 ||www.tube7.com^
+||www.tube9.com^
 ||www.tubeadnetwork.com^
 ||www.tubeadvertising.eu^
 ||www.tubedownloader.net^
@@ -12098,6 +12111,7 @@
 ||www.twowinone.com^
 ||www.twplus.com^
 ||www.twskype.com^
+||www.twsos.duckdns.org^
 ||www.twsupplygroup.com^
 ||www.twttr.com^
 ||www.twuitter.com^
@@ -12882,6 +12896,7 @@
 ||www.unitedindustries.net^
 ||www.unitedinterfaces.com^
 ||www.unitedkingdomcasinos.co.uk^
+||www.unitedmedsshop.com^
 ||www.unitedpowerbd.com^
 ||www.unitedproductsllc.net^
 ||www.unitedprogamers.za.pl^
@@ -12951,6 +12966,7 @@
 ||www.unlimiteddownloads.com^
 ||www.unlimitedserials.com^
 ||www.unlimitedviewers.com^
+||www.unlimx.duckdns.org^
 ||www.unlock.se^
 ||www.unlock867.at.ua^
 ||www.unlocked805.at.ua^
@@ -13013,6 +13029,7 @@
 ||www.uodoo.com^
 ||www.uogauoga.lt^
 ||www.uokwa.agesonest.com^
+||www.uolist.net^
 ||www.uolus.lt^
 ||www.uomomo.tmweb.ru^
 ||www.up-rgsdocker.net.daraz.com^
@@ -13639,6 +13656,7 @@
 ||www.vadratsikas.gr^
 ||www.vadrohooxk.info^
 ||www.vads.net.vn^
+||www.vads.vn^
 ||www.vadyur.github.io^
 ||www.vafoon.com^
 ||www.vagabond.brands.brandcollections.ru^
@@ -13906,6 +13924,7 @@
 ||www.vashikaranmantraremoval.blogspot.com^
 ||www.vashikaranmiya.livejournal.com^
 ||www.vashikaranofastrology.tumblr.com^
+||www.vashikaranpredictionspecialist.com^
 ||www.vashikaranproblemsolution.com^
 ||www.vashikaransolutions.com^
 ||www.vashikaranspacelist.blogspot.in^
@@ -14497,6 +14516,7 @@
 ||www.vermontmapleoutlet.com^
 ||www.vernatherm.com^
 ||www.verneblade.blogspot.com^
+||www.vernyomasgondok.hu^
 ||www.verofitness.com^
 ||www.veroja.com^
 ||www.verona.brands.brandcollections.ru^
@@ -15485,6 +15505,7 @@
 ||www.vizitlsa.narod.ru^
 ||www.vizury.com^
 ||www.vizzano.brands.brandcollections.ru^
+||www.vjccons.com.vn^
 ||www.vjdevelopers.com^
 ||www.vjegroup.com^
 ||www.vjfzp.com^
@@ -16342,6 +16363,7 @@
 ||www.watchcopy.cn^
 ||www.watchdesigner.cn^
 ||www.watchdogdevelopment.com^
+||www.watchdogdns.duckdns.org^
 ||www.watchdogs.extafiles.com^
 ||www.watchdogstrainer.extafiles.com^
 ||www.watchdogsupport.com^
@@ -16355,6 +16377,7 @@
 ||www.watchesbest.me^
 ||www.watchesbreitling.co^
 ||www.watchescopy.co^
+||www.watchescopy.top^
 ||www.watchescorn.com^
 ||www.watchesfakecheap.cn^
 ||www.watchesforwomen.cn^
@@ -17057,6 +17080,7 @@
 ||www.wecare-tech.com^
 ||www.wecdit.com^
 ||www.wecindia.in^
+||www.wecollect11.duckdns.org^
 ||www.wecountfish.com^
 ||www.wedannouncements.com^
 ||www.wedderbergen.com^
@@ -17487,8 +17511,11 @@
 ||www.whatsapp-status.com^
 ||www.whatsapp-verify.com^
 ||www.whatsapp-waeb.com^
+||www.whatsapp-wasor.com^
 ||www.whatsapp-web.org^
+||www.whatsapp-wossa.com^
 ||www.whatsapp-wosse.com^
+||www.whatsapp-wosso.com^
 ||www.whatsapp-wseb.com^
 ||www.whatsapp-wsra.com^
 ||www.whatsapp.link^
@@ -17727,6 +17754,7 @@
 ||www.whoyougle.ru^
 ||www.whrdgroup.com^
 ||www.whrilpool.com^
+||www.whservidor.com^
 ||www.whtianboo.com^
 ||www.whvf2gm5n.homepage.t-online.de^
 ||www.whwjls.com^
@@ -18691,6 +18719,8 @@
 ||www.workerssupport.net^
 ||www.workerssupport.org^
 ||www.workersupport.net^
+||www.workfinal.duckdns.org^
+||www.workfine11.duckdns.org^
 ||www.workflowboard.com^
 ||www.workfromhome.org^
 ||www.workfromhomeoranywhere.com^
@@ -18856,6 +18886,7 @@
 ||www.wowtravelsabah.com^
 ||www.wowwetwipes.com^
 ||www.wowx.io^
+||www.wowyourleet.duckdns.org^
 ||www.woyodev.org^
 ||www.woz.brands.brandcollections.ru^
 ||www.wp-amarc.pantoto.org^
@@ -20007,6 +20038,7 @@
 ||www.xtbook.sextgem.com^
 ||www.xtenarchitecture.com^
 ||www.xtep.com.hk^
+||www.xtestex.duckdns.org^
 ||www.xtewx.com^
 ||www.xthegame.com^
 ||www.xtierra.ca^
@@ -20027,6 +20059,7 @@
 ||www.xtrememoon.com^
 ||www.xtremenitrotruth.com^
 ||www.xtremeorganix.co.uk^
+||www.xtrmmarzonuevo.duckdns.org^
 ||www.xtrocash.host.sk^
 ||www.xtroglobal.com^
 ||www.xtronix.in^
@@ -20466,10 +20499,12 @@
 ||www.yeast-infection.naturalcuresreview.com^
 ||www.yeawindows.com^
 ||www.yebab.com^
+||www.yecuan.com^
 ||www.yedekparcadergisi.com^
 ||www.yeditepeofset.com^
 ||www.yeezys.org^
 ||www.yeheun.com^
+||www.yeisn.duckdns.org^
 ||www.yejeol.com^
 ||www.yejinbook.com^
 ||www.yelekin.com^
@@ -20842,6 +20877,7 @@
 ||www.youressaywritingservice.com^
 ||www.yourewelcome.amsterdam^
 ||www.yourfeet.net^
+||www.yourfiledownloader.net^
 ||www.yourfilezone.com^
 ||www.yourfirst.net^
 ||www.yourfirstpchelper.blogspot.com^
@@ -21039,6 +21075,7 @@
 ||www.yt-adblocker.com^
 ||www.ytcracker.com^
 ||www.ytdownloader.com^
+||www.ytecamlam.com.vn^
 ||www.ytfab.com^
 ||www.ythc.org.il^
 ||www.ytinder.com^
@@ -25348,6 +25385,7 @@
 ||wxxinren.com^
 ||wxxjd.voluumtrk.com^
 ||wxxjvvnetyomm.website^
+||wxybjfc.com^
 ||wxymag.xyz^
 ||wxynyij.icu^
 ||wxyzjutyofbjm.space^
@@ -27858,6 +27896,7 @@
 ||xml.a1.0network.com^
 ||xml.acertb.com^
 ||xml.ad-maven.com^
+||xml.adbetnet.com^
 ||xml.adbite.com^
 ||xml.adcannyxml.com^
 ||xml.adconclave.com^
@@ -27873,6 +27912,7 @@
 ||xml.admanage.com^
 ||xml.admeridianads.com^
 ||xml.admetherearly.com^
+||xml.admetix.com^
 ||xml.admidainsight.com^
 ||xml.admozartppc.com^
 ||xml.admozartxml.com^
@@ -28791,6 +28831,7 @@
 ||xosewug.com^
 ||xoshinshog.blogspot.com^
 ||xoslotz.agency^
+||xosoquangbinh.vn^
 ||xoszyclagweyv.online^
 ||xotwgy.ohmyschool.org^
 ||xoubuywanqskg.website^
@@ -29205,6 +29246,7 @@
 ||xszvzvvmmeebl.site^
 ||xt.meegmfio.in^
 ||xt2d.cn^
+||xt918.com^
 ||xtac.com^
 ||xtainment.net^
 ||xtakfprqxykkt.store^
@@ -29244,6 +29286,7 @@
 ||xtendmedia.com^$third-party
 ||xtension.com.eg^
 ||xtep.com.hk^
+||xtestex.duckdns.org^
 ||xtfhhpp.shop^
 ||xtgfujmknprb.ru^
 ||xtgreat.com^
@@ -30963,6 +31006,7 @@
 ||ydosfw.filippa-k.com^
 ||ydpushserver.youdao.com^
 ||ydqcjy.cn^
+||ydqhvlqqhtuli.website^
 ||yds-en.com^
 ||ydsfhdhd.weebly.com^
 ||ydsfsggd.weebly.com^
@@ -31380,6 +31424,7 @@
 ||ygfamen.com^
 ||ygfggtwer.s3-website-us-west-2.amazonaws.com^
 ||ygfw.hnmmc.cn^
+||yggkzs.cn^
 ||yggtorrent.com^
 ||yghhhn.frishop.dk^
 ||ygih.co.za^
@@ -32854,6 +32899,7 @@
 ||youtubevv.com^
 ||youtubewebproxy.com^
 ||youtubeyv.com^
+||youtubo.com^
 ||youtuge.com^
 ||youtuhe.com^
 ||youtui.net^
@@ -33188,6 +33234,7 @@
 ||ytdhshoutidai.com^
 ||ytdownloader.com^
 ||ytdut.online^
+||ytecamlam.com.vn^
 ||yterwhnjkloprty.s3-website-us-west-2.amazonaws.com^
 ||yterxv.com^
 ||ytfab.com^
@@ -33423,6 +33470,7 @@
 ||yumhusk.com^
 ||yumicotrans.com^
 ||yumimobi.com^
+||yumingv.icu^
 ||yumkwang.net^
 ||yumlist.com^
 ||yummy-month.com^
@@ -33514,6 +33562,7 @@
 ||yurpartner.com^
 ||yurtdax.com^
 ||yurtravel.com^
+||yuruglass.com^
 ||yuruknalyticafr.com^
 ||yurystvpolshi.pl^
 ||yurzldtomaeic.site^
@@ -33599,6 +33648,7 @@
 ||yvzpacgrjzrra.site^
 ||yw.kjukenhi.in^
 ||yw.qo1s.ru^
+||yw78.cn^
 ||yw800.com.cn^
 ||ywadk.top^
 ||ywak.com.cn^
@@ -33621,6 +33671,7 @@
 ||ywoedr62.top^
 ||ywojvu.kujten.com^
 ||ywphdckgaii.com^
+||ywqaplahuhtsd.com^
 ||ywqpgy.com^
 ||ywrcqa.10tv.com^
 ||ywrcqa.11alive.com^
@@ -33893,6 +33944,7 @@
 ||z.applovin.com^
 ||z.blogads.com^
 ||z.cafe12.com^
+||z.cdn.adbetnet.com^
 ||z.cdn.adpool.bet^
 ||z.cdn.braun634.com^
 ||z.cdn.protect-ad.com^
@@ -34887,6 +34939,7 @@
 ||zavonixtrader71force.com^
 ||zavonixtrader71force.ru^
 ||zavotharimulquine.com^
+||zavovpargct.com^
 ||zavrix-avg.com^
 ||zavrix-avg.net^
 ||zawaya-ai-system.com^
@@ -35681,6 +35734,7 @@
 ||zenoviagroup.com^
 ||zenpat.com^
 ||zenphiraweb.com^
+||zenplaza.com.vn^
 ||zenpraktijk.nl^
 ||zenquartz.my^
 ||zenque.com^

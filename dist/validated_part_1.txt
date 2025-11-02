@@ -409,6 +409,7 @@
 0.0.0.0 ad.gazeta.pl
 0.0.0.0 ad.grafika.cz
 0.0.0.0 ad.groupon.be
+0.0.0.0 ad.groupon.co.uk
 0.0.0.0 ad.groupon.com
 0.0.0.0 ad.groupon.de
 0.0.0.0 ad.groupon.fr
@@ -581,6 +582,7 @@
 0.0.0.0 ad41digital.checkm8.com
 0.0.0.0 ad42.checkm8.com
 0.0.0.0 ad42digital.checkm8.com
+0.0.0.0 ad43.checkm8.com
 0.0.0.0 ad43digital.checkm8.com
 0.0.0.0 ad44.checkm8.com
 0.0.0.0 ad44digital.checkm8.com
@@ -1154,6 +1156,7 @@
 0.0.0.0 adv.cityads.com
 0.0.0.0 adv.freeonline.it
 0.0.0.0 adv.gazeta.pl
+0.0.0.0 adv.klick.vn
 0.0.0.0 adv.livelog.biz
 0.0.0.0 adv.mobsmart.net
 0.0.0.0 adv.mpvc.it
@@ -2686,6 +2689,7 @@
 0.0.0.0 dellinc.tt.omtrdc.net
 0.0.0.0 deloitte.122.2o7.net
 0.0.0.0 delphicom.112.2o7.net
+0.0.0.0 demo.klick.vn
 0.0.0.0 demo1.lerian-nti.be
 0.0.0.0 demobl.cityads.com
 0.0.0.0 demr.mspaceads.com
@@ -2983,6 +2987,7 @@
 0.0.0.0 eu2.madsone.com
 0.0.0.0 eucpelgraficoprod.112.2o7.net
 0.0.0.0 eucpviveusaprod.112.2o7.net
+0.0.0.0 euro.klick.vn
 0.0.0.0 eurostar.122.2o7.net
 0.0.0.0 evania.adspirit.de
 0.0.0.0 evening-badlands-6215.herokuapp.com
@@ -3780,6 +3785,7 @@
 0.0.0.0 incoming-data-sense360.s3.amazonaws.com
 0.0.0.0 indetiske.ya.ru
 0.0.0.0 indigio.122.2o7.net
+0.0.0.0 indo.autoads.asia
 0.0.0.0 indus.iad-01.braze.com
 0.0.0.0 infasd2a.is-best.net
 0.0.0.0 inferna.iad-03.braze.com
@@ -3844,6 +3850,7 @@
 0.0.0.0 ipcwebuserprod.122.2o7.net
 0.0.0.0 ipcyachtingworldprod.122.2o7.net
 0.0.0.0 ipdata.adtech.fr
+0.0.0.0 iphone-za-darmo.over-blog.com
 0.0.0.0 ipv4.cws.conviva.com
 0.0.0.0 iq001.adtech.fr
 0.0.0.0 iqtestuj.glt.pl
@@ -3999,6 +4006,7 @@
 0.0.0.0 jzwjq.ads.tremorhub.com
 0.0.0.0 k5ads.osdn.com
 0.0.0.0 k87yfgsdaa.appspot.com
+0.0.0.0 kaartenhuis.nl.site-id.nl
 0.0.0.0 kaboose.112.2o7.net
 0.0.0.0 kakakucom.112.2o7.net
 0.0.0.0 kake.images.worldnow.com
@@ -5450,6 +5458,7 @@
 0.0.0.0 q017o-d42by.ads.tremorhub.com
 0.0.0.0 q017o-jh7o1.ads.tremorhub.com
 0.0.0.0 q4mn.adj.st
+0.0.0.0 qc.klick.vn
 0.0.0.0 qc.violet.vn
 0.0.0.0 qds0l.publishers.tremorhub.com
 0.0.0.0 qlipsodigital.checkm8.com
@@ -5536,6 +5545,7 @@
 0.0.0.0 reklama.onet.pl
 0.0.0.0 rekrutacja.zafriko.pl
 0.0.0.0 releaget.polosmith.com
+0.0.0.0 remain.chartboosts.com
 0.0.0.0 remodelingonlinecom.112.2o7.net
 0.0.0.0 renfeprod.112.2o7.net
 0.0.0.0 rentcom.112.2o7.net
@@ -6133,6 +6143,7 @@
 0.0.0.0 summitbusinessmedia.112.2o7.net
 0.0.0.0 sunassu.continuum-cardiology.com
 0.0.0.0 suncom.112.2o7.net
+0.0.0.0 sunerlypl.myshopify.com
 0.0.0.0 sunglobal.112.2o7.net
 0.0.0.0 sunny-unicorn-68f268.netlify.app
 0.0.0.0 sunonesearch.112.2o7.net
@@ -6289,6 +6300,7 @@
 0.0.0.0 testo.5v.pl
 0.0.0.0 tex.ero-advertising.com
 0.0.0.0 texas-holdem.shengen.ru
+0.0.0.0 text1.klick.vn
 0.0.0.0 textads.madisonavenue.com
 0.0.0.0 tfuuitf.weebly.com
 0.0.0.0 tgn.122.2o7.net
@@ -6748,6 +6760,7 @@
 0.0.0.0 w1.webcompteur.com
 0.0.0.0 wahacondrax.iad-03.braze.com
 0.0.0.0 waitlist.geekupworld.com
+0.0.0.0 wakeup.klick.vn
 0.0.0.0 walgrns.112.2o7.net
 0.0.0.0 wallmcream.divorcelawyersandiego.com
 0.0.0.0 walmart.112.2o7.net
@@ -6887,6 +6900,7 @@
 0.0.0.0 www.0n-line.tv
 0.0.0.0 www.0n.click
 0.0.0.0 www.1-1ads.com
+0.0.0.0 www.1-free-share-buttons.com
 0.0.0.0 www.100-ledowe-solary-pl.com
 0.0.0.0 www.1001movies.com
 0.0.0.0 www.11hour.com
@@ -8103,6 +8117,7 @@
 0.0.0.0 www.company.site
 0.0.0.0 www.companymaster.advocatemintukumarmondal.com
 0.0.0.0 www.comprarescalera.com
+0.0.0.0 www.computer-arts.info
 0.0.0.0 www.computersfd.company.site
 0.0.0.0 www.computerxchange.com
 0.0.0.0 www.condocoreca.com
@@ -8158,6 +8173,7 @@
 0.0.0.0 www.coviddogrulama.com
 0.0.0.0 www.covidexposed.com
 0.0.0.0 www.cowthulhu.com
+0.0.0.0 www.cp995.top
 0.0.0.0 www.cpabank.com
 0.0.0.0 www.cpacompanyonline.com
 0.0.0.0 www.cpanelhomemail-010290pdf-file001.mdbgo.io
@@ -9663,6 +9679,7 @@
 0.0.0.0 www.kiziltopraksporkulubu.com
 0.0.0.0 www.kjklkjjk.weebly.com
 0.0.0.0 www.klamotki.com
+0.0.0.0 www.klick.vn
 0.0.0.0 www.kliksaya.com
 0.0.0.0 www.klinikaideal.com
 0.0.0.0 www.kllenci-indywidualne-santandr-polska-bonus.eremons.com
@@ -10268,6 +10285,7 @@
 0.0.0.0 www.only-date.ct8.pl
 0.0.0.0 www.onlycarrent.com
 0.0.0.0 www.onlyfans-nudes.com
+0.0.0.0 www.onlyfansgenevieve.com
 0.0.0.0 www.onlyfanshandyman.com
 0.0.0.0 www.onwardclick.com
 0.0.0.0 www.onyxeryaman.com
@@ -10985,6 +11003,7 @@
 0.0.0.0 www.s10.histats.com.ero-advertising.com
 0.0.0.0 www.s10paces.ero-advertising.com
 0.0.0.0 www.s1labs.com
+0.0.0.0 www.s4f.net
 0.0.0.0 www.s4fex9eex2k.com
 0.0.0.0 www.s7.adaces.ero-advertising.com
 0.0.0.0 www.sabahattincamcioglu.com
@@ -15318,12 +15337,10 @@ wxsnsdy.video.qq.com^
 ||01-spyder-administrators-csr40.net.daraz.com^
 ||01-spyder-api-stage-oa-1-cf23region.net.daraz.com^
 ||01-spyder-ps-cf23region.net.daraz.com^
-||01-sql-test-nym.ad.corp.appnexus.com^
 ||01-sqlar21-10-r-oa-1.net.daraz.com^
 ||01-staff-administrators-csr40.net.daraz.com^
 ||01-staging-ocr-drzliveib-oa-1-cf23region.net.daraz.com^
 ||01-stagingc-f8.net.daraz.com^
-||01-sun-dr-lax.ad.corp.appnexus.com^
 ||01-support-administrators-csr40.net.daraz.com^
 ||01-surveyr21c-f8.net.daraz.com^
 ||01-svnib-oa-1-cf23region.net.daraz.com^
@@ -16130,7 +16147,6 @@ wxsnsdy.video.qq.com^
 ||098-frb-840.mktoresp.com^
 ||098-jtp-403.mktoresp.com^
 ||098.freestrip.chat^
-||0980372379.fly2dns.net^
 ||098784579.godaddysites.com^
 ||0988576657456223.weebly.com^
 ||0988ed4fd3c76018.com^
@@ -17378,7 +17394,6 @@ wxsnsdy.video.qq.com^
 ||100ea.com^
 ||100errors.info^
 ||100fd4a943.a51f200d7e.com^
-||100fenlm.cn^
 ||100fenlm.com^
 ||100filles.free.fr^
 ||100fran.com^
@@ -18710,7 +18725,6 @@ wxsnsdy.video.qq.com^
 ||12396.editor-qa1.marketingcloudqaapis.com^
 ||123ads.nl^
 ||123advertising.nl^
-||123any.com^
 ||123banners.com^
 ||123bcc3721.2156f5cc76.com^
 ||123beautyproducts.com^
@@ -20039,7 +20053,6 @@ wxsnsdy.video.qq.com^
 ||15141.hittail.com^
 ||15159.url.7wkw.com^
 ||1515dd.com^
-||1515er.duckdns.org^
 ||15161.editor-qa1.marketingcloudqaapis.com^
 ||15165.url.7wkw.com^
 ||151785341.keywordblocks.com^
@@ -20225,7 +20238,6 @@ wxsnsdy.video.qq.com^
 ||15950.editor-qa1.marketingcloudqaapis.com^
 ||159668.measurementapi.com^
 ||159692.measurementapi.com^
-||159753456.duckdns.org^
 ||1598sdasdss.blogspot.com^
 ||1599.connector-qa1.marketingcloudqaapis.com^
 ||1599.editor-qa1.marketingcloudqaapis.com^
@@ -20951,7 +20963,6 @@ wxsnsdy.video.qq.com^
 ||17mmc5g1n.com^
 ||17oez.voluumtrk.com^
 ||17proxy.com^
-||17q.com^
 ||17sp.com.cn^
 ||17tahun.com^
 ||17u.cn^
@@ -21295,29 +21306,22 @@ wxsnsdy.video.qq.com^
 ||189-46-221-18.dsl.telesp.net.br^
 ||189-46-221-30.dsl.telesp.net.br^
 ||189-46-231-210.dsl.telesp.net.br^
-||189-46-237-243.dsl.telesp.net.br^
 ||189-46-238-92.dsl.telesp.net.br^
 ||189-46-239-253.dsl.telesp.net.br^
 ||189-46-240-188.dsl.telesp.net.br^
 ||189-46-249-150.dsl.telesp.net.br^
 ||189-46-249-177.dsl.telesp.net.br^
 ||189-46-249-212.dsl.telesp.net.br^
-||189-46-35-5.dsl.telesp.net.br^
 ||189-46-48-16.dsl.telesp.net.br^
 ||189-46-49-253.dsl.telesp.net.br^
-||189-46-66-232.dsl.telesp.net.br^
-||189-46-81-115.dsl.telesp.net.br^
 ||189-46-81-2.dsl.telesp.net.br^
 ||189-47-135-3.dsl.telesp.net.br^
-||189-47-18-11.dsl.telesp.net.br^
 ||189-47-203-183.dsl.telesp.net.br^
 ||189-47-240-183.dsl.telesp.net.br^
 ||189-47-29-117.dsl.telesp.net.br^
 ||189-47-31-192.dsl.telesp.net.br^
 ||189-68-128-206.dsl.telesp.net.br^
 ||189-68-19-137.dsl.telesp.net.br^
-||189-68-28-51.dsl.telesp.net.br^
-||189-68-31-35.dsl.telesp.net.br^
 ||189-69-104-44.dsl.telesp.net.br^
 ||189-69-160-176.dial-up.telesp.net.br^
 ||189-69-167-203.dial-up.telesp.net.br^
@@ -22765,7 +22769,6 @@ wxsnsdy.video.qq.com^
 ||2.load8.biz^
 ||2.maryville.edu^
 ||2.mol16.biz^
-||2.mol19.biz^
 ||2.mol5.biz^
 ||2.mol7.biz^
 ||2.mono3.biz^
@@ -25272,7 +25275,6 @@ wxsnsdy.video.qq.com^
 ||23a1aece7b.47c50e31a9.com^
 ||23a6867e13e5f105.com^
 ||23b64136b6efc193.com^
-||23bece13537659fe414f68e45cedb2fcc42846e0dcd4f83c2ea9d2d6.com^
 ||23c608e087fd3894.com^
 ||23d31e95f7.7e8bf019d5.com^
 ||23dadea9c3.b60756935f.com^
@@ -25493,7 +25495,6 @@ wxsnsdy.video.qq.com^
 ||247antivirushelpline.com^
 ||247bypass.com^
 ||247chatsupport.net^
-||247dichvu.com^
 ||247dns.com^
 ||247entry.com^
 ||247essaywriters.com^
@@ -30538,7 +30539,6 @@ wxsnsdy.video.qq.com^
 ||4.load8.biz^
 ||4.mcnt.jp^
 ||4.mol16.biz^
-||4.mol19.biz^
 ||4.mol5.biz^
 ||4.mol7.biz^
 ||4.mono3.biz^
@@ -30694,7 +30694,6 @@ wxsnsdy.video.qq.com^
 ||4006911117.com^
 ||4008813318.com.cn^
 ||4009997658.com^
-||400amps.com^
 ||400bz.com^
 ||400cao.com^
 ||400gradi.com.au^
@@ -32773,7 +32772,6 @@ wxsnsdy.video.qq.com^
 ||5.load5.biz^
 ||5.load8.biz^
 ||5.mol16.biz^
-||5.mol19.biz^
 ||5.mol5.biz^
 ||5.mol7.biz^
 ||5.mono3.biz^
@@ -33591,12 +33589,8 @@ wxsnsdy.video.qq.com^
 ||54.sub-75-213-167.myvzw.com^
 ||540-cgn-957.mktoresp.com^
 ||540-cqs-570.mktoresp.com^
-||54001eaa.dsl.pool.telekom.hu^
 ||54002862.dsl.pool.telekom.hu^
-||540046a4.dsl.pool.telekom.hu^
 ||54004741.dsl.pool.telekom.hu^
-||54004a0a.dsl.pool.telekom.hu^
-||54006884.dsl.pool.telekom.hu^
 ||54009166.dsl.pool.telekom.hu^
 ||5400a980.dsl.pool.telekom.hu^
 ||5400a99e.dsl.pool.telekom.hu^
@@ -33607,23 +33601,14 @@ wxsnsdy.video.qq.com^
 ||5402800.fls.doubleclick.net^
 ||54032bf0.catv.pool.telekom.hu^
 ||5403308a.catv.pool.telekom.hu^
-||54033e0a.catv.pool.telekom.hu^
 ||54035467.catv.pool.telekom.hu^
-||54037b29.catv.pool.telekom.hu^
 ||5403a3e4.catv.pool.telekom.hu^
-||5403a9f7.catv.pool.telekom.hu^
 ||5403b2c2.catv.pool.telekom.hu^
 ||5403bbde.catv.pool.telekom.hu^
-||5403c0d4.catv.pool.telekom.hu^
 ||5403c0df.catv.pool.telekom.hu^
 ||5403c1fc.catv.pool.telekom.hu^
 ||5403c2d7.catv.pool.telekom.hu^
-||5403d4e0.catv.pool.telekom.hu^
-||5403dd2c.catv.pool.telekom.hu^
-||5403ea16.catv.pool.telekom.hu^
 ||5403ec26.catv.pool.telekom.hu^
-||5403ec4d.catv.pool.telekom.hu^
-||5403edfa.catv.pool.telekom.hu^
 ||5404448.fls.doubleclick.net^
 ||5405300.fls.doubleclick.net^
 ||5406-09eb-8338-dd7e.reporo.net^
@@ -35595,7 +35580,6 @@ wxsnsdy.video.qq.com^
 ||6447cea6d49239c0.top^
 ||6448.sock-qa1.marketingcloudqaops.com^
 ||645-coj-341.mktoresp.com^
-||645.cc^
 ||6451bf269296e058.com^
 ||64523656fb41790c.com^
 ||6454.eu-api.swrve.com^
@@ -37804,7 +37788,6 @@ wxsnsdy.video.qq.com^
 ||77.sub-70-211-167.myvzw.com^
 ||7701534.emails.tntdrama.com^
 ||771-usx-221.mktoresp.com^
-||77119.cc^
 ||7713.sock-qa1.marketingcloudqaops.com^
 ||7718-58fd-2844-4d60.reporo.net^
 ||771fnypadw0j.pt.themoneytizer.com^
@@ -38095,7 +38078,6 @@ wxsnsdy.video.qq.com^
 ||7860a898b6ea4774.com^
 ||78642.net^
 ||786736532.keywordblocks.com^
-||786ghtduhj.duckdns.org^
 ||786muslim.com^
 ||786muslims.com^
 ||786services.co.uk^
@@ -39398,7 +39380,6 @@ wxsnsdy.video.qq.com^
 ||8181zx.com^
 ||8182.editor-qa1.marketingcloudqaapis.com^
 ||8182.ftp-qa1.marketingcloudqaops.com^
-||8184.cc^
 ||8188.sfap-qa1.marketingcloudqaops.com^
 ||8197.sock-qa1.marketingcloudqaops.com^
 ||81a97.v.fwmrm.net^
@@ -41288,7 +41269,6 @@ wxsnsdy.video.qq.com^
 ||8800chrtrtwc.weebly.com^
 ||880450ed.ngrok.io^
 ||880517195.keywordblocks.com^
-||88088.com^
 ||880ac5cd641d.com^
 ||880autobody.com^
 ||8816.engine.mobileapptracking.com^
@@ -41930,7 +41910,6 @@ wxsnsdy.video.qq.com^
 ||9.load5.biz^
 ||9.load8.biz^
 ||9.mol16.biz^
-||9.mol19.biz^
 ||9.mol5.biz^
 ||9.mol7.biz^
 ||9.mono3.biz^
@@ -42319,8 +42298,6 @@ wxsnsdy.video.qq.com^
 ||91f07669f2c9.info^
 ||91f3054c84.3c241b2b3e.com^
 ||91feiyong.com^
-||91friend.com^
-||91friend.com^$third-party
 ||91hs005.xyz^*.gif
 ||91ijyex0dcd6j7ap.net.daraz.com^
 ||91ivr.com^
@@ -43842,7 +43819,6 @@ wxsnsdy.video.qq.com^
 ||98hx.cn^
 ||98kiss.com^
 ||98search.musicfrost.com^
-||98ser.com^
 ||99-0-0-249.lightspeed.flsmca.sbcglobal.net^
 ||99-0-0-251.lightspeed.flsmca.sbcglobal.net^
 ||99-118-215-24.lightspeed.irvnca.sbcglobal.net^
@@ -44517,7 +44493,6 @@ wxsnsdy.video.qq.com^
 ||a-vr.by^
 ||a-we.com^
 ||a-whole-freepass.co.cc^
-||a-wkyc.co.cc^
 ||a-writer.com^
 ||a-zdorov.ru^
 ||a-zwap.tk^
@@ -44678,7 +44653,6 @@ wxsnsdy.video.qq.com^
 ||a.cilon.site^
 ||a.cingo.sbs^
 ||a.clickintact.com^
-||a.clicksor.cn^
 ||a.closerpets.co.uk^
 ||a.cockfile.com^
 ||a.coinhub.wiki^
@@ -45675,7 +45649,6 @@ wxsnsdy.video.qq.com^
 ||a1-boekhouding.nl^
 ||a1-m1.doublepimp.com^
 ||a1.0s.net.cn^
-||a1.51shiti.cn^
 ||a1.91danji.com^
 ||a1.99933.cn^
 ||a1.99966.cn^
@@ -45686,7 +45659,6 @@ wxsnsdy.video.qq.com^
 ||a1.api.bbc.co.uk^
 ||a1.api.bbc.com^
 ||a1.arabsex1.com^
-||a1.bajiu.cn^
 ||a1.consoletarget.com^
 ||a1.cyyangqiguan.com^
 ||a1.firefoxchina.cn^
@@ -45701,7 +45673,6 @@ wxsnsdy.video.qq.com^
 ||a1.seadform.net^
 ||a1.smi2.ru^
 ||a1.suntimes.com^
-||a1.tbuz.com.cn^
 ||a1.vdna-assets.com^
 ||a1.x-traceur.com^
 ||a1.zhanzhang.net^
@@ -52608,7 +52579,6 @@ wxsnsdy.video.qq.com^
 ||abadf.org.br^
 ||abadhya.com^
 ||abadiacar.pt^
-||abadilaju.com^
 ||abadubai.com^
 ||abaeschiv.pro^
 ||abaforniture.it^
@@ -52803,7 +52773,6 @@ wxsnsdy.video.qq.com^
 ||abcbureautique.abc.perso.neuf.fr^
 ||abcd.5lu.com^
 ||abcd.bg^
-||abcd.cnhuoche.com^
 ||abcd.coderays.com^
 ||abcd.markusdan.com^
 ||abcd.mdc.akamaized.net^
@@ -53515,7 +53484,6 @@ wxsnsdy.video.qq.com^
 ||abrightideacompany.com^
 ||abrilar.com.br^
 ||abrilmidia.d1.sc.omtrdc.net^
-||abrilparadon.duckdns.org^
 ||abrir.link^
 ||abrirnegocio.com^
 ||abris-ug.ru^
@@ -53795,7 +53763,6 @@ wxsnsdy.video.qq.com^
 ||ac.ajur.info^
 ||ac.altiri.jp^
 ||ac.art456.com^
-||ac.atpanel.com^
 ||ac.babsrv.com^
 ||ac.batmobi.net^
 ||ac.berlinonline.de^
@@ -54187,7 +54154,6 @@ wxsnsdy.video.qq.com^
 ||access.definitions.digital^
 ||access.dragongolf.com^
 ||access.edu.lb^
-||access.ethsupply.com^
 ||access.fundonkey.com^
 ||access.funlagoon.net^
 ||access.funmonger.net^

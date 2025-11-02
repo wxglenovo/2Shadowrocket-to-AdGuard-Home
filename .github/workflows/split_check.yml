@@ -1,151 +1,99 @@
 name: Split & DNS Check
 
-# -----------------------------
-# 触发条件
-# -----------------------------
 on:
-  schedule:  # 定时任务
-    - cron: "0 0 * * *"   # 每天 00:00 UTC
-    - cron: "0 6 * * *"   # 每天 06:00 UTC
-    - cron: "0 12 * * *"  # 每天 12:00 UTC
-    - cron: "0 18 * * *"  # 每天 18:00 UTC
-    - cron: "*/22 * * * *" # 每 22 分钟一次
-  workflow_dispatch:      # 手动触发
+  schedule:
+    - cron: "0 0 * * *"     # ✅ 每天强制更新下载
+    - cron: "0 6 * * *"
+    - cron: "0 12 * * *"
+    - cron: "0 18 * * *"
+    - cron: "*/22 * * * *"  # ✅ 每 22 分钟仅验证，不下载
+  workflow_dispatch:
     inputs:
       part:
         description: '手动验证指定分片 1~16'
         required: false
-        default: ''
+        default: "0"
 
 permissions:
-  contents: write  # 允许推送代码到仓库
+  contents: write
 
-# -----------------------------
-# Job 定义
-# -----------------------------
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      PYTHONUNBUFFERED: 1  # 输出实时刷新
 
     steps:
+    - name: 🧩 Checkout
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
 
-      # -----------------------------
-      # 1. 检出仓库
-      # -----------------------------
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+    - name: 🛠 配置 Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.x"
 
-      # -----------------------------
-      # 2. 设置 Python 环境
-      # -----------------------------
-      - name: Setup Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.12'
+    - name: 📦 安装依赖
+      run: |
+        pip install dnspython requests
 
-      # -----------------------------
-      # 3. 安装依赖
-      # -----------------------------
-      - name: Install dependencies
-        run: pip install --upgrade requests dnspython
+    - name: 🕒 判断是否强制下载
+      id: check_time
+      run: |
+        CURRENT_HOUR=$(date -u +"%H")
+        echo "⏱ 当前 UTC 小时: $CURRENT_HOUR"
+        
+        # ✅ 改动处：UTC 0/6/12/18 点强制下载
+        if [[ "$CURRENT_HOUR" == "00" || "$CURRENT_HOUR" == "06" || "$CURRENT_HOUR" == "12" || "$CURRENT_HOUR" == "18" ]]; then
+            echo "force=yes" >> $GITHUB_OUTPUT
+        else
+            echo "force=no" >> $GITHUB_OUTPUT
+        fi
 
-      # -----------------------------
-      # 4. 配置 Git
-      # -----------------------------
-      - name: Configure Git
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+    - name: 🧪 执行验证脚本
+      run: |
+        mkdir -p logs tmp dist
 
-      # -----------------------------
-      # 5. 确定当前分片 (PART)
-      # -----------------------------
-      - name: Determine PART index
-        id: detect
-        run: |
-          mkdir -p tmp
-          LAST_PART_FILE="tmp/last_part.txt"
-          PART_INPUT="${{ github.event.inputs.part }}"
+        PART="${{ github.event.inputs.part }}"
+        FORCE="${{ steps.check_time.outputs.force }}"
 
-          if [ -n "$PART_INPUT" ]; then
-            # 手动指定分片
-            PART="$PART_INPUT"
-            echo "🛠 手动指定分片：$PART"
+        # ✅ 改动处：判断是否强制下载
+        if [[ "$FORCE" == "yes" ]]; then
+          echo "🚀 强制下载并生成分片"
+          python3 split_and_check_16.py --force-download > logs/run.log 2>&1
+        else
+          if [[ "$PART" != "0" ]]; then
+            echo "🔍 仅验证分片：$PART"
+            python3 split_and_check_16.py --part $PART > logs/run.log 2>&1
           else
-            # 自动轮替分片
-            if [ -f "$LAST_PART_FILE" ]; then
-              LAST_PART=$(cat "$LAST_PART_FILE")
-              PART=$(( (LAST_PART % 16) + 1 ))
-            else
-              PART=1
-            fi
-            echo "⏱ 自动轮替分片：$PART"
+            echo "✅ 普通轮训验证（不下载）"
+            python3 split_and_check_16.py > logs/run.log 2>&1
           fi
+        fi
 
-          echo "$PART" > "$LAST_PART_FILE"
-          echo "part=$PART" >> $GITHUB_OUTPUT
+        echo "📂 当前 tmp 文件："
+        ls -lh tmp
 
-      # -----------------------------
-      # 6. 定时强制下载规则
-      # -----------------------------
-      - name: Force download rules at schedule times
-        run: |
-          mkdir -p tmp
-          MERGED_FILE="merged_rules.txt"
-          # 检查当前时间
-          CURRENT_HOUR=$(date -u +"%H")
-          # ✅ 修复 if 缺少 fi 问题
-          if [[ "$CURRENT_HOUR" == "00" || "$CURRENT_HOUR" == "06" || "$CURRENT_HOUR" == "12" || "$CURRENT_HOUR" == "18" ]]; then
-            echo "✅ 强制下载规则源并生成所有分片"
-            python3 split_and_check_16.py --force-update
-          else
-            # ✅ 非下载时间，只在 tmp 没有分片时生成
-            if [ ! -f tmp/part_01.txt ]; then
-              echo "⚠ tmp/part_01.txt 不存在 → 生成分片"
-              python3 split_and_check_16.py --force-update
-            else
-              echo "⏩ tmp 分片已存在，不下载"
-            fi
-          fi
+    - name: 🧹 防止 Git 未暂存导致 pull 失败
+      run: |
+        # ✅ 改动处：只 add 真实存在的文件
+        git add tmp/*.txt dist/*.txt || true
+        git add dist/delete_counter.json || true
 
-      # -----------------------------
-      # 7. 确保 delete_counter.json 存在
-      # -----------------------------
-      - name: Ensure delete_counter.json exists
-        run: |
-          mkdir -p dist
-          if [ ! -f dist/delete_counter.json ]; then
-            echo "{}" > dist/delete_counter.json
-            echo "✅ 创建 dist/delete_counter.json"
-          else
-            echo "✅ delete_counter.json 已存在"
-          fi
+    - name: ✅ 提交结果
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      # -----------------------------
-      # 8. 对当前分片进行 DNS 验证
-      # -----------------------------
-      - name: Run DNS validation for current part
-        env:
-          PART: ${{ steps.detect.outputs.part }}
-        run: |
-          mkdir -p logs
-          echo "⏱ 开始验证分片 $PART"
-          python3 split_and_check_16.py --part "$PART" | tee logs/split_check_part_${PART}.log
+        # ✅ 无变化不用提交
+        if git diff --cached --quiet; then
+            echo "ℹ 无任何变化，不需要提交"
+            exit 0
+        fi
 
-      # -----------------------------
-      # 9. 提交并推送验证后的规则
-      # -----------------------------
-      - name: Commit & Push Validated Rules
-        env:
-          PART: ${{ steps.detect.outputs.part }}
-        run: |
-          # 提取日志统计信息
-          STATS=$(grep "COMMIT_STATS" logs/split_check_part_${PART}.log | tail -n1 | sed 's/COMMIT_STATS: //')
-          git add tmp/last_part.txt dist/validated_part_*.txt dist/delete_counter.json merged_rules.txt || true
-          git commit -m "🤖 part $PART → $STATS" || echo "No changes to commit"
-          git pull --rebase origin main || echo "⚠ Pull failed, 已忽略"
-          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main || echo "⚠ Push failed, 已忽略"
+        # ✅ 提交
+        git commit -m "🤖 自动验证更新"
+
+        # ✅ 改动处：避免 rebase 错误，改为 --no-rebase
+        git pull --no-rebase || echo "⚠ Pull 失败，继续 Push"
+
+        git push origin main

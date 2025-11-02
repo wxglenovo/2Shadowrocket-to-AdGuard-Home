@@ -464,9 +464,7 @@
 ||t.antalis.dk^
 ||t.antalis.ee^
 ||t.antalis.es^
-||t.antalis.fi^
 ||t.antalis.fr^
-||t.antalis.hu^
 ||t.antalis.ie^
 ||t.antalis.lt^
 ||t.antalis.lv^
@@ -1771,7 +1769,6 @@
 ||tfdtpa.dot-st.com^
 ||tfeableandwo.org^
 ||tfflrmlygarjj.online^
-||tfktkgozxizbr.com^
 ||tfla.xyz^
 ||tflurbzcqgpii.website^
 ||tfosrv.com^
@@ -1921,7 +1918,6 @@
 ||thickspaghetti.com^
 ||thickteaching.com^
 ||thighlemonadejell.com^
-||thikraik.net^
 ||thimblestrangearchitect.com^
 ||thind-gke-euw.prd.data.corp.unity3d.com^
 ||thingsafterthought.com^
@@ -2610,7 +2606,6 @@
 ||top3.inhaabit.com^
 ||topacad.com^
 ||topadsservices.com^
-||topadvert.ru^
 ||topapi.cp12.ott.cibntv.net^
 ||topapi.cp12.wasu.tv^
 ||topatternbackache.com^
@@ -4730,6 +4725,14 @@
 ||trail.thomsonreuters.co.uk^
 ||trail.thomsonreuters.com.au^
 ||trail.thomsonreuters.com.br^
+||www.berga-template.blogspot.com^
+||www.bergauer-regenerierung.de^
+||www.bergenelectric.com^
+||www.berger-regina.at^
+||www.berghard.pl^
+||www.bergindepolder.nl^
+||www.bergwelt-oberhof.de^
+||www.bergzitat.de^
 ||www.beriault.qc.ca^
 ||www.berich.eu^
 ||www.bering.narod.ru^
@@ -5185,7 +5188,6 @@
 ||www.bfast.com^
 ||www.bfbyxpjz.cn^
 ||www.bfc-mp.caisse-epargne.fr^
-||www.bfc5.duckdns.org^
 ||www.bfg.fund^
 ||www.bfg.loanzify.app^
 ||www.bfgnet.com.ua^
@@ -5373,7 +5375,6 @@
 ||www.bielpak.pl^
 ||www.bielsk.pl^
 ||www.bienart.com^
-||www.bienbaoantoan.com^
 ||www.biengrandir37.com^
 ||www.biennaledipalermo.it^
 ||www.biensorienter.com^
@@ -5826,6 +5827,7 @@
 ||www.bistroenglish.com^
 ||www.bistroenglish1.com^
 ||www.biswanet.com^
+||www.bit-bitmmarttex.top^
 ||www.bit-capitals.com^
 ||www.bit-wallet.net^
 ||www.bit.do^
@@ -5840,7 +5842,6 @@
 ||www.bitc-lang.com^
 ||www.bitcashout.wixsite.com^
 ||www.bitcell.com.mx^
-||www.bitchedade.duckdns.org^
 ||www.bitchmmkkox.sultryserver.com^
 ||www.bitcoadz.io^
 ||www.bitcoiin.com^
@@ -5999,7 +6000,6 @@
 ||www.bittorrentmanager.com^
 ||www.bittorrentpromo.github.io^
 ||www.bittorrentshare.com^
-||www.bittraders.io^
 ||www.bittrex-login.com^
 ||www.bittrex-sigin.com^
 ||www.bittrexsupport.com^
@@ -6038,7 +6038,6 @@
 ||www.bizarre-rituals.com^
 ||www.bizbuilder.co.za^
 ||www.bizcheapjerseys.com^
-||www.bizcn.com^
 ||www.bizconsulting.ro^
 ||www.bizcopier.my^
 ||www.bizdeductor.com^
@@ -6105,7 +6104,6 @@
 ||www.bjmyjs.net^
 ||www.bjmzjw.com^
 ||www.bjnj.org^
-||www.bjnrwwww.watchdogdns.duckdns.org^
 ||www.bjoerslev.dk^
 ||www.bjonvif.com^
 ||www.bjornaa.dk^
@@ -6229,6 +6227,7 @@
 ||www.blackpornclips.com^
 ||www.blackpornmovies.net^
 ||www.blackporno.net^
+||www.blackprz1e.duckdns.org^
 ||www.blackpussypics.net^
 ||www.blackrabbitthailand.com^
 ||www.blackrainbow.jp^
@@ -6786,7 +6785,6 @@
 ||www.bobstijl.nl^
 ||www.bobtheprinter.com^
 ||www.bobtrans.go.ro^
-||www.bobyhack.duckdns.org^
 ||www.bocaonoticias.com.br^
 ||www.boccard.be^
 ||www.bocekilaclama.gen.tr^
@@ -6804,6 +6802,7 @@
 ||www.bodog.eu^
 ||www.bodok.nl^
 ||www.bodonifamily.com^
+||www.bodorkos.com^
 ||www.bodrums-hotels.com^
 ||www.bodrums-hotels.net^
 ||www.bodrumshotels.net^
@@ -6822,7 +6821,6 @@
 ||www.bodyfirming.com.au^
 ||www.bodymindcounselling.ca^
 ||www.bodypressuremapping.com^
-||www.bodyprohealth.com^
 ||www.bodysecretrevelation.com^
 ||www.bodysense.pl^
 ||www.bodysync.ir^
@@ -6858,12 +6856,10 @@
 ||www.boinkplay.com^
 ||www.bois-beton.fr^
 ||www.boisdumonde.ca^
-||www.boisenorthendhome.com^
 ||www.bokep.su^
 ||www.bokepasia.org^
 ||www.bokepbugilmesum.blogspot.com^
 ||www.bokepvid.com^
-||www.bokhargostar.com^
 ||www.boklunue.go.th^
 ||www.boku-support.biz^
 ||www.boku-support.com^
@@ -6904,6 +6900,7 @@
 ||www.bomaxi.narod.ru^
 ||www.bomb.eu5.org^
 ||www.bombadruk.pl^
+||www.bombaslcl.cl^
 ||www.bombeiroslixa.pt^
 ||www.bombermusic.com^
 ||www.bomberossalitre.gob.ec^
@@ -7122,6 +7119,7 @@
 ||www.borkotel.ru^
 ||www.borkovitz.pl^
 ||www.borlaboretterem.hu^
+||www.borlander.cn^
 ||www.bormis.com^
 ||www.bornama.com.tw^
 ||www.borncash.com^
@@ -7267,6 +7265,7 @@
 ||www.boxmywish.com^
 ||www.boxofficemojo.com^
 ||www.boxofgiggles.com^
+||www.boxplanvidros.com.br^
 ||www.boxsterlee.com^
 ||www.boxsupport.net^
 ||www.boxuganda.com^
@@ -7280,7 +7279,6 @@
 ||www.boyutproje.net^
 ||www.bozenan.swk.vectranet.pl^
 ||www.boznar.si^
-||www.bozok1.duckdns.org^
 ||www.bp-hosting.com^
 ||www.bpath.com^
 ||www.bpcomputer.tv^
@@ -8177,6 +8175,7 @@
 ||www.buildorion.com^
 ||www.buildren.com^
 ||www.buildtraffic.com^
+||www.buildviet.info^
 ||www.buildyoursalon.com^
 ||www.builtindia.in^
 ||www.builtwithvision.com^
@@ -8208,7 +8207,6 @@
 ||www.bulktube.com^
 ||www.bulkwhatsappsoftware.com^
 ||www.bulldogmiami.com^
-||www.bullect.duckdns.org^
 ||www.bulletads.com^
 ||www.bulletinsync.info^
 ||www.bulletproof-web.ru^
@@ -8404,9 +8402,9 @@
 ||www.buturepos.narod.ru^
 ||www.butycamper.pl^
 ||www.butycaterpillaroutlet.pl^
-||www.butypalladium.pl^
 ||www.butypolskasklep.nadi8.com^
 ||www.butyrockport.pl^
+||www.butysklep.shop^
 ||www.buurtbusdeglind.nl^
 ||www.buuyt.de^
 ||www.buww.com^
@@ -8647,7 +8645,6 @@
 ||www.bxpaffc.com^
 ||www.bxtz888.com^
 ||www.bxzxw.net^
-||www.by-sabotage123.duckdns.org^
 ||www.by007.cn^
 ||www.byacademy.fr^
 ||www.byaka.su^
@@ -8767,6 +8764,7 @@
 ||www.c2autoelectrics.co.uk^
 ||www.c2l.eu^
 ||www.c2mma.com^
+||www.c2nhien-nt.khanhhoa.edu.vn^
 ||www.c3.hu^
 ||www.c30a8799.ngrok.io^
 ||www.c39b126b5cec.ngrok.io^
@@ -8842,7 +8840,6 @@
 ||www.cacaoweb.org^
 ||www.cacau.com.br^
 ||www.cacautec.com.br^
-||www.cacbethel.org^
 ||www.cacbuockiemtien.blogspot.com^
 ||www.cacemgas.com^
 ||www.cacereletronica.com.br^
@@ -8994,7 +8991,6 @@
 ||www.calcitapp.info^
 ||www.calcoastlogistics.com^
 ||www.calcutta.co.kr^
-||www.caldai.com^
 ||www.caledoniamine.com^
 ||www.calegal.com.co^
 ||www.calendareveryday.com^
@@ -9031,7 +9027,6 @@
 ||www.calista-photo.com^
 ||www.calistyle101.com^
 ||www.calitechsupport.net^
-||www.calitoway.duckdns.org^
 ||www.calixto.co.in^
 ||www.calizascapri.com^
 ||www.call-center.xyz^
@@ -9082,6 +9077,7 @@
 ||www.calma.com.br^
 ||www.calmabags.com^
 ||www.calongerentacar.com^
+||www.calor2000.eu^
 ||www.caloriemania.com^
 ||www.caloroseed.com^
 ||www.caloteiro.blogspot.com^
@@ -9142,7 +9138,6 @@
 ||www.camdendentalimplants.co.uk^
 ||www.camdengc.com^
 ||www.camdentownunlimited.demo.uxloft.com^
-||www.camed.duckdns.org^
 ||www.camelbakmountainrace.com.br^
 ||www.camellando.com^
 ||www.camelu.com^
@@ -9272,7 +9267,6 @@
 ||www.canadry.ca^
 ||www.canal-tours.net^
 ||www.canal2.cl^
-||www.canalcliente.duckdns.org^
 ||www.canalhost.net^
 ||www.canalize.jp^
 ||www.canaloni.com^
@@ -9465,6 +9459,7 @@
 ||www.capesahn.com^
 ||www.capewaytechsupport.com^
 ||www.capexholding.com^
+||www.caphilldesign.com^
 ||www.capifer.com.br^
 ||www.capimax.com^
 ||www.capital-account.com^
@@ -9607,7 +9602,6 @@
 ||www.cardquest.com^
 ||www.cardworksplus.co.uk^
 ||www.cardworksplus.com^
-||www.cardwsupdate.com^
 ||www.care-4-you.ch^
 ||www.care-ca.org^
 ||www.care-indonesia.org^
@@ -9692,7 +9686,6 @@
 ||www.carliestatsky.com^
 ||www.carlingmassagetherapy.com^
 ||www.carlmorris119.wixsite.com^
-||www.carlos3505.duckdns.org^
 ||www.carlosimoni.it^
 ||www.carlosramos.com.br^
 ||www.carlossimowa.com^
@@ -9906,7 +9899,6 @@
 ||www.casasantander.com^
 ||www.casasantateresita.com^
 ||www.casasaotiago.com^
-||www.casasasa.duckdns.org^
 ||www.casasdealdeateixois.com^
 ||www.casashavana.com^
 ||www.casasilva.com.br^
@@ -10043,7 +10035,6 @@
 ||www.casonaplazahotelaqp.com^
 ||www.casonatrabadelo.com^
 ||www.casper.mathiesen.com^
-||www.casperadam.duckdns.org^
 ||www.casperdeboer.com^
 ||www.casperinfosystem.com^
 ||www.caspia.co.uk^
@@ -10187,7 +10178,6 @@
 ||www.catsarea.com^
 ||www.catsdogsbabies.com^
 ||www.catsdogsbaby.com^
-||www.catshaj.duckdns.org^
 ||www.catskillmt.com^
 ||www.catsmakemehappy.com^
 ||www.catsplit.pl^
@@ -10327,6 +10317,7 @@
 ||www.cccshoes-pl.shop^
 ||www.cccshoes.shop^
 ||www.ccd-foundation.org^
+||www.ccdarts.com^
 ||www.ccdastro.com^
 ||www.ccdibc.com.br^
 ||www.ccdollar.linkpc.net^
@@ -10596,7 +10587,6 @@
 ||www.celebrityacademy.com^
 ||www.celebritydesire.com^
 ||www.celebritygalleries.ws^
-||www.celebritygalleriesfree.com^
 ||www.celebrityhealthcentral.com^
 ||www.celebrityinpose.com^
 ||www.celebrityleakedphotos.blogspot.com^
@@ -10820,7 +10810,6 @@
 ||www.ceos.vn^
 ||www.ceoseguros.com^
 ||www.ceotto.fr^
-||www.ceouniversal.duckdns.org^
 ||www.ceox.com.br^
 ||www.cep-marseille.org^
 ||www.cepesmaidiomasceci.com^
@@ -10852,6 +10841,7 @@
 ||www.ceritananggroe.blogspot.com^
 ||www.ceritasexsextoyotaqq.blogspot.com^
 ||www.cerminmataterapi.com^
+||www.cero007.duckdns.org^
 ||www.ceroccalgary.com^
 ||www.cerquasas.it^
 ||www.cerqueira.fr^
@@ -10955,7 +10945,6 @@
 ||www.cfltechnologies.com^
 ||www.cfmj.fr^
 ||www.cfnl.ca^
-||www.cfoisajrat5.duckdns.org^
 ||www.cfokecie.pl^
 ||www.cfp.edu.mx^
 ||www.cfr.internetdocss.com^
@@ -11832,6 +11821,7 @@
 ||www.christianlouboutin-heels.org^
 ||www.christianlouboutin-outlet.com.co^
 ||www.christianlouboutin-outlet.me^
+||www.christianlouboutin2017.top^
 ||www.christianlouboutinboots.cn^
 ||www.christianlouboutincloutlet.com^
 ||www.christianlouboutininc.top^
@@ -11921,7 +11911,6 @@
 ||www.chuck.support^
 ||www.chuckblier.com^
 ||www.chuckfaganco.com^
-||www.chucksboy.duckdns.org^
 ||www.chuckwebster.com^
 ||www.chucp.com^
 ||www.chudnemjedlom.sk^
@@ -12042,7 +12031,6 @@
 ||www.cigs4you.com^
 ||www.cigsandmoredepot.blogspot.com^
 ||www.cihan-etiket.com^
-||www.cihan05.duckdns.org^
 ||www.ciharddrives.blogspot.com^
 ||www.ciibigpicture.in^
 ||www.ciicpro.com^
@@ -12121,7 +12109,6 @@
 ||www.cipemiliaromagna.cateterismo.it^
 ||www.cipherme.pl^
 ||www.cipovenaramky.eu^
-||www.ciprudential.com.watchdogdns.duckdns.org^
 ||www.cipserviciosgenerales.com^
 ||www.ciptasemula.com^
 ||www.ciptojunaedyguru.com^
@@ -12308,7 +12295,6 @@
 ||www.claim-eth.top^
 ||www.claimfreerewards.com^
 ||www.claimprize.org^
-||www.claireritter.cmail-oln040092069015.outbound.protection.sketchwefair-watduoliprudential.com.watchdogdns.duckdns.org^
 ||www.clairevaessen.nl^
 ||www.claitors.com^
 ||www.claivonn-management.net^
@@ -12753,7 +12739,6 @@
 ||www.cloud-ingenuity.com^
 ||www.cloud-support61.com^
 ||www.cloud-trail.com^
-||www.cloud.com.py^
 ||www.cloud365.support^
 ||www.cloud9ecig.com^
 ||www.cloud9support.com^
@@ -13075,7 +13060,6 @@
 ||www.coatesrentalhomes.com^
 ||www.coax7nice.com^
 ||www.cob-eg.org^
-||www.cobaiadanet.duckdns.org^
 ||www.cobalten.com^
 ||www.cobanmustafapasavakfi.com^
 ||www.cobbshomecare.com^
@@ -13118,7 +13102,6 @@
 ||www.cocol88.site^
 ||www.cocomedia.ca^
 ||www.cocomongjeju.com^
-||www.cocomputewww.watchdogdns.duckdns.org^
 ||www.coconia.net^
 ||www.coconutfarmers.com^
 ||www.coconutheadsets.com^
@@ -13128,7 +13111,6 @@
 ||www.cocossalon.com^
 ||www.cocsl.es^
 ||www.codamen.com^
-||www.codazzixtrem.duckdns.org^
 ||www.code-24.biz^
 ||www.code-41.com^
 ||www.code-decode.net^
@@ -14877,6 +14859,7 @@
 ||www.cq10470.tmweb.ru^
 ||www.cq34158.tmweb.ru^
 ||www.cq38746.tmweb.ru^
+||www.cq565.com^
 ||www.cq95452.tmweb.ru^
 ||www.cqa.mx^
 ||www.cqbelleza.com^
@@ -16380,6 +16363,7 @@
 ||www.dailyjalebi.com^
 ||www.dailykeys.com^
 ||www.dailylifehub.com^
+||www.dailylifesciences.com^
 ||www.dailylocalguide.com^
 ||www.dailymedical.mamalk.com^
 ||www.dailymuktobangali.com^
@@ -17051,6 +17035,7 @@
 ||www.dc-india.com^
 ||www.dc-sovenokcom.437.com1.ru^
 ||www.dc-tech.ru^
+||www.dc0045.com^
 ||www.dc321.cn^
 ||www.dca-ems.hubhubhub.name^
 ||www.dcareug.com^
@@ -18143,6 +18128,7 @@
 ||www.df-vlog.info^
 ||www.df.com.tr^
 ||www.df9jw.homepage.t-online.de^
+||www.dfa.cc^
 ||www.dfabricaperu.com^
 ||www.dfasw.com^
 ||www.dfcf.91756.cn^
@@ -20241,6 +20227,7 @@
 ||www.drs-pharmacy.net^
 ||www.drsadao.com.br^
 ||www.drsandeepshah.com^
+||www.drsh.vn^
 ||www.drshohel.net^
 ||www.drshuxu.com^
 ||www.drsidneypearce.med.br^
@@ -20380,6 +20367,7 @@
 ||www.dszuk.hu^
 ||www.dtbpanthertrikes.co.uk^
 ||www.dtc-330d.com^
+||www.dtcc.edu.vn^
 ||www.dtcmedikal.com^
 ||www.dtechgroup.com^
 ||www.dtechway.com^
@@ -20540,6 +20528,7 @@
 ||www.dupke.at^
 ||www.duplexmanagement.co.uk^
 ||www.dupli.flu.cc^
+||www.duplicatefilecleaner.com^
 ||www.duplicatefilefixer.com^
 ||www.duplicatefilesfixer.com^
 ||www.duplicatefilesremover.com^
@@ -21006,6 +20995,7 @@
 ||www.easybizonline.com.au^
 ||www.easycontainer.co.th^
 ||www.easycounter.com^
+||www.easycracks.net^
 ||www.easycream.com^
 ||www.easycurrentnewsaccess.com^
 ||www.easydatingexposed.com^
@@ -21923,6 +21913,7 @@
 ||www.electricplug.xyz^
 ||www.electricshadows.com^
 ||www.electricsolution.al^
+||www.electricsunroof.com^
 ||www.electrictrainproductions.com^
 ||www.electricwheelchairs.co.uk^
 ||www.electriquestew.com^
@@ -23885,6 +23876,7 @@
 ||www.etiennevermeersch.be^
 ||www.etigara-electronica.ro^
 ||www.etiisalet.bugs3.com^
+||www.etiisallat.bugs3.com^
 ||www.etiissallat.bugs3.com^
 ||www.etikagit.com^
 ||www.etiksecimler.com^
@@ -26177,6 +26169,7 @@
 ||www.fgmail.com^
 ||www.fgmindia.com^
 ||www.fgmmiqngbqrxaunng.in^
+||www.fgnews.duckdns.org^
 ||www.fgoc.co.uk^
 ||www.fgoogle.com^
 ||www.fgoxychem.com^
@@ -27051,6 +27044,7 @@
 ||www.flaviarocco.com.br^
 ||www.flaviense.com.br^
 ||www.flavoredwater.net^
+||www.flavoritesystems.com^
 ||www.flavorwest.com^
 ||www.fld56.com^
 ||www.fleadhbythefeale.com^
@@ -27550,6 +27544,7 @@
 ||www.forcollegeessayhelp.com^
 ||www.ford-fiesta-block-wallpaper-news.blogspot.com^
 ||www.ford-fiesta.de^
+||www.ford-klub.eu^
 ||www.ford-windowws-eoorrry-5678.s3-website-us-west-2.amazonaws.com^
 ||www.ford7.plus.com^
 ||www.fordhamuniversity.com^
@@ -27909,6 +27904,7 @@
 ||www.fr.xhlive.org^
 ||www.fr.yah.certified-toolbar.com^
 ||www.fr.yaho.certified-toolbar.com^
+||www.fr.yahoo.c.certified-toolbar.com^
 ||www.fr.yahoo.com.certified-toolbar.com^
 ||www.fra-log.com^
 ||www.fra19.plus.com^
@@ -28648,6 +28644,7 @@
 ||www.fudcrypt.com^
 ||www.fudena.org.ve^
 ||www.fudman.com^
+||www.fudman.duckdns.org^
 ||www.fudpage.ru^
 ||www.fudpages.com^
 ||www.fuegoflores.com^
@@ -28881,6 +28878,7 @@
 ||www.furniturekitchenislands.org^
 ||www.furnstyl.com^
 ||www.furryfemales.com^
+||www.furs.ee^
 ||www.furshionista.com^
 ||www.furstyle-jl.de^
 ||www.furtee.com^
@@ -28979,6 +28977,7 @@
 ||www.fwdservice.com^
 ||www.fwdssp.com^
 ||www.fweid.rest^
+||www.fwitter.com^
 ||www.fwmrm.net^
 ||www.fwngc.com^
 ||www.fwong.com^
@@ -29040,6 +29039,7 @@
 ||www.fzhjyey.cn^
 ||www.fzhjyey.com^
 ||www.fzmumen.com^
+||www.fzqhsearch.certified-toolbar.com^
 ||www.fzwideworld.com^
 ||www.g-af.com^
 ||www.g-analytics.com^
@@ -30737,6 +30737,7 @@
 ||www.ginny-miller.com^
 ||www.ginolugli.com^
 ||www.ginosgourmandises.com^
+||www.gintama.com.ua^
 ||www.gintreja.lt^
 ||www.gioblu.com^
 ||www.giocareers.com^
@@ -31133,6 +31134,7 @@
 ||www.gm4pgv.plus.com^
 ||www.gmads.net^
 ||www.gmae.com.br^
+||www.gmagana.org^
 ||www.gmai.com^
 ||www.gmaii.com^
 ||www.gmaijl.com^
@@ -31594,6 +31596,7 @@
 ||www.goldsplaques.com^
 ||www.goldsvet.org^
 ||www.goldtrustpreciousmetals.com^
+||www.goldvipclub.com^
 ||www.goldwarez.org^
 ||www.goldwatchforwomen.com^
 ||www.goldwatereg.com^
@@ -31702,6 +31705,7 @@
 ||www.goodly.pro^
 ||www.goodlyframe.net^
 ||www.goodmediadvds.net^
+||www.goodmen.duckdns.org^
 ||www.goodmenonthego.com^
 ||www.goodmovie.us^
 ||www.goodnewshomesky.org^
@@ -32501,6 +32505,7 @@
 ||www.griggmedia.com.au^
 ||www.griggsfarmbillerica.com^
 ||www.grigolla.net^
+||www.grigori.duckdns.org^
 ||www.grijub.blogspot.com^
 ||www.grille.biz^
 ||www.grilledcheesebandits.com^
@@ -32716,6 +32721,7 @@
 ||www.grupounificados.cl^
 ||www.grupovaltec.com.br^
 ||www.grupoxn.com^
+||www.grupozancanaro.com.br^
 ||www.gruppen-orgies.com^
 ||www.gruppen-sex.tv^
 ||www.gruppobitumi.pl^
@@ -33241,6 +33247,7 @@
 ||www.h3lpdsk0-supp0t.yn.lt^
 ||www.h4ck.be^
 ||www.h4ck.org.cn^
+||www.h4x000r.duckdns.org^
 ||www.h5.com.br^
 ||www.h5s.vn^
 ||www.h7.rinch.at^
@@ -33433,6 +33440,7 @@
 ||www.hairybushthumbs.com^
 ||www.hairypussycuties.com^
 ||www.haisandacbiet.blogspot.com^
+||www.haishunprint.com^
 ||www.haisictirdeaici.go.ro^
 ||www.haitiankaoyan.com^
 ||www.haitilivenetworks.com^
@@ -34916,6 +34924,7 @@
 ||www.hi-techcabling.com^
 ||www.hi-techsolution.com^
 ||www.hi9.com.br^
+||www.hiagi.duckdns.org^
 ||www.hibara-ac.com^
 ||www.hibari-els.ed.jp^
 ||www.hibcoprotector.com^
@@ -35289,6 +35298,7 @@
 ||www.hndxxq.b17.23dns.net^
 ||www.hneclean.com^
 ||www.hnesq.com^
+||www.hnfmgg.com^
 ||www.hnfynd.cn^
 ||www.hnhcxx.com^
 ||www.hnhgny.com^
@@ -36416,6 +36426,7 @@
 ||www.https.secure.bank-of-america.login.sign.aepsumtzlh.underpains.duckdns.org^
 ||www.https.secure.bank-of-america.login.sign.btbnuabqua.underpains.duckdns.org^
 ||www.https.secure.bank-of-america.login.sign.clnsxtcsql.underpains.duckdns.org^
+||www.https.secure.bank-of-america.login.sign.ddnsaqgpmi.underpains.duckdns.org^
 ||www.https.secure.bank-of-america.login.sign.dhlcoqriys.underpains.duckdns.org^
 ||www.https.secure.bank-of-america.login.sign.djvixwwvij.underpains.duckdns.org^
 ||www.https.secure.bank-of-america.login.sign.edqwuzuxda.underpains.duckdns.org^
@@ -36448,11 +36459,13 @@
 ||www.https.secure.bank-of-america.login.sign.kyjrhnaknw.underpains.duckdns.org^
 ||www.https.secure.bank-of-america.login.sign.kyluingauq.underpains.duckdns.org^
 ||www.https.secure.bank-of-america.login.sign.lesvalsbvj.underpains.duckdns.org^
+||www.https.secure.bank-of-america.login.sign.liqypctrfr.underpains.duckdns.org^
 ||www.https.secure.bank-of-america.login.sign.lzmumieozo.underpains.duckdns.org^
 ||www.https.secure.bank-of-america.login.sign.mlztrpwoxx.underpains.duckdns.org^
 ||www.https.secure.bank-of-america.login.sign.naggebkgjb.underpains.duckdns.org^
 ||www.https.secure.bank-of-america.login.sign.nctvyiafpd.underpains.duckdns.org^
 ||www.https.secure.bank-of-america.login.sign.nkgowhimkb.underpains.duckdns.org^
+||www.https.secure.bank-of-america.login.sign.nmyveuqvya.underpains.duckdns.org^
 ||www.https.secure.bank-of-america.login.sign.nqlaznqxyq.underpains.duckdns.org^
 ||www.https.secure.bank-of-america.login.sign.nuwkcbppyz.underpains.duckdns.org^
 ||www.https.secure.bank-of-america.login.sign.oeuwfyfcls.underpains.duckdns.org^
@@ -36460,9 +36473,12 @@
 ||www.https.secure.bank-of-america.login.sign.ohqqytaksj.underpains.duckdns.org^
 ||www.https.secure.bank-of-america.login.sign.phakgzhmdq.underpains.duckdns.org^
 ||www.https.secure.bank-of-america.login.sign.pvkhjorgxp.underpains.duckdns.org^
+||www.https.secure.bank-of-america.login.sign.qzpvneownu.underpains.duckdns.org^
 ||www.https.secure.bank-of-america.login.sign.rjzskouvgj.underpains.duckdns.org^
 ||www.https.secure.bank-of-america.login.sign.scgxmajpyb.underpains.duckdns.org^
+||www.https.secure.bank-of-america.login.sign.seqsshgwkv.underpains.duckdns.org^
 ||www.https.secure.bank-of-america.login.sign.sliuqgmmey.underpains.duckdns.org^
+||www.https.secure.bank-of-america.login.sign.svhxzpeuan.underpains.duckdns.org^
 ||www.https.secure.bank-of-america.login.sign.tlimerhbga.underpains.duckdns.org^
 ||www.https.secure.bank-of-america.login.sign.ugvwnqcfox.underpains.duckdns.org^
 ||www.https.secure.bank-of-america.login.sign.uznxemgqjw.underpains.duckdns.org^
@@ -36480,6 +36496,7 @@
 ||www.https.secure.bankofamerica.login.sign.achemtildk.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.acsflpcijj.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.adnailtkmv.underpains.duckdns.org^
+||www.https.secure.bankofamerica.login.sign.aecztdbuwj.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.agkqvsgikn.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.ahxsclopjy.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.aidmkgfeyt.underpains.duckdns.org^
@@ -36503,15 +36520,20 @@
 ||www.https.secure.bankofamerica.login.sign.bobrnmckzc.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.bqcambeamk.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.budffosyyd.underpains.duckdns.org^
+||www.https.secure.bankofamerica.login.sign.buydnylimb.underpains.duckdns.org^
+||www.https.secure.bankofamerica.login.sign.bzypsvygvr.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.cbdeqzuvxq.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.ccitjhcxpp.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.ccnjcsludq.underpains.duckdns.org^
+||www.https.secure.bankofamerica.login.sign.ccnutqhvgt.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.cesjjxudod.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.cfraujrzkp.underpains.duckdns.org^
+||www.https.secure.bankofamerica.login.sign.cglrfnlfaq.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.cgzahqwafr.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.cjwspguvgg.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.clzjoioafn.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.cqohpvcohz.underpains.duckdns.org^
+||www.https.secure.bankofamerica.login.sign.csfrdvdpvm.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.ctmhgxkatm.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.cuokghumvz.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.cuuzimiagt.underpains.duckdns.org^
@@ -36525,23 +36547,29 @@
 ||www.https.secure.bankofamerica.login.sign.dncjxukvab.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.drhvfmnyok.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.dsmtuikpvy.underpains.duckdns.org^
+||www.https.secure.bankofamerica.login.sign.duqwwqjaxc.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.dvqklwcukj.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.dwutgimaai.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.dxrbdqpvif.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.dxypnnzqwb.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.ebpdfcivjf.underpains.duckdns.org^
+||www.https.secure.bankofamerica.login.sign.ecutrxnoos.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.edmrmodegf.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.edzartcpln.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.eimhpbzzcg.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.ekszimygnh.underpains.duckdns.org^
+||www.https.secure.bankofamerica.login.sign.emdaotircv.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.enjakwwhnj.underpains.duckdns.org^
+||www.https.secure.bankofamerica.login.sign.epobqexdva.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.erxshoyueb.underpains.duckdns.org^
+||www.https.secure.bankofamerica.login.sign.etebfpwmtk.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.evnwmqxsyk.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.ezvjejqkiu.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.ezynzujgmz.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.fbjhpodhsn.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.fdadekmtue.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.fepyhqnckw.underpains.duckdns.org^
+||www.https.secure.bankofamerica.login.sign.flvjsfzhdw.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.fngrtmptwk.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.fouinvfruq.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.fpvigtmevs.underpains.duckdns.org^
@@ -36555,6 +36583,7 @@
 ||www.https.secure.bankofamerica.login.sign.gaeqtsokmf.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.ggdwtdtppf.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.gghpkzzcie.underpains.duckdns.org^
+||www.https.secure.bankofamerica.login.sign.gimiiwswyk.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.gmavfepqns.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.gnonmarqyf.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.godtznfwqu.underpains.duckdns.org^
@@ -36568,6 +36597,7 @@
 ||www.https.secure.bankofamerica.login.sign.hnaudksiho.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.hnzpoazcvh.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.hqnbtbgjfj.underpains.duckdns.org^
+||www.https.secure.bankofamerica.login.sign.hrfcudtydn.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.hrrsvayxbu.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.hxvyrzoqno.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.ibgmmjfwsy.underpains.duckdns.org^
@@ -36577,42 +36607,55 @@
 ||www.https.secure.bankofamerica.login.sign.ihinqrnfva.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.ijufbzgwvw.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.ilfxrvzivn.underpains.duckdns.org^
+||www.https.secure.bankofamerica.login.sign.inelwytbuc.underpains.duckdns.org^
+||www.https.secure.bankofamerica.login.sign.inmdrefpgf.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.iokgoflrjb.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.ipegtieqja.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.iredswtqqj.underpains.duckdns.org^
+||www.https.secure.bankofamerica.login.sign.iyhyyrvfvh.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.iynenkwhfo.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.izquigxyqo.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.izyzrqntat.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.jetwvuuxmf.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.jlxeewjswy.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.jobkshkpcg.underpains.duckdns.org^
+||www.https.secure.bankofamerica.login.sign.jofdtlnddd.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.jpizyxgclr.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.jrcyvqxrmc.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.jsdajzewrz.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.jsdxthjdkk.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.jvuftehkhn.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.jvvtuawtco.underpains.duckdns.org^
+||www.https.secure.bankofamerica.login.sign.jzuwcbixgy.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.kbaynnqexp.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.kemkwtdjot.underpains.duckdns.org^
+||www.https.secure.bankofamerica.login.sign.kgyjgsiezb.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.khsgsbedmz.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.khvwedhrjk.underpains.duckdns.org^
+||www.https.secure.bankofamerica.login.sign.klkqddqumi.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.kopjiwqvmj.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.kvhtgnizsi.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.kvkyhulwhy.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.kzcgmsapmi.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.lfylrxclhg.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.ljprvnomzc.underpains.duckdns.org^
+||www.https.secure.bankofamerica.login.sign.lolumzbmid.underpains.duckdns.org^
+||www.https.secure.bankofamerica.login.sign.lvguazgdga.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.lxuqnyiwai.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.lydcrbdbxj.underpains.duckdns.org^
+||www.https.secure.bankofamerica.login.sign.mauoycxfmi.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.mavxteziqk.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.mbqfvkridw.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.mhvvbukopg.underpains.duckdns.org^
+||www.https.secure.bankofamerica.login.sign.mibdihoesd.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.mmcoqtjezo.underpains.duckdns.org^
+||www.https.secure.bankofamerica.login.sign.mmmhlmcors.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.mpvctszrwy.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.muxiyjlcts.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.mypainzgms.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.mzjvgxygof.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.ncefndgvva.underpains.duckdns.org^
+||www.https.secure.bankofamerica.login.sign.ndrfpswaej.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.ndtqayekzm.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.nexsjkgjfd.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.ngonpaymsr.underpains.duckdns.org^
@@ -36622,9 +36665,11 @@
 ||www.https.secure.bankofamerica.login.sign.nmrniainev.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.npmnpimima.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.nrakyioxkw.underpains.duckdns.org^
+||www.https.secure.bankofamerica.login.sign.nrsdetpdid.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.nuwburgxmc.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.nvpuqjevio.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.nwbnblbfyt.underpains.duckdns.org^
+||www.https.secure.bankofamerica.login.sign.nzqteyfier.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.oafcybgoqx.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.odbcqzhsfe.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.oeubdgywaf.underpains.duckdns.org^
@@ -36651,6 +36696,7 @@
 ||www.https.secure.bankofamerica.login.sign.qaauyxjpeb.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.qadaqqclyw.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.qafkcdeajd.underpains.duckdns.org^
+||www.https.secure.bankofamerica.login.sign.qdycyzkfve.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.qhbjonheik.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.qhipetooue.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.qprggqzduf.underpains.duckdns.org^
@@ -36678,24 +36724,32 @@
 ||www.https.secure.bankofamerica.login.sign.stetueonsw.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.styoiodnfu.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.svhvfopjev.underpains.duckdns.org^
+||www.https.secure.bankofamerica.login.sign.svsaxwnsxg.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.swrrjyantf.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.sxdenjxeuh.underpains.duckdns.org^
+||www.https.secure.bankofamerica.login.sign.szvjckuqtl.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.tdsfdpigyn.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.tdzcfzfhqx.underpains.duckdns.org^
+||www.https.secure.bankofamerica.login.sign.tgcsierqpv.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.tizlyzmtqx.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.tjcsqtzjjs.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.tkuivqeiwx.underpains.duckdns.org^
+||www.https.secure.bankofamerica.login.sign.tlprozavym.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.tlqbndygon.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.toyupnstex.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.tsobmlregp.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.tudhflpojt.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.tzeujvsupb.underpains.duckdns.org^
+||www.https.secure.bankofamerica.login.sign.tzjhfeyzcu.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.uaernccsho.underpains.duckdns.org^
+||www.https.secure.bankofamerica.login.sign.uajfppwlch.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.ucwretwlkz.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.ueajvankiu.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.uecylbsfda.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.ufxbuhcvef.underpains.duckdns.org^
+||www.https.secure.bankofamerica.login.sign.ujrwsxqxqe.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.uohencfyjc.underpains.duckdns.org^
+||www.https.secure.bankofamerica.login.sign.uozxkfsgfv.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.usblaqmyre.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.uuzdtdarsn.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.uwixtobsjz.underpains.duckdns.org^
@@ -36713,8 +36767,11 @@
 ||www.https.secure.bankofamerica.login.sign.vjbmtsvakg.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.vjlaghgbty.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.vnxlbbcigr.underpains.duckdns.org^
+||www.https.secure.bankofamerica.login.sign.vpcefjhhsy.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.vquhvbtlic.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.vrxcjirryf.underpains.duckdns.org^
+||www.https.secure.bankofamerica.login.sign.vsunpczoex.underpains.duckdns.org^
+||www.https.secure.bankofamerica.login.sign.vuliptavey.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.whfbvumvlw.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.whmofsrguw.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.wjctkumcwt.underpains.duckdns.org^
@@ -36763,6 +36820,7 @@
 ||www.https.secure.bankofamerica.login.sign.zodzsahrlm.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.zrnavmvutb.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.ztacxfnirh.underpains.duckdns.org^
+||www.https.secure.bankofamerica.login.sign.zweqdblgrh.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.zxqiexgija.underpains.duckdns.org^
 ||www.https.secure.bankofamerica.login.sign.zznfaoamlr.underpains.duckdns.org^
 ||www.https.usr.signin.php-country.x-uslocale.x-en-us.moduex.com^
@@ -37675,6 +37733,7 @@
 ||www.idowindowsuk.com^
 ||www.idownloadplay.com^
 ||www.idox.it^
+||www.idp.vn^
 ||www.idpbnacional.com^
 ||www.idpsupport.com^
 ||www.idrees.pk^
@@ -40768,8 +40827,6 @@
 ||www.iyioglu.com^
 ||www.iyjph.voluumtrk.com^
 ||www.iyke.darkbastard.com.de^
-||www.iykecyprus.duckdns.org^
-||www.iykemann.duckdns.org^
 ||www.iyogi.com^
 ||www.iyogiblog.com^
 ||www.iyottube.com^
@@ -41035,7 +41092,6 @@
 ||www.jandkonline.com^
 ||www.jandminfrastructure.com^
 ||www.jandradesigns.co^
-||www.jandre.ws^
 ||www.janeaustenjoy.com^
 ||www.janebyfilms.blogspot.com^
 ||www.janec.nl^
@@ -41083,7 +41139,6 @@
 ||www.jap-art.com^
 ||www.japan-kiss.com^
 ||www.japan.inmobi.com^
-||www.japanbreakingnews.com^
 ||www.japanesebeauties.net^
 ||www.japanesecosplaygirl.blogspot.com^
 ||www.japanesecosplaygirl.blogspot.hk^
@@ -41756,7 +41811,6 @@
 ||www.jmgroup-iq.com^
 ||www.jmgyhz.com^
 ||www.jmine.cn^
-||www.jmjry.duckdns.org^
 ||www.jmlazarte.com.ar^
 ||www.jmora.com^
 ||www.jmplink.com^
@@ -41773,7 +41827,6 @@
 ||www.jnbfashion.com^
 ||www.jnckbhkbkbd.hostingsiteforfree.com^
 ||www.jnetworks.at^
-||www.jnfybj.com^
 ||www.jnguanbang.com^
 ||www.jnhfsn.com^
 ||www.jnhoje.com^
@@ -41843,12 +41896,10 @@
 ||www.jobkunja.com^
 ||www.joblo.com^
 ||www.jobmastergroup.com^
-||www.joboffer221.wufoo.com^
 ||www.jobopp.com^
 ||www.jobquarters.com^
 ||www.jobrajasthan.com^
 ||www.jobs77alerts.com^
-||www.jobs95.com^
 ||www.jobsaf.com^
 ||www.jobsalert.xyz^
 ||www.jobsalert24.com^
@@ -41868,11 +41919,9 @@
 ||www.jobvacancyalert.com^
 ||www.jobwrite.com^
 ||www.jocamohe.tripod.com^
-||www.jocelyndonegan.com^
 ||www.jocelynjohnson.com^
 ||www.jochen-schaefer.eu^
 ||www.jochen.be^
-||www.jockl.com^
 ||www.jockytours.com^
 ||www.jodhacouture.com^
 ||www.jodiemcneill.com^
@@ -41887,7 +41936,6 @@
 ||www.joedee.co.za^
 ||www.joefortune89.com^
 ||www.joefusion.com^
-||www.joeing.duckdns.org^
 ||www.joeknowsaguy.com^
 ||www.joeknowsgayporn.com^
 ||www.joel-t.com^
@@ -41906,10 +41954,8 @@
 ||www.joesak.com^
 ||www.joesantibanez.cl^
 ||www.joesboardshop.com^
-||www.joeshowdoc.com^
 ||www.joesosnowski.com^
 ||www.joespeakesq.com^
-||www.joewhizz.duckdns.org^
 ||www.joeymerchant.com^
 ||www.joeynizuk.com^
 ||www.joeyslimousine.com^
@@ -41926,7 +41972,6 @@
 ||www.johanbrekka.no^
 ||www.johannesson.at^
 ||www.johansson.dk^
-||www.johcd.org^
 ||www.johkar.net^
 ||www.john-ashley.de^
 ||www.john-denney.com^
@@ -41934,16 +41979,11 @@
 ||www.john-gates.com^
 ||www.john.edmunds.talktalk.net^
 ||www.johnbearross.com^
-||www.johnbello.ca^
-||www.johnboydbooks.com^
 ||www.johncarta.com^
 ||www.johnchell.com^
-||www.johnchowdhury.com^
 ||www.johncieslewicz.com^
 ||www.johncouchtaxservice.com^
 ||www.johndeanpark.com^
-||www.johndeertractors.com^
-||www.johnendevermak.blogspot.com^
 ||www.johnhalbrookpsychotherapy.com^
 ||www.johnhordpiano.com^
 ||www.johnhouse.co.uk^
@@ -41952,17 +41992,13 @@
 ||www.johnnybees.com^
 ||www.johnnycrap.com^
 ||www.johnnyshot.com^
-||www.johnnywalters.com^
 ||www.johnplummerpartnership.co.uk^
 ||www.johnroachpt.co.uk^
 ||www.johnsati.com^
 ||www.johnscevolaseo.com^
-||www.johnshopkinshealthalerts.baseresults.com^
 ||www.johnsjewelryinc.com^
-||www.johnsmustang.com^
 ||www.johnson-reid.com^
 ||www.johnsondistribuidores.com^
-||www.johnsonfamilydentistry.com^
 ||www.johnsonfang.com^
 ||www.johnsonfashion.com.tw^
 ||www.johnsonmediagroup.com^
@@ -42008,7 +42044,6 @@
 ||www.jokefanatic.com^
 ||www.jokeforum.com^
 ||www.joker-prawojazdy.pl^
-||www.joker1180.8u.cz^
 ||www.joker500.mywire.org^
 ||www.jokerking.de^
 ||www.jokerzcomedyclub.com^
@@ -42041,13 +42076,10 @@
 ||www.joncomet.com^
 ||www.jondaroupoo.narod.ru^
 ||www.jones-world.com^
-||www.jones.net.au^
-||www.jonescountygis.com^
 ||www.jonesrus.com^
 ||www.jongewolf.nl^
 ||www.jongtang.com^
 ||www.jonishan.com.au^
-||www.jonivanco.com^
 ||www.jonlow.com^
 ||www.jonn22.com^
 ||www.jonnylinks.com^
@@ -42890,7 +42922,6 @@
 ||www.kanaangroupsociety.com^
 ||www.kanagawave.com^
 ||www.kanal103.com.mk^
-||www.kanal218.linkpc.net^
 ||www.kanalanifarm.org^
 ||www.kanamachhi.com^
 ||www.kanaua.com.br^
@@ -43693,7 +43724,6 @@
 ||www.khudermunkh.mn^
 ||www.khudothimoitravinh.com^
 ||www.khueng.go.th^
-||www.khulnasports.com^
 ||www.khumbro.com^
 ||www.khurki.com^
 ||www.khurshideng.com^
@@ -43790,7 +43820,6 @@
 ||www.killmarkdep.blogspot.com^
 ||www.killoftheday.com^
 ||www.killordestroymyenemy.blogspot.com^
-||www.killsitelima.duckdns.org^
 ||www.killsometime.com^
 ||www.killuarules.duckdns.org^
 ||www.kilo6alga.com^
@@ -44366,7 +44395,6 @@
 ||www.kolekcjamebli.shop^
 ||www.koleksiresepinusantara.blogspot.com^
 ||www.kolex.eu^
-||www.kolher.com^
 ||www.koliasolicitors.co.uk^
 ||www.kolimport.com^
 ||www.kolkatalivemusic.com^
@@ -44504,7 +44532,6 @@
 ||www.korcsma.de^
 ||www.korczak.wielun.pl^
 ||www.korea.inmobi.com^
-||www.koreadefence.net^
 ||www.koreadrama-series.blogspot.com^
 ||www.koreahrd.org^
 ||www.korean-hairstyles.blogspot.com^
@@ -44820,7 +44847,6 @@
 ||www.kuafor.aygungroup.com^
 ||www.kuaibo.com^
 ||www.kuaibo2.net^
-||www.kuaiyan.com.cn^
 ||www.kuaizip.com^
 ||www.kuangyuantrade.com^
 ||www.kuasasaksama.com^
@@ -44979,7 +45005,6 @@
 ||www.kvona.com^
 ||www.kvonline.tactics.be^
 ||www.kvtek.in^
-||www.kw-hsc.co.kr^
 ||www.kwaderrec.com^
 ||www.kwafu.com^
 ||www.kwakjuwon.com.ne.kr^
@@ -45505,7 +45530,6 @@
 ||www.lartisanet.com^
 ||www.lartsev.com^
 ||www.laryover2018.duckdns.org^
-||www.laryovermarzo.duckdns.org^
 ||www.lasagneandands.com^
 ||www.lasagneria.eu^
 ||www.lasalacantina.com^
@@ -45526,7 +45550,6 @@
 ||www.laserskincaresolutions.com^
 ||www.lasertag.kiev.ua^
 ||www.lasertattooremovalma.com^
-||www.laserveradedomaina.com^
 ||www.laservideo.it^
 ||www.laserzip.ru^
 ||www.lasfida.net^

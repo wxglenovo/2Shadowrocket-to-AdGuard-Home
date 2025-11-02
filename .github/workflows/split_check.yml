@@ -24,26 +24,30 @@ jobs:
       PYTHONUNBUFFERED: 1
 
     steps:
-      - name: Checkout repository
+      # ✅ 拉取仓库
+      - name: ✅ 拉取代码库
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Setup Python
+      # ✅ Python环境
+      - name: ✅ 设置 Python 环境
         uses: actions/setup-python@v4
         with:
           python-version: '3.12'
 
-      - name: Install dependencies
+      # ✅ 安装依赖
+      - name: ✅ 安装依赖
         run: pip install --upgrade requests dnspython
 
-      - name: Configure Git
+      # ✅ Git 配置
+      - name: ✅ Git 配置
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-      # ✅ 自动/手动决定当前分片
-      - name: Determine PART index
+      # ✅ 自动或手动解析当前分片
+      - name: ✅ 检测本次需要处理的分片
         id: detect
         run: |
           mkdir -p tmp
@@ -52,7 +56,7 @@ jobs:
 
           if [ -n "$PART_INPUT" ]; then
             PART="$PART_INPUT"
-            echo "🛠 手动指定分片：$PART"
+            echo "📌 使用手动指定的分片：$PART"
           else
             if [ -f "$LAST_PART_FILE" ]; then
               LAST_PART=$(cat "$LAST_PART_FILE")
@@ -60,65 +64,72 @@ jobs:
             else
               PART=1
             fi
-            echo "⏱ 自动轮替分片：$PART"
+            echo "⏱ 自动轮换分片，本次处理：$PART"
           fi
 
           echo "$PART" > "$LAST_PART_FILE"
           echo "part=$PART" >> $GITHUB_OUTPUT
 
-      # ✅ 每 6 小时强制更新规则源
-      # ✅ **特别修改：Python参数必须是 --force-update，而不是 --force**
-      - name: Force download rules at schedule times
+      # ✅ 每 6 小时强制拉取规则
+      # ✅ 本次改动：参数从 --force → ✅ 改成 --force-update
+      - name: ✅ 定时强制更新规则（每 6 小时）
         run: |
           CURRENT_HOUR=$(date -u +"%H")
           if [[ "$CURRENT_HOUR" == "00" || "$CURRENT_HOUR" == "06" || "$CURRENT_HOUR" == "12" || "$CURRENT_HOUR" == "18" ]]; then
-            echo "✅ 强制拉取规则源并生成所有分片"
-            python3 split_and_check_16.py --force-update   # ✅ 修复
+            echo "🔄 定时触发 → 强制重新下载规则并切片"
+            python3 split_and_check_16.py --force-update    # ✅ 本次改动
           else
-            echo "⏩ 非定时刷新时段，跳过强制更新"
+            echo "⏩ 当前不是强制刷新时间 → 跳过"
           fi
 
-      # ✅ 首次运行必须有 merged_rules 和 part_01，否则补齐
-      - name: Ensure rules and first part exist
+      # ✅ 如果首次运行，无 merged_rules 或无分片，则重新生成
+      - name: ✅ 检查规则与分片是否存在
         run: |
           if [ ! -f "merged_rules.txt" ] || [ ! -f "tmp/part_01.txt" ]; then
-            echo "⚠ 缺少规则文件或分片 → 重新拉取"
-            python3 split_and_check_16.py --force-update    # ✅ 修复
+            echo "⚠ 检测到缺少规则或分片 → 正在重新拉取"
+            python3 split_and_check_16.py --force-update    # ✅ 本次改动
           else
-            echo "✅ 规则文件与分片存在"
+            echo "✅ 已检测到完整规则与分片，无需重新生成"
           fi
 
-      - name: Ensure delete_counter.json exists
+      # ✅ 确保连续失败计数 JSON 存在
+      - name: ✅ 创建或检查 delete_counter.json
         run: |
           mkdir -p dist
           if [ ! -f dist/delete_counter.json ]; then
             echo "{}" > dist/delete_counter.json
-            echo "✅ 创建 dist/delete_counter.json（全局连续失败计数）"
+            echo "✅ 已创建 dist/delete_counter.json（全局连续失败计数）"
           else
             echo "✅ delete_counter.json 已存在"
           fi
 
-      - name: Run DNS validation for current part
+      # ✅ 执行 DNS 验证
+      - name: ✅ 执行 DNS 验证
         env:
           PART: ${{ steps.detect.outputs.part }}
         run: |
           mkdir -p logs
-          echo "⏱ 开始验证分片 $PART"
+          echo "🚀 开始验证分片 $PART..."
           python3 split_and_check_16.py --part "$PART" | tee logs/split_check_part_${PART}.log
 
-      # ✅ 自动 commit/push
-      # ✅ 特别修改：修复有时 validated_*.txt 还没生成导致的报错
-      - name: Commit & Push Validated Rules
+      # ✅ 提交与推送
+      - name: ✅ 提交与推送更改
         env:
           PART: ${{ steps.detect.outputs.part }}
         run: |
           STATS=$(grep "COMMIT_STATS" logs/split_check_part_${PART}.log | tail -n1 | sed 's/COMMIT_STATS: //')
 
+          echo "📝 本次提交统计：$STATS"
+
+          # ✅ 特别改动：validated_*.txt 可能不存在 → 禁止报错
           git add tmp/last_part.txt dist/delete_counter.json merged_rules.txt || true
-          git add dist/validated_part_*.txt 2>/dev/null || true   # ✅ 修复报错点
+          git add dist/validated_part_*.txt 2>/dev/null || true   # ✅ 本次改动
 
-          git commit -m "🤖 分片 $PART → $STATS" || echo "ℹ️ 无需提交"
+          git commit -m "🤖 分片 $PART | $STATS" || echo "ℹ️ 本次没有更新内容，无需提交"
 
-          git pull --rebase origin main || echo "⚠ Pull 失败（已忽略）"
+          echo "🔄 正在 Pull 最新代码（避免冲突）"
+          git pull --rebase origin main || echo "⚠ Pull 失败（忽略，不影响执行）"
 
-          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main || echo "⚠ Push 失败"
+          echo "⬆ 正在 Push 到仓库"
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main || echo "⚠ Push 失败（可能无变化）"
+

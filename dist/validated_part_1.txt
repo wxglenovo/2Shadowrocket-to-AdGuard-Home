@@ -417,6 +417,7 @@
 0.0.0.0 ad.groupon.nl
 0.0.0.0 ad.groupon.pl
 0.0.0.0 ad.hatena.ne.jp
+0.0.0.0 ad.hi5.com
 0.0.0.0 ad.horvitznewspapers.net
 0.0.0.0 ad.hyena.cz
 0.0.0.0 ad.infoseek.com
@@ -453,6 +454,7 @@
 0.0.0.0 ad.wz.cz
 0.0.0.0 ad.xmovies8.si
 0.0.0.0 ad.zinimedia.com
+0.0.0.0 ad.zodera.hu
 0.0.0.0 ad0.api.ero-advertising.com
 0.0.0.0 ad0.banners.ero-advertising.com
 0.0.0.0 ad0.bigmir.net
@@ -553,6 +555,8 @@
 0.0.0.0 ad31.checkm8.com
 0.0.0.0 ad31digital.checkm8.com
 0.0.0.0 ad32.checkm8.com
+0.0.0.0 ad32digital.checkm8.com
+0.0.0.0 ad33.checkm8.com
 0.0.0.0 ad33digital.checkm8.com
 0.0.0.0 ad34.checkm8.com
 0.0.0.0 ad34digital.checkm8.com
@@ -660,6 +664,7 @@
 0.0.0.0 adfstat.yandex.ru
 0.0.0.0 adgraphics.theonion.com
 0.0.0.0 adguanggao.eee114.com
+0.0.0.0 adi.admicro.vn
 0.0.0.0 adi.bigmir.net
 0.0.0.0 adimage.blm.net
 0.0.0.0 adimages.been.com
@@ -810,6 +815,7 @@
 0.0.0.0 ads.freshmeat.net
 0.0.0.0 ads.friendfinder.com
 0.0.0.0 ads.fulldls.com
+0.0.0.0 ads.game.net
 0.0.0.0 ads.gamigo.de
 0.0.0.0 ads.gaming-universe.de
 0.0.0.0 ads.gld.dk
@@ -1271,6 +1277,7 @@
 0.0.0.0 almuradtiles.zohosites.com
 0.0.0.0 alpha.onfluencer.net
 0.0.0.0 alpha2.autoads.asia
+0.0.0.0 alphaapi.autoads.asia
 0.0.0.0 alphaedgemarkethq.digitalhuner.com
 0.0.0.0 alt.webtraxs.com
 0.0.0.0 alternativhirek.blogspot.hu
@@ -1489,6 +1496,7 @@
 0.0.0.0 api-live.outgrow.co
 0.0.0.0 api-n.outgrow.co
 0.0.0.0 api.112.2o7.net
+0.0.0.0 api.autoads.asia
 0.0.0.0 api.axiatraders.com
 0.0.0.0 api.boclinkads.com
 0.0.0.0 api.britepool.com
@@ -1687,6 +1695,7 @@
 0.0.0.0 babycenter.tt.omtrdc.net
 0.0.0.0 babycentercom.112.2o7.net
 0.0.0.0 backdoor.thumblogger.com
+0.0.0.0 backup.review-ledger.live
 0.0.0.0 backuperwebcam.weebly.com
 0.0.0.0 bag.mobile.system.video.sms13.de
 0.0.0.0 bahn.de.122.2o7.net
@@ -3216,6 +3225,9 @@
 0.0.0.0 front-logs.voodoo-ads.io
 0.0.0.0 front.aid-ad.jp
 0.0.0.0 frontprod.androidzip.com
+0.0.0.0 frwrz661fasv.l4.adsco.re
+0.0.0.0 frwrz661fasv.n4.adsco.re
+0.0.0.0 frwrz661fasv.s4.adsco.re
 0.0.0.0 fs10.fusestats.com
 0.0.0.0 fujielectricholdings.112.2o7.net
 0.0.0.0 fun.lbn.ru
@@ -4652,6 +4664,7 @@
 0.0.0.0 netsdartboards.122.2o7.net
 0.0.0.0 network.advplace.com
 0.0.0.0 networksolutions.112.2o7.net
+0.0.0.0 new.915yzt.cn
 0.0.0.0 new.cetrk.com
 0.0.0.0 new.chokertraffic.com
 0.0.0.0 new.cityads.com
@@ -6761,6 +6774,7 @@
 0.0.0.0 wahacondrax.iad-03.braze.com
 0.0.0.0 waitlist.geekupworld.com
 0.0.0.0 wakeup.klick.vn
+0.0.0.0 wakeup247.klick.vn
 0.0.0.0 walgrns.112.2o7.net
 0.0.0.0 wallmcream.divorcelawyersandiego.com
 0.0.0.0 walmart.112.2o7.net
@@ -8431,6 +8445,7 @@
 0.0.0.0 www.dorukhalici.com
 0.0.0.0 www.dosasg.com
 0.0.0.0 www.dotpay.pocztapolska24.pl
+0.0.0.0 www.dotzup.com
 0.0.0.0 www.doubletankstore.com
 0.0.0.0 www.dourixbeamai.ru
 0.0.0.0 www.doyouluvdogs.com
@@ -19362,7 +19377,6 @@ wxsnsdy.video.qq.com^
 ||12c7552ecf49857a.com^
 ||12cams.be^
 ||12cb9d0c1f76a1f6.com^
-||12d58a5b4f36.site^
 ||12daysbook.com^
 ||12dbff90c6aaf78e.com^
 ||12directions.com^
@@ -19762,7 +19776,6 @@ wxsnsdy.video.qq.com^
 ||1412173.fls.doubleclick.net^
 ||14131.cc^
 ||14135679.adoric-om.com^
-||1414newlife.duckdns.org^
 ||141592653589793238462643383279502884197169399375105820974944592.com^
 ||141593501.keywordblocks.com^
 ||14198.com^
@@ -20827,7 +20840,6 @@ wxsnsdy.video.qq.com^
 ||177-32.dsl.sound.ag^
 ||177-vgq-981.mktoresp.com^
 ||177.175.50.84.dyn.estpak.ee^
-||177.214.38.84.otvk.pl^
 ||177.6.87.194.dynamic.dol.ru^
 ||177.sub-70-208-217.myvzw.com^
 ||177.sub-70-221-188.myvzw.com^
@@ -20852,7 +20864,6 @@ wxsnsdy.video.qq.com^
 ||177ed11f3a2b0fd3.com^
 ||177o.com^
 ||178-32-106-85.kimsufi.com^
-||178-live.com^
 ||178.173.92.64.static.reverse.ltdomains.com^
 ||178.179.232.72.static.reverse.ltdomains.com^
 ||178.248.3.202.ll.sta.mana.pf^
@@ -21300,8 +21311,6 @@ wxsnsdy.video.qq.com^
 ||189-46-117-234.dsl.telesp.net.br^
 ||189-46-119-162.dsl.telesp.net.br^
 ||189-46-13-178.dsl.telesp.net.br^
-||189-46-135-243.dsl.telesp.net.br^
-||189-46-2-193.dsl.telesp.net.br^
 ||189-46-205-220.dsl.telesp.net.br^
 ||189-46-221-18.dsl.telesp.net.br^
 ||189-46-221-30.dsl.telesp.net.br^
@@ -21621,7 +21630,6 @@ wxsnsdy.video.qq.com^
 ||190237bdf8.08a62d358c.com^
 ||19024.engine.mobileapptracking.com^
 ||190241.engine.mobileapptracking.com^
-||190243coinbase.com^
 ||190311.engine.mobileapptracking.com^
 ||19034.engine.mobileapptracking.com^
 ||19035924.automated.almosafer.com^
@@ -22080,7 +22088,6 @@ wxsnsdy.video.qq.com^
 ||1b6wvktphtz.stresshelden-coaching.de^
 ||1b755e90fba4.xyz^
 ||1b88cc6bce.7898a9d175.com^
-||1b9817e57a.top^
 ||1ba09568227d1424.com^
 ||1ba661d1ee941a4b.com^
 ||1ba8750b2c0aff93.com^
@@ -29063,7 +29070,6 @@ wxsnsdy.video.qq.com^
 ||360protected.com^
 ||360redirect.com^
 ||360roomview.com^
-||360service.report360.io^
 ||360share.com^
 ||360shopping.com.cn^
 ||360shuke.com^
@@ -29897,7 +29903,6 @@ wxsnsdy.video.qq.com^
 ||3a52c17df4635188.com^
 ||3a5918a7b124312f.com^
 ||3a60-3493-2ef5-707b.reporo.net^
-||3a601e828ea3c2b8.com^
 ||3a6359571b.470e0f40ac.com^
 ||3a699e5208.ed097cf04b.com^
 ||3a6f0b603caedae2.com^
@@ -30262,7 +30267,6 @@ wxsnsdy.video.qq.com^
 ||3gipcam.com^
 ||3gl.net^
 ||3gmobilerepaircentre.com.au^
-||3gmtr.com^
 ||3gool.blogspot.com^
 ||3gplay.pl^
 ||3gpvideo.ru^
@@ -30821,9 +30825,6 @@ wxsnsdy.video.qq.com^
 ||407b69137fb61ca0.com^
 ||407c3166d708913f.com^
 ||407ec3a9fbd5.com^
-||407enter.top^
-||407etrbil.top^
-||407etrer.top^
 ||407ffc5e-58ef-4c5f-97e3-ed682179108e.express.conves.io^
 ||408-zigzagstrnginx.0-030.net.daraz.com^
 ||408.0-01-lib-oa-1-cf23region.net.daraz.com^
@@ -31869,7 +31870,6 @@ wxsnsdy.video.qq.com^
 ||47235645.xyz^
 ||472614bcd69b421e.com^
 ||4728a5b2baa6e6b1.com^
-||472post.cfd^
 ||473-zzr-267.mktoresp.com^
 ||473057f8f5dae93c.com^
 ||4733010.fls.doubleclick.net^
@@ -32270,7 +32270,6 @@ wxsnsdy.video.qq.com^
 ||4all.twinks4all.com^
 ||4allfree.com^
 ||4aloevera.com^
-||4analytics.ws^
 ||4analyzer.com^
 ||4anners.ero-advertising.com^
 ||4aqoxkesav.com^
@@ -33594,20 +33593,14 @@ wxsnsdy.video.qq.com^
 ||54009166.dsl.pool.telekom.hu^
 ||5400a980.dsl.pool.telekom.hu^
 ||5400a99e.dsl.pool.telekom.hu^
-||5400aadf.dsl.pool.telekom.hu^
 ||5400de51.dsl.pool.telekom.hu^
-||5400ef7b.dsl.pool.telekom.hu^
 ||5400fd37.dsl.pool.telekom.hu^
 ||5402800.fls.doubleclick.net^
-||54032bf0.catv.pool.telekom.hu^
 ||5403308a.catv.pool.telekom.hu^
-||54035467.catv.pool.telekom.hu^
 ||5403a3e4.catv.pool.telekom.hu^
 ||5403b2c2.catv.pool.telekom.hu^
-||5403bbde.catv.pool.telekom.hu^
 ||5403c0df.catv.pool.telekom.hu^
 ||5403c1fc.catv.pool.telekom.hu^
-||5403c2d7.catv.pool.telekom.hu^
 ||5403ec26.catv.pool.telekom.hu^
 ||5404448.fls.doubleclick.net^
 ||5405300.fls.doubleclick.net^
@@ -34311,7 +34304,6 @@ wxsnsdy.video.qq.com^
 ||598-pzx-320.mktoresp.com^
 ||598-zra-380.mktoresp.com^
 ||59813833.adoric-om.com^
-||5981742-trezor.io^
 ||5988409.fls.doubleclick.net^
 ||5988425.fls.doubleclick.net^
 ||599.stats.misstrends.com^
@@ -34581,7 +34573,6 @@ wxsnsdy.video.qq.com^
 ||5f7717b605.d29ddeae47.com^
 ||5f8174fcf50c8f3fcaa2-1d2bf932855ebd52407efbb6cb4b64e5.r49.cf2.rackcdn.com^
 ||5f8b17f76664f85b.com^
-||5f98a6e2a24080e2.com^
 ||5f9c-51e9-4ba2-8184.reporo.net^
 ||5fa8f.v.fwmrm.net^
 ||5fb59.v.fwmrm.net^
@@ -35585,7 +35576,6 @@ wxsnsdy.video.qq.com^
 ||6454.eu-api.swrve.com^
 ||6454.eu-content.swrve.com^
 ||64580df84b.com^
-||6458f5edd8dd910f.com^
 ||646violate.com^
 ||647-qnj-130.mktoresp.com^
 ||6473.taplink.ws^
@@ -38273,7 +38263,6 @@ wxsnsdy.video.qq.com^
 ||7b0ac00c27488ffc.com^
 ||7b1da829836a966e.com^
 ||7b1deec9a7.70de8b3bd7.com^
-||7b20816272.com^
 ||7b26070d7b.68d48e2725.com^
 ||7b34c9796664c918.com^
 ||7b3a4a16a15d1a97d11d85986f48aba0.cyou^
@@ -38339,7 +38328,6 @@ wxsnsdy.video.qq.com^
 ||7caa2.v.fwmrm.net^
 ||7car.com.cn^
 ||7cb63c8b.ngrok.io^
-||7cbd0be81eb9beda4fd9.xyz^
 ||7cbf2.v.fwmrm.net^
 ||7cbwus.cn^
 ||7cc0dfc059.4497e71924.com^
@@ -39707,7 +39695,6 @@ wxsnsdy.video.qq.com^
 ||82b379980e1e684f6a37-f44861df22a3cd4eba5cb48c72143e81.r69.cf2.rackcdn.com^
 ||82d58e8d0bde1faa.com^
 ||82d62113a78dcaa5.com^
-||82da5.v.fwmrm.net^
 ||82df7.v.fwmrm.net^
 ||82e00.v.fwmrm.net^
 ||82e08.v.fwmrm.net^
@@ -39838,7 +39825,6 @@ wxsnsdy.video.qq.com^
 ||8352dc02157e2e48.com^
 ||835dbfc6be38beaa.com^
 ||83692.com^
-||8374864095ba0b05722cdeece2c3b43a.com^
 ||83773785b422815a.com^
 ||83802432.adoric-om.com^
 ||838116322.keywordblocks.com^
@@ -41094,7 +41080,6 @@ wxsnsdy.video.qq.com^
 ||87-205-47-45.adsl.inetia.pl^
 ||87-205-50-57.adsl.inetia.pl^
 ||87-205-53-147.adsl.inetia.pl^
-||87-229-16-210.saghysat.hu^
 ||87-229-17-147.saghysat.hu^
 ||87-94-147-51.tampere.customers.dnainternet.fi^
 ||87-94-82-43.tampere.customers.dnainternet.fi^
@@ -41295,7 +41280,6 @@ wxsnsdy.video.qq.com^
 ||88597.net^
 ||885c93586e11cccacd647adc490c00a4.getforge.io^
 ||885d978a23.149b5a6b84.com^
-||885dc649ee82.xyz^
 ||885df499425ec898.com^
 ||885fff80b5.6c9eed1c74.com^
 ||885mt.com^
@@ -41545,7 +41529,6 @@ wxsnsdy.video.qq.com^
 ||8934.sock-qa1.marketingcloudqaops.com^
 ||894388501642281033.weebly.com^
 ||8945.connector-qa1.marketingcloudqaapis.com^
-||894721-att.com^
 ||895-aqn-021.mktoresp.com^
 ||895-cgw-711.mktoresp.com^
 ||8957.sfap-qa1.marketingcloudqaops.com^
@@ -42305,7 +42288,6 @@ wxsnsdy.video.qq.com^
 ||91mh.me^
 ||91mobiles.com^
 ||91pool.com^
-||91pornhub.com^
 ||91support.com^
 ||91taojin.com^
 ||91veg.com^
@@ -43569,12 +43551,6 @@ wxsnsdy.video.qq.com^
 ||9651.editor-qa1.marketingcloudqaapis.com^
 ||9651.sfap-qa1.marketingcloudqaops.com^
 ||965312512.keywordblocks.com^
-||9659abc575.top^
-||9659abc576.top^
-||9659abc577.top^
-||9659abc578.top^
-||9659abc579.top^
-||9659abc580.top^
 ||9659abc585.top^
 ||9659abc586.top^
 ||9659abc587.top^
@@ -44496,7 +44472,6 @@ wxsnsdy.video.qq.com^
 ||a-writer.com^
 ||a-zdorov.ru^
 ||a-zwap.tk^
-||a.0c3a9b2aae13e46e43b0815559b8ab5288c3616548b2a148d9ac9c5d.com^
 ||a.0day.kiev.ua^
 ||a.111mi.com^
 ||a.1800gotjunk.com^
@@ -47976,7 +47951,6 @@ wxsnsdy.video.qq.com^
 ||a2jk1xoadv.neliver.com^
 ||a2m.cn^
 ||a2multimedia.pl^
-||a2mx.8r-4u.ru^
 ||a2p.go2cloud.org^
 ||a2p.org^
 ||a2put.chinaz.com^
@@ -48373,7 +48347,6 @@ wxsnsdy.video.qq.com^
 ||a3z.7ph88.ru^
 ||a4.adzs.nl^
 ||a4.applovin.com^
-||a4.censor.net^
 ||a4.hotpornfile.org^
 ||a4.ikafan.com^
 ||a4.smi2.ru^
@@ -49687,7 +49660,6 @@ wxsnsdy.video.qq.com^
 ||a6u4s5d76f87g9gyirfqzjm6ilo8ei57tfy57tdh46yu5fs.teemill.com^
 ||a6xqm5su8u.neliver.com^
 ||a6zkstvfgp.neliver.com^
-||a7.1lt22.ru^
 ||a7.7si-s.ru^
 ||a7.slotxbros.com^
 ||a7.smi2.ru^
@@ -52374,7 +52346,6 @@ wxsnsdy.video.qq.com^
 ||aasmconsultores.com^
 ||aasoftbd.org^
 ||aaspen.com^
-||aaspp-matomo-ingress-alb-1741779242.us-east-1.elb.amazonaws.com^
 ||aasr66.neoplus.adsl.tpnet.pl^
 ||aasssaa.com^
 ||aastrata.com.au^
@@ -52421,7 +52392,6 @@ wxsnsdy.video.qq.com^
 ||aawdlvr.com^
 ||aawdocs.com^
 ||aawfewvoclrhp.online^
-||aaws-aanalytics.sogei.it^
 ||aawspeedy.com^
 ||aawwewew.hipstor.kz^
 ||aax-cpm.amazon-adsystem.com^
@@ -52542,9 +52512,6 @@ wxsnsdy.video.qq.com^
 ||ab84da28bd134187.com^
 ||ab8888aaa10.cc^
 ||ab8888aaa11.cc^
-||ab8888aaa14.cc^
-||ab8888aaa16.cc^
-||ab8888aaa19.cc^
 ||ab8888aaa4.cc^
 ||ab8888aaa6.cc^
 ||ab8888aaa8.cc^
@@ -52655,7 +52622,6 @@ wxsnsdy.video.qq.com^
 ||abbotpredicateemma.com^
 ||abbotsfordautotech.com^
 ||abbotsy.com^
-||abbotteuadcusprod.112.2o7.net^
 ||abbottfamily.com.sg.102.112.2o7.net^
 ||abbottlaboratories.demdex.net^
 ||abbottlaboratories.tt.omtrdc.net^
@@ -53007,7 +52973,6 @@ wxsnsdy.video.qq.com^
 ||abis-industrie.com^
 ||abis.justclick.ru^
 ||abisorteo.webcindario.com^
-||abisource.com^
 ||abissnet.net^
 ||abitainchi.pro^
 ||abitstream.cfd^
@@ -53768,7 +53733,6 @@ wxsnsdy.video.qq.com^
 ||ac.berlinonline.de^
 ||ac.dcit.ch^
 ||ac.dun.163.com^
-||ac.dun.163yun.com^
 ||ac.ecai-report.com^
 ||ac.express.de^
 ||ac.fapnado.xxx^
@@ -54065,7 +54029,6 @@ wxsnsdy.video.qq.com^
 ||accept.alalikexpress.com^
 ||accept.mgmt.partner.net.daraz.com^
 ||accept.notifysrv.com^
-||accept.wardynskl.com.pl^
 ||acceptable.a-ads.com^
 ||acceptablebleat.com^
 ||acceptablefoot.com^
@@ -54166,7 +54129,6 @@ wxsnsdy.video.qq.com^
 ||access.iprolive.com^
 ||access.juicyteenporn.com^
 ||access.moseasia.com^
-||access.navinetwork.com^
 ||access.net.ua^
 ||access.notifysrv.com^
 ||access.open.uc.cn^

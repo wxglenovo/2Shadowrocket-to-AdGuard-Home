@@ -396,6 +396,8 @@
 0.0.0.0 www.wiadomosci-naszemiasto24.x9.eu
 0.0.0.0 www.wiadomosci-web.24.eu
 0.0.0.0 www.wiadomosci24-updates.net
+0.0.0.0 www.wiecejnizflirt.com
+0.0.0.0 www.wielkareklama.com
 0.0.0.0 www.wielofunkcyjne-okulary-do-czytania-pl.com
 0.0.0.0 www.wiercimy.com
 0.0.0.0 www.wiesetradeix.ru
@@ -410,6 +412,7 @@
 0.0.0.0 www.wildflowercrafted.net
 0.0.0.0 www.willcommen.de
 0.0.0.0 www.willmarroofing.com
+0.0.0.0 www.win-spy.com
 0.0.0.0 www.wind-walk.com
 0.0.0.0 www.windaily.com
 0.0.0.0 www.windows-film.com
@@ -2437,6 +2440,7 @@ z4a.net
 ||0.load5.biz^
 ||0.load8.biz^
 ||0.mol16.biz^
+||0.mol19.biz^
 ||0.mol5.biz^
 ||0.mol7.biz^
 ||0.mono3.biz^
@@ -4539,7 +4543,6 @@ z4a.net
 ||01-webmail-10-authenticate-oa-1.net.daraz.com^
 ||01-webstoreauthentiwebstorete21-10-authentiwebstorete-oa-1.net.daraz.com^
 ||01-winadmin-nym2.ad.corp.appnexus.com^
-||01-winbuild-nym2.ad.corp.appnexus.com^
 ||01-winlog-nym2.ad.corp.appnexus.com^
 ||01-wwar21ww-f8.net.daraz.com^
 ||01-www1ib-oa-1-administrators-csr40.net.daraz.com^
@@ -4679,6 +4682,7 @@ z4a.net
 ||0246c39abb80ce84.com^
 ||024dna.cn^
 ||024f-c409-1d64-9c88.reporo.net^
+||025613.com^
 ||0256bd2bcd00ae0a.com^
 ||025f96606f46ccf7.com^
 ||025suyu.com^
@@ -5281,15 +5285,11 @@ z4a.net
 ||088156009099.olsztyn.vectranet.pl^
 ||088156011233.olsztyn.vectranet.pl^
 ||088156034241.olsztyn.vectranet.pl^
-||088156039027.olsztyn.vectranet.pl^
 ||088156040066.olsztyn.vectranet.pl^
-||088156052081.olsztyn.vectranet.pl^
 ||088156057218.ostroda.vectranet.pl^
-||088156060096.nidzica.vectranet.pl^
 ||088156069141.skarzysko.vectranet.pl^
 ||088156175055.skarzysko.vectranet.pl^
 ||088156211139.radom.vectranet.pl^
-||088156212231.radom.vectranet.pl^
 ||088156213183.radom.vectranet.pl^
 ||088156250062.koscierzyna.vectranet.pl^
 ||088168.sound.ag^
@@ -5341,7 +5341,6 @@ z4a.net
 ||093-tqy-221.mktoresp.com^
 ||093.sexfortokens.com^
 ||093105003066.radomsko.vectranet.pl^
-||093105015032.braniewo.vectranet.pl^
 ||093105023115.skarzysko.vectranet.pl^
 ||093105025184.suwalki.vectranet.pl^
 ||093105030173.suwalki.vectranet.pl^
@@ -5987,6 +5986,7 @@ z4a.net
 ||1.lvshi567.com^
 ||1.mm100.com^
 ||1.mol16.biz^
+||1.mol19.biz^
 ||1.mol5.biz^
 ||1.mol7.biz^
 ||1.mono3.biz^
@@ -7330,6 +7330,7 @@ z4a.net
 ||11.147.118.sound.ag^
 ||11.6.87.194.dynamic.dol.ru^
 ||11.96131.com.cn^
+||11.gs^
 ||11.ptp22.com^
 ||11.red-88-31-21.staticip.rima-tde.net^
 ||11.red-88-31-70.staticip.rima-tde.net^
@@ -7876,7 +7877,6 @@ z4a.net
 ||12159c9c0b.3009e36989.com^
 ||12164.engine.mobileapptracking.com^
 ||12165.editor-qa1.marketingcloudqaapis.com^
-||121723398207.vercel.app^
 ||12176874.adoric-om.com^
 ||121779921.keywordblocks.com^
 ||121computersupport.com^
@@ -7991,6 +7991,7 @@ z4a.net
 ||12396.editor-qa1.marketingcloudqaapis.com^
 ||123ads.nl^
 ||123advertising.nl^
+||123any.com^
 ||123banners.com^
 ||123bcc3721.2156f5cc76.com^
 ||123beautyproducts.com^
@@ -9042,6 +9043,7 @@ z4a.net
 ||1412173.fls.doubleclick.net^
 ||14131.cc^
 ||14135679.adoric-om.com^
+||1414newlife.duckdns.org^
 ||141592653589793238462643383279502884197169399375105820974944592.com^
 ||141593501.keywordblocks.com^
 ||14198.com^
@@ -9333,12 +9335,12 @@ z4a.net
 ||15104.url.7wkw.com^
 ||151150.measurementapi.com^
 ||1511930.fls.doubleclick.net^
-||1511dx555.sbs^
 ||1511xsj.com^
 ||1513878.fls.doubleclick.net^
 ||15141.hittail.com^
 ||15159.url.7wkw.com^
 ||1515dd.com^
+||1515er.duckdns.org^
 ||15161.editor-qa1.marketingcloudqaapis.com^
 ||15165.url.7wkw.com^
 ||151785341.keywordblocks.com^
@@ -9531,6 +9533,7 @@ z4a.net
 ||15950.editor-qa1.marketingcloudqaapis.com^
 ||159668.measurementapi.com^
 ||159692.measurementapi.com^
+||159753456.duckdns.org^
 ||1598sdasdss.blogspot.com^
 ||1599.connector-qa1.marketingcloudqaapis.com^
 ||1599.editor-qa1.marketingcloudqaapis.com^
@@ -10131,6 +10134,7 @@ z4a.net
 ||177-32.dsl.sound.ag^
 ||177-vgq-981.mktoresp.com^
 ||177.175.50.84.dyn.estpak.ee^
+||177.214.38.84.otvk.pl^
 ||177.6.87.194.dynamic.dol.ru^
 ||177.sub-70-208-217.myvzw.com^
 ||177.sub-70-221-188.myvzw.com^
@@ -10268,6 +10272,7 @@ z4a.net
 ||17mmc5g1n.com^
 ||17oez.voluumtrk.com^
 ||17proxy.com^
+||17q.com^
 ||17sp.com.cn^
 ||17tahun.com^
 ||17u.cn^
@@ -10488,7 +10493,6 @@ z4a.net
 ||186576.tlnk.io^
 ||186650.engine.mobileapptracking.com^
 ||1867.stats.misstrends.com^
-||18670658-88be-4802-8ae0-f9c647f3990f-00-qv0gphpcvl33.kirk.replit.dev^
 ||186770.engine.mobileapptracking.com^
 ||186781.measurementapi.com^
 ||186789.measurementapi.com^
@@ -10630,6 +10634,7 @@ z4a.net
 ||189-46-173-33.dsl.telesp.net.br^
 ||189-46-185-195.dsl.telesp.net.br^
 ||189-46-2-135.dsl.telesp.net.br^
+||189-46-2-193.dsl.telesp.net.br^
 ||189-46-205-220.dsl.telesp.net.br^
 ||189-46-221-18.dsl.telesp.net.br^
 ||189-46-221-30.dsl.telesp.net.br^
@@ -10659,6 +10664,7 @@ z4a.net
 ||189-46-43-76.dsl.telesp.net.br^
 ||189-46-48-16.dsl.telesp.net.br^
 ||189-46-49-253.dsl.telesp.net.br^
+||189-46-66-232.dsl.telesp.net.br^
 ||189-46-81-115.dsl.telesp.net.br^
 ||189-46-81-2.dsl.telesp.net.br^
 ||189-46-81-75.dsl.telesp.net.br^
@@ -10668,6 +10674,8 @@ z4a.net
 ||189-46-93-226.dsl.telesp.net.br^
 ||189-46-99-195.dsl.telesp.net.br^
 ||189-47-135-3.dsl.telesp.net.br^
+||189-47-165-119.dsl.telesp.net.br^
+||189-47-18-11.dsl.telesp.net.br^
 ||189-47-180-65.dsl.telesp.net.br^
 ||189-47-200-60.dsl.telesp.net.br^
 ||189-47-203-183.dsl.telesp.net.br^
@@ -10681,9 +10689,11 @@ z4a.net
 ||189-68-128-206.dsl.telesp.net.br^
 ||189-68-137-165.dsl.telesp.net.br^
 ||189-68-17-88.dsl.telesp.net.br^
+||189-68-18-224.dsl.telesp.net.br^
 ||189-68-19-137.dsl.telesp.net.br^
 ||189-68-192-26.dsl.telesp.net.br^
 ||189-68-201-68.dsl.telesp.net.br^
+||189-68-28-51.dsl.telesp.net.br^
 ||189-68-31-35.dsl.telesp.net.br^
 ||189-69-104-44.dsl.telesp.net.br^
 ||189-69-111-91.dsl.telesp.net.br^
@@ -11737,7 +11747,6 @@ z4a.net
 ||1igare0jn.de^
 ||1iiinch.teachable.com^
 ||1in.cqcounter.com^
-||1inch-docs-lw38.vercel.app^
 ||1inch-docs.vercel.app^
 ||1inch-eth.ipns.dweb.link^
 ||1inch-extension.vercel.app^
@@ -15002,6 +15011,7 @@ z4a.net
 ||24cf67b81c.4c35d6c7f6.com^
 ||24click.top^
 ||24click.top^$popup
+||24compass.bond^
 ||24configs.bond^
 ||24counter.com^
 ||24counter.com^$third-party
@@ -15088,6 +15098,7 @@ z4a.net
 ||24uniswap.xyz^
 ||24univermag.ru^
 ||24update.bond^
+||24updates.bond^
 ||24videos.tv^
 ||24web.cc^
 ||24webgroup.com^
@@ -15348,6 +15359,7 @@ z4a.net
 ||266156632.keywordblocks.com^
 ||26631.sock-qa1.marketingcloudqaops.com^
 ||2664.tm.zedo.com^
+||2666120.com^
 ||26670.my1.ru^
 ||266735102.keywordblocks.com^
 ||26674.mydown.xaskm.com^
@@ -16924,7 +16936,6 @@ z4a.net
 ||30a431b26a.e1bf915283.com^
 ||30ae0e9e4dfb88e6.com^
 ||30bbe4fc47.2c8dd8f912.com^
-||30billion.duckdns.org^
 ||30boxes.com^
 ||30c3a3c015674e63.com^
 ||30cirt2vjxlboqm-p.adktrack53.xyz^
@@ -19628,7 +19639,6 @@ z4a.net
 ||3dnews.onthe.io^
 ||3dns-3.adobe.com^
 ||3donlinegames.de^
-||3doodler.club^
 ||3dou.net^
 ||3dp-s.tlnk.io^
 ||3dp4.com^
@@ -19810,7 +19820,6 @@ z4a.net
 ||3ig.info^
 ||3in1online.com.au^
 ||3infoweb.com^
-||3irf-casefb944638.vercel.app^
 ||3isee.com^
 ||3j0pw4ed7uac-a.akamaihd.net^
 ||3j1fiw14n9.com^
@@ -20045,7 +20054,6 @@ z4a.net
 ||4.dlevo.com^
 ||4.e-why.net^
 ||4.googlenews.xorg.pl^
-||4.internetdevices.net^
 ||4.load00.biz^
 ||4.load01.biz^
 ||4.load02.biz^
@@ -20059,6 +20067,7 @@ z4a.net
 ||4.load8.biz^
 ||4.mcnt.jp^
 ||4.mol16.biz^
+||4.mol19.biz^
 ||4.mol5.biz^
 ||4.mol7.biz^
 ||4.mono3.biz^
@@ -21248,7 +21257,6 @@ z4a.net
 ||4600114.fls.doubleclick.net^
 ||460173.ortb.adtelligent.com^
 ||460174.ortb.adtelligent.com^
-||4601f388-c532-490e-8236-ee121ac2127f-00-2wmrach7robjm.pike.replit.dev^
 ||460204582.keywordblocks.com^
 ||460365.ortb.adtelligent.com^
 ||4605355.fls.doubleclick.net^
@@ -21834,6 +21842,7 @@ z4a.net
 ||4all.twinks4all.com^
 ||4allfree.com^
 ||4aloevera.com^
+||4analytics.ws^
 ||4analyzer.com^
 ||4anners.ero-advertising.com^
 ||4aqoxkesav.com^
@@ -22246,6 +22255,7 @@ z4a.net
 ||4thofjulypictureedit.com^
 ||4thsource.actonsoftware.com^
 ||4ti1x3g90.urest.org^
+||4totls9uh.com^
 ||4toystore.com^
 ||4tr3sopq592o7svp1q6mn3.xyz^
 ||4tracker-billingcisco-capwap-controller.net.daraz.com^
@@ -23190,13 +23200,14 @@ z4a.net
 ||54.sub-75-213-167.myvzw.com^
 ||540-cgn-957.mktoresp.com^
 ||540-cqs-570.mktoresp.com^
-||54002862.dsl.pool.telekom.hu^
 ||54002887.dsl.pool.telekom.hu^
 ||540037f8.dsl.pool.telekom.hu^
 ||54004492.dsl.pool.telekom.hu^
+||540044d2.dsl.pool.telekom.hu^
 ||540046b3.dsl.pool.telekom.hu^
-||54004741.dsl.pool.telekom.hu^
 ||54004823.dsl.pool.telekom.hu^
+||540049f4.dsl.pool.telekom.hu^
+||54004a0a.dsl.pool.telekom.hu^
 ||540061d1.dsl.pool.telekom.hu^
 ||54006418.dsl.pool.telekom.hu^
 ||540069c4.dsl.pool.telekom.hu^
@@ -23205,23 +23216,27 @@ z4a.net
 ||54006f6e.dsl.pool.telekom.hu^
 ||54008f95.dsl.pool.telekom.hu^
 ||54009059.dsl.pool.telekom.hu^
-||54009166.dsl.pool.telekom.hu^
+||54009616.dsl.pool.telekom.hu^
+||54009657.dsl.pool.telekom.hu^
 ||540096d5.dsl.pool.telekom.hu^
 ||540096e0.dsl.pool.telekom.hu^
 ||5400979f.dsl.pool.telekom.hu^
+||540097b4.dsl.pool.telekom.hu^
 ||5400a808.dsl.pool.telekom.hu^
 ||5400a92a.dsl.pool.telekom.hu^
-||5400a980.dsl.pool.telekom.hu^
-||5400a99e.dsl.pool.telekom.hu^
 ||5400ae9e.dsl.pool.telekom.hu^
 ||5400c001.dsl.pool.telekom.hu^
+||5400c033.dsl.pool.telekom.hu^
+||5400c03e.dsl.pool.telekom.hu^
+||5400c04d.dsl.pool.telekom.hu^
 ||5400c076.dsl.pool.telekom.hu^
 ||5400c097.dsl.pool.telekom.hu^
+||5400c0b9.dsl.pool.telekom.hu^
+||5400c0cb.dsl.pool.telekom.hu^
 ||5400c0e1.dsl.pool.telekom.hu^
-||5400de51.dsl.pool.telekom.hu^
+||5400d2ae.dsl.pool.telekom.hu^
 ||5400e1a5.dsl.pool.telekom.hu^
 ||5400fd0d.dsl.pool.telekom.hu^
-||5400fd37.dsl.pool.telekom.hu^
 ||5400fd5f.dsl.pool.telekom.hu^
 ||5400fd9e.dsl.pool.telekom.hu^
 ||5400fda0.dsl.pool.telekom.hu^
@@ -23229,6 +23244,9 @@ z4a.net
 ||5402800.fls.doubleclick.net^
 ||5403051e.catv.pool.telekom.hu^
 ||540320cc.catv.pool.telekom.hu^
+||54032419.catv.pool.telekom.hu^
+||54032971.catv.pool.telekom.hu^
+||54032bf0.catv.pool.telekom.hu^
 ||5403308a.catv.pool.telekom.hu^
 ||5403384c.catv.pool.telekom.hu^
 ||54034231.catv.pool.telekom.hu^
@@ -23247,7 +23265,6 @@ z4a.net
 ||5403a25d.catv.pool.telekom.hu^
 ||5403a32d.catv.pool.telekom.hu^
 ||5403a393.catv.pool.telekom.hu^
-||5403a3e4.catv.pool.telekom.hu^
 ||5403a563.catv.pool.telekom.hu^
 ||5403a82f.catv.pool.telekom.hu^
 ||5403b02e.catv.pool.telekom.hu^
@@ -23260,22 +23277,21 @@ z4a.net
 ||5403c03b.catv.pool.telekom.hu^
 ||5403c05b.catv.pool.telekom.hu^
 ||5403c0d4.catv.pool.telekom.hu^
-||5403c0df.catv.pool.telekom.hu^
 ||5403c0ee.catv.pool.telekom.hu^
 ||5403c123.catv.pool.telekom.hu^
 ||5403c1b5.catv.pool.telekom.hu^
-||5403c1fc.catv.pool.telekom.hu^
 ||5403c231.catv.pool.telekom.hu^
 ||5403c247.catv.pool.telekom.hu^
 ||5403c2d6.catv.pool.telekom.hu^
+||5403c2d7.catv.pool.telekom.hu^
 ||5403c304.catv.pool.telekom.hu^
 ||5403c37d.catv.pool.telekom.hu^
 ||5403c594.catv.pool.telekom.hu^
 ||5403cca4.catv.pool.telekom.hu^
+||5403dd2c.catv.pool.telekom.hu^
 ||5403e526.catv.pool.telekom.hu^
 ||5403e853.catv.pool.telekom.hu^
 ||5403eb2e.catv.pool.telekom.hu^
-||5403ec26.catv.pool.telekom.hu^
 ||5403ec7f.catv.pool.telekom.hu^
 ||5403ed76.catv.pool.telekom.hu^
 ||5403f008.catv.pool.telekom.hu^
@@ -23283,6 +23299,7 @@ z4a.net
 ||5403f10c.catv.pool.telekom.hu^
 ||5403f195.catv.pool.telekom.hu^
 ||5403f217.catv.pool.telekom.hu^
+||5403f592.catv.pool.telekom.hu^
 ||5403f735.catv.pool.telekom.hu^
 ||5403f772.catv.pool.telekom.hu^
 ||5404448.fls.doubleclick.net^
@@ -24089,7 +24106,6 @@ z4a.net
 ||5amjcxz1advapdshyb0j2fndfjq201515396621.nuid.imrworldwide.com^
 ||5ap.je9r.ru^
 ||5arketing.0-01-lib-oa-1-cf23region.net.daraz.com^
-||5aspx.ws^
 ||5avxd.voluumtrk.com^
 ||5azc.xyz^
 ||5azvpjx8xj.com^
@@ -24542,6 +24558,7 @@ z4a.net
 ||6.load5.biz^
 ||6.load8.biz^
 ||6.mol16.biz^
+||6.mol19.biz^
 ||6.mol5.biz^
 ||6.mol7.biz^
 ||6.mono3.biz^
@@ -26916,7 +26933,24 @@ z4a.net
 ||7392.engine.mobileapptracking.com^
 ||739cb8d35c760d95.com^
 ||73a2370016b7.1web4617.paypal-offers.antimoney-laundering.org^
+||73a2370016b7.7wgei.paypal-profile.antimoney-laundering.org^
+||73a2370016b7.966125.n4.paypal.antimoney-laundering.org^
+||73a2370016b7.atlii.paypal-reactivate.antimoney-laundering.org^
+||73a2370016b7.b.i76.host146.paypal.antimoney-laundering.org^
+||73a2370016b7.db1www.paypal-withdrawal.antimoney-laundering.org^
+||73a2370016b7.ems.paypal-logon.antimoney-laundering.org^
+||73a2370016b7.eu1b80.paypal.antimoney-laundering.org^
+||73a2370016b7.glb-srj.paypal-network.antimoney-laundering.org^
+||73a2370016b7.hgpa.devna.paypal-shopping.antimoney-laundering.org^
+||73a2370016b7.launcher-v1q.paypal-here.antimoney-laundering.org^
+||73a2370016b7.nl.bizpolicy.paypal.antimoney-laundering.org^
+||73a2370016b7.oa.paypal-ssl.antimoney-laundering.org^
+||73a2370016b7.sip.i-pris6.paypal-login.antimoney-laundering.org^
 ||73a2370016b7.tech26.de.danggal2.paypal.antimoney-laundering.org^
+||73a2370016b7.trade-in.paypal.antimoney-laundering.org^
+||73a2370016b7.tys.paypal.antimoney-laundering.org^
+||73a2370016b7.vm88.paypal.antimoney-laundering.org^
+||73a2370016b7.vpn.xishan.paypal.antimoney-laundering.org^
 ||73a60a0e.top^
 ||73cba33ee21bc616.com^
 ||73ccbff0179b984b.com^
@@ -27882,9 +27916,9 @@ z4a.net
 ||7860a898b6ea4774.com^
 ||78642.net^
 ||786736532.keywordblocks.com^
+||786ghtduhj.duckdns.org^
 ||786muslim.com^
 ||786muslims.com^
-||786services.co.uk^
 ||786supermarket.com^
 ||787.vn^
 ||787254981.keywordblocks.com^
@@ -28346,7 +28380,6 @@ z4a.net
 ||7jnw4jh4-6d3300d8776cce51d8ea69828605194023a4306b-am1.d.aa.online-metrix.net^
 ||7jnw4jh4-6e541a65027b9aa8ad94b14eff8ac52d4ab018a0-am1.d.aa.online-metrix.net^
 ||7jnw4jh4-6fb6d6513f5e658876ea587b1850e772d9997445-am1.d.aa.online-metrix.net^
-||7jnw4jh4-713a372d6f8acbc80a8127292ee643f393b00c93-am1.d.aa.online-metrix.net^
 ||7jnw4jh4-786ace6d1a7a6fe5ee48f8f3b67cafd44e2c5fc4-am1.d.aa.online-metrix.net^
 ||7jnw4jh4-7a359e296d73608919c70cc7c679e3696e89ef68-am1.d.aa.online-metrix.net^
 ||7jnw4jh4-7a90f21ec66042b9ae5b5162a82faea6e34e75fc-am1.d.aa.online-metrix.net^
@@ -28409,6 +28442,7 @@ z4a.net
 ||7nt9p4d4.de^
 ||7ntrp.voluumtrk.com^
 ||7o2l520r0a.com^
+||7octubredc.duckdns.org^
 ||7offers.ru^
 ||7opelomr.ahlamontada.net^
 ||7oqlsi4ilyhr6fj-p.adktrack34.xyz^
@@ -30951,6 +30985,7 @@ z4a.net
 ||87-205-47-45.adsl.inetia.pl^
 ||87-205-50-57.adsl.inetia.pl^
 ||87-205-53-147.adsl.inetia.pl^
+||87-229-16-210.saghysat.hu^
 ||87-229-17-147.saghysat.hu^
 ||87-229-18-138.saghysat.hu^
 ||87-229-19-248.saghysat.hu^
@@ -32153,7 +32188,6 @@ z4a.net
 ||9132.editor-qa1.marketingcloudqaapis.com^
 ||913525452.keywordblocks.com^
 ||9136.com^
-||913789161621147280198065376576ipjpsvqgzrmxyey.adelon.com.br^
 ||913c00632025851c.com^
 ||913nd.dieti-natura.es^
 ||914.global.ssl.fastly.net^
@@ -32191,7 +32225,6 @@ z4a.net
 ||9197.connector-qa1.marketingcloudqaapis.com^
 ||9198.engine.mobileapptracking.com^
 ||919cp.com^
-||919xpj.com^
 ||919yi.com^
 ||91adv.com.cn^
 ||91adv.com^
@@ -34382,10 +34415,6 @@ z4a.net
 ||a-delivery.rmbl.ws^
 ||a-dns-google.com^
 ||a-domogarov.narod.ru^
-||a-fds.youborafds01.com^
-||a-fortunate-world.com^
-||a-fs.co.za^
-||a-g-s-s.com^
 ||a-graph.fr^
 ||a-gwas-01.dyndns.org^
 ||a-hmr.ru^
@@ -34788,7 +34817,6 @@ z4a.net
 ||abtest-ch.snssdk.com^
 ||abtest.alibaba.com^
 ||abtest3-misc-lf.zijieapi.com^
-||ac.dun.163yun.com^
 ||acc.jiangsujiaxue.com^
 ||account-support.com^
 ||account-support.info^
@@ -35258,7 +35286,6 @@ z4a.net
 ||acharyaastrologer.com^
 ||acharyagroup.net^
 ||achasurveying.co1.qualtrics.com^
-||achaujsc.com^
 ||achcdn.com^
 ||achcdn.com^$popup
 ||achcijc6oo.neliver.com^
@@ -35334,7 +35361,6 @@ z4a.net
 ||aciasms.com.br^
 ||aciax.com.br^
 ||acid.xa-5-r.ru^
-||acidicpersistance.duckdns.org^
 ||acidicstraw.com^
 ||acidinst.cyou^
 ||acidopigno.pro^
@@ -37034,7 +37060,6 @@ z4a.net
 ||ad-promm.click^
 ||ad-pulse.kakaobank.cloud^
 ||ad-rdh.adworx.at^
-||ad-reporting.forbes.com^
 ||ad-scope.com.cn^
 ||ad-scope.com^
 ||ad-score.com^
@@ -49197,7 +49222,6 @@ z4a.net
 ||ad.nvdvr.cn^
 ||ad.nz.doubleclick.net^
 ||ad.obuy.tw^
-||ad.ocps.net^
 ||ad.offerstrack.net^
 ||ad.ohmynews.com^
 ||ad.omotenashi.work^
@@ -49344,7 +49368,6 @@ z4a.net
 ||ad.theatreacademy.jp^
 ||ad.themedianw.com^
 ||ad.thetyee.ca^
-||ad.thewheelof.com^
 ||ad.thinkmedia.cn^
 ||ad.thisav.com^
 ||ad.thsi.cn^
@@ -51287,7 +51310,6 @@ z4a.net
 ||adblockanalytics.com^
 ||adblockenterpriseedition.com^
 ||adblocker-sentinel.net^$popup
-||adblockerexperts.info^
 ||adblockermax.com^
 ||adblockermax.com^$document
 ||adblockeromega.com^
@@ -52452,7 +52474,6 @@ z4a.net
 ||adhref.pl^
 ||adhsm.adhese.com^
 ||adht248.neoplus.adsl.tpnet.pl^
-||adhu.hit.gemius.pl^
 ||adhub.co.nz^
 ||adhub.digital^
 ||adhub.media^
@@ -52658,7 +52679,6 @@ z4a.net
 ||adireto.com^
 ||adireto.com^$third-party
 ||adiro.se^
-||adirofficesupplies.shop^
 ||adisabebai.firebaseapp.com^
 ||adisabebai.web.app^
 ||adisabledpartner.net.daraz.com^
@@ -52857,7 +52877,6 @@ z4a.net
 ||adlc132.neoplus.adsl.tpnet.pl^
 ||adlc2.sdo.com^
 ||adld241.neoplus.adsl.tpnet.pl^
-||adldigital.demdex.net^
 ||adldigital.tt.omtrdc.net^
 ||adle186.neoplus.adsl.tpnet.pl^
 ||adle229.neoplus.adsl.tpnet.pl^
@@ -53030,7 +53049,6 @@ z4a.net
 ||admaji.com^
 ||admaker.fr^
 ||admakers.com^
-||admamba.com^
 ||adman.antenna.gr^
 ||adman.atspace.co.uk^
 ||adman.ee^
@@ -54533,7 +54551,6 @@ z4a.net
 ||ads-mannenmedia.adhese.com^
 ||ads-marketing-vivofs.vivo.com.cn^
 ||ads-media.gameforge.com^
-||ads-media.truecaller.com^
 ||ads-mediafin.adhese.com^
 ||ads-meta-logo.s3.amazonaws.com^
 ||ads-newsmonkey.adhese.com^
@@ -54555,7 +54572,6 @@ z4a.net
 ||ads-production-public.s3.us-east-1.amazonaws.com^
 ||ads-query.luizalabs.com^
 ||ads-redis.ecn.cl^
-||ads-rendering-prod.corp.google.com^
 ||ads-resources-legacy.waze.com^
 ||ads-resources.waze.com^
 ||ads-rmb.adhese.com^
@@ -54633,7 +54649,6 @@ z4a.net
 ||ads.abovetopsecret.com^
 ||ads.abs-cbn.com^
 ||ads.accelerator-media.com^
-||ads.accurateshooter.com^
 ||ads.acesse.com^
 ||ads.aceweb.net^
 ||ads.acpc.cat^
@@ -54964,7 +54979,6 @@ z4a.net
 ||ads.computer.org^
 ||ads.concisus.com.au^
 ||ads.consumeraffairs.com^
-||ads.contentabc.com^
 ||ads.contents.fc2.com^
 ||ads.contextweb.com^
 ||ads.coolmobilegroup.com^
@@ -55425,7 +55439,6 @@ z4a.net
 ||ads.linkshrink.net^
 ||ads.linktracking.net^
 ||ads.listingware.com^
-||ads.liteweb.net^
 ||ads.live365.com^
 ||ads.livenation.com^
 ||ads.livepromotools.com^
@@ -55577,7 +55590,6 @@ z4a.net
 ||ads.newsland.it^
 ||ads.newsmonkey.adhese.com^
 ||ads.newsobserver.com^
-||ads.newtarget.com^
 ||ads.nextdoor.com^
 ||ads.nghenhinvietnam.vn^
 ||ads.nguoiduatin.vn^
@@ -56131,7 +56143,6 @@ z4a.net
 ||ads.thesun.co.uk^
 ||ads.thetimes.co.uk^
 ||ads.thetrainingofo.com^
-||ads.thinkgeoenergy.com^
 ||ads.thinkmedia.adhese.com^
 ||ads.thitruongtaichinhtiente.vn^
 ||ads.thumbr.com^
@@ -56208,7 +56219,6 @@ z4a.net
 ||ads.unison.bg^
 ||ads.unister-gmbh.de^
 ||ads.unitychina.cn^
-||ads.universityworldnews.com^
 ||ads.univision.com^
 ||ads.up-value.de^
 ||ads.upbet.com^
@@ -57127,7 +57137,6 @@ z4a.net
 ||adsdk.zeasn.tv^
 ||adsdkapi.dxys.pro^
 ||adsdkconfig.fractionalmedia.com^
-||adsdkpreprod.afd.azureedge.net^
 ||adsdkpreprod.azureedge.net^
 ||adsdkprod.afd.azureedge.net^
 ||adsdkprod.azureedge.net^
@@ -57321,7 +57330,6 @@ z4a.net
 ||adserver.atdnetwork.com^
 ||adserver.autoseo.pl^
 ||adserver.bafrahaber.com^
-||adserver.baltimorejewishlife.com^
 ||adserver.barrapunto.com^
 ||adserver.bdoce.cl^
 ||adserver.beggarspromo.com^
@@ -57463,7 +57471,6 @@ z4a.net
 ||adserver.passagemaker.com^
 ||adserver.passion.com^
 ||adserver.pazienti.it^
-||adserver.pbn.com^
 ||adserver.penthouse.com^
 ||adserver.piksel.mk^
 ||adserver.pl^
@@ -59168,7 +59175,6 @@ z4a.net
 ||aduahr.outbax.com.au^
 ||adubasul.com.br^
 ||aducash.com^
-||adudev.digital^
 ||adufezes.digital^
 ||aduforex.co.cc^
 ||aduhaduhjan.co.cc^
@@ -59182,7 +59188,6 @@ z4a.net
 ||adulsexpictures.ucgalleries.com^
 ||adult--shemalewarez.da.ru^
 ||adult-banner-ads.com^
-||adult-chess.com^
 ||adult-dating-info.blogspot.com^
 ||adult-engine-search.com^
 ||adult-finder.net^
@@ -59721,7 +59726,6 @@ z4a.net
 ||advert-department-pages-info.twomini.com^
 ||advert-layer.de^
 ||advert-suite-support-info.firebaseapp.com^
-||advert.ainvest.com^
 ||advert.ananzi.co.za^
 ||advert.api.thejoyrun.com^
 ||advert.bayarea.com^
@@ -60545,7 +60549,6 @@ z4a.net
 ||adzivijnyizgp.space^
 ||adzjunction.g2afse.com^
 ||adzjzihyq3.neliver.com^
-||adzly.com^
 ||adzmaster.offerstrack.net^
 ||adzmath.com^
 ||adzmaza.in^
@@ -61180,7 +61183,6 @@ z4a.net
 ||aeriale.com^
 ||aerialmistaken.com^
 ||aerialservices.co.uk^
-||aeribyu.duckdns.org^
 ||aerie-photographer.blogspot.com^
 ||aerin.apidocskeeleootstrap.0-030.net.daraz.com^
 ||aeris.myserverhosts.com^
@@ -62732,7 +62734,6 @@ z4a.net
 ||afyopku.cn^
 ||afys.jp^
 ||afz46ttb.paperform.co^
-||afzamltca.com^
 ||afzaoa6s59.neliver.com^
 ||afzjftub2b.neliver.com^
 ||afzph.myarthaus.com^
@@ -63084,8 +63085,6 @@ z4a.net
 ||agilemedia.jp^
 ||agilemsc.com^
 ||agilenewspulse.pro^
-||agilent-aam1.demdex.net^
-||agilent.demdex.net^
 ||agilent.tt.omtrdc.net^
 ||agilentcom.112.2o7.net^
 ||agilenttechnologies.tt.omtrdc.net^
@@ -63554,7 +63553,6 @@ z4a.net
 ||ahhacpacpv.com^
 ||ahharness.com^
 ||ahhgu.voluumtrk.com^
-||ahhhh.pe.kr^
 ||ahhkc.com^
 ||ahhrtt.bnext.com.tw^
 ||ahhrtt.managertoday.com.tw^
@@ -64344,7 +64342,6 @@ z4a.net
 ||airdrie.net^
 ||airdrieautomotive.com^
 ||airdrop-buckybonk.io^
-||airdrop-hyperliquid.finance^
 ||airdrop-payai.network^
 ||airdrop.credit^
 ||airdrop.delivery^
@@ -64693,7 +64690,6 @@ z4a.net
 ||aj2726.top^
 ||aj2738.top^
 ||aj2focmibw.neliver.com^
-||aj3000.bid^
 ||aj3043.bid^
 ||aj3067.bid^
 ||aj3081.top^
@@ -64940,7 +64936,6 @@ z4a.net
 ||akamai.0-00d70000000motieas.net.daraz.com^
 ||akamai.0-01-lib-oa-1-cf23region.net.daraz.com^
 ||akamai.cdneval.adnxs.com^
-||akamai.demdex.net^
 ||akamai.downloadv3.com^
 ||akamai.invitemedia.com^
 ||akamai.mathtag.com^
@@ -65319,7 +65314,6 @@ z4a.net
 ||al-azharinternationalcollege.com^
 ||al-bashek.com^
 ||al-bilad.net^
-||al-c0-dubai-delivery.uno^
 ||al-enayah.com^
 ||al-enjaz.com^
 ||al-falah.ir^
@@ -69331,7 +69325,6 @@ z4a.net
 ||allegrolokalnie.pl-oferta4141263647.shop^
 ||allegrolokalnie.pl-oferta4223249.cc^
 ||allegrolokalnie.pl-oferta428091.shop^
-||allegrolokalnie.pl-oferta4335256.icu^
 ||allegrolokalnie.pl-oferta43916817681256-msi-vector-16.shop^
 ||allegrolokalnie.pl-oferta4500446.shop^
 ||allegrolokalnie.pl-oferta45334.com^
@@ -69731,7 +69724,6 @@ z4a.net
 ||alliance-sto.ru^
 ||alliance2121.com^
 ||allianceacglobal.112.2o7.net^
-||alliancebernstein.demdex.net^
 ||alliancebernstein.tt.omtrdc.net^
 ||alliancedata.demdex.net^
 ||alliancedesprofs.qc.ca^
@@ -71015,7 +71007,6 @@ z4a.net
 ||alucmuhendislik.com^
 ||alucra.mytowntoolbar.com^
 ||aluent.com^
-||aluf-delivery.com^
 ||aluga-design.de^
 ||aluigi.altervista.org^
 ||aluitalia.it^
@@ -71504,7 +71495,6 @@ z4a.net
 ||amazon-brazil.lat^
 ||amazon-clone-snowy-seven.vercel.app^
 ||amazon-clone-ten-pied-30.vercel.app^
-||amazon-cr.com^
 ||amazon-customer-care.com^
 ||amazon-email.branch.rocks^
 ||amazon-faq23szhkghk0d1uf.netdna-ssl.com^
@@ -71591,7 +71581,6 @@ z4a.net
 ||amazonsupportcenter.com^
 ||amazonsuspensionapple.com^
 ||amazontips.net^
-||amazonuvip.vip^
 ||amazonwebservices.d2.sc.omtrdc.net^
 ||amazonwebservicesinc.tt.omtrdc.net^
 ||amazonwebstore.122.2o7.net^
@@ -71678,7 +71667,6 @@ z4a.net
 ||ambikadoor.in^
 ||ambil-resmi-dana4.github.io^
 ||ambios.org^
-||ambire-desktop.com^
 ||ambis.biz^
 ||ambition-web.fr^
 ||ambitionmu.com^
@@ -72237,7 +72225,6 @@ z4a.net
 ||amjd76fnsq.neliver.com^
 ||amjoltiktor.com^
 ||amkhn.voluumtrk.com^
-||aml-auditscan.com^
 ||aml-verifier.io^
 ||aml.valuecommerce.com^
 ||amlakweb.com^
@@ -72344,7 +72331,6 @@ z4a.net
 ||amolewmagram.112.2o7.net^
 ||amoment.ws^
 ||amomontereybay.112.2o7.net^
-||amonbet1.fr^
 ||amonetize.com^
 ||amongola.uk^
 ||amongremember.com^
@@ -72394,7 +72380,6 @@ z4a.net
 ||amount-good.co.cc^
 ||amountdonutproxy.com^
 ||amour-love.love.easyrencontre.com^
-||amourlove.org^
 ||amourna.com^
 ||amourplace.jp^
 ||amoursale.com^
@@ -72488,7 +72473,6 @@ z4a.net
 ||ampnetwork.net^
 ||ampri.res.in^
 ||amprtc.media.net^
-||amps.us.com^
 ||ampserviceslimited.demdex.net^
 ||ampserviceslimited.tt.omtrdc.net^
 ||ampsurf.co.cc^
@@ -72737,7 +72721,6 @@ z4a.net
 ||amwgisnagixqe.store^
 ||amwhhps5o9.neliver.com^
 ||amwilla.net^
-||amwnsbet.com^
 ||amwoukrkskillso.com^
 ||amwqo.voluumtrk.com^
 ||amwz1dxplz.neliver.com^
@@ -72832,7 +72815,6 @@ z4a.net
 ||ana-collector-alb-eu-iron-1900204823.us-east-1.elb.amazonaws.com^
 ||ana-collector-alb-eu-iron-650919269.eu-north-1.elb.amazonaws.com^
 ||ana-collector-alb-eu-iron-75689409.eu-central-1.elb.amazonaws.com^
-||ana-collector-alb-us-iron-1288770839.eu-central-1.elb.amazonaws.com^
 ||ana-collector-alb-us-iron-1731170687.us-east-2.elb.amazonaws.com^
 ||ana-collector-alb-us-iron-941119557.us-west-1.elb.amazonaws.com^
 ||ana-pointstravel.pxf.io^
@@ -73067,7 +73049,6 @@ z4a.net
 ||analytic.pdfarchitect.org^
 ||analytic.perromart.com.sg^
 ||analytic.petico.sg^
-||analytic.propertyhub.in.th^
 ||analytic.proxyme.link^
 ||analytic.rocks^
 ||analytic.rocks^$third-party
@@ -73142,7 +73123,6 @@ z4a.net
 ||analytics-cdn.prensaiberica.es^
 ||analytics-cdn.redbubble.com^
 ||analytics-cdn.sport.es^
-||analytics-cdn.stackcommerce.net^
 ||analytics-cdn.teachable.com^
 ||analytics-cds.mobiedu.vn^
 ||analytics-cf.bigcrunch.com^
@@ -73326,12 +73306,9 @@ z4a.net
 ||analytics.abacum.ai^
 ||analytics.ableton.com^
 ||analytics.academy.com^
-||analytics.accelevents.com^
-||analytics.accessacloud.com^
 ||analytics.accountinsight.cloud^
 ||analytics.acelauncher.com^
 ||analytics.ad.daum.net^
-||analytics.adartis.fi^
 ||analytics.adcanvas.com^
 ||analytics.aderserve.com^
 ||analytics.adfreetime.com^
@@ -73350,7 +73327,6 @@ z4a.net
 ||analytics.adsum.io^
 ||analytics.adultempire.com^
 ||analytics.adultswim.co.uk^
-||analytics.advalo.com^
 ||analytics.adways.com^
 ||analytics.adxpremium.services^
 ||analytics.ae.com^
@@ -73377,7 +73353,6 @@ z4a.net
 ||analytics.akvo.org^
 ||analytics.alandpost.com^
 ||analytics.alandsradio.ax^
-||analytics.albourne.com^
 ||analytics.alfarouqoud.com^
 ||analytics.algoepico.net^
 ||analytics.algolia.com^
@@ -73401,7 +73376,6 @@ z4a.net
 ||analytics.amig.com^
 ||analytics.amiunique.org^
 ||analytics.ammonit-keramik.de^
-||analytics.ammoseek.com^
 ||analytics.amora.com.br^
 ||analytics.amplitude.com^
 ||analytics.amsoil.com^
@@ -73424,7 +73398,6 @@ z4a.net
 ||analytics.api.justeattakeaway.com^
 ||analytics.api.mywot.com^
 ||analytics.api.zerto.com^
-||analytics.apify.com^
 ||analytics.apis.mcafee.com^
 ||analytics.apnewsregistry.com^
 ||analytics.apotekhjartat.se^
@@ -73443,7 +73416,6 @@ z4a.net
 ||analytics.appsalt.com^
 ||analytics.appsbnet.com.br^
 ||analytics.appservice.tech^
-||analytics.aptania.com^
 ||analytics.aqua-wise.com^
 ||analytics.arabacademie.com^
 ||analytics.archive.org^
@@ -73451,7 +73423,6 @@ z4a.net
 ||analytics.aristocloak.com^
 ||analytics.armymwr.com^
 ||analytics.arsenal.com^
-||analytics.arsnova.cc^
 ||analytics.artstation.com^
 ||analytics.artstorm.com^
 ||analytics.artworkout.net^
@@ -73476,14 +73447,12 @@ z4a.net
 ||analytics.autoeauto.it^
 ||analytics.autogo.ai^
 ||analytics.autoseo.pl^
-||analytics.autoshopdashboard.com^
 ||analytics.autozone.com^
 ||analytics.avanser.com.au^
 ||analytics.avcdn.net^
 ||analytics.avetta.com^
 ||analytics.avis.de^
 ||analytics.avis.lu^
-||analytics.avizia.com^
 ||analytics.aweber.com^
 ||analytics.awhr.com^
 ||analytics.awsli.com.br^
@@ -73517,13 +73486,9 @@ z4a.net
 ||analytics.bentto.dk^
 ||analytics.bestofluck.io^
 ||analytics.bestreviews.com^
-||analytics.betseyjohnson.com^
 ||analytics.betterbot.com^
 ||analytics.betterup.co^
-||analytics.bevylabs.com^
-||analytics.bewakoof.com^
 ||analytics.bi.encuentra24.com^
-||analytics.bidsquare.com^
 ||analytics.biezen.nl^
 ||analytics.bigdata.samsung.com^
 ||analytics.bigfishgames.com^
@@ -73542,7 +73507,6 @@ z4a.net
 ||analytics.blaerlaw.com^
 ||analytics.bleacherreport.com^
 ||analytics.blender.org^
-||analytics.blesk.cz^
 ||analytics.blg.nz^
 ||analytics.bloblohub.com^
 ||analytics.blocksite.co^
@@ -73552,7 +73516,6 @@ z4a.net
 ||analytics.bmj.com^
 ||analytics.boing.es^
 ||analytics.bolavip.com^
-||analytics.bollywoodshaadis.com^
 ||analytics.bomiv.com^
 ||analytics.bonbori.shop^
 ||analytics.bonfire.com^
@@ -73586,7 +73549,6 @@ z4a.net
 ||analytics.calcyiv.tesmath.com^
 ||analytics.callbell.eu^
 ||analytics.cambiumast.com^
-||analytics.campaign.episerver.net^
 ||analytics.canaltcm.com^
 ||analytics.canaltnt.es^
 ||analytics.candid.io^
@@ -73599,7 +73561,6 @@ z4a.net
 ||analytics.carambo.la^
 ||analytics.carbaselive.com^
 ||analytics.carbonatebrowser-api.com^
-||analytics.carbravo.com^
 ||analytics.carecredit.com^
 ||analytics.carecreditprovidercenter.com^
 ||analytics.carfax.com^
@@ -73620,7 +73581,6 @@ z4a.net
 ||analytics.castelliinaria.info^
 ||analytics.cathaypacific.com^
 ||analytics.catstevens.com^
-||analytics.cbreesi.com^
 ||analytics.ccgateway.net^
 ||analytics.ccned.nl^
 ||analytics.ccs.mcafee.com^
@@ -73661,7 +73621,6 @@ z4a.net
 ||analytics.cityskydive.nl^
 ||analytics.ciur.cz^
 ||analytics.clac.io^
-||analytics.clastify.com^
 ||analytics.cleanmasters.club^
 ||analytics.cleantech.training^
 ||analytics.clic2buy.com^
@@ -73690,7 +73649,6 @@ z4a.net
 ||analytics.cocos.com^
 ||analytics.code.dccouncil.gov^
 ||analytics.codes.baltimorecity.gov^
-||analytics.codespark.biz^
 ||analytics.codigo.se^
 ||analytics.cognyte.com^
 ||analytics.collectivemeasures.com^
@@ -73746,7 +73704,6 @@ z4a.net
 ||analytics.cyrillus.com^
 ||analytics.cyrillus.de^
 ||analytics.cyrillus.fr^
-||analytics.d66.nl^
 ||analytics.daasrv.net^
 ||analytics.dap-networks.de^
 ||analytics.data.lloydsbankinggroup.com^
@@ -73755,7 +73712,6 @@ z4a.net
 ||analytics.datasavannah.com^
 ||analytics.datascientest.com^
 ||analytics.datatrac.net^
-||analytics.datgroup.com^
 ||analytics.de.algolia.com^
 ||analytics.dealer.com^
 ||analytics.dealer.toyota.com^
@@ -73770,9 +73726,7 @@ z4a.net
 ||analytics.demo.plateau.ng.open.law^
 ||analytics.denimdream.com^
 ||analytics.dentalworksessex.co.uk^
-||analytics.dentsplysironadata.com^
 ||analytics.designspiration.com^
-||analytics.deutsche-boerse.com^
 ||analytics.deutscher-apotheker-verlag.de^
 ||analytics.dev.azure.com^
 ||analytics.dev.htmedia.in^
@@ -73803,12 +73757,10 @@ z4a.net
 ||analytics.dollymusical.com^
 ||analytics.dolphin-emu.org^
 ||analytics.donpatto.com.br^
-||analytics.dorothyperkins.com^
 ||analytics.dortania.com^
 ||analytics.dowjones.com^
 ||analytics.dpd.com^
 ||analytics.dpi-online.de^
-||analytics.dracoistyping.com^
 ||analytics.drinkcornbread.com^
 ||analytics.droracle.ai^
 ||analytics.drschenck.com^
@@ -73825,7 +73777,6 @@ z4a.net
 ||analytics.e.daveandbusters.com^
 ||analytics.e2estudios.com^
 ||analytics.easyvideo.vn^
-||analytics.economybookings.com^
 ||analytics.ecosia.org^
 ||analytics.ecoslay.com^
 ||analytics.edaily.co.kr^
@@ -73855,7 +73806,6 @@ z4a.net
 ||analytics.emburse.com^
 ||analytics.emeraldx.com^
 ||analytics.emforce.co.kr^
-||analytics.emol.cl^
 ||analytics.emol.com^
 ||analytics.emporium-allure.com^
 ||analytics.engie.be^
@@ -73873,7 +73823,6 @@ z4a.net
 ||analytics.essenzasegreta.com^
 ||analytics.eu-1.xcal.tv^
 ||analytics.eu.adjust.com^
-||analytics.eu.degreed.com^
 ||analytics.eventbrite.com^
 ||analytics.eventticketscenter.com^
 ||analytics.everyeye.it^
@@ -73882,7 +73831,6 @@ z4a.net
 ||analytics.evn.com.vn^
 ||analytics.evo.co.uk^
 ||analytics.evolvebeauty.com^
-||analytics.ewizsaas.com^
 ||analytics.ewz.ch^
 ||analytics.examfx.com^
 ||analytics.expertstores.co.za^
@@ -73904,17 +73852,14 @@ z4a.net
 ||analytics.favcy.com^
 ||analytics.fbgcdn.com^
 ||analytics.fcgtalent.fi^
-||analytics.fcrtech.cz^
 ||analytics.feeder.co^
 ||analytics.femina.se^
-||analytics.fender.com^
 ||analytics.ferguson.com^
 ||analytics.ferrero.com^
 ||analytics.ff.avast.com^
 ||analytics.ff.avast.sec.miui.com^
 ||analytics.fieldbee.com^
 ||analytics.filen.io^
-||analytics.finanz-tools.de^
 ||analytics.findfilo.com^
 ||analytics.fiquipedia.es^
 ||analytics.firespring.com.re.getclicky.com^
@@ -73930,7 +73875,6 @@ z4a.net
 ||analytics.fletcherliving.co.nz^
 ||analytics.flexclip.com^
 ||analytics.flexpay.io^
-||analytics.flir.com^
 ||analytics.float-in.pt^
 ||analytics.flodesk.com^
 ||analytics.floorsbv.nl^
@@ -73946,7 +73890,6 @@ z4a.net
 ||analytics.fnbsd.com^
 ||analytics.fnni.com^
 ||analytics.fnsouthwest.com^
-||analytics.folloze.com^
 ||analytics.foodticket.io^
 ||analytics.football360.ir^
 ||analytics.football360dev.ir^
@@ -73992,7 +73935,6 @@ z4a.net
 ||analytics.genesisdealerusa.com^
 ||analytics.genial.ly^
 ||analytics.genially.com^
-||analytics.genpra.info^
 ||analytics.gentselegance.com^
 ||analytics.genuinestyle.com^
 ||analytics.genvelo.com^
@@ -74033,11 +73975,9 @@ z4a.net
 ||analytics.gorgeous-il.co.il^
 ||analytics.gorillanation.com^
 ||analytics.goto-funds.com^
-||analytics.govfa.net^
 ||analytics.govyy.com^
 ||analytics.grabogarden.com^
 ||analytics.grape.media^
-||analytics.greenmatters.com^
 ||analytics.greenmountain.com^
 ||analytics.greenmountainenergy.com^
 ||analytics.greensender.pl^
@@ -74069,9 +74009,7 @@ z4a.net
 ||analytics.hardlightgames.com^
 ||analytics.hardrock.com^
 ||analytics.harepoint365.com^
-||analytics.harley-davidsondigital.com^
 ||analytics.harpercollins.com^
-||analytics.hartfordhealthcare.org^
 ||analytics.hashnode.com^
 ||analytics.hauhau.fi^
 ||analytics.hausamsee-aachen.com^
@@ -74135,14 +74073,11 @@ z4a.net
 ||analytics.ietf.org^
 ||analytics.ifanrusercontent.com^
 ||analytics.ifood.tv^
-||analytics.ignitermedia.com^
-||analytics.ignitionapp.com^
 ||analytics.ihealthspot.com^
 ||analytics.ihg.com.ssl.d1.sc.omtrdc.net^
 ||analytics.ihg.com^
 ||analytics.ikarao-shop.com^
 ||analytics.ikyu.com^
-||analytics.imedia8.com^
 ||analytics.imirwin.com^
 ||analytics.immersivetranslate.com^
 ||analytics.immohuysman.be^
@@ -74170,7 +74105,6 @@ z4a.net
 ||analytics.inquisitr.com^
 ||analytics.insightly.services^
 ||analytics.intelliscapesolutions.com^
-||analytics.interiordefine.com^
 ||analytics.internal.watchmegrow.com^
 ||analytics.interpolis.nl^
 ||analytics.interstatebatteries.com^
@@ -74269,7 +74203,6 @@ z4a.net
 ||analytics.kurtgeiger.us^
 ||analytics.laagbe.com^
 ||analytics.labeling-data.net^
-||analytics.lacsc.be^
 ||analytics.ladoun.com^
 ||analytics.lago.it^
 ||analytics.laineywilson.com^
@@ -74312,13 +74245,8 @@ z4a.net
 ||analytics.leya.tech^
 ||analytics.lform.dev^
 ||analytics.lhiver.com.br^
-||analytics.lib.unc.edu^
-||analytics.libertycr.com^
 ||analytics.libertymutual.com.edgekey.net^
-||analytics.libertymutual.com^
-||analytics.librarypass.com^
 ||analytics.lifebible.com^
-||analytics.lifeway.com^
 ||analytics.lifewithallah.com^
 ||analytics.liftoff.io^
 ||analytics.lightning-bolt.com^
@@ -74328,7 +74256,6 @@ z4a.net
 ||analytics.live-panorama.com^
 ||analytics.liveact-vault.com^
 ||analytics.liveact.cri-mw.jp^
-||analytics.livefootballtickets.com^
 ||analytics.loadweb.com^
 ||analytics.loanspq.com^
 ||analytics.locallogic.co^
@@ -74338,7 +74265,6 @@ z4a.net
 ||analytics.loft.rocks^
 ||analytics.logrhythm.com^
 ||analytics.lomar.sa^
-||analytics.lon.appsvc.an.adobe.com^
 ||analytics.londontheatredirect.com^
 ||analytics.lonestar.co.nz^
 ||analytics.looker.aircall.io^
@@ -74346,7 +74272,6 @@ z4a.net
 ||analytics.loop-cloud.de^$third-party
 ||analytics.lsrcity.com^
 ||analytics.lucid.app^
-||analytics.lucide.dev^
 ||analytics.luminenza.com^
 ||analytics.lumiqlearn.com^
 ||analytics.lunarclientprod.com^
@@ -74393,9 +74318,7 @@ z4a.net
 ||analytics.marvelsbd.com^
 ||analytics.massivwerthaus.at^
 ||analytics.matchbin.com^
-||analytics.matcotools.com^
 ||analytics.mathfel.de^
-||analytics.mathspace.co^
 ||analytics.matichon.co.th^
 ||analytics.matterport.com^
 ||analytics.mattresswarehouse.com^
@@ -74408,7 +74331,6 @@ z4a.net
 ||analytics.mefeedia.com^
 ||analytics.meituan.net^
 ||analytics.mejuri.com^
-||analytics.melio.com^
 ||analytics.melissa-online.nl^
 ||analytics.melodistudios.com^
 ||analytics.menswearhouse.com^
@@ -74424,7 +74346,6 @@ z4a.net
 ||analytics.mercadopago.com^
 ||analytics.metafox.bmw.com^
 ||analytics.metalocator.com^
-||analytics.metaview.ai^
 ||analytics.metriko.app^
 ||analytics.metrix.ir^
 ||analytics.metro-cc.ru^
@@ -74511,7 +74432,6 @@ z4a.net
 ||analytics.n7mobile.com^
 ||analytics.na-avtobus.ru^
 ||analytics.na-kd.com^
-||analytics.nagomisecurity.com^
 ||analytics.nanda.vn^
 ||analytics.naonow.com^
 ||analytics.narc.ing.net^
@@ -74568,7 +74488,6 @@ z4a.net
 ||analytics.nordea.fi^
 ||analytics.nordea.no^
 ||analytics.nordea.se^
-||analytics.nordnet.no^
 ||analytics.northerntool.com^
 ||analytics.notify.elsevier.com^
 ||analytics.notifyvisitors.com^
@@ -74577,7 +74496,6 @@ z4a.net
 ||analytics.nova.foxnews.com^
 ||analytics.nova.foxsports.com^
 ||analytics.novamobili.it^
-||analytics.novobanco.pt^
 ||analytics.nrg.com^
 ||analytics.nrgprotects.com^
 ||analytics.ntiermanaged.com.re.getclicky.com^
@@ -74608,13 +74526,11 @@ z4a.net
 ||analytics.onrushstats.com^
 ||analytics.openedition.org^
 ||analytics.openfoodfacts.org^
-||analytics.opengamma.com^
 ||analytics.openpetition.de^
 ||analytics.optilead.co.uk^
 ||analytics.optimalpeople.fr^
 ||analytics.orange.ro^
 ||analytics.orenshmu.com^
-||analytics.ortoo.tech^
 ||analytics.ostr.io^
 ||analytics.ouc.ac.cy^
 ||analytics.oumahorse.com^
@@ -74625,7 +74541,6 @@ z4a.net
 ||analytics.oximo.be^
 ||analytics.oyorooms.com^
 ||analytics.ozlinedsp.com^
-||analytics.p06.eloqua.com^
 ||analytics.paddle.com^
 ||analytics.pagefly.io^
 ||analytics.palatesensations.com^
@@ -74635,7 +74550,6 @@ z4a.net
 ||analytics.pangle-ads.com.edgesuite.net^
 ||analytics.pangle-ads.com^
 ||analytics.panoskin.com^
-||analytics.papajohns.co.uk^
 ||analytics.papi.nl^
 ||analytics.parfinity.com^
 ||analytics.partcommunity.com^
@@ -74645,25 +74559,19 @@ z4a.net
 ||analytics.passes.com^
 ||analytics.paste.ee^
 ||analytics.patriot-defender.com^
-||analytics.patsnap.com^
 ||analytics.pdf24.org^
 ||analytics.pdfe.com^
-||analytics.peek.us^
-||analytics.pekao.com.pl^
 ||analytics.pelicans.nba.com^
-||analytics.pella.com^
 ||analytics.peraichi.com^
 ||analytics.percentmobile.com^
 ||analytics.performable.com^
 ||analytics.performanse.com^
 ||analytics.perfumehouse.sa^
 ||analytics.permutive.com^
-||analytics.peru21.pe^
 ||analytics.pesktop.com^
 ||analytics.petracarestore.com^
 ||analytics.petrodatasync.net^
 ||analytics.pgatour.com^
-||analytics.pgbrandsaver.com^
 ||analytics.pgncs.notion.so^
 ||analytics.phando.com^
 ||analytics.phn.com^
@@ -74673,7 +74581,6 @@ z4a.net
 ||analytics.picknrg.com^
 ||analytics.picsart.com^
 ||analytics.pictureperfectkitchendesigns.com^
-||analytics.pihhealth.org^
 ||analytics.pilaragueci.com^
 ||analytics.pimproll.com^
 ||analytics.pingaja.com^
@@ -74706,7 +74613,6 @@ z4a.net
 ||analytics.pitchero.com^
 ||analytics.pixels.ai^
 ||analytics.pixeltricks.de^
-||analytics.pkb.io^
 ||analytics.plaid.com^
 ||analytics.plainproxies.com^
 ||analytics.planhat.com^
@@ -74721,7 +74627,6 @@ z4a.net
 ||analytics.plex.tv^
 ||analytics.plumbworld.co.uk^
 ||analytics.plus500.com^
-||analytics.pmg.com^
 ||analytics.pmsrv.co^
 ||analytics.pnc.com^
 ||analytics.pnw.appsvc.an.adobe.com^
@@ -74790,7 +74695,6 @@ z4a.net
 ||analytics.qoqa.ch^
 ||analytics.qoqa.ninja^
 ||analytics.qr-code.io^
-||analytics.qr-generator.ai^
 ||analytics.qrfy.com^
 ||analytics.qs-apps.com^
 ||analytics.qualcomm.com^
@@ -74799,9 +74703,7 @@ z4a.net
 ||analytics.query.yahoo.com^
 ||analytics.qumucloud.com^
 ||analytics.qushad.com^
-||analytics.radial.com^
 ||analytics.radiatemedia.com^
-||analytics.radzen.com^
 ||analytics.rambla.be^
 ||analytics.rapha.cc^
 ||analytics.ratioform.ch^
@@ -74822,10 +74724,8 @@ z4a.net
 ||analytics.recruitics.com^
 ||analytics.red.co.uk^
 ||analytics.redlink.com.ar^
-||analytics.reef.com^
 ||analytics.reelup.io^
 ||analytics.reenlo.com^
-||analytics.refurbed.be^
 ||analytics.refurbed.de^
 ||analytics.refurbed.it^
 ||analytics.regex101.com^
@@ -74839,7 +74739,6 @@ z4a.net
 ||analytics.rever.vn^
 ||analytics.revive.digital^
 ||analytics.revsure.cloud^
-||analytics.rewardstation.com^
 ||analytics.rexel.co.uk^
 ||analytics.reyrey.net^
 ||analytics.rhino3d.com^
@@ -74857,7 +74756,6 @@ z4a.net
 ||analytics.rogersmedia.com^
 ||analytics.romiltec.it^
 ||analytics.roohsaafabd.com^
-||analytics.rosenthal.de^
 ||analytics.rossetto.it^
 ||analytics.rotapost.ru^
 ||analytics.rothys.com^
@@ -74900,7 +74798,6 @@ z4a.net
 ||analytics.sayu.co.uk^
 ||analytics.sberbank.ru^
 ||analytics.sberhealth.ru^
-||analytics.scholastic.com^
 ||analytics.schoolwires.com^
 ||analytics.schubert.group^
 ||analytics.scorpion.co^
@@ -74911,8 +74808,6 @@ z4a.net
 ||analytics.sedrajewellery.com^
 ||analytics.seekxr.com^
 ||analytics.selfh.st^
-||analytics.sem-track.com^
-||analytics.senderrarx.com^
 ||analytics.sendsafely.com^
 ||analytics.senja.io^
 ||analytics.sensorpartners.com^
@@ -74929,7 +74824,6 @@ z4a.net
 ||analytics.sgnapps.com^
 ||analytics.shaklee.com^
 ||analytics.shareaholic.com^
-||analytics.shawfloors.com^
 ||analytics.shein.com^
 ||analytics.shephertz.com^
 ||analytics.shmoool.net^
@@ -74944,14 +74838,12 @@ z4a.net
 ||analytics.signalpusher.com^
 ||analytics.silktide.com^
 ||analytics.siltinatajs.lv^
-||analytics.silversea.com^
 ||analytics.silversponge.com.au^
 ||analytics.simpler.so^
 ||analytics.simpli.padsquad.com^
 ||analytics.simplii.com^
 ||analytics.simplyhealth.co.uk^
 ||analytics.sinchew.com.my^
-||analytics.siteground.com^
 ||analytics.sitewit.com^
 ||analytics.sixt.at^
 ||analytics.sixt.be^
@@ -74985,7 +74877,6 @@ z4a.net
 ||analytics.snugsocks.co.uk^
 ||analytics.social.unity.com^
 ||analytics.socialbakers.com^
-||analytics.socialbeat.io^
 ||analytics.sofi.com^
 ||analytics.sohatv.vn^
 ||analytics.solidbau.at^
@@ -74995,7 +74886,6 @@ z4a.net
 ||analytics.sonarworks.com^
 ||analytics.sonjj.com^
 ||analytics.sophia.org^
-||analytics.sostrenegrene.com^
 ||analytics.soundtrap.com^
 ||analytics.soup.io^
 ||analytics.southernairemarket.com^
@@ -75008,7 +74898,6 @@ z4a.net
 ||analytics.spearly.com^
 ||analytics.speckle.systems^
 ||analytics.speechanddebate.org^
-||analytics.spendhq.com^
 ||analytics.spoken-tutorial.org^
 ||analytics.sports-tracker.com^
 ||analytics.sports.ru^
@@ -75021,7 +74910,6 @@ z4a.net
 ||analytics.spscommerce.com^
 ||analytics.spun.com.br^
 ||analytics.squidhq.com^
-||analytics.sre.gob.mx^
 ||analytics.srvnw.com^
 ||analytics.ssense.com^
 ||analytics.ssmas.com^
@@ -75032,12 +74920,10 @@ z4a.net
 ||analytics.stanstedairport.com^
 ||analytics.starbreeze.com^
 ||analytics.starmakerstudios.com^
-||analytics.stash.com^
 ||analytics.statsperform.com^
 ||analytics.stellic.com^
 ||analytics.stg.online.xl.pt^
 ||analytics.stickify-api.com^
-||analytics.stimme.de^
 ||analytics.stocksport-online.de^
 ||analytics.strangeloopnetworks.com^
 ||analytics.strapi.io^
@@ -75112,7 +74998,6 @@ z4a.net
 ||analytics.tercept.com^
 ||analytics.tesolbooks.com^
 ||analytics.test.cheggnet.com^
-||analytics.texasoncology.com^
 ||analytics.textexpander.com^
 ||analytics.tfbank.se^
 ||analytics.thegazette.co.uk^
@@ -75128,7 +75013,6 @@ z4a.net
 ||analytics.thepublive.com^
 ||analytics.thereadyproducts.com^
 ||analytics.thereformation.com^
-||analytics.thesilican.com^
 ||analytics.thingx.tv^
 ||analytics.think-devzone.co.uk^
 ||analytics.thomasnet.io^
@@ -75136,7 +75020,6 @@ z4a.net
 ||analytics.threedeepmarketing.com^
 ||analytics.ticimax.cloud^
 ||analytics.ticinolibero.ch^
-||analytics.ticketmaster.be^
 ||analytics.ticketmaster.ca^
 ||analytics.ticketmaster.co.uk^
 ||analytics.ticketmaster.com.mx^
@@ -75175,7 +75058,6 @@ z4a.net
 ||analytics.tomatomtl.com^
 ||analytics.tondach.pl^
 ||analytics.topseotoolkit.com^
-||analytics.torq-api.com^
 ||analytics.torrancememorial.org^
 ||analytics.torrid.com^
 ||analytics.torus.co.uk^
@@ -75211,7 +75093,6 @@ z4a.net
 ||analytics.turk.pro^$third-party
 ||analytics.turnertv.com^
 ||analytics.tutorprolms.com^
-||analytics.tuvalabs.com^
 ||analytics.tv-kast.nl^
 ||analytics.tver.jp^
 ||analytics.twitter.com^
@@ -75245,7 +75126,6 @@ z4a.net
 ||analytics.urbanflowers.com.ua^
 ||analytics.urbanint.net^
 ||analytics.urx.io^
-||analytics.us-east-1.greenorbitcloud.com^
 ||analytics.us.adjust.com^
 ||analytics.us.algolia.com^
 ||analytics.us.archive.org^
@@ -75330,8 +75210,6 @@ z4a.net
 ||analytics.watchcredo.com^
 ||analytics.wavebox.io^
 ||analytics.wavelz.com^
-||analytics.wayground.com^
-||analytics.wayup.com^
 ||analytics.wbslaw.de^
 ||analytics.wearmedicine.com^
 ||analytics.webads.eu^
@@ -75401,17 +75279,14 @@ z4a.net
 ||analytics.wpmucdn.com^
 ||analytics.wrc.nic.in^
 ||analytics.write.as^
-||analytics.www.essity.com^
 ||analytics.www2.revenue.ie^
 ||analytics.wywrd.com^
-||analytics.x-onweb.com^
 ||analytics.x-station.eu^
 ||analytics.x.com^
 ||analytics.xcal.tv^
 ||analytics.xelondigital.com^
 ||analytics.xgimi.com^
 ||analytics.xl.pt^
-||analytics.xmslol.com^
 ||analytics.xoomenergy.com^
 ||analytics.xscreenattribution.com^
 ||analytics.xyzmedia.net^
@@ -75465,7 +75340,6 @@ z4a.net
 ||analytics00.meride.tv^
 ||analytics01.cisco.netacad.com^
 ||analytics01.resources.ingdirect.es^
-||analytics01.smartbear.com^
 ||analytics012.successfactors.eu^
 ||analytics02.metalocator.com^
 ||analytics02.resources.ingdirect.es^
@@ -75475,10 +75349,8 @@ z4a.net
 ||analytics1.wpmudev.com^
 ||analytics1.xdiarys.com^
 ||analytics10.successfactors.com^
-||analytics12-na.alma.exlibrisgroup.com^
 ||analytics12-naw.alma.exlibrisgroup.com^
 ||analytics12-naw.primo.exlibrisgroup.com^
-||analytics13.techsmith.com^
 ||analytics19.sapsf.com^
 ||analytics2-3-meride-tv.akamaized.net^
 ||analytics2-meride-tv.akamaized.net^
@@ -75509,12 +75381,10 @@ z4a.net
 ||analytics4.successfactors.com^
 ||analytics40.techsmith.com^
 ||analytics41.sapsf.com^
-||analytics41.techsmith.com^
 ||analytics43.techsmith.com^
 ||analytics44.sapsf.com^
 ||analytics44.techsmith.com^
 ||analytics45.techsmith.com^
-||analytics46.techsmith.com^
 ||analytics51.techsmith.com^
 ||analytics52.techsmith.com^
 ||analytics53.techsmith.com^
@@ -75531,7 +75401,6 @@ z4a.net
 ||analytics8.successfactors.com^
 ||analyticsapi.bsbportal.com^
 ||analyticsapi.endicia.com^
-||analyticsapi.erndc.com^
 ||analyticsapi.happypancake.net^
 ||analyticsapi.qogita.com^
 ||analyticsapi.shipstation.com^
@@ -76034,7 +75903,6 @@ z4a.net
 ||android.heyzap.com^
 ||android.notifysrv.com^
 ||android.push.126.net^
-||android.rdsdk.com^
 ||android.reporo.net^
 ||android.snippetsentry.com^
 ||android.txtsmarter.com^
@@ -76066,7 +75934,6 @@ z4a.net
 ||androidduvetscribble.com^
 ||androidfitur.blogspot.com^
 ||androidfroyo.co.cc^
-||androidgamehacks.info^
 ||androidgamemods.com^
 ||androidgreek.com^
 ||androidhost.org^
@@ -76233,7 +76100,6 @@ z4a.net
 ||angecornu.com^
 ||angege.com^
 ||angege.com^$popup
-||angel-abma-analytics-cs-alb-prod-1089759001.ap-south-1.elb.amazonaws.com^
 ||angel-group.net^
 ||angel-seeds.com.ua^
 ||angel-x.com^
@@ -76938,7 +76804,6 @@ z4a.net
 ||anonymousatwork.com^
 ||anonymousdelivers.us^
 ||anonymousdemographics.com^
-||anonymouse.home.pages.de^
 ||anonymouse.me^
 ||anonymouse.org^
 ||anonymouse.ru^
@@ -78835,7 +78700,6 @@ z4a.net
 ||api-lax1.touchcommerce.com^
 ||api-lb.vungle.com^
 ||api-ldp.novaonx.com^
-||api-live-app.online^
 ||api-live.outgrow.co^
 ||api-localhost.net.daraz.com^
 ||api-location-prd.pelcro.com^$domain=newsweek.com
@@ -79014,7 +78878,6 @@ z4a.net
 ||api.adifferentworldservices.com^
 ||api.adinside.com.br^
 ||api.adjust.com^
-||api.adlure.net^
 ||api.admitad.com^
 ||api.adn.mobvista.com^
 ||api.adnsafe.org^
@@ -79564,7 +79427,6 @@ z4a.net
 ||api.findenkaereste.dk^
 ||api.firebim.com.br^
 ||api.flatroninformatica.com.br^
-||api.flipdesk.jp^
 ||api.floatingcarforgotten.com^
 ||api.flocktory.com^
 ||api.flordelizdesignfloral.com.br^
@@ -80086,7 +79948,6 @@ z4a.net
 ||api.placed.com^
 ||api.planozerodividas.com.br^
 ||api.plantei.com.br^
-||api.platform.letv.com^
 ||api.player.xcal.tv^
 ||api.playminas.com.br^
 ||api.plooxy.com^
@@ -80746,7 +80607,6 @@ z4a.net
 ||apiecobici.apidocskeeleootstrap.0-030.net.daraz.com^
 ||apien.consejosyrecetas.com^
 ||apifaqs-winter.net.daraz.com^
-||apife2.teletica.com^
 ||apigateway.admicro.vn^
 ||apigeek.toyshow.com.br^
 ||apigtm.closethome.com.br^
@@ -81230,7 +81090,6 @@ z4a.net
 ||app-gvuz.glide.page^
 ||app-h.marketo.com^
 ||app-hack.com^
-||app-hpointservice.soulexport.com^
 ||app-i.marketo.com^
 ||app-icons.apptentive.com^
 ||app-id6016.firebaseapp.com^
@@ -82936,7 +82795,6 @@ z4a.net
 ||appimg.0575bbs.com^
 ||appimmobilier.com^
 ||appinfo.adop.cc^
-||appino2q.beget.tech^
 ||appinparkps.vic.edu.au^
 ||appinstall-priceline-com.control.kochava.com^
 ||appinstall.presage.io^
@@ -82997,7 +82855,6 @@ z4a.net
 ||apple-healthcare.org^
 ||apple-help.com^
 ||apple-helpnumber.com^
-||apple-icloud-in.net^
 ||apple-icloud-store-id.com^
 ||apple-id-itunes.webcindario.com^
 ||apple-id.net^
@@ -83017,7 +82874,6 @@ z4a.net
 ||apple-ld.com^
 ||apple-leather.com^
 ||apple-lg3.com^
-||apple-located-v.com^
 ||apple-location.live^
 ||apple-lt.com^
 ||apple-mac.com^
@@ -83053,7 +82909,6 @@ z4a.net
 ||apple-recover.com^
 ||apple-refunds.com^
 ||apple-regard.ru^
-||apple-russia-support.com.ru^
 ||apple-russia-support.com^
 ||apple-sauce.com^
 ||apple-service-kzn.ru^
@@ -83063,7 +82918,6 @@ z4a.net
 ||apple-sign.com^
 ||apple-simcard.app^
 ||apple-slime.com^
-||apple-smat.com^
 ||apple-soporte.com^
 ||apple-spamassage.com^
 ||apple-statistics.com^
@@ -83076,7 +82930,6 @@ z4a.net
 ||apple-sz.com^
 ||apple-tech.com^
 ||apple-tim.com^
-||apple-tire.com^
 ||apple-tr.com^
 ||apple-trace-in.com^
 ||apple-ua.com^
@@ -83275,7 +83128,6 @@ z4a.net
 ||appleid.com-signin-update.verificationx8489nc7ns7693j376d.gpt.vn^
 ||appleid.love^
 ||appleid24.ir^
-||appleid9.com^
 ||appleid98.com^
 ||appleidcomapple.com^
 ||appleidfa.com^
@@ -83961,7 +83813,6 @@ z4a.net
 ||approvedemail.actelion.com^
 ||approvedlinks.com^
 ||approvemedia.g2afse.com^
-||approveusdt.app^
 ||approvinces.de^
 ||approx.co.cc^
 ||approxim.com^
@@ -84041,7 +83892,6 @@ z4a.net
 ||apps.sascdn.com^
 ||apps.scrollx.io^
 ||apps.sfcdn.org^
-||apps.shakaguide.com^
 ||apps.shareaholic.com^
 ||apps.shift.com.au^
 ||apps.smartadserver.com^
@@ -84289,7 +84139,6 @@ z4a.net
 ||aprtx.com^$third-party
 ||apryb7jgtc.neliver.com^
 ||aps-bearing.com^
-||aps-delivery.ru^
 ||aps-scribe.com^
 ||aps-webhandler.appsflyer.com^
 ||aps.hearstnp.com^
@@ -84634,7 +84483,6 @@ z4a.net
 ||aquete.com^
 ||aquete.com^$popup
 ||aqueyk4cq5.neliver.com^
-||aquforex.co.cc^
 ||aqui-cancelar9.webcindario.com^
 ||aqui5tarr.pl^
 ||aquick.org^
@@ -84672,7 +84520,6 @@ z4a.net
 ||ar-prommoo.click^
 ||ar-reechh.click^
 ||ar-rihla.com^
-||ar-taggg.click^
 ||ar-text.nl^
 ||ar-tr.com^
 ||ar-trail.com^
@@ -84707,7 +84554,6 @@ z4a.net
 ||ar.freestrip.chat^
 ||ar.hot-india.com^
 ||ar.hotzcam.com^
-||ar.hqbang.com^
 ||ar.i-run.fr^
 ||ar.ifuckedyourgf.com^
 ||ar.info.lgsmartad.com^
@@ -84723,17 +84569,14 @@ z4a.net
 ||ar.nsfwlivechat.com^
 ||ar.omg.adult^
 ||ar.perfectgirls.live^
-||ar.promo.skf.com^
 ||ar.quadient.com^
 ||ar.r.stripchat.global^
 ||ar.rarecams.com^
-||ar.sexfortokens.com^
 ||ar.sexygirlspics.live^
 ||ar.showtime-cams.live^
 ||ar.spankbanglive.com^
 ||ar.starwank.com^
 ||ar.strip-chat.club^
-||ar.stripchat.beeg.com^
 ||ar.stripchat.direct^
 ||ar.stripchat.global^
 ||ar.stripchat.vision^
@@ -84746,7 +84589,6 @@ z4a.net
 ||ar.superchat.live^
 ||ar.superchatlive.com^
 ||ar.techieustad.com^
-||ar.thepornstar.com^
 ||ar.tklivechat.com^
 ||ar.tns-counter.ru^
 ||ar.tranny.show^
@@ -84755,15 +84597,11 @@ z4a.net
 ||ar.tubeadvertising.eu^
 ||ar.ucweb.com^
 ||ar.umeng.com^
-||ar.verwin.com^
 ||ar.webcam.ac^
 ||ar.xham.live^
 ||ar.xhamsterlive.info^
 ||ar.xhlive.cam^
-||ar.xhlive.net^
 ||ar.xhlive.org^
-||ar.zatube.com^
-||ar.ze-lu.ru^
 ||ar1.aza.io^
 ||ar12.toservers.com^
 ||ar1vk8zpse.neliver.com^
@@ -84772,7 +84610,6 @@ z4a.net
 ||ar4up.com^
 ||ar4xpxornxhny41zv8hribp24hs9y1509462932.nuid.imrworldwide.com^
 ||ar500arnor.com^
-||ar5tjyqtpl.neliver.com^
 ||ar5ykwacni.neliver.com^
 ||ar6q4ydxqx.neliver.com^
 ||ar7.org^
@@ -84798,15 +84635,12 @@ z4a.net
 ||arabiantongue.net^
 ||arabic.myradiotoolbar.com^
 ||arabic.saudimoneyexpo.com^
-||arabica.superchatlive.com^
 ||arabiccasinochoice.com^
 ||arabicfoodexpress.com^
 ||arabicvision.myfamilytoolbar.com^
 ||arabiincer.pro^
-||arabmistress.s3.amazonaws.com^
 ||arabmoheet.net^
 ||arabnashop.com^
-||arabposts.com^
 ||arabs.arabxn.org^
 ||arabs.arabxporn.net^
 ||arabs.nodzway.com^
@@ -84857,7 +84691,6 @@ z4a.net
 ||aralego.com^
 ||aramark.evergage.com^
 ||aramarkservices.tt.omtrdc.net^
-||aramarkus.112.2o7.net^
 ||aramatch.com^
 ||aramcoglobalinvestprogram.com^
 ||aramcoservice.com^
@@ -85074,8 +84907,6 @@ z4a.net
 ||arcane.maison-etanche.com^
 ||arcanelogicbase.digital^
 ||arcaneshadow.com^
-||arcanetrade-app.com^
-||arcanetrade-tech.com^
 ||arcanevault.com^
 ||arcani-maconnerie.fr^
 ||arcanjo.pedrotchaka.com.br^

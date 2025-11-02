@@ -82,14 +82,14 @@ jobs:
           echo "part=$PART" >> $GITHUB_OUTPUT
 
       # ===============================
-      # ✅ 6. 定时强制更新规则源
+      # ✅ 6. 定时强制更新规则源（每 6 小时）
       # ===============================
       - name: ✅ 定时强制更新规则（每 6 小时）
         run: |
           CURRENT_HOUR=$(date -u +"%H")
           if [[ "$CURRENT_HOUR" == "00" || "$CURRENT_HOUR" == "06" || "$CURRENT_HOUR" == "12" || "$CURRENT_HOUR" == "18" ]]; then
             echo "🔄 定时触发 → 强制重新下载规则并切片"
-            python3 split_and_check_16.py --force-update    # ✅ 本次改动：参数改为 --force-update
+            python3 split_and_check_16.py --force-update     # ✅ 本次改动：--force-update
           else
             echo "⏩ 当前不是强制刷新时间 → 跳过"
           fi
@@ -101,10 +101,9 @@ jobs:
         run: |
           if [ ! -f "merged_rules.txt" ] || [ ! -f "tmp/part_01.txt" ]; then
             echo "⚠ 缺少规则文件或分片 → 正在重新拉取"
-            python3 split_and_check_16.py --force-update    # ✅ 本次改动：参数改为 --force-update
+            python3 split_and_check_16.py --force-update     # ✅ 本次改动
           else
             echo "✅ 已检测到完整规则与分片，无需重新生成"
-          fi
 
       # ===============================
       # ✅ 8. 确保连续失败计数文件存在
@@ -117,10 +116,9 @@ jobs:
             echo "✅ 已创建 dist/delete_counter.json（全局连续失败计数）"
           else
             echo "✅ delete_counter.json 已存在"
-          fi
 
       # ===============================
-      # ✅ 9. DNS 验证
+      # ✅ 9. 执行 DNS 验证
       # ===============================
       - name: ✅ 执行 DNS 验证
         env:
@@ -140,9 +138,9 @@ jobs:
           STATS=$(grep "COMMIT_STATS" logs/split_check_part_${PART}.log | tail -n1 | sed 's/COMMIT_STATS: //')
           echo "📝 本次提交统计：$STATS"
 
-          # ✅ 特别改动：validated_*.txt 可能不存在 → 安全写法避免报错
+          # ✅ 本次改动：validated_*.txt 可能不存在 → 安全写法避免报错
           git add tmp/last_part.txt dist/delete_counter.json merged_rules.txt || true
-          git add dist/validated_part_*.txt 2>/dev/null || true    # ✅ 本次改动
+          git add dist/validated_part_*.txt 2>/dev/null || true     # ✅ 本次改动
 
           git commit -m "🤖 分片 $PART | $STATS" || echo "ℹ️ 本次没有更新内容，无需提交"
 

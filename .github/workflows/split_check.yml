@@ -35,7 +35,7 @@ jobs:
           python-version: '3.12'
 
       - name: ✅ 安装依赖
-        run: pip install --upgrade requests dnspython tqdm
+        run: pip install --upgrade requests dnspython
 
       - name: ✅ Git 配置
         run: |
@@ -46,7 +46,7 @@ jobs:
         id: detect
         run: |
           mkdir -p tmp dist
-          # ✅ 确保 skip_tracker.json 存在
+          # 确保 skip_tracker.json 存在
           SKIP_FILE="dist/skip_tracker.json"
           if [ ! -f "$SKIP_FILE" ]; then
             echo "{}" > "$SKIP_FILE"

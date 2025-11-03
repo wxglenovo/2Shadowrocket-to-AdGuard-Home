@@ -46,7 +46,6 @@ jobs:
         id: detect
         run: |
           mkdir -p tmp dist
-          # 确保 skip_tracker.json 存在
           SKIP_FILE="dist/skip_tracker.json"
           if [ ! -f "$SKIP_FILE" ]; then
             echo "{}" > "$SKIP_FILE"
@@ -78,7 +77,6 @@ jobs:
             python3 split_and_check_16.py --force-update
           else
             echo "⏩ 当前不是强制刷新时间 → 跳过"
-          fi
 
       - name: ✅ 检查规则文件与分片
         run: |
@@ -87,7 +85,6 @@ jobs:
             python3 split_and_check_16.py --force-update
           else
             echo "✅ 已检测到完整规则与分片，无需重新生成"
-          fi
 
       - name: ✅ 创建或检查 delete_counter.json
         run: |
@@ -97,15 +94,14 @@ jobs:
             echo "✅ 已创建 dist/delete_counter.json（全局连续失败计数）"
           else
             echo "✅ delete_counter.json 已存在"
-          fi
 
-      - name: ✅ 执行 DNS 验证
+      - name: ✅ 执行 DNS 验证并打印 HOSTS 转换日志
         env:
           PART: ${{ steps.detect.outputs.part }}
         run: |
           mkdir -p logs
           echo "🚀 开始验证分片 $PART..."
-          python3 split_and_check_16.py --part "$PART" | tee logs/split_check_part_${PART}.log
+          python3 split_and_check_16.py --part "$PART" 2>&1 | tee logs/split_check_part_${PART}.log | grep -E "HOSTS 转换|⚠"
 
       - name: ✅ 提交与推送更改
         env:
@@ -124,19 +120,3 @@ jobs:
 
           echo "⬆ 推送到仓库"
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main || echo "⚠ Push 失败（可能无变化）"
-
-      - name: ✅ 打印 HOSTS → AdGuard 转换日志
-        run: |
-          if [ -f merged_rules.txt ]; then
-            echo "📄 解析 merged_rules.txt 进行 HOSTS → AdGuard 转换日志"
-            grep -E "^(0\.0\.0\.0|127\.0\.0\.1) " merged_rules.txt | while read -r line; do
-              domain=$(echo "$line" | awk '{print $2}')
-              if [ -n "$domain" ]; then
-                echo "✅ 转换成功: $line → ||${domain}^"
-              else
-                echo "⚠ 转换失败: $line"
-              fi
-            done
-          else
-            echo "⚠ merged_rules.txt 不存在，无法打印 HOSTS 转换日志"
-          fi

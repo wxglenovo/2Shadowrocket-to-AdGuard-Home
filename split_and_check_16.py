@@ -19,29 +19,17 @@ PARTS = 16
 DNS_WORKERS = 50
 DNS_TIMEOUT = 2
 DELETE_COUNTER_FILE = os.path.join(DIST_DIR, "delete_counter.json")
+SKIP_FILE = os.path.join(DIST_DIR, "skip_tracker.json")
+
 DELETE_THRESHOLD = 4
 SKIP_VALIDATE_THRESHOLD = 7
 SKIP_ROUNDS = 10
-SKIP_FILE = os.path.join(DIST_DIR, "skip_tracker.json")
 
-# 创建目录
 os.makedirs(TMP_DIR, exist_ok=True)
 os.makedirs(DIST_DIR, exist_ok=True)
 
 # ===============================
-# HOSTS → AdGuard 转换函数
-# ===============================
-def hosts_to_adguard(line):
-    line = line.strip()
-    if not line or line.startswith("!") or line.startswith("#"):
-        return None  # 注释行直接跳过
-    if line.startswith("0.0.0.0 ") or line.startswith("127.0.0.1 "):
-        domain = line.split()[1].strip()
-        return f"||{domain}^"
-    return line  # 其他规则保持原样
-
-# ===============================
-# 跳过验证计数器
+# Skip tracker
 # ===============================
 def load_skip_tracker():
     if os.path.exists(SKIP_FILE):
@@ -51,6 +39,8 @@ def load_skip_tracker():
         except:
             return {}
     else:
+        with open(SKIP_FILE, "w", encoding="utf-8") as f:
+            json.dump({}, f, indent=2)
         return {}
 
 def save_skip_tracker(data):
@@ -58,7 +48,26 @@ def save_skip_tracker(data):
         json.dump(data, f, indent=2, ensure_ascii=False)
 
 # ===============================
-# 下载与合并规则
+# Delete counter
+# ===============================
+def load_delete_counter():
+    if os.path.exists(DELETE_COUNTER_FILE):
+        try:
+            with open(DELETE_COUNTER_FILE, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except:
+            return {}
+    else:
+        with open(DELETE_COUNTER_FILE, "w", encoding="utf-8") as f:
+            json.dump({}, f, indent=2)
+        return {}
+
+def save_delete_counter(counter):
+    with open(DELETE_COUNTER_FILE, "w", encoding="utf-8") as f:
+        json.dump(counter, f, indent=2, ensure_ascii=False)
+
+# ===============================
+# 下载与合并规则（支持 HOSTS -> AdGuard 转换）
 # ===============================
 def download_all_sources():
     if not os.path.exists(URLS_TXT):
@@ -74,9 +83,24 @@ def download_all_sources():
             r = requests.get(url, timeout=20)
             r.raise_for_status()
             for line in r.text.splitlines():
-                ag_line = hosts_to_adguard(line)
-                if ag_line:
-                    merged.add(ag_line)
+                line = line.strip()
+                if not line or line.startswith("#") or line.startswith("!"):
+                    continue
+
+                # ✅ HOSTS 转换逻辑（直接把 0.0.0.0 或 127.0.0.1 替换为 ||）
+                if line.startswith("0.0.0.0") or line.startswith("127.0.0.1"):
+                    parts = line.split()
+                    if len(parts) >= 2:
+                        host = parts[1].strip()
+                        converted = f"||{host}^"
+                        merged.add(converted)
+                        print(f"🔄 HOSTS 转换: {line} → {converted}")
+                        continue
+                    else:
+                        print(f"⚠ HOSTS 格式错误，忽略: {line}")
+                        continue
+
+                merged.add(line)
         except Exception as e:
             print(f"⚠ 下载失败 {url}: {e}")
     print(f"✅ 合并 {len(merged)} 条规则")
@@ -92,7 +116,7 @@ def split_parts():
         print("⚠ 缺少合并规则文件")
         return False
     with open(MASTER_RULE, "r", encoding="utf-8") as f:
-        rules = [l.strip() for l in f if l.strip()]
+        rules = [l.strip() for l in f if l.strip() and not l.startswith("!")]
     total = len(rules)
     per_part = (total + PARTS - 1) // PARTS
     print(f"🪓 分片 {total} 条，每片约 {per_part}")
@@ -138,26 +162,6 @@ def dns_validate(lines):
     return valid
 
 # ===============================
-# 删除计数器
-# ===============================
-def load_delete_counter():
-    if os.path.exists(DELETE_COUNTER_FILE):
-        try:
-            with open(DELETE_COUNTER_FILE, "r", encoding="utf-8") as f:
-                return json.load(f)
-        except:
-            print(f"⚠ {DELETE_COUNTER_FILE} 解析失败，重建空计数")
-            return {}
-    else:
-        with open(DELETE_COUNTER_FILE, "w", encoding="utf-8") as f:
-            json.dump({}, f, indent=2)
-        return {}
-
-def save_delete_counter(counter):
-    with open(DELETE_COUNTER_FILE, "w", encoding="utf-8") as f:
-        json.dump(counter, f, indent=2, ensure_ascii=False)
-
-# ===============================
 # 核心处理分片
 # ===============================
 def process_part(part):
@@ -171,18 +175,17 @@ def process_part(part):
         return
 
     lines = open(part_file, "r", encoding="utf-8").read().splitlines()
-    print(f"⏱ 验证分片 {part}, 共 {len(lines)} 条规则")
+    lines = [l for l in lines if not l.startswith("!")]
+    print(f"⏱ 验证分片 {part}, 共 {len(lines)} 条规则（已过滤注释）")
 
     old_rules = set()
     out_file = os.path.join(DIST_DIR, f"validated_part_{part}.txt")
     if os.path.exists(out_file):
         with open(out_file, "r", encoding="utf-8") as f:
-            old_rules = set([l.strip() for l in f if l.strip()])
+            old_rules = set([l.strip() for l in f if l.strip() and not l.startswith("!")])
 
     delete_counter = load_delete_counter()
     skip_tracker = load_skip_tracker()
-
-    print("🚀 开始 DNS 验证（跳过计数 >7 的规则）")
 
     rules_to_validate = []
     for r in lines:
@@ -190,10 +193,12 @@ def process_part(part):
         if c is None or c <= SKIP_VALIDATE_THRESHOLD:
             rules_to_validate.append(r)
             continue
+
         skip_cnt = skip_tracker.get(r, 0)
         skip_cnt += 1
         skip_tracker[r] = skip_cnt
         print(f"⏩ 跳过验证 {r}（次数 {skip_cnt}/10）")
+
         if skip_cnt >= SKIP_ROUNDS:
             print(f"🔁 恢复验证：{r}（跳过达到10次 → 重置计数=4）")
             delete_counter[r] = 4
@@ -209,16 +214,20 @@ def process_part(part):
     new_delete_counter = delete_counter.copy()
 
     for rule in all_rules:
+        if rule.startswith("!"):
+            continue
         if rule in valid:
             final_rules.add(rule)
             new_delete_counter[rule] = 0
             if rule not in old_rules:
                 added_count += 1
             continue
+
         old_count = delete_counter.get(rule, None)
-        new_count = old_count + 1 if old_count is not None else 4
+        new_count = 4 if old_count is None else old_count + 1
         new_delete_counter[rule] = new_count
         print(f"⚠ 连续失败计数 = {new_count} ：{rule}")
+
         if new_count >= DELETE_THRESHOLD:
             removed_count += 1
             continue

@@ -1497,6 +1497,7 @@ z4a.net
 |absbwe-j769.vercel.app^
 |abscbn.spinbox.net^
 |abshop.fr^
+|absolutezeros.duckdns.org^
 |absorbingband.com^
 |abstractedauthority.com^
 |abtasty.com^
@@ -1822,6 +1823,7 @@ z4a.net
 |ad.cl.doubleclick.net^
 |ad.clickotmedia.com^
 |ad.cn.doubleclick.net^
+|ad.cooks.com^
 |ad.cosp.jp^
 |ad.crwdcntrl.net^
 |ad.ddo.jp^
@@ -2602,6 +2604,7 @@ z4a.net
 |admediator.unityads.unity3d.com^
 |admedo.com^
 |admeld.com^
+|admeme.net^
 |admeridianads.com^
 |admex.com^
 |admez.com^
@@ -2728,6 +2731,7 @@ z4a.net
 |adpro.futurenet.club^
 |adprofits.ru^
 |adprotect.net^
+|adprovider.adlure.net^
 |adpulse.ads.targetnet.com^
 |adpulsex.com^
 |adpush.goforandroid.com^
@@ -3274,6 +3278,7 @@ z4a.net
 |ads.nordichardware.com^
 |ads.nordichardware.se^
 |ads.northjersey.com^
+|ads.novanet.vn^
 |ads.novem.pl^
 |ads.novinhagostosa10.com^
 |ads.nrc.adhese.com^
@@ -3312,6 +3317,7 @@ z4a.net
 |ads.persgroep.adhese.com^
 |ads.persgroep.net^
 |ads.pexi.nl^
+|ads.pfl.ua^
 |ads.phillipsdata.us^
 |ads.phonearena.com^
 |ads.phonepe.com^
@@ -5403,6 +5409,7 @@ z4a.net
 |amplify.outbrain.com^
 |amplifypixel.outbrain.com^
 |ampmetrics.engadget.com^
+|ampower.me^
 |amprtc.media.net^
 |amptrack.dailymail.co.uk^
 |amrytt.adk2x.com^
@@ -7760,6 +7767,7 @@ z4a.net
 |backlinkwatch.com^
 |backofficellc.com^
 |backpaininstantrelief.com^
+|backup.review-ledger.live^
 |backuperwebcam.weebly.com^
 |backuprabbit.com^
 |backupso.com^
@@ -10902,6 +10910,7 @@ z4a.net
 |candidography.com^
 |candorilestha.cfd^
 |candy-network.com^
+|candygirls.cc^
 |caneryapimermergroup.com^
 |canethra-ai.com^
 |canethraai.net^
@@ -29718,7 +29727,6 @@ z4a.net
 |msktekstil.com^
 |msmetrics.ws.sonos.com^
 |msn-cdn.effectivemeasure.net^
-|msn.tns-cs.net^
 |msn1.com^
 |msna1com.112.2o7.net^
 |msnaccountservices.112.2o7.net^
@@ -29991,7 +29999,6 @@ z4a.net
 |n.gameads.io^
 |n.k-8ip.ru^
 |n.mplxtms.com^
-|n0aq.y8-8.online^
 |n1.nskfyl.com^
 |n1internet.com^
 |n2.nskfyl.com^
@@ -30004,14 +30011,12 @@ z4a.net
 |n4061ad.jp.doubleclick.net^
 |n4403ad.doubleclick.net^
 |n479ad.doubleclick.net^
-|n4t5.fi0m.online^
 |n4vi.top^
 |n5.nskfyl.com^
 |n5rqa.98g-bj.ru^
 |n6.nskfyl.com^
 |n69.com^
 |n6k.q7jt-0k.ru^
-|n6ta.ve1p.online^
 |n7.nskfyl.com^
 |na-ab19.marketo.com^
 |na-ab20.marketo.com^
@@ -30237,27 +30242,21 @@ z4a.net
 |nebulawealthai.com^
 ||00xvppy.cn^
 ||027dir.com^
-||036e.cn^
 ||0551huayanbdf.com^
-||080999.cn^
 ||087tqb.cn^
 ||0941.org^
-||0dwm.icu^
 ||0m483y7.cn^
 ||1-bmo-client-login.com^
 ||1.11130.com.cn^
 ||1.5000yan.com^
 ||1.66law.cn^
-||1.78500.cn^
 ||1.95ye.com^
-||1.codesdq.com^
 ||1.feihua.com^
 ||1.glook.cn^
 ||1.jushtong.com^
 ||1.shopit.cn^
 ||1.sj33.net^
 ||1.tecbbs.com^
-||1.v-x.com.cn^
 ||1.weiheshidai.com^
 ||1.xilu.com^
 ||1.zhev.com.cn^
@@ -30265,7 +30264,6 @@ z4a.net
 ||100.pncdn.cn^
 ||10000xing.cn^
 ||12.cookcai.com^
-||123.sogou.com^
 ||123.ywxww.net^
 ||123cha.com^
 ||12551-1311572332.cos.ap-shanghai.myqcloud.com^
@@ -30310,7 +30308,6 @@ z4a.net
 ||2tr1kkz.cn^
 ||2vqgtxw.cn^
 ||3.cjcp.cn^
-||3.ssqzj.com^
 ||301848.com^
 ||30edu.com.cn^
 ||31up.icu^
@@ -30332,7 +30329,6 @@ z4a.net
 ||3sas.icu^
 ||42gixk.98kk89.com^
 ||4399stat.5054399.com^
-||44629.com^
 ||4cx5.icu^
 ||4d0m.cn^
 ||4t6u.icu^
@@ -30356,7 +30352,6 @@ z4a.net
 ||55726zubo56686.com^
 ||55zzz.cn^
 ||573569djd.com^
-||57573zubo36833.com^
 ||588589.com^
 ||595image.com^
 ||59gt.cn^
@@ -30395,9 +30390,7 @@ z4a.net
 ||7xi9g1.com1.z0.glb.clouddn.com^
 ||8131.qizhihaotian.cn^
 ||8181zx.com^
-||88362zubo95838.com^
 ||888.tv.sohu.com^
-||888abc333abc.com^
 ||888bb555ww.com^
 ||888bb666cc.com^
 ||888xx222kk.com^
@@ -30419,7 +30412,6 @@ z4a.net
 ||999aa666bb.com^
 ||999abc333abc.com^
 ||999bb222ww.com^
-||999xx333kk.com^
 ||999xx999kk.com^
 ||99box.com^
 ||9fum.ifeng.com^

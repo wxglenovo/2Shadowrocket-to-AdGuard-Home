@@ -67,7 +67,7 @@ def save_delete_counter(counter):
         json.dump(counter, f, indent=2, ensure_ascii=False)
 
 # ===============================
-# 下载与合并规则（支持 HOSTS -> AdGuard 转换 & 多域名逗号拆分）
+# 下载与合并规则（支持 HOSTS -> AdGuard 转换，多域名逗号分隔）
 # ===============================
 def download_all_sources():
     if not os.path.exists(URLS_TXT):
@@ -87,29 +87,33 @@ def download_all_sources():
                 if not line or line.startswith("#") or line.startswith("!"):
                     continue
 
-                # ✅ HOSTS 转换逻辑
+                # ✅ HOSTS 转换逻辑，支持多个逗号分隔
                 if line.startswith("0.0.0.0") or line.startswith("127.0.0.1"):
                     parts = line.split()
                     if len(parts) >= 2:
-                        host = parts[1].strip()
-                        converted = f"||{host}^"
-                        merged.add(converted)
-                        print(f"🔄 HOSTS 转换: {line} → {converted}")
+                        hosts = parts[1].split(",")
+                        for host in hosts:
+                            host = host.strip()
+                            if host:
+                                converted = f"||{host}^"
+                                merged.add(converted)
+                                print(f"🔄 HOSTS 转换: {line} → {converted}")
                         continue
                     else:
                         print(f"⚠ HOSTS 格式错误，忽略: {line}")
                         continue
 
-                # ✅ 多域名逗号拆分
-                if "," in line:
-                    domains = [d.strip() for d in line.split(",") if d.strip()]
+                # ✅ 多域名逗号分隔处理
+                if "," in line and not line.startswith("||"):
+                    domains = line.split(",")
                     for d in domains:
-                        converted = f"||{d}^"
-                        merged.add(converted)
-                        print(f"🔄 多域名拆分: {d} → {converted}")
+                        d = d.strip()
+                        if d:
+                            converted = f"||{d}^"
+                            merged.add(converted)
+                            print(f"🔄 多域名转换: {line} → {converted}")
                     continue
 
-                # 其他规则直接加入
                 merged.add(line)
         except Exception as e:
             print(f"⚠ 下载失败 {url}: {e}")

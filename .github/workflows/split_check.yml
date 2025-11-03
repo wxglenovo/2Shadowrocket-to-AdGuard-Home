@@ -105,6 +105,7 @@ jobs:
         run: |
           mkdir -p logs
           echo "🚀 开始验证分片 $PART..."
+          # 执行 Python 脚本，HOSTS → AdGuard 转换日志会打印在这里
           python3 split_and_check_16.py --part "$PART" | tee logs/split_check_part_${PART}.log
 
       - name: ✅ 提交与推送更改

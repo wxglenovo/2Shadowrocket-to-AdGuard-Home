@@ -8,7 +8,7 @@ AdGuard / DNS 规则管理脚本（最终版）
 2. 将合并规则拆分为多个分片（去掉注释行）
 3. 使用 DNS 验证规则有效性（50线程并发，每批500条）
 4. 自动维护删除计数和跳过验证机制
-5. 清理 delete_counter 和 skip_tracker 中已删除规则
+5. 清理 delete_counter 和 skip_tracker 中已删除规则（5天未出现清理）
 6. 跳过验证逻辑提前处理，提高验证速度
 7. 跳过和恢复验证均打印清晰日志
 """
@@ -18,6 +18,7 @@ import json
 import requests
 import argparse
 import dns.resolver
+import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # ===============================
@@ -36,6 +37,7 @@ SKIP_FILE = os.path.join(DIST_DIR, "skip_tracker.json")  # 跳过验证记录文
 DELETE_THRESHOLD = 4         # 连续失败次数超过此值则从列表中删除
 SKIP_VALIDATE_THRESHOLD = 7  # 超过此值则暂时跳过验证
 SKIP_ROUNDS = 10             # 跳过验证的最大轮数
+FIVE_DAYS = 5 * 24 * 60 * 60 # 5天秒数，用于清理 delete_counter / skip_tracker
 
 os.makedirs(TMP_DIR, exist_ok=True)
 os.makedirs(DIST_DIR, exist_ok=True)
@@ -46,8 +48,7 @@ os.makedirs(DIST_DIR, exist_ok=True)
 def load_skip_tracker():
     if os.path.exists(SKIP_FILE):
         try:
-            with open(SKIP_FILE, "r", encoding="utf-8") as f:
-                return json.load(f)
+            return json.load(open(SKIP_FILE, "r", encoding="utf-8"))
         except:
             return {}
     else:
@@ -65,8 +66,7 @@ def save_skip_tracker(data):
 def load_delete_counter():
     if os.path.exists(DELETE_COUNTER_FILE):
         try:
-            with open(DELETE_COUNTER_FILE, "r", encoding="utf-8") as f:
-                return json.load(f)
+            return json.load(open(DELETE_COUNTER_FILE, "r", encoding="utf-8"))
         except:
             return {}
     else:
@@ -79,7 +79,7 @@ def save_delete_counter(counter):
         json.dump(counter, f, indent=2, ensure_ascii=False)
 
 # ===============================
-# 下载与合并规则（简化版）
+# 下载与合并规则（简化版，去掉 HOSTS 和多域名拆分）
 # ===============================
 def download_all_sources():
     if not os.path.exists(URLS_TXT):
@@ -171,6 +171,41 @@ def dns_validate(lines):
     return valid
 
 # ===============================
+# 获取当前 urls.txt 中的所有规则
+# ===============================
+def get_all_current_rules():
+    current_rules = set()
+    if os.path.exists(MASTER_RULE):
+        with open(MASTER_RULE, "r", encoding="utf-8") as f:
+            current_rules = set([l.strip() for l in f if l.strip() and not l.startswith("!") and not l.startswith("#")])
+    return current_rules
+
+# ===============================
+# 清理 delete_counter / skip_tracker 中已删除且超过5天的规则
+# ===============================
+def cleanup_old_rules(delete_counter, skip_tracker):
+    now = int(time.time())
+    current_rules = get_all_current_rules()
+    removed_counter = []
+    removed_skip = []
+
+    for rule, data in list(delete_counter.items()):
+        last_seen = data.get("last_seen", 0)
+        if rule not in current_rules and now - last_seen > FIVE_DAYS:
+            delete_counter.pop(rule)
+            removed_counter.append(rule)
+
+    for rule, data in list(skip_tracker.items()):
+        last_seen = data.get("last_seen", 0)
+        if rule not in current_rules and now - last_seen > FIVE_DAYS:
+            skip_tracker.pop(rule)
+            removed_skip.append(rule)
+
+    if removed_counter or removed_skip:
+        print(f"🗑 清理 delete_counter {len(removed_counter)} 条，skip_tracker {len(removed_skip)} 条（已删除且超过5天）")
+    return delete_counter, skip_tracker
+
+# ===============================
 # 核心处理分片逻辑
 # ===============================
 def process_part(part):
@@ -182,6 +217,8 @@ def process_part(part):
     if not os.path.exists(part_file):
         print("❌ 分片仍不存在，终止")
         return
+
+    now = int(time.time())
 
     # 加载当前分片规则（去掉注释）
     lines = [l for l in open(part_file, "r", encoding="utf-8").read().splitlines()
@@ -203,19 +240,22 @@ def process_part(part):
     # ===============================
     rules_to_validate = []
     for r in lines:
-        old_count = delete_counter.get(r, 0)
-        skip_cnt = skip_tracker.get(r, 0)
+        old_data = delete_counter.get(r, {"count":0, "last_seen": now})
+        skip_data = skip_tracker.get(r, {"skip":0, "last_seen": now})
+
+        old_count = old_data.get("count",0)
+        skip_cnt = skip_data.get("skip",0)
 
         # 如果 delete_counter 超过 SKIP_VALIDATE_THRESHOLD，先跳过验证
         if old_count > SKIP_VALIDATE_THRESHOLD:
             skip_cnt += 1
-            skip_tracker[r] = skip_cnt
+            skip_tracker[r] = {"skip": skip_cnt, "last_seen": now}
             print(f"⏩ 跳过验证 {r}（次数 {skip_cnt}/{SKIP_ROUNDS}）")
 
             # 如果跳过次数达到上限，恢复验证
             if skip_cnt >= SKIP_ROUNDS:
                 print(f"🔁 恢复验证：{r}（跳过达到 {SKIP_ROUNDS} 次 → 重置计数=6）")
-                delete_counter[r] = 6
+                delete_counter[r] = {"count":6, "last_seen": now}
                 skip_tracker.pop(r)
                 rules_to_validate.append(r)  # 仅恢复的规则才加入 DNS 验证
             continue
@@ -238,14 +278,15 @@ def process_part(part):
     for rule in all_rules:
         if rule in valid:
             final_rules.add(rule)
-            new_delete_counter[rule] = 0
+            new_delete_counter[rule] = {"count":0, "last_seen": now}
             if rule not in old_rules:
                 added_count += 1
             continue
 
-        old_count = delete_counter.get(rule, None)
+        old_data = delete_counter.get(rule, {"count":0})
+        old_count = old_data.get("count",0)
         new_count = 4 if old_count is None else old_count + 1
-        new_delete_counter[rule] = new_count
+        new_delete_counter[rule] = {"count": new_count, "last_seen": now}
         print(f"⚠ 连续失败计数 = {new_count} ：{rule}")
 
         if new_count >= DELETE_THRESHOLD:
@@ -254,27 +295,12 @@ def process_part(part):
         final_rules.add(rule)
 
     # ===============================
-    # 清理 delete_counter 和 skip_tracker 中已删除规则
+    # 清理 delete_counter / skip_tracker 中已删除且超过5天的规则
     # ===============================
-    all_current_rules = set(lines)
-    removed_from_counter = []
-    removed_from_skip = []
-
-    for rule in list(new_delete_counter.keys()):
-        if rule not in all_current_rules:
-            new_delete_counter.pop(rule)
-            removed_from_counter.append(rule)
-
-    for rule in list(skip_tracker.keys()):
-        if rule not in all_current_rules:
-            skip_tracker.pop(rule)
-            removed_from_skip.append(rule)
-
-    if removed_from_counter or removed_from_skip:
-        print(f"🗑 清理 delete_counter {len(removed_from_counter)} 条，skip_tracker {len(removed_from_skip)} 条已删除的规则")
+    delete_counter, skip_tracker = cleanup_old_rules(new_delete_counter, skip_tracker)
 
     # 保存更新后的计数和跳过记录
-    save_delete_counter(new_delete_counter)
+    save_delete_counter(delete_counter)
     save_skip_tracker(skip_tracker)
 
     # 保存最终分片，去掉注释

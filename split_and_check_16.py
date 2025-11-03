@@ -1,187 +1,272 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+
 import os
 import json
 import requests
-import dns.resolver
 import argparse
+import dns.resolver
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from tqdm import tqdm
 
-# -----------------------------
-# 配置
-# -----------------------------
+# ==========================================================
+# ✅ 配置参数
+# ==========================================================
 URLS_TXT = "urls.txt"
 TMP_DIR = "tmp"
 DIST_DIR = "dist"
-MERGED_FILE = "merged_rules.txt"
+MASTER_RULE = "merged_rules.txt"
+PARTS = 16
+DNS_WORKERS = 50
+DNS_TIMEOUT = 2
 DELETE_COUNTER_FILE = os.path.join(DIST_DIR, "delete_counter.json")
-VALIDATED_PREFIX = os.path.join(DIST_DIR, "validated_part_")
-WORKERS = 50  # DNS 并发
-PER_PART = 5000  # 每片数量可调
+
+DELETE_THRESHOLD = 4
+SKIP_VALIDATE_THRESHOLD = 7
+SKIP_ROUNDS = 10
+SKIP_FILE = os.path.join(DIST_DIR, "skip_tracker.json")
+
+# 创建目录
+os.makedirs(TMP_DIR, exist_ok=True)
+os.makedirs(DIST_DIR, exist_ok=True)
 
 
-# ✅ 辅助函数：读取 delete_counter.json
-def load_delete_counter():
-    if os.path.exists(DELETE_COUNTER_FILE):
-        with open(DELETE_COUNTER_FILE, "r", encoding="utf-8") as f:
-            return json.load(f)
-    return {}
+# ==========================================================
+# ✅ 跳过验证计数器
+# ==========================================================
+def load_skip_tracker():
+    if os.path.exists(SKIP_FILE):
+        try:
+            with open(SKIP_FILE, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except:
+            return {}
+    else:
+        return {}
+
+def save_skip_tracker(data):
+    with open(SKIP_FILE, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
 
 
-# ✅ 写回 delete_counter.json
-def save_delete_counter(counter):
-    with open(DELETE_COUNTER_FILE, "w", encoding="utf-8") as f:
-        json.dump(counter, f, ensure_ascii=False, indent=2)
-
-
-# ✅ 下载并合并所有规则（新增 HOSTS 转换逻辑）
+# ==========================================================
+# ✅ 下载与合并规则
+# ✅【新增逻辑】HOSTS → AdGuard 转换
+# ==========================================================
 def download_all_sources():
     if not os.path.exists(URLS_TXT):
-        print("❌ 未找到 urls.txt，无法继续")
+        print("❌ urls.txt 不存在")
         return False
 
-    print("📥 正在下载规则源...")
+    print("📥 下载规则源...")
     merged = set()
 
     with open(URLS_TXT, "r", encoding="utf-8") as f:
         urls = [u.strip() for u in f if u.strip()]
 
     for url in urls:
-        print(f"🌐 正在获取：{url}")
+        print(f"🌐 获取 {url}")
         try:
-            r = requests.get(url, timeout=15)
+            r = requests.get(url, timeout=20)
             r.raise_for_status()
-
-            for raw in r.text.splitlines():
-                line = raw.strip()
-                if not line or line.startswith("#"):
-                    continue
-
-                # ✅✅✅【本次新增逻辑】HOSTS → AdGuard 转换开始
-                # 支持格式：
-                #   0.0.0.0 domain.com
-                #   127.0.0.1  xxx.net
-                parts = line.split()
-                if len(parts) == 2 and parts[0] in ("0.0.0.0", "127.0.0.1"):
-                    domain = parts[1].strip()
-                    if domain and "." in domain:
-                        line = f"||{domain}^"
-                # ✅✅✅【本次新增逻辑】HOSTS → AdGuard 转换结束
-
-                merged.add(line)
-
+            for line in r.text.splitlines():
+                line = line.strip()
+                if line and not line.startswith("#"):
+                    # =====================================================
+                    # ✅ 新增逻辑：HOSTS -> AdGuard 转换
+                    parts = line.split()
+                    if len(parts) == 2 and parts[0] in ("0.0.0.0", "127.0.0.1"):
+                        domain = parts[1].strip()
+                        if domain and "." in domain:
+                            line = f"||{domain}^"
+                    # =====================================================
+                    merged.add(line)
         except Exception as e:
-            print(f"⚠ 无法下载：{url}   原因：{e}")
+            print(f"⚠ 下载失败 {url}: {e}")
 
-    print(f"✅ 下载并合并完成，共 {len(merged)} 条规则")
-
-    with open(MERGED_FILE, "w", encoding="utf-8") as f:
+    print(f"✅ 合并 {len(merged)} 条规则")
+    with open(MASTER_RULE, "w", encoding="utf-8") as f:
         f.write("\n".join(sorted(merged)))
 
     return True
 
 
-# ✅ 切片
-def split_to_parts():
-    print("🔪 正在切片规则...")
-    if not os.path.exists(MERGED_FILE):
-        print("❌ merged_rules.txt 不存在，无法切片")
+# ==========================================================
+# ✅ 分片函数
+# ==========================================================
+def split_parts():
+    if not os.path.exists(MASTER_RULE):
+        print("⚠ 缺少合并规则文件")
         return False
 
-    with open(MERGED_FILE, "r", encoding="utf-8") as f:
-        rules = [r.strip() for r in f if r.strip()]
+    with open(MASTER_RULE, "r", encoding="utf-8") as f:
+        rules = [l.strip() for l in f if l.strip()]
 
-    os.makedirs(TMP_DIR, exist_ok=True)
+    total = len(rules)
+    per_part = (total + PARTS - 1) // PARTS
+    print(f"🪓 分片 {total} 条，每片约 {per_part}")
 
-    part = 1
-    for i in range(0, len(rules), PER_PART):
-        part_file = os.path.join(TMP_DIR, f"part_{part:02d}.txt")
-        with open(part_file, "w", encoding="utf-8") as f:
-            f.write("\n".join(rules[i:i + PER_PART]))
-        print(f"✅ 已生成 {part_file}")
-        part += 1
+    for i in range(PARTS):
+        part_rules = rules[i * per_part:(i + 1) * per_part]
+        filename = os.path.join(TMP_DIR, f"part_{i+1:02d}.txt")
+        with open(filename, "w", encoding="utf-8") as f:
+            f.write("\n".join(part_rules))
+        print(f"📄 分片 {i+1}: {len(part_rules)} 条 → {filename}")
 
     return True
 
 
-# ✅ DNS 验证单条
+# ==========================================================
+# ✅ DNS 验证
+# ==========================================================
 def check_domain(rule):
-    # 只验证 AdGuard 域名类规则：||domain^
-    if rule.startswith("||") and rule.endswith("^"):
-        domain = rule[2:-1]
-    else:
-        return True, rule  # 保留非域名规则
-
     resolver = dns.resolver.Resolver()
-    resolver.lifetime = 2
-    resolver.timeout = 2
+    resolver.timeout = DNS_TIMEOUT
+    resolver.lifetime = DNS_TIMEOUT
+    domain = rule.lstrip("|").split("^")[0].replace("*", "")
+    if not domain:
+        return None
     try:
         resolver.resolve(domain)
-        return True, rule
+        return rule
     except:
-        return False, rule
+        return None
+
+def dns_validate(lines):
+    print(f"🚀 启动 {DNS_WORKERS} 并发验证")
+    valid = []
+    with ThreadPoolExecutor(max_workers=DNS_WORKERS) as executor:
+        futures = {executor.submit(check_domain, rule): rule for rule in lines}
+        total = len(lines)
+        done = 0
+        for future in as_completed(futures):
+            done += 1
+            result = future.result()
+            if result:
+                valid.append(result)
+            if done % 500 == 0:
+                print(f"✅ 已验证 {done}/{total} 条，有效 {len(valid)} 条")
+    print(f"✅ 分片验证完成，有效 {len(valid)} 条")
+    return valid
 
 
-# ✅ 验证某个分片（part）
-def validate_part(part):
+# ==========================================================
+# ✅ 删除计数器
+# ==========================================================
+def load_delete_counter():
+    if os.path.exists(DELETE_COUNTER_FILE):
+        try:
+            with open(DELETE_COUNTER_FILE, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except:
+            print(f"⚠ {DELETE_COUNTER_FILE} 解析失败，重建空计数")
+            return {}
+    else:
+        with open(DELETE_COUNTER_FILE, "w", encoding="utf-8") as f:
+            json.dump({}, f, indent=2)
+        return {}
+
+def save_delete_counter(counter):
+    with open(DELETE_COUNTER_FILE, "w", encoding="utf-8") as f:
+        json.dump(counter, f, indent=2, ensure_ascii=False)
+
+
+# ==========================================================
+# ✅ 核心处理分片逻辑
+# ==========================================================
+def process_part(part):
     part_file = os.path.join(TMP_DIR, f"part_{int(part):02d}.txt")
     if not os.path.exists(part_file):
-        print(f"❌ 分片 {part_file} 不存在")
+        print(f"⚠ 分片 {part} 缺失，重新下载并切片")
+        download_all_sources()
+        split_parts()
+    if not os.path.exists(part_file):
+        print("❌ 分片仍不存在，终止")
         return
 
-    print(f"🚀 开始验证分片 {part_file}")
-    counter = load_delete_counter()
+    lines = open(part_file, "r", encoding="utf-8").read().splitlines()
+    print(f"⏱ 验证分片 {part}, 共 {len(lines)} 条规则")
 
-    with open(part_file, "r", encoding="utf-8") as f:
-        rules = [r.strip() for r in f if r.strip()]
+    old_rules = set()
+    out_file = os.path.join(DIST_DIR, f"validated_part_{part}.txt")
+    if os.path.exists(out_file):
+        with open(out_file, "r", encoding="utf-8") as f:
+            old_rules = set([l.strip() for l in f if l.strip()])
 
-    valid = []
-    removed = 0
+    delete_counter = load_delete_counter()
+    skip_tracker = load_skip_tracker()
 
-    with ThreadPoolExecutor(max_workers=WORKERS) as executor:
-        futures = [executor.submit(check_domain, r) for r in rules]
-        for fu in tqdm(as_completed(futures), total=len(futures), desc=f"分片 {part} 验证中"):
-            ok, rule = fu.result()
+    print("🚀 开始 DNS 验证（跳过计数 >7 的规则）")
 
-            if ok:
-                valid.append(rule)
-                if rule in counter:
-                    counter[rule] = 0  # 成功一次清零
-            else:
-                # 连续失败计数 +1
-                counter[rule] = counter.get(rule, 0) + 1
-                if counter[rule] < 4:
-                    valid.append(rule)
-                else:
-                    removed += 1  # 超过 3 次才真正删除
+    # ✅ 筛选可验证规则
+    rules_to_validate = []
+    for r in lines:
+        c = delete_counter.get(r, None)
+        if c is None or c <= SKIP_VALIDATE_THRESHOLD:
+            rules_to_validate.append(r)
+            continue
+        # 跳过计数 >7
+        skip_cnt = skip_tracker.get(r, 0) + 1
+        skip_tracker[r] = skip_cnt
+        print(f"⏩ 跳过验证 {r}（次数 {skip_cnt}/10）")
+        if skip_cnt >= SKIP_ROUNDS:
+            print(f"🔁 恢复验证：{r}（跳过达到10次 → 重置计数=4）")
+            delete_counter[r] = 4
+            skip_tracker.pop(r)
+            rules_to_validate.append(r)
 
-    # 写回验证后的结果文件
-    out_file = f"{VALIDATED_PREFIX}{int(part):02d}.txt"
+    # ✅ DNS 查询
+    valid = set(dns_validate(rules_to_validate))
+
+    final_rules = set()
+    added_count = 0
+    removed_count = 0
+    all_rules = old_rules | set(lines)
+    new_delete_counter = delete_counter.copy()
+
+    for rule in all_rules:
+        if rule in valid:
+            final_rules.add(rule)
+            new_delete_counter[rule] = 0
+            if rule not in old_rules:
+                added_count += 1
+            continue
+        old_count = delete_counter.get(rule, None)
+        new_count = 4 if old_count is None else old_count + 1
+        new_delete_counter[rule] = new_count
+        print(f"⚠ 连续失败计数 = {new_count} ：{rule}")
+        if new_count >= DELETE_THRESHOLD:
+            removed_count += 1
+            continue
+        final_rules.add(rule)
+
+    save_delete_counter(new_delete_counter)
+    save_skip_tracker(skip_tracker)
+
     with open(out_file, "w", encoding="utf-8") as f:
-        f.write("\n".join(sorted(set(valid))))
+        f.write("\n".join(sorted(final_rules)))
 
-    save_delete_counter(counter)
+    total_count = len(final_rules)
+    print(f"✅ 分片 {part} 完成: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
+    print(f"COMMIT_STATS: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
 
-    print(f"✅ 分片 {part} 验证完成：共 {len(rules)} 条 → 保留 {len(valid)} 条 → 删除 {removed} 条")
-    print(f"COMMIT_STATS: 分片{part} 共{len(rules)}条 保留{len(valid)}条 删除{removed}条")
 
-
+# ==========================================================
 # ✅ 主函数
+# ==========================================================
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--part", type=str, help="指定验证分片 1~16")
-    parser.add_argument("--force-update", action="store_true", help="强制重新下载 + 切片")
+    parser.add_argument("--part", help="验证指定分片 1~16")
+    parser.add_argument("--force-update", action="store_true", help="强制重新下载规则源并切片")
     args = parser.parse_args()
 
     if args.force_update:
-        print("🔄 强制刷新规则源...")
         download_all_sources()
-        split_to_parts()
-        print("✅ 强制刷新结束")
-    else:
-        if args.part:
-            validate_part(args.part)
-        else:
-            print("⚠ 未提供分片参数，也未 --force-update，自动使用分片 01")
-            validate_part("1")
+        split_parts()
+
+    if not os.path.exists(MASTER_RULE) or not os.path.exists(os.path.join(TMP_DIR, "part_01.txt")):
+        print("⚠ 缺少规则或分片，自动拉取")
+        download_all_sources()
+        split_parts()
+
+    if args.part:
+        process_part(args.part)

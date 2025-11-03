@@ -1,3 +1,4 @@
+
 name: Split & DNS Check
 
 on:
@@ -51,6 +52,8 @@ jobs:
           if [ ! -f "$SKIP_FILE" ]; then
             echo "{}" > "$SKIP_FILE"
             echo "✅ 已创建 skip_tracker.json（用于记录跳过验证次数）"
+          else
+            echo "✅ skip_tracker.json 已存在"
           fi
 
           LAST_PART_FILE="tmp/last_part.txt"
@@ -105,7 +108,6 @@ jobs:
         run: |
           mkdir -p logs
           echo "🚀 开始验证分片 $PART..."
-          # 执行 Python 脚本，HOSTS → AdGuard 转换日志会打印在这里
           python3 split_and_check_16.py --part "$PART" | tee logs/split_check_part_${PART}.log
 
       - name: ✅ 提交与推送更改

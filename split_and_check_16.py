@@ -67,7 +67,7 @@ def save_delete_counter(counter):
         json.dump(counter, f, indent=2, ensure_ascii=False)
 
 # ===============================
-# 下载与合并规则（支持 HOSTS -> AdGuard 转换，多域名逗号分隔）
+# 下载与合并规则（支持 HOSTS -> AdGuard 转换 + 多域名拆分）
 # ===============================
 def download_all_sources():
     if not os.path.exists(URLS_TXT):
@@ -87,11 +87,11 @@ def download_all_sources():
                 if not line or line.startswith("#") or line.startswith("!"):
                     continue
 
-                # ✅ HOSTS 转换逻辑，支持多个逗号分隔
+                # ✅ HOSTS 转换逻辑
                 if line.startswith("0.0.0.0") or line.startswith("127.0.0.1"):
                     parts = line.split()
                     if len(parts) >= 2:
-                        hosts = parts[1].split(",")
+                        hosts = parts[1].split(",")  # 多域名逗号拆分
                         for host in hosts:
                             host = host.strip()
                             if host:
@@ -103,15 +103,12 @@ def download_all_sources():
                         print(f"⚠ HOSTS 格式错误，忽略: {line}")
                         continue
 
-                # ✅ 多域名逗号分隔处理
+                # ✅ 多域名逗号拆分规则
                 if "," in line and not line.startswith("||"):
-                    domains = line.split(",")
-                    for d in domains:
-                        d = d.strip()
-                        if d:
-                            converted = f"||{d}^"
-                            merged.add(converted)
-                            print(f"🔄 多域名转换: {line} → {converted}")
+                    domains = [d.strip() for d in line.split(",") if d.strip()]
+                    for domain in domains:
+                        merged.add(f"||{domain}^")
+                        print(f"🔄 多域名拆分: {line} → ||{domain}^")
                     continue
 
                 merged.add(line)
@@ -215,8 +212,8 @@ def process_part(part):
         print(f"⏩ 跳过验证 {r}（次数 {skip_cnt}/10）")
 
         if skip_cnt >= SKIP_ROUNDS:
-            print(f"🔁 恢复验证：{r}（跳过达到10次 → 重置计数=6）")
-            delete_counter[r] = 6
+            print(f"🔁 恢复验证：{r}（跳过达到10次 → 重置计数=4）")
+            delete_counter[r] = 4
             skip_tracker.pop(r)
             rules_to_validate.append(r)
 

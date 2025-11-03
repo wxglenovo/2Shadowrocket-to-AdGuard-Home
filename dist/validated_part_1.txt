@@ -2753,6 +2753,7 @@ z4a.net
 ||00utl00khelps.jimdo.com^
 ||00web.net^
 ||00webcams.com^
+||00x20x10x10xd3.duckdns.org^
 ||00xvppy.cn^
 ||01-00d70000000motieas-oa-1-administrators-csr40.net.daraz.com^
 ||01-01-car21-web-wwww11node-webappr21c-f8.net.daraz.com^
@@ -3675,6 +3676,7 @@ z4a.net
 ||01-vms-f8.net.daraz.com^
 ||01-webmail-10-authenticate-oa-1.net.daraz.com^
 ||01-webstoreauthentiwebstorete21-10-authentiwebstorete-oa-1.net.daraz.com^
+||01-winadmin-nym2.ad.corp.appnexus.com^
 ||01-winbuild-nym2.ad.corp.appnexus.com^
 ||01-winlog-nym2.ad.corp.appnexus.com^
 ||01-wwar21ww-f8.net.daraz.com^
@@ -4178,6 +4180,7 @@ z4a.net
 ||07780778.com^
 ||078088162029.elblag.vectranet.pl^
 ||078088177231.elblag.vectranet.pl^
+||078088224123.kielce.vectranet.pl^
 ||07893138.com^
 ||079-wyc-990.mktoresp.com^
 ||079301eaff0975107716716fd1cb0dcd.com^
@@ -4481,12 +4484,15 @@ z4a.net
 ||093105025184.suwalki.vectranet.pl^
 ||093105030173.suwalki.vectranet.pl^
 ||093105107084.pila.vectranet.pl^
+||093105147104.radom.vectranet.pl^
 ||093105151190.radom.vectranet.pl^
+||093105154215.starachowice.vectranet.pl^
 ||093105160008.elblag.vectranet.pl^
 ||093105164148.elblag.vectranet.pl^
 ||093105164233.elblag.vectranet.pl^
 ||093105192018.skierniewice.vectranet.pl^
 ||093105201193.skierniewice.vectranet.pl^
+||093105219198.rybnik.vectranet.pl^
 ||0933134ffdb8bf49.com^
 ||0935-5457-9a1d-ce06.reporo.net^
 ||0938roundcube.weebly.com^
@@ -4512,6 +4518,7 @@ z4a.net
 ||098-frb-840.mktoresp.com^
 ||098-jtp-403.mktoresp.com^
 ||098.freestrip.chat^
+||0980372379.fly2dns.net^
 ||098784579.godaddysites.com^
 ||0988576657456223.weebly.com^
 ||0988ed4fd3c76018.com^
@@ -6223,7 +6230,9 @@ z4a.net
 ||106.sub-75-215-93.myvzw.com^
 ||10600.connector-qa1.marketingcloudqaapis.com^
 ||10600.editor-qa1.marketingcloudqaapis.com^
+||10600.url.7wkw.com^
 ||106034522e61dc95.com^
+||10605.url.7wkw.com^
 ||1060952.collect.igodigital.com^
 ||1061.engine.mobileapptracking.com^
 ||10611.url.7wkw.com^
@@ -6577,6 +6586,7 @@ z4a.net
 ||1121xsj.com^
 ||11220.pakman00.hop.clickbank.net^
 ||11223.url.016272.com^
+||11225.url.7wkw.com^
 ||11225544serviceaccountbussines.start.page^
 ||11226c300807c35b.com^
 ||11227.url.7wkw.com^
@@ -6635,6 +6645,7 @@ z4a.net
 ||11336.url.7wkw.com^
 ||113366.com^
 ||11346.url.7wkw.com^
+||11352.url.7wkw.com^
 ||11387.connector-qa1.marketingcloudqaapis.com^
 ||11387.editor-qa1.marketingcloudqaapis.com^
 ||11387.ftp-qa1.marketingcloudqaops.com^
@@ -9748,6 +9759,7 @@ z4a.net
 ||189-46-221-18.dsl.telesp.net.br^
 ||189-46-221-30.dsl.telesp.net.br^
 ||189-46-228-235.dsl.telesp.net.br^
+||189-46-231-208.dsl.telesp.net.br^
 ||189-46-231-210.dsl.telesp.net.br^
 ||189-46-231-230.dsl.telesp.net.br^
 ||189-46-231-239.dsl.telesp.net.br^
@@ -9759,9 +9771,11 @@ z4a.net
 ||189-46-240-188.dsl.telesp.net.br^
 ||189-46-241-246.dsl.telesp.net.br^
 ||189-46-246-237.dsl.telesp.net.br^
+||189-46-248-146.dsl.telesp.net.br^
 ||189-46-249-150.dsl.telesp.net.br^
 ||189-46-249-177.dsl.telesp.net.br^
 ||189-46-249-212.dsl.telesp.net.br^
+||189-46-249-229.dsl.telesp.net.br^
 ||189-46-3-156.dsl.telesp.net.br^
 ||189-46-34-129.dsl.telesp.net.br^
 ||189-46-35-5.dsl.telesp.net.br^
@@ -9772,6 +9786,7 @@ z4a.net
 ||189-46-66-232.dsl.telesp.net.br^
 ||189-46-81-115.dsl.telesp.net.br^
 ||189-46-81-2.dsl.telesp.net.br^
+||189-46-81-75.dsl.telesp.net.br^
 ||189-46-84-33.dsl.telesp.net.br^
 ||189-46-87-233.dsl.telesp.net.br^
 ||189-46-92-208.dsl.telesp.net.br^
@@ -9781,6 +9796,7 @@ z4a.net
 ||189-47-165-119.dsl.telesp.net.br^
 ||189-47-18-11.dsl.telesp.net.br^
 ||189-47-180-65.dsl.telesp.net.br^
+||189-47-200-60.dsl.telesp.net.br^
 ||189-47-203-183.dsl.telesp.net.br^
 ||189-47-212-150.dsl.telesp.net.br^
 ||189-47-240-183.dsl.telesp.net.br^
@@ -12771,6 +12787,7 @@ z4a.net
 ||21294.dialer.lincassa.com^
 ||21294.engine.mobileapptracking.com^
 ||212941459.keywordblocks.com^
+||212h248.compnet.pl^
 ||213-133-100-58.clients.your-server.de^
 ||213-133-109-58.clients.your-server.de^
 ||213-140-1-230.ip.fastwebnet.it^
@@ -14099,6 +14116,7 @@ z4a.net
 ||24affiliates.com^
 ||24affiliates.com^$popup
 ||24alertnow.com^
+||24bitdeposit.com^
 ||24c6y06yxmetccjz.partner-pay.net.daraz.com^
 ||24car7insurance.org^
 ||24card.com^
@@ -21223,6 +21241,7 @@ z4a.net
 ||4legs.com.au^
 ||4legsfriend.ru^
 ||4life.com^
+||4liker.com^
 ||4link.it^
 ||4link.it^$third-party
 ||4littlegirlsfund.org^
@@ -22295,12 +22314,17 @@ z4a.net
 ||540-cgn-957.mktoresp.com^
 ||540-cqs-570.mktoresp.com^
 ||540037f8.dsl.pool.telekom.hu^
+||54004823.dsl.pool.telekom.hu^
 ||540061d1.dsl.pool.telekom.hu^
+||540069c4.dsl.pool.telekom.hu^
 ||54006cfd.dsl.pool.telekom.hu^
 ||54009616.dsl.pool.telekom.hu^
+||5400ae9e.dsl.pool.telekom.hu^
+||5400c001.dsl.pool.telekom.hu^
 ||5400c04d.dsl.pool.telekom.hu^
 ||5400c097.dsl.pool.telekom.hu^
 ||5400c0b9.dsl.pool.telekom.hu^
+||5400c0cb.dsl.pool.telekom.hu^
 ||5400e1a5.dsl.pool.telekom.hu^
 ||5400fda0.dsl.pool.telekom.hu^
 ||5400fddc.dsl.pool.telekom.hu^
@@ -22316,9 +22340,11 @@ z4a.net
 ||5403c0d4.catv.pool.telekom.hu^
 ||5403c123.catv.pool.telekom.hu^
 ||5403c1b5.catv.pool.telekom.hu^
+||5403c247.catv.pool.telekom.hu^
 ||5403c2d6.catv.pool.telekom.hu^
 ||5403c2d7.catv.pool.telekom.hu^
 ||5403c304.catv.pool.telekom.hu^
+||5403e526.catv.pool.telekom.hu^
 ||5403e853.catv.pool.telekom.hu^
 ||5403f195.catv.pool.telekom.hu^
 ||5403f592.catv.pool.telekom.hu^
@@ -22524,6 +22550,7 @@ z4a.net
 ||5568125.adoric-om.com^
 ||5569600.fls.doubleclick.net^
 ||55697329000106.homedeccori.com^
+||556ghr.duckdns.org^
 ||5571074.notify6.com^
 ||55726zubo56686.com^
 ||5573.ftp-qa1.marketingcloudqaops.com^
@@ -22958,6 +22985,7 @@ z4a.net
 ||58shuma.com^
 ||58shuz.com^
 ||58sport.ru^
+||58t.cc^
 ||58taopinhui.com^
 ||58tg.com^
 ||58tg.com^$third-party
@@ -24841,6 +24869,7 @@ z4a.net
 ||688366365.com^
 ||688465365.com^
 ||6885188dd16db506.com^
+||6886.net^
 ||688645132.keywordblocks.com^
 ||688722724012a103.com^
 ||6887543.cc^
@@ -26915,6 +26944,7 @@ z4a.net
 ||787.vn^
 ||787254981.keywordblocks.com^
 ||787676786.weebly.com^
+||787787.com^
 ||7878.sock-qa1.marketingcloudqaops.com^
 ||787marketing.com^
 ||788-vna-120.mktoresp.com^
@@ -30261,7 +30291,6 @@ z4a.net
 ||88cb038935b275ac.com^
 ||88ce28e4e74c214b.com^
 ||88chan.pw^
-||88commerce.com^
 ||88cpc.com^
 ||88d437a165acc1c5.com^
 ||88d8925c1f8520f2.com^
@@ -61752,7 +61781,6 @@ z4a.net
 ||orvixentplatform.com^
 ||orvynnestapp.com^
 ||orvynnestapp.net^
-||orxpol.lm3hhu.skin^
 ||oryj8-jzbmc.ads.tremorhub.com^
 ||oryvian-app.com^
 ||oryvian-platform.net^
@@ -65362,7 +65390,6 @@ z4a.net
 ||r5.ritikajoshi.com^
 ||r5yd.b6je.online^
 ||r6.ritikajoshi.com^
-||r6mqa.yldv.online^
 ||r7.ritikajoshi.com^
 ||r8mi.top^
 ||r8qs.adj.st^
@@ -67054,7 +67081,6 @@ z4a.net
 ||s6539.online^
 ||s7.adaces.ero-advertising.com^
 ||s79.research.de.com^
-||s8j1.yldv.online^
 ||s8lp.mi9q.online^
 ||s8powazkowska-modlinska.pl^
 ||s8t.teads.tv^
@@ -78661,7 +78687,6 @@ z4a.net
 ||w5.hitbox.com^
 ||w6.hitbox.com^
 ||w7.hitbox.com^
-||w7p2g.yldv.online^
 ||w7r0.h-3t.online^
 ||w8.hitbox.com^
 ||w8j3.8786.online^

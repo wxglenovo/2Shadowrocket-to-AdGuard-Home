@@ -20,10 +20,10 @@ DNS_WORKERS = 50
 DNS_TIMEOUT = 2
 DELETE_COUNTER_FILE = os.path.join(DIST_DIR, "delete_counter.json")
 
-# 删除阈值 = 4
+# ✅ 删除阈值 = 4
 DELETE_THRESHOLD = 4
 
-# 跳过阈值：计数 > 7
+# ✅ 跳过阈值：计数 > 7
 SKIP_VALIDATE_THRESHOLD = 7
 SKIP_ROUNDS = 10   # 跳过验证 10 次
 SKIP_FILE = os.path.join(DIST_DIR, "skip_tracker.json")
@@ -32,17 +32,20 @@ SKIP_FILE = os.path.join(DIST_DIR, "skip_tracker.json")
 os.makedirs(TMP_DIR, exist_ok=True)
 os.makedirs(DIST_DIR, exist_ok=True)
 
+# ✅ 确保 skip_tracker.json 存在
+if not os.path.exists(SKIP_FILE):
+    with open(SKIP_FILE, "w", encoding="utf-8") as f:
+        json.dump({}, f, indent=2)
+    print(f"✅ 已创建 {SKIP_FILE}（用于记录跳过验证次数）")
+
 # ===============================
 # 跳过验证计数器（用于 >7 的规则）
 # ===============================
 def load_skip_tracker():
-    if os.path.exists(SKIP_FILE):
-        try:
-            with open(SKIP_FILE, "r", encoding="utf-8") as f:
-                return json.load(f)
-        except:
-            return {}
-    else:
+    try:
+        with open(SKIP_FILE, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except:
         return {}
 
 def save_skip_tracker(data):
@@ -150,7 +153,7 @@ def save_delete_counter(counter):
         json.dump(counter, f, indent=2, ensure_ascii=False)
 
 # ===============================
-# 核心处理分片（含跳过累加修正）
+# 核心处理分片
 # ===============================
 def process_part(part):
     part_file = os.path.join(TMP_DIR, f"part_{int(part):02d}.txt")
@@ -176,6 +179,7 @@ def process_part(part):
 
     print("🚀 开始 DNS 验证（跳过计数 >7 的规则）")
 
+    # 第一步：筛掉需要跳过验证的规则
     rules_to_validate = []
     for r in lines:
         c = delete_counter.get(r, None)
@@ -183,23 +187,24 @@ def process_part(part):
             rules_to_validate.append(r)
             continue
 
-        # 计数 >7 → 累加 skip_tracker
-        skip_cnt = skip_tracker.get(r, 0) + 1
+        # 计数 >7 → 跳过验证并累加 skip_tracker
+        skip_cnt = skip_tracker.get(r, 0)
+        skip_cnt += 1
         skip_tracker[r] = skip_cnt
         print(f"⏩ 跳过验证 {r}（次数 {skip_cnt}/{SKIP_ROUNDS}）")
+
+        # 达到 SKIP_ROUNDS → 重置计数为 4，继续验证
         if skip_cnt >= SKIP_ROUNDS:
-            print(f"🔁 恢复验证：{r}（跳过达到{SKIP_ROUNDS}次 → 重置计数=6）")
-            delete_counter[r] = 6
+            print(f"🔁 恢复验证：{r}（跳过达到{SKIP_ROUNDS}次 → 重置计数=4）")
+            delete_counter[r] = 4
             skip_tracker.pop(r)
             rules_to_validate.append(r)
 
-    # DNS 查询
     valid = set(dns_validate(rules_to_validate))
 
     final_rules = set()
     added_count = 0
     removed_count = 0
-
     all_rules = old_rules | set(lines)
     new_delete_counter = delete_counter.copy()
 
@@ -212,18 +217,13 @@ def process_part(part):
             continue
 
         old_count = delete_counter.get(rule, None)
-        if old_count is None:
-            new_count = 4
-        else:
-            new_count = old_count + 1
-
+        new_count = old_count + 1 if old_count is not None else 4
         new_delete_counter[rule] = new_count
         print(f"⚠ 连续失败计数 = {new_count} ：{rule}")
 
         if new_count >= DELETE_THRESHOLD:
             removed_count += 1
             continue
-
         final_rules.add(rule)
 
     save_delete_counter(new_delete_counter)

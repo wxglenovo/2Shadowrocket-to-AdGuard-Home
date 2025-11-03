@@ -49,14 +49,14 @@ jobs:
           SKIP_FILE="dist/skip_tracker.json"
           if [ ! -f "$SKIP_FILE" ]; then
             echo "{}" > "$SKIP_FILE"
-            echo "✅ 已创建 skip_tracker.json"
+            echo "✅ 已创建 skip_tracker.json（用于记录跳过验证次数）"
           fi
 
           LAST_PART_FILE="tmp/last_part.txt"
           PART_INPUT="${{ github.event.inputs.part }}"
           if [ -n "$PART_INPUT" ]; then
             PART="$PART_INPUT"
-            echo "📌 手动指定分片：$PART"
+            echo "📌 使用手动指定分片：$PART"
           else
             if [ -f "$LAST_PART_FILE" ]; then
               LAST_PART=$(cat "$LAST_PART_FILE")
@@ -73,30 +73,27 @@ jobs:
         run: |
           CURRENT_HOUR=$(date -u +"%H")
           if [[ "$CURRENT_HOUR" == "00" || "$CURRENT_HOUR" == "06" || "$CURRENT_HOUR" == "12" || "$CURRENT_HOUR" == "18" ]]; then
-            echo "🔄 强制下载规则并切片"
+            echo "🔄 定时触发 → 强制重新下载规则并切片"
             python3 split_and_check_16.py --force-update
           else
-            echo "⏩ 非强制刷新时间，跳过"
-          fi
+            echo "⏩ 当前不是强制刷新时间 → 跳过"
 
       - name: ✅ 检查规则文件与分片
         run: |
           if [ ! -f "merged_rules.txt" ] || [ ! -f "tmp/part_01.txt" ]; then
-            echo "⚠ 缺少规则文件或分片 → 重新拉取"
+            echo "⚠ 缺少规则文件或分片 → 正在重新拉取"
             python3 split_and_check_16.py --force-update
           else
-            echo "✅ 已检测到规则文件与分片，无需重新生成"
-          fi
+            echo "✅ 已检测到完整规则与分片，无需重新生成"
 
       - name: ✅ 创建或检查 delete_counter.json
         run: |
           mkdir -p dist
           if [ ! -f dist/delete_counter.json ]; then
             echo "{}" > dist/delete_counter.json
-            echo "✅ 已创建 delete_counter.json"
+            echo "✅ 已创建 dist/delete_counter.json（全局连续失败计数）"
           else
             echo "✅ delete_counter.json 已存在"
-          fi
 
       - name: ✅ 执行 DNS 验证
         env:

@@ -98,6 +98,7 @@
 ||2vqgtxw.cn^
 ||3.5646.cn^
 ||3.cjcp.cn^
+||3.ssqzj.com^
 ||301848.com^
 ||30edu.com.cn^
 ||31up.icu^
@@ -140,8 +141,10 @@
 ||54hm.cn^
 ||54kefu.net^
 ||55.la^
+||55726zubo56686.com^
 ||55zzz.cn^
 ||573569djd.com^
+||57573zubo36833.com^
 ||588589.com^
 ||595image.com^
 ||59gt.cn^
@@ -158,6 +161,7 @@
 ||644446.com^
 ||6669667.com^
 ||666aa777bb.com^
+||666bb777ww.com^
 ||6789.net^
 ||67it.com^
 ||68287zubo85737.com^
@@ -166,7 +170,9 @@
 ||6uzxtlv.cn^
 ||6v4.work^
 ||6v6.work^
+||7299tu75.cc^
 ||73336zubo25326.com^
+||777bb111ww.com^
 ||7aey.icu^
 ||7car.com.cn^
 ||7cbwus.cn^
@@ -177,7 +183,9 @@
 ||7xi9g1.com1.z0.glb.clouddn.com^
 ||8131.qizhihaotian.cn^
 ||8181zx.com^
+||88362zubo95838.com^
 ||888.tv.sohu.com^
+||888abc333abc.com^
 ||888bb555ww.com^
 ||888bb666cc.com^
 ||888xx222kk.com^
@@ -199,6 +207,7 @@
 ||999aa666bb.com^
 ||999abc333abc.com^
 ||999bb222ww.com^
+||999xx333kk.com^
 ||999xx999kk.com^
 ||99box.com^
 ||9fum.ifeng.com^
@@ -209,5 +218,6 @@
 ||9xxy.icu^
 ||a.52zxw.com^
 ||a.armystar.com^
+||a.baidinet.com^
 ||a.baidu.com^
 ||a.bake818.cn^

@@ -35,7 +35,8 @@ jobs:
           python-version: '3.12'
 
       - name: ✅ 安装依赖
-        run: pip install --upgrade requests dnspython
+        run: |
+          pip install --upgrade requests dnspython
 
       - name: ✅ Git 配置
         run: |

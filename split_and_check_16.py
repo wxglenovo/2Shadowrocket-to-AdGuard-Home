@@ -7,6 +7,7 @@ import requests
 import argparse
 import dns.resolver
 from concurrent.futures import ThreadPoolExecutor, as_completed
+import re
 
 # ===============================
 # 配置
@@ -20,15 +21,11 @@ DNS_WORKERS = 50
 DNS_TIMEOUT = 2
 DELETE_COUNTER_FILE = os.path.join(DIST_DIR, "delete_counter.json")
 
-# 删除阈值
 DELETE_THRESHOLD = 4
-
-# 跳过阈值：计数 > 7
 SKIP_VALIDATE_THRESHOLD = 7
-SKIP_ROUNDS = 10  # 跳过验证 10 次
+SKIP_ROUNDS = 10
 SKIP_FILE = os.path.join(DIST_DIR, "skip_tracker.json")
 
-# 创建目录
 os.makedirs(TMP_DIR, exist_ok=True)
 os.makedirs(DIST_DIR, exist_ok=True)
 
@@ -69,7 +66,23 @@ def save_delete_counter(counter):
         json.dump(counter, f, indent=2, ensure_ascii=False)
 
 # ===============================
-# 下载与合并规则（增加 HOSTS → AdGuard 转换）
+# HOSTS → AdGuard 转换
+# ===============================
+def hosts_to_adguard(rule):
+    line = rule.strip()
+    if not line or line.startswith("#"):
+        return None
+
+    m = re.match(r'^(?:0\.0\.0\.0|127\.0\.0\.1)\s+([^\s#]+)', line)
+    if m:
+        domain = m.group(1).strip()
+        adguard_rule = f"||{domain}^"
+        print(f"🔁 HOSTS 转换: {line} → {adguard_rule}")
+        return adguard_rule
+    return line
+
+# ===============================
+# 下载并合并规则
 # ===============================
 def download_all_sources():
     if not os.path.exists(URLS_TXT):
@@ -85,23 +98,12 @@ def download_all_sources():
             r = requests.get(url, timeout=20)
             r.raise_for_status()
             for line in r.text.splitlines():
-                line = line.strip()
-                if not line or line.startswith("#"):
-                    continue
-
-                # ===== 新增 HOSTS → AdGuard 转换逻辑 =====
-                parts = line.split()
-                if len(parts) == 2 and parts[0] in ("0.0.0.0", "127.0.0.1"):
-                    domain = parts[1].strip()
-                    if domain and "." in domain:
-                        line = f"||{domain}^"
-                        print(f"🔁 HOSTS 转换 → {line}")
-                # ===== 转换逻辑结束 =====
-
-                merged.add(line)
+                conv = hosts_to_adguard(line)
+                if conv:
+                    merged.add(conv)
         except Exception as e:
             print(f"⚠ 下载失败 {url}: {e}")
-    print(f"✅ 合并完成，共 {len(merged)} 条规则")
+    print(f"✅ 合并 {len(merged)} 条规则")
     with open(MASTER_RULE, "w", encoding="utf-8") as f:
         f.write("\n".join(sorted(merged)))
     return True
@@ -117,7 +119,7 @@ def split_parts():
         rules = [l.strip() for l in f if l.strip()]
     total = len(rules)
     per_part = (total + PARTS - 1) // PARTS
-    print(f"🪓 分片 {total} 条规则，每片约 {per_part} 条")
+    print(f"🪓 分片 {total} 条，每片约 {per_part}")
     for i in range(PARTS):
         part_rules = rules[i * per_part:(i + 1) * per_part]
         filename = os.path.join(TMP_DIR, f"part_{i+1:02d}.txt")
@@ -130,15 +132,12 @@ def split_parts():
 # DNS 验证
 # ===============================
 def check_domain(rule):
-    # 仅验证 AdGuard 域名规则
-    if rule.startswith("||") and rule.endswith("^"):
-        domain = rule[2:-1].replace("*", "")
-    else:
-        return rule  # 保留非域名规则
-
     resolver = dns.resolver.Resolver()
     resolver.timeout = DNS_TIMEOUT
     resolver.lifetime = DNS_TIMEOUT
+    domain = rule.lstrip("|").split("^")[0].replace("*", "")
+    if not domain:
+        return None
     try:
         resolver.resolve(domain)
         return rule
@@ -146,10 +145,10 @@ def check_domain(rule):
         return None
 
 def dns_validate(lines):
-    print(f"🚀 启动 {DNS_WORKERS} 并发 DNS 验证")
+    print(f"🚀 启动 {DNS_WORKERS} 并发验证")
     valid = []
     with ThreadPoolExecutor(max_workers=DNS_WORKERS) as executor:
-        futures = {executor.submit(check_domain, r): r for r in lines}
+        futures = {executor.submit(check_domain, rule): rule for rule in lines}
         total = len(lines)
         done = 0
         for future in as_completed(futures):
@@ -157,13 +156,13 @@ def dns_validate(lines):
             result = future.result()
             if result:
                 valid.append(result)
-            if done % 500 == 0 or done == total:
-                print(f"✅ 已验证 {done}/{total} 条规则，有效 {len(valid)} 条")
-    print(f"✅ 分片 DNS 验证完成，有效 {len(valid)} 条")
+            if done % 500 == 0:
+                print(f"✅ 已验证 {done}/{total} 条，有效 {len(valid)} 条")
+    print(f"✅ 分片验证完成，有效 {len(valid)} 条")
     return valid
 
 # ===============================
-# 分片处理主函数
+# 分片处理核心
 # ===============================
 def process_part(part):
     part_file = os.path.join(TMP_DIR, f"part_{int(part):02d}.txt")
@@ -175,7 +174,7 @@ def process_part(part):
         print("❌ 分片仍不存在，终止")
         return
 
-    lines = open(part_file, "r", encoding="utf-8").read().splitlines()
+    lines = [hosts_to_adguard(r) for r in open(part_file, "r", encoding="utf-8").read().splitlines() if hosts_to_adguard(r)]
     print(f"⏱ 验证分片 {part}, 共 {len(lines)} 条规则")
 
     old_rules = set()
@@ -188,27 +187,22 @@ def process_part(part):
     skip_tracker = load_skip_tracker()
 
     print("🚀 开始 DNS 验证（跳过计数 >7 的规则）")
-
     rules_to_validate = []
     for r in lines:
         c = delete_counter.get(r, None)
-
         if c is None or c <= SKIP_VALIDATE_THRESHOLD:
             rules_to_validate.append(r)
-            continue
-
-        skip_cnt = skip_tracker.get(r, 0) + 1
-        skip_tracker[r] = skip_cnt
-        print(f"⏩ 跳过验证 {r}（次数 {skip_cnt}/{SKIP_ROUNDS}）")
-
-        if skip_cnt >= SKIP_ROUNDS:
-            print(f"🔁 恢复验证：{r}（跳过达到10次 → 重置计数=6）")
-            delete_counter[r] = 6
-            skip_tracker.pop(r)
-            rules_to_validate.append(r)
+        else:
+            skip_cnt = skip_tracker.get(r, 0) + 1
+            skip_tracker[r] = skip_cnt
+            print(f"⏩ 跳过验证 {r}（次数 {skip_cnt}/{SKIP_ROUNDS}）")
+            if skip_cnt >= SKIP_ROUNDS:
+                print(f"🔁 恢复验证：{r}（跳过达到{SKIP_ROUNDS}次 → 重置计数=6）")
+                delete_counter[r] = 6
+                skip_tracker.pop(r)
+                rules_to_validate.append(r)
 
     valid = set(dns_validate(rules_to_validate))
-
     final_rules = set()
     added_count = 0
     removed_count = 0
@@ -222,12 +216,10 @@ def process_part(part):
             if rule not in old_rules:
                 added_count += 1
             continue
-
         old_count = delete_counter.get(rule, None)
-        new_count = 4 if old_count is None else old_count + 1
+        new_count = old_count + 1 if old_count is not None else 4  # 第一次失败计数 = 4
         new_delete_counter[rule] = new_count
         print(f"⚠ 连续失败计数 = {new_count} ：{rule}")
-
         if new_count >= DELETE_THRESHOLD:
             removed_count += 1
             continue
@@ -244,7 +236,7 @@ def process_part(part):
     print(f"COMMIT_STATS: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
 
 # ===============================
-# 主函数入口
+# 主函数
 # ===============================
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -263,6 +255,3 @@ if __name__ == "__main__":
 
     if args.part:
         process_part(args.part)
-    else:
-        print("⚠ 未指定分片，默认验证分片 01")
-        process_part("1")

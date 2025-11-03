@@ -45,7 +45,14 @@ jobs:
       - name: ✅ 检测本次需要处理的分片
         id: detect
         run: |
-          mkdir -p tmp
+          mkdir -p tmp dist
+          # 确保 skip_tracker.json 存在
+          SKIP_FILE="dist/skip_tracker.json"
+          if [ ! -f "$SKIP_FILE" ]; then
+            echo "{}" > "$SKIP_FILE"
+            echo "✅ 已创建 skip_tracker.json（用于记录跳过验证次数）"
+          fi
+
           LAST_PART_FILE="tmp/last_part.txt"
           PART_INPUT="${{ github.event.inputs.part }}"
           if [ -n "$PART_INPUT" ]; then
@@ -107,7 +114,7 @@ jobs:
           STATS=$(grep "COMMIT_STATS" logs/split_check_part_${PART}.log | tail -n1 | sed 's/COMMIT_STATS: //')
           echo "📝 本次提交统计：$STATS"
 
-          git add tmp/last_part.txt dist/delete_counter.json merged_rules.txt || true
+          git add tmp/last_part.txt dist/delete_counter.json dist/skip_tracker.json merged_rules.txt || true
           git add dist/validated_part_*.txt 2>/dev/null || true
 
           git commit -m "🤖 分片 $PART | $STATS" || echo "ℹ️ 本次无变化，无需提交"

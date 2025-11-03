@@ -8,7 +8,7 @@ AdGuard / DNS 规则管理脚本（最终版）
 2. 将合并规则拆分为多个分片（去掉注释行）
 3. 使用 DNS 验证规则有效性
 4. 自动维护删除计数和跳过验证机制
-5. 最终生成的分片和验证后的文件均无注释行
+5. 清理 delete_counter 和 skip_tracker 中已删除规则
 """
 
 import os
@@ -187,7 +187,8 @@ def process_part(part):
     1. 加载规则
     2. DNS 验证（跳过规则逻辑）
     3. 更新删除计数
-    4. 保存验证后的分片（去掉注释行）
+    4. 清理 delete_counter 和 skip_tracker 中已删除规则
+    5. 保存验证后的分片（去掉注释行）
     """
     part_file = os.path.join(TMP_DIR, f"part_{int(part):02d}.txt")
     if not os.path.exists(part_file):
@@ -260,6 +261,27 @@ def process_part(part):
             continue
         final_rules.add(rule)
 
+    # ===============================
+    # 清理 delete_counter 和 skip_tracker 中已删除规则
+    # ===============================
+    all_current_rules = set(lines)
+    removed_from_counter = []
+    removed_from_skip = []
+
+    for rule in list(new_delete_counter.keys()):
+        if rule not in all_current_rules:
+            new_delete_counter.pop(rule)
+            removed_from_counter.append(rule)
+
+    for rule in list(skip_tracker.keys()):
+        if rule not in all_current_rules:
+            skip_tracker.pop(rule)
+            removed_from_skip.append(rule)
+
+    if removed_from_counter or removed_from_skip:
+        print(f"🗑 清理 delete_counter {len(removed_from_counter)} 条，skip_tracker {len(removed_from_skip)} 条已删除的规则")
+
+    # 保存更新后的计数和跳过记录
     save_delete_counter(new_delete_counter)
     save_skip_tracker(skip_tracker)
 

@@ -393,6 +393,7 @@
 0.0.0.0 www.whimensyforge.shop
 0.0.0.0 www.whimsife.com
 0.0.0.0 www.whogetsmyvote.com
+0.0.0.0 www.whufast.com
 0.0.0.0 www.whyjpansy.crowleyfishfoundation.com
 0.0.0.0 www.whymoorlandsmatter.com
 0.0.0.0 www.wiadomosci-naszemiasto24.x9.eu
@@ -413,12 +414,14 @@
 0.0.0.0 www.wilczynskaanna.online
 0.0.0.0 www.wildegracehomestead.com
 0.0.0.0 www.wildflowercrafted.net
+0.0.0.0 www.willcommen.de
 0.0.0.0 www.willmarroofing.com
 0.0.0.0 www.win-spy.com
 0.0.0.0 www.wind-walk.com
 0.0.0.0 www.windaily.com
 0.0.0.0 www.windows-film.com
 0.0.0.0 www.windygene.com
+0.0.0.0 www.winner.giftprizewinner.com
 0.0.0.0 www.winscholarship.com
 0.0.0.0 www.wintarixsis.ru
 0.0.0.0 www.wioejhfe.weebly.com
@@ -758,8 +761,6 @@
 0.0.0.0 x6.yakiuchi.com
 0.0.0.0 x8.sarashi.com
 0.0.0.0 x888x.myserver.org
-0.0.0.0 xacthuc.autoads.asia
-0.0.0.0 xads.codon.vn
 0.0.0.0 xads.joboko.com
 0.0.0.0 xads.zedo.com
 0.0.0.0 xanax-online.run.to
@@ -770,7 +771,6 @@
 0.0.0.0 xhealth.112.2o7.net
 0.0.0.0 xhealthmobiltools.112.2o7.net
 0.0.0.0 xlsxattachmentpro.github.io
-0.0.0.0 xmadsapi.codon.vn
 0.0.0.0 xmadsapi.joboko.com
 0.0.0.0 xmarkscom.skimlinks.com
 0.0.0.0 xml.adtech.fr
@@ -2421,6 +2421,7 @@ z4a.net
 ||0-z0090c.0-030.net.daraz.com^
 ||0.0.0.0.beeglivesex.com^
 ||0.0.0.0.hpyrdr.com^
+||0.0000000000000000000000.com^
 ||0.110.222.sound.ag^
 ||0.1mono.biz^
 ||0.2mono.biz^
@@ -4544,6 +4545,7 @@ z4a.net
 ||01-vms-f8.net.daraz.com^
 ||01-webmail-10-authenticate-oa-1.net.daraz.com^
 ||01-webstoreauthentiwebstorete21-10-authentiwebstorete-oa-1.net.daraz.com^
+||01-winadmin-nym2.ad.corp.appnexus.com^
 ||01-winbuild-nym2.ad.corp.appnexus.com^
 ||01-winlog-nym2.ad.corp.appnexus.com^
 ||01-wwar21ww-f8.net.daraz.com^
@@ -4690,6 +4692,7 @@ z4a.net
 ||02608c8e5e56.info^
 ||0270.org^
 ||0271-842d-5a8b-d2c9.reporo.net^
+||0274proxy.co.cc^
 ||02760b4250998d66.com^
 ||027dddc1bb9beb8a.com^
 ||027dir.com^
@@ -4831,6 +4834,7 @@ z4a.net
 ||0471fcw.com^
 ||0472421a93.8c814e6744.com^
 ||0472js.com^
+||047617855.superu2.com^
 ||047c96e8c4781fc0.com^
 ||048-acr-930.mktoresp.com^
 ||0481e562f7caa146.com^
@@ -5035,6 +5039,7 @@ z4a.net
 ||0759bfb9b0594675.com^
 ||076-wlp-880.mktoresp.com^
 ||07634.com^
+||0769liancheng.cn^
 ||077.us^
 ||07751.ucoz.pl^
 ||07773138.com^
@@ -5241,6 +5246,7 @@ z4a.net
 ||0800.info^
 ||08000.info^
 ||0800test.sound.ag^
+||080120.com^
 ||080133.sound.ag^
 ||0804c230def9d3b4.com^
 ||0808008a10.buzz^
@@ -5272,6 +5278,7 @@ z4a.net
 ||084794aea459c04c.com^
 ||085-svr-790.mktoresp.com^
 ||085a-lin-prod-moss-bigip1.sound.ag^
+||086pop.com^
 ||087tqb.cn^
 ||088-ivk-130.mktoresp.com^
 ||088125.sound.ag^
@@ -5378,6 +5385,7 @@ z4a.net
 ||098-frb-840.mktoresp.com^
 ||098-jtp-403.mktoresp.com^
 ||098.freestrip.chat^
+||0980372379.fly2dns.net^
 ||098784579.godaddysites.com^
 ||0988576657456223.weebly.com^
 ||0988ed4fd3c76018.com^
@@ -5837,6 +5845,7 @@ z4a.net
 ||0w57c49k-5087ec170bf2e840fbd5ea3da793d32118df46db-am1.d.aa.online-metrix.net^
 ||0w57c49k-805a6302d090a46de8b72452f8b39eacce363c42-am1.d.aa.online-metrix.net^
 ||0w57c49k-8a659f7cef6bd1009b489e004f46d82c699ff7a6-am1.d.aa.online-metrix.net^
+||0w57c49k-9d302e2ed25beca91ebb3e171256c368c1037ea2-am1.d.aa.online-metrix.net^
 ||0w57c49k-c732fd8af3b320be8608b4f2071b856496516d85-am1.d.aa.online-metrix.net^
 ||0w57c49k-c8e01b69581cbb1a43e74fa7e20ce70ed56a511d-am1.d.aa.online-metrix.net^
 ||0w57c49k-c913ee5f99e5b6ec25cfb0f56fe14188b088bd65-am1.d.aa.online-metrix.net^
@@ -6006,6 +6015,7 @@ z4a.net
 ||1.qualtrics.com^
 ||1.quicktrkr.com^
 ||1.rensir.com^
+||1.rr95.com^
 ||1.salesforce-partners.com^
 ||1.sayge.io^
 ||1.shopit.cn^
@@ -6520,6 +6530,8 @@ z4a.net
 ||10002.ftp-qa1.marketingcloudqaops.com^
 ||10002.sfap-qa1.marketingcloudqaops.com^
 ||10002.sock-qa1.marketingcloudqaops.com^
+||10002154q.at.ua^
+||100023.live173.com^
 ||1000240168779.at.ua^
 ||100025074.collect.igodigital.com^
 ||100026903.collect.igodigital.com^
@@ -6537,6 +6549,7 @@ z4a.net
 ||1000booksmethod.com^
 ||1000credi.cabanova.fr^
 ||1000dy.com^
+||1000echos.lambanogroupe.com^
 ||1000embalagens.com.br^
 ||1000fapvids.online^
 ||1000femmes.com^
@@ -7708,6 +7721,7 @@ z4a.net
 ||1188.com^$third-party
 ||1188.content.swrve.com^
 ||11880.sfap-qa1.marketingcloudqaops.com^
+||1188098.shop^
 ||11884.ftp-qa1.marketingcloudqaops.com^
 ||11897.sfap-qa1.marketingcloudqaops.com^
 ||118d654612df63bc8395-aecfeaabe29a34ea9a877711ec6d8aed.r37.cf2.rackcdn.com^
@@ -7831,6 +7845,7 @@ z4a.net
 ||12055.connector-qa1.marketingcloudqaapis.com^
 ||1205fec1f6de6e67.com^
 ||1208344341.rsc.cdn77.org^
+||12086.net^
 ||1208818836.rsc.cdn77.org^
 ||120fsbyy.com^
 ||120mk.voluumtrk.com^
@@ -7850,6 +7865,7 @@ z4a.net
 ||121.sub-97-43-73.myvzw.com^
 ||121069.sound.ag^
 ||12110.sock-qa1.marketingcloudqaops.com^
+||12112336.pix-cdn.org^
 ||1211281.weebly.com^
 ||12114200.pix-cdn.org^
 ||12116.engine.mobileapptracking.com^
@@ -7861,6 +7877,7 @@ z4a.net
 ||1213.engine.mobileapptracking.com^
 ||121323ggfdh.weebly.com^
 ||12144.engine.mobileapptracking.com^
+||1215.info^
 ||12159c9c0b.3009e36989.com^
 ||12164.engine.mobileapptracking.com^
 ||12165.editor-qa1.marketingcloudqaapis.com^
@@ -8004,6 +8021,7 @@ z4a.net
 ||123embed.com^
 ||123ero.nl^
 ||123exampleago-loginvc.doclogin.net.daraz.com^
+||123fastproxy.co.cc^
 ||123fixes.blogspot.com^
 ||123flits.nl^
 ||123followers.com^
@@ -8424,6 +8442,7 @@ z4a.net
 ||124-169-140-121.dyn.iinet.net.au^
 ||124-169-189-42.dyn.iinet.net.au^
 ||124-169-212-130.dyn.iinet.net.au^
+||124-169-221-209.dyn.iinet.net.au^
 ||124-169-59-45.dyn.iinet.net.au^
 ||124-169-6-229.dyn.iinet.net.au^
 ||124-47-119-175.cidr4.kct.ad.jp^
@@ -8487,6 +8506,7 @@ z4a.net
 ||125.114.151.202.cc9.ne.jp^
 ||125.114.233.72.static.reverse.ltdomains.com^
 ||125.6.87.194.dynamic.dol.ru^
+||125.net.jumia.co.ke^
 ||125.sub-75-196-236.myvzw.com^
 ||125000.engine.mobileapptracking.com^
 ||12503.ftp-qa1.marketingcloudqaops.com^
@@ -8530,6 +8550,7 @@ z4a.net
 ||1268.free.wtbid204.top^
 ||1268402.fls.doubleclick.net^
 ||12694.engine.mobileapptracking.com^
+||127-152-133-95.pool.ukrtel.net^
 ||127-244-58-66.gci.net^
 ||127-gri-621.mktoresp.com^
 ||127.6.87.194.dynamic.dol.ru^
@@ -8691,6 +8712,7 @@ z4a.net
 ||131132131.keywordblocks.com^
 ||13118.ftp-qa1.marketingcloudqaops.com^
 ||1311xsj.com^
+||13131313.co.cc^
 ||1314-520.com^
 ||13142.sock-qa1.marketingcloudqaops.com^
 ||13142738.adoric-om.com^
@@ -8846,6 +8868,7 @@ z4a.net
 ||13642.engine.mobileapptracking.com^
 ||1364c2e769.26e8264baa.com^
 ||13650.editor-qa1.marketingcloudqaapis.com^
+||136501.com^
 ||13651.connector-qa1.marketingcloudqaapis.com^
 ||13654.ftp-qa1.marketingcloudqaops.com^
 ||13654.sock-qa1.marketingcloudqaops.com^
@@ -8950,6 +8973,7 @@ z4a.net
 ||14-0-204-188.static.pccw-hkt.com^
 ||14-185.031.popsite.net^
 ||14-195.190.popsite.net^
+||14-94-133-95.pool.ukrtel.net^
 ||14.197.forpsi.net^
 ||14.253.227.sound.ag^
 ||14.29ec54.tvnetwork.hu^
@@ -9020,6 +9044,7 @@ z4a.net
 ||1412173.fls.doubleclick.net^
 ||14131.cc^
 ||14135679.adoric-om.com^
+||1414newlife.duckdns.org^
 ||141592653589793238462643383279502884197169399375105820974944592.com^
 ||141593501.keywordblocks.com^
 ||14198.com^
@@ -9059,6 +9084,7 @@ z4a.net
 ||14297.sfap-qa1.marketingcloudqaops.com^
 ||14299.url.7wkw.com^
 ||142pc202.sshunet.nl^
+||143-147-135-95.pool.ukrtel.net^
 ||143-aav-221.mktoresp.com^
 ||143.6.87.194.dynamic.dol.ru^
 ||143.rbx.ovh.sound.ag^
@@ -9091,6 +9117,7 @@ z4a.net
 ||14394.engine.mobileapptracking.com^
 ||143k.com^
 ||144-141.dsl.sound.ag^
+||144-42-179-94.pool.ukrtel.net^
 ||144-gql-770.mktoresp.com^
 ||144-ncb-030.mktoresp.com^
 ||144.0-030.net.daraz.com^
@@ -9202,6 +9229,7 @@ z4a.net
 ||14830.engine.mobileapptracking.com^
 ||148503732.keywordblocks.com^
 ||14880.connector-qa1.marketingcloudqaapis.com^
+||149-233-124-91.pool.ukrtel.net^
 ||149.6.87.194.dynamic.dol.ru^
 ||149.static.stripchat.webcam^
 ||149.sub-70-208-227.myvzw.com^
@@ -9471,6 +9499,8 @@ z4a.net
 ||1585.content.swrve.com^
 ||1588-2040.co.kr^
 ||15884.sock-qa1.marketingcloudqaops.com^
+||1588aa.com^
+||1588aa.com^$third-party
 ||15894.editor-qa1.marketingcloudqaapis.com^
 ||15898.ftp-qa1.marketingcloudqaops.com^
 ||158acc.0-030.net.daraz.com^
@@ -9535,6 +9565,7 @@ z4a.net
 ||15yb.com^
 ||15yomodels.com^
 ||16-164.sound.ag^
+||16-224-133-95.pool.ukrtel.net^
 ||16-b.it^
 ||16.6.87.194.dynamic.dol.ru^
 ||16.62.233.72.static.reverse.ltdomains.com^
@@ -9635,6 +9666,7 @@ z4a.net
 ||16317.editor-qa1.marketingcloudqaapis.com^
 ||16322.engine.mobileapptracking.com^
 ||163330.measurementapi.com^
+||163345.com^
 ||163386.engine.mobileapptracking.com^
 ||16343.sock-qa1.marketingcloudqaops.com^
 ||163506.measurementapi.com^
@@ -9786,6 +9818,7 @@ z4a.net
 ||16887.connector-qa1.marketingcloudqaapis.com^
 ||16887.sfap-qa1.marketingcloudqaops.com^
 ||16888.engine.mobileapptracking.com^
+||16888.vn^
 ||1688bo.com^
 ||1688daigou.com^
 ||1688sagamecom.info^
@@ -9836,6 +9869,7 @@ z4a.net
 ||16c2c9fddfcba8f12dc6ecc1cd3bb420.xyz^
 ||16cade76bc793d90.com^
 ||16d08c88d8466387.com^
+||16e4e0d558e23070.com^
 ||16e653a97d3f96e8.com^
 ||16f3-2fd2-76cc-eaf8.reporo.net^
 ||16f938ff5a6e8fc6.com^
@@ -9910,6 +9944,7 @@ z4a.net
 ||171.sub-75-205-191.myvzw.com^
 ||171058.measurementapi.com^
 ||171092.engine.mobileapptracking.com^
+||1710coffee.com^
 ||171100.engine.mobileapptracking.com^
 ||171140.measurementapi.com^
 ||1711xsj.com^
@@ -10543,6 +10578,7 @@ z4a.net
 ||189-18-201-142.dsl.telesp.net.br^
 ||189-18-201-94.dsl.telesp.net.br^
 ||189-18-208-119.dsl.telesp.net.br^
+||189-18-21-173.dsl.telesp.net.br^
 ||189-18-214-94.dsl.telesp.net.br^
 ||189-18-229-130.dsl.telesp.net.br^
 ||189-18-230-127.dsl.telesp.net.br^
@@ -10556,6 +10592,7 @@ z4a.net
 ||189-18-57-148.dsl.telesp.net.br^
 ||189-18-57-162.dsl.telesp.net.br^
 ||189-18-57-81.dsl.telesp.net.br^
+||189-18-58-143.dsl.telesp.net.br^
 ||189-18-59-92.dsl.telesp.net.br^
 ||189-19-141-45.dsl.telesp.net.br^
 ||189-19-154-2.dsl.telesp.net.br^
@@ -10563,11 +10600,15 @@ z4a.net
 ||189-19-159-174.dsl.telesp.net.br^
 ||189-19-219-212.dsl.telesp.net.br^
 ||189-19-242-38.dsl.telesp.net.br^
+||189-19-88-159.dsl.telesp.net.br^
 ||189-211-177-171.static.axtel.net^
 ||189-46-1-231.dsl.telesp.net.br^
 ||189-46-101-19.dsl.telesp.net.br^
+||189-46-101-24.dsl.telesp.net.br^
 ||189-46-113-47.dsl.telesp.net.br^
+||189-46-117-234.dsl.telesp.net.br^
 ||189-46-118-66.dsl.telesp.net.br^
+||189-46-119-162.dsl.telesp.net.br^
 ||189-46-119-234.dsl.telesp.net.br^
 ||189-46-119-88.dsl.telesp.net.br^
 ||189-46-121-245.dsl.telesp.net.br^
@@ -10579,10 +10620,12 @@ z4a.net
 ||189-46-173-33.dsl.telesp.net.br^
 ||189-46-185-195.dsl.telesp.net.br^
 ||189-46-2-193.dsl.telesp.net.br^
+||189-46-205-220.dsl.telesp.net.br^
 ||189-46-221-18.dsl.telesp.net.br^
 ||189-46-221-30.dsl.telesp.net.br^
 ||189-46-228-235.dsl.telesp.net.br^
 ||189-46-231-208.dsl.telesp.net.br^
+||189-46-231-210.dsl.telesp.net.br^
 ||189-46-231-230.dsl.telesp.net.br^
 ||189-46-231-239.dsl.telesp.net.br^
 ||189-46-235-251.dsl.telesp.net.br^
@@ -10593,10 +10636,15 @@ z4a.net
 ||189-46-239-253.dsl.telesp.net.br^
 ||189-46-240-188.dsl.telesp.net.br^
 ||189-46-241-246.dsl.telesp.net.br^
+||189-46-248-146.dsl.telesp.net.br^
 ||189-46-249-150.dsl.telesp.net.br^
+||189-46-249-177.dsl.telesp.net.br^
+||189-46-249-229.dsl.telesp.net.br^
 ||189-46-3-156.dsl.telesp.net.br^
+||189-46-34-129.dsl.telesp.net.br^
 ||189-46-35-5.dsl.telesp.net.br^
 ||189-46-43-76.dsl.telesp.net.br^
+||189-46-48-16.dsl.telesp.net.br^
 ||189-46-49-253.dsl.telesp.net.br^
 ||189-46-66-232.dsl.telesp.net.br^
 ||189-46-81-115.dsl.telesp.net.br^
@@ -10612,6 +10660,7 @@ z4a.net
 ||189-47-200-60.dsl.telesp.net.br^
 ||189-47-203-183.dsl.telesp.net.br^
 ||189-47-212-150.dsl.telesp.net.br^
+||189-47-26-196.dsl.telesp.net.br^
 ||189-47-29-117.dsl.telesp.net.br^
 ||189-47-30-206.dsl.telesp.net.br^
 ||189-47-31-192.dsl.telesp.net.br^
@@ -10622,6 +10671,7 @@ z4a.net
 ||189-68-18-224.dsl.telesp.net.br^
 ||189-68-19-137.dsl.telesp.net.br^
 ||189-68-192-26.dsl.telesp.net.br^
+||189-68-28-51.dsl.telesp.net.br^
 ||189-69-104-44.dsl.telesp.net.br^
 ||189-69-160-176.dial-up.telesp.net.br^
 ||189-69-167-203.dial-up.telesp.net.br^
@@ -10905,7 +10955,6 @@ z4a.net
 ||1900196654.p04.elqsandbox.com^
 ||190087.deeplink.mobileapptracking.com^
 ||190087.engine.mobileapptracking.com^
-||1900892.cc^
 ||19009143.xyz^
 ||19009143.xyz^$document,popup
 ||190093.engine.mobileapptracking.com^
@@ -11257,6 +11306,7 @@ z4a.net
 ||19902.engine.mobileapptracking.com^
 ||199038.sound.ag^
 ||199071.engine.mobileapptracking.com^
+||1990tu.com^
 ||1990z.com^
 ||199109.engine.mobileapptracking.com^
 ||1991482557.rsc.cdn77.org^
@@ -11674,6 +11724,7 @@ z4a.net
 ||1inch-extension.vercel.app^
 ||1ink.cc^
 ||1instruments.com^
+||1invite.ru^
 ||1iohncj.xyz^
 ||1iphone.co.cc^
 ||1it.cqcounter.com^
@@ -11893,6 +11944,7 @@ z4a.net
 ||1sms.de^
 ||1snacks.com^
 ||1snn5n9w-e1b73a11236b887e1eaa395f045fd394f6b732c0-am1.d.aa.online-metrix.net^
+||1sonic.co.cc^
 ||1sputnik.ru^
 ||1spyder-pdp3pago-loginvc.doclogin.net.daraz.com^
 ||1sqfobn52.de^
@@ -12257,6 +12309,7 @@ z4a.net
 ||200-158-140-157.dsl.telesp.net.br^
 ||200-158-164-75.dsl.telesp.net.br^
 ||200-158-182-149.dsl.telesp.net.br^
+||200-158-24-139.dsl.telesp.net.br^
 ||200-158-24-247.dsl.telesp.net.br^
 ||200-158-25-225.dsl.telesp.net.br^
 ||200-158-25-249.dsl.telesp.net.br^
@@ -12291,12 +12344,14 @@ z4a.net
 ||200-206-154-162.dsl.telesp.net.br^
 ||200-206-161-200.dsl.telesp.net.br^
 ||200-206-170-58.dsl.telesp.net.br^
+||200-206-219-195.dsl.telesp.net.br^
 ||200-206-225-118.dsl.telesp.net.br^
 ||200-206-229-125.dsl.telesp.net.br^
 ||200-206-229-197.dsl.telesp.net.br^
 ||200-206-233-41.dsl.telesp.net.br^
 ||200-206-241-133.dsl.telesp.net.br^
 ||200-207-158-70.dsl.telesp.net.br^
+||200-207-170-79.dial-up.telesp.net.br^
 ||200-207-170-95.dial-up.telesp.net.br^
 ||200-207-174-152.dial-up.telesp.net.br^
 ||200-207-175-244.dial-up.telesp.net.br^
@@ -12374,6 +12429,7 @@ z4a.net
 ||200summit.com^$third-party
 ||201-0-138-24.dial-up.telesp.net.br^
 ||201-0-18-135.dsl.telesp.net.br^
+||201-0-206-130.dial-up.telesp.net.br^
 ||201-0-29-192.dsl.telesp.net.br^
 ||201-0-39-235.dsl.telesp.net.br^
 ||201-0-9-195.dsl.telesp.net.br^
@@ -12406,6 +12462,8 @@ z4a.net
 ||201-1-56-134.dsl.telesp.net.br^
 ||201-1-57-161.dsl.telesp.net.br^
 ||201-1-59-148.dsl.telesp.net.br^
+||201-1-59-223.dsl.telesp.net.br^
+||201-1-59-23.dsl.telesp.net.br^
 ||201-1-59-94.dsl.telesp.net.br^
 ||201-1-60-14.dsl.telesp.net.br^
 ||201-1-62-2.dsl.telesp.net.br^
@@ -12431,9 +12489,11 @@ z4a.net
 ||201-13-143-143.dial-up.telesp.net.br^
 ||201-13-143-150.dial-up.telesp.net.br^
 ||201-13-148-26.dial-up.telesp.net.br^
+||201-13-156-169.dial-up.telesp.net.br^
 ||201-13-156-241.dial-up.telesp.net.br^
 ||201-13-157-169.dial-up.telesp.net.br^
 ||201-13-157-91.dial-up.telesp.net.br^
+||201-13-159-228.dial-up.telesp.net.br^
 ||201-13-160-165.dial-up.telesp.net.br^
 ||201-13-160-196.dial-up.telesp.net.br^
 ||201-13-163-111.dial-up.telesp.net.br^
@@ -12457,6 +12517,7 @@ z4a.net
 ||201-13-35-23.dsl.telesp.net.br^
 ||201-13-51-70.dsl.telesp.net.br^
 ||201-13-60-166.dsl.telesp.net.br^
+||201-13-98-213.dsl.telesp.net.br^
 ||201-15-124-60.cbabm300.ipd.brasiltelecom.net.br^
 ||201-236-175-117.adsl.tie.cl^
 ||201-25-50-166.paemt300.ipd.brasiltelecom.net.br^
@@ -12471,6 +12532,8 @@ z4a.net
 ||201-26-155-49.dial-up.telesp.net.br^
 ||201-26-159-240.dial-up.telesp.net.br^
 ||201-26-16-43.dsl.telesp.net.br^
+||201-26-198-87.dsl.telesp.net.br^
+||201-26-34-34.dsl.telesp.net.br^
 ||201-26-35-120.dsl.telesp.net.br^
 ||201-26-60-138.dsl.telesp.net.br^
 ||201-26-7-180.dsl.telesp.net.br^
@@ -12479,6 +12542,7 @@ z4a.net
 ||201-27-167-160.dsl.telesp.net.br^
 ||201-27-168-69.dsl.telesp.net.br^
 ||201-27-169-233.dsl.telesp.net.br^
+||201-27-171-94.dsl.telesp.net.br^
 ||201-27-172-12.dsl.telesp.net.br^
 ||201-27-172-124.dsl.telesp.net.br^
 ||201-27-172-87.dsl.telesp.net.br^
@@ -12496,6 +12560,7 @@ z4a.net
 ||201-27-80-247.dsl.telesp.net.br^
 ||201-27-89-28.dsl.telesp.net.br^
 ||201-27-97-12.dsl.telesp.net.br^
+||201-42-10-16.dsl.telesp.net.br^
 ||201-42-10-88.dsl.telesp.net.br^
 ||201-42-11-141.dsl.telesp.net.br^
 ||201-42-113-170.dsl.telesp.net.br^
@@ -12514,6 +12579,7 @@ z4a.net
 ||201-42-163-79.dsl.telesp.net.br^
 ||201-42-165-105.dsl.telesp.net.br^
 ||201-42-166-238.dsl.telesp.net.br^
+||201-42-166-24.dsl.telesp.net.br^
 ||201-42-167-162.dsl.telesp.net.br^
 ||201-42-168-1.dsl.telesp.net.br^
 ||201-42-168-252.dsl.telesp.net.br^
@@ -12535,11 +12601,14 @@ z4a.net
 ||201-42-211-135.dsl.telesp.net.br^
 ||201-42-212-225.dsl.telesp.net.br^
 ||201-42-212-7.dsl.telesp.net.br^
+||201-42-213-119.dsl.telesp.net.br^
+||201-42-214-227.dsl.telesp.net.br^
 ||201-42-214-66.dsl.telesp.net.br^
 ||201-42-22-230.dsl.telesp.net.br^
 ||201-42-31-69.dsl.telesp.net.br^
 ||201-42-53-189.dsl.telesp.net.br^
 ||201-42-71-118.dsl.telesp.net.br^
+||201-42-71-81.dsl.telesp.net.br^
 ||201-42-8-226.dsl.telesp.net.br^
 ||201-42-86-1.dsl.telesp.net.br^
 ||201-42-9-21.dsl.telesp.net.br^
@@ -12555,8 +12624,10 @@ z4a.net
 ||201-43-122-168.dsl.telesp.net.br^
 ||201-43-122-250.dsl.telesp.net.br^
 ||201-43-122-93.dsl.telesp.net.br^
+||201-43-123-33.dsl.telesp.net.br^
 ||201-43-123-52.dsl.telesp.net.br^
 ||201-43-124-81.dsl.telesp.net.br^
+||201-43-125-64.dsl.telesp.net.br^
 ||201-43-125-92.dsl.telesp.net.br^
 ||201-43-129-196.dsl.telesp.net.br^
 ||201-43-13-165.dsl.telesp.net.br^
@@ -12570,9 +12641,12 @@ z4a.net
 ||201-43-177-225.dsl.telesp.net.br^
 ||201-43-180-13.dsl.telesp.net.br^
 ||201-43-180-65.dsl.telesp.net.br^
+||201-43-200-170.dsl.telesp.net.br^
 ||201-43-206-129.dsl.telesp.net.br^
 ||201-43-207-150.dsl.telesp.net.br^
+||201-43-207-203.dsl.telesp.net.br^
 ||201-43-208-128.dsl.telesp.net.br^
+||201-43-208-177.dsl.telesp.net.br^
 ||201-43-213-121.dsl.telesp.net.br^
 ||201-43-213-72.dsl.telesp.net.br^
 ||201-43-213-84.dsl.telesp.net.br^
@@ -12587,6 +12661,7 @@ z4a.net
 ||201-43-60-52.dsl.telesp.net.br^
 ||201-43-65-242.dsl.telesp.net.br^
 ||201-43-66-215.dsl.telesp.net.br^
+||201-43-67-12.dsl.telesp.net.br^
 ||201-43-71-7.dsl.telesp.net.br^
 ||201-43-8-187.dsl.telesp.net.br^
 ||201-43-83-152.dsl.telesp.net.br^
@@ -12607,6 +12682,7 @@ z4a.net
 ||201-68-109-91.dsl.telesp.net.br^
 ||201-68-110-82.dsl.telesp.net.br^
 ||201-68-111-200.dsl.telesp.net.br^
+||201-68-138-111.dsl.telesp.net.br^
 ||201-68-138-27.dsl.telesp.net.br^
 ||201-68-138-41.dsl.telesp.net.br^
 ||201-68-150-122.dsl.telesp.net.br^
@@ -12615,14 +12691,17 @@ z4a.net
 ||201-68-164-136.dsl.telesp.net.br^
 ||201-68-171-128.dsl.telesp.net.br^
 ||201-68-174-73.dsl.telesp.net.br^
+||201-68-176-108.dsl.telesp.net.br^
 ||201-68-177-154.dsl.telesp.net.br^
 ||201-68-177-63.dsl.telesp.net.br^
 ||201-68-177-67.dsl.telesp.net.br^
 ||201-68-178-154.dsl.telesp.net.br^
+||201-68-193-135.dsl.telesp.net.br^
 ||201-68-194-115.dsl.telesp.net.br^
 ||201-68-194-9.dsl.telesp.net.br^
 ||201-68-195-70.dsl.telesp.net.br^
 ||201-68-202-203.dsl.telesp.net.br^
+||201-68-202-77.dsl.telesp.net.br^
 ||201-68-22-43.dsl.telesp.net.br^
 ||201-68-22-78.dsl.telesp.net.br^
 ||201-68-222-212.dsl.telesp.net.br^
@@ -12633,6 +12712,7 @@ z4a.net
 ||201-68-237-31.dsl.telesp.net.br^
 ||201-68-244-240.dsl.telesp.net.br^
 ||201-68-246-194.dsl.telesp.net.br^
+||201-68-247-245.dsl.telesp.net.br^
 ||201-68-249-48.dsl.telesp.net.br^
 ||201-68-253-194.dsl.telesp.net.br^
 ||201-68-253-41.dsl.telesp.net.br^
@@ -12681,6 +12761,7 @@ z4a.net
 ||201-92-183-43.dsl.telesp.net.br^
 ||201-92-185-1.dsl.telesp.net.br^
 ||201-92-187-251.dsl.telesp.net.br^
+||201-92-187-60.dsl.telesp.net.br^
 ||201-92-188-44.dsl.telesp.net.br^
 ||201-92-191-203.dsl.telesp.net.br^
 ||201-92-204-111.dsl.telesp.net.br^
@@ -12707,6 +12788,7 @@ z4a.net
 ||201-92-47-77.dsl.telesp.net.br^
 ||201-92-64-60.dsl.telesp.net.br^
 ||201-92-72-218.dsl.telesp.net.br^
+||201-92-8-216.dsl.telesp.net.br^
 ||201-92-84-11.dsl.telesp.net.br^
 ||201-92-9-92.dsl.telesp.net.br^
 ||201-92-93-89.dsl.telesp.net.br^
@@ -12715,6 +12797,7 @@ z4a.net
 ||201-93-176-151.dsl.telesp.net.br^
 ||201-93-199-189.dsl.telesp.net.br^
 ||201-93-203-144.dsl.telesp.net.br^
+||201-93-212-34.dsl.telesp.net.br^
 ||201-93-215-169.dsl.telesp.net.br^
 ||201-93-221-180.dsl.telesp.net.br^
 ||201-93-225-148.dsl.telesp.net.br^
@@ -12733,9 +12816,12 @@ z4a.net
 ||201-95-149-148.dsl.telesp.net.br^
 ||201-95-150-123.dsl.telesp.net.br^
 ||201-95-150-128.dsl.telesp.net.br^
+||201-95-151-199.dsl.telesp.net.br^
 ||201-95-155-53.dsl.telesp.net.br^
+||201-95-16-193.dsl.telesp.net.br^
 ||201-95-16-6.dsl.telesp.net.br^
 ||201-95-162-189.dsl.telesp.net.br^
+||201-95-169-132.dsl.telesp.net.br^
 ||201-95-17-159.dsl.telesp.net.br^
 ||201-95-207-151.dsl.telesp.net.br^
 ||201-95-219-117.dsl.telesp.net.br^
@@ -12983,6 +13069,7 @@ z4a.net
 ||20591617p.rfihub.com^
 ||20594.editor-qa1.marketingcloudqaapis.com^
 ||206-225-94-32.dedicated.abac.net^
+||206-225-94-63.dedicated.abac.net^
 ||206-248-149-67.dsl.ncf.ca^
 ||206-cll-191.mktoresp.com^
 ||206.232.36.72.static.reverse.ltdomains.com^
@@ -13723,6 +13810,7 @@ z4a.net
 ||216-188-255-155.dyn.grandenetworks.net^
 ||216-221-195-9.pool.dsl.bbtel.com^
 ||216-224-51-206.client.dsl.net^
+||216-55-161-201.dedicated.abac.net^
 ||216-55-181-94.dedicated.abac.net^
 ||216.55.106.37.hera.net^
 ||216.6.87.194.dynamic.dol.ru^
@@ -14493,6 +14581,7 @@ z4a.net
 ||2359.content.swrve.com^
 ||23591.editor-qa1.marketingcloudqaapis.com^
 ||235c440d53.c2529de2cf.com^
+||236-253-133-95.pool.ukrtel.net^
 ||236.6.87.194.dynamic.dol.ru^
 ||236.kansas-11rh15rt.mo.dial-access.att.net^
 ||236.sound.ag^
@@ -14881,6 +14970,7 @@ z4a.net
 ||24counter.com^
 ||24counter.com^$third-party
 ||24customersupport.com^
+||24d.ir^
 ||24d2340a7eb82755.com^
 ||24d9723464d0.top^
 ||24e09667bc68d559.com^
@@ -15730,6 +15820,7 @@ z4a.net
 ||2acd61a7af1dbbd1.com^
 ||2acheterairmaxenligne.com^
 ||2acnmzzlink.webcindario.com^
+||2ad.ir^
 ||2ad8fc08.qqc.co^
 ||2ada-f309-68bb-3247.reporo.net^
 ||2adab76055e4e3f1.com^
@@ -16368,6 +16459,7 @@ z4a.net
 ||2webh.com^
 ||2week.info^
 ||2week.net^
+||2wii.co.cc^
 ||2wik6cxt8nugpaj-p.bonnelectureatous.fr^
 ||2wink.com.au^
 ||2winresidency.com^
@@ -16383,6 +16475,7 @@ z4a.net
 ||2x5y1818hekwjcl18o0.0-030.net.daraz.com^
 ||2x7.q3lo.ru^
 ||2x7y88hekwjcl8o1.0-030.net.daraz.com^
+||2x8.co.cc^
 ||2xclick.ru^
 ||2xclick.ru^$third-party
 ||2xcommunications.com^
@@ -16452,6 +16545,7 @@ z4a.net
 ||3.load5.biz^
 ||3.load8.biz^
 ||3.mol16.biz^
+||3.mol19.biz^
 ||3.mol5.biz^
 ||3.mol7.biz^
 ||3.mono3.biz^
@@ -17558,6 +17652,7 @@ z4a.net
 ||3292164.notify6.com^
 ||3292164.notifysrv.com^
 ||3292172.notifysrv.com^
+||329329.com^
 ||3294027.fls.doubleclick.net^
 ||3294260.notify6.com^
 ||3294260.notifysrv.com^
@@ -18561,6 +18656,7 @@ z4a.net
 ||3658870.com^
 ||3658871.com^
 ||3658873.com^
+||36590365.com^
 ||3659353.com^
 ||365adminsupport.com^
 ||365bet.shop^
@@ -18912,6 +19008,7 @@ z4a.net
 ||37e1b712ae76f0cc.com^
 ||37fb54d9456b9cfd.com^
 ||37fbbae481514e4d43739bcde1dfcb8e.com^
+||37fd4b3c515c3467.com^
 ||37fde8ca0b.d603b6ccf0.com^
 ||37gowan.com^
 ||37lwjdaua.com^
@@ -19463,6 +19560,7 @@ z4a.net
 ||3dc265e90c6d9fa3cc0c-3f982316dc17e6e99fe1b47483239d63.r95.cf2.rackcdn.com^
 ||3dcloud.co.uk^
 ||3dcrystal3d.com^
+||3dczar.co.cc^
 ||3dd3a44e1c.1c8c1287bc.com^
 ||3ddental.co.in^
 ||3ddesignroom.com^
@@ -19822,6 +19920,7 @@ z4a.net
 ||3sqvexc60y.com^
 ||3srecycling.com^
 ||3ssff.com^
+||3stepads.com^
 ||3supdat.top^
 ||3sverd.no^
 ||3t.skimresources.com^
@@ -19919,6 +20018,7 @@ z4a.net
 ||4.load8.biz^
 ||4.mcnt.jp^
 ||4.mol16.biz^
+||4.mol19.biz^
 ||4.mol5.biz^
 ||4.mol7.biz^
 ||4.mono3.biz^
@@ -21821,6 +21921,7 @@ z4a.net
 ||4desiz.blogspot.com^
 ||4device.ru^
 ||4df24b3551c3679c.com^
+||4dgroup.ru^
 ||4djsbydjs.com^
 ||4dogmedia.go2cloud.org^
 ||4dq.com^
@@ -21920,6 +22021,7 @@ z4a.net
 ||4glory.net^
 ||4go.cc^
 ||4gram.com^
+||4gsurf.co.cc^
 ||4h44.com^
 ||4hc.de^
 ||4hc.info^
@@ -21975,6 +22077,7 @@ z4a.net
 ||4legs.com.au^
 ||4legsfriend.ru^
 ||4life.com^
+||4liker.com^
 ||4link.it^
 ||4link.it^$third-party
 ||4littlegirlsfund.org^
@@ -22012,6 +22115,7 @@ z4a.net
 ||4nzrqw.cn^
 ||4o.fa3y.ru^
 ||4o2.fa3y.ru^
+||4object.ws^
 ||4office.pl^
 ||4ogv6.voluumtrk.com^
 ||4oney.com^
@@ -22050,6 +22154,7 @@ z4a.net
 ||4refurbishedmachinery.com^
 ||4renee.com^
 ||4revergreen.com^
+||4rextyrex.co.cc^
 ||4rfns9bmp1.com^
 ||4rgm6z478o.cn^
 ||4ri.com^
@@ -22064,6 +22169,7 @@ z4a.net
 ||4rxgu.voluumtrk.com^
 ||4rzfl.voluumtrk.com^
 ||4s6vubbh-b1fcfc3a98834add4b17bbee704123557507f2f3-am1.d.aa.online-metrix.net^
+||4s8s.com^
 ||4seasons-iraq.com^
 ||4secureorders.com^
 ||4serp.voluumtrk.com^
@@ -22074,6 +22180,7 @@ z4a.net
 ||4solo.biz^
 ||4spp2.voluumtrk.com^
 ||4sqt6jq.de^
+||4squareproxy.co.cc^
 ||4ssl.ws^
 ||4sstudyabroad.com^
 ||4stablestick.fr^
@@ -22125,6 +22232,7 @@ z4a.net
 ||4videosoft.com^
 ||4vkusa.mirtesen.ru^
 ||4vm.com^
+||4w90.co.cc^
 ||4wad.com^
 ||4wake.com^
 ||4watertesting.com^
@@ -22460,6 +22568,7 @@ z4a.net
 ||50centguitar.com^
 ||50d67d089eca3dda.com^
 ||50dd2e9fbbd14564.com^
+||50dollarforex.co.cc^
 ||50e57be19a.b0ff04e647.com^
 ||50hardcore.galleryprogram.com^
 ||50m.gkcyc.com^
@@ -22612,6 +22721,7 @@ z4a.net
 ||517c-3e70-2c5b-6385.reporo.net^
 ||517diaoyu.com^
 ||517f3gm3a9u2by8jw4lbyg3y1c.hop.clickbank.net^
+||517m.cn^
 ||518-tow-870.mktoresp.com^
 ||518000635.collect.igodigital.com^
 ||518000955.collect.igodigital.com^
@@ -22677,6 +22787,7 @@ z4a.net
 ||51gxqm.com^
 ||51huanche.com^
 ||51huitui.com^
+||51jianli.cn^
 ||51juejinjie.com.cn^
 ||51la.net^
 ||51la.net^$third-party
@@ -23039,6 +23150,7 @@ z4a.net
 ||54004823.dsl.pool.telekom.hu^
 ||54004a0a.dsl.pool.telekom.hu^
 ||540069c4.dsl.pool.telekom.hu^
+||54006cfd.dsl.pool.telekom.hu^
 ||54006f6e.dsl.pool.telekom.hu^
 ||54009616.dsl.pool.telekom.hu^
 ||54009657.dsl.pool.telekom.hu^
@@ -23049,9 +23161,11 @@ z4a.net
 ||5400c001.dsl.pool.telekom.hu^
 ||5400c04d.dsl.pool.telekom.hu^
 ||5400c076.dsl.pool.telekom.hu^
+||5400c097.dsl.pool.telekom.hu^
 ||5400c0b9.dsl.pool.telekom.hu^
 ||5400d2ae.dsl.pool.telekom.hu^
 ||5402800.fls.doubleclick.net^
+||5403051e.catv.pool.telekom.hu^
 ||54032419.catv.pool.telekom.hu^
 ||54032bf0.catv.pool.telekom.hu^
 ||54034231.catv.pool.telekom.hu^
@@ -23060,6 +23174,8 @@ z4a.net
 ||54036b0a.catv.pool.telekom.hu^
 ||54038cd5.catv.pool.telekom.hu^
 ||5403a3e4.catv.pool.telekom.hu^
+||5403a563.catv.pool.telekom.hu^
+||5403b2c2.catv.pool.telekom.hu^
 ||5403b82e.catv.pool.telekom.hu^
 ||5403c03b.catv.pool.telekom.hu^
 ||5403c0d4.catv.pool.telekom.hu^
@@ -23071,8 +23187,10 @@ z4a.net
 ||5403e526.catv.pool.telekom.hu^
 ||5403e853.catv.pool.telekom.hu^
 ||5403eb2e.catv.pool.telekom.hu^
+||5403ec7f.catv.pool.telekom.hu^
 ||5403f10c.catv.pool.telekom.hu^
 ||5403f195.catv.pool.telekom.hu^
+||5403f772.catv.pool.telekom.hu^
 ||5404448.fls.doubleclick.net^
 ||5405300.fls.doubleclick.net^
 ||5406-09eb-8338-dd7e.reporo.net^
@@ -23196,6 +23314,7 @@ z4a.net
 ||54hm.cn^
 ||54kefu.net^
 ||54kefu.net^$third-party
+||54knk.ru^
 ||54ly.com^
 ||54te.com^
 ||55-140-223-66.gci.net^
@@ -23253,7 +23372,9 @@ z4a.net
 ||55583138.com^
 ||5558x7.com^
 ||5559aa93df167012.com^
+||555abc222abc.com^
 ||555abc333abc.com^
+||555abc666abc.com^
 ||555drone.com^
 ||555fe0fa.qqc.co^
 ||555hosting.com^
@@ -24059,6 +24180,7 @@ z4a.net
 ||5expoyxvnum34vnu.onion.ws^
 ||5f-hj8-5d2g.dnsdf.com^
 ||5f0041fdccac49f2.com^
+||5f055i.co.cc^
 ||5f07fc039cfaa37a.com^
 ||5f0c226d5b00c7c8.com^
 ||5f1b56988da17bba.com^
@@ -24142,6 +24264,7 @@ z4a.net
 ||5ijo.01net.com^
 ||5imoney.com^
 ||5ip9.com^
+||5ips.net^
 ||5iroom.com^
 ||5ivy3ikkt.com^
 ||5j.com^
@@ -24170,6 +24293,7 @@ z4a.net
 ||5mff.com^
 ||5mgrgsc.cn^
 ||5min.com^
+||5ml.info^
 ||5mm.zxfw5.cn^
 ||5mn041cdz.com^
 ||5mno3.com^$popup
@@ -25293,6 +25417,7 @@ z4a.net
 ||66030.vidlock.com^
 ||6604.org^
 ||660d10c420a6fb6e.com^
+||661.at.ua^
 ||661.sock-qa1.marketingcloudqaops.com^
 ||6611429.fls.doubleclick.net^
 ||6612.engine.mobileapptracking.com^
@@ -25324,6 +25449,7 @@ z4a.net
 ||6656.engine.mobileapptracking.com^
 ||666.eurtb.adtelligent.com^
 ||6660003.com^
+||66600619.com^
 ||6661.eu-api.swrve.com^
 ||6661.eu-content.swrve.com^
 ||66613138.com^
@@ -25806,6 +25932,7 @@ z4a.net
 ||6bf28imiuaptt949z56frbrn0z.hop.clickbank.net^
 ||6bgaput9ullc.com^
 ||6bvya.voluumtrk.com^
+||6c.cn^
 ||6c.e-dx.ru^
 ||6c062330ce.54653cc53d.com^
 ||6c0f832f38.4058e46800.com^
@@ -25965,6 +26092,7 @@ z4a.net
 ||6gurus.com^
 ||6gvg5saail.com^
 ||6h02.com^
+||6h9.net^
 ||6hejing.cn^
 ||6hezi.com^
 ||6hp.info^
@@ -26092,6 +26220,7 @@ z4a.net
 ||6xigema.com^
 ||6xr2.tlnk.io^
 ||6y6s56yhh56y6y656.pages.dev^
+||6y6y.com^
 ||6ye.com.cn^
 ||6yk.biz^
 ||6ynyejkv0j1s.app.tapmyback.com^
@@ -26356,6 +26485,7 @@ z4a.net
 ||70twantpmevw1ufi.beta.mercury.ai^
 ||70yst.com^
 ||71-177.net.jumia.ma^
+||71-193-134-95.pool.ukrtel.net^
 ||71-211-149-83.hlrn.qwest.net^
 ||71-217-114-216.tukw.qwest.net^
 ||71-223-68-203.phnx.qwest.net^
@@ -27363,6 +27493,7 @@ z4a.net
 ||77208893.cn^
 ||772268.com^
 ||77266.hittail.com^
+||77276.com^
 ||772773a.com^
 ||773.com^
 ||7730.engine.mobileapptracking.com^
@@ -27413,6 +27544,7 @@ z4a.net
 ||77793.net^
 ||77793138.com^
 ||777advisors.com^
+||777bb111ww.com^
 ||777blogz.com^
 ||777books.com^
 ||777dealer.com^
@@ -27647,6 +27779,7 @@ z4a.net
 ||7860a898b6ea4774.com^
 ||78642.net^
 ||786736532.keywordblocks.com^
+||786ghtduhj.duckdns.org^
 ||786muslim.com^
 ||786muslims.com^
 ||786services.co.uk^
@@ -28084,6 +28217,7 @@ z4a.net
 ||7jftl.voluumtrk.com^
 ||7jjrd.voluumtrk.com^
 ||7jkzmbd.cn^
+||7jnw4jh4-03055fb446e546e0e10a75a7af5bb68d73a201c7-am1.d.aa.online-metrix.net^
 ||7jnw4jh4-18de31c4037c1f275d252dcccbb8872b0e8de0bd-am1.d.aa.online-metrix.net^
 ||7jnw4jh4-1ebeab67ba65f19a331fee43a13dc2426f65d020-am1.d.aa.online-metrix.net^
 ||7jnw4jh4-1ef9f0dfe1b7813308f8347a9d4771d6874cc2b9-am1.d.aa.online-metrix.net^
@@ -28095,10 +28229,12 @@ z4a.net
 ||7jnw4jh4-2ddd13843c134b8219b399cf94e2faa5f3456690-am1.d.aa.online-metrix.net^
 ||7jnw4jh4-2de296dbdc334a7af461bb545119e5e907b92f69-am1.d.aa.online-metrix.net^
 ||7jnw4jh4-2df25d35fc8b8cfb76a51783010a87c437fd2e42-am1.d.aa.online-metrix.net^
+||7jnw4jh4-3d42b76fc5eca097583bf21f22da715c1eeff8ec-am1.d.aa.online-metrix.net^
 ||7jnw4jh4-3dee17922f6a24a2e633b9cd1c09ce540eded0a9-am1.d.aa.online-metrix.net^
 ||7jnw4jh4-431af259e547877343f5aa2a536ca5f8396e6006-am1.d.aa.online-metrix.net^
 ||7jnw4jh4-4639f1df97932d5c4080354fddafb8af6a7c7b08-am1.d.aa.online-metrix.net^
 ||7jnw4jh4-46a9485313ec0c422533832cd250ebf5c0f023db-am1.d.aa.online-metrix.net^
+||7jnw4jh4-46cfcce7eb996af3838b62ef96b4f9704e320366-am1.d.aa.online-metrix.net^
 ||7jnw4jh4-4d42d08405204e2bc38096743b90f212b71caee2-am1.d.aa.online-metrix.net^
 ||7jnw4jh4-4d68101fd6f383f0c6549b1b175765a3c8449b9b-am1.d.aa.online-metrix.net^
 ||7jnw4jh4-5c0a775e4208d4845fc86a61498d680734706e3d-am1.d.aa.online-metrix.net^
@@ -28434,6 +28570,7 @@ z4a.net
 ||80-123-46-47.adsl.highway.telekom.at^
 ||80-123-5-57.adsl.highway.telekom.at^
 ||80-123-6-160.adsl.highway.telekom.at^
+||80-157-113-92.pool.ukrtel.net^
 ||80-186-140-163.elisa-mobile.fi^
 ||80-186-143-112.elisa-mobile.fi^
 ||80-186-179-1.elisa-mobile.fi^
@@ -28594,6 +28731,7 @@ z4a.net
 ||809071.adoric-om.com^
 ||8096888.com^
 ||8097-c493-8fbf-0dc2.reporo.net^
+||8098.nut.cc^
 ||809f46adf0590f3a.com^
 ||80a3e39b3395e268.com^
 ||80aczhyfg8v3bu7jzesb.viomil.ro^
@@ -28615,6 +28753,7 @@ z4a.net
 ||80vn.cn^
 ||80xmedia.com^
 ||80xy.com^
+||81-149-133-95.pool.ukrtel.net^
 ||81-178-23-84.dsl.pipex.com^
 ||81-178-31-165.dsl.pipex.com^
 ||81-208-101-202.ip.fastwebnet.it^
@@ -29445,6 +29584,7 @@ z4a.net
 ||839-plz-231.mktoresp.com^
 ||8397.sock-qa1.marketingcloudqaops.com^
 ||8397396.fls.doubleclick.net^
+||839995.com^
 ||83a6b209740a0c3a.com^
 ||83b11beb10ba0408.com^
 ||83d4519974072500.com^
@@ -29457,6 +29597,7 @@ z4a.net
 ||83y.ru^
 ||84-16-235-35.spitzenserver.de^
 ||84-231-10-66.elisa-mobile.fi^
+||84-245-22-39.dsl.cambrium.nl^
 ||84-252-21-217.2073137061.pleven.cablebg.net^
 ||84-32-97-23.aktv.lt^
 ||84-32-98-144.aktv.lt^
@@ -30613,6 +30754,7 @@ z4a.net
 ||86f276c6899ec2ee.com^
 ||86fm.com^
 ||86hi9r4f.xyz^
+||86kx.com^
 ||86mall.com^
 ||86okr7sb.myutilitydomain.com^
 ||86pnlln256.kameleoon.eu^
@@ -30721,12 +30863,6 @@ z4a.net
 ||87.116.209.46.brzesko209.tnp.pl^
 ||87.116.209.88.brzesko209.tnp.pl^
 ||87.6.87.194.dynamic.dol.ru^
-||87.68.236.216.adsl.012.net.il^
-||87.68.44.14.cable.012.net.il^
-||87.68.57.139.cable.012.net.il^
-||87.68.62.122.cable.012.net.il^
-||87.68.85.19.cable.012.net.il^
-||87.69.62.77.cable.012.net.il^
 ||87.80.74.97.host.secureserver.net^
 ||87.97.10.17.pool.invitel.hu^
 ||87.97.10.247.pool.invitel.hu^
@@ -30922,7 +31058,6 @@ z4a.net
 ||886a38e988.9c8b7403e9.com^
 ||887-tyd-310.mktoresp.com^
 ||88701283b4087cde.com^
-||887338591354223303680938806133mnnnhqusckzpape.adelon.com.br^
 ||8876.ftp-qa1.marketingcloudqaops.com^
 ||887908253.keywordblocks.com^
 ||887sconline.com^
@@ -30954,9 +31089,11 @@ z4a.net
 ||8889-38b3-9b87-03a8.reporo.net^
 ||88893138.com^
 ||88896alarm.com^
+||888abc333abc.com^
 ||888abc555abc.com^
 ||888abc888abc.com^
 ||888b.biz^
+||888bb555ww.com^
 ||888bb666cc.com^
 ||888c09cf4b651198.com^
 ||888casino.com^
@@ -31004,6 +31141,7 @@ z4a.net
 ||88lmfff666.com^
 ||88lotte.com^
 ||88minutes.co.cc^
+||88ng.com^
 ||88p2p.com^
 ||88p2p.com^$popup
 ||88proxy.co.cc^
@@ -31073,6 +31211,7 @@ z4a.net
 ||89-181-5-231.net.novis.pt^
 ||89-181-81-116.net.novis.pt^
 ||89-232-224-165.pppoe-adsl.isurgut.ru^
+||89-234-124-91.pool.ukrtel.net^
 ||89-235-206-26.saturn.infonet.ee^
 ||89-235-217-120.saturn.infonet.ee^
 ||89-235-222-236.saturn.infonet.ee^
@@ -31430,6 +31569,7 @@ z4a.net
 ||8mg050.n3cdn1.secureserver.net^*/960
 ||8mgtar.co.cc^
 ||8mhzh9pvg9qvlc4f.net.daraz.com^
+||8ml.info^
 ||8mmdesign.com^
 ||8mrbg.voluumtrk.com^
 ||8mzyb.voluumtrk.com^
@@ -32517,6 +32657,7 @@ z4a.net
 ||9377co.com^
 ||9377hi.com^
 ||9377ku.com^
+||9377ne.com^
 ||9377os.com^
 ||93787ece9e765f96.com^
 ||938567431.keywordblocks.com^
@@ -33289,6 +33430,7 @@ z4a.net
 ||967av.com^
 ||968.bitterstrawberry.com^
 ||969.engine.mobileapptracking.com^
+||9691564644650.hyperphp.com^
 ||9693.pandasuite.io^
 ||96936e33e0b94a97.com^
 ||96964.engine.mobileapptracking.com^
@@ -33368,6 +33510,7 @@ z4a.net
 ||97829k.com^
 ||978520b8b3dbef94.com^
 ||9786.pandasuite.io^
+||978652324598773248676.hyperphp.com^
 ||9786544t5r.weebly.com^
 ||9786958-gov-br-team.weebly.com^
 ||97893138.com^
@@ -33576,6 +33719,7 @@ z4a.net
 ||9999eth.com^
 ||999aa666bb.com^
 ||999abc333abc.com^
+||999abc999abc.com^
 ||999bb222ww.com^
 ||999d.com^
 ||999d.com^$third-party
@@ -33667,6 +33811,7 @@ z4a.net
 ||9amq5z4y1y.com^
 ||9anime.cc^
 ||9anime.to^
+||9at62l.aktualizaceuctuunicreditgroup.qzz.io^
 ||9ata.ero-advertising.com^
 ||9atiuana2s911.twilightparadox.com^
 ||9awdf.voluumtrk.com^
@@ -33856,6 +34001,7 @@ z4a.net
 ||9gau3j8x7.com^
 ||9gc.co.uk^
 ||9gg23.com^$popup
+||9ghwyvdk-003d5c59a58c62c2fae4360fcdb23da1d584cc3d-am1.d.aa.online-metrix.net^
 ||9ghwyvdk-007412eb87f1139f91b6bf158d3382f3f2deb86b-am1.d.aa.online-metrix.net^
 ||9ghwyvdk-022144909d24cce4e38037648ebc747f814f2e2c-am1.d.aa.online-metrix.net^
 ||9ghwyvdk-07e89c095a017b281ade7a041d7248e5b6e8a467-am1.d.aa.online-metrix.net^
@@ -33886,6 +34032,7 @@ z4a.net
 ||9ghwyvdk-7adbe202e102fc1144d1dae5cea1dea688fa3f7d-am1.d.aa.online-metrix.net^
 ||9ghwyvdk-855b227570b95a93b9af3d163df85c51153bb98d-am1.d.aa.online-metrix.net^
 ||9ghwyvdk-896ec5b123dc68c259053b02fcd4b6984d317ad3-am1.d.aa.online-metrix.net^
+||9ghwyvdk-91b233a486317bd325a845097d0ddb55c0d06352-am1.d.aa.online-metrix.net^
 ||9ghwyvdk-91bd5cac97a72d6757f026f8579654fc2911f143-am1.d.aa.online-metrix.net^
 ||9ghwyvdk-92dd18a9dbcda0b7cdfc9d861c15da553f2d0f10-am1.d.aa.online-metrix.net^
 ||9ghwyvdk-9e2ba844370313dc65140a207dc066d32a6c6a02-am1.d.aa.online-metrix.net^
@@ -34429,7 +34576,6 @@ z4a.net
 ||a.collective-media.net.43489.9299.302br.net^
 ||a.collective-media.net.43490.9299.302br.net^
 ||a.collective-media.net.43491.9299.302br.net^
-||a.dtprofit.com^
 ||a.inpit.xyz^
 ||a.mfcad.net^
 ||a.o.nf^
@@ -34531,7 +34677,6 @@ z4a.net
 ||abdklghcddihp.space^
 ||abdobaik.duckdns.org^
 ||abisource.com^
-||ablegates.co.za^
 ||about-blank.ws^
 ||aboutlaserremoval.com^
 ||abrilparadon.duckdns.org^
@@ -36710,7 +36855,6 @@ z4a.net
 ||ad-sdk-config.youdao.com^
 ||ad-sdk.huxiu.com^
 ||ad-search.com^
-||ad-serv.tubemogul.com^
 ||ad-serve.b-cdn.net^
 ||ad-server.eu^
 ||ad-serving.d-o-ads.com^
@@ -48791,7 +48935,6 @@ z4a.net
 ||ad.trwv.net^
 ||ad.tubeadnetwork.com^
 ||ad.tubelegion.com^
-||ad.tubemogul.com^
 ||ad.twinrdengine.com^
 ||ad.twitchguru.com^
 ||ad.u-car.com.tw^
@@ -49962,7 +50105,6 @@ z4a.net
 ||ad7pzqwscd.neliver.com^
 ||ad8.adriver.ru^
 ||ad8.allbanners.ru^
-||ad8.cc^
 ||ad8.hpg.com.br^
 ||ad8.paycount.com^
 ||ad80.hpg.com.br^
@@ -50744,7 +50886,6 @@ z4a.net
 ||addendo.network^
 ||addeppo.com^
 ||adderallpatient.com^
-||adderleyprimary.co.uk^
 ||addesigner.com^
 ||addetect.com^
 ||addfreestats.com^$third-party
@@ -52130,7 +52271,6 @@ z4a.net
 ||admin18.testandtarget.omniture.com^
 ||admin19.page.link^
 ||admin19.testandtarget.omniture.com^
-||admin1960.linkpc.net^
 ||admin2.adlooxtracking.com^
 ||admin2.moseasia.com^
 ||admin2.testandtarget.omniture.com^
@@ -53010,7 +53150,6 @@ z4a.net
 ||adready.info^
 ||adreadyclick.com^
 ||adreal.cn^
-||adreal.dt.co.kr^
 ||adrealclick.com^$popup
 ||adrecord.com^
 ||adrecord.com^$third-party
@@ -56693,7 +56832,6 @@ z4a.net
 ||adv.ilsole24ore.it^
 ||adv.imadrep.co.kr^
 ||adv.isdn.cz^
-||adv.khan.co.kr^
 ||adv.linear.it^
 ||adv.mediamond.it^
 ||adv.mip.com^
@@ -56767,7 +56905,6 @@ z4a.net
 ||advanceddefensivetactics.com^
 ||advancedemployersolutions.com^
 ||advancedetective.com^
-||advancedfileoptimizer.com^
 ||advancedfoodequipment.com^
 ||advancedhunt.com^
 ||advancedidentityprotector.com^
@@ -59771,7 +59908,6 @@ z4a.net
 ||agav.co.cc^
 ||agava.net^
 ||agaxocjedwjue0uz7psukdkuyzn2s1509504610.nuid.imrworldwide.com^
-||agbero.duckdns.org^
 ||agbfgatnhzdeb.online^
 ||agbiz.co.za^
 ||agbr8yb2sr.neliver.com^
@@ -60162,7 +60298,6 @@ z4a.net
 ||agorasim.webcindario.com^
 ||agorotjinked.shop^
 ||agostinos.com^
-||agostonrat.duckdns.org^
 ||agostsensi.pro^
 ||agouriforex.co.cc^
 ||agozarnyc.com^
@@ -60337,7 +60472,6 @@ z4a.net
 ||aguforex.co.cc^
 ||aguidethpartner.net.daraz.com^
 ||aguimaweb.com^
-||aguiyi1234.duckdns.org^
 ||agulino.com^
 ||agunagand.com^
 ||aguniaccov.pro^
@@ -60560,7 +60694,6 @@ z4a.net
 ||ahomsoalsoah.net^
 ||ahongdeash.net^
 ||ahongxianglkk.bookonline.com.cn^
-||ahora2018.duckdns.org^
 ||ahoramascotas.cl^
 ||ahorixvendoapp.com^
 ||ahorixvendoapp.net^
@@ -60645,7 +60778,6 @@ z4a.net
 ||ahxqqfgmfumpo.website^
 ||ahxvo5c41w.neliver.com^
 ||ahxwbjvul3.neliver.com^
-||ahyanari.duckdns.org^
 ||ahyjsrlslitla.online^
 ||ahylcpjkdp.neliver.com^
 ||ahylong.cn^
@@ -61165,7 +61297,6 @@ z4a.net
 ||airdrie.net^
 ||airdrieautomotive.com^
 ||airdrop-buckybonk.io^
-||airdrop-hype.com^
 ||airdrop-hype.fun^
 ||airdrop-payai.network^
 ||airdrop.credit^
@@ -66329,7 +66460,6 @@ z4a.net
 ||allgamesfree.com^
 ||allgamesoftware.blogspot.com^
 ||allgeier-haustechnik.de^
-||allgfind.com^
 ||allghettosex.com^
 ||allgoodfind.com^
 ||allgoods.us^
@@ -66553,7 +66683,6 @@ z4a.net
 ||allporncomics.com^
 ||allpornovids.com^
 ||allpornpass.com^
-||allpornvideos.net^
 ||allprintersupport.com^
 ||allprivatebabes.com^
 ||allproblog.com^
@@ -66576,7 +66705,6 @@ z4a.net
 ||allsaintsvictoria.org^
 ||allsale.pl^
 ||allscalesusa.com^
-||allsearch.ws^
 ||allseason.apps.net.daraz.com^
 ||allseason.development.net.daraz.com^
 ||allseasons-investments.com^
@@ -66748,7 +66876,6 @@ z4a.net
 ||almac.academy.static.dev.whitehat.gr^
 ||almacalefaccion.cl^
 ||almacenelpunto.com^
-||almacenescol.duckdns.org^
 ||almaciat.mystoretoolbar.com^
 ||almaco.com.co^
 ||almacopio.com^
@@ -67760,7 +67887,6 @@ z4a.net
 ||amangode.122.2o7.net^
 ||amangroup.co^
 ||amani-tours.com^
-||amani24.duckdns.org^
 ||amaniasurf.com^
 ||amanita.com.my^
 ||amanizauz9.neliver.com^
@@ -68014,7 +68140,6 @@ z4a.net
 ||amazonwebservices.d2.sc.omtrdc.net^
 ||amazonwebservicesinc.tt.omtrdc.net^
 ||amazonwebstore.demdex.net^
-||amazulu.duckdns.org^
 ||amazun.net^
 ||amazy.ru^
 ||amb-coach.com^
@@ -71772,7 +71897,6 @@ z4a.net
 ||andand.cn^
 ||andappproxy.co.cc^
 ||andares.com^
-||andat.com.vn^
 ||andathung.com^
 ||andatrailers.com.au^
 ||andayiyuan.com^
@@ -71815,7 +71939,6 @@ z4a.net
 ||andfinance.com^
 ||andfir.it^
 ||andfkcplbv.neliver.com^
-||andflopez123.duckdns.org^
 ||andhghtyjdf.firebaseapp.com^
 ||andhghtyjdf.web.app^
 ||andiamoluggage.com^

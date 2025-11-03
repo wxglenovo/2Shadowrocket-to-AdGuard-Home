@@ -46,10 +46,13 @@ jobs:
         id: detect
         run: |
           mkdir -p tmp dist
+          # 确保 skip_tracker.json 存在
           SKIP_FILE="dist/skip_tracker.json"
           if [ ! -f "$SKIP_FILE" ]; then
             echo "{}" > "$SKIP_FILE"
             echo "✅ 已创建 skip_tracker.json（用于记录跳过验证次数）"
+          else
+            echo "✅ skip_tracker.json 已存在"
           fi
 
           LAST_PART_FILE="tmp/last_part.txt"
@@ -96,14 +99,15 @@ jobs:
             echo "✅ 已创建 dist/delete_counter.json（全局连续失败计数）"
           else
             echo "✅ delete_counter.json 已存在"
+          fi
 
-      - name: ✅ 执行 DNS 验证并打印 HOSTS 转换日志
+      - name: ✅ 执行 DNS 验证
         env:
           PART: ${{ steps.detect.outputs.part }}
         run: |
           mkdir -p logs
           echo "🚀 开始验证分片 $PART..."
-          python3 split_and_check_16.py --part "$PART" 2>&1 | tee logs/split_check_part_${PART}.log | grep -E "HOSTS 转换|⚠"
+          python3 split_and_check_16.py --part "$PART" | tee logs/split_check_part_${PART}.log
 
       - name: ✅ 提交与推送更改
         env:

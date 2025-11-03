@@ -172,6 +172,7 @@ def cleanup_old_rules(delete_counter, skip_tracker):
         if rule not in current_rules and now - last_seen > FIVE_DAYS:
             delete_counter.pop(rule)
             removed_counter.append(rule)
+            print(f"🗑 删除规则 {rule}（超过5天未出现，删除时间：{time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())}）")
 
     # 清理 skip_tracker 中已删除且超过5天的规则
     for rule, data in list(skip_tracker.items()):
@@ -179,6 +180,7 @@ def cleanup_old_rules(delete_counter, skip_tracker):
         if rule not in current_rules and now - last_seen > FIVE_DAYS:
             skip_tracker.pop(rule)
             removed_skip.append(rule)
+            print(f"🗑 删除跳过验证规则 {rule}（超过5天未出现，删除时间：{time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())}）")
 
     if removed_counter or removed_skip:
         print(f"🗑 清理 delete_counter {len(removed_counter)} 条，skip_tracker {len(removed_skip)} 条（已删除且超过5天）")

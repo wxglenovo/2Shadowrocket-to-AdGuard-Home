@@ -9,6 +9,7 @@ AdGuard / DNS 规则管理脚本（最终版）
 3. 使用 DNS 验证规则有效性（50线程并发，每批500条）
 4. 自动维护删除计数和跳过验证机制
 5. 清理 delete_counter 和 skip_tracker 中已删除规则
+6. 跳过验证逻辑提前处理，提高验证速度
 """
 
 import os
@@ -42,7 +43,6 @@ os.makedirs(DIST_DIR, exist_ok=True)
 # Skip Tracker（跳过验证机制）
 # ===============================
 def load_skip_tracker():
-    """加载跳过验证记录"""
     if os.path.exists(SKIP_FILE):
         try:
             with open(SKIP_FILE, "r", encoding="utf-8") as f:
@@ -55,7 +55,6 @@ def load_skip_tracker():
         return {}
 
 def save_skip_tracker(data):
-    """保存跳过验证记录"""
     with open(SKIP_FILE, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
 
@@ -63,7 +62,6 @@ def save_skip_tracker(data):
 # Delete Counter（删除计数机制）
 # ===============================
 def load_delete_counter():
-    """加载规则连续失败计数"""
     if os.path.exists(DELETE_COUNTER_FILE):
         try:
             with open(DELETE_COUNTER_FILE, "r", encoding="utf-8") as f:
@@ -76,7 +74,6 @@ def load_delete_counter():
         return {}
 
 def save_delete_counter(counter):
-    """保存规则连续失败计数"""
     with open(DELETE_COUNTER_FILE, "w", encoding="utf-8") as f:
         json.dump(counter, f, indent=2, ensure_ascii=False)
 
@@ -84,10 +81,6 @@ def save_delete_counter(counter):
 # 下载与合并规则（简化版）
 # ===============================
 def download_all_sources():
-    """
-    下载 urls.txt 中的所有规则源
-    不做 HOSTS -> AdGuard 转换，也不拆分多域名
-    """
     if not os.path.exists(URLS_TXT):
         print("❌ urls.txt 不存在")
         return False
@@ -104,7 +97,7 @@ def download_all_sources():
             r.raise_for_status()
             for line in r.text.splitlines():
                 line = line.strip()
-                # 直接跳过注释行
+                # 跳过注释行
                 if not line or line.startswith("#") or line.startswith("!"):
                     continue
                 merged.add(line)
@@ -120,10 +113,6 @@ def download_all_sources():
 # 分片处理（去掉注释）
 # ===============================
 def split_parts():
-    """
-    将合并规则拆分为多个分片
-    注：分片时已过滤掉注释行（! 或 # 开头）
-    """
     if not os.path.exists(MASTER_RULE):
         print("⚠ 缺少合并规则文件")
         return False
@@ -147,7 +136,6 @@ def split_parts():
 # DNS 验证模块（50线程，每批500条）
 # ===============================
 def check_domain(rule):
-    """检查单条规则的域名是否可解析"""
     resolver = dns.resolver.Resolver()
     resolver.timeout = DNS_TIMEOUT
     resolver.lifetime = DNS_TIMEOUT
@@ -161,10 +149,6 @@ def check_domain(rule):
         return None
 
 def dns_validate(lines):
-    """
-    并发 DNS 验证规则有效性
-    50 线程并发，每批处理 500 条
-    """
     print(f"🚀 启动 {DNS_WORKERS} 并发验证，每批 500 条")
     valid = []
     total = len(lines)
@@ -189,14 +173,6 @@ def dns_validate(lines):
 # 核心处理分片逻辑
 # ===============================
 def process_part(part):
-    """
-    处理单个分片：
-    1. 加载规则
-    2. DNS 验证（跳过规则逻辑）
-    3. 更新删除计数
-    4. 清理 delete_counter 和 skip_tracker 中已删除规则
-    5. 保存验证后的分片（去掉注释行）
-    """
     part_file = os.path.join(TMP_DIR, f"part_{int(part):02d}.txt")
     if not os.path.exists(part_file):
         print(f"⚠ 分片 {part} 缺失，重新下载并切片")
@@ -206,7 +182,7 @@ def process_part(part):
         print("❌ 分片仍不存在，终止")
         return
 
-    # 加载当前分片规则（过滤注释）
+    # 加载当前分片规则（去掉注释）
     lines = [l for l in open(part_file, "r", encoding="utf-8").read().splitlines()
              if not l.startswith("!") and not l.startswith("#")]
     print(f"⏱ 验证分片 {part}, 共 {len(lines)} 条规则（已过滤注释）")
@@ -221,29 +197,36 @@ def process_part(part):
     delete_counter = load_delete_counter()
     skip_tracker = load_skip_tracker()
 
-    # 构建待验证列表
+    # ===============================
+    # 构建待验证列表（提前处理跳过验证）
+    # ===============================
     rules_to_validate = []
     for r in lines:
-        c = delete_counter.get(r, None)
-        if c is None or c <= SKIP_VALIDATE_THRESHOLD:
-            rules_to_validate.append(r)
+        old_count = delete_counter.get(r, 0)
+        skip_cnt = skip_tracker.get(r, 0)
+
+        # 超过阈值跳过验证
+        if old_count > SKIP_VALIDATE_THRESHOLD:
+            skip_cnt += 1
+            skip_tracker[r] = skip_cnt
+            print(f"⏩ 跳过验证 {r}（次数 {skip_cnt}/{SKIP_ROUNDS}）")
+
+            if skip_cnt >= SKIP_ROUNDS:
+                print(f"🔁 恢复验证：{r}（跳过达到 {SKIP_ROUNDS} 次 → 重置计数=6）")
+                delete_counter[r] = 6
+                skip_tracker.pop(r)
+                rules_to_validate.append(r)
             continue
 
-        skip_cnt = skip_tracker.get(r, 0)
-        skip_cnt += 1
-        skip_tracker[r] = skip_cnt
-        print(f"⏩ 跳过验证 {r}（次数 {skip_cnt}/{SKIP_ROUNDS}）")
-
-        if skip_cnt >= SKIP_ROUNDS:
-            print(f"🔁 恢复验证：{r}（跳过达到 {SKIP_ROUNDS} 次 → 重置计数=6）")
-            delete_counter[r] = 6
-            skip_tracker.pop(r)
-            rules_to_validate.append(r)
+        # 普通规则加入验证列表
+        rules_to_validate.append(r)
 
     # DNS 验证
     valid = set(dns_validate(rules_to_validate))
 
+    # ===============================
     # 更新规则集和删除计数
+    # ===============================
     final_rules = set()
     added_count = 0
     removed_count = 0

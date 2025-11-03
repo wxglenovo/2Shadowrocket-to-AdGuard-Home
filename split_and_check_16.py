@@ -19,35 +19,18 @@ PARTS = 16
 DNS_WORKERS = 50
 DNS_TIMEOUT = 2
 DELETE_COUNTER_FILE = os.path.join(DIST_DIR, "delete_counter.json")
-SKIP_FILE = os.path.join(DIST_DIR, "skip_tracker.json")
 
+# 删除阈值
 DELETE_THRESHOLD = 4
+
+# 跳过阈值：计数 > 7
 SKIP_VALIDATE_THRESHOLD = 7
 SKIP_ROUNDS = 10   # 跳过验证 10 次
+SKIP_FILE = os.path.join(DIST_DIR, "skip_tracker.json")
 
 # 创建目录
 os.makedirs(TMP_DIR, exist_ok=True)
 os.makedirs(DIST_DIR, exist_ok=True)
-
-# ===============================
-# HOSTS -> AdGuard 转换
-# ===============================
-def convert_hosts_to_adguard(line):
-    """
-    支持 0.0.0.0 xxx.com 或 127.0.0.1 xxx.com
-    转换成 ||xxx.com^
-    """
-    line = line.strip()
-    if line.startswith("0.0.0.0 ") or line.startswith("127.0.0.1 "):
-        parts = line.split()
-        if len(parts) >= 2:
-            domain = parts[1].strip()
-            if domain:
-                adguard_rule = f"||{domain}^"
-                print(f"🔹 HOSTS 转换成功: {line} → {adguard_rule}")
-                return adguard_rule
-    print(f"🔸 HOSTS 转换不适用: {line}")
-    return line
 
 # ===============================
 # 跳过验证计数器
@@ -96,6 +79,23 @@ def download_all_sources():
     return True
 
 # ===============================
+# HOSTS → AdGuard 转换（仅处理 0.0.0.0 或 127.0.0.1）
+# ===============================
+def hosts_to_adguard(line):
+    line = line.strip()
+    if line.startswith("0.0.0.0") or line.startswith("127.0.0.1"):
+        parts = line.split()
+        if len(parts) >= 2:
+            domain = parts[1].strip()
+            adguard_rule = f"||{domain}^"
+            print(f"🔄 HOSTS 转换成功: {line} → {adguard_rule}")
+            return adguard_rule
+        else:
+            print(f"⚠ HOSTS 格式不正确，跳过: {line}")
+            return None
+    return line
+
+# ===============================
 # 分片
 # ===============================
 def split_parts():
@@ -104,6 +104,10 @@ def split_parts():
         return False
     with open(MASTER_RULE, "r", encoding="utf-8") as f:
         rules = [l.strip() for l in f if l.strip()]
+    # HOSTS 转换
+    converted = [hosts_to_adguard(r) for r in rules if r]
+    rules = [r for r in converted if r]
+
     total = len(rules)
     per_part = (total + PARTS - 1) // PARTS
     print(f"🪓 分片 {total} 条，每片约 {per_part}")
@@ -169,7 +173,7 @@ def save_delete_counter(counter):
         json.dump(counter, f, indent=2, ensure_ascii=False)
 
 # ===============================
-# 核心分片处理
+# 核心处理分片
 # ===============================
 def process_part(part):
     part_file = os.path.join(TMP_DIR, f"part_{int(part):02d}.txt")
@@ -182,10 +186,6 @@ def process_part(part):
         return
 
     lines = open(part_file, "r", encoding="utf-8").read().splitlines()
-
-    # ✅ 转换 HOSTS 规则到 AdGuard
-    lines = [convert_hosts_to_adguard(l) for l in lines]
-
     print(f"⏱ 验证分片 {part}, 共 {len(lines)} 条规则")
 
     old_rules = set()
@@ -198,20 +198,17 @@ def process_part(part):
     skip_tracker = load_skip_tracker()
 
     print("🚀 开始 DNS 验证（跳过计数 >7 的规则）")
-
     rules_to_validate = []
     for r in lines:
         c = delete_counter.get(r, None)
-
         if c is None or c <= SKIP_VALIDATE_THRESHOLD:
             rules_to_validate.append(r)
             continue
-
         skip_cnt = skip_tracker.get(r, 0) + 1
         skip_tracker[r] = skip_cnt
         print(f"⏩ 跳过验证 {r}（次数 {skip_cnt}/{SKIP_ROUNDS}）")
         if skip_cnt >= SKIP_ROUNDS:
-            print(f"🔁 恢复验证：{r}（跳过达到{SKIP_ROUNDS}次 → 重置计数=4）")
+            print(f"🔁 恢复验证：{r}（跳过达到10次 → 重置计数=4）")
             delete_counter[r] = 4
             skip_tracker.pop(r)
             rules_to_validate.append(r)
@@ -231,7 +228,6 @@ def process_part(part):
             if rule not in old_rules:
                 added_count += 1
             continue
-
         old_count = delete_counter.get(rule, None)
         new_count = 4 if old_count is None else old_count + 1
         new_delete_counter[rule] = new_count

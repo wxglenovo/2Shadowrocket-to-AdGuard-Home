@@ -33,7 +33,7 @@ os.makedirs(TMP_DIR, exist_ok=True)
 os.makedirs(DIST_DIR, exist_ok=True)
 
 # ===============================
-# 跳过验证计数器
+# 跳过验证计数器（用于 >7 的规则）
 # ===============================
 def load_skip_tracker():
     if os.path.exists(SKIP_FILE):
@@ -42,7 +42,8 @@ def load_skip_tracker():
                 return json.load(f)
         except:
             return {}
-    return {}
+    else:
+        return {}
 
 def save_skip_tracker(data):
     with open(SKIP_FILE, "w", encoding="utf-8") as f:
@@ -149,7 +150,7 @@ def save_delete_counter(counter):
         json.dump(counter, f, indent=2, ensure_ascii=False)
 
 # ===============================
-# 核心处理分片
+# 核心处理分片（含跳过累加修正）
 # ===============================
 def process_part(part):
     part_file = os.path.join(TMP_DIR, f"part_{int(part):02d}.txt")
@@ -181,19 +182,24 @@ def process_part(part):
         if c is None or c <= SKIP_VALIDATE_THRESHOLD:
             rules_to_validate.append(r)
             continue
+
+        # 计数 >7 → 累加 skip_tracker
         skip_cnt = skip_tracker.get(r, 0) + 1
         skip_tracker[r] = skip_cnt
         print(f"⏩ 跳过验证 {r}（次数 {skip_cnt}/{SKIP_ROUNDS}）")
         if skip_cnt >= SKIP_ROUNDS:
-            print(f"🔁 恢复验证：{r}（跳过达到{SKIP_ROUNDS}次 → 重置计数=4）")
-            delete_counter[r] = 4
+            print(f"🔁 恢复验证：{r}（跳过达到{SKIP_ROUNDS}次 → 重置计数=6）")
+            delete_counter[r] = 6
             skip_tracker.pop(r)
             rules_to_validate.append(r)
 
+    # DNS 查询
     valid = set(dns_validate(rules_to_validate))
+
     final_rules = set()
     added_count = 0
     removed_count = 0
+
     all_rules = old_rules | set(lines)
     new_delete_counter = delete_counter.copy()
 
@@ -204,13 +210,20 @@ def process_part(part):
             if rule not in old_rules:
                 added_count += 1
             continue
+
         old_count = delete_counter.get(rule, None)
-        new_count = 4 if old_count is None else old_count + 1
+        if old_count is None:
+            new_count = 4
+        else:
+            new_count = old_count + 1
+
         new_delete_counter[rule] = new_count
         print(f"⚠ 连续失败计数 = {new_count} ：{rule}")
+
         if new_count >= DELETE_THRESHOLD:
             removed_count += 1
             continue
+
         final_rules.add(rule)
 
     save_delete_counter(new_delete_counter)

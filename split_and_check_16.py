@@ -203,7 +203,7 @@ def process_part(part):
         print(f"⏩ 跳过验证 {r}（次数 {skip_cnt}/{SKIP_ROUNDS}）")
         if skip_cnt >= SKIP_ROUNDS:
             print(f"🔁 恢复验证：{r}（跳过达到{SKIP_ROUNDS}次 → 重置计数=6）")
-            delete_counter[r] = 4
+            delete_counter[r] = 6
             skip_tracker.pop(r)
             rules_to_validate.append(r)
 

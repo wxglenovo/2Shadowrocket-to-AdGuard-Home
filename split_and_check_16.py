@@ -21,19 +21,17 @@ DNS_TIMEOUT = 2
 DELETE_COUNTER_FILE = os.path.join(DIST_DIR, "delete_counter.json")
 SKIP_FILE = os.path.join(DIST_DIR, "skip_tracker.json")
 
-# 阈值配置
-DELETE_THRESHOLD = 4           # 达到 4 删除
-SKIP_VALIDATE_THRESHOLD = 7    # >7 次跳过验证
-SKIP_ROUNDS = 10               # 跳过 10 次后重置计数
-FIRST_FAIL_COUNT = 4           # 第一次失败计数 = 4
-RESET_COUNT_AFTER_SKIP = 6     # 跳过满 SKIP_ROUNDS 次后重置计数 = 6
+DELETE_THRESHOLD = 4
+SKIP_VALIDATE_THRESHOLD = 7
+SKIP_ROUNDS = 10
+FIRST_FAIL_COUNT = 4
+RESET_COUNT_AFTER_SKIP = 6
 
-# 创建目录
 os.makedirs(TMP_DIR, exist_ok=True)
 os.makedirs(DIST_DIR, exist_ok=True)
 
 # ===============================
-# 跳过验证计数器
+# 跳过计数器
 # ===============================
 def load_skip_tracker():
     if os.path.exists(SKIP_FILE):
@@ -72,17 +70,21 @@ def save_delete_counter(counter):
 # HOSTS → AdGuard 转换
 # ===============================
 def hosts_to_adguard(line):
-    line = line.strip()
-    if not line or line.startswith("#"):
+    try:
+        line = line.strip()
+        if not line or line.startswith("#"):
+            return None
+        parts = line.split()
+        if len(parts) == 2 and parts[0] in ("0.0.0.0", "127.0.0.1"):
+            domain = parts[1].strip()
+            if domain and "." in domain:
+                conv = f"||{domain}^"
+                print(f"🔄 HOSTS 转换: {line} → {conv}")
+                return conv
+        return line
+    except Exception as e:
+        print(f"⚠ 转换异常: {line} → {e}")
         return None
-    parts = line.split()
-    if len(parts) == 2 and parts[0] in ("0.0.0.0", "127.0.0.1"):
-        domain = parts[1].strip()
-        if domain and "." in domain:
-            conv = f"||{domain}^"
-            print(f"🔄 HOSTS 转换: {line} → {conv}")
-            return conv
-    return line
 
 # ===============================
 # 下载与合并规则
@@ -135,16 +137,16 @@ def split_parts():
 # DNS 验证
 # ===============================
 def check_domain(rule):
-    resolver = dns.resolver.Resolver()
-    resolver.timeout = DNS_TIMEOUT
-    resolver.lifetime = DNS_TIMEOUT
-    domain = rule.lstrip("|").split("^")[0].replace("*", "")
-    if not domain:
-        return None
     try:
+        resolver = dns.resolver.Resolver()
+        resolver.timeout = DNS_TIMEOUT
+        resolver.lifetime = DNS_TIMEOUT
+        domain = rule.lstrip("|").split("^")[0].replace("*", "")
+        if not domain:
+            return None
         resolver.resolve(domain)
         return rule
-    except:
+    except Exception:
         return None
 
 def dns_validate(lines):
@@ -152,8 +154,8 @@ def dns_validate(lines):
     valid = []
     with ThreadPoolExecutor(max_workers=DNS_WORKERS) as executor:
         futures = {executor.submit(check_domain, rule): rule for rule in lines}
-        total = len(lines)
         done = 0
+        total = len(lines)
         for future in as_completed(futures):
             done += 1
             try:
@@ -168,7 +170,7 @@ def dns_validate(lines):
     return valid
 
 # ===============================
-# 核心处理分片
+# 处理分片
 # ===============================
 def process_part(part):
     part_file = os.path.join(TMP_DIR, f"part_{int(part):02d}.txt")
@@ -199,7 +201,6 @@ def process_part(part):
 
     print("🚀 开始 DNS 验证（跳过计数 >7 的规则）")
 
-    # 筛选允许验证的规则
     rules_to_validate = []
     for r in lines:
         c = delete_counter.get(r, None)
@@ -220,7 +221,6 @@ def process_part(part):
     final_rules = set()
     added_count = 0
     removed_count = 0
-
     all_rules = old_rules | set(lines)
     new_delete_counter = delete_counter.copy()
 

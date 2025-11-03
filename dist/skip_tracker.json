@@ -1,1 +1,22 @@
-{}
+{
+  "||*.ip6.arpa^": 1,
+  "||*0kkkkkt*^$app=com.dragon.read,important": 1,
+  "||*applog*.*.*^$app=com.dragon.read,important": 1,
+  "||*bsgslb*^$app=com.dragon.read,important": 1,
+  "||*byte*^$app=com.dragon.read,important": 1,
+  "||*cjjd14*^$app=com.dragon.read,important": 1,
+  "||*douyin*^$app=com.dragon.read,important": 1,
+  "||*ecombd*^$app=com.dragon.read,important": 1,
+  "||*erer*^$app=com.dragon.read,important": 1,
+  "||*ietheivaicai*^$app=com.dragon.read,important": 1,
+  "||*misc*^$app=com.dragon.read,important": 1,
+  "||*pstatp*^$app=com.dragon.read,important": 1,
+  "||*qtaeixd*^$app=com.dragon.read,important": 1,
+  "||*sealaly*^$app=com.dragon.read,important": 1,
+  "||*sinfonlinec*^$important,app=com.dragon.read": 1,
+  "||*siomxity*^$app=com.dragon.read,important": 1,
+  "||*static*^$app=com.dragon.read,important": 1,
+  "||*stream*^$app=com.dragon.read,important": 1,
+  "||*toutiao*^$app=com.dragon.read,important": 1,
+  "||*ttweb*^$app=com.dragon.read,important": 1
+}

@@ -215,8 +215,8 @@ def process_part(part):
         print(f"⏩ 跳过验证 {r}（次数 {skip_cnt}/10）")
 
         if skip_cnt >= SKIP_ROUNDS:
-            print(f"🔁 恢复验证：{r}（跳过达到10次 → 重置计数=4）")
-            delete_counter[r] = 4
+            print(f"🔁 恢复验证：{r}（跳过达到10次 → 重置计数=6）")
+            delete_counter[r] = 6
             skip_tracker.pop(r)
             rules_to_validate.append(r)
 

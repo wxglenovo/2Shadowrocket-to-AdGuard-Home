@@ -1,3 +1,4 @@
+# ✅ 2025-11-03 本次更新：Python脚本新增 HOSTS → AdGuard 规则转换逻辑（已在脚本内用中文注释标明）
 
 name: Split & DNS Check
 
@@ -36,7 +37,7 @@ jobs:
           python-version: '3.12'
 
       - name: ✅ 安装依赖
-        run: pip install --upgrade requests dnspython
+        run: pip install --upgrade requests dnspython tqdm
 
       - name: ✅ Git 配置
         run: |
@@ -81,7 +82,7 @@ jobs:
             python3 split_and_check_16.py --force-update
           else
             echo "✅ 已检测到完整规则与分片，无需重新生成"
-          fi     # ✅ 修复：补上 fi
+          fi
 
       - name: ✅ 创建或检查 delete_counter.json
         run: |
@@ -112,9 +113,5 @@ jobs:
           git add dist/validated_part_*.txt 2>/dev/null || true
 
           git commit -m "🤖 分片 $PART | $STATS" || echo "ℹ️ 本次无变化，无需提交"
-
-          echo "🔄 pull 最新代码以避免冲突"
           git pull --rebase origin main || echo "⚠ Pull 失败（忽略）"
-
-          echo "⬆ 推送到仓库"
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main || echo "⚠ Push 失败（可能无变化）"

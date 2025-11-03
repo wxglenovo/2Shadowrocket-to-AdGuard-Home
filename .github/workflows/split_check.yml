@@ -77,6 +77,7 @@ jobs:
             python3 split_and_check_16.py --force-update
           else
             echo "⏩ 当前不是强制刷新时间 → 跳过"
+          fi
 
       - name: ✅ 检查规则文件与分片
         run: |
@@ -85,6 +86,7 @@ jobs:
             python3 split_and_check_16.py --force-update
           else
             echo "✅ 已检测到完整规则与分片，无需重新生成"
+          fi
 
       - name: ✅ 创建或检查 delete_counter.json
         run: |

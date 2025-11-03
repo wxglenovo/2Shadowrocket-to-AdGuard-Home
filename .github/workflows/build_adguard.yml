@@ -1,4 +1,4 @@
-name: Build AdGuardHome Rules (no wildcard compression)
+name: Build AdGuardHome Rules 
 
 on:
   schedule:

@@ -6,7 +6,6 @@ import json
 import requests
 import argparse
 import dns.resolver
-import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # ===============================
@@ -25,8 +24,6 @@ SKIP_FILE = os.path.join(DIST_DIR, "skip_tracker.json")
 DELETE_THRESHOLD = 4
 SKIP_VALIDATE_THRESHOLD = 7
 SKIP_ROUNDS = 10
-
-FIVE_DAYS = 5 * 24 * 60 * 60  # 5天秒数，用于清理 delete_counter / skip_tracker
 
 os.makedirs(TMP_DIR, exist_ok=True)
 os.makedirs(DIST_DIR, exist_ok=True)
@@ -70,7 +67,7 @@ def save_delete_counter(counter):
         json.dump(counter, f, indent=2, ensure_ascii=False)
 
 # ===============================
-# 下载与合并规则
+# 下载与合并规则（支持 HOSTS -> AdGuard 转换）
 # ===============================
 def download_all_sources():
     if not os.path.exists(URLS_TXT):
@@ -90,7 +87,20 @@ def download_all_sources():
                 if not line or line.startswith("#") or line.startswith("!"):
                     continue
 
-                merged.add(line)  
+                # ✅ HOSTS 转换逻辑（直接把 0.0.0.0 或 127.0.0.1 替换为 ||）
+                if line.startswith("0.0.0.0") or line.startswith("127.0.0.1"):
+                    parts = line.split()
+                    if len(parts) >= 2:
+                        host = parts[1].strip()
+                        converted = f"||{host}^"
+                        merged.add(converted)
+                        print(f"🔄 HOSTS 转换: {line} → {converted}")
+                        continue
+                    else:
+                        print(f"⚠ HOSTS 格式错误，忽略: {line}")
+                        continue
+
+                merged.add(line)
         except Exception as e:
             print(f"⚠ 下载失败 {url}: {e}")
     print(f"✅ 合并 {len(merged)} 条规则")
@@ -150,41 +160,6 @@ def dns_validate(lines):
                 print(f"✅ 已验证 {done}/{total} 条，有效 {len(valid)} 条")
     print(f"✅ 分片验证完成，有效 {len(valid)} 条")
     return valid
-
-# ===============================
-# 清理已删除且超过5天未出现的规则
-# ===============================
-def cleanup_old_rules(delete_counter, skip_tracker):
-    now = int(time.time())
-    current_rules = set()
-
-    # 获取当前有效规则
-    if os.path.exists(MASTER_RULE):
-        with open(MASTER_RULE, "r", encoding="utf-8") as f:
-            current_rules = set([l.strip() for l in f if l.strip() and not l.startswith("!") and not l.startswith("#")])
-
-    removed_counter = []
-    removed_skip = []
-
-    # 清理 delete_counter 中已删除且超过5天的规则
-    for rule, data in list(delete_counter.items()):
-        last_seen = data.get("last_seen", 0)
-        if rule not in current_rules and now - last_seen > FIVE_DAYS:
-            delete_counter.pop(rule)
-            removed_counter.append(rule)
-            print(f"🗑 删除规则 {rule}（超过5天未出现，删除时间：{time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())}）")
-
-    # 清理 skip_tracker 中已删除且超过5天的规则
-    for rule, data in list(skip_tracker.items()):
-        last_seen = data.get("last_seen", 0)
-        if rule not in current_rules and now - last_seen > FIVE_DAYS:
-            skip_tracker.pop(rule)
-            removed_skip.append(rule)
-            print(f"🗑 删除跳过验证规则 {rule}（超过5天未出现，删除时间：{time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())}）")
-
-    if removed_counter or removed_skip:
-        print(f"🗑 清理 delete_counter {len(removed_counter)} 条，skip_tracker {len(removed_skip)} 条（已删除且超过5天）")
-    return delete_counter, skip_tracker
 
 # ===============================
 # 核心处理分片
@@ -257,9 +232,6 @@ def process_part(part):
             removed_count += 1
             continue
         final_rules.add(rule)
-
-    # 清理过期规则
-    delete_counter, skip_tracker = cleanup_old_rules(delete_counter, skip_tracker)
 
     save_delete_counter(new_delete_counter)
     save_skip_tracker(skip_tracker)

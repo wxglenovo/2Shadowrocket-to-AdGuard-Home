@@ -206,25 +206,24 @@ def process_part(part):
         old_count = delete_counter.get(r, 0)
         skip_cnt = skip_tracker.get(r, 0)
 
-        # 超过阈值跳过验证
+        # 如果 delete_counter 超过 SKIP_VALIDATE_THRESHOLD，先跳过验证
         if old_count > SKIP_VALIDATE_THRESHOLD:
             skip_cnt += 1
             skip_tracker[r] = skip_cnt
-            # ⏩ 打印跳过验证日志
             print(f"⏩ 跳过验证 {r}（次数 {skip_cnt}/{SKIP_ROUNDS}）")
 
-            # 如果跳过次数达到上限，恢复验证并重置 delete_counter
+            # 如果跳过次数达到上限，恢复验证
             if skip_cnt >= SKIP_ROUNDS:
                 print(f"🔁 恢复验证：{r}（跳过达到 {SKIP_ROUNDS} 次 → 重置计数=6）")
                 delete_counter[r] = 6
                 skip_tracker.pop(r)
-                rules_to_validate.append(r)
+                rules_to_validate.append(r)  # 仅恢复的规则才加入 DNS 验证
             continue
 
-        # 普通规则加入验证列表
+        # 正常规则直接加入待验证列表
         rules_to_validate.append(r)
 
-    # DNS 验证
+    # DNS 验证（仅验证 rules_to_validate）
     valid = set(dns_validate(rules_to_validate))
 
     # ===============================

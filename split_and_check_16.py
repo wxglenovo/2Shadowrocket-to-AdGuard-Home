@@ -21,16 +21,33 @@ DNS_TIMEOUT = 2
 DELETE_COUNTER_FILE = os.path.join(DIST_DIR, "delete_counter.json")
 SKIP_FILE = os.path.join(DIST_DIR, "skip_tracker.json")
 
-# 删除阈值 = 4
 DELETE_THRESHOLD = 4
-
-# 跳过阈值：计数 > 7
 SKIP_VALIDATE_THRESHOLD = 7
 SKIP_ROUNDS = 10   # 跳过验证 10 次
 
 # 创建目录
 os.makedirs(TMP_DIR, exist_ok=True)
 os.makedirs(DIST_DIR, exist_ok=True)
+
+# ===============================
+# HOSTS -> AdGuard 转换
+# ===============================
+def convert_hosts_to_adguard(line):
+    """
+    支持 0.0.0.0 xxx.com 或 127.0.0.1 xxx.com
+    转换成 ||xxx.com^
+    """
+    line = line.strip()
+    if line.startswith("0.0.0.0 ") or line.startswith("127.0.0.1 "):
+        parts = line.split()
+        if len(parts) >= 2:
+            domain = parts[1].strip()
+            if domain:
+                adguard_rule = f"||{domain}^"
+                print(f"🔹 HOSTS 转换成功: {line} → {adguard_rule}")
+                return adguard_rule
+    print(f"🔸 HOSTS 转换不适用: {line}")
+    return line
 
 # ===============================
 # 跳过验证计数器
@@ -43,9 +60,8 @@ def load_skip_tracker():
         except:
             return {}
     else:
-        # 自动创建
         with open(SKIP_FILE, "w", encoding="utf-8") as f:
-            json.dump({}, f, indent=2)
+            json.dump({}, f)
         return {}
 
 def save_skip_tracker(data):
@@ -53,7 +69,7 @@ def save_skip_tracker(data):
         json.dump(data, f, indent=2, ensure_ascii=False)
 
 # ===============================
-# 下载与合并规则（带 HOSTS 转换）
+# 下载与合并规则
 # ===============================
 def download_all_sources():
     if not os.path.exists(URLS_TXT):
@@ -70,21 +86,8 @@ def download_all_sources():
             r.raise_for_status()
             for line in r.text.splitlines():
                 line = line.strip()
-                if not line or line.startswith("#"):
-                    continue
-
-                # -----------------------------
-                # ✅ HOSTS 文件规则转换
-                # -----------------------------
-                if line.startswith("0.0.0.0 ") or line.startswith("127.0.0.1 "):
-                    parts = line.split()
-                    if len(parts) >= 2:
-                        domain = parts[1].strip()
-                        # 去掉前后的空格
-                        if domain:
-                            line = f"||{domain}^"
-
-                merged.add(line)
+                if line and not line.startswith("#"):
+                    merged.add(line)
         except Exception as e:
             print(f"⚠ 下载失败 {url}: {e}")
     print(f"✅ 合并 {len(merged)} 条规则")
@@ -166,7 +169,7 @@ def save_delete_counter(counter):
         json.dump(counter, f, indent=2, ensure_ascii=False)
 
 # ===============================
-# 核心处理分片
+# 核心分片处理
 # ===============================
 def process_part(part):
     part_file = os.path.join(TMP_DIR, f"part_{int(part):02d}.txt")
@@ -179,6 +182,10 @@ def process_part(part):
         return
 
     lines = open(part_file, "r", encoding="utf-8").read().splitlines()
+
+    # ✅ 转换 HOSTS 规则到 AdGuard
+    lines = [convert_hosts_to_adguard(l) for l in lines]
+
     print(f"⏱ 验证分片 {part}, 共 {len(lines)} 条规则")
 
     old_rules = set()
@@ -192,23 +199,22 @@ def process_part(part):
 
     print("🚀 开始 DNS 验证（跳过计数 >7 的规则）")
 
-    # 第一步：筛掉需要跳过验证的规则
     rules_to_validate = []
     for r in lines:
         c = delete_counter.get(r, None)
 
         if c is None or c <= SKIP_VALIDATE_THRESHOLD:
             rules_to_validate.append(r)
-        else:
-            skip_cnt = skip_tracker.get(r, 0)
-            skip_cnt += 1
-            skip_tracker[r] = skip_cnt
-            print(f"⏩ 跳过验证 {r}（次数 {skip_cnt}/10）")
-            if skip_cnt >= SKIP_ROUNDS:
-                print(f"🔁 恢复验证：{r}（跳过达到10次 → 重置计数=4）")
-                delete_counter[r] = 4
-                skip_tracker.pop(r)
-                rules_to_validate.append(r)
+            continue
+
+        skip_cnt = skip_tracker.get(r, 0) + 1
+        skip_tracker[r] = skip_cnt
+        print(f"⏩ 跳过验证 {r}（次数 {skip_cnt}/{SKIP_ROUNDS}）")
+        if skip_cnt >= SKIP_ROUNDS:
+            print(f"🔁 恢复验证：{r}（跳过达到{SKIP_ROUNDS}次 → 重置计数=4）")
+            delete_counter[r] = 4
+            skip_tracker.pop(r)
+            rules_to_validate.append(r)
 
     valid = set(dns_validate(rules_to_validate))
 
@@ -230,11 +236,9 @@ def process_part(part):
         new_count = 4 if old_count is None else old_count + 1
         new_delete_counter[rule] = new_count
         print(f"⚠ 连续失败计数 = {new_count} ：{rule}")
-
         if new_count >= DELETE_THRESHOLD:
             removed_count += 1
             continue
-
         final_rules.add(rule)
 
     save_delete_counter(new_delete_counter)

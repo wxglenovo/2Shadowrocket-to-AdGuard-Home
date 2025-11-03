@@ -349,7 +349,6 @@
 0.0.0.0 abc.amaretto.xja.pl
 0.0.0.0 abcnews.tt.omtrdc.net
 0.0.0.0 abprod.112.2o7.net
-0.0.0.0 abs.ants.vn
 0.0.0.0 absbwe-do4n.vercel.app
 0.0.0.0 absbwe-j769.vercel.app
 0.0.0.0 abtracker.adultbouncer.com
@@ -728,7 +727,6 @@
 0.0.0.0 ads.adhood.com
 0.0.0.0 ads.adhsm.adhese.com
 0.0.0.0 ads.adk2.com
-0.0.0.0 ads.admatrix.vn
 0.0.0.0 ads.adred.de
 0.0.0.0 ads.adshareware.net
 0.0.0.0 ads.adsonar.com
@@ -847,7 +845,6 @@
 0.0.0.0 ads.kompass.com
 0.0.0.0 ads.koreanfriendfinder.com
 0.0.0.0 ads.krawall.de
-0.0.0.0 ads.lamchame.vn
 0.0.0.0 ads.lesbianpersonals.com
 0.0.0.0 ads.lfstmedia.com
 0.0.0.0 ads.linktracking.net
@@ -881,7 +878,6 @@
 0.0.0.0 ads.newmedia.cz
 0.0.0.0 ads.nola.com
 0.0.0.0 ads.northjersey.com
-0.0.0.0 ads.novanet.vn
 0.0.0.0 ads.novem.pl
 0.0.0.0 ads.nrc.adhese.com
 0.0.0.0 ads.nyx.cz
@@ -901,7 +897,6 @@
 0.0.0.0 ads.people.com.cn
 0.0.0.0 ads.peoplespharmacy.com
 0.0.0.0 ads.persgroep.adhese.com
-0.0.0.0 ads.phunusuckhoe.vn
 0.0.0.0 ads.phunuvagiadinh.vn
 0.0.0.0 ads.pittsburghlive.com
 0.0.0.0 ads.poconorecord.com
@@ -1191,7 +1186,6 @@
 0.0.0.0 adwcleaner.programmesetjeux.com
 0.0.0.0 adwpaces.ero-advertising.com
 0.0.0.0 adx.admicro.vn
-0.0.0.0 adx.ants.vn
 0.0.0.0 adx.hoanggia.net.vn
 0.0.0.0 adx.ibibo.com
 0.0.0.0 adx.ocala.com
@@ -1614,7 +1608,6 @@
 0.0.0.0 atlas.iad-03.braze.com
 0.0.0.0 atlassian.122.2o7.net
 0.0.0.0 attiora.uk.com
-0.0.0.0 au-insight.ants.vn
 0.0.0.0 au.2.cqcounter.com
 0.0.0.0 au.ants.vn
 0.0.0.0 aubankprod.112.2o7.net
@@ -9553,7 +9546,6 @@
 0.0.0.0 www.kibrithaneistanbul.com
 0.0.0.0 www.kici-kici.com
 0.0.0.0 www.kids-in-sandbox.com
-0.0.0.0 www.kidsangel.com
 0.0.0.0 www.kidsinsandbox.info
 0.0.0.0 www.kiepscy.evai.pl
 0.0.0.0 www.kimestes.org

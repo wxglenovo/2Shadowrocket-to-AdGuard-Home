@@ -6,7 +6,7 @@ AdGuard / DNS 规则管理脚本（最终版）
 功能：
 1. 下载规则源并合并
 2. 将合并规则拆分为多个分片（去掉注释行）
-3. 使用 DNS 验证规则有效性
+3. 使用 DNS 验证规则有效性（50线程并发，每批500条）
 4. 自动维护删除计数和跳过验证机制
 5. 清理 delete_counter 和 skip_tracker 中已删除规则
 """
@@ -144,7 +144,7 @@ def split_parts():
     return True
 
 # ===============================
-# DNS 验证模块
+# DNS 验证模块（50线程，每批500条）
 # ===============================
 def check_domain(rule):
     """检查单条规则的域名是否可解析"""
@@ -161,21 +161,28 @@ def check_domain(rule):
         return None
 
 def dns_validate(lines):
-    """并发 DNS 验证规则有效性"""
-    print(f"🚀 启动 {DNS_WORKERS} 并发验证")
+    """
+    并发 DNS 验证规则有效性
+    50 线程并发，每批处理 500 条
+    """
+    print(f"🚀 启动 {DNS_WORKERS} 并发验证，每批 500 条")
     valid = []
-    with ThreadPoolExecutor(max_workers=DNS_WORKERS) as executor:
-        futures = {executor.submit(check_domain, rule): rule for rule in lines}
-        total = len(lines)
-        done = 0
-        for future in as_completed(futures):
-            done += 1
-            result = future.result()
-            if result:
-                valid.append(result)
-            if done % 500 == 0:
-                print(f"✅ 已验证 {done}/{total} 条，有效 {len(valid)} 条")
-    print(f"✅ 分片验证完成，有效 {len(valid)} 条")
+    total = len(lines)
+    batch_size = 500
+
+    for i in range(0, total, batch_size):
+        batch = lines[i:i+batch_size]
+        with ThreadPoolExecutor(max_workers=DNS_WORKERS) as executor:
+            futures = {executor.submit(check_domain, rule): rule for rule in batch}
+            done = 0
+            for future in as_completed(futures):
+                done += 1
+                result = future.result()
+                if result:
+                    valid.append(result)
+                if done % 100 == 0 or done == len(batch):
+                    print(f"✅ 已验证 {i + done}/{total} 条，有效 {len(valid)} 条")
+    print(f"✅ 分片验证完成，共验证 {total} 条，有效 {len(valid)} 条")
     return valid
 
 # ===============================

@@ -10,6 +10,7 @@ AdGuard / DNS 规则管理脚本（最终版）
 4. 自动维护删除计数和跳过验证机制
 5. 清理 delete_counter 和 skip_tracker 中已删除规则
 6. 跳过验证逻辑提前处理，提高验证速度
+7. 跳过和恢复验证均打印清晰日志
 """
 
 import os
@@ -198,7 +199,7 @@ def process_part(part):
     skip_tracker = load_skip_tracker()
 
     # ===============================
-    # 构建待验证列表（提前处理跳过验证）
+    # 构建待验证列表（跳过验证提前处理）
     # ===============================
     rules_to_validate = []
     for r in lines:
@@ -209,8 +210,10 @@ def process_part(part):
         if old_count > SKIP_VALIDATE_THRESHOLD:
             skip_cnt += 1
             skip_tracker[r] = skip_cnt
+            # ⏩ 打印跳过验证日志
             print(f"⏩ 跳过验证 {r}（次数 {skip_cnt}/{SKIP_ROUNDS}）")
 
+            # 如果跳过次数达到上限，恢复验证并重置 delete_counter
             if skip_cnt >= SKIP_ROUNDS:
                 print(f"🔁 恢复验证：{r}（跳过达到 {SKIP_ROUNDS} 次 → 重置计数=6）")
                 delete_counter[r] = 6

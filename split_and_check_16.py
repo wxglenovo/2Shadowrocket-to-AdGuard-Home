@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*- 
 
 import os
 import json
@@ -153,7 +153,8 @@ def unified_skip_remove_fast(all_rules_list):
             delete_counter[r] = 6
 
     # 批量打印日志（一次性写入控制台，减少 IO 阻塞）
-    print("\n".join(logs))
+    if logs:
+        print("\n".join(logs))
 
     # 批量写回 JSON（只写一次）
     save_json(SKIP_FILE, skip_tracker)

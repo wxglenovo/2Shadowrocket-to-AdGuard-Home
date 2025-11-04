@@ -118,7 +118,54 @@ def download_all_sources():
     print(f"✅ 合并 {len(merged)} 条规则")
     with open(MASTER_RULE, "w", encoding="utf-8") as f:
         f.write("\n".join(sorted(merged)))
+
+    # ✅ 下载完成后立即统一剔除跳过验证规则
+    unified_skip_remove()
+
     return True
+
+# ===============================
+# 统一剔除跳过验证规则
+# ===============================
+def unified_skip_remove():
+    if not os.path.exists(MASTER_RULE):
+        return
+
+    delete_counter = load_delete_counter()
+    skip_tracker = load_skip_tracker()
+
+    with open(MASTER_RULE, "r", encoding="utf-8") as f:
+        rules = [l.strip() for l in f if l.strip()]
+
+    final_rules = []
+    removed_count = 0
+    for r in rules:
+        c = delete_counter.get(r, 0)
+        if c > SKIP_VALIDATE_THRESHOLD:
+            skip_cnt = skip_tracker.get(r, 0) + 1
+            skip_tracker[r] = skip_cnt
+            delete_cnt = c + 1
+            delete_counter[r] = delete_cnt
+
+            print(f"⚠ 统一剔除（跳过验证）：{r} | 跳过次数={skip_cnt} | 删除计数={delete_cnt}")
+            removed_count += 1
+
+            # 超过删除阈值仍保留 final_rules 不加入
+            if skip_cnt >= SKIP_ROUNDS:
+                print(f"🔁 跳过次数达到 {SKIP_ROUNDS} 次 → 恢复验证：{r}（重置连续失败次数=6）")
+                delete_counter[r] = 6
+                skip_tracker.pop(r)
+                final_rules.append(r)
+            continue
+        final_rules.append(r)
+
+    save_skip_tracker(skip_tracker)
+    save_delete_counter(delete_counter)
+
+    with open(MASTER_RULE, "w", encoding="utf-8") as f:
+        f.write("\n".join(final_rules))
+
+    print(f"⚡ 已统一剔除跳过验证 {removed_count} 条规则")
 
 # ===============================
 # 分片模块（Split Parts）
@@ -214,42 +261,42 @@ def process_part(part):
     removed_count = 0
 
     # ===============================
-    # 统一剔除（跳过验证）
-    # ===============================
-    removed_skip_rules = []
-    for r in lines:
-        c = delete_counter.get(r, 0)
-        if c > SKIP_VALIDATE_THRESHOLD:
-            skip_cnt = skip_tracker.get(r, 0) + 1
-            skip_tracker[r] = skip_cnt
-            delete_cnt = c + 1
-            delete_counter[r] = delete_cnt
-
-            print(f"⚠ 统一剔除（跳过验证）：{r} | 跳过次数={skip_cnt} | 删除计数={delete_cnt}")
-            removed_skip_rules.append(r)
-
-            # 达到删除阈值
-            if delete_cnt >= DELETE_THRESHOLD:
-                removed_count += 1
-                continue
-
-            # 跳过次数达到上限 → 恢复验证
-            if skip_cnt >= SKIP_ROUNDS:
-                print(f"🔁 跳过次数达到 {SKIP_ROUNDS} 次 → 恢复验证：{r}（重置连续失败次数=6）")
-                delete_counter[r] = 6
-                skip_tracker.pop(r)
-                rules_to_validate.append(r)
-            continue
-
-        rules_to_validate.append(r)
-
-    # 保存统一剔除计数
-    save_skip_tracker(skip_tracker)
-    save_delete_counter(delete_counter)
-
-    # ===============================
     # DNS 验证正常流程
     # ===============================
+    for r in lines:
+        c = delete_counter.get(r, 0)
+
+        # 需要进入 DNS 验证
+        if c <= SKIP_VALIDATE_THRESHOLD:
+            rules_to_validate.append(r)
+            continue
+
+        # 超过跳过阈值 → 不验证，但依然计数
+        skip_cnt = skip_tracker.get(r, 0) + 1
+        skip_tracker[r] = skip_cnt
+
+        new_del_cnt = c + 1
+        delete_counter[r] = new_del_cnt
+
+        print(f"✅ 跳过验证：{r} （跳过 {skip_cnt}/{SKIP_ROUNDS} 次，连续失败 {new_del_cnt}/{DELETE_THRESHOLD} 次）")
+
+        # 达到删除阈值
+        if new_del_cnt >= DELETE_THRESHOLD:
+            print(f"🔥 达到连续失败阈值 → 删除规则：{r}")
+            removed_count += 1
+            continue
+
+        # 仍保留在当前分片
+        final_rules.add(r)
+
+        # 跳过次数达到上限 → 恢复验证
+        if skip_cnt >= SKIP_ROUNDS:
+            print(f"🔁 跳过次数达到 {SKIP_ROUNDS} 次 → 恢复验证：{r}（重置连续失败次数=6）")
+            delete_counter[r] = 6
+            skip_tracker.pop(r)
+            rules_to_validate.append(r)
+
+    # DNS 验证
     valid = set(dns_validate(rules_to_validate))
 
     all_rules = old_rules | set(lines)

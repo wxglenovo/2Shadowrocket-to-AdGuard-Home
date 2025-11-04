@@ -12,18 +12,18 @@ import time
 # ===============================
 # 配置区（Config）
 # ===============================
-URLS_TXT = "urls.txt"  # urls.txt 存放所有规则源 URL
-TMP_DIR = "tmp"  # 临时分片目录
-DIST_DIR = "dist"  # 处理后输出目录
-MASTER_RULE = "merged_rules.txt"  # 合并后的主规则文件
-PARTS = 16  # 分片总数
-DNS_WORKERS = 50  # DNS 并发验证线程数
-DNS_TIMEOUT = 2  # DNS 查询超时时间
-DELETE_COUNTER_FILE = os.path.join(DIST_DIR, "delete_counter.json")  # 连续失败计数文件路径
-SKIP_FILE = os.path.join(DIST_DIR, "skip_tracker.json")  # 跳过验证计数文件路径
-DELETE_THRESHOLD = 4  # 规则连续失败多少次后删除
-SKIP_VALIDATE_THRESHOLD = 7  # 超过多少次失败跳过 DNS 验证
-SKIP_ROUNDS = 10  # 跳过验证的最大轮次
+URLS_TXT = "urls.txt"
+TMP_DIR = "tmp"
+DIST_DIR = "dist"
+MASTER_RULE = "merged_rules.txt"
+PARTS = 16
+DNS_WORKERS = 50
+DNS_TIMEOUT = 2
+DELETE_COUNTER_FILE = os.path.join(DIST_DIR, "delete_counter.json")
+SKIP_FILE = os.path.join(DIST_DIR, "skip_tracker.json")
+DELETE_THRESHOLD = 4
+SKIP_VALIDATE_THRESHOLD = 7
+SKIP_ROUNDS = 10
 
 os.makedirs(TMP_DIR, exist_ok=True)
 os.makedirs(DIST_DIR, exist_ok=True)
@@ -139,8 +139,11 @@ def remove_skip_rules():
     for r in rules:
         if delete_counter.get(r, 0) > SKIP_VALIDATE_THRESHOLD:
             removed_count += 1
-            skip_tracker[r] = skip_tracker.get(r, 0) + 1
-            delete_counter[r] += 1
+            skip_cnt = skip_tracker.get(r, 0) + 1
+            skip_tracker[r] = skip_cnt
+            delete_cnt = delete_counter.get(r, 0) + 1
+            delete_counter[r] = delete_cnt
+            print(f"⚠ 统一剔除（跳过验证）：{r} | 跳过次数={skip_cnt} | 删除计数={delete_cnt}")
             continue
         filtered_rules.append(r)
 

@@ -24,7 +24,6 @@ SKIP_FILE = os.path.join(DIST_DIR, "skip_tracker.json")  # 跳过验证计数文
 NOT_WRITTEN_FILE = os.path.join(DIST_DIR, "not_written_counter.json")  # 连续未写入计数
 DELETE_THRESHOLD = 4  # 连续失败多少次后删除
 SKIP_VALIDATE_THRESHOLD = 7  # 超过多少次失败跳过 DNS 验证（删除计数 >= 7）
-SKIP_ROUNDS = 10  # 跳过验证的最大轮次，超过后恢复验证
 DNS_BATCH_SIZE = 500  # 每批验证条数
 
 os.makedirs(TMP_DIR, exist_ok=True)
@@ -48,6 +47,41 @@ def load_json(path):
 def save_json(path, data):
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
+
+# ===============================
+# 下载规则源并合并
+# ===============================
+def download_all_sources():
+    if not os.path.exists(URLS_TXT):
+        print("❌ urls.txt 不存在")
+        return False
+
+    print("📥 下载规则源...")
+    merged = set()
+
+    with open(URLS_TXT, "r", encoding="utf-8") as f:
+        urls = [u.strip() for u in f if u.strip()]
+
+    for url in urls:
+        print(f"🌐 获取 {url}")
+        try:
+            r = requests.get(url, timeout=20)
+            r.raise_for_status()
+            for line in r.text.splitlines():
+                line = line.strip()
+                if line:
+                    merged.add(line)
+        except Exception as e:
+            print(f"⚠ 下载失败 {url}: {e}")
+
+    print(f"✅ 合并 {len(merged)} 条规则")
+
+    with open(MASTER_RULE, "w", encoding="utf-8") as f:
+        f.write("\n".join(sorted(merged)))
+
+    recovered_rules = unified_skip_remove(merged)
+    split_parts(recovered_rules)
+    return True
 
 # ===============================
 # 并行提取规则与更新删除计数

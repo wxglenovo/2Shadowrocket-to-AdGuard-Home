@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
 
 import os
 import json
+import aiohttp
+import asyncio
 import requests
 import argparse
 import dns.resolver
@@ -50,118 +52,99 @@ def save_json(path, data):
         json.dump(data, f, indent=2, ensure_ascii=False)
 
 # ===============================
-# 下载源并合并
+# 异步下载规则源
 # ===============================
-def download_all_sources():
+async def fetch_url(session, url, retries=0):
+    try:
+        async with session.get(url, timeout=20) as response:
+            response.raise_for_status()  # 如果响应不是 200，抛出异常
+            return await response.text()
+    except Exception as e:
+        if retries < 3:
+            print(f"⚠ 下载失败 {url}，正在重试...({retries+1}/3)")
+            return await fetch_url(session, url, retries=retries+1)
+        else:
+            print(f"❌ 下载失败 {url}: {e}")
+            return None
+
+# 异步下载并合并规则
+async def download_all_sources():
     if not os.path.exists(URLS_TXT):
         print("❌ urls.txt 不存在")
         return False
 
     print("📥 下载规则源...")
-    merged = set()
 
+    # 读取所有 URL
     with open(URLS_TXT, "r", encoding="utf-8") as f:
-        urls = [u.strip() for u in f if u.strip()]
+        urls = [url.strip() for url in f if url.strip()]
 
-    for url in urls:
-        print(f"🌐 获取 {url}")
-        try:
-            r = requests.get(url, timeout=20)
-            r.raise_for_status()
-            for line in r.text.splitlines():
-                line = line.strip()
-                if line:
-                    merged.add(line)
-        except Exception as e:
-            print(f"⚠ 下载失败 {url}: {e}")
+    merged = set()
+    async with aiohttp.ClientSession() as session:
+        tasks = []
+        
+        # 异步发起请求
+        for url in urls:
+            tasks.append(fetch_url(session, url))
+
+        # 获取所有下载内容
+        responses = await asyncio.gather(*tasks)
+        
+        # 处理下载的规则
+        for response in responses:
+            if response:
+                for line in response.splitlines():
+                    line = line.strip()
+                    if line:
+                        merged.add(line)
 
     print(f"✅ 合并 {len(merged)} 条规则")
 
+    # 保存合并的规则到文件
     with open(MASTER_RULE, "w", encoding="utf-8") as f:
         f.write("\n".join(sorted(merged)))
-
-    recovered_rules = unified_skip_remove_fast(merged)
-    split_parts(recovered_rules)
+    
     return True
 
 # ===============================
-# ✅ 高效统一剔除跳过验证模块（核心）
+# ✅ 统一剔除跳过验证模块（核心）
 # ===============================
-def unified_skip_remove_fast(all_rules_list):
-    """
-    高性能统一剔除函数：
-    - 只处理 delete_counter 中已经 >= SKIP_VALIDATE_THRESHOLD 的规则与 all_rules_list 的交集
-    - 批量收集日志，最终一次性写回
-    - 返回 recovered_rules（需要恢复验证并放到最后分片的规则）
-    """
-    # 读取计数器一次
+def unified_skip_remove(all_rules_set):
     skip_tracker = load_json(SKIP_FILE)
     delete_counter = load_json(DELETE_COUNTER_FILE)
-    not_written = load_json(NOT_WRITTEN_FILE)
-
-    # 把 all_rules_list 转成集合供快速查找
-    rules_set = set(all_rules_list)
-
-    # 候选：只有 delete_counter 中的键且在 rules_set 中，避免遍历所有规则
-    candidate_keys = [k for k, v in delete_counter.items() if v >= SKIP_VALIDATE_THRESHOLD and k in rules_set]
-    if not candidate_keys:
-        # 无候选，确保文件写回（以防文件不存在）
-        save_json(SKIP_FILE, skip_tracker)
-        save_json(DELETE_COUNTER_FILE, delete_counter)
-        save_json(NOT_WRITTEN_FILE, not_written)
-        return []
-
+    not_written_counter = load_json(NOT_WRITTEN_FILE)
     recovered_rules = []
-    logs = []  # 日志缓冲，最后批量打印或写入
-    log_count = {}  # 用于限制日志输出数量
-    restore_list = []  # 需要恢复验证的规则列表
 
-    # 遍历候选而不是全部规则
-    for r in candidate_keys:
-        # 安全读取当前值（避免 race）
-        cur_del = delete_counter.get(r, 0)
-        cur_skip = skip_tracker.get(r, 0)
+    for r in list(all_rules_set):
+        del_cnt = delete_counter.get(r, 0)
+        skip_cnt = skip_tracker.get(r, 0)
 
-        # 累加跳过次数并写回内存 dict
-        cur_skip += 1
-        skip_tracker[r] = cur_skip
+        # ✅ 只有删除计数 >= SKIP_VALIDATE_THRESHOLD 才跳过验证
+        if del_cnt < SKIP_VALIDATE_THRESHOLD:
+            continue
 
-        # 累加 delete_counter
-        cur_del += 1
-        delete_counter[r] = cur_del
+        # ✅ 累加跳过次数（从文件中读取后 +1）
+        skip_cnt += 1
+        skip_tracker[r] = skip_cnt
 
-        # 缓存日志（严格格式）
-        log_message = f"⚠ 统一剔除（跳过验证）：{r} | 跳过次数={cur_skip} | 删除计数={cur_del}"
-        
-        # 控制相同日志内容的输出次数（最多显示 20 次）
-        if log_message not in log_count:
-            log_count[log_message] = 1
-        elif log_count[log_message] < 20:
-            log_count[log_message] += 1
+        # ✅ 删除计数继续 +1（历史累加）
+        del_cnt += 1
+        delete_counter[r] = del_cnt
 
-        # 只打印前 20 次出现的相同日志
-        if log_count[log_message] <= 20:
-            logs.append(log_message)
+        # ✅ 日志 —— 严格格式
+        print(f"⚠ 统一剔除（跳过验证）：{r} | 跳过次数={skip_cnt} | 删除计数={del_cnt}")
 
-        # 如果达到恢复阈值
-        if cur_skip >= SKIP_ROUNDS:
-            restore_list.append(r)
-            logs.append(f"🔁 跳过次数达到 {SKIP_ROUNDS} 次 → 恢复验证：{r}（重置连续失败次数=6）")
-            # 清除 skip 计数
-            skip_tracker.pop(r, None)
-            # set delete_counter to 6
+        # ✅ 当跳过 >= SKIP_ROUNDS 时恢复验证
+        if skip_cnt >= SKIP_ROUNDS:
+            print(f"🔁 跳过次数达到 {SKIP_ROUNDS} 次 → 恢复验证：{r}（重置连续失败次数=6）")
+            skip_tracker.pop(r)
             delete_counter[r] = 6
+            recovered_rules.append(r)
 
-    # 批量打印日志（一次性写入控制台，减少 IO 阻塞）
-    if logs:
-        print("\n".join(logs))
-
-    # 批量写回 JSON（只写一次）
     save_json(SKIP_FILE, skip_tracker)
     save_json(DELETE_COUNTER_FILE, delete_counter)
-    save_json(NOT_WRITTEN_FILE, not_written)
-
-    return restore_list
+    save_json(NOT_WRITTEN_FILE, not_written_counter)
+    return recovered_rules
 
 # ===============================
 # 分片
@@ -353,11 +336,11 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     if args.force_update:
-        download_all_sources()
+        asyncio.run(download_all_sources())
 
     if not os.path.exists(MASTER_RULE) or not os.path.exists(os.path.join(TMP_DIR, "part_01.txt")):
         print("⚠ 缺少规则或分片，自动拉取")
-        download_all_sources()
+        asyncio.run(download_all_sources())
 
     if args.part:
         process_part(args.part)

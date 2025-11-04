@@ -24,7 +24,7 @@ SKIP_FILE = os.path.join(DIST_DIR, "skip_tracker.json")  # 跳过验证计数文
 NOT_WRITTEN_FILE = os.path.join(DIST_DIR, "not_written_counter.json")  # 连续未写入计数
 DELETE_THRESHOLD = 4  # 连续失败多少次后删除
 SKIP_VALIDATE_THRESHOLD = 7  # 超过多少次失败跳过 DNS 验证（删除计数 >= 7）
-SKIP_ROUNDS = 10  # 跳过验证的最大轮次，超过后恢复验证
+SKIP_ROUNDS = 20  # 跳过验证的最大轮次，超过后恢复验证
 DNS_BATCH_SIZE = 500  # 每批验证条数
 
 os.makedirs(TMP_DIR, exist_ok=True)

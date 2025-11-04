@@ -8,6 +8,7 @@ import argparse
 import dns.resolver
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import time
+import asyncio
 
 # ===============================
 # 配置区（Config）
@@ -145,6 +146,15 @@ async def dns_validate_async(rules):
     return [rule for rule in valid_rules if rule]
 
 # ===============================
+# DNS 验证日志打印
+# ===============================
+def print_dns_progress(i, completed, total, start_time):
+    elapsed = time.time() - start_time
+    speed = (i + completed) / elapsed
+    eta = (total - (i + completed)) / speed if speed > 0 else 0
+    print(f"✅ 已验证 {i + completed}/{total} 条 | 有效 {completed} 条 | 速度 {speed:.1f} 条/秒 | ETA {eta:.1f} 秒")
+
+# ===============================
 # 核心：并行处理分片和更新删除计数
 # ===============================
 def process_part(part):
@@ -188,6 +198,7 @@ def process_part(part):
             future.result()
 
     # 异步 DNS 验证
+    start_time = time.time()
     valid = asyncio.run(dns_validate_async(rules_to_validate))
 
     # 已验证的规则写入
@@ -201,13 +212,14 @@ def process_part(part):
         else:
             # 验证失败 → 删除计数加 1
             delete_counter[rule] = delete_counter.get(rule, 0) + 1
+            print(f"⚠ 连续失败 +1 → {delete_counter[rule]}/{DELETE_THRESHOLD} ：{rule}")
             if delete_counter[rule] >= DELETE_THRESHOLD:
                 removed_count += 1
                 print(f"🔥 连续失败达到阈值 → 删除规则：{rule}")
                 not_written.pop(rule, None)
                 final_rules.discard(rule)
 
-    # 处理并写入 validated_part
+    # 写入文件
     save_json(DELETE_COUNTER_FILE, delete_counter)
     save_json(NOT_WRITTEN_FILE, not_written)
 

@@ -121,6 +121,37 @@ def download_all_sources():
     return True
 
 # ===============================
+# 统一剔除跳过验证规则
+# ===============================
+def remove_skip_rules():
+    delete_counter = load_delete_counter()
+    skip_tracker = load_skip_tracker()
+
+    if not os.path.exists(MASTER_RULE):
+        print("⚠ 缺少合并规则文件，无法剔除跳过规则")
+        return
+
+    with open(MASTER_RULE, "r", encoding="utf-8") as f:
+        rules = [l.strip() for l in f if l.strip()]
+
+    filtered_rules = []
+    removed_count = 0
+    for r in rules:
+        if delete_counter.get(r, 0) > SKIP_VALIDATE_THRESHOLD:
+            removed_count += 1
+            skip_tracker[r] = skip_tracker.get(r, 0) + 1
+            delete_counter[r] += 1
+            continue
+        filtered_rules.append(r)
+
+    with open(MASTER_RULE, "w", encoding="utf-8") as f:
+        f.write("\n".join(filtered_rules))
+
+    save_skip_tracker(skip_tracker)
+    save_delete_counter(delete_counter)
+    print(f"✅ 已统一剔除 {removed_count} 条跳过验证规则")
+
+# ===============================
 # 分片模块（Split Parts）
 # ===============================
 def split_parts():
@@ -192,6 +223,7 @@ def process_part(part):
     if not os.path.exists(part_file):
         print(f"⚠ 分片 {part} 缺失，重新下载并切片")
         download_all_sources()
+        remove_skip_rules()
         split_parts()
     if not os.path.exists(part_file):
         print("❌ 分片仍不存在，终止")
@@ -216,12 +248,14 @@ def process_part(part):
 
     for r in lines:
         c = delete_counter.get(r, 0)
+
         if c <= SKIP_VALIDATE_THRESHOLD:
             rules_to_validate.append(r)
             continue
 
         skip_cnt = skip_tracker.get(r, 0) + 1
         skip_tracker[r] = skip_cnt
+
         new_del_cnt = c + 1
         delete_counter[r] = new_del_cnt
 
@@ -240,7 +274,6 @@ def process_part(part):
             skip_tracker.pop(r)
             rules_to_validate.append(r)
 
-    # DNS 验证
     valid = set(dns_validate(rules_to_validate))
 
     all_rules = old_rules | set(lines)
@@ -287,11 +320,13 @@ if __name__ == "__main__":
 
     if args.force_update:
         download_all_sources()
+        remove_skip_rules()
         split_parts()
 
     if not os.path.exists(MASTER_RULE) or not os.path.exists(os.path.join(TMP_DIR, "part_01.txt")):
         print("⚠ 缺少规则或分片，自动拉取")
         download_all_sources()
+        remove_skip_rules()
         split_parts()
 
     if args.part:

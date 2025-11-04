@@ -7,6 +7,7 @@ import requests
 import argparse
 import dns.resolver
 from concurrent.futures import ThreadPoolExecutor, as_completed
+import time
 
 # ===============================
 # 配置区（Config）
@@ -161,20 +162,25 @@ def check_domain(rule):
 def dns_validate(lines):
     print(f"🚀 启动 {DNS_WORKERS} 并发验证，批量 500 条规则")
     valid = []
-
+    total = len(lines)
     batch_size = 500
+    start_time = time.time()
+    verified_count = 0
+
     for i in range(0, len(lines), batch_size):
         batch = lines[i:i+batch_size]
         with ThreadPoolExecutor(max_workers=DNS_WORKERS) as executor:
             futures = {executor.submit(check_domain, rule): rule for rule in batch}
-            done = 0
             for future in as_completed(futures):
-                done += 1
                 result = future.result()
                 if result:
                     valid.append(result)
-            # ✅ 每 500 条打印一次
-            print(f"✅ 已验证 {i + len(batch)}/{len(lines)} 条，有效 {len(valid)} 条")
+                verified_count += 1
+        elapsed = time.time() - start_time
+        speed = verified_count / elapsed if elapsed > 0 else 0
+        eta = (total - verified_count) / speed if speed > 0 else 0
+        print(f"✅ 已验证 {verified_count}/{total} 条 | 有效 {len(valid)} 条 | 速度 {speed:.1f} 条/秒 | ETA {eta:.1f} 秒")
+
     print(f"✅ 分片验证完成，总有效 {len(valid)} 条")
     return valid
 
@@ -208,7 +214,6 @@ def process_part(part):
     added_count = 0
     removed_count = 0
 
-    # ✅ 先剔除跳过验证规则并计数
     for r in lines:
         c = delete_counter.get(r, 0)
         if c <= SKIP_VALIDATE_THRESHOLD:
@@ -217,7 +222,6 @@ def process_part(part):
 
         skip_cnt = skip_tracker.get(r, 0) + 1
         skip_tracker[r] = skip_cnt
-
         new_del_cnt = c + 1
         delete_counter[r] = new_del_cnt
 
@@ -236,7 +240,7 @@ def process_part(part):
             skip_tracker.pop(r)
             rules_to_validate.append(r)
 
-    # ✅ DNS 验证
+    # DNS 验证
     valid = set(dns_validate(rules_to_validate))
 
     all_rules = old_rules | set(lines)

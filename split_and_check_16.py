@@ -6,6 +6,7 @@ import json
 import requests
 import argparse
 import dns.resolver
+import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # ===============================
@@ -110,7 +111,6 @@ def download_all_sources():
                 line = line.strip()
                 if not line:
                     continue
-                # 直接加入规则，不做 HOSTS 转换，也不忽略注释
                 merged.add(line)
         except Exception as e:
             print(f"⚠ 下载失败 {url}: {e}")
@@ -144,7 +144,7 @@ def split_parts():
     return True
 
 # ===============================
-# DNS 验证模块（Validate Domains, 批量 500 条并发 50 线程）
+# DNS 验证模块（增强日志版本）
 # ===============================
 def check_domain(rule):
     resolver = dns.resolver.Resolver()
@@ -163,20 +163,36 @@ def dns_validate(lines):
     print(f"🚀 启动 {DNS_WORKERS} 并发验证，批量 500 条规则")
     valid = []
 
+    total = len(lines)
     batch_size = 500
-    for i in range(0, len(lines), batch_size):
+    checked = 0
+    start_time = time.time()
+
+    for i in range(0, total, batch_size):
         batch = lines[i:i+batch_size]
+
         with ThreadPoolExecutor(max_workers=DNS_WORKERS) as executor:
             futures = {executor.submit(check_domain, rule): rule for rule in batch}
-            done = 0
             for future in as_completed(futures):
-                done += 1
+                checked += 1
                 result = future.result()
                 if result:
                     valid.append(result)
-                if done % 50 == 0 or done == len(batch):
-                    print(f"✅ 已验证 {i + done}/{len(lines)} 条，有效 {len(valid)} 条")
-    print(f"✅ 分片验证完成，总有效 {len(valid)} 条")
+
+        elapsed = time.time() - start_time
+        speed = checked / elapsed if elapsed > 0 else 0
+        remaining = total - checked
+        eta = remaining / speed if speed > 0 else 0
+
+        print(
+            f"✅ 已验证 {checked}/{total} 条"
+            f" | 有效 {len(valid)} 条"
+            f" | 速度 {speed:.1f} 条/秒"
+            f" | ETA {eta:.1f} 秒"
+        )
+
+    elapsed = time.time() - start_time
+    print(f"🎯 DNS验证完成 → 有效 {len(valid)} 条，总耗时 {elapsed:.1f} 秒")
     return valid
 
 # ===============================

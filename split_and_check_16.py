@@ -3,13 +3,12 @@
 
 import os
 import json
-import aiohttp
-import asyncio
 import requests
 import argparse
 import dns.resolver
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import time
+from collections import defaultdict
 
 # ===============================
 # 配置区（Config）
@@ -52,58 +51,38 @@ def save_json(path, data):
         json.dump(data, f, indent=2, ensure_ascii=False)
 
 # ===============================
-# 异步下载规则源
+# 下载源并合并
 # ===============================
-async def fetch_url(session, url, retries=0):
-    try:
-        async with session.get(url, timeout=20) as response:
-            response.raise_for_status()  # 如果响应不是 200，抛出异常
-            return await response.text()
-    except Exception as e:
-        if retries < 3:
-            print(f"⚠ 下载失败 {url}，正在重试...({retries+1}/3)")
-            return await fetch_url(session, url, retries=retries+1)
-        else:
-            print(f"❌ 下载失败 {url}: {e}")
-            return None
-
-# 异步下载并合并规则
-async def download_all_sources():
+def download_all_sources():
     if not os.path.exists(URLS_TXT):
         print("❌ urls.txt 不存在")
         return False
 
     print("📥 下载规则源...")
-
-    # 读取所有 URL
-    with open(URLS_TXT, "r", encoding="utf-8") as f:
-        urls = [url.strip() for url in f if url.strip()]
-
     merged = set()
-    async with aiohttp.ClientSession() as session:
-        tasks = []
-        
-        # 异步发起请求
-        for url in urls:
-            tasks.append(fetch_url(session, url))
 
-        # 获取所有下载内容
-        responses = await asyncio.gather(*tasks)
-        
-        # 处理下载的规则
-        for response in responses:
-            if response:
-                for line in response.splitlines():
-                    line = line.strip()
-                    if line:
-                        merged.add(line)
+    with open(URLS_TXT, "r", encoding="utf-8") as f:
+        urls = [u.strip() for u in f if u.strip()]
+
+    for url in urls:
+        print(f"🌐 获取 {url}")
+        try:
+            r = requests.get(url, timeout=20)
+            r.raise_for_status()
+            for line in r.text.splitlines():
+                line = line.strip()
+                if line:
+                    merged.add(line)
+        except Exception as e:
+            print(f"⚠ 下载失败 {url}: {e}")
 
     print(f"✅ 合并 {len(merged)} 条规则")
 
-    # 保存合并的规则到文件
     with open(MASTER_RULE, "w", encoding="utf-8") as f:
         f.write("\n".join(sorted(merged)))
-    
+
+    recovered_rules = unified_skip_remove(merged)
+    split_parts(recovered_rules)
     return True
 
 # ===============================
@@ -114,6 +93,8 @@ def unified_skip_remove(all_rules_set):
     delete_counter = load_json(DELETE_COUNTER_FILE)
     not_written_counter = load_json(NOT_WRITTEN_FILE)
     recovered_rules = []
+
+    log_count = defaultdict(int)  # 记录每个日志出现次数
 
     for r in list(all_rules_set):
         del_cnt = delete_counter.get(r, 0)
@@ -132,7 +113,12 @@ def unified_skip_remove(all_rules_set):
         delete_counter[r] = del_cnt
 
         # ✅ 日志 —— 严格格式
-        print(f"⚠ 统一剔除（跳过验证）：{r} | 跳过次数={skip_cnt} | 删除计数={del_cnt}")
+        log_msg = f"⚠ 统一剔除（跳过验证）：{r} | 跳过次数={skip_cnt} | 删除计数={del_cnt}"
+        if log_count[log_msg] < 20:  # 如果该日志没有超过20次，打印
+            print(log_msg)
+            log_count[log_msg] += 1
+        elif log_count[log_msg] == 20:  # 打印次数达到20次时，显示数量
+            print(f"⚠ 日志超出次数限制，显示数量：{log_msg}...")
 
         # ✅ 当跳过 >= SKIP_ROUNDS 时恢复验证
         if skip_cnt >= SKIP_ROUNDS:
@@ -336,11 +322,11 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     if args.force_update:
-        asyncio.run(download_all_sources())
+        download_all_sources()
 
     if not os.path.exists(MASTER_RULE) or not os.path.exists(os.path.join(TMP_DIR, "part_01.txt")):
         print("⚠ 缺少规则或分片，自动拉取")
-        asyncio.run(download_all_sources())
+        download_all_sources()
 
     if args.part:
         process_part(args.part)

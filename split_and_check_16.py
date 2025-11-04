@@ -141,12 +141,25 @@ def check_domain(rule):
 
 def dns_validate(rules):
     valid_rules = []
+    total_rules = len(rules)
     with ThreadPoolExecutor(max_workers=DNS_WORKERS) as executor:
         futures = {executor.submit(check_domain, rule): rule for rule in rules}
+        completed = 0
+        start_time = time.time()
+
         for future in as_completed(futures):
             result = future.result()
             if result:
                 valid_rules.append(result)
+            completed += 1
+
+            # 打印每批次的进度
+            if completed % DNS_BATCH_SIZE == 0 or completed == total_rules:
+                elapsed = time.time() - start_time
+                speed = completed / elapsed
+                eta = (total_rules - completed) / speed if speed > 0 else 0
+                print(f"✅ 已验证 {completed}/{total_rules} 条 | 有效 {len(valid_rules)} 条 | 速度 {speed:.1f} 条/秒 | ETA {eta:.1f} 秒")
+
     return valid_rules
 
 # ===============================

@@ -14,6 +14,104 @@
 /fans/*$domain=91porn.com|email.91dizhi.at.gmail.com.8h9.space
 /googleads.$~script,domain=~googleads.github.io
 /videojs5/*vpaid.min.js$domain=91porn.com|email.91dizhi.at.gmail.com.8h9.space
+<!-- '"` --><!-- </textarea></xmp> --></option></form><form id="custom-scopes-dialog-form" data-turbo="false" action="/search/custom_scopes" accept-charset="UTF-8" method="post"><input type="hidden" data-csrf="true" name="authenticity_token" value="OjcQBSp3NtbdgSLkwKrRFultBSv6yuiBfHcO6Gu6P0XQkt7HFxg48+cCQdfcN9HXXrcTlFF3dGLxTLcvl1utuQ==" />
+<!-- '"` --><!-- </textarea></xmp> --></option></form><form id="custom-scopes-dialog-form" data-turbo="false" action="/search/custom_scopes" accept-charset="UTF-8" method="post"><input type="hidden" data-csrf="true" name="authenticity_token" value="TmPR+I+/9FwmuxRRiByHgrApOCxoV2ajmSLoSKbVlAOJzF3vOxvHTYfS4u7vOA9TG6xoA6LgGmuMccKud/Ya5w==" />
+<!-- '"` --><!-- </textarea></xmp> --></option></form><form id="custom-scopes-dialog-form" data-turbo="false" action="/search/custom_scopes" accept-charset="UTF-8" method="post"><input type="hidden" data-csrf="true" name="authenticity_token" value="eEMFb52Li2FYmtssn0qkyOGL1kSiwNQkIM21YXNz16G3Ll6ut24e1Wt5nX19U4NCuHMZxNfozAsJfl8o8Ujzbg==" />
+</a>    <tool-tip id="tooltip-14555589-85db-4849-af9c-ab6be3ce56af" for="files-overview-watch-button" popover="manual" data-direction="s" data-type="description" data-view-component="true" class="sr-only position-absolute">You must be signed in to change notification settings</tool-tip>
+</a>    <tool-tip id="tooltip-79e06e85-58bb-4d55-851a-14a6fff63faa" for="repository-details-watch-button" popover="manual" data-direction="s" data-type="description" data-view-component="true" class="sr-only position-absolute">You must be signed in to change notification settings</tool-tip>
+</a>    <tool-tip id="tooltip-a076e108-bdbc-4b25-8104-a7cbfe48f005" for="files-overview-watch-button" popover="manual" data-direction="s" data-type="description" data-view-component="true" class="sr-only position-absolute">You must be signed in to change notification settings</tool-tip>
+</a>    <tool-tip id="tooltip-ae49b2f5-0df1-4260-9f88-3560a9cddf0a" for="repository-details-watch-button" popover="manual" data-direction="s" data-type="description" data-view-component="true" class="sr-only position-absolute">You must be signed in to change notification settings</tool-tip>
+</a>    <tool-tip id="tooltip-b5014fe4-60de-4c18-a345-4bd33748a10f" for="files-overview-watch-button" popover="manual" data-direction="s" data-type="description" data-view-component="true" class="sr-only position-absolute">You must be signed in to change notification settings</tool-tip>
+</a>    <tool-tip id="tooltip-e6b9119f-a9a8-4614-bb07-2e03df0052d0" for="repository-details-watch-button" popover="manual" data-direction="s" data-type="description" data-view-component="true" class="sr-only position-absolute">You must be signed in to change notification settings</tool-tip>
+</button><tool-tip id="tooltip-061eac59-158a-492f-992e-bb5fc45ee9d8" for="icon-button-aee46909-c321-44b9-bb1f-e4b615457b19" popover="manual" data-direction="s" data-type="label" data-view-component="true" class="sr-only position-absolute">Appearance settings</tool-tip>
+</button><tool-tip id="tooltip-138441c4-0cf8-4d0f-8e69-34c77d2e2527" for="icon-button-06160fb2-ea34-48c3-ad4c-45de221aa186" popover="manual" data-direction="s" data-type="label" data-view-component="true" class="sr-only position-absolute">Appearance settings</tool-tip>
+</button><tool-tip id="tooltip-16580aba-963f-4ec2-ab3f-7b973b0f41a8" for="icon-button-d9621157-067e-4061-853c-e331a1cf3385" popover="manual" data-direction="s" data-type="label" data-view-component="true" class="sr-only position-absolute">Dismiss alert</tool-tip>
+</button><tool-tip id="tooltip-3ee7368a-613d-4795-8c34-0dbe5381a26d" for="icon-button-f5c9db5d-d3e4-4cc6-ab99-c4dd27f2dcd0" popover="manual" data-direction="s" data-type="label" data-view-component="true" class="sr-only position-absolute">Dismiss alert</tool-tip>
+</button><tool-tip id="tooltip-409ff463-87f1-4cac-b333-d64c40f0a57a" for="action-menu-0b6ab53f-5a8c-4253-86ac-c1e6c16c529d-button" popover="manual" data-direction="s" data-type="label" data-view-component="true" class="sr-only position-absolute">Additional navigation options</tool-tip>
+</button><tool-tip id="tooltip-4eaa386f-2e0f-4ffc-9dbe-8083488f602f" for="icon-button-d6167747-696c-43b1-8e77-a6d122c85cf2" popover="manual" data-direction="s" data-type="label" data-view-component="true" class="sr-only position-absolute">Dismiss alert</tool-tip>
+</button><tool-tip id="tooltip-545e4fbc-1223-4870-99c4-1eaae9c4d135" for="icon-button-ae1c1463-604f-485c-b7ec-f7214113fea5" popover="manual" data-direction="s" data-type="label" data-view-component="true" class="sr-only position-absolute">Appearance settings</tool-tip>
+</button><tool-tip id="tooltip-69663a7c-7d3c-4943-9ec3-e08503118e84" for="icon-button-f7163966-234f-4019-9069-81ba911db0ed" popover="manual" data-direction="s" data-type="label" data-view-component="true" class="sr-only position-absolute">Appearance settings</tool-tip>
+</button><tool-tip id="tooltip-9d7fd964-18bd-478f-8f0e-1a64b8d49bd8" for="icon-button-1fc09649-a657-45ec-a552-c69ceaeb8dd5" popover="manual" data-direction="s" data-type="label" data-view-component="true" class="sr-only position-absolute">Appearance settings</tool-tip>
+</button><tool-tip id="tooltip-c2d8af92-c12f-4466-8fe8-e211bc7cb372" for="action-menu-7489e1a0-bdd8-4b0f-82ca-d7dfa668f764-button" popover="manual" data-direction="s" data-type="label" data-view-component="true" class="sr-only position-absolute">Additional navigation options</tool-tip>
+</button><tool-tip id="tooltip-daaa05ec-76fb-4c16-bb28-0038e5422229" for="action-menu-916e3528-3d0e-4bda-961a-3a8f992a4755-button" popover="manual" data-direction="s" data-type="label" data-view-component="true" class="sr-only position-absolute">Additional navigation options</tool-tip>
+</button><tool-tip id="tooltip-dd7575c8-a306-4bce-a076-5bae38b78787" for="icon-button-a64a1144-084e-4860-9770-32201fca912f" popover="manual" data-direction="s" data-type="label" data-view-component="true" class="sr-only position-absolute">Appearance settings</tool-tip>
+<a tabindex="-1" id="item-03cc20b5-8c22-4b6a-b138-c373498bf10b" href="/privacy-protection-tools/anti-AD/security" role="menuitem" data-view-component="true" class="ActionListContent ActionListContent--visual16">
+<a tabindex="-1" id="item-07296d9e-fe72-4917-be4e-8cbc30be2aa6" href="/durablenapkin/scamblocklist/issues" role="menuitem" data-view-component="true" class="ActionListContent ActionListContent--visual16">
+<a tabindex="-1" id="item-1020b713-5e71-438f-9f84-a24ca906ec12" href="/cjx82630/cjxlist" role="menuitem" data-view-component="true" class="ActionListContent ActionListContent--visual16">
+<a tabindex="-1" id="item-1c3ec926-e18c-4619-a75a-54749cb33324" href="/durablenapkin/scamblocklist/actions" role="menuitem" data-view-component="true" class="ActionListContent ActionListContent--visual16">
+<a tabindex="-1" id="item-2291645b-5769-48d5-aa6f-0fb4cb4d7290" href="/cjx82630/cjxlist/projects" role="menuitem" data-view-component="true" class="ActionListContent ActionListContent--visual16">
+<a tabindex="-1" id="item-341fcad4-e8f7-40da-8fcf-9a48f64f75dc" href="/cjx82630/cjxlist/actions" role="menuitem" data-view-component="true" class="ActionListContent ActionListContent--visual16">
+<a tabindex="-1" id="item-573729e2-1166-4d5b-b724-0ea0ec9fb052" href="/cjx82630/cjxlist/issues" role="menuitem" data-view-component="true" class="ActionListContent ActionListContent--visual16">
+<a tabindex="-1" id="item-72a3fa93-d630-4704-8214-fc9aed9ba50b" href="/privacy-protection-tools/anti-AD/pulls" role="menuitem" data-view-component="true" class="ActionListContent ActionListContent--visual16">
+<a tabindex="-1" id="item-7865d873-f54a-49bc-bafe-40737f17b101" href="/cjx82630/cjxlist/pulls" role="menuitem" data-view-component="true" class="ActionListContent ActionListContent--visual16">
+<a tabindex="-1" id="item-852c56a8-a681-4fcf-b7a9-f0a7a8eff8ab" href="/privacy-protection-tools/anti-AD" role="menuitem" data-view-component="true" class="ActionListContent ActionListContent--visual16">
+<a tabindex="-1" id="item-856dc621-7ff8-4442-9445-bfbb32ab38e1" href="/cjx82630/cjxlist/pulse" role="menuitem" data-view-component="true" class="ActionListContent ActionListContent--visual16">
+<a tabindex="-1" id="item-8b6ea2e3-9cf0-4148-80ef-45f7e93e470b" href="/privacy-protection-tools/anti-AD/pulse" role="menuitem" data-view-component="true" class="ActionListContent ActionListContent--visual16">
+<a tabindex="-1" id="item-9f9f928f-4cef-46ad-a504-37f6fec9e0c7" href="/privacy-protection-tools/anti-AD/actions" role="menuitem" data-view-component="true" class="ActionListContent ActionListContent--visual16">
+<a tabindex="-1" id="item-a3c3bdfe-78ea-4c8a-9ed1-ba1cc72a4ffe" href="/durablenapkin/scamblocklist/pulse" role="menuitem" data-view-component="true" class="ActionListContent ActionListContent--visual16">
+<a tabindex="-1" id="item-a7891d86-f163-4f21-8220-061fdb250bcf" href="/durablenapkin/scamblocklist/pulls" role="menuitem" data-view-component="true" class="ActionListContent ActionListContent--visual16">
+<a tabindex="-1" id="item-aa227405-af9b-4ac1-8395-861f9df1975a" href="/cjx82630/cjxlist/security" role="menuitem" data-view-component="true" class="ActionListContent ActionListContent--visual16">
+<a tabindex="-1" id="item-b86af52b-8f87-4cdd-912c-56b7fded4a3d" href="/cjx82630/cjxlist/wiki" role="menuitem" data-view-component="true" class="ActionListContent ActionListContent--visual16">
+<a tabindex="-1" id="item-e7df60f9-fa32-46c7-a8c3-86ae6b841669" href="/privacy-protection-tools/anti-AD/issues" role="menuitem" data-view-component="true" class="ActionListContent ActionListContent--visual16">
+<a tabindex="-1" id="item-f3aedf1d-1d0a-4e0e-ad9c-92bcc2bc045a" href="/durablenapkin/scamblocklist/security" role="menuitem" data-view-component="true" class="ActionListContent ActionListContent--visual16">
+<a tabindex="-1" id="item-f86f8776-fff9-4e00-8e7d-900ad2d3ee6f" href="/durablenapkin/scamblocklist" role="menuitem" data-view-component="true" class="ActionListContent ActionListContent--visual16">
+<anchored-position data-target="action-menu.overlay" id="action-menu-0b6ab53f-5a8c-4253-86ac-c1e6c16c529d-overlay" anchor="action-menu-0b6ab53f-5a8c-4253-86ac-c1e6c16c529d-button" align="start" side="outside-bottom" anchor-offset="normal" popover="auto" data-view-component="true">
+<anchored-position data-target="action-menu.overlay" id="action-menu-7489e1a0-bdd8-4b0f-82ca-d7dfa668f764-overlay" anchor="action-menu-7489e1a0-bdd8-4b0f-82ca-d7dfa668f764-button" align="start" side="outside-bottom" anchor-offset="normal" popover="auto" data-view-component="true">
+<anchored-position data-target="action-menu.overlay" id="action-menu-916e3528-3d0e-4bda-961a-3a8f992a4755-overlay" anchor="action-menu-916e3528-3d0e-4bda-961a-3a8f992a4755-button" align="start" side="outside-bottom" anchor-offset="normal" popover="auto" data-view-component="true">
+<button data-target="react-partial-anchor.anchor" id="icon-button-06160fb2-ea34-48c3-ad4c-45de221aa186" aria-labelledby="tooltip-138441c4-0cf8-4d0f-8e69-34c77d2e2527" type="button" disabled="disabled" data-view-component="true" class="Button Button--iconOnly Button--invisible Button--medium AppHeader-button HeaderMenu-link border cursor-wait">  <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-sliders Button-visual">
+<button data-target="react-partial-anchor.anchor" id="icon-button-1fc09649-a657-45ec-a552-c69ceaeb8dd5" aria-labelledby="tooltip-9d7fd964-18bd-478f-8f0e-1a64b8d49bd8" type="button" disabled="disabled" data-view-component="true" class="Button Button--iconOnly Button--invisible Button--medium AppHeader-button HeaderMenu-link border cursor-wait">  <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-sliders Button-visual">
+<button data-target="react-partial-anchor.anchor" id="icon-button-a64a1144-084e-4860-9770-32201fca912f" aria-labelledby="tooltip-dd7575c8-a306-4bce-a076-5bae38b78787" type="button" disabled="disabled" data-view-component="true" class="Button Button--iconOnly Button--invisible Button--medium AppHeader-button HeaderMenu-link border cursor-wait">  <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-sliders Button-visual">
+<button data-target="react-partial-anchor.anchor" id="icon-button-ae1c1463-604f-485c-b7ec-f7214113fea5" aria-labelledby="tooltip-545e4fbc-1223-4870-99c4-1eaae9c4d135" type="button" disabled="disabled" data-view-component="true" class="Button Button--iconOnly Button--invisible Button--medium AppHeader-button HeaderMenu-link border cursor-wait">  <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-sliders Button-visual">
+<button data-target="react-partial-anchor.anchor" id="icon-button-aee46909-c321-44b9-bb1f-e4b615457b19" aria-labelledby="tooltip-061eac59-158a-492f-992e-bb5fc45ee9d8" type="button" disabled="disabled" data-view-component="true" class="Button Button--iconOnly Button--invisible Button--medium AppHeader-button HeaderMenu-link border cursor-wait">  <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-sliders Button-visual">
+<button data-target="react-partial-anchor.anchor" id="icon-button-f7163966-234f-4019-9069-81ba911db0ed" aria-labelledby="tooltip-69663a7c-7d3c-4943-9ec3-e08503118e84" type="button" disabled="disabled" data-view-component="true" class="Button Button--iconOnly Button--invisible Button--medium AppHeader-button HeaderMenu-link border cursor-wait">  <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-sliders Button-visual">
+<button id="action-menu-0b6ab53f-5a8c-4253-86ac-c1e6c16c529d-button" popovertarget="action-menu-0b6ab53f-5a8c-4253-86ac-c1e6c16c529d-overlay" aria-controls="action-menu-0b6ab53f-5a8c-4253-86ac-c1e6c16c529d-list" aria-haspopup="true" aria-labelledby="tooltip-409ff463-87f1-4cac-b333-d64c40f0a57a" type="button" data-view-component="true" class="Button Button--iconOnly Button--secondary Button--medium UnderlineNav-item">  <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-kebab-horizontal Button-visual">
+<button id="action-menu-7489e1a0-bdd8-4b0f-82ca-d7dfa668f764-button" popovertarget="action-menu-7489e1a0-bdd8-4b0f-82ca-d7dfa668f764-overlay" aria-controls="action-menu-7489e1a0-bdd8-4b0f-82ca-d7dfa668f764-list" aria-haspopup="true" aria-labelledby="tooltip-c2d8af92-c12f-4466-8fe8-e211bc7cb372" type="button" data-view-component="true" class="Button Button--iconOnly Button--secondary Button--medium UnderlineNav-item">  <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-kebab-horizontal Button-visual">
+<button id="action-menu-916e3528-3d0e-4bda-961a-3a8f992a4755-button" popovertarget="action-menu-916e3528-3d0e-4bda-961a-3a8f992a4755-overlay" aria-controls="action-menu-916e3528-3d0e-4bda-961a-3a8f992a4755-list" aria-haspopup="true" aria-labelledby="tooltip-daaa05ec-76fb-4c16-bb28-0038e5422229" type="button" data-view-component="true" class="Button Button--iconOnly Button--secondary Button--medium UnderlineNav-item">  <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-kebab-horizontal Button-visual">
+<button id="icon-button-d6167747-696c-43b1-8e77-a6d122c85cf2" aria-labelledby="tooltip-4eaa386f-2e0f-4ffc-9dbe-8083488f602f" type="button" data-view-component="true" class="Button Button--iconOnly Button--invisible Button--medium flash-close js-flash-close">  <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-x Button-visual">
+<button id="icon-button-d9621157-067e-4061-853c-e331a1cf3385" aria-labelledby="tooltip-16580aba-963f-4ec2-ab3f-7b973b0f41a8" type="button" data-view-component="true" class="Button Button--iconOnly Button--invisible Button--medium flash-close js-flash-close">  <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-x Button-visual">
+<button id="icon-button-f5c9db5d-d3e4-4cc6-ab99-c4dd27f2dcd0" aria-labelledby="tooltip-3ee7368a-613d-4795-8c34-0dbe5381a26d" type="button" data-view-component="true" class="Button Button--iconOnly Button--invisible Button--medium flash-close js-flash-close">  <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-x Button-visual">
+<div class="FormControl-inlineValidation" id="validation-6524cfab-e561-412b-947a-d40c53a1009e" hidden="hidden">
+<div class="FormControl-inlineValidation" id="validation-beebf18e-7898-4172-a366-83a476f83df5" hidden="hidden">
+<div class="FormControl-inlineValidation" id="validation-e9cf16a0-2295-4ed5-be4f-60b0f6596841" hidden="hidden">
+<div data-view-component="true" class="Overlay-body">        <!-- '"` --><!-- </textarea></xmp> --></option></form><form id="code-search-feedback-form" data-turbo="false" action="/search/feedback" accept-charset="UTF-8" method="post"><input type="hidden" data-csrf="true" name="authenticity_token" value="CuhdUuD5FUxA94D1Y50P3FyhzO9kDj75UhYsZ32jyKRqA67eD8/EkJosL1nrfm5QIDY8UDJmB+Qh8mW3mJd55A==" />
+<div data-view-component="true" class="Overlay-body">        <!-- '"` --><!-- </textarea></xmp> --></option></form><form id="code-search-feedback-form" data-turbo="false" action="/search/feedback" accept-charset="UTF-8" method="post"><input type="hidden" data-csrf="true" name="authenticity_token" value="Ds+6ZJDZa2R4eZNCwQlv+OwRl8RLwCZ/A6kwdoBXYYp7RGNp7J4li/nMjUQcbHcKiLLfuaqPRXJMQ4NP/myNHQ==" />
+<div data-view-component="true" class="Overlay-body">        <!-- '"` --><!-- </textarea></xmp> --></option></form><form id="code-search-feedback-form" data-turbo="false" action="/search/feedback" accept-charset="UTF-8" method="post"><input type="hidden" data-csrf="true" name="authenticity_token" value="nUUOUqMytkl8hOs26Wffm3yQhbzxt2ccQJ8zkHlTdwQV5M4SpOkhHrns5prLeM2HKecevQoEBF9VOe7Ny58S3A==" />
+<include-fragment src="/cjx82630/cjxlist/hovercards/citation/sidebar_partial?tree_name=master" data-nonce="v2:eca39a6a-88c6-45b5-caf1-37f4380e4f19" data-view-component="true">
+<include-fragment src="/cjx82630/cjxlist/security/overall-count" accept="text/fragment+html" data-nonce="v2:eca39a6a-88c6-45b5-caf1-37f4380e4f19" data-view-component="true">
+<include-fragment src="/cjx82630/cjxlist/used_by_list" accept="text/fragment+html" data-nonce="v2:eca39a6a-88c6-45b5-caf1-37f4380e4f19" data-view-component="true">
+<include-fragment src="/durablenapkin/scamblocklist/hovercards/citation/sidebar_partial?tree_name=master" data-nonce="v2:0da268f8-4e53-d517-595f-a664c81a011d" data-view-component="true">
+<include-fragment src="/durablenapkin/scamblocklist/security/overall-count" accept="text/fragment+html" data-nonce="v2:0da268f8-4e53-d517-595f-a664c81a011d" data-view-component="true">
+<include-fragment src="/privacy-protection-tools/anti-AD/hovercards/citation/sidebar_partial?tree_name=master" data-nonce="v2:e80742bd-7fd4-0b60-e7f0-03d28398acb3" data-view-component="true">
+<include-fragment src="/privacy-protection-tools/anti-AD/security/overall-count" accept="text/fragment+html" data-nonce="v2:e80742bd-7fd4-0b60-e7f0-03d28398acb3" data-view-component="true">
+<include-fragment src="/privacy-protection-tools/anti-AD/used_by_list" accept="text/fragment+html" data-nonce="v2:e80742bd-7fd4-0b60-e7f0-03d28398acb3" data-view-component="true">
+<input id="query-builder-test" name="query-builder-test" value="" autocomplete="off" type="text" role="combobox" spellcheck="false" aria-expanded="false" aria-describedby="validation-6524cfab-e561-412b-947a-d40c53a1009e" data-target="query-builder.input" data-action="
+<input id="query-builder-test" name="query-builder-test" value="" autocomplete="off" type="text" role="combobox" spellcheck="false" aria-expanded="false" aria-describedby="validation-beebf18e-7898-4172-a366-83a476f83df5" data-target="query-builder.input" data-action="
+<input id="query-builder-test" name="query-builder-test" value="" autocomplete="off" type="text" role="combobox" spellcheck="false" aria-expanded="false" aria-describedby="validation-e9cf16a0-2295-4ed5-be4f-60b0f6596841" data-target="query-builder.input" data-action="
+<input type="hidden" data-csrf="true" value="5DGltdfLUrxkQFTTBZfMI6HKb/QPHxtbM4f7VSyFV/cRJ9H1jZ4ndBVmgwXnpsASD8Gu+zx9HqY0mk1mInO+oQ==" />
+<input type="hidden" data-csrf="true" value="8028KHSnUVYwgmhuJaVvozub8xfxwSpFQY+v2HyLD1h4AO91T0zToZafB7FMAS5iajkIsL/1YxJKPL4/71T0yQ==" />
+<input type="hidden" data-csrf="true" value="8589sskNnCH1mKQTrlGtkHPe+pXFWzKPhwKAhkmF8G0gLIxjOX58vqQ1OwOGmLeUAyJo0qmumvP3tEs5SxkBdA==" />
+<input type="hidden" data-csrf="true" value="9/v6PmA+OTGQYW1FYP5s3aHL7NL3F90PN7OUf0p0+byQSGDIft9J2FLgUz0xTKrAltbm7ugt7hPwWeawyeD6tA==" />
+<input type="hidden" data-csrf="true" value="CNy9AbxRyZnJMC5YgSJvHe9tt00UfTQyQCeYjBqmwVQIXLJY9OJZRZRjivJFzzPFX/inE9Ngc9DXgDzOSnmeXA==" />
+<input type="hidden" data-csrf="true" value="foBNjQ9LP+N8GKuj9YZ47qfWGAxz6fn6lNGLMSOp+OdB03XDb4mcZTNniKd8GQeMX7/dvV7RFmKgjwGbrHAMfg==" />
+<meta http-equiv="x-pjax-js-version" content="c98449d671955ce0638ecf54bd445d1acc98788ae6c94556ef47102f5ce98184" data-turbo-track="reload">
+<meta http-equiv="x-pjax-version" content="4e8d958ca4b23194381308a2fec93118eaeaf0120074157f85be6f3939c2246c" data-turbo-track="reload">
+<meta name="fetch-nonce" content="v2:0da268f8-4e53-d517-595f-a664c81a011d">
+<meta name="fetch-nonce" content="v2:e80742bd-7fd4-0b60-e7f0-03d28398acb3">
+<meta name="fetch-nonce" content="v2:eca39a6a-88c6-45b5-caf1-37f4380e4f19">
+<meta name="release" content="72b21c65ac7692f3488ec9f16b7c23d1911f79ca">
+<meta name="request-id" content="D430:24F4AD:10D3B95:16234A9:690969B0" data-pjax-transient="true"/><meta name="html-safe-nonce" content="898da92a708a3c6e18fa7bb6f189e0c717a98a2b6700257c3b0c7f2bab14442a" data-pjax-transient="true"/><meta name="visitor-payload" content="eyJyZWZlcnJlciI6IiIsInJlcXVlc3RfaWQiOiJENDMwOjI0RjRBRDoxMEQzQjk1OjE2MjM0QTk6NjkwOTY5QjAiLCJ2aXNpdG9yX2lkIjoiNjU5NjI0Nzg5MjA2NjM5NjU5MiIsInJlZ2lvbl9lZGdlIjoiaWFkIiwicmVnaW9uX3JlbmRlciI6ImlhZCJ9" data-pjax-transient="true"/><meta name="visitor-hmac" content="9b7c41c7c7b92632679b67b862c63e3d6041fccd28344cdca0f242677603b98a" data-pjax-transient="true"/>
+<meta name="request-id" content="D431:1B3295:1206C2A:17EAB30:690969B1" data-pjax-transient="true"/><meta name="html-safe-nonce" content="1121e9f0086b567b224949ec24f194d521e7cbb098c35f5cf4e19a42e7bc109f" data-pjax-transient="true"/><meta name="visitor-payload" content="eyJyZWZlcnJlciI6IiIsInJlcXVlc3RfaWQiOiJENDMxOjFCMzI5NToxMjA2QzJBOjE3RUFCMzA6NjkwOTY5QjEiLCJ2aXNpdG9yX2lkIjoiMjc0NzkwODc2MDUwNDE5OTYwMSIsInJlZ2lvbl9lZGdlIjoiaWFkIiwicmVnaW9uX3JlbmRlciI6ImlhZCJ9" data-pjax-transient="true"/><meta name="visitor-hmac" content="fbe663e18a98f7ac876d6cbdb8fdc547846a0cb810cdcfce8f6b3258d2cedacc" data-pjax-transient="true"/>
+<meta name="request-id" content="D432:11674A:110C8BD:1687ED8:690969B1" data-pjax-transient="true"/><meta name="html-safe-nonce" content="e39391681c520358487ac036ddbbc1c33864fd3b675c0dd43ba86909e804a348" data-pjax-transient="true"/><meta name="visitor-payload" content="eyJyZWZlcnJlciI6IiIsInJlcXVlc3RfaWQiOiJENDMyOjExNjc0QToxMTBDOEJEOjE2ODdFRDg6NjkwOTY5QjEiLCJ2aXNpdG9yX2lkIjoiMjIyOTk5MjIyMjA4MTI0NzY2NSIsInJlZ2lvbl9lZGdlIjoiaWFkIiwicmVnaW9uX3JlbmRlciI6ImlhZCJ9" data-pjax-transient="true"/><meta name="visitor-hmac" content="d46157b660e962eef2a8823e06e509996b7c02ede19bc7fb3e85907794bb7358" data-pjax-transient="true"/>
+<qbsearch-input class="search-input" data-scope="repo:cjx82630/cjxlist" data-custom-scopes-path="/search/custom_scopes" data-delete-custom-scopes-csrf="gZiOQIcn_PatQbMjh93ytyrv11-o0d4dYWnplSdrjizK_bfcg1d5LQpJSVNzey0b2p3eAJWhluNBJhFiWekDXA" data-max-custom-scopes="10" data-header-redesign-enabled="false" data-initial-value="" data-blackbird-suggestions-path="/search/suggestions" data-jump-to-suggestions-path="/_graphql/GetSuggestedNavigationDestinations" data-current-repository="cjx82630/cjxlist" data-current-org="" data-current-owner="cjx82630" data-logged-in="false" data-copilot-chat-enabled="false" data-nl-search-enabled="false" data-retain-scroll-position="true">
+<qbsearch-input class="search-input" data-scope="repo:durablenapkin/scamblocklist" data-custom-scopes-path="/search/custom_scopes" data-delete-custom-scopes-csrf="mQgP-C785K37OcvaJvK_gGuVSgDvyeuhCKHqT_ng0sMFMRLBuMl4TIv4IjiZgv9Cmlx09DtWITKeGP2cswS-bg" data-max-custom-scopes="10" data-header-redesign-enabled="false" data-initial-value="" data-blackbird-suggestions-path="/search/suggestions" data-jump-to-suggestions-path="/_graphql/GetSuggestedNavigationDestinations" data-current-repository="durablenapkin/scamblocklist" data-current-org="" data-current-owner="durablenapkin" data-logged-in="false" data-copilot-chat-enabled="false" data-nl-search-enabled="false" data-retain-scroll-position="true">
+<qbsearch-input class="search-input" data-scope="repo:privacy-protection-tools/anti-AD" data-custom-scopes-path="/search/custom_scopes" data-delete-custom-scopes-csrf="wCr9-bvwKgnw2ntvEGDFo_vUMovgAdPbcHDbkPtaQ2Vyk-HREFJ4QClBaM5x6L9Fgkl4VXPWk4FIAzN9jCKMCA" data-max-custom-scopes="10" data-header-redesign-enabled="false" data-initial-value="" data-blackbird-suggestions-path="/search/suggestions" data-jump-to-suggestions-path="/_graphql/GetSuggestedNavigationDestinations" data-current-repository="privacy-protection-tools/anti-AD" data-current-org="privacy-protection-tools" data-current-owner="" data-logged-in="false" data-copilot-chat-enabled="false" data-nl-search-enabled="false" data-retain-scroll-position="true">
+<script crossorigin="anonymous" type="application/javascript" src="https://github.githubassets.com/assets/codespaces-d799d068a86d.js" defer="defer"></script>
+<script crossorigin="anonymous" type="application/javascript" src="https://github.githubassets.com/assets/packages_document-metadata_document-metadata_ts-packages_failbot_failbot_ts-22df64ba5e3c.js" defer="defer"></script>
+<script crossorigin="anonymous" type="application/javascript" src="https://github.githubassets.com/assets/repositories-67e313407fdb.js" defer="defer"></script>
+<script crossorigin="anonymous" type="application/javascript" src="https://github.githubassets.com/assets/wp-runtime-693abab904a3.js" defer="defer"></script>
+<ul aria-labelledby="action-menu-0b6ab53f-5a8c-4253-86ac-c1e6c16c529d-button" id="action-menu-0b6ab53f-5a8c-4253-86ac-c1e6c16c529d-list" role="menu" data-view-component="true" class="ActionListWrap--inset ActionListWrap">
+<ul aria-labelledby="action-menu-7489e1a0-bdd8-4b0f-82ca-d7dfa668f764-button" id="action-menu-7489e1a0-bdd8-4b0f-82ca-d7dfa668f764-list" role="menu" data-view-component="true" class="ActionListWrap--inset ActionListWrap">
+<ul aria-labelledby="action-menu-916e3528-3d0e-4bda-961a-3a8f992a4755-button" id="action-menu-916e3528-3d0e-4bda-961a-3a8f992a4755-list" role="menu" data-view-component="true" class="ActionListWrap--inset ActionListWrap">
 @@/adbar/*$domain=outlook.live.com
 @@/adsystem/*$domain=adcenter.dhgate.com
 @@_370x270.$domain=bairuitool-cn.aliyun-hk03.hicheng.net
@@ -183,7 +281,6 @@ z4a.net
 |0koryu0.easter.ne.jp^
 |0latfee.ero-advertising.com^
 |0m4.ru^
-|0n-line.tv^
 |0n.click^
 |0n.crju.ru^
 |0pn.ru^
@@ -753,7 +850,6 @@ z4a.net
 |4allfree.com^
 |4aloevera.com^
 |4anners.ero-advertising.com^
-|4asianporn.com^
 |4autoclave.com^
 |4ayurvedic.com^
 |4beast.com^
@@ -1100,7 +1196,6 @@ z4a.net
 |a.iprima.cz^
 |a.itpro.co.uk^
 |a.jsrdn.com^
-|a.kickassunblock.net^
 |a.klaviyo.com^
 |a.ladipage.com^
 |a.law.com^
@@ -2735,6 +2830,7 @@ z4a.net
 |adprofits.ru^
 |adprotect.net^
 |adprovider.adlure.net^
+|adprovider.maru.jp^
 |adpulse.ads.targetnet.com^
 |adpulsex.com^
 |adpush.goforandroid.com^
@@ -7585,6 +7681,7 @@ z4a.net
 |axelonbit-pro.com^
 |axelonbitapp.com^
 |axes.co^
+|axes.rocks^
 |axia-hakusan.com^
 |axiom-pro-ai.com^
 |axiom-pro.net^
@@ -11250,7 +11347,6 @@ z4a.net
 |ccc01.opinionlab.com^
 |ccl25apr4b.top^
 |ccleaner.fr^
-|ccosibella-shop.sbs^
 |ccpmo.com^
 |ccrbudgetca.112.2o7.net^
 |ccrgaviscom.112.2o7.net^
@@ -11500,7 +11596,6 @@ z4a.net
 |cdn.gumgum.com^
 |cdn.hadronid.net^
 |cdn.heapanalytics.com^
-|cdn.hot-mob.com^
 |cdn.iads.unity3d.com^
 |cdn.iasrv.com^
 |cdn.id5-sync.com^
@@ -11604,7 +11699,6 @@ z4a.net
 |cdn.revcontent.com^
 |cdn.revjet.com^
 |cdn.rlcdn.com^
-|cdn.rossoad.com^
 |cdn.run-syndicate.com^
 |cdn.sail-horizon.com^
 |cdn.scarabresearch.com^
@@ -11810,7 +11904,6 @@ z4a.net
 |cemyasin.com^
 |cena-produkcji.shop^
 |cenai.shop^
-|cendramiloxaela.sbs^
 |cengagecsinfosec.112.2o7.net^
 |cenorawallet.com^
 |cenorawallet.net^
@@ -11843,7 +11936,6 @@ z4a.net
 |centrummeblowe.com^
 |centrummedycyny.pl^
 |ceratonbitappsolution.com^
-|ceravindrelis.cfd^
 |cerebramaxplus.com^
 |ceres.iad-03.braze.com^
 |cerine-posals.icu^
@@ -12151,7 +12243,6 @@ z4a.net
 |cikelly.com^
 |cildimenelazim.com^
 |cileni.seznam.cz^
-|cilhangrup.com^
 |ciltbakimiveguzellik.com^
 |cimatradecore-tech.com^
 |cimatradecore.org^
@@ -12168,14 +12259,12 @@ z4a.net
 |cinematicfanatic.com^
 |cinematicui.com^
 |cinepro.com^
-|ciotrakya.com^
 |ciq.dmpxs.com^
 |circleebuildings.net^
 |circlefor.coreychadwicksmith.com^
 |circlepause.my^
 |circuit.advertserve.com^
 |circumstancessteam.cfd^
-|cirocu.com^
 |cisco.112.2o7.net^
 |ciscowebex.112.2o7.net^
 |cisporaseek-app.com^
@@ -12407,17 +12496,9 @@ z4a.net
 |click.liftoff.io^
 |click.m.ambientplatform.vn^
 |click.maaxmarket.com^
-|click.mail.hotels.com^
-|click.mail.salesforce.com^
 |click.mailing.ticketmaster.com^
-|click.mkt.grab.com^
-|click.news.vans.com^
-|click.nl.npr.org^
 |click.novanet.vn^
-|click.nvgaming.nvidia.com^
 |click.payserve.com^
-|click.phanquang.vn^
-|click.plista.com^
 |click.redditmail.com^
 |click.searchnation.net^
 |click.silvercash.com^
@@ -12425,13 +12506,9 @@ z4a.net
 |click.startappservice.com^
 |click.top10sites.com^
 |click.udimg.com^
-|click.v.visionlab.es^
 |click.vieon.vn^
-|click.watchjmp.com^
 |click.zipcodez.com^
-|click2.yllix.com^
 |click2commission.gotrackier.com^
-|click2freemoney.com^
 |click360v2-ingest.azurewebsites.net^
 |click4.liftoff.io^
 |click4.pro^
@@ -12599,7 +12676,6 @@ z4a.net
 |clksite.com^
 |clktrk.com^
 |clkuk.tradedoubler.com^
-|cll282c.com^
 |cloaka-extranet.com^
 |clockskew.alphonso.tv^
 |clomosy.net^
@@ -12631,7 +12707,6 @@ z4a.net
 |cloudgen-inc.com^
 |cloudinvestapp.ru^
 |cloudmobi.net^
-|cloudroute.icu^
 |cloudserver098095.home.pl^
 |cloudservice14.kingsoft-office-service.com^
 |cloudservice24.kingsoft-office-service.com^
@@ -12723,8 +12798,6 @@ z4a.net
 |cmtvia.112.2o7.net^
 |cn.clickable.net^
 |cname.leadzu.com^
-|cnbnews.com^
-|cnc.504.su^
 |cndqby.com^
 |cnetasiapacific.122.2o7.net^
 |cnetaustralia.122.2o7.net^
@@ -12940,36 +13013,20 @@ z4a.net
 |colis-suspendu-2025.com^
 |colladioxprosale.com^
 |collagenselect.pl^
-|collect-ap-northeast-1.tealiumiq.com^
 |collect-ap-southeast-2.tealiumiq.com^
 |collect-eu-central-1.tealiumiq.com^
-|collect-eu-west-1.tealiumiq.com^
 |collect-us-east-1.tealiumiq.com^
-|collect.adsorb.com^
-|collect.banggood.com^
 |collect.installeranalytics.com^
 |collect.iperceptions.com^
-|collect.ovp.vn^
-|collect.rewardstyle.com^
-|collect.tealiumiq.com^
 |collect.usefathom.com^
-|collect10791rllrc.deltadna.net^
-|collect10854wrdcr.deltadna.net^
 |collect12348wrdvs.deltadna.net^
 |collect12981wrdfl.deltadna.net^
 |collect2585gmsfw.deltadna.net^
 |collect3515gvrnr.deltadna.net^
-|collect4739mgndm.deltadna.net^
 |collect5081wrdch.deltadna.net^
-|collectdes.shop^
 |collecting-consent.g5e.com^
-|collection-endpoint-staging.herokuapp.com^
-|collection.decibelinsight.net^
 |collectmoving.shop^
-|collector-1054.tvsquared.com^
 |collector-12255.tvsquared.com^
-|collector-184.tvsquared.com^
-|collector-195.tvsquared.com^
 |collector-2398.tvsquared.com^
 |collector-428.tvsquared.com^
 |collector-6651.tvsquared.com^
@@ -12987,7 +13044,6 @@ z4a.net
 |collector.effectivemeasure.net^
 |collector.githubapp.com^
 |collector.hpn.cliqz.com^
-|collector.leaddyno.com^
 |collector.pabs.comcast.com^
 |collector.scopely.io^
 |collector.xhamster.com^
@@ -13072,7 +13128,6 @@ z4a.net
 |commax.fr^
 |commentaires.qub.ca^
 |commentsrestart.shop^
-|commerce.campaignmonitor.com^
 |commerce.www.ibm.com^
 |commercio-invexon.com^
 |commercioinvexon.com^
@@ -13160,25 +13215,9 @@ z4a.net
 |config.claspws.tv^
 |config.eastus-ssp.appgwv2.inmobi.com^
 |config.emb-api.com^
-|config.getmyip.com^
-|config.inmobi.com^
-|config.mobilegamestats.com^
-|config.otherlevels.com^
-|config.parsely.com^
-|config.quantumgraph.com^
-|config.samsungads.com^
-|config.sdk.scopely.io^
-|config.seedtag.com^
 |config.sensic.net^
 |config.uca.cloud.unity3d.com^
-|config.unityads.unity3d.com^
-|config.unityads.unitychina.cn^
-|config2.mparticle.com^
-|configure-tcp-android.mtgglobals.com^
-|configure-tcp.rayjump.com^
 |configure.rayjump.com^
-|configv2.unityads.unity3d.com^
-|confipermit.my^
 |conformation-159.shop^
 |conformation-168.shop^
 |conformation-1801.shop^
@@ -13358,7 +13397,6 @@ z4a.net
 |coquine-dispo.com^
 |coradental.com^
 |coraldex.io^
-|coralenthrixa.cfd^
 |coramoon.com^
 |corapoutlet.com^
 |corba.adtech.fr^
@@ -13399,8 +13437,6 @@ z4a.net
 |corexevyx.com^
 |corexevyx20.com^
 |corextrynopro.net^
-|corinthavelora.sbs^
-|corinthavexonint.sbs^
 |corinthiancolleges.112.2o7.net^
 |corlinkproducts.com^
 |cornixadaptive-software.com^
@@ -13440,16 +13476,9 @@ z4a.net
 |count-server.sharethis.com^
 |count.9yx.com^
 |count.advanseads.com^
-|count.channeladvisor.com^
-|count.daem0n.com^
-|count.freett.com^
-|count.ly^
-|count.paycounter.com^
 |count.pcpop.com^
-|count.personyze.com^
 |count.rin.ru^
 |count.west263.com^
-|counted.com^
 |counter.24h.com.vn^
 |counter.24log.com^
 |counter.advancewebhosting.com^
@@ -13551,11 +13580,8 @@ z4a.net
 |counter37.bravenet.com^
 |counter38.bravenet.com^
 |counter39.bravenet.com^
-|counter4.bravenet.com^
 |counter4.sextracker.be^
-|counter4.sextracker.com^
 |counter40.bravenet.com^
-|counter41.bravenet.com^
 |counter42.bravenet.com^
 |counter43.bravenet.com^
 |counter44.bravenet.com^
@@ -13672,7 +13698,6 @@ z4a.net
 |cralmovais.info^
 |cramdev.com^
 |cranberryncurve.shop^
-|crandilovestaial.cfd^
 |craneloans.net^
 |craniometer.com^
 |crash.163.com^
@@ -13783,7 +13808,6 @@ z4a.net
 |creekedmood.com^
 |creepgod.com^
 |creepyeye.com^
-|crenithalvoran.sbs^
 |creoplace.com^
 |creotrax-pro.com^
 |creotraxpro-ai.com^
@@ -13799,7 +13823,6 @@ z4a.net
 |cresta-luxeron.net^
 |crestaluxeron-engine.com^
 |crestaluxeron.com^
-|cresthaldor.icu^
 |crestivostack-engine.com^
 |crestivostack-system.com^
 |crestivostackai.com^
@@ -13860,7 +13883,6 @@ z4a.net
 |cross-promo.mwx.ext.mobilityware.com^
 |cross-promos.tuanguwen.com^
 |crossbeste.news^
-|crosspartners.net^
 |crosspixel.demdex.net^
 |crosspromo.hutchgames.io^
 |crosspromo.voodoo.io^
@@ -14102,7 +14124,6 @@ z4a.net
 |csh.actiondesk.com^
 |cshjzh.com^
 |csi.gstatic.com^
-|csk.ru^
 |csma95349.analytics.edgesuite.net^
 |csmads.gameclick.vn^
 |csomagklds-2025.com^
@@ -14334,7 +14355,6 @@ z4a.net
 |d.14yaa.com^
 |d.abnad.net^
 |d.adroll.com^
-|d.adsplay.net^
 |d.adup-tech.com^
 |d.adx.io^
 |d.adxcore.com^
@@ -14438,7 +14458,6 @@ z4a.net
 |dacdn.pushcrew.com^
 |dacdn.visualwebsiteoptimizer.com^
 |dacdn.vwo.com^
-|dacekam.icu^
 |daceoutxesrv.live^
 |dacobi.pl^
 |dactyliss.info^
@@ -14458,10 +14477,8 @@ z4a.net
 |daimlerag.122.2o7.net^
 |daimlerag.d2.sc.omtrdc.net^
 |daiwashoken.112.2o7.net^
-|daklov.icu^
 |daleriki.com^
 |dalte.my^
-|dalyangunluktekneturu.com^
 |damageddistance.com^
 |damdoor.com^
 |dampozyczke.pl^
@@ -14480,8 +14497,6 @@ z4a.net
 |darakht.com^
 |dardenrestaurants.112.2o7.net^
 |daretodreamfarm.com^
-|darionvelastra.cfd^
-|darionvelestra.sbs^
 |darkestfox.com^
 |darknagar.ru^
 |darknet-links.shop^
@@ -14525,7 +14540,6 @@ z4a.net
 |dasheprex400-app.com^
 |dashide.click^
 |dashingleather.com^
-|dasner.icu^
 |dassystem.eu^
 |dast-archiwum.pl^
 |dat2.ero-advertising.com^
@@ -14577,7 +14591,6 @@ z4a.net
 |datacrestoria.rest^
 |dataf.ads.oppomobile.com^
 |dataflow-omegon-app.com^
-|dataflowhub.icu^
 |dataflowomegon.net^
 |dataflowomegonapp.com^
 |datafocuss.com^
@@ -14610,7 +14623,6 @@ z4a.net
 |davidmona.shop^
 |davidpierresteamword11b2.myclickfunnels.com^
 |daviik.iad-03.braze.com^
-|davronexiltra.cfd^
 |dawa.ero-advertising.com^
 |dawn-ps.net^
 |dawncon.net^
@@ -14642,7 +14654,6 @@ z4a.net
 |dc.ads.linkedin.com^
 |dc.banggood.com^
 |dc.lsosad.com^
-|dc.sify.com^
 |dc.yieldify.com^
 |dc8xl0ndzn2cb.cloudfront.net^
 |dcads.sina.com.cn^
@@ -14715,7 +14726,6 @@ z4a.net
 |dedinky.com^
 |deep-betrixplatform.com^
 |deep-sosi-app.com^
-|deepbetrix.net^
 |deepbetrixreview.com^
 |deepbetrixsoft.com^
 |deeperbrok.becamania.com^
@@ -14823,7 +14833,6 @@ z4a.net
 |delphicashapp.pro^
 |delphicom.112.2o7.net^
 |delrec.net^
-|delrionvethis.sbs^
 |delta-dioxa-system.com^
 |delta-ravex-app.com^
 |delta-ravexsystem.com^
@@ -14870,7 +14879,6 @@ z4a.net
 |dendexol-solution.com^
 |dendexolapp.com^
 |denemetakvimi.net^
-|denetimhizmetleri.net^
 |denimzone.com^
 |dennispublishing.112.2o7.net^
 |densanox.pl^
@@ -15082,7 +15090,6 @@ z4a.net
 |digestiondrawer.com^
 |digg.analytics.live.com^
 |digi-naxtor.net^
-|digi.vinut.com.vn^
 |digiaquascr.com^
 |digicertwc.rubiconproject.com.edgekey.net^
 |digilabx.com^
@@ -15345,7 +15352,6 @@ z4a.net
 |dn.adflex.vn^
 |dn.adzerver.com^
 |dnacdn.net^
-|dnafect.com^
 |dni.agcdn.com^
 |dnps.com^
 |dns-info.dyndns.pro^
@@ -15395,7 +15401,6 @@ z4a.net
 |doktorpsikolog.net^
 |dokument-pl-wheat.vercel.app^
 |doladowanie50pln.ujm.pl^
-|dollarrentcar.com^
 |dollishreborndolls.com^
 |dolrax-varo.com^
 |domainfwd.com^
@@ -15439,7 +15444,6 @@ z4a.net
 |dopperfolgprosolution.com^
 |dorahexum-app.pro^
 |dorahexumapp-app.com^
-|doralenthrise.cfd^
 |dorato-vaultaris.com^
 |doratovaultaris-system.com^
 |doratovaultaris.net^
@@ -15450,10 +15454,7 @@ z4a.net
 |dorianbaroque.org^
 |doribax-vision.com^
 |doribaxvision.net^
-|dorinquelavralor.sbs^
-|dorinthavesta.cfd^
 |dorisue.org^
-|dormavestira.cfd^
 |dornatrixel-app.com^
 |dornatrixelapp.com^
 |dorothye.com^
@@ -15553,7 +15554,6 @@ z4a.net
 |dpdmgw.com^
 |dpiprodesntls.112.2o7.net^
 |dpknlxygfr.wiki^
-|dplb.el7hoi.icu^
 |dplus-acc.com^
 |dplus-account.com^
 |dplus-recover.com^
@@ -15599,8 +15599,6 @@ z4a.net
 |dravaxils-app.com^
 |dravaxils-software.com^
 |dravaxils.net^
-|dravenquill.icu^
-|dravenquintis.sbs^
 |dravex-platform-app.com^
 |dravex-platform-app.net^
 |dravexisprime-8.com^
@@ -15681,7 +15679,6 @@ z4a.net
 |drodzy.com^
 |droidix.click^
 |droidtek.click^
-|dromethilaven.sbs^
 |droneadventures.info^
 |dropbox-download.com^
 |drovencast.wiki^
@@ -16028,7 +16025,6 @@ z4a.net
 |e7876.dscg.akamaiedge.net^
 |e7z9t4x6a0v5mk3zo1a0xj2z7c6g8sa6js5z7s2c3h9x0s5fh3a6sjwb8q7m.xyz^
 |e89.friendfinder.com^
-|e8n4rt.sbs^
 |eacdn.com^
 |ead-soft.popunder.ru^
 |eadexchange.com^
@@ -16447,7 +16443,6 @@ z4a.net
 |ejestate.com^
 |ejowho.live^
 |ejs.hitbox.com^
-|ejuiashsateam.info^
 |ek36tum.com^
 |ekay-kay.com^
 |ekgarantipolicem.com^
@@ -16515,7 +16510,6 @@ z4a.net
 |elevecoinetra-pro.com^
 |elevefinoble.com^
 |elgonexpedition.com^
-|eliarmakine.com^
 |eliartekstilotomasyon.com^
 |eligibility.wootric.com^
 |elink.nhanlucnganhluat.vn^
@@ -16551,7 +16545,6 @@ z4a.net
 |eltororico.net^
 |eltutudelavestruz.com^
 |elv3-tslogging.touchcommerce.com^
-|elvanderiosta.sbs^
 |elvex.ch^
 |elxont.com^
 |elxsi-ai-platform.com^
@@ -16627,7 +16620,6 @@ z4a.net
 |emobi-sys.com^
 |emodoinc.com^
 |emoily.com^
-|emonitorg.icu^
 |emonitoring.qpon^
 |emp-eu-online.shop^
 |employ22.112.2o7.net^
@@ -16658,7 +16650,6 @@ z4a.net
 |endeksetiket.com^
 |endgrecher.shop^
 |endorsementbolt.apptinken.com^
-|endrxorrome.sbs^
 |enemafan.com^
 |energeticladybug.com^
 |energeticmeerkat.com^
@@ -16935,7 +16926,6 @@ z4a.net
 |esentepegrup.com^
 |eset.122.2o7.net^
 |esg.hitbox.com^
-|esgcertturkey.com^
 |esgic.1.p2l.info^
 |eshiftc.sbs^
 |esi.amp.permutive.com^
@@ -17359,9 +17349,7 @@ z4a.net
 |evonartextech.com^
 |evoprimexsoftware.com^
 |evrasya.com^
-|evreccacoin.com^
 |evrenselakademi.com^
-|evrenselokulakademi.com^
 |evresco.com^
 |evri-package-gb.web.app^
 |evrixedge.com^
@@ -17432,7 +17420,6 @@ z4a.net
 |exferre-iq-app.com^
 |exferre-iqapp.com^
 |exhibenfrance.com^
-|exhibi79e5q.cyou^
 |exhibits4court.com^
 |exhibitsneeze.com^
 |exion-edge-ai.com^
@@ -17446,7 +17433,6 @@ z4a.net
 |exipure.net^
 |exit-ad.de^
 |exit.oxcash2.com^
-|exit.silvercash.com^
 |exit76.com^
 |exitexchange.com^
 |exitfuel.com^
@@ -17568,7 +17554,6 @@ z4a.net
 |f15.adventori.com^
 |f16.adventori.com^
 |f18.adventori.com^
-|f2.novanet.vn^
 |f24.adventori.com^
 |f25.adventori.com^
 |f2communitynews.112.2o7.net^
@@ -17577,14 +17562,12 @@ z4a.net
 |f2network.112.2o7.net^
 |f2nmycareer.112.2o7.net^
 |f2nsmh.112.2o7.net^
-|f2ntheage.112.2o7.net^
 |f4u.pl^
 |f5.pe8d.ru^
 |f5e.qo1s.ru^
 |f5networksdevcentralprod.122.2o7.net^
 |f5networksthreatstackprod.122.2o7.net^
 |f7q2.q7jt-0k.ru^
-|f9o7qs.sbs^
 |fabbricadelgusto.com^
 |fabbroyacht.com^
 |fabcooutdoor.com^
@@ -17598,7 +17581,6 @@ z4a.net
 |facebook-profile.5v.pl^
 |facebook-proxy.hi5.com^
 |facebook-repto1040s2.ahlamountada.com^
-|facebook-zamowienia.company.site^
 |facebook.5v.pl^
 |facebookcrawl.co.cc^
 |facebookid.younetmedia.com^
@@ -17626,7 +17608,6 @@ z4a.net
 |fairfax.demdex.net^
 |fairfaxau.d1.sc.omtrdc.net^
 |fairfaxau.demdex.net^
-|fairfeeling.com^
 |fairholt-cryptrix.net^
 |fairholt-flowdex.net^
 |fairholt-flowdexsoft.com^
@@ -17642,7 +17623,6 @@ z4a.net
 |fakedoc.shop^
 |fakehshear.shop^
 |fakers.co.jp^
-|fakoyapi.com^
 |faksowy.is-best.net^
 |faktoswe.is-best.net^
 |faktowace.is-best.net^
@@ -17681,10 +17661,8 @@ z4a.net
 |falcoware.com^
 |faldo.pl^
 |faldstoolos.info^
-|falendrixioraeli.cfd^
 |fallaciousfifth.com^
 |falonmanb.shop^
-|falquentilora.sbs^
 |faltren-5mexur.digital^
 |fam-8.net^
 |fam-ad.com^
@@ -17785,7 +17763,6 @@ z4a.net
 |fastmountainpath.info^
 |fastnclick.com^
 |fastspin77.online^
-|fasttrackmedia.icu^
 |fata.ero-advertising.com^
 |fatburnactive.pl^
 |fatcatrewards.com^
@@ -17817,7 +17794,6 @@ z4a.net
 |fbd.de^
 |fbet.com^
 |fbfredericksburgcom.112.2o7.net^
-|fbhrobud.pl^
 |fbkmnr.112.2o7.net^
 |fblinker.com^
 |fbpodgladacz.wordpress.com^
@@ -17870,7 +17846,6 @@ z4a.net
 |feed.minpos.com^
 |feed.mobeek.net^
 |feed.pushtimize.com^
-|feed.validclick.com^
 |feeda.info^
 |feedads.g.doubleclick.net^
 |feedback.adrecover.com^
@@ -17901,10 +17876,8 @@ z4a.net
 |felmolemric.shop^
 |felonixtrader59.ru^
 |felonixtrader59evo.ru^
-|felorinthesia.sbs^
 |felthoravendrix.cfd^
 |feltorixan-app.com^
-|felvariontesa.cfd^
 |fem-staffservice.ssl-lolipop.jp^
 |female-v.1.p2l.info^
 |femeedia.com^
@@ -18053,7 +18026,6 @@ z4a.net
 |file.edunet.ac^
 |file.gamefeat.net^
 |file.ipinyou.com.cn^
-|file.novanet.vn^
 |file.uhsea.com^
 |file.ziyu.net^
 |fileconvertpro.co^
@@ -18440,7 +18412,6 @@ z4a.net
 |fishingbakersfield.com^
 |fishingboat24.com^
 |fishingboats24.com^
-|fistiksarayi.com^
 |fitboxy.pl^
 |fitchciapara.com^
 |fitnesscampvdf.info^
@@ -18463,7 +18434,6 @@ z4a.net
 |fixxermorsel.za.com^
 |fiynance.net^
 |fizjoterapia.5v.pl^
-|fizzylabs.afftrack.com^
 |fjd.da6v.ru^
 |fjellvaltrix.com^
 |fjordbitrow.com^
@@ -18512,7 +18482,6 @@ z4a.net
 |flerturex.net^
 |flerturexapp.com^
 |flerturexsystem.com^
-|flerxoturix.net^
 |fleshlightcash.com^
 |fleshunder.pro^
 |flex.msn.com^
@@ -18597,7 +18566,6 @@ z4a.net
 |fluttermysdk.com^
 |flutterxzdk.com^
 |fluttrsql.com^
-|fluxarena.icu^
 |fluxdream-flow-ai.com^
 |fluxdreamflow-system.com^
 |fluxdreamflowapp.com^
@@ -18692,7 +18660,6 @@ z4a.net
 |fondurile-de-investitii.com^
 |fondzynartech.com^
 |fongbanquetes.com^
-|fonksiyoneltiphekimligi.com^
 |fonksiyoneltipzirvesi.com^
 |fontostudni.club^
 |foo.cosmocode.de^
@@ -18708,7 +18675,6 @@ z4a.net
 |fopenr.shop^
 |for-ward.jp^
 |foragingfun.info^
-|foranthimeva.cfd^
 |forantrixel-app.com^
 |forantrixel-app.net^
 |forantrixelsystem.com^
@@ -18933,10 +18899,8 @@ z4a.net
 |francele.com^
 |francoinproapp.com^
 |francuddu.org^
-|frandelovixa.cfd^
 |frankedoho.com^
 |fravellunax-app.com^
-|fravianthoselon.sbs^
 |freakads.com^
 |fred-frost.com^
 |free-counter.co.uk^
@@ -19020,7 +18984,6 @@ z4a.net
 |friendexpand.cyou^
 |friendlyduck.com^
 |friendshipmale.com^
-|friesbee.com^
 |fritewrite.com^
 |frizzslush.com^
 |frlorexiana-app.net^
@@ -19193,7 +19156,6 @@ z4a.net
 |funtoonez.com^
 |funwithvegas.com^
 |furilimads.com^
-|furkanoptik.com^
 |furniturecom.112.2o7.net^
 |furnlevitz.112.2o7.net^
 |furryfork.com^
@@ -19276,7 +19238,6 @@ z4a.net
 |fyxoltrix-tech.com^
 |fz.tiansys.cn^
 |fzip.thanhnien.vn^
-|fzyc2c.com^
 |g-pixel.invitemedia.com^
 |g-rg-rl.net^
 |g.3gl.net^
@@ -19290,12 +19251,10 @@ z4a.net
 |g.eclick.vn^
 |g.jwpsrv.com^
 |g.koowo.com^
-|g.s.360.cn^
 |g.thinktarget.com^
 |g.websponsors.com^
 |g.zedo.com^
 |g0l32.queensiteforapp.com^
-|g0p0pr.sbs^
 |g1-globosaude.com^
 |g1.doubleclick.net^
 |g1.idg.pl^
@@ -19486,7 +19445,6 @@ z4a.net
 |gardenphotobnv.info^
 |gardenrelaxcpn.info^
 |garlictbrain.my^
-|garniloventis.cfd^
 |garokalaycijewelry.com^
 |garss.tv^
 |garudaairlines.com^
@@ -19523,7 +19481,6 @@ z4a.net
 |gaspra.iad-03.braze.com^
 |gasprofitapp.net^
 |gasprofitsoftware.com^
-|gastokim.icu^
 |gastrointestinal.1.p2l.info^
 |gasurvey.gemius.com^
 |gasylix-system.com^
@@ -19750,7 +19707,6 @@ z4a.net
 |geniusonline.online^
 |geniuswaveapp.com^
 |genmonet.com^
-|gentaf.icu^
 |genterieilac.com^
 |gentlecedars.com^
 |gentorioz-app-platform.com^
@@ -19934,7 +19890,6 @@ z4a.net
 |ghanacapital-solution.com^
 |ghanacapital.net^
 |ghb.adtelligent.com^
-|ghb1.adtelligent.com^
 |ghb2.adtelligent.com^
 |ghent-gce-sc.bidswitch.net^
 |ghint.divsce.com^
@@ -19997,7 +19952,6 @@ z4a.net
 |gixdera-soft.com^
 |gixdera.net^
 |giyhub.com^
-|giyshop.com^
 |gizmomoto.com^
 |gj.applog.uc.cn^
 |gj.gds.mmstat.com^
@@ -20017,7 +19971,6 @@ z4a.net
 |gklfs-ktn14.ads.tremorhub.com^
 |gklfs-x8k98.ads.tremorhub.com^
 |gko.distinctrobin.com^
-|gkoptimize.com^
 |gl-nutrition.online^
 |gl.genmonet.com^
 |glacierbitwise.com^
@@ -20131,11 +20084,9 @@ z4a.net
 |gmo-searchteria.jp^
 |gmointernet.112.2o7.net^
 |gmossp-sp.jp^
-|gmrkolektif.com^
 |gmtdmp.mookie1.com^
 |gn6q33gvk9.us-east-1.awsapprunner.com^
 |gngvalf.com^
-|gngvalve.net^
 |gnoseisinvexioum.ru^
 |gnosticweb.com^
 |gntbcstglobal.112.2o7.net^
@@ -20346,7 +20297,6 @@ z4a.net
 |goto-target-com.customtraffic.impactradius.com^
 |goto.trafficmultiplier.com^
 |gotowka-doreki.eu^
-|gotowkatutaj.pl^
 |gotowkowe-pozyczki.pl^
 |gotoyahoo.com^
 |gotu.tpbid.com^
@@ -20367,7 +20317,6 @@ z4a.net
 |gp.dejanews.com^
 |gpaper104.112.2o7.net^
 |gpaper105.112.2o7.net^
-|gpaper107.112.2o7.net^
 |gpaper108.112.2o7.net^
 |gpaper109.112.2o7.net^
 |gpaper110.112.2o7.net^
@@ -20401,7 +20350,6 @@ z4a.net
 |gpaper144.112.2o7.net^
 |gpaper145.112.2o7.net^
 |gpaper147.112.2o7.net^
-|gpaper149.112.2o7.net^
 |gpaper151.112.2o7.net^
 |gpaper154.112.2o7.net^
 |gpaper156.112.2o7.net^
@@ -20437,7 +20385,6 @@ z4a.net
 |gpaper214.112.2o7.net^
 |gpaper219.112.2o7.net^
 |gpaper223.112.2o7.net^
-|gpapercareer.112.2o7.net^
 |gpapermom104.112.2o7.net^
 |gparted.fr^
 |gplayer.kmpmedia.net^
@@ -20809,7 +20756,6 @@ z4a.net
 |growitxprosoft.com^
 |growlineapp.ru^
 |growlr.adsbynimbus.com^
-|growmax.cyou^
 |growstepcodesystem.com^
 |growth-thrivepeak-engine.com^
 |growthmind-nl.com^
@@ -21030,7 +20976,6 @@ z4a.net
 |halten-sync.com^
 |halten-syncapp.com^
 |haltingbadge.com^
-|halventrisola.sbs^
 |halvixen-app.com^
 |halvixen-system.com^
 |halvixen.net^
@@ -21121,7 +21066,6 @@ z4a.net
 |havasedge.com^
 |hawaiihell.com^
 |hawk-trade-ai.com^
-|hayampostl.sbs^
 |hayjan.com^
 |haymarketbusinesspublications.122.2o7.net^
 |hazel-projektowanie.com.pl^
@@ -21167,7 +21111,6 @@ z4a.net
 |headjordan.com^
 |headregi.shop^
 |healcheck.adpia.vn^
-|healsist.com^
 |health-line.me^
 |health-partner.net^
 |healthandeco.info^
@@ -21244,7 +21187,6 @@ z4a.net
 |helmetnetw.sbs^
 |help.adtech.fr^
 |help.adtech.us^
-|help.businesspagesupportcontact.cfd^
 |help.mysearch.com^
 |helpcollar.com^
 |helper-stats.wondershare.com^
@@ -21255,7 +21197,6 @@ z4a.net
 |helpngu.odspecs.com^
 |helpqwc.odspecs.com^
 |helsroom.com^
-|helvandrositando.sbs^
 |hematemizlik.com^
 |hemel-finvex.net^
 |hemel-fundexis.net^
@@ -21295,7 +21236,6 @@ z4a.net
 |hersanpazarlama.com^
 |herseklagunu.net^
 |hertz.122.2o7.net^
-|hervaliontra.cfd^
 |het-ex.com^
 |hettis.info^
 |hettlobat.shop^
@@ -21670,7 +21610,6 @@ z4a.net
 |howler.shareaholic.com^
 |howtoaudios.com^
 |howtobooklets.com^
-|howtobuildsoftware.com^
 |howtofishingtips.com^
 |howuzijopi.net^
 |hp.gcafe.vn^
@@ -22162,7 +22101,6 @@ z4a.net
 |iirrrr788ytty.weebly.com^
 |ijoloqos.digital^
 |ijufizesy.life^
-|ikegetvltyjc.icu^
 |iki.daleriki.com^
 |ikincielgarantisi.com^
 |ikjjes04.com^
@@ -22546,7 +22484,6 @@ z4a.net
 |immediate-bitcoin.net^
 |immediate-bitnex.com^
 |immediate-bitwave-app.net^
-|immediate-bitwave.app^
 |immediate-bitwave.com^
 |immediate-bitwave.net^
 |immediate-bitwave.org^
@@ -23390,7 +23327,6 @@ z4a.net
 |immediatei800dayprosoft.com^
 |immediateiceletsystem.com^
 |immediateifexapp.com^
-|immediateimovax.app^
 |immediateimovax.co^
 |immediateimovax.com^
 |immediateimovax.net^
@@ -23495,7 +23431,6 @@ z4a.net
 |immediatemultiplex.com^
 |immediateneon.pro^
 |immediateneon.ru^
-|immediateneonapp.com^
 |immediateneupro.co^
 |immediateneupro.com^
 |immediateneupro.org^
@@ -23570,7 +23505,6 @@ z4a.net
 |immediateproliaplatform.net^
 |immediatepropel.net^
 |immediateproprolia-ai.com^
-|immediateproprolia-app.com^
 |immediateproprolia.com^
 |immediatepulse.ru^
 |immediatepump-app.com^
@@ -24133,7 +24067,6 @@ z4a.net
 |inkcomix.com^
 |inkheroic.com^
 |inklineglobal.com^
-|inkolas.icu^
 |inkoleasing.ru^
 |inkrevenue.gotrackier.com^
 |inksama.com^
@@ -24990,7 +24923,6 @@ z4a.net
 |isponsorki.pl^
 |ispot.tv^
 |isppofficial.com^
-|isralink.net^
 |istanbulikincielesyaalanlar.net^
 |istanbulpadel.com^
 |istartsurf.com^
@@ -25084,7 +25016,6 @@ z4a.net
 |j.zucks.net.zimg.jp^
 |j0e.n6ri.ru^
 |j2waycm.netmng.com^
-|j3fj9cpldw.cfd^
 |j3lbpcd9.r.us-east-1.awstrack.me^
 |j5sf.com^
 |j68.ve1p.ru^
@@ -25115,13 +25046,11 @@ z4a.net
 |jakestrack.com^
 |jakfluxrow.com^
 |jakotako.is-best.net^
-|jakoturkiye.com^
 |jakpodrywacnatinderze.pl^
 |jakub-irena.com^
 |jakubirena.com^
 |jalm-umowa-engine.com^
 |jalm-umowa.com^
-|jaltherionestnave.cfd^
 |jalvo-02mexint.biz^
 |jalvon-95tenuxo.click^
 |jalzirex.shop^
@@ -25130,7 +25059,6 @@ z4a.net
 |jambocast.com^
 |jameepouse.com^
 |jampp.com^
-|jandrilomesta.sbs^
 |janeaustenjoy.com^
 |janebergere.com^
 |janezk.50webs.co^
@@ -25237,7 +25165,6 @@ z4a.net
 |jgen18.cjt1.net^
 |jgen19.cjt1.net^
 |jgen2.cjt1.net^
-|jgen20.cjt1.net^
 |jgen22.cjt1.net^
 |jgen23.cjt1.net^
 |jgen25.cjt1.net^
@@ -25365,7 +25292,6 @@ z4a.net
 |jordanbuty.pl^
 |jordankerr.com^
 |jordanshenk.com^
-|jorvanthesium.sbs^
 |joseandreslopez.com^
 |joshcoe.com^
 |josip-stadler.org^
@@ -25375,7 +25301,6 @@ z4a.net
 |journalismadviser.com^
 |journalregistercompany.122.2o7.net^
 |journeyhex.shop^
-|jovarnilestix.cfd^
 |jovedelembuilder.com^
 |jovedelempaynex.com^
 |jovenesyjusticia.org^
@@ -25411,7 +25336,6 @@ z4a.net
 |jr.stg.ads.zalo.me^
 |jrcdelcotimescom.122.2o7.net^
 |jrcom.112.2o7.net^
-|jrevaldi.icu^
 |jrjoeyhome.com^
 |jrpfekf.angelfire.com^
 |jrsa.net^
@@ -25623,7 +25547,6 @@ z4a.net
 |k2w0.tgmop.ru^
 |k3.f42u6.ru^
 |k3vzn.flx10.com^
-|k4t8ln.sbs^
 |k5ads.osdn.com^
 |k5zoom.com^
 |k7v1.6x-3z.ru^
@@ -25634,7 +25557,6 @@ z4a.net
 |kaartenhuis.nl.site-id.nl^
 |kaboose.112.2o7.net^
 |kachingmail.com^
-|kadindogumhekimi.com^
 |kadriyamac.com^
 |kaffnet.com^
 |kagehyi4.com^
@@ -25654,7 +25576,6 @@ z4a.net
 |kalantzis.net^
 |kalashennikefu.com^
 |kalekilisesi.com^
-|kalesuitesbungalov.com^
 |kalisopa.dkonto.pl^
 |kalm-fundrelix.net^
 |kalmfundrelix.com^
@@ -25681,7 +25602,6 @@ z4a.net
 |kapfexpro-platform.com^
 |kapfexpro.ru^
 |kapfexproplatform.com^
-|kapidukkani.com^
 |kapindayiz.com^
 |kapirontraxapp.com^
 |kapirontraxapp.net^
@@ -25732,7 +25652,6 @@ z4a.net
 |kaspersky.122.2o7.net^
 |kasperthreatpostprod.112.2o7.net^
 |kasumikarate.hanagasumi.net^
-|kasvatekstil.com^
 |kasvu-bitrow.net^
 |kasvubitrow.com^
 |kasyno-online-vulkan.pl^
@@ -25926,7 +25845,6 @@ z4a.net
 |kittytoast.com^
 |kiwiksad.shop^
 |kixer.com^
-|kiziltopraksporkulubu.com^
 |kj65rdasz.appspot.com^
 |kj6787rsd.appspot.com^
 |kjbbc.net^
@@ -25958,7 +25876,6 @@ z4a.net
 |klasykavod.pl^
 |klclick.com^
 |klclick1.com^
-|kleban.icu^
 |klenti.pl^
 |klick.vn^
 |klid-portaris.net^
@@ -25969,7 +25886,6 @@ z4a.net
 |kliksaya.com^
 |klinikaideal.com^
 |klipmart.forbes.com^
-|klivaremin.icu^
 |klkstrm.kargo.com^
 |kllenci-indywidualne-santandr-polska-bonus.eremons.com^
 |klocinski.com^
@@ -26151,7 +26067,6 @@ z4a.net
 |kronvarixin-tech.com^
 |kronverixalena.com^
 |kronverixan-tech.com^
-|kroomm.icu^
 |kropka.onet.pl^
 |krosyphora.shop^
 |krovanelia-app.com^
@@ -26205,7 +26120,6 @@ z4a.net
 |kultapaycore-app.com^
 |kultapaycore.com^
 |kumarbus.com^
-|kungfuyasamtarzi.com^
 |kupmoda.com^
 |kupuj-tv.pl^
 |kupujemycopolskie.pl^
@@ -26407,7 +26321,6 @@ z4a.net
 |laringtexapp.com^
 |larissalinhares.com.br^
 |larivieracasino.com^
-|larnovesthira.sbs^
 |larusse.fr^
 |lasiocampa.info^
 |lasopabowl158.weebly.com^
@@ -26531,10 +26444,8 @@ z4a.net
 |lead.network^
 |lead.program3.com^
 |lead.soperson.com^
-|lead02.com^
 |lead5.pl^
 |leadboltapps.net^
-|leadcascade.icu^
 |leadclick.com^
 |leader.linkexchange.com^
 |leadesoul.my^
@@ -26610,7 +26521,6 @@ z4a.net
 |leger-finvio.com^
 |legerfinvio-app.com^
 |legerfinvioapp.com^
-|legextensionsurgery.com^
 |legitonlinecasinos.com^
 |legjava.pro^
 |legobowties.com^
@@ -26619,10 +26529,8 @@ z4a.net
 |leipsig.online^
 |leket.fr^
 |lekibezrecepty.org^
-|leklanto.icu^
 |leklicht.net^
 |lektor-cda.pl^
-|lekw71jq.cfd^
 |lelatrixio-ai-pro.com^
 |lelatrixioai.net^
 |lemiabicocukkulubu.com^
@@ -26630,7 +26538,6 @@ z4a.net
 |lemmatechnologies.com^
 |lemnisk.co^
 |lemnode.fr^
-|lemonadihnmeag-fadr.cfd^
 |lemondde.fr^
 |lemonparty.org^
 |lemovnde.fr^
@@ -26712,7 +26619,6 @@ z4a.net
 |lewontex-appsoft.com^
 |lewontexapp-app.com^
 |lewplnews.yolasite.com^
-|lexandorquess.sbs^
 |lexapro.1.p2l.info^
 |lexapro.3.p2l.info^
 |lexapro.4.p2l.info^
@@ -26898,7 +26804,6 @@ z4a.net
 |linkjumps.com^
 |linkkoin.com^
 |linknohu.org^
-|linkobav.icu^
 |linkprice.com^
 |linkrain.com^
 |linkreferral.com^
@@ -27063,7 +26968,6 @@ z4a.net
 |lmolrbfl.tigarshark.com^
 |lmqyz.com^
 |lmyd3iz3qn.kameleoon.eu^
-|ln7ost.el7hoi.icu^
 |lnads.osdn.com^
 |lniany.com^
 |lnks.gd^
@@ -27492,7 +27396,6 @@ z4a.net
 |lortab.hut1.ru^
 |lortopulix-platform.com^
 |lortopulixapp.com^
-|lorvanethrixa.cfd^
 |lorvim-33nexaro.digital^
 |lostartofbeingadame.com^
 |losu.112.2o7.net^
@@ -27530,10 +27433,8 @@ z4a.net
 |low-hacker.popunder.ru^
 |lowervalues.com^
 |lowes.tt.omtrdc.net^
-|lowest-price.eu^
 |lowisko-podolsze.pl^
 |lp-wip.pl^
-|lp.bringtheallow.com^
 |lp.cleanmymac.online^
 |lp.empire.goodgamestudios.com^
 |lp.growthtools.com^
@@ -27658,7 +27559,6 @@ z4a.net
 |lumeportdex-system.com^
 |lumeportdex.com^
 |lumeracointra.ru^
-|lumeranthovis2.sbs^
 |lumerantix.shop^
 |lumestro-crate.com^
 |lumetrix-ai-app.com^
@@ -27761,7 +27661,6 @@ z4a.net
 |lunovextrader41titan.net^
 |lunoxyrem-engine.com^
 |lunoxyrem.com^
-|luntravegon.icu^
 |luntrixora-software.com^
 |luntvox.ru^
 |lunveritas.wiki^
@@ -28773,12 +28672,10 @@ z4a.net
 |meritluxis-app.com^
 |meritluxis-solution.com^
 |meritluxis.org^
-|merlabutik.com^
 |merlyatelier.com^
 |merrymilkfoods.com^
 |mersinbuyuksehiras.com^
 |mertarman.com^
-|mertkocakaya.com^
 |message-hub-svc.usw2.cordial.com^
 |messaging.influencemobile.com^
 |messaging.insurads.com^
@@ -29388,7 +29285,6 @@ z4a.net
 |mobile.logs.roku.com^
 |mobile.measurelib.com^
 |mobile.mng-ads.com^
-|mobile.novanet.vn^
 |mobile.pipe.aria.microsoft.com^
 |mobile.smartadserver.com^
 |mobile.yandexadexchange.net^
@@ -29652,7 +29548,6 @@ z4a.net
 |movieartgqt.info^
 |moviecpot.com^
 |moviegate1.net^
-|movies-box.net^
 |moviesae.cc^
 |moviesearchcenter.com^
 |moviestarplanethacks.pl^
@@ -29840,7 +29735,6 @@ z4a.net
 |musicfitnessjwd.info^
 |musika.pl^
 |musikzoo.com^
-|mustafaalkus.com^
 |mustarderfd.info^
 |muteknife.com^
 |mutlukadinlarakademisi.com^
@@ -29851,7 +29745,6 @@ z4a.net
 |mv.treehousei.com^
 |mvas.cityads.com^
 |mvconf.cloud.360safe.com^
-|mvconf.f.360.cn^
 |mvconf.lato.cloud.360safe.com^
 |mvconf.uk.cloud.360safe.com^
 |mvideo.facilitategovernor.com^
@@ -29871,7 +29764,6 @@ z4a.net
 |mxptint.net^
 |mxs01.cityads.com^
 |mxs02.cityads.com^
-|mxtovhzvfl.icu^
 |mxu.livejasmin.com^
 |mxvp-ad-config-prod-1.zenmxapps.com^
 |mxvp-feature-toggle-prod-1.zenmxapps.com^
@@ -30051,7 +29943,6 @@ z4a.net
 |nakanohito.jp^
 |nakedeurasia.com^
 |nakladatelstvi-brazda.wz.cz^
-|naknona.icu^
 |nalamop.online^
 |nalominko.shop^
 |nameguess.com^
@@ -30233,121 +30124,6 @@ z4a.net
 |nebulasynoxapp.com^
 |nebulawealth-ai-software.com^
 |nebulawealthai.com^
-||00xvppy.cn^
-||027dir.com^
-||0551huayanbdf.com^
-||087tqb.cn^
-||0941.org^
-||0m483y7.cn^
-||1-bmo-client-login.com^
-||1.11130.com.cn^
-||1.5000yan.com^
-||1.66law.cn^
-||1.95ye.com^
-||1.feihua.com^
-||1.glook.cn^
-||1.jushtong.com^
-||1.shopit.cn^
-||1.sj33.net^
-||1.tecbbs.com^
-||1.weiheshidai.com^
-||1.xilu.com^
-||1.zhev.com.cn^
-||1.zuowenjun.com^
-||100.pncdn.cn^
-||10000xing.cn^
-||12.cookcai.com^
-||123.ywxww.net^
-||123cha.com^
-||12551-1311572332.cos.ap-shanghai.myqcloud.com^
-||1500020991.vodplayer.wxamedia.com^
-||1500022744.vodplayer.wxamedia.com^
-||1500026601.vodplayer.wxamedia.com^
-||1640831964042.se-life.cn^
-||165tchuang.com^
-||168.it168.com^
-||17.huanqiu.com^
-||1717.1000uc.com^
-||17173.com^
-||192168.luyouwang.com^
-||1buo.icu^
-||1gtp.icu^
-||1jok.icu^
-||1kanz.cn^
-||1l1.cc^
-||1qingdao.com^
-||1rtb.com^
-||1sapp.com^
-||1uo9djbnsr.com^
-||1wkg.cn^
-||20091222.com^
-||2021.dxsbb.com^
-||2025.ip138.com^
-||20wx.com^
-||21.fh21static.com^
-||2144.cn^
-||222aa333bb.com^
-||2345.cn^
-||2481e.com^
-||24klm.cn^
-||25662zubo23739.com^
-||2607.cn^
-||28kc.cn^
-||2g312kn32qfy-1323053341.cos.ap-bangkok.myqcloud.com^
-||2girls1finger.org^
-||2mdn-cn.net^
-||2pogg4c.cn^
-||2qpqwkx.cn^
-||2tr1kkz.cn^
-||2vqgtxw.cn^
-||3.cjcp.cn^
-||301848.com^
-||30edu.com.cn^
-||31up.icu^
-||32.huanqiu.com^
-||360ads.com^
-||360in.com^
-||360kuai.com^
-||360os.com^
-||360shuke.com^
-||362728tdg.com^
-||365dmp.com^
-||366488839e.cn^
-||370jj.icu^
-||37wan.com^
-||39jz.com^
-||3i2i.com^
-||3p8801.co^
-||3q3l.cn^
-||3sas.icu^
-||42gixk.98kk89.com^
-||4399stat.5054399.com^
-||4cx5.icu^
-||4d0m.cn^
-||4t6u.icu^
-||5.gzfenda.com^
-||50bang.org^
-||50m.gkcyc.com^
-||51.la^
-||511a.cn^
-||51240.com^
-||5166.info^
-||519332da.rtc.youme.im^
-||51taifu.com^
-||51yes.com^
-||52aoteman.com^
-||52kuwang.cn^
-||52z.com^
-||53kf.com^
-||54hm.cn^
-||54kefu.net^
-||55.la^
-||55726zubo56686.com^
-||55zzz.cn^
-||573569djd.com^
-||588589.com^
-||595image.com^
-||59gt.cn^
 ||5mgrgsc.cn^
 ||5mm.zxfw5.cn^
 ||5pub.com^
@@ -30392,7 +30168,6 @@ z4a.net
 ||88lmfff666.com^
 ||8961.jianbihua.com^
 ||8ail6.icu^
-||8ff0.cn^
 ||8le8le.com^
 ||8ox.cn^
 ||8y3j.cn^

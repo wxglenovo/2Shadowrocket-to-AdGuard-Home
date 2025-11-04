@@ -24,7 +24,7 @@ SKIP_FILE = os.path.join(DIST_DIR, "skip_tracker.json")  # 跳过验证计数文
 NOT_WRITTEN_FILE = os.path.join(DIST_DIR, "not_written_counter.json")  # 连续未写入计数
 DELETE_THRESHOLD = 4  # 连续失败多少次后删除
 SKIP_VALIDATE_THRESHOLD = 7  # 超过多少次失败跳过 DNS 验证（删除计数 >= 7）
-SKIP_ROUNDS = 20  # 跳过验证的最大轮次，超过后恢复验证
+SKIP_ROUNDS = 10  # 跳过验证的最大轮次，超过后恢复验证
 DNS_BATCH_SIZE = 500  # 每批验证条数
 
 os.makedirs(TMP_DIR, exist_ok=True)
@@ -85,7 +85,7 @@ def download_all_sources():
     return True
 
 # ===============================
-# 高性能统一剔除跳过验证模块（核心）
+# ✅ 高效统一剔除跳过验证模块（核心）
 # ===============================
 def unified_skip_remove_fast(all_rules_list):
     """
@@ -114,6 +114,7 @@ def unified_skip_remove_fast(all_rules_list):
     recovered_rules = []
     logs = []  # 日志缓冲，最后批量打印或写入
     log_count = {}  # 用于限制日志输出数量
+    restore_list = []  # 需要恢复验证的规则列表
 
     # 遍历候选而不是全部规则
     for r in candidate_keys:
@@ -144,15 +145,14 @@ def unified_skip_remove_fast(all_rules_list):
 
         # 如果达到恢复阈值
         if cur_skip >= SKIP_ROUNDS:
+            restore_list.append(r)
             logs.append(f"🔁 跳过次数达到 {SKIP_ROUNDS} 次 → 恢复验证：{r}（重置连续失败次数=6）")
             # 清除 skip 计数
             skip_tracker.pop(r, None)
             # set delete_counter to 6
             delete_counter[r] = 6
-            recovered_rules.append(r)
 
     # 批量打印日志（一次性写入控制台，减少 IO 阻塞）
-    # 如果日志行数非常多，你也可以改为写入文件：with open('dist/skip_log.txt','a') as lf: lf.write("\n".join(logs)+"\n")
     print("\n".join(logs))
 
     # 批量写回 JSON（只写一次）
@@ -160,7 +160,7 @@ def unified_skip_remove_fast(all_rules_list):
     save_json(DELETE_COUNTER_FILE, delete_counter)
     save_json(NOT_WRITTEN_FILE, not_written)
 
-    return recovered_rules
+    return restore_list
 
 # ===============================
 # 分片
@@ -173,7 +173,7 @@ def split_parts(recovered_rules=None):
     with open(MASTER_RULE, "r", encoding="utf-8") as f:
         rules = [l.strip() for l in f if l.strip()]
 
-    # 恢复验证的规则放在最后一个分片
+    # ✅ 恢复验证的规则放在最后一个分片
     if recovered_rules:
         for r in recovered_rules:
             if r in rules:
@@ -229,7 +229,7 @@ def dns_validate(lines):
                 if result:
                     valid.append(result)
 
-                # 每 500 条打印一次
+                # ✅ 每 500 条打印一次
                 if completed % 500 == 0 or completed == len(batch):
                     elapsed = time.time() - start_time
                     speed = (i + completed) / elapsed
@@ -240,7 +240,7 @@ def dns_validate(lines):
     return valid
 
 # ===============================
-# 核心：处理分片 & 跳过验证逻辑
+# ✅ 核心：处理分片 & 跳过验证逻辑
 # ===============================
 def process_part(part):
     part_file = os.path.join(TMP_DIR, f"part_{int(part):02d}.txt")
@@ -269,11 +269,11 @@ def process_part(part):
     added_count = 0
     removed_count = 0
 
-    # 遍历当前分片规则
+    # ✅ 遍历当前分片规则
     for r in lines:
         del_cnt = delete_counter.get(r, 0)
 
-        # delete_counter >= 7 → 跳过验证、直接剔除、不进入分片
+        # ✅ delete_counter >= 7 → 跳过验证、直接剔除、不进入分片
         if del_cnt >= SKIP_VALIDATE_THRESHOLD:
             skip_cnt = skip_tracker.get(r, 0) + 1
             skip_tracker[r] = skip_cnt
@@ -281,21 +281,21 @@ def process_part(part):
 
             print(f"⚠ 统一剔除（跳过验证）：{r} | 跳过次数={skip_cnt} | 删除计数={delete_counter[r]}")
 
-            # 跳过累计 ≥10 → 恢复验证
+            # ✅ 跳过累计 ≥10 → 恢复验证
             if skip_cnt >= SKIP_ROUNDS:
                 print(f"🔁 跳过次数达到 {SKIP_ROUNDS} 次 → 恢复验证：{r}（重置连续失败次数=6）")
                 skip_tracker.pop(r)
                 delete_counter[r] = 6
                 rules_to_validate.append(r)
-            continue  # 不写入分片
+            continue  # ✅ 不写入分片
 
-        # 未达到跳过阈值 → 正常进入 DNS 验证队列
+        # ✅ 未达到跳过阈值 → 正常进入 DNS 验证队列
         rules_to_validate.append(r)
 
-    # 开始 DNS 验证
+    # ✅ 开始 DNS 验证
     valid = set(dns_validate(rules_to_validate))
 
-    # 已验证的规则写入
+    # ✅ 已验证的规则写入
     for rule in rules_to_validate:
         if rule in valid:
             final_rules.add(rule)
@@ -305,13 +305,13 @@ def process_part(part):
             if rule not in old_rules:
                 added_count += 1
         else:
-            # 未通过验证 → 连续失败计数 +1
+            # ✅ 未通过验证 → 连续失败计数 +1
             old = delete_counter.get(rule, 0)
             new = old + 1
             delete_counter[rule] = new
             print(f"⚠ 连续失败 +1 → {new}/{DELETE_THRESHOLD} ：{rule}")
 
-            # 达到删除阈值 → 删除
+            # ✅ 达到删除阈值 → 删除
             if new >= DELETE_THRESHOLD:
                 removed_count += 1
                 print(f"🔥 连续失败达到阈值 → 删除规则：{rule}")
@@ -320,7 +320,7 @@ def process_part(part):
                 continue
             final_rules.add(rule)
 
-    # 没写入 validated_part 的规则 → 记失败轮次
+    # ✅ 没写入 validated_part 的规则 → 记失败轮次
     for rule in list(final_rules):
         if rule not in valid and rule not in old_rules:
             cnt = not_written.get(rule, 0) + 1

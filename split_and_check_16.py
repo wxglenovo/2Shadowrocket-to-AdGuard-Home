@@ -113,14 +113,18 @@ def filter_and_update_high_delete_count_rules(all_rules_set):
 # ===============================
 def split_parts(merged_rules):
     total = len(merged_rules)
-    per_part = (total + PARTS - 1) // PARTS
-    print(f"🪓 分片 {total} 条，每片约 {per_part}")
+    per_part = (total + PARTS - 1) // PARTS  # 计算每片的规则数
+    print(f"🪓 分片 {total} 条，每片约 {per_part}")  # 打印总规则数与每片规则数
 
     for i in range(PARTS):
         part_rules = list(merged_rules)[i * per_part:(i + 1) * per_part]
         filename = os.path.join(TMP_DIR, f"part_{i+1:02d}.txt")
+        
+        # 写入分片文件
         with open(filename, "w", encoding="utf-8") as f:
             f.write("\n".join(part_rules))
+        
+        # 打印每个分片的规则数和文件路径
         print(f"📄 分片 {i+1}: {len(part_rules)} 条 → {filename}")
 
 # ===============================

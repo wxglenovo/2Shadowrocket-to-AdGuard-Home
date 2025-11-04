@@ -166,20 +166,24 @@ def split_parts(recovered_rules=None):
 # 通过并行化提升恢复验证效率
 # ===============================
 def recover_validation(rules_to_recover):
+    # 把恢复验证规则均匀分配到 16 个分片中
+    split_size = len(rules_to_recover) // PARTS
+    divided_rules = [rules_to_recover[i:i + split_size] for i in range(0, len(rules_to_recover), split_size)]
+
     with ThreadPoolExecutor(max_workers=DNS_WORKERS) as executor:
-        futures = [executor.submit(process_recovery, r) for r in rules_to_recover]
+        futures = [executor.submit(process_recovery, batch) for batch in divided_rules]
         for future in as_completed(futures):
             future.result()  # 等待所有恢复任务完成
 
-def process_recovery(rule):
+def process_recovery(rules_batch):
     # 恢复验证的具体操作
     skip_tracker = load_json(SKIP_FILE)
     delete_counter = load_json(DELETE_COUNTER_FILE)
-    skip_tracker.pop(rule, None)
-    delete_counter[rule] = 6  # 重置失败次数
-    print(f"🔁 恢复验证：{rule}（重置连续失败次数=6）")
-
-    # 这里可以增加其他恢复操作
+    
+    for rule in rules_batch:
+        skip_tracker.pop(rule, None)
+        delete_counter[rule] = 6  # 重置失败次数
+        print(f"🔁 恢复验证：{rule}（重置连续失败次数=6）")
 
     save_json(SKIP_FILE, skip_tracker)
     save_json(DELETE_COUNTER_FILE, delete_counter)

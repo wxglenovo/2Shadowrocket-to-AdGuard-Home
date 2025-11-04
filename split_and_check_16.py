@@ -123,9 +123,10 @@ def unified_skip_remove(all_rules_set):
         # 当跳过 >= SKIP_ROUNDS 时，**删除该规则并重置失败次数为 6**
         if skip_cnt >= SKIP_ROUNDS:
             print(f"🔁 跳过次数达到 {SKIP_ROUNDS} 次 → 恢复验证：{r}（删除并重置连续失败次数=6）")
-            # 删除规则记录
-            skip_tracker.pop(r)
-            delete_counter[r] = 6  # 重置失败次数
+            # 从 skip_tracker 中删除规则记录
+            skip_tracker.pop(r, None)
+            # 重置连续失败次数为 6
+            delete_counter[r] = 6
             recovered_rules.append(r)
 
     save_json(SKIP_FILE, skip_tracker)
@@ -254,9 +255,9 @@ def process_part(part):
 
             # 跳过累计 ≥10 → 恢复验证
             if skip_cnt >= SKIP_ROUNDS:
-                print(f"🔁 跳过次数达到 {SKIP_ROUNDS} 次 → 恢复验证：{r}（重置连续失败次数=6）")
-                skip_tracker.pop(r)
-                delete_counter[r] = 6
+                print(f"🔁 跳过次数达到 {SKIP_ROUNDS} 次 → 恢复验证：{r}（删除并重置连续失败次数=6）")
+                skip_tracker.pop(r, None)  # 从 skip_tracker 中删除规则记录
+                delete_counter[r] = 6  # 重置连续失败次数为 6
                 rules_to_validate.append(r)
             continue  # 不写入分片
 

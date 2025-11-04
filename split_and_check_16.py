@@ -51,6 +51,41 @@ def save_json(path, data):
         json.dump(data, f, indent=2, ensure_ascii=False)
 
 # ===============================
+# 下载源并合并
+# ===============================
+def download_all_sources():
+    if not os.path.exists(URLS_TXT):
+        print("❌ urls.txt 不存在")
+        return False
+
+    print("📥 下载规则源...")
+    merged = set()
+
+    with open(URLS_TXT, "r", encoding="utf-8") as f:
+        urls = [u.strip() for u in f if u.strip()]
+
+    for url in urls:
+        print(f"🌐 获取 {url}")
+        try:
+            r = requests.get(url, timeout=20)
+            r.raise_for_status()
+            for line in r.text.splitlines():
+                line = line.strip()
+                if line:
+                    merged.add(line)
+        except Exception as e:
+            print(f"⚠ 下载失败 {url}: {e}")
+
+    print(f"✅ 合并 {len(merged)} 条规则")
+
+    with open(MASTER_RULE, "w", encoding="utf-8") as f:
+        f.write("\n".join(sorted(merged)))
+
+    recovered_rules = unified_skip_remove(merged)
+    split_parts(recovered_rules)
+    return True
+
+# ===============================
 # 统一剔除跳过验证模块（核心）
 # ===============================
 def unified_skip_remove(all_rules_set):

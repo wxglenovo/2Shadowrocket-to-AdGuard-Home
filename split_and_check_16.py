@@ -144,7 +144,7 @@ def split_parts(recovered_rules=None):
 
     total = len(rules)
     per_part = (total + PARTS - 1) // PARTS
-    print(f"🪓 分片 {total} 条，每片约 {per_part}")
+    print(f"🪓 分片 {total} 条，每片约 {per_part} 条")
 
     for i in range(PARTS):
         part_rules = rules[i * per_part:(i + 1) * per_part]

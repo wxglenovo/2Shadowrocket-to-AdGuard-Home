@@ -8,7 +8,6 @@ import argparse
 import dns.resolver
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import time
-from collections import defaultdict
 
 # ===============================
 # 配置区（Config）
@@ -86,52 +85,29 @@ def download_all_sources():
     return True
 
 # ===============================
-# ✅ 统一剔除跳过验证模块（核心）
+# 统一剔除删除计数 >= 7 的规则
 # ===============================
 def unified_skip_remove(all_rules_set):
-    skip_tracker = load_json(SKIP_FILE)
     delete_counter = load_json(DELETE_COUNTER_FILE)
-    not_written_counter = load_json(NOT_WRITTEN_FILE)
     recovered_rules = []
 
-    log_count = defaultdict(int)  # 记录每个日志出现次数
-
     for r in list(all_rules_set):
-        del_cnt = delete_counter.get(r, 0)
-        skip_cnt = skip_tracker.get(r, 0)
+        del_cnt = delete_counter.get(r, 4)  # 新规则的初始删除计数为 4
 
-        # 只有删除计数 >= SKIP_VALIDATE_THRESHOLD 才跳过验证
-        if del_cnt < SKIP_VALIDATE_THRESHOLD:
+        # ✅ 如果删除计数 >= 7，直接跳过该规则并不进入分片
+        if del_cnt >= 7:
+            print(f"⚠ 删除计数达到 7 或以上，跳过规则：{r} | 删除计数={del_cnt}")
+            delete_counter[r] = del_cnt + 1
             continue
 
-        # 累加跳过次数（从文件中读取后 +1）
-        skip_cnt += 1
-        skip_tracker[r] = skip_cnt
-
-        # 删除计数继续 +1（历史累加）
-        del_cnt += 1
-        delete_counter[r] = del_cnt
-
-        # 严格日志
-        log_msg = f"⚠ 统一剔除（跳过验证）：{r} | 跳过次数={skip_cnt} | 删除计数={del_cnt}"
-        if log_count[log_msg] < 20:  # 如果该日志没有超过20次，打印
-            print(log_msg)
-            log_count[log_msg] += 1
-        elif log_count[log_msg] == 20:  # 打印次数达到20次时，显示数量
-            print(f"⚠ 日志超出次数限制，显示数量：{log_msg}...")
-
-        # 当跳过 >= SKIP_ROUNDS 时，**删除该规则并重置失败次数为 6**
-        if skip_cnt >= SKIP_ROUNDS:
-            print(f"🔁 跳过次数达到 {SKIP_ROUNDS} 次 → 恢复验证：{r}（删除并重置连续失败次数=6）")
-            # 从 skip_tracker 中删除规则记录
-            skip_tracker.pop(r, None)
-            # 重置连续失败次数为 6
+        # ✅ 如果删除计数 >= 17，重置删除计数为 6
+        if del_cnt >= 17:
+            print(f"⚠ 删除计数达到 17，重置为 6：{r} | 删除计数={del_cnt}")
             delete_counter[r] = 6
-            recovered_rules.append(r)
 
-    save_json(SKIP_FILE, skip_tracker)
+        recovered_rules.append(r)
+
     save_json(DELETE_COUNTER_FILE, delete_counter)
-    save_json(NOT_WRITTEN_FILE, not_written_counter)
     return recovered_rules
 
 # ===============================
@@ -154,7 +130,7 @@ def split_parts(recovered_rules=None):
 
     total = len(rules)
     per_part = (total + PARTS - 1) // PARTS
-    print(f"🪓 分片 {total} 条，每片约 {per_part} 条规则")
+    print(f"🪓 分片 {total} 条，每片约 {per_part}")
 
     for i in range(PARTS):
         part_rules = rules[i * per_part:(i + 1) * per_part]
@@ -212,7 +188,7 @@ def dns_validate(lines):
     return valid
 
 # ===============================
-# ✅ 核心：处理分片 & 跳过验证逻辑
+# 核心：处理分片 & 跳过验证逻辑
 # ===============================
 def process_part(part):
     part_file = os.path.join(TMP_DIR, f"part_{int(part):02d}.txt")
@@ -233,7 +209,6 @@ def process_part(part):
             old_rules = set([l.strip() for l in f if l.strip()])
 
     delete_counter = load_json(DELETE_COUNTER_FILE)
-    skip_tracker = load_json(SKIP_FILE)
     not_written = load_json(NOT_WRITTEN_FILE)
 
     rules_to_validate = []
@@ -241,33 +216,22 @@ def process_part(part):
     added_count = 0
     removed_count = 0
 
-    # 遍历当前分片规则
+    # ✅ 遍历当前分片规则
     for r in lines:
-        del_cnt = delete_counter.get(r, 0)
+        del_cnt = delete_counter.get(r, 4)
 
-        # delete_counter >= 7 → 跳过验证、直接剔除、不进入分片
-        if del_cnt >= SKIP_VALIDATE_THRESHOLD:
-            skip_cnt = skip_tracker.get(r, 0) + 1
-            skip_tracker[r] = skip_cnt
+        # ✅ 删除计数 >= 7 → 跳过验证、直接剔除、不进入分片
+        if del_cnt >= 7:
             delete_counter[r] = del_cnt + 1
+            print(f"⚠ 删除计数达到 7 或以上，跳过规则：{r} | 删除计数={del_cnt}")
+            continue  # ✅ 不写入分片
 
-            print(f"⚠ 统一剔除（跳过验证）：{r} | 跳过次数={skip_cnt} | 删除计数={delete_counter[r]}")
-
-            # 跳过累计 ≥10 → 恢复验证
-            if skip_cnt >= SKIP_ROUNDS:
-                print(f"🔁 跳过次数达到 {SKIP_ROUNDS} 次 → 恢复验证：{r}（删除并重置连续失败次数=6）")
-                skip_tracker.pop(r, None)  # 从 skip_tracker 中删除规则记录
-                delete_counter[r] = 6  # 重置连续失败次数为 6
-                rules_to_validate.append(r)
-            continue  # 不写入分片
-
-        # 未达到跳过阈值 → 正常进入 DNS 验证队列
         rules_to_validate.append(r)
 
-    # 开始 DNS 验证
+    # ✅ 开始 DNS 验证
     valid = set(dns_validate(rules_to_validate))
 
-    # 已验证的规则写入
+    # ✅ 已验证的规则写入
     for rule in rules_to_validate:
         if rule in valid:
             final_rules.add(rule)
@@ -277,22 +241,20 @@ def process_part(part):
             if rule not in old_rules:
                 added_count += 1
         else:
-            # 未通过验证 → 连续失败计数 +1
+            # ✅ 未通过验证 → 连续失败计数 +1
             old = delete_counter.get(rule, 0)
             new = old + 1
             delete_counter[rule] = new
             print(f"⚠ 连续失败 +1 → {new}/{DELETE_THRESHOLD} ：{rule}")
 
-            # 达到删除阈值 → 删除
+            # ✅ 达到删除阈值 → 删除
             if new >= DELETE_THRESHOLD:
                 removed_count += 1
                 print(f"🔥 连续失败达到阈值 → 删除规则：{rule}")
-                if rule in not_written:
-                    not_written.pop(rule)
                 continue
             final_rules.add(rule)
 
-    # 没写入 validated_part 的规则 → 记失败轮次
+    # ✅ 没写入 validated_part 的规则 → 记失败轮次
     for rule in list(final_rules):
         if rule not in valid and rule not in old_rules:
             cnt = not_written.get(rule, 0) + 1
@@ -304,7 +266,7 @@ def process_part(part):
                 not_written.pop(rule)
 
     save_json(DELETE_COUNTER_FILE, delete_counter)
-    save_json(SKIP_FILE, skip_tracker)
+    save_json(SKIP_FILE, {})
     save_json(NOT_WRITTEN_FILE, not_written)
 
     with open(out_file, "w", encoding="utf-8") as f:

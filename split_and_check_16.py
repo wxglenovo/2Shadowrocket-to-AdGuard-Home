@@ -6,7 +6,6 @@ import json
 import requests
 import argparse
 import dns.resolver
-import asyncio
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import time
 
@@ -24,7 +23,6 @@ DELETE_COUNTER_FILE = os.path.join(DIST_DIR, "delete_counter.json")  # 连续失
 SKIP_FILE = os.path.join(DIST_DIR, "skip_tracker.json")  # 跳过验证计数文件路径
 NOT_WRITTEN_FILE = os.path.join(DIST_DIR, "not_written_counter.json")  # 连续未写入计数
 DELETE_THRESHOLD = 4  # 删除计数阈值
-SKIP_VALIDATE_THRESHOLD = 7  # 超过多少次失败跳过 DNS 验证（删除计数 >= 7）
 DNS_BATCH_SIZE = 500  # 每批验证条数
 
 os.makedirs(TMP_DIR, exist_ok=True)
@@ -80,8 +78,35 @@ def download_all_sources():
     with open(MASTER_RULE, "w", encoding="utf-8") as f:
         f.write("\n".join(sorted(merged)))
 
-    split_parts(merged)
+    # 提取删除计数 < 7 的规则并剔除，处理删除计数 >= 7 的规则
+    filtered_rules, updated_delete_counter = filter_and_update_high_delete_count_rules(merged)
+    split_parts(filtered_rules)
+    save_json(DELETE_COUNTER_FILE, updated_delete_counter)
     return True
+
+# ===============================
+# 提取删除计数 < 7 的规则并更新删除计数
+# ===============================
+def filter_and_update_high_delete_count_rules(all_rules_set):
+    delete_counter = load_json(DELETE_COUNTER_FILE)
+    low_delete_count_rules = set()
+    updated_delete_counter = delete_counter.copy()
+
+    for rule in all_rules_set:
+        del_cnt = delete_counter.get(rule, 4)
+        # 删除计数 >= 7 的规则不加入分片
+        if del_cnt < 7:
+            low_delete_count_rules.add(rule)
+        else:
+            print(f"⚠ 删除计数达到 7 或以上，跳过该规则：{rule} | 删除计数={del_cnt}")
+            # 删除计数 >= 7 时，增加删除计数
+            updated_delete_counter[rule] = del_cnt + 1
+            # 如果删除计数 >= 17，重置为 6
+            if updated_delete_counter[rule] >= 17:
+                updated_delete_counter[rule] = 6
+                print(f"🔁 删除计数达到 17，重置规则：{rule} 的删除计数为 6")
+    
+    return low_delete_count_rules, updated_delete_counter
 
 # ===============================
 # 分片
@@ -120,7 +145,7 @@ async def dns_validate_async(rules):
     return [rule for rule in valid_rules if rule]
 
 # ===============================
-# 核心：处理分片
+# 核心：并行处理分片和更新删除计数
 # ===============================
 def process_part(part):
     part_file = os.path.join(TMP_DIR, f"part_{int(part):02d}.txt")
@@ -148,21 +173,19 @@ def process_part(part):
     added_count = 0
     removed_count = 0
 
-    # 遍历当前分片规则
-    for r in lines:
-        del_cnt = delete_counter.get(r, 4)
+    # 使用线程池并行处理规则
+    with ThreadPoolExecutor() as executor:
+        futures = []
 
-        # 删除计数 >= 7 → 不进入分片，跳过该规则
-        if del_cnt >= 7:
-            print(f"⚠ 删除计数达到 7 或以上，跳过该规则：{r} | 删除计数={del_cnt}")
-            continue  # 不加入分片
+        # 提交任务：提取删除计数 < 7 的规则，进行分片和 DNS 验证
+        futures.append(executor.submit(process_rules_for_split_and_dns, lines, delete_counter, rules_to_validate))
 
-        # 删除计数 >= 17 → 重置删除计数为 6
-        if del_cnt >= 17:
-            print(f"⚠ 删除计数达到 17，重置为 6：{r} | 删除计数={del_cnt}")
-            delete_counter[r] = 6
+        # 提交任务：将删除计数 >= 7 的规则的删除计数加 1
+        futures.append(executor.submit(update_high_delete_count_rules, lines, delete_counter))
 
-        rules_to_validate.append(r)
+        # 等待所有任务完成
+        for future in as_completed(futures):
+            future.result()
 
     # 异步 DNS 验证
     valid = asyncio.run(dns_validate_async(rules_to_validate))
@@ -180,13 +203,11 @@ def process_part(part):
             delete_counter[rule] = delete_counter.get(rule, 0) + 1
             if delete_counter[rule] >= DELETE_THRESHOLD:
                 removed_count += 1
-                print(f"🔥 删除计数达到阈值 → 删除规则：{rule}")
+                print(f"🔥 连续失败达到阈值 → 删除规则：{rule}")
                 not_written.pop(rule, None)
                 final_rules.discard(rule)
-            else:
-                final_rules.add(rule)
 
-    # 每批次写入
+    # 处理并写入 validated_part
     save_json(DELETE_COUNTER_FILE, delete_counter)
     save_json(NOT_WRITTEN_FILE, not_written)
 

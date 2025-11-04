@@ -80,48 +80,75 @@ def download_all_sources():
     with open(MASTER_RULE, "w", encoding="utf-8") as f:
         f.write("\n".join(sorted(merged)))
 
-    recovered_rules = unified_skip_remove(merged)
+    recovered_rules = unified_skip_remove_fast(merged)
     split_parts(recovered_rules)
     return True
 
 # ===============================
-# ✅ 统一剔除跳过验证模块（核心）
+# 高性能统一剔除跳过验证模块（核心）
 # ===============================
-def unified_skip_remove(all_rules_set):
+def unified_skip_remove_fast(all_rules_list):
+    """
+    高性能统一剔除函数：
+    - 只处理 delete_counter 中已经 >= SKIP_VALIDATE_THRESHOLD 的规则与 all_rules_list 的交集
+    - 批量收集日志，最终一次性写回
+    - 返回 recovered_rules（需要恢复验证并放到最后分片的规则）
+    """
+    # 读取计数器一次
     skip_tracker = load_json(SKIP_FILE)
     delete_counter = load_json(DELETE_COUNTER_FILE)
-    not_written_counter = load_json(NOT_WRITTEN_FILE)
+    not_written = load_json(NOT_WRITTEN_FILE)
+
+    # 把 all_rules_list 转成集合供快速查找
+    rules_set = set(all_rules_list)
+
+    # 候选：只有 delete_counter 中的键且在 rules_set 中，避免遍历所有规则
+    candidate_keys = [k for k, v in delete_counter.items() if v >= SKIP_VALIDATE_THRESHOLD and k in rules_set]
+    if not candidate_keys:
+        # 无候选，确保文件写回（以防文件不存在）
+        save_json(SKIP_FILE, skip_tracker)
+        save_json(DELETE_COUNTER_FILE, delete_counter)
+        save_json(NOT_WRITTEN_FILE, not_written)
+        return []
+
     recovered_rules = []
+    logs = []  # 日志缓冲，最后批量打印或写入
 
-    for r in list(all_rules_set):
-        del_cnt = delete_counter.get(r, 0)
-        skip_cnt = skip_tracker.get(r, 0)
+    # 遍历候选而不是全部规则
+    for r in candidate_keys:
+        # 安全读取当前值（避免 race）
+        cur_del = delete_counter.get(r, 0)
+        cur_skip = skip_tracker.get(r, 0)
 
-        # ✅ 只有删除计数 >= SKIP_VALIDATE_THRESHOLD 才跳过验证
-        if del_cnt < SKIP_VALIDATE_THRESHOLD:
-            continue
+        # 累加跳过次数并写回内存 dict
+        cur_skip += 1
+        skip_tracker[r] = cur_skip
 
-        # ✅ 累加跳过次数（从文件中读取后 +1）
-        skip_cnt += 1
-        skip_tracker[r] = skip_cnt
+        # 累加 delete_counter
+        cur_del += 1
+        delete_counter[r] = cur_del
 
-        # ✅ 删除计数继续 +1（历史累加）
-        del_cnt += 1
-        delete_counter[r] = del_cnt
+        # 缓存日志（严格格式）
+        logs.append(f"⚠ 统一剔除（跳过验证）：{r} | 跳过次数={cur_skip} | 删除计数={cur_del}")
 
-        # ✅ 日志 —— 严格格式
-        print(f"⚠ 统一剔除（跳过验证）：{r} | 跳过次数={skip_cnt} | 删除计数={del_cnt}")
-
-        # ✅ 当跳过 >= SKIP_ROUNDS 时恢复验证
-        if skip_cnt >= SKIP_ROUNDS:
-            print(f"🔁 跳过次数达到 {SKIP_ROUNDS} 次 → 恢复验证：{r}（重置连续失败次数=6）")
-            skip_tracker.pop(r)
+        # 如果达到恢复阈值
+        if cur_skip >= SKIP_ROUNDS:
+            logs.append(f"🔁 跳过次数达到 {SKIP_ROUNDS} 次 → 恢复验证：{r}（重置连续失败次数=6）")
+            # 清除 skip 计数
+            skip_tracker.pop(r, None)
+            # set delete_counter to 6
             delete_counter[r] = 6
             recovered_rules.append(r)
 
+    # 批量打印日志（一次性写入控制台，减少 IO 阻塞）
+    # 如果日志行数非常多，你也可以改为写入文件：with open('dist/skip_log.txt','a') as lf: lf.write("\n".join(logs)+"\n")
+    print("\n".join(logs))
+
+    # 批量写回 JSON（只写一次）
     save_json(SKIP_FILE, skip_tracker)
     save_json(DELETE_COUNTER_FILE, delete_counter)
-    save_json(NOT_WRITTEN_FILE, not_written_counter)
+    save_json(NOT_WRITTEN_FILE, not_written)
+
     return recovered_rules
 
 # ===============================
@@ -135,7 +162,7 @@ def split_parts(recovered_rules=None):
     with open(MASTER_RULE, "r", encoding="utf-8") as f:
         rules = [l.strip() for l in f if l.strip()]
 
-    # ✅ 恢复验证的规则放在最后一个分片
+    # 恢复验证的规则放在最后一个分片
     if recovered_rules:
         for r in recovered_rules:
             if r in rules:
@@ -144,7 +171,7 @@ def split_parts(recovered_rules=None):
 
     total = len(rules)
     per_part = (total + PARTS - 1) // PARTS
-    print(f"🪓 分片 {total} 条，每片约 {per_part} 条")
+    print(f"🪓 分片 {total} 条，每片约 {per_part}")
 
     for i in range(PARTS):
         part_rules = rules[i * per_part:(i + 1) * per_part]
@@ -202,7 +229,7 @@ def dns_validate(lines):
     return valid
 
 # ===============================
-# ✅ 核心：处理分片 & 跳过验证逻辑
+# 核心：处理分片 & 跳过验证逻辑
 # ===============================
 def process_part(part):
     part_file = os.path.join(TMP_DIR, f"part_{int(part):02d}.txt")

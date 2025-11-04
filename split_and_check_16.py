@@ -17,7 +17,8 @@ TMP_DIR = "tmp"
 DIST_DIR = "dist"
 MASTER_RULE = "merged_rules.txt"
 PARTS = 16
-DNS_WORKERS = 50
+DNS_WORKERS = 50           # 50线程并发
+BATCH_SIZE = 500           # 每批处理500条规则
 DNS_TIMEOUT = 2
 DELETE_COUNTER_FILE = os.path.join(DIST_DIR, "delete_counter.json")
 SKIP_FILE = os.path.join(DIST_DIR, "skip_tracker.json")
@@ -163,13 +164,12 @@ def check_domain(rule):
         return None
 
 def dns_validate(lines):
-    print(f"🚀 启动 {DNS_WORKERS} 并发验证，批量 500 条规则")
+    print(f"🚀 启动 {DNS_WORKERS} 并发验证，每批 {BATCH_SIZE} 条规则")
     valid = []
-    batch_size = 500
     start_time = time.time()
 
-    for i in range(0, len(lines), batch_size):
-        batch = lines[i:i+batch_size]
+    for i in range(0, len(lines), BATCH_SIZE):
+        batch = lines[i:i+BATCH_SIZE]
         with ThreadPoolExecutor(max_workers=DNS_WORKERS) as executor:
             futures = {executor.submit(check_domain, rule): rule for rule in batch}
             done = 0

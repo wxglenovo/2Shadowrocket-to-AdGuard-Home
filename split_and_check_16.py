@@ -152,11 +152,10 @@ def process_part(part):
     for r in lines:
         del_cnt = delete_counter.get(r, 4)
 
-        # 删除计数 >= 7 → 跳过验证、直接剔除、不进入分片
+        # 删除计数 >= 7 → 不进入分片，跳过该规则
         if del_cnt >= 7:
-            print(f"⚠ 删除计数达到 7 或以上，跳过规则：{r} | 删除计数={del_cnt}")
-            delete_counter[r] = del_cnt + 1
-            continue  # 跳过该规则
+            print(f"⚠ 删除计数达到 7 或以上，跳过该规则：{r} | 删除计数={del_cnt}")
+            continue  # 不加入分片
 
         # 删除计数 >= 17 → 重置删除计数为 6
         if del_cnt >= 17:

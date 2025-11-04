@@ -6184,6 +6184,7 @@
 ||aikat-vim.com^
 ||aikat.ha.cked.net^
 ||aikatuz.jp^
+||aikfkzkq.com^
 ||aikgv.itickets.com^
 ||aikgwjgrbn.neliver.com^
 ||aikhra.londonclub.sk^
@@ -6263,6 +6264,7 @@
 ||aimes.com^
 ||aimetoidabord.com^
 ||aimfar.solution.weborama.fr^
+||aimforward.xyz^
 ||aimg.fc2.com^
 ||aimging.com^
 ||aimging.com^$document
@@ -6934,6 +6936,7 @@
 ||ajjac.club^
 ||ajjahotelgroup.com^
 ||ajjdagokxajb.com^
+||ajjkmozrrvmj.top^
 ||ajjlasruwwrlt.store^
 ||ajjrkn7kjd.neliver.com^
 ||ajjwutdytigzg.rocks^
@@ -7100,6 +7103,7 @@
 ||akademiktez.com^
 ||akademikz.ru^
 ||akademipsgfr.firebaseapp.com^
+||akademisendikasi.com^
 ||akademispor.net^
 ||akademsmile.ru^
 ||akadigital.vn^
@@ -8330,13 +8334,16 @@
 ||alebilet.pi49148147.rest^
 ||alebilet.pl-23348-private.shop^
 ||alebilet.pl-32526oferta.shop^
+||alebilet.pl-349410.icu^
 ||alebilet.pl-352463.shop^
 ||alebilet.pl-373858.cfd^
 ||alebilet.pl-3739.cfd^
 ||alebilet.pl-37398.cfd^
 ||alebilet.pl-37399.cfd^
+||alebilet.pl-4120037.icu^
 ||alebilet.pl-4428528.cfd^
 ||alebilet.pl-4428529.cfd^
+||alebilet.pl-47681.cfd^
 ||alebilet.pl-486762o.shop^
 ||alebilet.pl-53192256-personal.shop^
 ||alebilet.pl-539574532.shop^
@@ -8375,11 +8382,14 @@
 ||alebilet.pl-dostaww.shop^
 ||alebilet.pl-dosw.shop^
 ||alebilet.pl-doswaw.shop^
+||alebilet.pl-g974225784211356789990000.cfd^
 ||alebilet.pl-id-oferta-kamikaze-k1-plus-uzywana-tydzien.shop^
 ||alebilet.pl-id-oferta85354.shop^
 ||alebilet.pl-item-7763251998-apple-watch-ultra-2.shop^
 ||alebilet.pl-items2836184.shop^
 ||alebilet.pl-k023626678187625256262718181.cfd^
+||alebilet.pl-kategoria-281747.top^
+||alebilet.pl-kategoria-inne-958392.top^
 ||alebilet.pl-kategoria12746412648578712478.shop^
 ||alebilet.pl-kategoria1782387121287.shop^
 ||alebilet.pl-kategoria178246145615619821467.shop^
@@ -8581,6 +8591,8 @@
 ||alebilet.pl-oferta249942210272-ipad-air-gen5.cfd^
 ||alebilet.pl-oferta249942212677-ipad-air-gen-5.sbs^
 ||alebilet.pl-oferta249942212677-ipad-air-gen5.cfd^
+||alebilet.pl-oferta249942294622-macbook-pro-m3-512.cfd^
+||alebilet.pl-oferta249942294622-macbook-pro-m3-512.sbs^
 ||alebilet.pl-oferta26569298451.click^
 ||alebilet.pl-oferta27016591256-komputer-gamingowy.cfd^
 ||alebilet.pl-oferta2705723.com^
@@ -8653,7 +8665,9 @@
 ||alebilet.pl-oferta6704652.us^
 ||alebilet.pl-oferta6830308.shop^
 ||alebilet.pl-oferta6894958.com^
+||alebilet.pl-oferta691592.icu^
 ||alebilet.pl-oferta7151922.com^
+||alebilet.pl-oferta721992.icu^
 ||alebilet.pl-oferta7225378.cc^
 ||alebilet.pl-oferta7225378.link^
 ||alebilet.pl-oferta7302779.shop^
@@ -8733,6 +8747,7 @@
 ||alebilet.pl-oferta8652574216.cfd^
 ||alebilet.pl-oferta86574.rest^
 ||alebilet.pl-oferta86578.rest^
+||alebilet.pl-oferta872301.icu^
 ||alebilet.pl-oferta8737291.com^
 ||alebilet.pl-oferta883320.com^
 ||alebilet.pl-oferta884937.shop^
@@ -8756,6 +8771,7 @@
 ||alebilet.pl-oferta9349475.cfd^
 ||alebilet.pl-oferta9374628105.cfd^
 ||alebilet.pl-oferta9481224.cfd^
+||alebilet.pl-oferta948193.icu^
 ||alebilet.pl-oferta9507093.cc^
 ||alebilet.pl-oferta9563717.shop^
 ||alebilet.pl-oferta9581902.icu^
@@ -10311,6 +10327,7 @@
 ||allegro.pl-3739.cfd^
 ||allegro.pl-37398.cfd^
 ||allegro.pl-37399.cfd^
+||allegro.pl-4120037.icu^
 ||allegro.pl-4428528.cfd^
 ||allegro.pl-4428529.cfd^
 ||allegro.pl-486762o.shop^
@@ -10334,12 +10351,14 @@
 ||allegro.pl-80834493.shop^
 ||allegro.pl-81022992-personal.shop^
 ||allegro.pl-83221-personal.shop^
+||allegro.pl-8483701.icu^
 ||allegro.pl-85673423.shop^
 ||allegro.pl-873213.pro^
 ||allegro.pl-9102234-personal.shop^
 ||allegro.pl-91724oferta.shop^
 ||allegro.pl-92001628oferta.icu^
 ||allegro.pl-93299323-poland.shop^
+||allegro.pl-934841.icu^
 ||allegro.pl-9467x2729oferta.shop^
 ||allegro.pl-948195912.sbs^
 ||allegro.pl-9532520.rest^
@@ -10357,11 +10376,14 @@
 ||allegro.pl-dostaww.shop^
 ||allegro.pl-dosw.shop^
 ||allegro.pl-doswaw.shop^
+||allegro.pl-g974225784211356789990000.cfd^
 ||allegro.pl-id-oferta-kamikaze-k1-plus-uzywana-tydzien.shop^
 ||allegro.pl-id-oferta85354.shop^
 ||allegro.pl-item-7763251998-apple-watch-ultra-2.shop^
 ||allegro.pl-items2836184.shop^
 ||allegro.pl-k023626678187625256262718181.cfd^
+||allegro.pl-kategoria-281747.top^
+||allegro.pl-kategoria-inne-958392.top^
 ||allegro.pl-kategoria12746412648578712478.shop^
 ||allegro.pl-kategoria1782387121287.shop^
 ||allegro.pl-kategoria178246145615619821467.shop^
@@ -10563,6 +10585,8 @@
 ||allegro.pl-oferta249942210272-ipad-air-gen5.cfd^
 ||allegro.pl-oferta249942212677-ipad-air-gen-5.sbs^
 ||allegro.pl-oferta249942212677-ipad-air-gen5.cfd^
+||allegro.pl-oferta249942294622-macbook-pro-m3-512.cfd^
+||allegro.pl-oferta249942294622-macbook-pro-m3-512.sbs^
 ||allegro.pl-oferta26569298451.click^
 ||allegro.pl-oferta27016591256-komputer-gamingowy.cfd^
 ||allegro.pl-oferta2705723.com^
@@ -10636,7 +10660,9 @@
 ||allegro.pl-oferta6704652.us^
 ||allegro.pl-oferta6830308.shop^
 ||allegro.pl-oferta6894958.com^
+||allegro.pl-oferta691592.icu^
 ||allegro.pl-oferta7151922.com^
+||allegro.pl-oferta721992.icu^
 ||allegro.pl-oferta7225378.cc^
 ||allegro.pl-oferta7225378.link^
 ||allegro.pl-oferta7302779.shop^
@@ -10715,6 +10741,7 @@
 ||allegro.pl-oferta8652574216.cfd^
 ||allegro.pl-oferta86574.rest^
 ||allegro.pl-oferta86578.rest^
+||allegro.pl-oferta872301.icu^
 ||allegro.pl-oferta8737291.com^
 ||allegro.pl-oferta883320.com^
 ||allegro.pl-oferta884937.shop^
@@ -10738,6 +10765,7 @@
 ||allegro.pl-oferta9349475.cfd^
 ||allegro.pl-oferta9374628105.cfd^
 ||allegro.pl-oferta9481224.cfd^
+||allegro.pl-oferta948193.icu^
 ||allegro.pl-oferta9507093.cc^
 ||allegro.pl-oferta9563717.shop^
 ||allegro.pl-oferta9581902.icu^
@@ -11259,6 +11287,7 @@
 ||allegrolokalnie.pi-ofertaid37917213.com^
 ||allegrolokalnie.pi1838247.rest^
 ||allegrolokalnie.pl-00374przedmiot.icu^
+||allegrolokalnie.pl-0039412.icu^
 ||allegrolokalnie.pl-0954643754.shop^
 ||allegrolokalnie.pl-1263489.icu^
 ||allegrolokalnie.pl-1782.shop^
@@ -11274,6 +11303,7 @@
 ||allegrolokalnie.pl-2897382309723980.digital^
 ||allegrolokalnie.pl-31310.cfd^
 ||allegrolokalnie.pl-32526oferta.shop^
+||allegrolokalnie.pl-349410.icu^
 ||allegrolokalnie.pl-352463.shop^
 ||allegrolokalnie.pl-37292.cfd^
 ||allegrolokalnie.pl-373858.cfd^
@@ -11285,6 +11315,7 @@
 ||allegrolokalnie.pl-4120037.icu^
 ||allegrolokalnie.pl-4428528.cfd^
 ||allegrolokalnie.pl-4428529.cfd^
+||allegrolokalnie.pl-457814.icu^
 ||allegrolokalnie.pl-469951.icu^
 ||allegrolokalnie.pl-4792513.cfd^
 ||allegrolokalnie.pl-486762o.shop^
@@ -11302,6 +11333,7 @@
 ||allegrolokalnie.pl-6412.cfd^
 ||allegrolokalnie.pl-6435523432.shop^
 ||allegrolokalnie.pl-65932.sbs^
+||allegrolokalnie.pl-66769.cfd^
 ||allegrolokalnie.pl-7259138.cfd^
 ||allegrolokalnie.pl-7318148.cfd^
 ||allegrolokalnie.pl-73645362.shop^
@@ -11329,6 +11361,7 @@
 ||allegrolokalnie.pl-91724oferta.shop^
 ||allegrolokalnie.pl-92001628oferta.icu^
 ||allegrolokalnie.pl-93299323-poland.shop^
+||allegrolokalnie.pl-934841.icu^
 ||allegrolokalnie.pl-942821.cfd^
 ||allegrolokalnie.pl-9467x2729oferta.shop^
 ||allegrolokalnie.pl-948195912.sbs^
@@ -11360,6 +11393,7 @@
 ||allegrolokalnie.pl-ezakupy24.shop^
 ||allegrolokalnie.pl-f1-ce.sbs^
 ||allegrolokalnie.pl-firmowe-oferty-8817.icu^
+||allegrolokalnie.pl-g974225784211356789990000.cfd^
 ||allegrolokalnie.pl-id-80834493.shop^
 ||allegrolokalnie.pl-id-88834499993.shop^
 ||allegrolokalnie.pl-id-oferta-kamikaze-k1-plus-uzywana-tydzien.shop^
@@ -11367,6 +11401,8 @@
 ||allegrolokalnie.pl-item-7763251998-apple-watch-ultra-2.shop^
 ||allegrolokalnie.pl-items2836184.shop^
 ||allegrolokalnie.pl-k023626678187625256262718181.cfd^
+||allegrolokalnie.pl-kategoria-281747.top^
+||allegrolokalnie.pl-kategoria-inne-958392.top^
 ||allegrolokalnie.pl-kategoria-inne4662.shop^
 ||allegrolokalnie.pl-kategoria-inne6584.shop^
 ||allegrolokalnie.pl-kategoria12746412648578712478.shop^
@@ -11576,6 +11612,8 @@
 ||allegrolokalnie.pl-oferta249942212677-ipad-air-gen-5.sbs^
 ||allegrolokalnie.pl-oferta249942212677-ipad-air-gen5.cfd^
 ||allegrolokalnie.pl-oferta249942294622-ipad-air-gen5.cfd^
+||allegrolokalnie.pl-oferta249942294622-macbook-pro-m3-512.cfd^
+||allegrolokalnie.pl-oferta249942294622-macbook-pro-m3-512.sbs^
 ||allegrolokalnie.pl-oferta26569298451.click^
 ||allegrolokalnie.pl-oferta27016591256-komputer-gamingowy.cfd^
 ||allegrolokalnie.pl-oferta2705723.com^
@@ -11654,8 +11692,10 @@
 ||allegrolokalnie.pl-oferta6830308.shop^
 ||allegrolokalnie.pl-oferta68314.icu^
 ||allegrolokalnie.pl-oferta6894958.com^
+||allegrolokalnie.pl-oferta691592.icu^
 ||allegrolokalnie.pl-oferta6939859.click^
 ||allegrolokalnie.pl-oferta7151922.com^
+||allegrolokalnie.pl-oferta721992.icu^
 ||allegrolokalnie.pl-oferta7225378.cc^
 ||allegrolokalnie.pl-oferta7225378.link^
 ||allegrolokalnie.pl-oferta7302779.shop^
@@ -11738,6 +11778,7 @@
 ||allegrolokalnie.pl-oferta8652574216.cfd^
 ||allegrolokalnie.pl-oferta86574.rest^
 ||allegrolokalnie.pl-oferta86578.rest^
+||allegrolokalnie.pl-oferta872301.icu^
 ||allegrolokalnie.pl-oferta8737291.com^
 ||allegrolokalnie.pl-oferta883320.com^
 ||allegrolokalnie.pl-oferta884937.shop^
@@ -11762,6 +11803,7 @@
 ||allegrolokalnie.pl-oferta9349475.cfd^
 ||allegrolokalnie.pl-oferta9374628105.cfd^
 ||allegrolokalnie.pl-oferta9481224.cfd^
+||allegrolokalnie.pl-oferta948193.icu^
 ||allegrolokalnie.pl-oferta9507093.cc^
 ||allegrolokalnie.pl-oferta9563717.shop^
 ||allegrolokalnie.pl-oferta9581902.icu^
@@ -12795,6 +12837,7 @@
 ||alphaglobalcr.com^
 ||alphaglobaltracking-login.com^
 ||alphagraphics.com.sa^
+||alphagroup.lat^
 ||alphahandcentre.com^
 ||alphahaulnh.com^
 ||alphaindu.com^
@@ -13023,6 +13066,7 @@
 ||altalgrami.pro^
 ||altalgroupru.419.com1.ru^
 ||altamira-pizza.be^
+||altamoorgoods.com^
 ||altan5.com^
 ||altangroup.com^
 ||altaredlife.com^
@@ -13584,6 +13628,7 @@
 ||amadeus666.org^
 ||amadisonroseevent.apidocskeeleootstrap.0-030.net.daraz.com^
 ||amadolondon.co.uk^
+||amae.zjcapital.cn^
 ||amaena.com^
 ||amaerodactylon.com^
 ||amafruits.com^
@@ -13875,6 +13920,7 @@
 ||amazonaws.com^*/prod_analytics
 ||amazoncards.dlcodes.com^
 ||amazoncc.org^
+||amazonclone-wheat.vercel.app^
 ||amazonco.uk^
 ||amazoncomp.az^
 ||amazoncontrol.in^
@@ -14134,6 +14180,7 @@
 ||ameligouv.info^
 ||amelin.org^
 ||amelindo.it^
+||amelioratesaolsectech.weebly.com^
 ||ameliuge.beget.tech^
 ||ameliw4p.beget.tech^
 ||ameltek.com^
@@ -14587,6 +14634,7 @@
 ||ammagpocol.pro^
 ||ammagsenza.pro^
 ||ammalhypat.com^
+||amman.duckdns.org^
 ||ammanabbat.pro^
 ||ammanjelut.pro^
 ||ammansnob.com^
@@ -15545,6 +15593,7 @@
 ||analytics-min-mls.yinzcam.com^
 ||analytics-min-nba.yinzcam.com^
 ||analytics-min-nfl.yinzcam.com^
+||analytics-mkt.wemakeprice.com^
 ||analytics-msg-venues.yinzcam.com^
 ||analytics-myhermes.wt-eu02.net^
 ||analytics-nfl-5.yinzcam.com^
@@ -17848,6 +17897,7 @@
 ||anatitan.co.cc^
 ||anatol.com^
 ||anatoliaconstruction.ca^
+||anatolianmonuments.com^
 ||anatoliansidemarathon.net^
 ||anatoliatree.com^
 ||anatomia.io^
@@ -18020,6 +18070,7 @@
 ||andfinance.com^
 ||andfir.it^
 ||andfkcplbv.neliver.com^
+||andflopez123.duckdns.org^
 ||andhghtyjdf.firebaseapp.com^
 ||andhghtyjdf.web.app^
 ||andiamoluggage.com^
@@ -19038,6 +19089,7 @@
 ||anonymaster.eklablog.com^
 ||anonymat.org^
 ||anonymate.com^
+||anonymato.duckdns.org^
 ||anonyme.online^
 ||anonymhouse.ws^
 ||anonymise.com^
@@ -19219,6 +19271,7 @@
 ||ansell.d1.sc.omtrdc.net^
 ||anselmianssdd.info^
 ||ansetech.co.kr^
+||anshadnadampadi.github.io^
 ||anshulz.com^
 ||ansik.or.kr^
 ||ansim-tradix.net^
@@ -19228,6 +19281,7 @@
 ||ansius.com^
 ||ansiway.com^
 ||ansize.com^
+||ansjsma.duckdns.org^
 ||anskyforex.co.cc^
 ||ansleygwin.com^
 ||ansnxnkxsagnp.website^
@@ -19837,6 +19891,7 @@
 ||anuluj-dlug.pl^
 ||anuluj-mandat.pl^
 ||anun.comicsarmy.com^
+||anunankis1.duckdns.org^
 ||anunciadores.com^
 ||anuncios.edicaoms.com.br^
 ||anuncios.ourtoolbar.com^
@@ -20053,6 +20108,7 @@
 ||ao.la.lv^
 ||ao.lop.com^
 ||ao.pioncomm.net^
+||ao.tolydigital.net^
 ||ao3648.actonsoftware.com^
 ||ao3app.viralmedia.app^
 ||ao4ylt8l7b.neliver.com^
@@ -20095,6 +20151,7 @@
 ||aoertong.com^
 ||aoeyo7enab.neliver.com^
 ||aofflife.com^
+||aofhashix.com^
 ||aofob.manssion.com^
 ||aoftso.ultimebike.com^
 ||aogf.co.ke^
@@ -20582,6 +20639,7 @@
 ||apache.adx1.com^
 ||apache.avadacom.com^
 ||apache.net.daraz.com^
+||apache202.duckdns.org^
 ||apache21.hostbasket.com^
 ||apacheemailvisionpagelib-oa-1.net.daraz.com^
 ||apachelication-spring.net.daraz.com^
@@ -22214,6 +22272,7 @@
 ||api.nuvellorstore.com^
 ||api.nz.igexin.com^
 ||api.oacertocritico.com.br^
+||api.obfuscatorjavascript.com^
 ||api.obrotherstech.com.br^
 ||api.odontologiasinfronteras.com^
 ||api.offline.avazunativeads.com^
@@ -23194,6 +23253,7 @@
 ||apnafun-sabir.blogspot.com^
 ||apnalakshya.com^
 ||apnapunjabindianrestaurant.com^
+||apnavigation1218.com^
 ||apnblapf6d.neliver.com^
 ||apni.tv^
 ||apnid.c.appier.net^
@@ -23385,6 +23445,7 @@
 ||app-b.marketo.com^
 ||app-benchmarks.adjust.com^
 ||app-beta.brandclub.com^
+||app-bia.inc^
 ||app-bitbanlk-cc.weebly.com^
 ||app-bittrex.com^
 ||app-blockfi-en-login.pages.dev^
@@ -23581,6 +23642,7 @@
 ||app-uat.onemedifund.com.au^
 ||app-uat.territoryhealth.com.au^
 ||app-uksouth-sit-ods-bankruptcy.azurewebsites.net^
+||app-ulyspeage-fr.com^
 ||app-uniswapping.org^
 ||app-ups.com^
 ||app-use88aception.start.page^
@@ -25059,6 +25121,7 @@
 ||appeal-check.firebaseapp.com^
 ||appeal-check.web.app^
 ||appeal-matter-tw-feedback.web.app^
+||appealbussines-reviewpages-2131313131.vercel.app^
 ||appealing-kr-issuenow.firebaseapp.com^
 ||appealinglingerie.com^
 ||appearancesurf.co.cc^
@@ -26154,6 +26217,7 @@
 ||apps-cunfirm-ownear2023.start.page^
 ||apps-data77accntcenters.start.page^
 ||apps-for-pc.com^
+||apps-ledger-wallet.pages.dev^
 ||apps-live-haixing.com^
 ||apps-n-warez.blogspot.com^
 ||apps-payment.servehttp.com^
@@ -26805,6 +26869,7 @@
 ||aquete.com^
 ||aquete.com^$popup
 ||aqueyk4cq5.neliver.com^
+||aquforex.co.cc^
 ||aqui-cancelar9.webcindario.com^
 ||aqui5tarr.pl^
 ||aquick.org^
@@ -26970,6 +27035,7 @@
 ||arabefunct.com^
 ||arabgulfrox.net^
 ||arabgulfroxapp.com^
+||arabgurufin-soft.com^
 ||arabiacranes.com^
 ||arabian-horse-highlights.homepage.t-online.de^
 ||arabian-star.com^
@@ -26984,6 +27050,7 @@
 ||arabindiaspices.com^
 ||arabmistress.s3.amazonaws.com^
 ||arabmoheet.net^
+||arabmoney.duckdns.org^
 ||arabnashop.com^
 ||arabnewsupdate.com^
 ||arabpornhub.com^
@@ -28412,6 +28479,7 @@
 ||arsivolt.com^
 ||arslan.pro^
 ||arslanhaider.com^
+||arslanmobilyam.com^
 ||arslatino.com^
 ||arsmagnarecordings.com^
 ||arsmedico.com^
@@ -29246,6 +29314,7 @@
 ||asdf.mg.mytravelmap.xyz^
 ||asdf.webspecmail.com^
 ||asdfasdf-3fdisa3d.dynamic-dns.net^
+||asdfavae.duckdns.org^
 ||asdfbynjhnbvcxzsdfghujknbv.weebly.com^
 ||asdfg.pro^
 ||asdfg23.com^
@@ -29286,6 +29355,7 @@
 ||aselered.org^
 ||asellservices.com^
 ||aseltech.com.tr^
+||aselturkyilmaz.com^
 ||asem.it^
 ||asemaanfan.pro^
 ||asematirot.pro^
@@ -30820,7 +30890,11 @@
 ||astralhustle.com^
 ||astralink59centerova.sbs^
 ||astralopitec.yomu.ru^
+||astralport3neonworld.sbs^
 ||astralport49astralport.cfd^
+||astralport67silverpath.sbs^
+||astralport712horizontech.sbs^
+||astralport848pulsarforge.sbs^
 ||astralsignal4ya.com^
 ||astralux-service.ru^
 ||astraphy.narod.ru^
@@ -31014,6 +31088,7 @@
 ||asussupportdriver.com^
 ||asussupportnumber.com^
 ||asustekcomputerinc.tt.omtrdc.net^
+||asutasaglik.com^
 ||asuum.com^
 ||asuut79dxw.neliver.com^
 ||asv-frueh-auf.de^
@@ -31367,6 +31442,7 @@
 ||atendimento-seguro.com^
 ||atendimento.com.sapo.pt^
 ||atendimentoapp.com^
+||atendimentobia24h.digital^
 ||atendimentobiaprime.ru.com^
 ||atendimentobradesco.app^
 ||atendimentodigitalbia.digital^
@@ -31582,6 +31658,7 @@
 ||atlantacomputerrecycling.net^
 ||atlantacure.org^
 ||atlantaelectronics.co.id^
+||atlantafencepro.com^
 ||atlantajewishlifefestival.com^
 ||atlantaproxy.co.cc^
 ||atlantarealestatesolutions.com^
@@ -32287,6 +32364,7 @@
 ||attzg.readinggenius.com^
 ||atualflex.com.br^
 ||atualizabrasil.com.br^
+||atualizacao-bradescardx.com^
 ||atualizacaocadastral.digital^
 ||atualizacaoseguranca.digital^
 ||atualizandoonline.web541.kinghost.net^
@@ -33141,6 +33219,7 @@
 ||austinangelnetwork.org^
 ||austinbcaudill.com^
 ||austincomputersupport.com^
+||austine4.duckdns.org^
 ||austinhearingcares.com^
 ||austinhill.net^
 ||austinisd.co1.qualtrics.com^
@@ -33218,6 +33297,7 @@
 ||auterio.digital^
 ||autexchemical.com^
 ||autfaciam.com^
+||auth--ledger--com.pages.dev^
 ||auth--sterartledger.gitbook.io^
 ||auth-adashxorization.summer.net.daraz.com^
 ||auth-appledgr-guide.pages.dev^
@@ -34281,6 +34361,7 @@
 ||avantshop.de^
 ||avanttravel.com^
 ||avanua.pl^
+||avanzando2025.webcindario.com^
 ||avanzapich1ncha.webcindario.com^
 ||avanzclean.pro^
 ||avaparse.ir^
@@ -34426,6 +34507,7 @@
 ||avenir-bitrevo.net^
 ||avenir-meca.com^
 ||avenirbitlux.net^
+||avenirbitrevo.net^
 ||avenirbitrevotech.com^
 ||avenit01.webtrekk.net^
 ||avenixiotech.com^
@@ -35743,6 +35825,7 @@
 ||aydtv.com^
 ||aye2103.lovestoblog.com^
 ||aye8cbnp87.neliver.com^
+||ayedd.duckdns.org^
 ||ayeedmgnpb.com^
 ||ayeloo.com^
 ||ayerbo.xhost.ro^
@@ -35861,6 +35944,7 @@
 ||ayw0vu8tjx.neliver.com^
 ||ayx.wi7o.ru^
 ||ayyew.com^
+||ayyrates.duckdns.org^
 ||ayyware.com^
 ||ayz8fcoxrx.neliver.com^
 ||ayz9ntb159.neliver.com^
@@ -36920,11 +37004,13 @@
 ||b5b55bfe31a8f8ab.com^
 ||b5ckdqyq70.neliver.com^
 ||b5db217320cb4144.com^
+||b5e17bdf06.com^
 ||b5e47601eef1b1f6.com^
 ||b5e8ad5d6c.edcc0994fe.com^
 ||b5ej8uthdy.neliver.com^
 ||b5fvawswso.neliver.com^
 ||b5j6itccyluq.nofluffjobs.com^
+||b5k2.g6xt-5n.ru^
 ||b5kqefhrsv.neliver.com^
 ||b5lf2egy8w.neliver.com^
 ||b5mhl1mcicjky7krs8njz0ubnwq981507571731.nuid.imrworldwide.com^
@@ -37038,6 +37124,7 @@
 ||b7myqq710q.neliver.com^
 ||b7ooagmievxajkf-p.akming.xyz^
 ||b7quv.voluumtrk.com^
+||b7rp.5g-t.online^
 ||b7tmcppupn.neliver.com^
 ||b7tp47v2nb3x-a.akamaihd.net^
 ||b7vzklu1dq.neliver.com^
@@ -38490,6 +38577,7 @@
 ||bafybeifcfe5xorgq2rm5cwebwgksa72gyifrf3tmfjqrwcnwpr5qpglvb4.ipfs.dweb.link^
 ||bafybeifelz34aerc4afiegvichmsn6frsheuhun3fsbrdzbbicm4zyhhtu.ipfs.dweb.link^
 ||bafybeifgzx4io3dzbvis5ts2t24kltun72lzv7l37zroel7prg5wfg352i.ipfs.dweb.link^
+||bafybeifoqx7cecgwyuti2e5fmxrvkx7veb3rjeodscfspaorccswaqkjla.ipfs.dweb.link^
 ||bafybeifostukapjjrjeru7k5qa2o7to4gvynlv2c5pxkt2fsgvrjvugrdi.ipfs.dweb.link^
 ||bafybeifpbirfh6jknff7q6dncvf7wisjezdkbqokdyurdujayg2tg4lnnm.ipfs.dweb.link^
 ||bafybeifpiekptkrcivuqtsbtgx7lvcy4jxdbswtzb3dwo5vtrebgcceggi.ipfs.dweb.link^
@@ -40784,6 +40872,7 @@
 ||barzarventure.com^
 ||basabasi.co^
 ||basarangoruntuleme.com^
+||basaranhizliokuma.com^
 ||basarankocluk.com^
 ||basaribox.com^
 ||basarinn.is^
@@ -41573,6 +41662,7 @@
 ||bbroadbandbbhwhwjwh.weebly.com^
 ||bbrowse.com^
 ||bbrsalon.com^
+||bbrv-bussiness.com^
 ||bbs.0609.com^
 ||bbs.18wos.org^
 ||bbs.abvc.cn^
@@ -41650,6 +41740,7 @@
 ||bbuni.com^$third-party
 ||bbus19.ddns.net^
 ||bbuvm6cs2k.neliver.com^
+||bbva-app-1-c6c6bqhhg7dqh0a9.mexicocentral-01.azurewebsites.net^
 ||bbva.112.2o7.net^
 ||bbva.demdex.net^
 ||bbvaar.demdex.net^
@@ -42242,6 +42333,7 @@
 ||bdokkq.themodernback.com^
 ||bdols.readyrocker.com^
 ||bdooev.4fit.ro^
+||bdoonline.unconnect-device.workers.dev^
 ||bdproyectos.com^
 ||bdq4zj3mlh.neliver.com^
 ||bdq77mvxde.neliver.com^
@@ -43664,8 +43756,12 @@
 ||bellsoutclick.administrators.net.daraz.com^
 ||bellsouth-att-sign-in-0748a8.webflow.io^
 ||bellsouth-att-sign-in-65baa8.webflow.io^
+||bellsouth-att-sign-in-87a8e6.webflow.io^
+||bellsouth-att-sign-in-969798.webflow.io^
 ||bellsouth-att-sign-in-a33d19.webflow.io^
+||bellsouth-att-sign-in-b0c7cd.webflow.io^
 ||bellsouth-att-sign-in-c07142.webflow.io^
+||bellsouth-att-sign-in-cb2059.webflow.io^
 ||bellsouth-att-sign-in-ddd1e1.webflow.io^
 ||bellsouth-att-sign-in-ea5cd6.webflow.io^
 ||bellsouth-discover.administrator.net.daraz.com^
@@ -44284,6 +44380,7 @@
 ||bepax.sk^
 ||bepchrzncipst.space^
 ||bepcuicaitien.com^
+||bepeltdoyly.help^
 ||bepilelaities.com^
 ||bepkimduyet.com^
 ||bepmfavegj.neliver.com^
@@ -46222,6 +46319,7 @@
 ||bhgscrap.112.2o7.net^
 ||bhgtravel.112.2o7.net^
 ||bhgtv.com^
+||bhhgvedfr.com^
 ||bhhmmnrxji.neliver.com^
 ||bhhqvf.theway9.co.kr^
 ||bhhsg.superstarcarwashaz.com^
@@ -46352,6 +46450,7 @@
 ||bia.safe-order.net^
 ||bia24hsatendimento.pro^
 ||bia2clip.co.cc^
+||biaajuda-app.icu^
 ||biacartoesx.php0h.com^
 ||biaclip11.hot-india.com^
 ||biadentalcenter.com^
@@ -48145,6 +48244,7 @@
 ||bitamg3ai.com^
 ||bitandbyte62.com^
 ||bitangel.biz^
+||bitano.shop^
 ||bitapp24-platform.com^
 ||bitappalorasolution.com^
 ||bitarron.com.br^
@@ -48628,6 +48728,7 @@
 ||bitcoinportal.info^
 ||bitcoinpowerapp.com^
 ||bitcoinpricesearch.com^
+||bitcoinprime.fr^
 ||bitcoinprime.software^
 ||bitcoinprimeapp.de^
 ||bitcoinprismax.com^

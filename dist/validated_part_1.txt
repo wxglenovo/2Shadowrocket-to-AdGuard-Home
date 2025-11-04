@@ -1441,6 +1441,7 @@ z4a.net
 |abbottlabs.112.2o7.net^
 |abbottnutrition.com.102.112.2o7.net^
 |abbyssh.freestats.com^
+|abbywintersnudes.thumblogger.com^
 |abc-ads.com^
 |abc.amaretto.xja.pl^
 |abcd.mdc.akamaized.net^
@@ -1908,6 +1909,7 @@ z4a.net
 |ad.kr.doubleclick.net^
 |ad.krutilka.ru^
 |ad.land.to^
+|ad.leadboltads.net^
 |ad.leadboltapps.net^
 |ad.linkexchange.com^
 |ad.linkprice.com^
@@ -2327,6 +2329,7 @@ z4a.net
 |adbmetrics.xn--futuroenespaol-1nb.es^
 |adboost.finalid.com^
 |adbooth.adk2.co^
+|adbooth.net^
 |adbot.com^
 |adbot.theonion.com^
 |adbox.inbox-online.com^
@@ -3885,6 +3888,7 @@ z4a.net
 |adserver.ision.de^
 |adserver.isonews.com^
 |adserver.janes.com^
+|adserver.janes.net^
 |adserver.janes.org^
 |adserver.janesguide.com^
 |adserver.juicyads.com^
@@ -14552,7 +14556,6 @@ z4a.net
 |data.mistat.intl.xiaomi.com^
 |data.mistat.xiaomi.com^
 |data.nal.usda.gov^
-|data.namesakeoscilloscopemarquis.com^
 |data.netscope.marktest.pt^
 |data.queryly.com^
 |data.sec.intl.miui.com^
@@ -16140,7 +16143,6 @@ z4a.net
 |echotraderapp.com^
 |echowealth-ai.com^
 |ecircle-ag.com^
-|eclass47.duckdns.org^
 |eclat-fundex.net^
 |eclat-gainetra-app.com^
 |eclat-gainetra.net^
@@ -19275,7 +19277,6 @@ z4a.net
 |fz.tiansys.cn^
 |fzip.thanhnien.vn^
 |fzyc2c.com^
-|fzytr.com^
 |g-pixel.invitemedia.com^
 |g-rg-rl.net^
 |g.3gl.net^
@@ -20947,7 +20948,6 @@ z4a.net
 |gz.je9t.ru^
 |gzmute.com^
 |gzs2u.doctortrf.com^
-|h-adachi.org^
 |h-adashx.ut.taobao.com^
 |h-adashx4ae.ut.taobao.com^
 |h-afnetwww.adshuffle.com^
@@ -25488,7 +25488,6 @@ z4a.net
 |js.smartredirect.de^
 |js.smi2.ru^
 |js.spacenine.biz^
-|js.spotx.tv^
 |js.stat.ijinshan.com^
 |js.tongji.linezing.com^
 |js.ua.redtram.com^
@@ -27073,7 +27072,6 @@ z4a.net
 |lnonef.agencytraffic.com^
 |load-apne1.exelator.com^
 |load.exelator.com^
-|load.focalex.com^
 |load.fomo.com^
 |load.instinctiveads.com^
 |load.s3.amazonaws.com^
@@ -27246,7 +27244,6 @@ z4a.net
 |log.tieudungthoinay.vn^
 |log.tinnhanhchungkhoan.vn^
 |log.tinxe.vn^
-|log.trackingio.com^
 |log.tv.zing.vn^
 |log.tv360.vn^
 |log.umsns.com^
@@ -28133,7 +28130,6 @@ z4a.net
 |manifest.localytics.com^
 |manpower.122.2o7.net^
 |mansmith.net^
-|mantis.autoads.asia^
 |mantisadnetwork.com^
 |mantropal.info^
 |manualdrain.com^
@@ -28298,7 +28294,6 @@ z4a.net
 |mathid.mathtag.com^
 |mathtype.cn^
 |matomo.activate.cz^
-|matomo.bantheme.xyz^
 |matomo.crossiety.app^
 |matomo.ecoe.vn^
 |matomo.quan.hoabinh.vn^
@@ -29595,7 +29590,6 @@ z4a.net
 |monvaltrixa.net^
 |monvero.top^
 |monvex.net^
-|moodoo.com.cn^
 |mookie1.com^
 |moon-flyntex.net^
 |moonbootpolskapl.com^
@@ -29943,7 +29937,6 @@ z4a.net
 |mylead-tracking.tracknow.info^
 |mylead.global^
 |mylike.co.uk^
-|mylink-today.com^
 |mylivejasmin.org^
 |mylocker-mondial.com^
 |mylovelypet.net^

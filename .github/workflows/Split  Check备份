@@ -1,4 +1,3 @@
-
 name: Split & DNS Check
 
 on:
@@ -47,13 +46,10 @@ jobs:
         id: detect
         run: |
           mkdir -p tmp dist
-          # 确保 skip_tracker.json 存在
           SKIP_FILE="dist/skip_tracker.json"
           if [ ! -f "$SKIP_FILE" ]; then
             echo "{}" > "$SKIP_FILE"
-            echo "✅ 已创建 skip_tracker.json（用于记录跳过验证次数）"
-          else
-            echo "✅ skip_tracker.json 已存在"
+            echo "✅ 已创建 skip_tracker.json"
           fi
 
           LAST_PART_FILE="tmp/last_part.txt"
@@ -97,7 +93,7 @@ jobs:
           mkdir -p dist
           if [ ! -f dist/delete_counter.json ]; then
             echo "{}" > dist/delete_counter.json
-            echo "✅ 已创建 dist/delete_counter.json（全局连续失败计数）"
+            echo "✅ 已创建 dist/delete_counter.json"
           else
             echo "✅ delete_counter.json 已存在"
           fi

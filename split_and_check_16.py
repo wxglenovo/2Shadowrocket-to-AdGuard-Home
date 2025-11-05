@@ -71,6 +71,9 @@ def update_not_written_counter(part, rule, not_written_counter):
         # 只清除当前分片中的规则，保留其他分片中的记录
         del not_written_counter[rule]
 
+    # 保存更新后的 not_written_counter
+    save_json(NOT_WRITTEN_FILE, not_written_counter)
+
 # ===============================
 # 下载并合并规则源
 # ===============================

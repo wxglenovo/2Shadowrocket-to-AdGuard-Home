@@ -1,5 +1,6 @@
 import requests
 import os
+from concurrent.futures import ThreadPoolExecutor
 
 # 定义文件路径
 URLS_FILE = 'urls.txt'
@@ -22,13 +23,16 @@ def download_and_merge_rules():
     with open(URLS_FILE, 'r') as file:
         urls = file.readlines()
 
+    # 使用 ThreadPoolExecutor 来并行下载规则
+    with ThreadPoolExecutor(max_workers=5) as executor:
+        futures = [executor.submit(download_rule, url.strip()) for url in urls]
+
+    # 合并所有下载的规则
     with open(MERGED_FILE, 'w', encoding='utf-8') as merged_file:
-        for url in urls:
-            url = url.strip()
-            print(f"正在下载规则: {url}...")
-            rules = download_rule(url)
-            if rules:
-                merged_file.write(rules)
+        for future in futures:
+            result = future.result()
+            if result:
+                merged_file.write(result)
                 merged_file.write('\n')
 
     print(f"所有规则已合并到 {MERGED_FILE}")

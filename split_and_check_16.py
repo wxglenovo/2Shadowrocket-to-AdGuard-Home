@@ -8,9 +8,10 @@ import argparse
 import dns.resolver
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import time
+from threading import Lock
 
 # ===============================
-# 配置区
+# 配置区（Config）
 # ===============================
 URLS_TXT = "urls.txt"
 TMP_DIR = "tmp"
@@ -28,6 +29,8 @@ WRITE_COUNTER_MAX = 3
 os.makedirs(TMP_DIR, exist_ok=True)
 os.makedirs(DIST_DIR, exist_ok=True)
 
+lock = Lock()
+
 # ===============================
 # JSON 读写
 # ===============================
@@ -44,8 +47,9 @@ def load_json(path):
         return {}
 
 def save_json(path, data):
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=2, ensure_ascii=False)
+    with lock:
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=2, ensure_ascii=False)
 
 # ===============================
 # 下载并合并规则源
@@ -89,6 +93,7 @@ def filter_and_update_high_delete_count_rules(all_rules_set):
     low_delete_count_rules = set()
     updated_delete_counter = delete_counter.copy()
 
+    reset_logs = []
     for rule in all_rules_set:
         del_cnt = delete_counter.get(rule, 4)
         if del_cnt < 7:
@@ -97,7 +102,9 @@ def filter_and_update_high_delete_count_rules(all_rules_set):
             updated_delete_counter[rule] = del_cnt + 1
             if updated_delete_counter[rule] >= 17:
                 updated_delete_counter[rule] = 6
-                print(f"🔁 删除计数达到 17，重置规则：{rule} 的删除计数为 6")
+                reset_logs.append(rule)
+    if reset_logs:
+        print(f"🔁 删除计数达到 17，重置 {len(reset_logs)} 条规则，示例: {reset_logs[:20]}")
     return low_delete_count_rules, updated_delete_counter
 
 # ===============================
@@ -145,48 +152,40 @@ def dns_validate(rules):
             completed += 1
             if completed % DNS_BATCH_SIZE == 0 or completed == total_rules:
                 elapsed = time.time() - start_time
-                speed = completed / elapsed if elapsed > 0 else 0
-                eta = (total_rules - completed) / speed if speed > 0 else 0
+                speed = completed / elapsed
+                eta = (total_rules - completed)/speed if speed>0 else 0
                 print(f"✅ 已验证 {completed}/{total_rules} 条 | 有效 {len(valid_rules)} 条 | 速度 {speed:.1f} 条/秒 | ETA {eta:.1f} 秒")
     return valid_rules
 
 # ===============================
-# not_written_counter.json 处理
+# 更新 not_written_counter.json（写入 validated_part_X.txt 时触发）
 # ===============================
-def update_not_written_counter_multithread(part, final_rules):
+def update_not_written_counter(part, final_rules):
     counter = load_json(NOT_WRITTEN_FILE)
-    part_name = f"validated_part_{part}"
 
-    def process_rule(rule):
-        nonlocal counter
-        if rule in final_rules:
-            counter[rule] = {"write_counter": WRITE_COUNTER_MAX, "part": part_name}
-            return None
-        else:
-            info = counter.get(rule)
-            if info and info["part"] == part_name:
-                info["write_counter"] -= 1
-                if info["write_counter"] <= 0:
-                    print(f"🔥 write_counter 为0，删除 {rule} 于 {part_name}")
-                    return rule
-                else:
-                    print(f"⚠ {rule} 未出现于 {part_name}，write_counter -1 → {info['write_counter']}")
+    # 写入规则 → write_counter=3，并记录分片号
+    for rule in final_rules:
+        counter[rule] = {"write_counter": WRITE_COUNTER_MAX, "part": f"validated_part_{part}"}
 
-    removed_rules = []
-    with ThreadPoolExecutor(max_workers=50) as executor:
-        futures = {executor.submit(process_rule, rule): rule for rule in list(counter.keys())}
-        for future in as_completed(futures):
-            result = future.result()
-            if result:
-                removed_rules.append(result)
-
-    for r in removed_rules:
-        counter.pop(r, None)
-
+    # 检查未出现的规则，write_counter-1
+    for rule, info in list(counter.items()):
+        if info["part"] == f"validated_part_{part}" and rule not in final_rules:
+            counter[rule]["write_counter"] -= 1
+            if counter[rule]["write_counter"] <= 0:
+                # 删除当前分片文件中的规则
+                part_file = os.path.join(DIST_DIR, f"validated_part_{part}.txt")
+                if os.path.exists(part_file):
+                    lines = [l.strip() for l in open(part_file, "r", encoding="utf-8").read().splitlines()]
+                    if rule in lines:
+                        lines.remove(rule)
+                        with open(part_file, "w", encoding="utf-8") as f:
+                            f.write("\n".join(lines))
+                        print(f"🔥 write_counter=0，已从 {info['part']} 删除规则：{rule}")
+                counter.pop(rule)
     save_json(NOT_WRITTEN_FILE, counter)
 
 # ===============================
-# 分片处理
+# 处理分片
 # ===============================
 def process_part(part):
     part_file = os.path.join(TMP_DIR, f"part_{int(part):02d}.txt")
@@ -203,11 +202,9 @@ def process_part(part):
     out_file = os.path.join(DIST_DIR, f"validated_part_{part}.txt")
     old_rules = set()
     if os.path.exists(out_file):
-        with open(out_file, "r", encoding="utf-8") as f:
-            old_rules = set([l.strip() for l in f if l.strip()])
+        old_rules = set([l.strip() for l in open(out_file, "r", encoding="utf-8") if l.strip()])
 
     delete_counter = load_json(DELETE_COUNTER_FILE)
-
     rules_to_validate = []
     final_rules = set(old_rules)
     added_count = 0
@@ -234,15 +231,14 @@ def process_part(part):
             if delete_counter[rule] >= DELETE_THRESHOLD:
                 removed_count += 1
                 final_rules.discard(rule)
-                print(f"🔥 连续失败达到阈值 → 删除规则：{rule}")
 
-    save_json(DELETE_COUNTER_FILE, delete_counter)
-
-    # ✅ 仅在写入 validated_part_X.txt 后触发
     with open(out_file, "w", encoding="utf-8") as f:
         f.write("\n".join(sorted(final_rules)))
 
-    update_not_written_counter_multithread(part, final_rules)
+    # ====== 关键：写入 validated_part_X.txt 后触发 not_written_counter.json 更新 ======
+    update_not_written_counter(part, final_rules)
+
+    save_json(DELETE_COUNTER_FILE, delete_counter)
 
     total_count = len(final_rules)
     print(f"✅ 分片 {part} 完成: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")

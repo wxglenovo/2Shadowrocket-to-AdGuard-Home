@@ -22,7 +22,7 @@ jobs:
         python3 split_and_validate.py  # 分片并验证 DNS
 
     - name: Upload logs
-      uses: actions/upload-artifact@v3  # 使用最新的 v3 版本
+      uses: actions/upload-artifact@v4  # 使用最新的 v4 版本
       with:
         name: validation-logs
         path: ./logs/*  # 上传 logs 文件夹中的所有日志

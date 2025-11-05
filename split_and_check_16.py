@@ -181,7 +181,7 @@ def process_part(part):
         return
 
     lines = [l.strip() for l in open(part_file, "r", encoding="utf-8").read().splitlines()]
-    print(f"⏱ 验证分片 {part}, 共 {len(lines)} 条规则（不剔除注释）")
+    print(f"⏱ 验证分片 {part}, 共 {len(lines)} 条规则")
 
     out_file = os.path.join(DIST_DIR, f"validated_part_{part}.txt")
     old_rules = set()

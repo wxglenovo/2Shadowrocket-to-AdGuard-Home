@@ -26,7 +26,7 @@ DELETE_THRESHOLD = 4  # 删除计数阈值
 DNS_BATCH_SIZE = 500  # 每批验证条数
 
 os.makedirs(TMP_DIR, exist_ok=True)
-os.makedirs(DIST_DIR, exist_ok=True)
+os.makedirs(DIST_DIR, exist_ok=True)  # 确保 dist 目录存在
 
 # ===============================
 # JSON 读写封装

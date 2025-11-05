@@ -89,10 +89,7 @@ jobs:
           mkdir -p logs
           python3 split_and_check_16.py --part "$PART" | tee logs/split_check_part_${PART}.log
 
-      - name: ✅ 提取统计信息并修复分片 14 的数值显示
-        run: |
-          STATS_LOG="logs/split_check_part_${PART}.log"
-
+ 
           # 提取并检查统计数据
           TOTAL=$(grep -oP '总 (\d+)' "$STATS_LOG" | sed 's/总 //')
           NEW=$(grep -oP '新增 (\d+)' "$STATS_LOG" | sed 's/新增 //')

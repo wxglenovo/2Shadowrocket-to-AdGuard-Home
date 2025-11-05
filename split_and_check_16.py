@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*- 
 
 import os
 import json
@@ -20,7 +20,7 @@ PARTS = 16  # 分片总数
 DNS_WORKERS = 50  # DNS 并发验证线程数
 DNS_TIMEOUT = 2  # DNS 查询超时时间
 DELETE_COUNTER_FILE = os.path.join(DIST_DIR, "delete_counter.json")  # 连续失败计数文件路径
-NOT_WRITTEN_FILE = os.path.join(DIST_DIR, "not_written_counter.json")  # 连续未写入计数
+NOT_WRITTEN_FILE = os.path.join(DIST_DIR, "not_written_counter.json")  # 未写入计数文件
 DELETE_THRESHOLD = 4  # 删除计数阈值
 DNS_BATCH_SIZE = 500  # 每批验证条数
 
@@ -48,6 +48,28 @@ def save_json(path, data):
     """ 保存 JSON 数据到文件 """
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
+
+# ===============================
+# 更新未写入规则计数器
+# ===============================
+def update_not_written_counter(part, rule, not_written_counter):
+    """ 更新规则在 not_written_counter.json 中的写入计数器 """
+    if rule not in not_written_counter:
+        # 如果规则不存在，则初始化它的 write_counter 为 3，记录当前分片号
+        not_written_counter[rule] = {
+            "write_counter": 3,  # 初始值为 3
+            "part": part  # 记录该规则属于哪个分片
+        }
+    else:
+        # 如果规则已存在，递减 write_counter
+        current_write_counter = not_written_counter[rule]["write_counter"]
+        not_written_counter[rule]["write_counter"] = max(current_write_counter - 1, 0)
+
+    # 如果该规则在当前分片中的 write_counter 为 0，表示该规则在该分片中不再写入
+    if not_written_counter[rule]["write_counter"] == 0 and not_written_counter[rule]["part"] == part:
+        print(f"⚠ 清理规则：{rule} 因为 write_counter 为 0，分片：{part}")
+        # 只清除当前分片中的规则，保留其他分片中的记录
+        del not_written_counter[rule]
 
 # ===============================
 # 下载并合并规则源
@@ -169,13 +191,6 @@ def dns_validate(rules):
     return valid_rules
 
 # ===============================
-# 更新未写入计数器
-# ===============================
-def update_not_written_counter(rule, not_written_counter):
-    """ 增加规则未写入计数 """
-    not_written_counter[rule] = not_written_counter.get(rule, 0) + 1
-
-# ===============================
 # 核心：并行处理分片和更新删除计数
 # ===============================
 def process_part(part):
@@ -222,7 +237,7 @@ def process_part(part):
             final_rules.add(rule)
             delete_counter[rule] = 0
             if rule in not_written:
-                not_written.pop(rule)
+                not_written[rule]["write_counter"] = 3  # 重置写入计数器为 3
             added_count += 1
         else:
             # 验证失败 → 删除计数加 1
@@ -236,7 +251,7 @@ def process_part(part):
 
             # 如果该规则验证失败且没有写入，则增加未写入计数
             if rule not in valid:
-                update_not_written_counter(rule, not_written)
+                update_not_written_counter(part, rule, not_written)
 
     # 将更新后的未写入规则计数器保存到文件
     save_json(NOT_WRITTEN_FILE, not_written)

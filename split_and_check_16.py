@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
 
 import os
 import json
@@ -12,24 +12,24 @@ import time
 # ===============================
 # 配置区（Config）
 # ===============================
-URLS_TXT = "urls.txt"
-TMP_DIR = "tmp"
-DIST_DIR = "dist"
-MASTER_RULE = "merged_rules.txt"
-PARTS = 16
-DNS_WORKERS = 50
-DNS_TIMEOUT = 2
-DELETE_COUNTER_FILE = os.path.join(DIST_DIR, "delete_counter.json")
-NOT_WRITTEN_FILE = os.path.join(DIST_DIR, "not_written_counter.json")
-DELETE_THRESHOLD = 4
-DNS_BATCH_SIZE = 500
-WRITE_COUNTER_MAX = 3
+URLS_TXT = "urls.txt"  # urls.txt 存放所有规则源 URL
+TMP_DIR = "tmp"  # 临时分片目录
+DIST_DIR = "dist"  # 处理后输出目录
+MASTER_RULE = "merged_rules.txt"  # 合并后的主规则文件
+PARTS = 16  # 分片总数
+DNS_WORKERS = 50  # DNS 并发验证线程数
+DNS_TIMEOUT = 2  # DNS 查询超时时间
+DELETE_COUNTER_FILE = os.path.join(DIST_DIR, "delete_counter.json")  # 连续失败计数文件路径
+SKIP_FILE = os.path.join(DIST_DIR, "skip_tracker.json")  # 跳过验证计数文件路径
+NOT_WRITTEN_FILE = os.path.join(DIST_DIR, "not_written_counter.json")  # 连续未写入计数
+DELETE_THRESHOLD = 4  # 删除计数阈值
+DNS_BATCH_SIZE = 500  # 每批验证条数
 
 os.makedirs(TMP_DIR, exist_ok=True)
 os.makedirs(DIST_DIR, exist_ok=True)
 
 # ===============================
-# JSON 读写
+# JSON 读写封装
 # ===============================
 def load_json(path):
     if os.path.exists(path):
@@ -74,38 +74,38 @@ def download_all_sources():
             print(f"⚠ 下载失败 {url}: {e}")
 
     print(f"✅ 合并 {len(merged)} 条规则")
+
     with open(MASTER_RULE, "w", encoding="utf-8") as f:
         f.write("\n".join(sorted(merged)))
 
+    # 提取删除计数 < 7 的规则并剔除，处理删除计数 >= 7 的规则
     filtered_rules, updated_delete_counter = filter_and_update_high_delete_count_rules(merged)
     split_parts(filtered_rules)
     save_json(DELETE_COUNTER_FILE, updated_delete_counter)
     return True
 
 # ===============================
-# 处理删除计数 >=7 的规则
+# 提取删除计数 < 7 的规则并更新删除计数
 # ===============================
 def filter_and_update_high_delete_count_rules(all_rules_set):
     delete_counter = load_json(DELETE_COUNTER_FILE)
     low_delete_count_rules = set()
     updated_delete_counter = delete_counter.copy()
 
-    reset_count = 0  # 用于计数重置规则的数量
-
     for rule in all_rules_set:
         del_cnt = delete_counter.get(rule, 4)
+        # 删除计数 >= 7 的规则不加入分片
         if del_cnt < 7:
             low_delete_count_rules.add(rule)
         else:
+            print(f"⚠ 删除计数达到 7 或以上，跳过该规则：{rule} | 删除计数={del_cnt}")
+            # 删除计数 >= 7 时，增加删除计数
             updated_delete_counter[rule] = del_cnt + 1
+            # 如果删除计数 >= 17，重置为 6
             if updated_delete_counter[rule] >= 17:
-                updated_delete_counter[rule] = 5
-                reset_count += 1  # 增加计数
-                print(f"🔁 删除计数达到 17，重置规则：{rule} 的删除计数为 5")
-
-    if reset_count > 0:
-        print(f"✅ 总共重置了 {reset_count} 条规则的删除计数为 5")
-
+                updated_delete_counter[rule] = 6
+                print(f"🔁 删除计数达到 17，重置规则：{rule} 的删除计数为 6")
+    
     return low_delete_count_rules, updated_delete_counter
 
 # ===============================
@@ -117,14 +117,14 @@ def split_parts(merged_rules):
     print(f"🪓 分片 {total} 条，每片约 {per_part}")
 
     for i in range(PARTS):
-        part_rules = list(merged_rules)[i*per_part:(i+1)*per_part]
+        part_rules = list(merged_rules)[i * per_part:(i + 1) * per_part]
         filename = os.path.join(TMP_DIR, f"part_{i+1:02d}.txt")
         with open(filename, "w", encoding="utf-8") as f:
             f.write("\n".join(part_rules))
         print(f"📄 分片 {i+1}: {len(part_rules)} 条 → {filename}")
 
 # ===============================
-# DNS 验证
+# 并行DNS验证
 # ===============================
 def check_domain(rule):
     resolver = dns.resolver.Resolver()
@@ -141,55 +141,16 @@ def check_domain(rule):
 
 def dns_validate(rules):
     valid_rules = []
-    total_rules = len(rules)
     with ThreadPoolExecutor(max_workers=DNS_WORKERS) as executor:
         futures = {executor.submit(check_domain, rule): rule for rule in rules}
-        completed = 0
-        start_time = time.time()
         for future in as_completed(futures):
             result = future.result()
             if result:
                 valid_rules.append(result)
-            completed += 1
-            if completed % DNS_BATCH_SIZE == 0 or completed == total_rules:
-                elapsed = time.time() - start_time
-                speed = completed / elapsed
-                eta = (total_rules - completed)/speed if speed > 0 else 0
-                print(f"✅ 已验证 {completed}/{total_rules} 条 | 有效 {len(valid_rules)} 条 | 速度 {speed:.1f} 条/秒 | ETA {eta:.1f} 秒")
     return valid_rules
 
 # ===============================
-# 更新 not_written_counter.json
-# ===============================
-def update_not_written_counter(part, final_rules):
-    counter = load_json(NOT_WRITTEN_FILE)
-
-    # 设定当前分片的规则 write_counter = 3
-    part_file = os.path.join(TMP_DIR, f"part_{int(part):02d}.txt")
-    if not os.path.exists(part_file):
-        print(f"⚠ 分片 {part} 文件缺失，无法更新 write_counter")
-        return
-
-    with open(part_file, "r", encoding="utf-8") as f:
-        part_rules = set(f.read().splitlines())
-
-    for rule in part_rules:
-        if rule in counter:
-            counter[rule]["write_counter"] = 3
-            counter[rule]["part"] = f"validated_part_{part}"
-
-    # 对其他规则未出现的，write_counter-1
-    for rule, info in list(counter.items()):
-        if info["part"] == f"validated_part_{part}" and rule not in part_rules:
-            counter[rule]["write_counter"] -= 1
-            if counter[rule]["write_counter"] <= 0:
-                print(f"🔥 删除 {rule} 于 {info['part']}")
-                counter.pop(rule)
-
-    save_json(NOT_WRITTEN_FILE, counter)
-
-# ===============================
-# 处理分片
+# 核心：并行处理分片和更新删除计数
 # ===============================
 def process_part(part):
     part_file = os.path.join(TMP_DIR, f"part_{int(part):02d}.txt")
@@ -201,7 +162,7 @@ def process_part(part):
         return
 
     lines = [l.strip() for l in open(part_file, "r", encoding="utf-8").read().splitlines()]
-    print(f"⏱ 验证分片 {part}, 共 {len(lines)} 条规则")
+    print(f"⏱ 验证分片 {part}, 共 {len(lines)} 条规则（不剔除注释）")
 
     out_file = os.path.join(DIST_DIR, f"validated_part_{part}.txt")
     old_rules = set()
@@ -210,11 +171,14 @@ def process_part(part):
             old_rules = set([l.strip() for l in f if l.strip()])
 
     delete_counter = load_json(DELETE_COUNTER_FILE)
+    not_written = load_json(NOT_WRITTEN_FILE)
+
     rules_to_validate = []
-    final_rules = set(old_rules)  # 确保最终的规则集从已有规则开始
+    final_rules = set(old_rules)
     added_count = 0
     removed_count = 0
 
+    # 提取删除计数 < 7 的规则，进行分片和 DNS 验证
     for r in lines:
         del_cnt = delete_counter.get(r, 4)
         if del_cnt < 7:
@@ -222,29 +186,56 @@ def process_part(part):
         else:
             delete_counter[r] = del_cnt + 1
             print(f"⚠ 删除计数达到 7 或以上，跳过规则：{r} | 删除计数={del_cnt}")
-
+    
+    # 并行 DNS 验证
     valid = dns_validate(rules_to_validate)
 
+    # 已验证的规则写入
     for rule in rules_to_validate:
         if rule in valid:
             final_rules.add(rule)
             delete_counter[rule] = 0
+            if rule in not_written:
+                not_written.pop(rule)
+            # 更新 write_counter
+            not_written[rule] = {"write_counter": 3, "part": f"validated_part_{part}"}
             added_count += 1
         else:
+            # 验证失败 → 删除计数加 1
             delete_counter[rule] = delete_counter.get(rule, 0) + 1
             print(f"⚠ 连续失败 +1 → {delete_counter[rule]}/{DELETE_THRESHOLD} ：{rule}")
             if delete_counter[rule] >= DELETE_THRESHOLD:
                 removed_count += 1
+                print(f"🔥 连续失败达到阈值 → 删除规则：{rule}")
+                not_written.pop(rule, None)
                 final_rules.discard(rule)
 
+    # 更新 not_written_counter.json
     save_json(DELETE_COUNTER_FILE, delete_counter)
+    save_json(NOT_WRITTEN_FILE, not_written)
 
-    # 更新 not_written_counter.json 仅在写入 validated_part_X.txt 时
     with open(out_file, "w", encoding="utf-8") as f:
         f.write("\n".join(sorted(final_rules)))
-
-    update_not_written_counter(part, final_rules)
 
     total_count = len(final_rules)
     print(f"✅ 分片 {part} 完成: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
     print(f"COMMIT_STATS: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
+
+# ===============================
+# 主入口
+# ===============================
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--part", help="验证指定分片 1~16")
+    parser.add_argument("--force-update", action="store_true", help="强制重新下载规则源并切片")
+    args = parser.parse_args()
+
+    if args.force_update:
+        download_all_sources()
+
+    if not os.path.exists(MASTER_RULE) or not os.path.exists(os.path.join(TMP_DIR, "part_01.txt")):
+        print("⚠ 缺少规则或分片，自动拉取")
+        download_all_sources()
+
+    if args.part:
+        process_part(args.part)

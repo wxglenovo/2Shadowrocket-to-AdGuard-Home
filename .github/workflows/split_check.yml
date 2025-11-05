@@ -42,7 +42,7 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: ✅ 检测本次需要处理的分片
+      - name: ✅ 检测本次处理的分片
         id: detect
         run: |
           mkdir -p tmp dist
@@ -63,7 +63,7 @@ jobs:
           echo "$PART" > "$LAST_PART_FILE"
           echo "part=$PART" >> $GITHUB_OUTPUT
 
-      - name: ✅ 定时强制更新规则（每 6 小时）
+      - name: ✅ 定时强制更新规则（每6小时）
         run: |
           CURRENT_HOUR=$(date -u +"%H")
           if [[ "$CURRENT_HOUR" == "00" || "$CURRENT_HOUR" == "06" || "$CURRENT_HOUR" == "12" || "$CURRENT_HOUR" == "18" ]]; then

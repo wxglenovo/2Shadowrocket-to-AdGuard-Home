@@ -46,6 +46,7 @@ jobs:
         id: detect
         run: |
           mkdir -p tmp dist
+
           LAST_PART_FILE="tmp/last_part.txt"
           PART_INPUT="${{ github.event.inputs.part }}"
           if [ -n "$PART_INPUT" ]; then
@@ -71,6 +72,7 @@ jobs:
             python3 split_and_check_16.py --force-update
           else
             echo "⏩ 当前不是强制刷新时间 → 跳过"
+          fi
 
       - name: ✅ 检查规则文件与分片
         run: |
@@ -84,6 +86,11 @@ jobs:
         run: |
           mkdir -p dist
           [ -f dist/delete_counter.json ] || echo "{}" > dist/delete_counter.json
+
+      - name: ✅ 创建或检查 not_written_counter.json
+        run: |
+          mkdir -p dist
+          [ -f dist/not_written_counter.json ] || echo "{}" > dist/not_written_counter.json
 
       - name: ✅ 执行 DNS 验证
         env:
@@ -105,5 +112,8 @@ jobs:
 
           git commit -m "🤖 分片 $PART | $STATS" || echo "ℹ️ 本次无变化，无需提交"
 
+          echo "🔄 pull 最新代码以避免冲突"
           git pull --rebase origin main || echo "⚠ Pull 失败（忽略）"
+
+          echo "⬆ 推送到仓库"
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main || echo "⚠ Push 失败（可能无变化）"

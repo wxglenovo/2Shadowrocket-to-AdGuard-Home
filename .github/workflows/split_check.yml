@@ -69,10 +69,12 @@ jobs:
             python3 split_and_check_16.py --force-update
           fi
 
-      - name: ✅ 检查规则文件与分片
-        run: |
-          if [ ! -f "merged_rules.txt" ] || [ ! -f "tmp/part_01.txt" ]; then
-            python3 split_and_check_16.py --force-update
+- name: ✅ 检查规则文件与分片
+  run: |
+    if [ ! -f "merged_rules.txt" ] || [ ! -f "tmp/part_01.txt" ]; then
+      python3 split_and_check_16.py --force-update
+    fi
+
 
       - name: ✅ 创建或检查 delete_counter.json
         run: |

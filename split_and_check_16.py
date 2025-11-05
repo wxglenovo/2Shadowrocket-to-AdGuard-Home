@@ -170,26 +170,14 @@ def dns_validate(rules):
     return valid_rules
 
 # ===============================
-# 更新删除未写入规则
+# 更新未写入计数器
 # ===============================
-def remove_rules_not_written(part_file, not_written_counter):
-    """ 检查规则是否连续三次未写入，若是，则从文件中删除 """
-    lines = [l.strip() for l in open(part_file, "r", encoding="utf-8").read().splitlines()]
-    updated_lines = []
-    
-    for rule in lines:
-        # 如果规则连续三次未写入，则跳过
-        if not_written_counter.get(rule, 0) >= 3:
-            print(f"⚠ 规则 {rule} 连续三次未写入，已从分片 {part_file} 中删除")
-            continue
-        updated_lines.append(rule)
-
-    # 将删除后的规则重新写入分片文件
-    with open(part_file, "w", encoding="utf-8") as f:
-        f.write("\n".join(updated_lines))
+def update_not_written_counter(rule, not_written_counter):
+    """ 增加规则未写入计数 """
+    not_written_counter[rule] = not_written_counter.get(rule, 0) + 1
 
 # ===============================
-# 更新规则验证逻辑：调整未写入规则计数
+# 核心：并行处理分片和更新删除计数
 # ===============================
 def process_part(part):
     part_file = os.path.join(TMP_DIR, f"part_{int(part):02d}.txt")
@@ -211,7 +199,6 @@ def process_part(part):
 
     delete_counter = load_json(DELETE_COUNTER_FILE)
     not_written = load_json(NOT_WRITTEN_FILE)  # 加载未写入规则计数器
-    not_written_counter = {}  # 用来追踪规则未写入的次数
 
     rules_to_validate = []
     final_rules = set(old_rules)
@@ -250,15 +237,12 @@ def process_part(part):
 
             # 如果该规则验证失败且没有写入，则增加未写入计数
             if rule not in valid:
-                not_written_counter[rule] = not_written_counter.get(rule, 0) + 1
+                update_not_written_counter(rule, not_written)
 
     # 将更新后的未写入规则计数器保存到文件
     save_json(NOT_WRITTEN_FILE, not_written)
 
-    # 移除那些连续三次未写入的规则
-    remove_rules_not_written(part_file, not_written_counter)
-
-    # 写入文件
+    # 写入最终文件
     save_json(DELETE_COUNTER_FILE, delete_counter)
 
     with open(out_file, "w", encoding="utf-8") as f:

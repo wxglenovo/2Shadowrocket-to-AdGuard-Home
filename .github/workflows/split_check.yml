@@ -1,3 +1,4 @@
+
 name: Split & DNS Check
 
 on:
@@ -72,21 +73,16 @@ jobs:
         run: |
           if [ ! -f "merged_rules.txt" ] || [ ! -f "tmp/part_01.txt" ]; then
             python3 split_and_check_16.py --force-update
-          fi
 
       - name: ✅ 创建或检查 delete_counter.json
         run: |
           mkdir -p dist
-          if [ ! -f dist/delete_counter.json ]; then
-            echo "{}" > dist/delete_counter.json
-          fi
+          [ -f dist/delete_counter.json ] || echo "{}" > dist/delete_counter.json
 
       - name: ✅ 创建或检查 not_written_counter.json
         run: |
           mkdir -p dist
-          if [ ! -f dist/not_written_counter.json ]; then
-            echo "{}" > dist/not_written_counter.json
-          fi
+          [ -f dist/not_written_counter.json ] || echo "{}" > dist/not_written_counter.json
 
       - name: ✅ 执行 DNS 验证
         env:

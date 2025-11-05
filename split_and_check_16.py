@@ -20,7 +20,6 @@ PARTS = 16  # 分片总数
 DNS_WORKERS = 50  # DNS 并发验证线程数
 DNS_TIMEOUT = 2  # DNS 查询超时时间
 DELETE_COUNTER_FILE = os.path.join(DIST_DIR, "delete_counter.json")  # 连续失败计数文件路径
-SKIP_FILE = os.path.join(DIST_DIR, "skip_tracker.json")  # 跳过验证计数文件路径
 NOT_WRITTEN_FILE = os.path.join(DIST_DIR, "not_written_counter.json")  # 连续未写入计数
 DELETE_THRESHOLD = 4  # 删除计数阈值
 DNS_BATCH_SIZE = 500  # 每批验证条数
@@ -106,8 +105,8 @@ def filter_and_update_high_delete_count_rules(all_rules_set):
             updated_delete_counter[rule] = del_cnt + 1
             # 如果删除计数 >= 17，重置为 6
             if updated_delete_counter[rule] >= 17:
-                updated_delete_counter[rule] = 6
-                print(f"🔁 删除计数达到 17，重置规则：{rule} 的删除计数为 6")
+                updated_delete_counter[rule] = 5
+                print(f"🔁 删除计数达到 17，重置规则：{rule} 的删除计数为 5")
     
     return low_delete_count_rules, updated_delete_counter
 

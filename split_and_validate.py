@@ -176,10 +176,10 @@ def validate_part(part_file, validated_part_file, delete_counter, start_time, to
 
 def process_rule(rule, success, delete_counter, validated_part, not_written_counter):
     if success:
-        delete_counter[rule] = 0
-        validated_part.write(f"{rule}\n")
-        not_written_counter[rule] = 0
-        logging.info(f"规则验证成功: {rule}")
+        delete_counter[rule] = 0  # 验证成功，删除计数重置为 0
+        validated_part.write(f"{rule}\n")  # 写入 validated_part 文件
+        not_written_counter[rule] = 0  # 重置未写入计数
+        logging.info(f"规则验证成功并写入 validated_part: {rule}")
     else:
         delete_counter[rule] += 1
         if delete_counter[rule] >= 4:

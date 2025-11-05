@@ -2,7 +2,7 @@ name: Rule Update & DNS Validation
 
 on:
   schedule:
-    - cron: "0 0,6,12,18 * * *"  # 每天四次，间隔 6 小时
+    - cron: "0 0,6,12,18 * * *"  # 每天四次，分别是 0、6、12、18 UTC
   workflow_dispatch:
 
 jobs:
@@ -15,14 +15,14 @@ jobs:
 
     - name: Download and merge rules from urls.txt
       run: |
-        python3 download_and_merge_rules.py  # 假设已有脚本下载并合并规则
+        python3 download_and_merge_rules.py  # 下载并合并规则
 
     - name: Split rules and start DNS validation
       run: |
-        python3 split_and_validate.py  # 假设已有脚本进行分片和 DNS 验证
+        python3 split_and_validate.py  # 分片并验证 DNS
 
     - name: Upload logs
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3  # 使用最新的 v3 版本
       with:
         name: validation-logs
-        path: ./logs/*  # 假设日志文件存放在 logs 文件夹中
+        path: ./logs/*  # 上传 logs 文件夹中的所有日志

@@ -2,8 +2,9 @@ import logging
 import os
 import dns.resolver
 from collections import defaultdict
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import json
+import time
 
 # 设置日志目录
 if not os.path.exists('logs'):
@@ -78,18 +79,35 @@ def validate_dns(rule):
     except (dns.resolver.NoAnswer, dns.resolver.NXDOMAIN, dns.resolver.Timeout):
         return False
 
+# 批量 DNS 验证
+def batch_validate_dns(rules_batch):
+    results = {}
+    for rule in rules_batch:
+        results[rule] = validate_dns(rule)
+    return results
+
+# 计算预计剩余时间
+def estimate_remaining_time(start_time, processed, total):
+    elapsed_time = time.time() - start_time
+    remaining_time = (elapsed_time / processed) * (total - processed) if processed else 0
+    return remaining_time
+
 # 处理验证结果
 def process_validation_results():
     delete_counter = load_delete_counter()
     os.makedirs(VALIDATED_DIR, exist_ok=True)
-    
+
+    total_rules = sum(1 for _ in open(MERGED_FILE, 'r', encoding='utf-8'))
+    rules_processed = 0
+    start_time = time.time()
+
     # 分片验证
-    with ThreadPoolExecutor(max_workers=5) as executor:
+    with ThreadPoolExecutor(max_workers=80) as executor:
         futures = []
         for i in range(24):
             part_file = os.path.join(SPLIT_DIR, f"part_{i+1}.txt")
             validated_part_file = os.path.join(VALIDATED_DIR, f"validated_part_{i+1}.txt")
-            futures.append(executor.submit(validate_part, part_file, validated_part_file, delete_counter))
+            futures.append(executor.submit(validate_part, part_file, validated_part_file, delete_counter, start_time, total_rules))
 
         for future in futures:
             future.result()  # 等待所有分片验证完成
@@ -97,28 +115,48 @@ def process_validation_results():
     # 保存更新的删除计数
     save_delete_counter(delete_counter)
 
-def validate_part(part_file, validated_part_file, delete_counter):
+def validate_part(part_file, validated_part_file, delete_counter, start_time, total_rules):
+    # 每次处理 1000 条规则
+    batch_size = 1000
     not_written_counter = defaultdict(int)
-    
+    rules_processed = 0
+    valid_count = 0
+    total_batch = sum(1 for _ in open(part_file, 'r', encoding='utf-8')) // batch_size
+    rules_batch = []
+
     with open(part_file, 'r', encoding='utf-8') as part, open(validated_part_file, 'w', encoding='utf-8') as validated_part:
         for rule in part:
-            rule = rule.strip()
-            success = validate_dns(rule)
-            
-            # DNS 验证成功
-            if success:
-                delete_counter[rule] = 0
-                validated_part.write(f"{rule}\n")
-                not_written_counter[rule] = 0
-                logging.info(f"规则验证成功: {rule}")
-            # DNS 验证失败
-            else:
-                delete_counter[rule] += 1
-                if delete_counter[rule] >= 4:
-                    logging.info(f"规则 DNS 验证失败: {rule} (失败次数 {delete_counter[rule]})")
-                if delete_counter[rule] >= 7:
-                    logging.info(f"规则因 7 次失败而被标记删除: {rule}")
-        
+            rules_batch.append(rule.strip())
+            if len(rules_batch) >= batch_size:
+                # 批量验证
+                validation_results = batch_validate_dns(rules_batch)
+                valid_count += sum(1 for res in validation_results.values() if res)
+                for rule, success in validation_results.items():
+                    process_rule(rule, success, delete_counter, validated_part, not_written_counter)
+                rules_processed += len(rules_batch)
+
+                # 打印日志
+                elapsed_time = time.time() - start_time
+                remaining_time = estimate_remaining_time(start_time, rules_processed, total_rules)
+                logging.info(f"批次完成：有效数 {valid_count}，剩余时间估算：{remaining_time:.2f}秒")
+
+                # 重置批次
+                rules_batch = []
+
+        # 处理剩余的规则
+        if rules_batch:
+            validation_results = batch_validate_dns(rules_batch)
+            valid_count += sum(1 for res in validation_results.values() if res)
+            for rule, success in validation_results.items():
+                process_rule(rule, success, delete_counter, validated_part, not_written_counter)
+
+            rules_processed += len(rules_batch)
+
+            # 打印日志
+            elapsed_time = time.time() - start_time
+            remaining_time = estimate_remaining_time(start_time, rules_processed, total_rules)
+            logging.info(f"最后一批完成：有效数 {valid_count}，剩余时间估算：{remaining_time:.2f}秒")
+
         # 删除计数 >= 17 的规则，重置为 5
         for rule in list(delete_counter.keys()):
             if delete_counter[rule] >= 17:
@@ -135,6 +173,19 @@ def validate_part(part_file, validated_part_file, delete_counter):
                     for line in lines:
                         if line.strip() != rule:
                             validated_part_write.write(line)
+
+def process_rule(rule, success, delete_counter, validated_part, not_written_counter):
+    if success:
+        delete_counter[rule] = 0
+        validated_part.write(f"{rule}\n")
+        not_written_counter[rule] = 0
+        logging.info(f"规则验证成功: {rule}")
+    else:
+        delete_counter[rule] += 1
+        if delete_counter[rule] >= 4:
+            logging.info(f"规则 DNS 验证失败: {rule} (失败次数 {delete_counter[rule]})")
+        if delete_counter[rule] >= 7:
+            logging.info(f"规则因 7 次失败而被标记删除: {rule}")
 
 if __name__ == "__main__":
     split_rules()

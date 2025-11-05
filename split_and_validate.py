@@ -2,7 +2,7 @@ import logging
 import os
 import dns.resolver
 from collections import defaultdict
-from concurrent.futures import ThreadPoolExecutor, as_completed
+from concurrent.futures import ThreadPoolExecutor
 import json
 import time
 
@@ -202,18 +202,32 @@ def process_large_delete_count(delete_counter):
     """处理删除计数大于等于7的规则"""
     for rule, count in list(delete_counter.items()):
         if count >= 7:
-            delete_counter[rule] = 5
-            logging.info(f"规则 {rule} 删除计数大于等于7，已重置为 5。")
+            delete_counter[rule] += 1
+            if delete_counter[rule] >= 17:
+                delete_counter[rule] = 5  # 重置为 5
+                logging.info(f"规则 {rule} 删除计数大于等于 17，已重置为 5。")
+            logging.info(f"规则 {rule} 删除计数更新为 {delete_counter[rule]}。")
 
 def process_small_delete_count(delete_counter):
-    """处理删除计数小于7的规则"""
-    for rule, count in list(delete_counter.items()):
-        if count < 7:
-            logging.info(f"规则 {rule} 删除计数小于7，继续处理...")
+    """处理删除计数小于7的规则，进行分片和轮替 DNS 验证"""
+    small_delete_count_rules = [rule for rule, count in delete_counter.items() if count < 7]
+    
+    # 将这些规则进行分片并轮替 DNS 验证
+    os.makedirs(SPLIT_DIR, exist_ok=True)
+    batch_size = 1000
+    with ThreadPoolExecutor(max_workers=80) as executor:
+        futures = []
+        for i in range(0, len(small_delete_count_rules), batch_size):
+            batch = small_delete_count_rules[i:i+batch_size]
+            futures.append(executor.submit(batch_validate_dns, batch))
+
+        for future in futures:
+            future.result()  # 等待所有验证完成
+
+    logging.info("删除计数小于 7 的规则已完成 DNS 验证。")
 
 if __name__ == "__main__":
-    split_rules()
-    process_validation_results()
-    delete_counter = load_delete_counter()
-    handle_deletion_counter(delete_counter)
-    save_delete_counter(delete_counter)
+    split_rules()  # 分片规则
+    delete_counter = load_delete_counter()  # 加载删除计数
+    handle_deletion_counter(delete_counter)  # 并行处理删除计数
+    save_delete_counter(delete_counter)  # 保存更新的删除计数

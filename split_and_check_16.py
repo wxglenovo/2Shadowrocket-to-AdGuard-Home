@@ -90,6 +90,8 @@ def filter_and_update_high_delete_count_rules(all_rules_set):
     low_delete_count_rules = set()
     updated_delete_counter = delete_counter.copy()
 
+    reset_count = 0  # 用于计数重置规则的数量
+
     for rule in all_rules_set:
         del_cnt = delete_counter.get(rule, 4)
         if del_cnt < 7:
@@ -98,7 +100,12 @@ def filter_and_update_high_delete_count_rules(all_rules_set):
             updated_delete_counter[rule] = del_cnt + 1
             if updated_delete_counter[rule] >= 17:
                 updated_delete_counter[rule] = 5
+                reset_count += 1  # 增加计数
                 print(f"🔁 删除计数达到 17，重置规则：{rule} 的删除计数为 5")
+
+    if reset_count > 0:
+        print(f"✅ 总共重置了 {reset_count} 条规则的删除计数为 5")
+
     return low_delete_count_rules, updated_delete_counter
 
 # ===============================

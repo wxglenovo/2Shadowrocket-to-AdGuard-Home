@@ -187,6 +187,33 @@ def process_rule(rule, success, delete_counter, validated_part, not_written_coun
         if delete_counter[rule] >= 7:
             logging.info(f"规则因 7 次失败而被标记删除: {rule}")
 
+def handle_deletion_counter(delete_counter):
+    """并行处理删除计数大于7和小于7的规则"""
+    with ThreadPoolExecutor(max_workers=2) as executor:
+        # 将大于 7 和小于 7 的规则分开处理
+        future_7_plus = executor.submit(process_large_delete_count, delete_counter)
+        future_less_7 = executor.submit(process_small_delete_count, delete_counter)
+
+        # 等待所有任务完成
+        future_7_plus.result()
+        future_less_7.result()
+
+def process_large_delete_count(delete_counter):
+    """处理删除计数大于等于7的规则"""
+    for rule, count in list(delete_counter.items()):
+        if count >= 7:
+            delete_counter[rule] = 5
+            logging.info(f"规则 {rule} 删除计数大于等于7，已重置为 5。")
+
+def process_small_delete_count(delete_counter):
+    """处理删除计数小于7的规则"""
+    for rule, count in list(delete_counter.items()):
+        if count < 7:
+            logging.info(f"规则 {rule} 删除计数小于7，继续处理...")
+
 if __name__ == "__main__":
     split_rules()
     process_validation_results()
+    delete_counter = load_delete_counter()
+    handle_deletion_counter(delete_counter)
+    save_delete_counter(delete_counter)

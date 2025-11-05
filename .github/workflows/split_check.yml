@@ -89,20 +89,6 @@ jobs:
           mkdir -p logs
           python3 split_and_check_16.py --part "$PART" | tee logs/split_check_part_${PART}.log
 
- 
-          # 提取并检查统计数据
-          TOTAL=$(grep -oP '总 (\d+)' "$STATS_LOG" | sed 's/总 //')
-          NEW=$(grep -oP '新增 (\d+)' "$STATS_LOG" | sed 's/新增 //')
-          DELETE=$(grep -oP '删除 (\d+)' "$STATS_LOG" | sed 's/删除 //')
-
-          # 如果提取的数值为空，给默认值0
-          TOTAL=${TOTAL:-0}
-          NEW=${NEW:-0}
-          DELETE=${DELETE:-0}
-
-          # 输出修复后的统计信息
-          echo "🤖 分片 $PART | 总 $TOTAL, 新增 $NEW, 删除 $DELETE"
-
       - name: ✅ 提交与推送更改
         env:
           PART: ${{ steps.detect.outputs.part }}

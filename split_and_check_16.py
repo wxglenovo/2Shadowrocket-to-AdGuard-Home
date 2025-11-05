@@ -163,16 +163,29 @@ def dns_validate(rules):
 # ===============================
 def update_not_written_counter(part, final_rules):
     counter = load_json(NOT_WRITTEN_FILE)
-    # 重置当前分片规则 write_counter = 3
-    for rule in final_rules:
-        counter[rule] = {"write_counter": WRITE_COUNTER_MAX, "part": f"validated_part_{part}"}
+
+    # 设定当前分片的规则 write_counter = 3
+    part_file = os.path.join(TMP_DIR, f"part_{int(part):02d}.txt")
+    if not os.path.exists(part_file):
+        print(f"⚠ 分片 {part} 文件缺失，无法更新 write_counter")
+        return
+
+    with open(part_file, "r", encoding="utf-8") as f:
+        part_rules = set(f.read().splitlines())
+
+    for rule in part_rules:
+        if rule in counter:
+            counter[rule]["write_counter"] = 3
+            counter[rule]["part"] = f"validated_part_{part}"
+
     # 对其他规则未出现的，write_counter-1
     for rule, info in list(counter.items()):
-        if info["part"] == f"validated_part_{part}" and rule not in final_rules:
+        if info["part"] == f"validated_part_{part}" and rule not in part_rules:
             counter[rule]["write_counter"] -= 1
             if counter[rule]["write_counter"] <= 0:
-                print(f"🔥 write_counter 为0，删除 {rule} 于 {info['part']}")
+                print(f"🔥 删除 {rule} 于 {info['part']}")
                 counter.pop(rule)
+
     save_json(NOT_WRITTEN_FILE, counter)
 
 # ===============================
@@ -225,8 +238,8 @@ def process_part(part):
                 final_rules.discard(rule)
 
     save_json(DELETE_COUNTER_FILE, delete_counter)
-    save_json(NOT_WRITTEN_FILE, load_json(NOT_WRITTEN_FILE))  # 确保文件存在
 
+    # 更新 not_written_counter.json 仅在写入 validated_part_X.txt 时
     with open(out_file, "w", encoding="utf-8") as f:
         f.write("\n".join(sorted(final_rules)))
 
@@ -235,22 +248,3 @@ def process_part(part):
     total_count = len(final_rules)
     print(f"✅ 分片 {part} 完成: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
     print(f"COMMIT_STATS: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
-
-# ===============================
-# 主入口
-# ===============================
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--part", help="验证指定分片 1~16")
-    parser.add_argument("--force-update", action="store_true", help="强制重新下载规则源并切片")
-    args = parser.parse_args()
-
-    if args.force_update:
-        download_all_sources()
-
-    if not os.path.exists(MASTER_RULE) or not os.path.exists(os.path.join(TMP_DIR, "part_01.txt")):
-        print("⚠ 缺少规则或分片，自动拉取")
-        download_all_sources()
-
-    if args.part:
-        process_part(args.part)

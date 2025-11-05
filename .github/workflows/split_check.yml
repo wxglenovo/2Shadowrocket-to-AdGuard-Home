@@ -74,7 +74,7 @@ jobs:
           CURRENT_HOUR=$(date -u +"%H")
           if [[ "$CURRENT_HOUR" == "00" || "$CURRENT_HOUR" == "06" || "$CURRENT_HOUR" == "12" || "$CURRENT_HOUR" == "18" ]]; then
             echo "🔄 定时触发 → 强制重新下载规则并切片"
-            python3 split_and_check_16.py --force-update
+            python3 split_and_check_16.py --force-update || echo "⚠ 强制更新规则失败"
           else
             echo "⏩ 当前不是强制刷新时间 → 跳过"
           fi
@@ -83,7 +83,7 @@ jobs:
         run: |
           if [ ! -f "merged_rules.txt" ] || [ ! -f "tmp/part_01.txt" ]; then
             echo "⚠ 缺少规则文件或分片 → 正在重新拉取"
-            python3 split_and_check_16.py --force-update
+            python3 split_and_check_16.py --force-update || echo "⚠ 下载失败"
           else
             echo "✅ 已检测到完整规则与分片，无需重新生成"
           fi

@@ -46,8 +46,8 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-      # 检测本次需要处理的分片
-      - name: ✅ 检测规则文件与分片
+      # 检测分片
+      - name: ✅ 检测规则分片
         id: detect
         run: |
           mkdir -p tmp dist
@@ -68,6 +68,17 @@ jobs:
           echo "$PART" > "$LAST_PART_FILE"
           echo "part=$PART" >> $GITHUB_OUTPUT
 
+      # 定时强制更新规则
+      - name: ✅ 定时强制更新规则（每6小时）
+        run: |
+          CURRENT_HOUR=$(date -u +"%H")
+          if [[ "$CURRENT_HOUR" == "00" || "$CURRENT_HOUR" == "06" || "$CURRENT_HOUR" == "12" || "$CURRENT_HOUR" == "18" ]]; then
+            echo "🔄 定时触发 → 强制重新下载规则并切片"
+            python3 split_and_check_16.py --force-update
+          else
+            echo "⏩ 当前不是强制刷新时间 → 跳过"
+          fi
+
       # 检查规则文件与分片
       - name: ✅ 检查规则文件与分片
         run: |
@@ -82,31 +93,32 @@ jobs:
       - name: ✅ 创建或检查 delete_counter.json
         run: |
           mkdir -p dist
-          [ -f dist/delete_counter.json ] || echo "{}" > dist/delete_counter.json
-          echo "✅ delete_counter.json 已存在或已创建"
+          if [ ! -f dist/delete_counter.json ]; then
+            echo "{}" > dist/delete_counter.json
+            echo "✅ 已创建 dist/delete_counter.json"
+          else
+            echo "✅ delete_counter.json 已存在"
+          fi
 
       # 创建或检查 not_written_counter.json
       - name: ✅ 创建或检查 not_written_counter.json
         run: |
-          if [ ! -f "dist/not_written_counter.json" ]; then
+          mkdir -p dist
+          if [ ! -f dist/not_written_counter.json ]; then
             echo "{}" > dist/not_written_counter.json
-            echo "✅ 已创建 not_written_counter.json"
+            echo "✅ 已创建 dist/not_written_counter.json"
           else
             echo "✅ not_written_counter.json 已存在"
           fi
 
-      # 执行 DNS 验证
+      # 执行 DNS 验证和更新 not_written_counter
       - name: ✅ 执行 DNS 验证
         env:
           PART: ${{ steps.detect.outputs.part }}
         run: |
           mkdir -p logs
-          START_TIME=$(date +%s)
           echo "🚀 开始验证分片 $PART..."
           python3 split_and_check_16.py --part "$PART" | tee logs/split_check_part_${PART}.log
-          END_TIME=$(date +%s)
-          ELAPSED_TIME=$((END_TIME - START_TIME))
-          echo "⏱ 验证分片 $PART 完成，耗时 ${ELAPSED_TIME}s"
 
       # 提交与推送更改
       - name: ✅ 提交与推送更改
@@ -119,11 +131,10 @@ jobs:
           git add tmp/last_part.txt dist/delete_counter.json dist/not_written_counter.json merged_rules.txt || true
           git add dist/validated_part_*.txt 2>/dev/null || true
 
-          if git diff --cached --quiet; then
-            echo "ℹ️ 本次无变化，无需提交"
-          else
-            git commit -m "🤖 分片 $PART | $STATS" || echo "ℹ️ 提交失败（忽略）"
-            git pull --rebase origin main || echo "⚠ Pull 失败（忽略）"
-            echo "⬆ 推送到仓库"
-            git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main || echo "⚠ Push 失败（可能无变化）"
-          fi
+          git commit -m "🤖 分片 $PART | $STATS" || echo "ℹ️ 本次无变化，无需提交"
+
+          echo "🔄 pull 最新代码以避免冲突"
+          git pull --rebase origin main || echo "⚠ Pull 失败（忽略）"
+
+          echo "⬆ 推送到仓库"
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main || echo "⚠ Push 失败（可能无变化）"

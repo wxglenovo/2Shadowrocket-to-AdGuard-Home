@@ -32,6 +32,7 @@ os.makedirs(DIST_DIR, exist_ok=True)
 # JSON 读写封装
 # ===============================
 def load_json(path):
+    """ 加载 JSON 文件，如果不存在则创建并返回空字典 """
     if os.path.exists(path):
         try:
             with open(path, "r", encoding="utf-8") as f:
@@ -39,11 +40,13 @@ def load_json(path):
         except:
             return {}
     else:
+        # 如果文件不存在，初始化为空字典并创建该文件
         with open(path, "w", encoding="utf-8") as f:
             json.dump({}, f, indent=2)
         return {}
 
 def save_json(path, data):
+    """ 保存 JSON 数据到文件 """
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
 
@@ -207,7 +210,7 @@ def process_part(part):
             old_rules = set([l.strip() for l in f if l.strip()])
 
     delete_counter = load_json(DELETE_COUNTER_FILE)
-    not_written = load_json(NOT_WRITTEN_FILE)
+    not_written = load_json(NOT_WRITTEN_FILE)  # 加载未写入规则计数器
     not_written_counter = {}  # 用来追踪规则未写入的次数
 
     rules_to_validate = []
@@ -249,7 +252,7 @@ def process_part(part):
             if rule not in valid:
                 not_written_counter[rule] = not_written_counter.get(rule, 0) + 1
 
-    # 将更新后的未写入规则计数器保存
+    # 将更新后的未写入规则计数器保存到文件
     save_json(NOT_WRITTEN_FILE, not_written)
 
     # 移除那些连续三次未写入的规则

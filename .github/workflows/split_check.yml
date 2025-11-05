@@ -89,15 +89,35 @@ jobs:
           mkdir -p logs
           python3 split_and_check_16.py --part "$PART" | tee logs/split_check_part_${PART}.log
 
-      - name: ✅ 提取统计信息并提交更改
-        env:
-          PART: ${{ steps.detect.outputs.part }}
+      - name: ✅ 提取统计信息并修复分片 13 的数值显示
         run: |
-          # 提取统计信息：总数、新增、删除
+          # 定义日志文件和提取统计信息
           STATS_LOG="logs/split_check_part_${PART}.log"
           TOTAL=$(grep -oP '总 (\d+)' "$STATS_LOG" | sed 's/总 //')
           NEW=$(grep -oP '新增 (\d+)' "$STATS_LOG" | sed 's/新增 //')
           DELETE=$(grep -oP '删除 (\d+)' "$STATS_LOG" | sed 's/删除 //')
+
+          # 修复：如果数值为空，则设置为 0
+          TOTAL=${TOTAL:-0}
+          NEW=${NEW:-0}
+          DELETE=${DELETE:-0}
+
+          # 输出修复后的统计信息
+          echo "🤖 分片 $PART | 总 $TOTAL, 新增 $NEW, 删除 $DELETE"
+
+      - name: ✅ 提交与推送更改
+        env:
+          PART: ${{ steps.detect.outputs.part }}
+        run: |
+          STATS_LOG="logs/split_check_part_${PART}.log"
+          TOTAL=$(grep -oP '总 (\d+)' "$STATS_LOG" | sed 's/总 //')
+          NEW=$(grep -oP '新增 (\d+)' "$STATS_LOG" | sed 's/新增 //')
+          DELETE=$(grep -oP '删除 (\d+)' "$STATS_LOG" | sed 's/删除 //')
+
+          # 确保提取的数值为空时设置为 0
+          TOTAL=${TOTAL:-0}
+          NEW=${NEW:-0}
+          DELETE=${DELETE:-0}
 
           # 打印日志信息
           echo "🤖 分片 $PART | 总 $TOTAL, 新增 $NEW, 删除 $DELETE"

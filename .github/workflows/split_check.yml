@@ -1,5 +1,4 @@
 name: Split & DNS Check
-
 on:
   schedule:
     - cron: "0 0 * * *"
@@ -22,7 +21,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       PYTHONUNBUFFERED: 1
-
     steps:
       - name: ✅ 拉取代码库
         uses: actions/checkout@v4
@@ -74,7 +72,6 @@ jobs:
             python3 split_and_check_16.py --force-update
           fi
 
-
       - name: ✅ 创建或检查 delete_counter.json
         run: |
           mkdir -p dist
@@ -92,13 +89,22 @@ jobs:
           mkdir -p logs
           python3 split_and_check_16.py --part "$PART" | tee logs/split_check_part_${PART}.log
 
-      - name: ✅ 提交与推送更改
+      - name: ✅ 提取统计信息并提交更改
         env:
           PART: ${{ steps.detect.outputs.part }}
         run: |
-          STATS=$(grep "COMMIT_STATS" logs/split_check_part_${PART}.log | tail -n1 | sed 's/COMMIT_STATS: //')
+          # 提取统计信息：总数、新增、删除
+          STATS_LOG="logs/split_check_part_${PART}.log"
+          TOTAL=$(grep -oP '总 (\d+)' "$STATS_LOG" | sed 's/总 //')
+          NEW=$(grep -oP '新增 (\d+)' "$STATS_LOG" | sed 's/新增 //')
+          DELETE=$(grep -oP '删除 (\d+)' "$STATS_LOG" | sed 's/删除 //')
+
+          # 打印日志信息
+          echo "🤖 分片 $PART | 总 $TOTAL, 新增 $NEW, 删除 $DELETE"
+
+          # 提交更改
           git add tmp/last_part.txt dist/delete_counter.json dist/not_written_counter.json merged_rules.txt || true
           git add dist/validated_part_*.txt 2>/dev/null || true
-          git commit -m "🤖 分片 $PART | $STATS" || echo "ℹ️ 本次无变化"
+          git commit -m "🤖 分片 $PART | 总 $TOTAL, 新增 $NEW, 删除 $DELETE" || echo "ℹ️ 本次无变化"
           git pull --rebase origin main || echo "⚠ Pull 失败（忽略）"
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main || echo "⚠ Push 失败（可能无变化）"

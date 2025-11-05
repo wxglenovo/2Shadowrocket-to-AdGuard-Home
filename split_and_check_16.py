@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*- 
 
 import os
 import json
@@ -147,7 +147,7 @@ def dns_validate(rules):
             if completed % DNS_BATCH_SIZE == 0 or completed == total_rules:
                 elapsed = time.time() - start_time
                 speed = completed / elapsed
-                eta = (total_rules - completed)/speed if speed>0 else 0
+                eta = (total_rules - completed)/speed if speed > 0 else 0
                 print(f"✅ 已验证 {completed}/{total_rules} 条 | 有效 {len(valid_rules)} 条 | 速度 {speed:.1f} 条/秒 | ETA {eta:.1f} 秒")
     return valid_rules
 

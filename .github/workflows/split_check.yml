@@ -68,11 +68,6 @@ jobs:
           echo "$PART" > "$LAST_PART_FILE"
           echo "part=$PART" >> $GITHUB_OUTPUT
 
-      # 定时强制更新规则（每6小时）
-      - name: ✅ 定时强制更新规则（每6小时）
-        run: |
-          python3 update_rules.py  # 独立脚本处理定时更新
-
       # 检查规则文件与分片
       - name: ✅ 检查规则文件与分片
         run: |

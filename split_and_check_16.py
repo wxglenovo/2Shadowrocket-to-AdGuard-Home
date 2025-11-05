@@ -198,7 +198,7 @@ def process_part(part):
 
     delete_counter = load_json(DELETE_COUNTER_FILE)
     rules_to_validate = []
-    final_rules = set(old_rules)
+    final_rules = set(old_rules)  # 确保最终的规则集从已有规则开始
     added_count = 0
     removed_count = 0
 

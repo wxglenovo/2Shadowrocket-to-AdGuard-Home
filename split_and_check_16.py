@@ -242,7 +242,7 @@ def process_part(part):
     valid = dns_validate(rules_to_validate)
 
     # 初始化连续失败计数
-    failure_counts = {i: 0 for i in range(1, DELETE_THRESHOLD + 1)}
+    failure_counts = {}
 
     for rule in rules_to_validate:
         if rule in valid:
@@ -252,21 +252,16 @@ def process_part(part):
         else:
             delete_counter[rule] = delete_counter.get(rule, 0) + 1
             current_failure_count = delete_counter[rule]
-            if current_failure_count < DELETE_THRESHOLD:
-                failure_counts[current_failure_count] += 1
+            # 统计每个失败次数的规则
+            failure_counts[current_failure_count] = failure_counts.get(current_failure_count, 0) + 1
             if delete_counter[rule] >= DELETE_THRESHOLD:
                 removed_count += 1
                 final_rules.discard(rule)
 
     save_json(DELETE_COUNTER_FILE, delete_counter)
 
-    # 输出连续失败计数
-    for i in range(1, DELETE_THRESHOLD + 1):
-        if failure_counts[i] > 0:
-            print(f"⚠ 连续失败 {i}/4 的规则条数: {failure_counts[i]} 条")
-
-    # 如果失败计数超过 DELETE_THRESHOLD，还需要输出更高的计数，例如 5/4、6/4、7/4 等
-    for i in range(DELETE_THRESHOLD + 1, max(failure_counts.keys()) + 1):
+    # 输出所有失败次数的规则条数
+    for i in range(1, max(failure_counts.keys()) + 1):  # max(failure_counts.keys()) 确保包含所有失败次数
         if failure_counts[i] > 0:
             print(f"⚠ 连续失败 {i}/4 的规则条数: {failure_counts[i]} 条")
 

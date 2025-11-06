@@ -97,6 +97,8 @@ def filter_and_update_high_delete_count_rules(all_rules_set):
     
     reset_count = 0  # 记录重置的规则数量
     reset_limit = 20  # 限制只显示前20条重置的规则
+    skipped_count = 0  # 记录跳过的规则数量
+    skipped_rules = []  # 存储跳过的规则
 
     for rule in all_rules_set:
         del_cnt = delete_counter.get(rule, 4)
@@ -110,7 +112,15 @@ def filter_and_update_high_delete_count_rules(all_rules_set):
                 
                 if reset_count <= reset_limit:  # 限制只打印前20条重置的规则
                     print(f"🔁 删除计数达到 17，重置规则：{rule} 的删除计数为 5")
-    
+            
+            # 对于删除计数达到7或以上的规则进行跳过
+            if del_cnt >= 7:
+                skipped_count += 1
+                skipped_rules.append(rule)
+                if len(skipped_rules) <= reset_limit:  # 限制只打印前20条跳过的规则
+                    print(f"⚠ 删除计数达到 7 或以上，跳过该规则：{rule} | 删除计数={del_cnt}")
+
+    print(f"🔢 共 {skipped_count} 条规则被跳过验证")
     print(f"🔢 共 {reset_count} 条规则的删除计数被重置")  # 打印重置的总规则数
     return low_delete_count_rules, updated_delete_counter
 
@@ -179,8 +189,7 @@ def update_not_written_counter(part, final_rules):
     for rule, info in list(counter.items()):
         # 检查 'part' 键是否存在，如果不存在，则跳过该条目
         if "part" not in info:
-            print(f"⚠ 跳过规则 {rule}，缺少 'part' 键")
-            continue
+            continue  # 跳过没有 'part' 键的规则
         
         if info["part"] == f"validated_part_{part}" and rule not in final_rules:
             counter[rule]["write_counter"] -= 1

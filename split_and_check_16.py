@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*- 
 
 import os
 import json
@@ -83,7 +83,7 @@ def download_all_sources():
         f.write("\n".join(sorted(merged)))
 
     filtered_rules, updated_delete_counter = filter_and_update_high_delete_count_rules(merged)
-    split_parts(filtered_rules)
+    split_parts(filtered_rules)  # 修复了 missing split_parts
     save_json(DELETE_COUNTER_FILE, updated_delete_counter)
     return True
 
@@ -260,5 +260,5 @@ if __name__ == "__main__":
         print("⚠ 缺少规则或分片，自动拉取")
         download_all_sources()
 
-    if args.part:
+    if args.part:  
         process_part(args.part)

@@ -169,6 +169,11 @@ def update_not_written_counter(part, final_rules):
     
     # 对其他规则未出现的，write_counter-1
     for rule, info in list(counter.items()):
+        # 检查 'part' 键是否存在，如果不存在，则跳过该条目
+        if "part" not in info:
+            print(f"⚠ 跳过规则 {rule}，缺少 'part' 键")
+            continue
+        
         if info["part"] == f"validated_part_{part}" and rule not in final_rules:
             counter[rule]["write_counter"] -= 1
             if counter[rule]["write_counter"] <= 0:

@@ -197,7 +197,7 @@ def update_not_written_counter(part, final_rules):
 
     # 重置当前分片规则 write_counter = 6
     for rule in final_rules:
-        counter[rule] = {"write_counter": WRITE_COUNTER_MAX, "part": current_part_prefix}
+        counter[rule] = {"write_counter": 6, "part": current_part_prefix}
 
     # 对其他规则未出现的，write_counter-1
     for rule, info in list(counter.items()):
@@ -207,12 +207,17 @@ def update_not_written_counter(part, final_rules):
         if info["part"] == current_part_prefix and rule not in final_rules:
             counter[rule]["write_counter"] -= 1
             if counter[rule]["write_counter"] <= 0:
-                print(f"🔥 write_counter 为0，删除 {rule} 于 {info['part']}")
+                print(f"🔥 write_counter 为 0，删除 {rule} 于 {info['part']}")
+                counter.pop(rule)
+                deleted_rules.append(rule)  # 记录被删除的规则
+
+            if counter[rule]["write_counter"] == 3:
+                print(f"🔥 write_counter 达到 3，删除该规则于分片 {info['part']}：{rule}")
                 counter.pop(rule)
                 deleted_rules.append(rule)  # 记录被删除的规则
 
     # 输出写入规则数量
-    write_counter_6_count = len([rule for rule, info in counter.items() if info.get('write_counter', 0) == 6])
+    write_counter_6_count = len([rule for rule, info in counter.items() if info.get('write_counter', 0) == 6 and info.get('part') == current_part_prefix])
     print(f"🔥 写入规则 {{'write_counter': 6, 'part': '{current_part_prefix}'}} 数量: {write_counter_6_count}")
 
     # 输出不在当前分片的规则数量

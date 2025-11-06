@@ -1,5 +1,9 @@
+/adx.$domain=~adx.uk.com|~adx.wowfi.com
 @@||adm.crowdicity.com^
 @@||ads.vk.com^
+@@||ct.ddc.venmo.com.fpc.datadome.co^$domain=id.venmo.com
+@@||fundingchoicesmessages.google.com/i/$script,domain=9to5mac.com|fanatik.com.tr|globo.com|kledgeb.blogspot.com
+@@||g.doubleclick.net/gampad/ads?*.crunchyroll.com$xmlhttprequest,domain=imasdk.googleapis.com
 @@||g.doubleclick.net/gampad/live/ads?*%2Flemino_instr%$domain=imasdk.googleapis.com
 gdt.qq.com
 hxsame.hexun.com^
@@ -10123,6 +10127,7 @@ va.huya.com
 ||b.rifub.com^
 ||b.simonandschuster.com^
 ||b.socialdemokraterna.se^
+||b.st-hatena.com/js/$script,third-party,domain=~b.hatena.ne.jp
 ||b.tondaka.com^
 ||b.vidmob.com^
 ||b.yy88.ru^
@@ -23800,6 +23805,7 @@ va.huya.com
 ||jbkqemk.icu^
 ||jbmqa.voluumtrk.com^
 ||jbventure.in^
+||jc.lgtianma.cn/*.gif$domain=m.geosouth.net
 ||jcca.qualtrics.com^
 ||jcdn.ad-stir.com^
 ||jcereza.com^

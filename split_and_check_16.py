@@ -83,7 +83,7 @@ def download_all_sources():
         f.write("\n".join(sorted(merged)))
 
     filtered_rules, updated_delete_counter = filter_and_update_high_delete_count_rules(merged)
-    split_parts(filtered_rules)  # 确保这里调用的 split_parts 已定义
+    split_parts(filtered_rules)  # 修复了 missing split_parts
     save_json(DELETE_COUNTER_FILE, updated_delete_counter)
     return True
 
@@ -181,6 +181,9 @@ def split_parts(rules):
     if len(rules) == 0:
         print("⚠ 没有规则进行分片")
         return
+
+    # 将 rules 从 set 转换为 list
+    rules = list(rules)
 
     # 计算每个分片包含的规则数量
     rules_per_part = len(rules) // PARTS

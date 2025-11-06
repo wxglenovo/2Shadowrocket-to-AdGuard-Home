@@ -222,7 +222,7 @@ def process_part(part):
         return
 
     lines = [l.strip() for l in open(part_file, "r", encoding="utf-8").read().splitlines()]
-    print(f"⏱ 验证分片 {part}, 共 {len(lines)} 条规则")
+    print(f"⏱ 验证分片 {part}, 共 {len(lines)} 条规则（不剔除注释）")
 
     out_file = os.path.join(DIST_DIR, f"validated_part_{part}.txt")
     old_rules = set()
@@ -235,6 +235,7 @@ def process_part(part):
     final_rules = set(old_rules)
     added_count = 0
     removed_count = 0
+    deleted_rules_count = 0  # 新增删除的规则计数
 
     for r in lines:
         del_cnt = delete_counter.get(r, 4)
@@ -262,6 +263,7 @@ def process_part(part):
             if delete_counter[rule] >= DELETE_THRESHOLD:
                 removed_count += 1
                 final_rules.discard(rule)
+                deleted_rules_count += 1  # 增加删除规则的数量
 
     save_json(DELETE_COUNTER_FILE, delete_counter)
 
@@ -278,8 +280,8 @@ def process_part(part):
     update_not_written_counter(part, final_rules)
 
     total_count = len(final_rules)
-    print(f"✅ 分片 {part} 完成: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
-    print(f"COMMIT_STATS: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
+    print(f"✅ 分片 {part} 完成: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}, 删除规则数量: {deleted_rules_count}")
+    print(f"COMMIT_STATS: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}, 删除规则数量: {deleted_rules_count}")
 
 # ===============================
 # 主入口

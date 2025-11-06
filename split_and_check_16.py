@@ -94,7 +94,7 @@ def filter_and_update_high_delete_count_rules(all_rules_set):
     delete_counter = load_json(DELETE_COUNTER_FILE)
     low_delete_count_rules = set()
     updated_delete_counter = delete_counter.copy()
-    
+
     reset_count = 0  # 记录重置的规则数量
     reset_limit = 20  # 限制只显示前20条重置的规则
     skipped_count = 0  # 记录跳过的规则数量
@@ -109,7 +109,7 @@ def filter_and_update_high_delete_count_rules(all_rules_set):
             if updated_delete_counter[rule] >= 17:
                 updated_delete_counter[rule] = 5
                 reset_count += 1  # 重置计数器加1
-                
+
                 if reset_count <= reset_limit:  # 限制只打印前20条重置的规则
                     print(f"🔁 删除计数达到 17，重置规则：{rule} 的删除计数为 5")
             
@@ -120,8 +120,12 @@ def filter_and_update_high_delete_count_rules(all_rules_set):
                 if len(skipped_rules) <= reset_limit:  # 限制只打印前20条跳过的规则
                     print(f"⚠ 删除计数达到 7 或以上，跳过该规则：{rule} | 删除计数={del_cnt}")
 
+    # 输出跳过规则总数
     print(f"🔢 共 {skipped_count} 条规则被跳过验证")
-    print(f"🔢 共 {reset_count} 条规则的删除计数被重置")  # 打印重置的总规则数
+
+    # 输出重置规则的数量
+    print(f"🔢 共 {reset_count} 条规则的删除计数被重置")
+    
     return low_delete_count_rules, updated_delete_counter
 
 # ===============================

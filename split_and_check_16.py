@@ -265,6 +265,11 @@ def process_part(part):
         if failure_counts[i] > 0:
             print(f"⚠ 连续失败 {i}/4 的规则条数: {failure_counts[i]} 条")
 
+    # 如果失败计数超过 DELETE_THRESHOLD，还需要输出更高的计数，例如 5/4、6/4、7/4 等
+    for i in range(DELETE_THRESHOLD + 1, max(failure_counts.keys()) + 1):
+        if failure_counts[i] > 0:
+            print(f"⚠ 连续失败 {i}/4 的规则条数: {failure_counts[i]} 条")
+
     # 将有效规则写入对应的分片文件
     with open(out_file, "w", encoding="utf-8") as f:
         f.write("\n".join(sorted(final_rules)))

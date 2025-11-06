@@ -211,8 +211,8 @@ def update_not_written_counter(part, final_rules):
                 counter.pop(rule)
                 deleted_rules.append(rule)  # 记录被删除的规则
 
-            if counter[rule]["write_counter"] == 3:
-                print(f"🔥 write_counter 达到 3，删除该规则于分片 {info['part']}：{rule}")
+            if counter[rule]["write_counter"] <= 3:
+                print(f"🔥 write_counter 为 3，删除该规则于分片 {info['part']}：{rule}")
                 counter.pop(rule)
                 deleted_rules.append(rule)  # 记录被删除的规则
 

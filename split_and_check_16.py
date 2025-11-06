@@ -236,7 +236,6 @@ def update_not_written_counter(part, final_rules):
     print(f"🔥 规则 write_counter 为 0，删除该规则于 not_written_counter.json 数量: {write_counter_0_delete_count}")
 
     # 调试输出
-    print(f"准备保存更新后的数据：{counter}")
     save_json(NOT_WRITTEN_FILE, counter)
 
     return len(deleted_rules)  # 返回被删除的规则数量

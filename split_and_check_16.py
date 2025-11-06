@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*- 
 
 import os
 import json
@@ -147,7 +147,7 @@ def dns_validate(rules):
             if completed % DNS_BATCH_SIZE == 0 or completed == total_rules:
                 elapsed = time.time() - start_time
                 speed = completed / elapsed
-                eta = (total_rules - completed)/speed if speed>0 else 0
+                eta = (total_rules - completed)/speed if speed > 0 else 0
                 print(f"✅ 已验证 {completed}/{total_rules} 条 | 有效 {len(valid_rules)} 条 | 速度 {speed:.1f} 条/秒 | ETA {eta:.1f} 秒")
     return valid_rules
 
@@ -159,6 +159,7 @@ def update_not_written_counter(part, final_rules):
     # 重置当前分片规则 write_counter = 3
     for rule in final_rules:
         counter[rule] = {"write_counter": WRITE_COUNTER_MAX, "part": f"validated_part_{part}"}
+    
     # 对其他规则未出现的，write_counter-1
     for rule, info in list(counter.items()):
         if info["part"] == f"validated_part_{part}" and rule not in final_rules:
@@ -166,6 +167,9 @@ def update_not_written_counter(part, final_rules):
             if counter[rule]["write_counter"] <= 0:
                 print(f"🔥 write_counter 为0，删除 {rule} 于 {info['part']}")
                 counter.pop(rule)
+
+    # 调试输出
+    print(f"保存更新后的 not_written_counter.json: {counter}")
     save_json(NOT_WRITTEN_FILE, counter)
 
 # ===============================
@@ -218,7 +222,6 @@ def process_part(part):
                 final_rules.discard(rule)
 
     save_json(DELETE_COUNTER_FILE, delete_counter)
-    save_json(NOT_WRITTEN_FILE, load_json(NOT_WRITTEN_FILE))  # 确保文件存在
 
     with open(out_file, "w", encoding="utf-8") as f:
         f.write("\n".join(sorted(final_rules)))

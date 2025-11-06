@@ -117,19 +117,19 @@ def filter_and_update_high_delete_count_rules(all_rules_set):
                 skipped_count += 1
                 skipped_rules.append(rule)
 
+    # 先输出跳过规则日志（只显示前20条）
+    for i, rule in enumerate(skipped_rules[:20]):
+        print(f"⚠ 删除计数达到 7 或以上，跳过规则：{rule} | 删除计数={delete_counter.get(rule)}")
+
     # 输出跳过规则总数
-    print(f"🔢 共 {skipped_count} 条规则被跳过验证")
+    print(f"🔢 共 {skipped_count} 条规则删除计数达到 7 或以上被跳过验证")
 
-    # 先输出跳过规则日志
-    for rule in skipped_rules:
-        print(f"⚠ 删除计数达到 7 或以上，跳过该规则：{rule} | 删除计数={delete_counter.get(rule)}")
-
-    # 输出重置规则的日志
-    for rule in reset_rules:
+    # 输出重置规则日志（只显示前20条）
+    for i, rule in enumerate(reset_rules[:20]):
         print(f"🔁 删除计数达到 17，重置规则：{rule} 的删除计数为 5")
 
     # 输出重置规则总数
-    print(f"🔢 共 {reset_count} 条规则的删除计数被重置")
+    print(f"🔢 共 {reset_count} 条规则删除计数达到 17的删除计数被重置为 5")
 
     return low_delete_count_rules, updated_delete_counter
 
@@ -222,7 +222,7 @@ def process_part(part):
         return
 
     lines = [l.strip() for l in open(part_file, "r", encoding="utf-8").read().splitlines()]
-    print(f"⏱ 验证分片 {part}, 共 {len(lines)} 条规则（不剔除注释）")
+    print(f"⏱ 验证分片 {part}, 共 {len(lines)} 条规则")
 
     out_file = os.path.join(DIST_DIR, f"validated_part_{part}.txt")
     old_rules = set()
@@ -257,7 +257,7 @@ def process_part(part):
         else:
             delete_counter[rule] = delete_counter.get(rule, 0) + 1
             current_failure_count = delete_counter[rule]
-            # 统计每个失败次数的规则
+            # 统计每个失败次数的规则条数
             failure_counts[current_failure_count] = failure_counts.get(current_failure_count, 0) + 1
             if delete_counter[rule] >= DELETE_THRESHOLD:
                 removed_count += 1

@@ -1,3 +1,5 @@
+
+
 name: Split & DNS Check
 
 on:
@@ -24,34 +26,33 @@ jobs:
       PYTHONUNBUFFERED: 1
 
     steps:
+      # 拉取代码库
       - name: ✅ 拉取代码库
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
+      # 设置 Python 环境
       - name: ✅ 设置 Python 环境
         uses: actions/setup-python@v4
         with:
           python-version: '3.12'
 
+      # 安装依赖
       - name: ✅ 安装依赖
         run: pip install --upgrade requests dnspython
 
+      # Git 配置
       - name: ✅ Git 配置
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: ✅ 检测本次需要处理的分片
+      # 检测分片
+      - name: ✅ 检测规则分片
         id: detect
         run: |
           mkdir -p tmp dist
-          SKIP_FILE="dist/skip_tracker.json"
-          if [ ! -f "$SKIP_FILE" ]; then
-            echo "{}" > "$SKIP_FILE"
-            echo "✅ 已创建 skip_tracker.json"
-          fi
-
           LAST_PART_FILE="tmp/last_part.txt"
           PART_INPUT="${{ github.event.inputs.part }}"
           if [ -n "$PART_INPUT" ]; then
@@ -69,7 +70,8 @@ jobs:
           echo "$PART" > "$LAST_PART_FILE"
           echo "part=$PART" >> $GITHUB_OUTPUT
 
-      - name: ✅ 定时强制更新规则（每 6 小时）
+      # 定时强制更新规则
+      - name: ✅ 定时强制更新规则（每6小时）
         run: |
           CURRENT_HOUR=$(date -u +"%H")
           if [[ "$CURRENT_HOUR" == "00" || "$CURRENT_HOUR" == "06" || "$CURRENT_HOUR" == "12" || "$CURRENT_HOUR" == "18" ]]; then
@@ -79,6 +81,7 @@ jobs:
             echo "⏩ 当前不是强制刷新时间 → 跳过"
           fi
 
+      # 检查规则文件与分片
       - name: ✅ 检查规则文件与分片
         run: |
           if [ ! -f "merged_rules.txt" ] || [ ! -f "tmp/part_01.txt" ]; then
@@ -88,6 +91,7 @@ jobs:
             echo "✅ 已检测到完整规则与分片，无需重新生成"
           fi
 
+      # 创建或检查 delete_counter.json
       - name: ✅ 创建或检查 delete_counter.json
         run: |
           mkdir -p dist
@@ -98,6 +102,18 @@ jobs:
             echo "✅ delete_counter.json 已存在"
           fi
 
+      # 创建或检查 not_written_counter.json
+      - name: ✅ 创建或检查 not_written_counter.json
+        run: |
+          mkdir -p dist
+          if [ ! -f dist/not_written_counter.json ]; then
+            echo "{}" > dist/not_written_counter.json
+            echo "✅ 已创建 dist/not_written_counter.json"
+          else
+            echo "✅ not_written_counter.json 已存在"
+          fi
+
+      # 执行 DNS 验证和更新 not_written_counter
       - name: ✅ 执行 DNS 验证
         env:
           PART: ${{ steps.detect.outputs.part }}
@@ -106,6 +122,7 @@ jobs:
           echo "🚀 开始验证分片 $PART..."
           python3 split_and_check_16.py --part "$PART" | tee logs/split_check_part_${PART}.log
 
+      # 提交与推送更改
       - name: ✅ 提交与推送更改
         env:
           PART: ${{ steps.detect.outputs.part }}
@@ -113,7 +130,7 @@ jobs:
           STATS=$(grep "COMMIT_STATS" logs/split_check_part_${PART}.log | tail -n1 | sed 's/COMMIT_STATS: //')
           echo "📝 本次提交统计：$STATS"
 
-          git add tmp/last_part.txt dist/delete_counter.json dist/skip_tracker.json merged_rules.txt || true
+          git add tmp/last_part.txt dist/delete_counter.json dist/not_written_counter.json merged_rules.txt || true
           git add dist/validated_part_*.txt 2>/dev/null || true
 
           git commit -m "🤖 分片 $PART | $STATS" || echo "ℹ️ 本次无变化，无需提交"

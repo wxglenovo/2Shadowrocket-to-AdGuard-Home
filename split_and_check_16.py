@@ -1,6 +1,5 @@
-
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
 
 import os
 import json
@@ -113,7 +112,7 @@ def filter_and_update_high_delete_count_rules(all_rules_set):
 
                 if reset_count <= reset_limit:  # 限制只打印前20条重置的规则
                     print(f"🔁 删除计数达到 17，重置规则：{rule} 的删除计数为 5")
-            
+
             # 对于删除计数达到7或以上的规则进行跳过
             if del_cnt >= 7:
                 skipped_count += 1
@@ -126,7 +125,7 @@ def filter_and_update_high_delete_count_rules(all_rules_set):
 
     # 输出重置规则的数量
     print(f"🔢 共 {reset_count} 条规则的删除计数被重置")
-    
+
     return low_delete_count_rules, updated_delete_counter
 
 # ===============================
@@ -185,16 +184,16 @@ def dns_validate(rules):
 def update_not_written_counter(part, final_rules):
     print(f"开始更新 not_written_counter.json，处理分片 {part} 中的 {len(final_rules)} 条规则")
     counter = load_json(NOT_WRITTEN_FILE)
-    
+
     # 重置当前分片规则 write_counter = 3
     for rule in final_rules:
         counter[rule] = {"write_counter": WRITE_COUNTER_MAX, "part": f"validated_part_{part}"}
-    
+
     # 对其他规则未出现的，write_counter-1
     for rule, info in list(counter.items()):
         if "part" not in info:
             continue  # 跳过没有 'part' 键的规则
-        
+
         if info["part"] == f"validated_part_{part}" and rule not in final_rules:
             counter[rule]["write_counter"] -= 1
             if counter[rule]["write_counter"] <= 0:
@@ -242,6 +241,9 @@ def process_part(part):
 
     valid = dns_validate(rules_to_validate)
 
+    # 初始化连续失败计数
+    failure_counts = {i: 0 for i in range(1, DELETE_THRESHOLD + 1)}
+
     for rule in rules_to_validate:
         if rule in valid:
             final_rules.add(rule)
@@ -249,12 +251,20 @@ def process_part(part):
             added_count += 1
         else:
             delete_counter[rule] = delete_counter.get(rule, 0) + 1
+            current_failure_count = delete_counter[rule]
             print(f"⚠ 连续失败 +1 → {delete_counter[rule]}/{DELETE_THRESHOLD} ：{rule}")
+            if current_failure_count < DELETE_THRESHOLD:
+                failure_counts[current_failure_count] += 1
             if delete_counter[rule] >= DELETE_THRESHOLD:
                 removed_count += 1
                 final_rules.discard(rule)
 
     save_json(DELETE_COUNTER_FILE, delete_counter)
+
+    # 输出连续失败计数
+    for i in range(1, DELETE_THRESHOLD + 1):
+        if failure_counts[i] > 0:
+            print(f"⚠ 连续失败 {i}/{DELETE_THRESHOLD} 的规则条数: {failure_counts[i]} 条")
 
     # 将有效规则写入对应的分片文件
     with open(out_file, "w", encoding="utf-8") as f:

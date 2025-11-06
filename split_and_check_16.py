@@ -209,10 +209,13 @@ def update_not_written_counter(part, final_rules):
                 counter.pop(rule)
                 deleted_rules.append(rule)  # 记录被删除的规则
 
-    # 输出被删除的前20条规则
-    print(f"⚠ 删除的前20条规则：")
-    for i, rule in enumerate(deleted_rules[:20]):
-        print(f"🔥 删除规则：{rule}")
+    # 输出准备保存更新后的数据的前20项
+    print(f"⚠ 准备保存更新后的数据的前20项：")
+    for i, (rule, info) in enumerate(list(counter.items())[:20]):
+        print(f"🔥 {rule}: {info}")
+
+    # 输出总规则数量
+    print(f"🔢 共 {len(counter)} 条规则数据已更新")
 
     # 调试输出
     print(f"准备保存更新后的数据：{counter}")

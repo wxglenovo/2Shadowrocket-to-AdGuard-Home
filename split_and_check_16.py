@@ -20,7 +20,6 @@ PARTS = 16
 DNS_WORKERS = 50
 DNS_TIMEOUT = 2
 DELETE_COUNTER_FILE = os.path.join(DIST_DIR, "delete_counter.json")
-NOT_WRITTEN_FILE = os.path.join(DIST_DIR, "not_written_counter.json")
 DELETE_THRESHOLD = 4
 DNS_BATCH_SIZE = 500
 WRITE_COUNTER_MAX = 3
@@ -95,11 +94,6 @@ def filter_and_update_high_delete_count_rules(all_rules_set):
     low_delete_count_rules = set()
     updated_delete_counter = delete_counter.copy()
 
-    reset_count = 0  # 记录重置的规则数量
-    reset_limit = 20  # 限制只显示前20条重置的规则
-    skipped_count = 0  # 记录跳过的规则数量
-    skipped_rules = []  # 存储跳过的规则
-
     for rule in all_rules_set:
         del_cnt = delete_counter.get(rule, 4)
         if del_cnt < 7:
@@ -108,24 +102,7 @@ def filter_and_update_high_delete_count_rules(all_rules_set):
             updated_delete_counter[rule] = del_cnt + 1
             if updated_delete_counter[rule] >= 17:
                 updated_delete_counter[rule] = 5
-                reset_count += 1  # 重置计数器加1
-
-                if reset_count <= reset_limit:  # 限制只打印前20条重置的规则
-                    print(f"🔁 删除计数达到 17，重置规则：{rule} 的删除计数为 5")
-            
-            # 对于删除计数达到7或以上的规则进行跳过
-            if del_cnt >= 7:
-                skipped_count += 1
-                skipped_rules.append(rule)
-                if len(skipped_rules) <= reset_limit:  # 限制只打印前20条跳过的规则
-                    print(f"⚠ 删除计数达到 7 或以上，跳过该规则：{rule} | 删除计数={del_cnt}")
-
-    # 输出跳过规则总数
-    print(f"🔢 共 {skipped_count} 条规则被跳过验证")
-
-    # 输出重置规则的数量
-    print(f"🔢 共 {reset_count} 条规则的删除计数被重置")
-    
+                print(f"🔁 删除计数达到 17，重置规则：{rule} 的删除计数为 5")
     return low_delete_count_rules, updated_delete_counter
 
 # ===============================
@@ -179,31 +156,22 @@ def dns_validate(rules):
     return valid_rules
 
 # ===============================
-# 更新 not_written_counter.json
+# 更新 delete_counter.json
 # ===============================
-def update_not_written_counter(part, final_rules):
-    print(f"开始更新 not_written_counter.json，处理分片 {part} 中的 {len(final_rules)} 条规则")
-    counter = load_json(NOT_WRITTEN_FILE)
-    
-    # 重置当前分片规则 write_counter = 3
-    for rule in final_rules:
-        counter[rule] = {"write_counter": WRITE_COUNTER_MAX, "part": f"validated_part_{part}"}
-    
-    # 对其他规则未出现的，write_counter-1
-    for rule, info in list(counter.items()):
-        # 检查 'part' 键是否存在，如果不存在，则跳过该条目
-        if "part" not in info:
-            continue  # 跳过没有 'part' 键的规则
-        
-        if info["part"] == f"validated_part_{part}" and rule not in final_rules:
-            counter[rule]["write_counter"] -= 1
-            if counter[rule]["write_counter"] <= 0:
-                print(f"🔥 write_counter 为0，删除 {rule} 于 {info['part']}")
-                counter.pop(rule)
+def update_delete_counter(part, final_rules):
+    print(f"开始更新 delete_counter.json，处理分片 {part} 中的 {len(final_rules)} 条规则")
+    delete_counter = load_json(DELETE_COUNTER_FILE)
 
-    # 调试输出
-    print(f"准备保存更新后的数据：{counter}")
-    save_json(NOT_WRITTEN_FILE, counter)
+    # 更新删除计数
+    for rule in final_rules:
+        delete_counter[rule] = delete_counter.get(rule, 0)
+
+    # 对其他规则未出现的，delete_counter+1
+    for rule, count in list(delete_counter.items()):
+        if rule not in final_rules:
+            delete_counter[rule] = count + 1
+
+    save_json(DELETE_COUNTER_FILE, delete_counter)
 
 # ===============================
 # 处理分片
@@ -254,12 +222,10 @@ def process_part(part):
                 removed_count += 1
                 final_rules.discard(rule)
 
-    save_json(DELETE_COUNTER_FILE, delete_counter)
+    update_delete_counter(part, final_rules)
 
     with open(out_file, "w", encoding="utf-8") as f:
         f.write("\n".join(sorted(final_rules)))
-
-    update_not_written_counter(part, final_rules)
 
     total_count = len(final_rules)
     print(f"✅ 分片 {part} 完成: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")

@@ -190,6 +190,8 @@ def update_not_written_counter(part, final_rules):
     print(f"开始更新 not_written_counter.json，处理分片 {part} 中的 {len(final_rules)} 条规则")
     counter = load_json(NOT_WRITTEN_FILE)
 
+    deleted_rules_count = 0  # 用于记录删除规则数量
+
     # 重置当前分片规则 write_counter = 3
     for rule in final_rules:
         counter[rule] = {"write_counter": WRITE_COUNTER_MAX, "part": f"validated_part_{part}"}
@@ -204,10 +206,13 @@ def update_not_written_counter(part, final_rules):
             if counter[rule]["write_counter"] <= 0:
                 print(f"🔥 write_counter 为0，删除 {rule} 于 {info['part']}")
                 counter.pop(rule)
+                deleted_rules_count += 1  # 统计被删除的规则数量
 
     # 调试输出
     print(f"准备保存更新后的数据：{counter}")
     save_json(NOT_WRITTEN_FILE, counter)
+
+    return deleted_rules_count  # 返回被删除的规则数量
 
 # ===============================
 # 处理分片
@@ -247,7 +252,6 @@ def process_part(part):
 
     valid = dns_validate(rules_to_validate)
 
-    # 初始化连续失败计数
     failure_counts = {}
 
     for rule in rules_to_validate:
@@ -258,7 +262,6 @@ def process_part(part):
         else:
             delete_counter[rule] = delete_counter.get(rule, 0) + 1
             current_failure_count = delete_counter[rule]
-            # 统计每个失败次数的规则条数
             failure_counts[current_failure_count] = failure_counts.get(current_failure_count, 0) + 1
             if delete_counter[rule] >= DELETE_THRESHOLD:
                 removed_count += 1
@@ -267,8 +270,7 @@ def process_part(part):
 
     save_json(DELETE_COUNTER_FILE, delete_counter)
 
-    # 输出所有失败次数的规则条数
-    for i in range(1, max(failure_counts.keys()) + 1):  # max(failure_counts.keys()) 确保包含所有失败次数
+    for i in range(1, max(failure_counts.keys()) + 1):
         if failure_counts[i] > 0:
             print(f"⚠ 连续失败 {i}/4 的规则条数: {failure_counts[i]} 条")
 
@@ -276,12 +278,12 @@ def process_part(part):
     with open(out_file, "w", encoding="utf-8") as f:
         f.write("\n".join(sorted(final_rules)))
 
-    # 更新 `not_written_counter.json` 文件
-    update_not_written_counter(part, final_rules)
+    # 更新 `not_written_counter.json` 文件，并返回删除规则数量
+    deleted_count = update_not_written_counter(part, final_rules)
 
     total_count = len(final_rules)
-    print(f"✅ 分片 {part} 完成: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}, 删除规则数量: {deleted_rules_count}")
-    print(f"COMMIT_STATS: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}, 删除规则数量: {deleted_rules_count}")
+    print(f"✅ 分片 {part} 完成: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}, 删除规则数量: {deleted_count}")
+    print(f"COMMIT_STATS: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}, 删除规则数量: {deleted_count}")
 
 # ===============================
 # 主入口

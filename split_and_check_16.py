@@ -23,7 +23,8 @@ DELETE_COUNTER_FILE = os.path.join(DIST_DIR, "delete_counter.json")
 NOT_WRITTEN_FILE = os.path.join(DIST_DIR, "not_written_counter.json")
 DELETE_THRESHOLD = 4
 DNS_BATCH_SIZE = 500
-WRITE_COUNTER_MAX = 3
+WRITE_COUNTER_MAX = 6
+WRITE_COUNTER_MIN = 0
 
 os.makedirs(TMP_DIR, exist_ok=True)
 os.makedirs(DIST_DIR, exist_ok=True)
@@ -134,56 +135,6 @@ def filter_and_update_high_delete_count_rules(all_rules_set):
     return low_delete_count_rules, updated_delete_counter
 
 # ===============================
-# 分片
-# ===============================
-def split_parts(merged_rules):
-    total = len(merged_rules)
-    per_part = (total + PARTS - 1) // PARTS
-    print(f"🪓 分片 {total} 条，每片约 {per_part} 条规则")
-
-    for i in range(PARTS):
-        part_rules = list(merged_rules)[i*per_part:(i+1)*per_part]
-        filename = os.path.join(TMP_DIR, f"part_{i+1:02d}.txt")
-        with open(filename, "w", encoding="utf-8") as f:
-            f.write("\n".join(part_rules))
-        print(f"📄 分片 {i+1}: {len(part_rules)} 条 → {filename}")
-
-# ===============================
-# DNS 验证
-# ===============================
-def check_domain(rule):
-    resolver = dns.resolver.Resolver()
-    resolver.timeout = DNS_TIMEOUT
-    resolver.lifetime = DNS_TIMEOUT
-    domain = rule.lstrip("|").split("^")[0].replace("*", "")
-    if not domain:
-        return None
-    try:
-        resolver.resolve(domain)
-        return rule
-    except Exception as e:
-        return None
-
-def dns_validate(rules):
-    valid_rules = []
-    total_rules = len(rules)
-    with ThreadPoolExecutor(max_workers=DNS_WORKERS) as executor:
-        futures = {executor.submit(check_domain, rule): rule for rule in rules}
-        completed = 0
-        start_time = time.time()
-        for future in as_completed(futures):
-            result = future.result()
-            if result:
-                valid_rules.append(result)
-            completed += 1
-            if completed % DNS_BATCH_SIZE == 0 or completed == total_rules:
-                elapsed = time.time() - start_time
-                speed = completed / elapsed
-                eta = (total_rules - completed)/speed if speed > 0 else 0
-                print(f"✅ 已验证 {completed}/{total_rules} 条 | 有效 {len(valid_rules)} 条 | 速度 {speed:.1f} 条/秒 | ETA {eta:.1f} 秒")
-    return valid_rules
-
-# ===============================
 # 更新 not_written_counter.json
 # ===============================
 def update_not_written_counter(part, final_rules):
@@ -193,21 +144,37 @@ def update_not_written_counter(part, final_rules):
     deleted_rules_count = 0  # 用于记录删除规则数量
     deleted_rules = []  # 存储被删除的规则（write_counter 为 0 的规则）
 
-    # 重置当前分片规则 write_counter = 3
+    # 统计不同 write_counter 的规则数量
+    write_counter_stats = {
+        6: 0, 5: 0, 4: 0, 3: 0, 2: 0, 1: 0, 0: 0
+    }
+
+    # 对于当前分片，write_counter 初始化为 6
     for rule in final_rules:
         counter[rule] = {"write_counter": WRITE_COUNTER_MAX, "part": f"validated_part_{part}"}
+        write_counter_stats[WRITE_COUNTER_MAX] += 1
 
-    # 对其他规则未出现的，write_counter-1
+    # 对于其他规则未出现的，write_counter-1
     for rule, info in list(counter.items()):
         if "part" not in info:
             continue  # 跳过没有 'part' 键的规则
 
         if info["part"] == f"validated_part_{part}" and rule not in final_rules:
             counter[rule]["write_counter"] -= 1
+            write_counter_stats[counter[rule]["write_counter"]] += 1
             if counter[rule]["write_counter"] <= 0:
-                print(f"🔥 write_counter 为0，删除 {rule} 于 {info['part']}")
+                print(f"🔥 write_counter 为 0，删除 {rule} 于 {info['part']}")
                 counter.pop(rule)
                 deleted_rules.append(rule)  # 记录被删除的规则
+
+    # 输出统计数据
+    print(f"🔥 写入规则 write_counter 为 6 的数量: {write_counter_stats[6]}")
+    print(f"⚠ 规则 不在当前分片 write_counter 为 5 的数量: {write_counter_stats[5]}")
+    print(f"⚠ 规则 不在当前分片 write_counter 为 4 的数量: {write_counter_stats[4]}")
+    print(f"🔥 规则 write_counter 为 3，删除该规则于分片的数量: {write_counter_stats[3]}")
+    print(f"⚠ 规则 不在当前分片 write_counter 为 2 的数量: {write_counter_stats[2]}")
+    print(f"⚠ 规则 不在当前分片 write_counter 为 1 的数量: {write_counter_stats[1]}")
+    print(f"🔥 规则 write_counter 为 0，删除该规则于 not_written_counter.json 的数量: {write_counter_stats[0]}")
 
     # 输出准备保存更新后的数据的前20项
     print(f"⚠ 准备保存更新后的数据的前20项：")

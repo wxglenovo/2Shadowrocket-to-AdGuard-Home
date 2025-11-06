@@ -107,7 +107,7 @@ def filter_and_update_high_delete_count_rules(all_rules_set):
             low_delete_count_rules.add(rule)
         else:
             updated_delete_counter[rule] = del_cnt + 1
-            if updated_delete_counter[rule] >= 22:
+            if updated_delete_counter[rule] >= 17:
                 updated_delete_counter[rule] = 5
                 reset_count += 1  # 重置计数器加1
                 reset_rules.append(rule)  # 将重置规则添加到日志中
@@ -126,10 +126,10 @@ def filter_and_update_high_delete_count_rules(all_rules_set):
 
     # 输出重置规则日志（只显示前20条）
     for i, rule in enumerate(reset_rules[:20]):
-        print(f"🔁 删除计数达到 22，重置规则：{rule} 的删除计数为 5")
+        print(f"🔁 删除计数达到 17，重置规则：{rule} 的删除计数为 5")
 
     # 输出重置规则总数
-    print(f"🔢 共 {reset_count} 条规则删除计数达到 22的删除计数被重置为 5")
+    print(f"🔢 共 {reset_count} 条规则删除计数达到 17的删除计数被重置为 5")
 
     return low_delete_count_rules, updated_delete_counter
 
@@ -191,6 +191,7 @@ def update_not_written_counter(part, final_rules):
     counter = load_json(NOT_WRITTEN_FILE)
 
     deleted_rules_count = 0  # 用于记录删除规则数量
+    deleted_rules = []  # 存储被删除的规则（write_counter 为 0 的规则）
 
     # 重置当前分片规则 write_counter = 3
     for rule in final_rules:
@@ -206,13 +207,18 @@ def update_not_written_counter(part, final_rules):
             if counter[rule]["write_counter"] <= 0:
                 print(f"🔥 write_counter 为0，删除 {rule} 于 {info['part']}")
                 counter.pop(rule)
-                deleted_rules_count += 1  # 统计被删除的规则数量
+                deleted_rules.append(rule)  # 记录被删除的规则
+
+    # 输出被删除的前20条规则
+    print(f"⚠ 删除的前20条规则：")
+    for i, rule in enumerate(deleted_rules[:20]):
+        print(f"🔥 删除规则：{rule}")
 
     # 调试输出
     print(f"准备保存更新后的数据：{counter}")
     save_json(NOT_WRITTEN_FILE, counter)
 
-    return deleted_rules_count  # 返回被删除的规则数量
+    return len(deleted_rules)  # 返回被删除的规则数量
 
 # ===============================
 # 处理分片
@@ -282,8 +288,8 @@ def process_part(part):
     deleted_count = update_not_written_counter(part, final_rules)
 
     total_count = len(final_rules)
-    print(f"✅ 分片 {part} 完成: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}, 清除part数量: {deleted_count}")
-    print(f"COMMIT_STATS: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}, 清除part数量: {deleted_count}")
+    print(f"✅ 分片 {part} 完成: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}, 删除规则数量: {deleted_count}")
+    print(f"COMMIT_STATS: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}, 删除规则数量: {deleted_count}")
 
 # ===============================
 # 主入口

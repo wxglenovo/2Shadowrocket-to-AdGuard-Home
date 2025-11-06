@@ -83,7 +83,7 @@ def download_all_sources():
         f.write("\n".join(sorted(merged)))
 
     filtered_rules, updated_delete_counter = filter_and_update_high_delete_count_rules(merged)
-    split_parts(filtered_rules)  # 修复了 missing split_parts
+    split_parts(filtered_rules)  # 确保这里调用的 split_parts 已定义
     save_json(DELETE_COUNTER_FILE, updated_delete_counter)
     return True
 
@@ -172,6 +172,31 @@ def update_not_written_counter(part, final_rules):
     save_json(NOT_WRITTEN_FILE, counter)
 
     return len(deleted_rules)  # 返回被删除的规则数量
+
+# ===============================
+# 分片处理
+# ===============================
+def split_parts(rules):
+    """将规则分成多个分片，并保存到对应的文件中"""
+    if len(rules) == 0:
+        print("⚠ 没有规则进行分片")
+        return
+
+    # 计算每个分片包含的规则数量
+    rules_per_part = len(rules) // PARTS
+    extra_rules = len(rules) % PARTS
+
+    part_start = 0
+    for part in range(1, PARTS + 1):
+        part_end = part_start + rules_per_part + (1 if part <= extra_rules else 0)
+        part_rules = sorted(rules[part_start:part_end])
+
+        part_file = os.path.join(TMP_DIR, f"part_{part:02d}.txt")
+        with open(part_file, "w", encoding="utf-8") as f:
+            f.write("\n".join(part_rules))
+
+        print(f"✅ 分片 {part} 完成，包含 {len(part_rules)} 条规则")
+        part_start = part_end
 
 # ===============================
 # 处理分片

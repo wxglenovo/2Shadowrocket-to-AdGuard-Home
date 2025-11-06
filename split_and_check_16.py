@@ -252,7 +252,6 @@ def process_part(part):
         else:
             delete_counter[rule] = delete_counter.get(rule, 0) + 1
             current_failure_count = delete_counter[rule]
-            print(f"⚠ 连续失败 +1 → {delete_counter[rule]}/{DELETE_THRESHOLD} ：{rule}")
             if current_failure_count < DELETE_THRESHOLD:
                 failure_counts[current_failure_count] += 1
             if delete_counter[rule] >= DELETE_THRESHOLD:

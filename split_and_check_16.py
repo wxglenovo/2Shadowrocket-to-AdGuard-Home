@@ -36,7 +36,8 @@ def load_json(path):
         try:
             with open(path, "r", encoding="utf-8") as f:
                 return json.load(f)
-        except:
+        except Exception as e:
+            print(f"⚠ 读取 {path} 时发生错误: {e}")
             return {}
     else:
         with open(path, "w", encoding="utf-8") as f:
@@ -44,8 +45,12 @@ def load_json(path):
         return {}
 
 def save_json(path, data):
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=2, ensure_ascii=False)
+    try:
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=2, ensure_ascii=False)
+        print(f"✅ 已保存 {path}")
+    except Exception as e:
+        print(f"⚠ 保存 {path} 时发生错误: {e}")
 
 # ===============================
 # 下载并合并规则源
@@ -129,7 +134,7 @@ def check_domain(rule):
     try:
         resolver.resolve(domain)
         return rule
-    except:
+    except Exception as e:
         return None
 
 def dns_validate(rules):
@@ -155,7 +160,9 @@ def dns_validate(rules):
 # 更新 not_written_counter.json
 # ===============================
 def update_not_written_counter(part, final_rules):
+    print(f"开始更新 not_written_counter.json，处理分片 {part} 中的 {len(final_rules)} 条规则")
     counter = load_json(NOT_WRITTEN_FILE)
+    
     # 重置当前分片规则 write_counter = 3
     for rule in final_rules:
         counter[rule] = {"write_counter": WRITE_COUNTER_MAX, "part": f"validated_part_{part}"}
@@ -169,7 +176,7 @@ def update_not_written_counter(part, final_rules):
                 counter.pop(rule)
 
     # 调试输出
-    print(f"保存更新后的 not_written_counter.json: {counter}")
+    print(f"准备保存更新后的数据：{counter}")
     save_json(NOT_WRITTEN_FILE, counter)
 
 # ===============================

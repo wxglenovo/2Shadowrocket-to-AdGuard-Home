@@ -187,34 +187,38 @@ def dns_validate(rules):
 # 更新 not_written_counter.json
 # ===============================
 def update_not_written_counter(part, final_rules):
+    current_part_prefix = f"validated_part_{part}"
     print(f"开始更新 not_written_counter.json，处理分片 {part} 中的 {len(final_rules)} 条规则")
+    
+    # 加载当前的数据
     counter = load_json(NOT_WRITTEN_FILE)
 
     deleted_rules_count = 0  # 用于记录删除规则数量
     deleted_rules = []  # 存储被删除的规则（write_counter 为 0 的规则）
 
-    current_part_prefix = f"validated_part_{part}"
-
-    # 重置当前分片规则 write_counter = 6
+    # 对于成功验证并写入的规则，write_counter 设置为 6
     for rule in final_rules:
         counter[rule] = {"write_counter": 6, "part": current_part_prefix}
 
-    # 对其他规则未出现的，write_counter-1
+    # 对于没有出现在当前分片中的规则，write_counter -1
     for rule, info in list(counter.items()):
         if "part" not in info:
             continue  # 跳过没有 'part' 键的规则
 
         if info["part"] == current_part_prefix and rule not in final_rules:
             counter[rule]["write_counter"] -= 1
-            if counter[rule]["write_counter"] <= 0:
-                print(f"🔥 write_counter 为 0，删除 {rule} 于 {info['part']}")
-                counter.pop(rule)
-                deleted_rules.append(rule)  # 记录被删除的规则
 
+            # 如果 write_counter <= 3，从当前分片中删除
             if counter[rule]["write_counter"] <= 3:
-                print(f"🔥 write_counter 为 3，删除该规则于分片 {info['part']}：{rule}")
+                print(f"🔥 write_counter <= 3，删除 {rule} 于分片 {info['part']}")
                 counter.pop(rule)
-                deleted_rules.append(rule)  # 记录被删除的规则
+                deleted_rules.append(rule)
+
+            # 如果 write_counter <= 0，从 not_written_counter.json 中删除
+            if counter[rule]["write_counter"] <= 0:
+                print(f"🔥 write_counter <= 0，删除 {rule} 于 not_written_counter.json")
+                counter.pop(rule)
+                deleted_rules.append(rule)
 
     # 输出写入规则数量
     write_counter_6_count = len([rule for rule, info in counter.items() if info.get('write_counter', 0) == 6 and info.get('part') == current_part_prefix])

@@ -24,24 +24,30 @@ jobs:
       PYTHONUNBUFFERED: 1
 
     steps:
+      # 拉取代码库
       - name: ✅ 拉取代码库
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
+      # 设置 Python 环境
       - name: ✅ 设置 Python 环境
         uses: actions/setup-python@v4
         with:
           python-version: '3.12'
 
+      # 安装依赖
       - name: ✅ 安装依赖
         run: pip install --upgrade requests dnspython
 
+      # Git 配置
       - name: ✅ Git 配置
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
+      # 检测分片
+      - name: ✅ 检测规则分片
       - name: ✅ 检测分片
         id: detect
         run: |
@@ -50,6 +56,7 @@ jobs:
           PART_INPUT="${{ github.event.inputs.part }}"
           if [ -n "$PART_INPUT" ]; then
             PART="$PART_INPUT"
+            echo "📌 使用手动指定分片：$PART"
           else
             if [ -f "$LAST_PART_FILE" ]; then
               LAST_PART=$(cat "$LAST_PART_FILE")
@@ -57,48 +64,81 @@ jobs:
             else
               PART=1
             fi
+            echo "⏱ 自动轮换分片，本次处理：$PART"
           fi
           echo "$PART" > "$LAST_PART_FILE"
           echo "part=$PART" >> $GITHUB_OUTPUT
 
+      # 定时强制更新规则
       - name: ✅ 定时强制更新规则（每6小时）
         run: |
           CURRENT_HOUR=$(date -u +"%H")
           if [[ "$CURRENT_HOUR" == "00" || "$CURRENT_HOUR" == "06" || "$CURRENT_HOUR" == "12" || "$CURRENT_HOUR" == "18" ]]; then
+            echo "🔄 定时触发 → 强制重新下载规则并切片"
             python3 split_and_check_16.py --force-update
+          else
+            echo "⏩ 当前不是强制刷新时间 → 跳过"
           fi
 
+      # 检查规则文件与分片
       - name: ✅ 检查规则文件与分片
         run: |
           if [ ! -f "merged_rules.txt" ] || [ ! -f "tmp/part_01.txt" ]; then
+            echo "⚠ 缺少规则文件或分片 → 正在重新拉取"
             python3 split_and_check_16.py --force-update
+          else
+            echo "✅ 已检测到完整规则与分片，无需重新生成"
           fi
 
-
+      # 创建或检查 delete_counter.json
       - name: ✅ 创建或检查 delete_counter.json
         run: |
           mkdir -p dist
+          if [ ! -f dist/delete_counter.json ]; then
+            echo "{}" > dist/delete_counter.json
+            echo "✅ 已创建 dist/delete_counter.json"
+          else
+            echo "✅ delete_counter.json 已存在"
+          fi
           [ -f dist/delete_counter.json ] || echo "{}" > dist/delete_counter.json
 
+      # 创建或检查 not_written_counter.json
       - name: ✅ 创建或检查 not_written_counter.json
         run: |
           mkdir -p dist
+          if [ ! -f dist/not_written_counter.json ]; then
+            echo "{}" > dist/not_written_counter.json
+            echo "✅ 已创建 dist/not_written_counter.json"
+          else
+            echo "✅ not_written_counter.json 已存在"
+          fi
           [ -f dist/not_written_counter.json ] || echo "{}" > dist/not_written_counter.json
 
+      # 执行 DNS 验证和更新 not_written_counter
       - name: ✅ 执行 DNS 验证
         env:
           PART: ${{ steps.detect.outputs.part }}
         run: |
           mkdir -p logs
+          echo "🚀 开始验证分片 $PART..."
           python3 split_and_check_16.py --part "$PART" | tee logs/split_check_part_${PART}.log
 
+      # 提交与推送更改
       - name: ✅ 提交与推送更改
         env:
           PART: ${{ steps.detect.outputs.part }}
         run: |
           STATS=$(grep "COMMIT_STATS" logs/split_check_part_${PART}.log | tail -n1 | sed 's/COMMIT_STATS: //')
+          echo "📝 本次提交统计：$STATS"
+
           git add tmp/last_part.txt dist/delete_counter.json dist/not_written_counter.json merged_rules.txt || true
           git add dist/validated_part_*.txt 2>/dev/null || true
+
+          git commit -m "🤖 分片 $PART | $STATS" || echo "ℹ️ 本次无变化，无需提交"
+
+          echo "🔄 pull 最新代码以避免冲突"
           git commit -m "🤖 分片 $PART | $STATS" || echo "ℹ️ 本次无变化"
           git pull --rebase origin main || echo "⚠ Pull 失败（忽略）"
+
+          echo "⬆ 推送到仓库"
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main || echo "⚠ Push 失败（可能无变化）"

@@ -88,6 +88,21 @@ def download_all_sources():
     return True
 
 # ===============================
+# 分片处理
+# ===============================
+def split_parts(merged_rules):
+    total = len(merged_rules)
+    per_part = (total + PARTS - 1) // PARTS
+    print(f"🪓 分片 {total} 条，每片约 {per_part} 条规则")
+
+    for i in range(PARTS):
+        part_rules = list(merged_rules)[i*per_part:(i+1)*per_part]
+        filename = os.path.join(TMP_DIR, f"part_{i+1:02d}.txt")
+        with open(filename, "w", encoding="utf-8") as f:
+            f.write("\n".join(part_rules))
+        print(f"📄 分片 {i+1}: {len(part_rules)} 条 → {filename}")
+
+# ===============================
 # 处理删除计数 >=7 的规则
 # ===============================
 def filter_and_update_high_delete_count_rules(all_rules_set):
@@ -107,7 +122,7 @@ def filter_and_update_high_delete_count_rules(all_rules_set):
             low_delete_count_rules.add(rule)
         else:
             updated_delete_counter[rule] = del_cnt + 1
-            if updated_delete_counter[rule] >= 24:
+            if updated_delete_counter[rule] >= 17:
                 updated_delete_counter[rule] = 5
                 reset_count += 1  # 重置计数器加1
                 reset_rules.append(rule)  # 将重置规则添加到日志中
@@ -126,10 +141,10 @@ def filter_and_update_high_delete_count_rules(all_rules_set):
 
     # 输出重置规则日志（只显示前20条）
     for i, rule in enumerate(reset_rules[:20]):
-        print(f"🔁 删除计数达到 24，重置规则：{rule} 的删除计数为 5")
+        print(f"🔁 删除计数达到 17，重置规则：{rule} 的删除计数为 5")
 
     # 输出重置规则总数
-    print(f"🔢 共 {reset_count} 条规则删除计数达到 24的删除计数被重置为 5")
+    print(f"🔢 共 {reset_count} 条规则删除计数达到 17的删除计数被重置为 5")
 
     return low_delete_count_rules, updated_delete_counter
 
@@ -188,15 +203,23 @@ def update_not_written_counter(part, final_rules, old_rules):
     write_counter_5_count = len([rule for rule, info in counter.items() if info.get('write_counter', 0) == 5 and info.get('part') == current_part_prefix])
     print(f"⚠ 规则 不在当前分片 {{'write_counter': 5, 'part': '{current_part_prefix}'}} 数量: {write_counter_5_count}")
     
-    # 统计删除数量
-    write_counter_0_delete_count = len([rule for rule, info in counter.items() if info.get('write_counter', 0) == 0 and info.get('part') == current_part_prefix])
-    print(f"🔥 规则 write_counter 为 0，删除该规则于 not_written_counter.json 数量: {write_counter_0_delete_count}")
-    
-    # 更新 not_written_counter.json
-    save_json(NOT_WRITTEN_FILE, counter)
+    write_counter_4_count = len([rule for rule, info in counter.items() if info.get('write_counter', 0) == 4 and info.get('part') == current_part_prefix])
+    print(f"⚠ 规则 不在当前分片 {{'write_counter': 4, 'part': '{current_part_prefix}'}} 数量: {write_counter_4_count}")
 
-    # 返回被删除的规则数量和新增规则数量
-    return deleted_rules_count, new_rules_count
+    write_counter_3_count = len([rule for rule, info in counter.items() if info.get('write_counter', 0) == 3 and info.get('part') == current_part_prefix])
+    print(f"🔥 规则 write_counter 为 3，删除该规则于分片 {current_part_prefix} 数量: {write_counter_3_count}")
+
+    write_counter_2_count = len([rule for rule, info in counter.items() if info.get('write_counter', 0) == 2 and info.get('part') == current_part_prefix])
+    print(f"⚠ 规则 不在当前分片 {{'write_counter': 2, 'part': '{current_part_prefix}'}} 数量: {write_counter_2_count}")
+
+    write_counter_1_count = len([rule for rule, info in counter.items() if info.get('write_counter', 0) == 1 and info.get('part') == current_part_prefix])
+    print(f"⚠ 规则 不在当前分片 {{'write_counter': 1, 'part': '{current_part_prefix}'}} 数量: {write_counter_1_count}")
+
+    # 输出删除的规则数量
+    print(f"🔥 规则 write_counter 为 0，删除该规则于 not_written_counter.json 数量: {len(deleted_rules)}")
+
+    save_json(NOT_WRITTEN_FILE, counter)
+    return len(deleted_rules)
 
 # ===============================
 # 处理分片

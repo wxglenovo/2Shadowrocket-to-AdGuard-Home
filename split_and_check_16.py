@@ -107,7 +107,7 @@ def filter_and_update_high_delete_count_rules(all_rules_set):
             low_delete_count_rules.add(rule)
         else:
             updated_delete_counter[rule] = del_cnt + 1
-            if updated_delete_counter[rule] >= 17:
+            if updated_delete_counter[rule] >= 24:
                 updated_delete_counter[rule] = 5
                 reset_count += 1  # 重置计数器加1
                 reset_rules.append(rule)  # 将重置规则添加到日志中
@@ -126,10 +126,10 @@ def filter_and_update_high_delete_count_rules(all_rules_set):
 
     # 输出重置规则日志（只显示前20条）
     for i, rule in enumerate(reset_rules[:20]):
-        print(f"🔁 删除计数达到 17，重置规则：{rule} 的删除计数为 5")
+        print(f"🔁 删除计数达到 24，重置规则：{rule} 的删除计数为 5")
 
     # 输出重置规则总数
-    print(f"🔢 共 {reset_count} 条规则删除计数达到 17的删除计数被重置为 5")
+    print(f"🔢 共 {reset_count} 条规则删除计数达到 24的删除计数被重置为 5")
 
     return low_delete_count_rules, updated_delete_counter
 

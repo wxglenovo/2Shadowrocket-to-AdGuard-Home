@@ -128,14 +128,12 @@ jobs:
           STATS=$(grep "COMMIT_STATS" logs/split_check_part_${PART}.log | tail -n1 | sed 's/COMMIT_STATS: //')
           echo "📝 本次提交统计：$STATS"
 
-          # 追踪更改文件
-          git status  # 打印当前 Git 状态，方便调试
           git add tmp/last_part.txt dist/delete_counter.json dist/not_written_counter.json merged_rules.txt || true
           git add dist/validated_part_*.txt 2>/dev/null || true
 
           git commit -m "🤖 分片 $PART | $STATS" || echo "ℹ️ 本次无变化，无需提交"
 
-          echo "🔄 拉取最新代码以避免冲突"
+          echo "🔄 pull 最新代码以避免冲突"
           git pull --rebase origin main || echo "⚠ Pull 失败（忽略）"
 
           echo "⬆ 推送到仓库"

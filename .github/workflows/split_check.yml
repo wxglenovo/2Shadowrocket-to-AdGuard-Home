@@ -10,9 +10,9 @@ on:
   workflow_dispatch:
     inputs:
       part:
-        description: '手动验证指定分片 1~16'
+        description: "手动验证指定分片 1~16"
         required: false
-        default: ''
+        default: ""
 
 permissions:
   contents: write
@@ -24,36 +24,32 @@ jobs:
       PYTHONUNBUFFERED: 1
 
     steps:
-      # 拉取代码库
       - name: ✅ 拉取代码库
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      # 设置 Python 环境
       - name: ✅ 设置 Python 环境
         uses: actions/setup-python@v4
         with:
-          python-version: '3.12'
+          python-version: "3.12"
 
-      # 安装依赖
       - name: ✅ 安装依赖
-        run: pip install --upgrade requests dnspython
+        run: |
+          pip install --upgrade requests dnspython
 
-      # Git 配置
       - name: ✅ Git 配置
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-      # 检测分片
-      - name: ✅ 检测规则分片
       - name: ✅ 检测分片
         id: detect
         run: |
           mkdir -p tmp dist
           LAST_PART_FILE="tmp/last_part.txt"
           PART_INPUT="${{ github.event.inputs.part }}"
+
           if [ -n "$PART_INPUT" ]; then
             PART="$PART_INPUT"
             echo "📌 使用手动指定分片：$PART"
@@ -66,10 +62,10 @@ jobs:
             fi
             echo "⏱ 自动轮换分片，本次处理：$PART"
           fi
+
           echo "$PART" > "$LAST_PART_FILE"
           echo "part=$PART" >> $GITHUB_OUTPUT
 
-      # 定时强制更新规则
       - name: ✅ 定时强制更新规则（每6小时）
         run: |
           CURRENT_HOUR=$(date -u +"%H")
@@ -80,7 +76,6 @@ jobs:
             echo "⏩ 当前不是强制刷新时间 → 跳过"
           fi
 
-      # 检查规则文件与分片
       - name: ✅ 检查规则文件与分片
         run: |
           if [ ! -f "merged_rules.txt" ] || [ ! -f "tmp/part_01.txt" ]; then
@@ -90,7 +85,6 @@ jobs:
             echo "✅ 已检测到完整规则与分片，无需重新生成"
           fi
 
-      # 创建或检查 delete_counter.json
       - name: ✅ 创建或检查 delete_counter.json
         run: |
           mkdir -p dist
@@ -102,7 +96,6 @@ jobs:
           fi
           [ -f dist/delete_counter.json ] || echo "{}" > dist/delete_counter.json
 
-      # 创建或检查 not_written_counter.json
       - name: ✅ 创建或检查 not_written_counter.json
         run: |
           mkdir -p dist
@@ -114,7 +107,6 @@ jobs:
           fi
           [ -f dist/not_written_counter.json ] || echo "{}" > dist/not_written_counter.json
 
-      # 执行 DNS 验证和更新 not_written_counter
       - name: ✅ 执行 DNS 验证
         env:
           PART: ${{ steps.detect.outputs.part }}
@@ -123,7 +115,6 @@ jobs:
           echo "🚀 开始验证分片 $PART..."
           python3 split_and_check_16.py --part "$PART" | tee logs/split_check_part_${PART}.log
 
-      # 提交与推送更改
       - name: ✅ 提交与推送更改
         env:
           PART: ${{ steps.detect.outputs.part }}

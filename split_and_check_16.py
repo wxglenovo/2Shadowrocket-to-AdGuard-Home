@@ -196,76 +196,80 @@ def dns_validate(rules):
     return valid_rules
 
 # ===============================
-# 更新 not_written_counter.json
+# ✅ 更新 not_written_counter.json
 # ===============================
 def update_not_written_counter(part, final_rules):
-    print(f"开始更新 not_written_counter.json → 分片 {part} / {len(final_rules)} 条有效规则")
-
-    counter = ensure_not_written_structure()
     part_key = f"validated_part_{part}"
+    counter = load_json(NOT_WRITTEN_FILE)
+
+    # 首次运行，自动创建 16 个分区
+    if not counter:
+        for i in range(1, 17):
+            key = f"validated_part_{i}"
+            if key not in counter:
+                counter[key] = {}
+        print("✅ 首次运行，已自动创建 16 个分区 in not_written_counter.json")
+
+    first_update = part_key not in counter or not counter[part_key]
+    if first_update:
+        counter[part_key] = {}
+
+    # 读取 validated_part_X.txt 中旧规则
     validated_file = os.path.join(DIST_DIR, f"{part_key}.txt")
-
-    # 是否首次更新
-    first_update = (len(counter.get(part_key, {})) == 0)
-
-    # 读取旧 validated_part_X.txt 的规则（如果有）
     existing_file_rules = set()
     if first_update and os.path.exists(validated_file):
-        with open(validated_file, "r", encoding="utf-8") as f:
-            existing_file_rules = set([l.strip() for l in f if l.strip()])
+        with open(validated_file, "r", encoding="utf-8") as vf:
+            existing_file_rules = set([l.strip() for l in vf if l.strip()])
 
-    # ✅ 本次验证通过 → write_counter = 6
+    # 首次更新：旧规则未出现 → write_counter = 5
+    if first_update and existing_file_rules:
+        missing_initial_rules = existing_file_rules - set(final_rules)
+        for rule in missing_initial_rules:
+            counter[part_key][rule] = 5
+            print(f"🔧 首次更新：{rule} 设为 write_counter = 5")
+        # ⚠ 注意：首次更新时不删除文件中规则
+
+    # 当前分片验证成功的规则 → write_counter = 6
     for rule in final_rules:
         counter[part_key][rule] = 6
 
-    # ✅ 首次更新：旧文件有，但本次未出现 → write_counter = 5
-    if first_update and existing_file_rules:
-        missing = existing_file_rules - set(final_rules)
-        for rule in missing:
-            counter[part_key][rule] = 5
-            if os.path.exists(validated_file):
-                with open(validated_file, "r", encoding="utf-8") as f:
-                    lines = [l.strip() for l in f if l.strip()]
-                if rule in lines:
-                    lines.remove(rule)
-                    with open(validated_file, "w", encoding="utf-8") as f:
-                        f.write("\n".join(sorted(lines)))
-            print(f"🔧 首次更新 → {rule} 设为 write_counter = 5 并从文件删除")
-
-    # ✅ 非首次：旧规则这次没出现 → -1
-    if os.path.exists(validated_file):
-        with open(validated_file, "r", encoding="utf-8") as f:
-            current_file_rules = set([l.strip() for l in f if l.strip()])
-    else:
-        current_file_rules = set()
-
+    # 非首次更新：缺席规则 → write_counter -= 1
     for rule in list(counter[part_key].keys()):
         if rule not in final_rules:
-            # 首次更新且已处理过的跳过
+            # 跳过首次更新时已处理的旧规则
             if first_update and rule in existing_file_rules:
                 continue
 
             counter[part_key][rule] -= 1
             wc = counter[part_key][rule]
 
-            # write_counter ≤3 → 从 validated_part_X.txt 删除
-            if wc <= 3 and rule in current_file_rules:
-                print(f"🔥 write_counter ≤ 3 → 从 {part_key}.txt 删除: {rule}")
-                current_file_rules.discard(rule)
-                with open(validated_file, "w", encoding="utf-8") as f:
-                    f.write("\n".join(sorted(current_file_rules)))
+            # write_counter ≤ 3 → 从 validated_part_X.txt 删除，打印日志
+            if wc <= 3:
+                try:
+                    validated_rules = set()
+                    if os.path.exists(validated_file):
+                        with open(validated_file, "r", encoding="utf-8") as f:
+                            validated_rules = set([l.strip() for l in f if l.strip()])
+                    if rule in validated_rules:
+                        validated_rules.discard(rule)
+                        with open(validated_file, "w", encoding="utf-8") as f:
+                            f.write("\n".join(sorted(validated_rules)))
+                        print(f"🔥 write_counter ≤3 - 从 {part_key}.txt 删除: {rule}")
+                except Exception as e:
+                    print(f"⚠ 删除 validated_part_X.txt 中规则失败: {e}")
 
-            # write_counter ≤0 → 从 JSON 删除
+            # write_counter ≤ 0 → 从 JSON 删除
             if wc <= 0:
-                print(f"💥 write_counter = 0 → 从 JSON 删除: {rule}")
+                print(f"💥 write_counter = 0 → 从 not_written_counter.json 删除: {rule}")
                 del counter[part_key][rule]
 
-    # ✅ 若分区空则移除
+    # 若分区空则移除
     if part_key in counter and not counter[part_key]:
         del counter[part_key]
 
     save_json(NOT_WRITTEN_FILE, counter)
-    print(f"✅ not_written_counter.json 更新完成（{part_key}）")
+    print(f"✅ not_written_counter.json 分区 {part_key} 更新完成")
+
 
 # ===============================
 # 处理分片

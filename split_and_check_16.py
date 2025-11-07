@@ -208,22 +208,19 @@ def update_not_written_counter(part):
 
     part_counter = counter[part_key]
 
-    # ✅ 验证成功的 → write_counter=6
     for rule in tmp_rules:
         part_counter[rule] = 6
 
-    # ✅ 验证缺席的规则递减 write_counter
     for rule in existing_rules:
         if rule not in tmp_rules:
             if rule in part_counter:
                 part_counter[rule] -= 1
                 if part_counter[rule] <= 0:
-                    print(f"💥 write_counter = 0 → 从 JSON 删除：{rule}")
+                    print(f"💥 write_counter = 3 → 从 JSON 删除：{rule}")
                     del part_counter[rule]
             else:
                 part_counter[rule] = 5
 
-    # ✅ 删除 write_counter <=3 的规则，同时限制打印20条日志
     if os.path.exists(validated_file):
         with open(validated_file, "r", encoding="utf-8") as f:
             old_lines = [l.strip() for l in f if l.strip()]
@@ -306,9 +303,12 @@ def process_part(part):
 
     update_not_written_counter(part)
 
+    # ✅ 正确统计删除数
     total_count = len(final_rules)
-    print(f"✅ 分片 {part} 完成:总{total_count},新增{added_count},过滤 {removed_count},删除{len(to_delete)}")
-    print(f"COMMIT_STATS:总{total_count},新增{added_count},过滤{removed_count},删除{len(to_delete)}")
+    deleted_count = len(old_rules) - len(final_rules)
+
+    print(f"✅ 分片 {part} 完成: 总{total_count}, 新增{added_count}, 删除{deleted_count}, 过滤{removed_count}")
+    print(f"COMMIT_STATS:总{total_count},新增{added_count},删除{deleted_count},过滤{removed_count}")
 
 # ===============================
 # 主入口

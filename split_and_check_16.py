@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
 
 import os
 import json
@@ -23,7 +23,7 @@ DELETE_COUNTER_FILE = os.path.join(DIST_DIR, "delete_counter.json")
 NOT_WRITTEN_FILE = os.path.join(DIST_DIR, "not_written_counter.json")
 DELETE_THRESHOLD = 4
 DNS_BATCH_SIZE = 500
-WRITE_COUNTER_MAX = 6
+WRITE_COUNTER_MAX = 3
 
 os.makedirs(TMP_DIR, exist_ok=True)
 os.makedirs(DIST_DIR, exist_ok=True)
@@ -83,7 +83,7 @@ def download_all_sources():
         f.write("\n".join(sorted(merged)))
 
     filtered_rules, updated_delete_counter = filter_and_update_high_delete_count_rules(merged)
-    split_parts(filtered_rules)  # 修复了 missing split_parts
+    split_parts(filtered_rules)
     save_json(DELETE_COUNTER_FILE, updated_delete_counter)
     return True
 
@@ -107,7 +107,7 @@ def filter_and_update_high_delete_count_rules(all_rules_set):
             low_delete_count_rules.add(rule)
         else:
             updated_delete_counter[rule] = del_cnt + 1
-            if updated_delete_counter[rule] >= 24:
+            if updated_delete_counter[rule] >= 17:
                 updated_delete_counter[rule] = 5
                 reset_count += 1  # 重置计数器加1
                 reset_rules.append(rule)  # 将重置规则添加到日志中
@@ -126,12 +126,62 @@ def filter_and_update_high_delete_count_rules(all_rules_set):
 
     # 输出重置规则日志（只显示前20条）
     for i, rule in enumerate(reset_rules[:20]):
-        print(f"🔁 删除计数达到 24，重置规则：{rule} 的删除计数为 5")
+        print(f"🔁 删除计数达到 17，重置规则：{rule} 的删除计数为 5")
 
     # 输出重置规则总数
-    print(f"🔢 共 {reset_count} 条规则删除计数达到 24的删除计数被重置为 5")
+    print(f"🔢 共 {reset_count} 条规则删除计数达到 17的删除计数被重置为 5")
 
     return low_delete_count_rules, updated_delete_counter
+
+# ===============================
+# 分片
+# ===============================
+def split_parts(merged_rules):
+    total = len(merged_rules)
+    per_part = (total + PARTS - 1) // PARTS
+    print(f"🪓 分片 {total} 条，每片约 {per_part} 条规则")
+
+    for i in range(PARTS):
+        part_rules = list(merged_rules)[i*per_part:(i+1)*per_part]
+        filename = os.path.join(TMP_DIR, f"part_{i+1:02d}.txt")
+        with open(filename, "w", encoding="utf-8") as f:
+            f.write("\n".join(part_rules))
+        print(f"📄 分片 {i+1}: {len(part_rules)} 条 → {filename}")
+
+# ===============================
+# DNS 验证
+# ===============================
+def check_domain(rule):
+    resolver = dns.resolver.Resolver()
+    resolver.timeout = DNS_TIMEOUT
+    resolver.lifetime = DNS_TIMEOUT
+    domain = rule.lstrip("|").split("^")[0].replace("*", "")
+    if not domain:
+        return None
+    try:
+        resolver.resolve(domain)
+        return rule
+    except Exception as e:
+        return None
+
+def dns_validate(rules):
+    valid_rules = []
+    total_rules = len(rules)
+    with ThreadPoolExecutor(max_workers=DNS_WORKERS) as executor:
+        futures = {executor.submit(check_domain, rule): rule for rule in rules}
+        completed = 0
+        start_time = time.time()
+        for future in as_completed(futures):
+            result = future.result()
+            if result:
+                valid_rules.append(result)
+            completed += 1
+            if completed % DNS_BATCH_SIZE == 0 or completed == total_rules:
+                elapsed = time.time() - start_time
+                speed = completed / elapsed
+                eta = (total_rules - completed)/speed if speed > 0 else 0
+                print(f"✅ 已验证 {completed}/{total_rules} 条 | 有效 {len(valid_rules)} 条 | 速度 {speed:.1f} 条/秒 | ETA {eta:.1f} 秒")
+    return valid_rules
 
 # ===============================
 # 更新 not_written_counter.json
@@ -140,10 +190,7 @@ def update_not_written_counter(part, final_rules):
     print(f"开始更新 not_written_counter.json，处理分片 {part} 中的 {len(final_rules)} 条规则")
     counter = load_json(NOT_WRITTEN_FILE)
 
-    deleted_rules_count = 0  # 用于记录删除规则数量
-    deleted_rules = []  # 存储被删除的规则（write_counter 为 0 的规则）
-
-    # 重置当前分片规则 write_counter = 6
+    # 重置当前分片规则 write_counter = 3
     for rule in final_rules:
         counter[rule] = {"write_counter": WRITE_COUNTER_MAX, "part": f"validated_part_{part}"}
 
@@ -157,49 +204,10 @@ def update_not_written_counter(part, final_rules):
             if counter[rule]["write_counter"] <= 0:
                 print(f"🔥 write_counter 为0，删除 {rule} 于 {info['part']}")
                 counter.pop(rule)
-                deleted_rules.append(rule)  # 记录被删除的规则
-
-    # 输出准备保存更新后的数据的前20项
-    print(f"⚠ 准备保存更新后的数据的前20项：")
-    for i, (rule, info) in enumerate(list(counter.items())[:20]):
-        print(f"🔥 {rule}: {info}")
-
-    # 输出总规则数量
-    print(f"🔢 共 {len(counter)} 条规则数据已更新")
 
     # 调试输出
     print(f"准备保存更新后的数据：{counter}")
     save_json(NOT_WRITTEN_FILE, counter)
-
-    return len(deleted_rules)  # 返回被删除的规则数量
-
-# ===============================
-# 分片处理
-# ===============================
-def split_parts(rules):
-    """将规则分成多个分片，并保存到对应的文件中"""
-    if len(rules) == 0:
-        print("⚠ 没有规则进行分片")
-        return
-
-    # 将 rules 从 set 转换为 list
-    rules = list(rules)
-
-    # 计算每个分片包含的规则数量
-    rules_per_part = len(rules) // PARTS
-    extra_rules = len(rules) % PARTS
-
-    part_start = 0
-    for part in range(1, PARTS + 1):
-        part_end = part_start + rules_per_part + (1 if part <= extra_rules else 0)
-        part_rules = sorted(rules[part_start:part_end])
-
-        part_file = os.path.join(TMP_DIR, f"part_{part:02d}.txt")
-        with open(part_file, "w", encoding="utf-8") as f:
-            f.write("\n".join(part_rules))
-
-        print(f"✅ 分片 {part} 完成，包含 {len(part_rules)} 条规则")
-        part_start = part_end
 
 # ===============================
 # 处理分片
@@ -214,7 +222,7 @@ def process_part(part):
         return
 
     lines = [l.strip() for l in open(part_file, "r", encoding="utf-8").read().splitlines()]
-    print(f"⏱ 验证分片 {part}, 共 {len(lines)} 条规则（不剔除注释）")
+    print(f"⏱ 验证分片 {part}, 共 {len(lines)} 条规则")
 
     out_file = os.path.join(DIST_DIR, f"validated_part_{part}.txt")
     old_rules = set()
@@ -227,7 +235,6 @@ def process_part(part):
     final_rules = set(old_rules)
     added_count = 0
     removed_count = 0
-    deleted_rules_count = 0  # 新增删除的规则计数
 
     for r in lines:
         del_cnt = delete_counter.get(r, 4)
@@ -239,6 +246,7 @@ def process_part(part):
 
     valid = dns_validate(rules_to_validate)
 
+    # 初始化连续失败计数
     failure_counts = {}
 
     for rule in rules_to_validate:
@@ -249,15 +257,16 @@ def process_part(part):
         else:
             delete_counter[rule] = delete_counter.get(rule, 0) + 1
             current_failure_count = delete_counter[rule]
+            # 统计每个失败次数的规则条数
             failure_counts[current_failure_count] = failure_counts.get(current_failure_count, 0) + 1
             if delete_counter[rule] >= DELETE_THRESHOLD:
                 removed_count += 1
                 final_rules.discard(rule)
-                deleted_rules_count += 1  # 增加删除规则的数量
 
     save_json(DELETE_COUNTER_FILE, delete_counter)
 
-    for i in range(1, max(failure_counts.keys()) + 1):
+    # 输出所有失败次数的规则条数
+    for i in range(1, max(failure_counts.keys()) + 1):  # max(failure_counts.keys()) 确保包含所有失败次数
         if failure_counts[i] > 0:
             print(f"⚠ 连续失败 {i}/4 的规则条数: {failure_counts[i]} 条")
 
@@ -265,12 +274,12 @@ def process_part(part):
     with open(out_file, "w", encoding="utf-8") as f:
         f.write("\n".join(sorted(final_rules)))
 
-    # 更新 `not_written_counter.json` 文件，并返回删除规则数量
-    deleted_count = update_not_written_counter(part, final_rules, old_rules)
+    # 更新 `not_written_counter.json` 文件
+    update_not_written_counter(part, final_rules)
 
     total_count = len(final_rules)
-    print(f"✅ 分片 {part} 完成: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}, 删除规则数量: {deleted_count}")
-    print(f"COMMIT_STATS: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}, 删除规则数量: {deleted_count}")
+    print(f"✅ 分片 {part} 完成: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
+    print(f"COMMIT_STATS: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
 
 # ===============================
 # 主入口
@@ -288,5 +297,5 @@ if __name__ == "__main__":
         print("⚠ 缺少规则或分片，自动拉取")
         download_all_sources()
 
-    if args.part:  
+    if args.part:
         process_part(args.part)

@@ -52,7 +52,6 @@ def save_json(path, data):
     except Exception as e:
         print(f"⚠ 保存 {path} 时发生错误: {e}")
 
-
 # ===============================
 # 下载并合并规则源
 # ===============================
@@ -87,7 +86,6 @@ def download_all_sources():
     split_parts(filtered_rules)
     save_json(DELETE_COUNTER_FILE, updated_delete_counter)
     return True
-
 
 # ===============================
 # 处理删除计数 >=7 的规则
@@ -126,10 +124,9 @@ def filter_and_update_high_delete_count_rules(all_rules_set):
     for i, rule in enumerate(reset_rules[:20]):
         print(f"🔁 删除计数达到 17，重置规则：{rule} 的删除计数为 5")
 
-    print(f"🔢 共 {reset_count} 条规则删除计数达到 17的删除计数被重置为 5")
+    print(f"🔢 共 {reset_count} 条规则删除计数达到 17 的删除计数被重置为 5")
 
     return low_delete_count_rules, updated_delete_counter
-
 
 # ===============================
 # 分片
@@ -145,7 +142,6 @@ def split_parts(merged_rules):
         with open(filename, "w", encoding="utf-8") as f:
             f.write("\n".join(part_rules))
         print(f"📄 分片 {i+1}: {len(part_rules)} 条 → {filename}")
-
 
 # ===============================
 # DNS 验证
@@ -182,9 +178,8 @@ def dns_validate(rules):
                 print(f"✅ 已验证 {completed}/{total_rules} 条 | 有效 {len(valid_rules)} 条 | 速度 {speed:.1f} 条/秒 | ETA {eta:.1f} 秒")
     return valid_rules
 
-
 # ===============================
-# ✅ 更新 not_written_counter.json（已替换）
+# ✅ 修正后的 update_not_written_counter()
 # ===============================
 def update_not_written_counter(part, final_rules):
     print(f"开始更新 not_written_counter.json，处理分片 {part} 中的 {len(final_rules)} 条规则")
@@ -192,43 +187,55 @@ def update_not_written_counter(part, final_rules):
     part_key = f"validated_part_{part}"
     counter = load_json(NOT_WRITTEN_FILE)
 
-    # ✅ 首次更新：如果没有这个分区
+    # 是否首次更新
     first_update = part_key not in counter
     if first_update:
         counter[part_key] = {}
 
-    # ✅ 当前更新成功的规则 → 计数重置为 6
+    # --- 读取 validated_part_X.txt 以获取旧规则（首次更新需要）
+    validated_file = os.path.join(DIST_DIR, f"{part_key}.txt")
+    existing_file_rules = set()
+    if first_update and os.path.exists(validated_file):
+        try:
+            with open(validated_file, "r", encoding="utf-8") as vf:
+                existing_file_rules = set([l.strip() for l in vf if l.strip()])
+        except:
+            existing_file_rules = set()
+
+    # ✅ 当前分片验证成功的规则 → write_counter = 6
     for rule in final_rules:
         counter[part_key][rule] = 6
 
-    # ✅ 找出本次缺失的旧规则
-    old_rules = set(counter.get(part_key, {}).keys()) - set(final_rules)
-
-    for rule in list(old_rules):
-        if first_update:
-            # ✅ 第一次：旧规则设为 5
+    # ✅ 首次更新：旧规则（文件存在但本次未出现） → write_counter = 5
+    if first_update and existing_file_rules:
+        missing_initial_rules = existing_file_rules - set(final_rules)
+        for rule in missing_initial_rules:
             counter[part_key][rule] = 5
-        else:
-            # ✅ 之后更新：递减 1
+            print(f"🔧 首次更新：{rule} 设为 write_counter = 5")
+
+    # ✅ 非首次更新：对于旧有但这次没出现的 → write_counter -= 1
+    for rule in list(counter[part_key].keys()):
+        if rule not in final_rules:
+            # 跳过首次更新时已经设为 5 的规则
+            if first_update and rule in existing_file_rules:
+                continue
+
             counter[part_key][rule] -= 1
+            wc = counter[part_key][rule]
 
-        wc = counter[part_key][rule]
+            if wc <= 3:
+                print(f"🔥 write_counter ≤ 3 - 将从 {part_key}.txt 删除：{rule}")
 
-        # ✅ write_counter ≤ 3 → 未来从 validated_part_X.txt 清除
-        if wc <= 3:
-            print(f"🔥 write_counter ≤ 3，规则将从 {part_key}.txt 删除: {rule}")
+            if wc <= 0:
+                print(f"💥 write_counter = 0 → 从 JSON 删除：{rule}")
+                del counter[part_key][rule]
 
-        # ✅ write_counter ≤ 0 → JSON 彻底删除
-        if wc <= 0:
-            print(f"💥 write_counter ≤ 0 → 从 not_written_counter.json 删除: {rule}")
-            del counter[part_key][rule]
-
+    # ✅ 若分区空则移除
     if part_key in counter and not counter[part_key]:
         del counter[part_key]
 
     save_json(NOT_WRITTEN_FILE, counter)
     print(f"✅ not_written_counter.json 分区 {part_key} 更新完成")
-
 
 # ===============================
 # 处理分片
@@ -285,18 +292,18 @@ def process_part(part):
     save_json(DELETE_COUNTER_FILE, delete_counter)
 
     for i in range(1, max(failure_counts.keys()) + 1):
-        if failure_counts[i] > 0:
+        if failure_counts.get(i, 0) > 0:
             print(f"⚠ 连续失败 {i}/4 的规则条数: {failure_counts[i]} 条")
 
     with open(out_file, "w", encoding="utf-8") as f:
         f.write("\n".join(sorted(final_rules)))
 
+    # ✅ 更新 not_written_counter.json
     update_not_written_counter(part, final_rules)
 
     total_count = len(final_rules)
     print(f"✅ 分片 {part} 完成: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
     print(f"COMMIT_STATS: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
-
 
 # ===============================
 # 主入口

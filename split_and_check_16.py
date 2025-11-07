@@ -208,33 +208,34 @@ def update_not_written_counter(part):
 
     part_counter = counter[part_key]
 
+    # 验证成功的规则 → write_counter = 6
     for rule in tmp_rules:
         part_counter[rule] = 6
 
+    # 原 validated_part_X.txt 有、但 tmp 中没有
     for rule in existing_rules:
         if rule not in tmp_rules:
             if rule in part_counter:
                 part_counter[rule] -= 1
-                if part_counter[rule] <= 0:
-                    print(f"💥 write_counter = 3 → 从 JSON 删除：{rule}")
+                if part_counter[rule] <= 3:
+                    print(f"💥 write_counter ≤ 3 → 从 JSON 删除：{rule}")
                     del part_counter[rule]
             else:
                 part_counter[rule] = 5
 
+    # 删除 write_counter <=3 的规则，同时写回 validated_part_X.txt
     if os.path.exists(validated_file):
         with open(validated_file, "r", encoding="utf-8") as f:
             old_lines = [l.strip() for l in f if l.strip()]
 
         to_delete = [l for l in old_lines if part_counter.get(l, 0) <= 3]
-
         for rule in to_delete[:20]:
             print(f"🔥 write_counter ≤ 3 - 将从 {validated_file} 删除：{rule}")
 
         if to_delete:
-            print(f"🗑 本次从 {validated_file} 删除 共 {len(to_delete)} 条")
+            print(f"🧹 从 {validated_file} 删除 共 {len(to_delete)} 条")
 
         new_lines = [l for l in old_lines if part_counter.get(l, 0) > 3]
-
         with open(validated_file, "w", encoding="utf-8") as f:
             f.write("\n".join(new_lines))
 
@@ -303,7 +304,6 @@ def process_part(part):
 
     update_not_written_counter(part)
 
-    # ✅ 正确统计删除数
     total_count = len(final_rules)
     deleted_count = len(old_rules) - len(final_rules)
 

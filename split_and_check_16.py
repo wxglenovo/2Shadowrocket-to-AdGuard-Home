@@ -23,7 +23,7 @@ DELETE_COUNTER_FILE = os.path.join(DIST_DIR, "delete_counter.json")
 NOT_WRITTEN_FILE = os.path.join(DIST_DIR, "not_written_counter.json")
 DELETE_THRESHOLD = 4
 DNS_BATCH_SIZE = 500
-WRITE_COUNTER_MAX = 6
+WRITE_COUNTER_MAX = 3
 
 os.makedirs(TMP_DIR, exist_ok=True)
 os.makedirs(DIST_DIR, exist_ok=True)
@@ -155,7 +155,7 @@ def check_domain(rule):
     try:
         resolver.resolve(domain)
         return rule
-    except Exception:
+    except:
         return None
 
 def dns_validate(rules):
@@ -184,7 +184,7 @@ def update_not_written_counter(part, final_rules):
     part_key = f"validated_part_{part}"
     counter = load_json(NOT_WRITTEN_FILE)
 
-    # 自动创建16个分区（首次运行）
+    # 自动创建16个分区
     for i in range(1, PARTS+1):
         key = f"validated_part_{i}"
         if key not in counter:
@@ -196,20 +196,21 @@ def update_not_written_counter(part, final_rules):
         with open(validated_file, "r", encoding="utf-8") as vf:
             existing_file_rules = set([l.strip() for l in vf if l.strip()])
 
-    # 验证成功规则 write_counter = 6
+    # 首次更新缺席规则 → write_counter = 5
+    first_update_missing_rules = set()
+    for rule in existing_file_rules:
+        if rule not in counter[part_key]:
+            counter[part_key][rule] = 5
+            first_update_missing_rules.add(rule)
+            print(f"🔧 首次更新：{rule} 设为 write_counter = 5")
+
+    # 验证成功规则 → write_counter = 6
     for rule in final_rules:
         counter[part_key][rule] = 6
 
-    # 首次更新旧规则缺席 → write_counter = 5，不删除文件
-    missing_initial_rules = existing_file_rules - set(final_rules)
-    for rule in missing_initial_rules:
-        if rule not in counter[part_key]:
-            counter[part_key][rule] = 5
-            print(f"🔧 首次更新：{rule} 设为 write_counter = 5")
-
     # 非首次更新缺席规则 → write_counter -= 1
     for rule in list(counter[part_key].keys()):
-        if rule not in final_rules and rule not in missing_initial_rules:
+        if rule not in final_rules and rule not in first_update_missing_rules:
             counter[part_key][rule] -= 1
             wc = counter[part_key][rule]
             if wc <= 3:

@@ -107,11 +107,11 @@ def filter_and_update_high_delete_count_rules(all_rules_set):
     low_delete_count_rules = set()
     updated_delete_counter = delete_counter.copy()
 
-    reset_count = 0
-    reset_limit = 20
-    skipped_count = 0
-    skipped_rules = []
-    reset_rules = []
+    reset_count = 0  # 记录重置的规则数量
+    reset_limit = 20  # 限制只显示前20条重置的规则
+    skipped_count = 0  # 记录跳过的规则数量
+    skipped_rules = []  # 存储跳过的规则
+    reset_rules = []  # 存储重置规则的日志
 
     for rule in all_rules_set:
         del_cnt = delete_counter.get(rule, 4)
@@ -121,22 +121,27 @@ def filter_and_update_high_delete_count_rules(all_rules_set):
             updated_delete_counter[rule] = del_cnt + 1
             if updated_delete_counter[rule] >= 17:
                 updated_delete_counter[rule] = 5
-                reset_count += 1
-                reset_rules.append(rule)
+                reset_count += 1  # 重置计数器加1
+                reset_rules.append(rule)  # 将重置规则添加到日志中
 
+            # 对于删除计数达到7或以上的规则进行跳过
             if del_cnt >= 7:
                 skipped_count += 1
                 skipped_rules.append(rule)
 
+    # 先输出跳过规则日志（只显示前20条）
     for i, rule in enumerate(skipped_rules[:20]):
         print(f"⚠ 删除计数达到 7 或以上，跳过规则：{rule} | 删除计数={delete_counter.get(rule)}")
 
+    # 输出跳过规则总数
     print(f"🔢 共 {skipped_count} 条规则删除计数达到 7 或以上被跳过验证")
 
+    # 输出重置规则日志（只显示前20条）
     for i, rule in enumerate(reset_rules[:20]):
         print(f"🔁 删除计数达到 17，重置规则：{rule} 的删除计数为 5")
 
-    print(f"🔢 共 {reset_count} 条规则删除计数达到 17 的删除计数被重置为 5")
+    # 输出重置规则总数
+    print(f"🔢 共 {reset_count} 条规则删除计数达到 17的删除计数被重置为 5")
 
     return low_delete_count_rules, updated_delete_counter
 

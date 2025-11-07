@@ -188,7 +188,7 @@ def dns_validate(rules, part):
 # ===============================
 # 更新 not_written_counter.json
 # ===============================
-def update_not_written_counter(part, final_rules):
+def update_not_written_counter(part):
     part_key = f"validated_part_{part}"
     counter = load_json(NOT_WRITTEN_FILE)
 
@@ -211,36 +211,40 @@ def update_not_written_counter(part, final_rules):
         with open(tmp_file, "r", encoding="utf-8") as tf:
             tmp_rules = set([l.strip() for l in tf if l.strip()])
 
-    # ✅ 验证成功的规则 write_counter=6
+    # ✅ 遍历当前分区的 JSON
+    part_counter = counter[part_key]
+
+    # 处理验证成功的规则 → write_counter=6
     for rule in tmp_rules:
-        counter[part_key][rule] = 6
+        part_counter[rule] = 6
 
-    # ✅ 首次更新旧规则缺席 → write_counter=5（不删除文件）
-    missing_rules = existing_rules - tmp_rules
-    for rule in missing_rules:
-        if rule not in counter[part_key]:
-            counter[part_key][rule] = 5
-            print(f"🔧 首次更新：{rule} 设为 write_counter = 5")
+    # 处理缺席规则
+    for rule in existing_rules:
+        if rule not in tmp_rules:
+            if rule in part_counter:
+                # 非首次更新，递减 write_counter
+                part_counter[rule] -= 1
+                wc = part_counter[rule]
+                if wc <= 3 and os.path.exists(validated_file):
+                    print(f"🔥 write_counter ≤ 3 - 将从 {validated_file} 删除：{rule}")
+                if wc <= 0:
+                    print(f"💥 write_counter = 0 → 从 JSON 删除：{rule}")
+                    del part_counter[rule]
+            else:
+                # 首次更新缺席 → write_counter=5
+                part_counter[rule] = 5
+                print(f"🔧 首次更新：{rule} 设为 write_counter = 5")
 
-    # ✅ 非首次更新缺席规则 → write_counter -= 1
-    for rule in list(counter[part_key].keys()):
-        if rule not in tmp_rules and rule not in missing_rules:
-            counter[part_key][rule] -= 1
-            wc = counter[part_key][rule]
-            if wc <= 3 and os.path.exists(validated_file):
-                print(f"🔥 write_counter ≤ 3 - 将从 {validated_file} 删除：{rule}")
-            if wc <= 0:
-                print(f"💥 write_counter = 0 → 从 JSON 删除：{rule}")
-                del counter[part_key][rule]
-
-    # ✅ 删除 write_counter ≤3 的规则从 validated_part_X.txt
+    # 删除 write_counter ≤3 的规则从 validated_part_X.txt
     if os.path.exists(validated_file):
         with open(validated_file, "r", encoding="utf-8") as f:
             lines = [l.strip() for l in f if l.strip()]
-        new_lines = [l for l in lines if counter[part_key].get(l, 0) > 3]
+        new_lines = [l for l in lines if part_counter.get(l, 0) > 3]
         with open(validated_file, "w", encoding="utf-8") as f:
             f.write("\n".join(new_lines))
 
+    # 保存 JSON
+    counter[part_key] = part_counter
     save_json(NOT_WRITTEN_FILE, counter)
 
 # ===============================
@@ -305,7 +309,7 @@ def process_part(part):
         f.write("\n".join(sorted(final_rules)))
 
     # 更新 not_written_counter.json
-    update_not_written_counter(part, final_rules)
+    update_not_written_counter(part)
 
     total_count = len(final_rules)
     print(f"✅ 分片 {part} 完成: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")

@@ -307,8 +307,8 @@ def process_part(part):
     update_not_written_counter(part)
 
     total_count = len(final_rules)
-    print(f"✅ 分片 {part} 完成: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
-    print(f"COMMIT_STATS: 总 {total_count}, 新增 {added_count}, 删除 {removed_count}")
+    print(f"✅ 分片 {part} 完成:总{total_count},新增{added_count},过滤 {removed_count},删除{len(to_delete)}")
+    print(f"COMMIT_STATS:总{total_count},新增{added_count},过滤{removed_count},删除{len(to_delete)}")
 
 # ===============================
 # 主入口

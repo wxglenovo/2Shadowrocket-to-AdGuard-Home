@@ -317,7 +317,7 @@ def process_part(part):
     deleted_count = len(old_rules) - len(final_rules)
 
     print(f"✅ 分片 {part} 完成: 总{len(final_rules)}, 新增{added_count}, 删除{deleted_count}, 过滤{filtered_count}")
-    print(f"总{len(final_rules)},新增{added_count},删除{deleted_count},过滤{filtered_count}")
+    print(f"COMMIT_STATS:总{len(final_rules)},新增{added_count},删除{deleted_count},过滤{filtered_count}")
 
 # ===============================
 # 主入口

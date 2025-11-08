@@ -1,1 +1,0 @@
-https://raw.githubusercontent.com/wxglenovo/1AdGuardHome-Rules-AutoMerge-/refs/heads/main/dist/merged_rules.txt

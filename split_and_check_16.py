@@ -208,9 +208,9 @@ def update_not_written_counter(part):
 
     part_counter = counter[part_key]
 
-    # 验证成功规则 write_counter = 6
+    # 验证成功规则 write_counter = 4
     for rule in tmp_rules:
-        part_counter[rule] = 6
+        part_counter[rule] = 4
 
     # 已存在规则在 tmp_rules 中缺失，write_counter -1
     for rule in existing_rules:
@@ -218,19 +218,19 @@ def update_not_written_counter(part):
             if rule in part_counter:
                 part_counter[rule] -= 1
                 if part_counter[rule] <= 0:
-                    print(f"💥 write_counter ≤ 3 → 从 JSON 删除：{rule}")
+                    print(f"💥 write_counter ≤ 0 → 从 JSON 删除：{rule}")
                     del part_counter[rule]
             else:
-                part_counter[rule] = 5
+                part_counter[rule] = 0
 
-    # 删除 validated_file 中 write_counter ≤3 的规则
+    # 删除 validated_file 中 write_counter ≤0 的规则
     if os.path.exists(validated_file):
         with open(validated_file, "r", encoding="utf-8") as f:
             old_lines = [l.strip() for l in f if l.strip()]
-        to_delete = [l for l in old_lines if part_counter.get(l, 0) <= 3]
+        to_delete = [l for l in old_lines if part_counter.get(l, 0) <= 0]
 
         for rule in to_delete[:20]:
-            print(f"🔥 write_counter ≤ 3 - 将从 {validated_file} 删除：{rule}")
+            print(f"🔥 write_counter ≤ 0 - 将从 {validated_file} 删除：{rule}")
 
         # 统计删除总数
         deleted_count = len(to_delete)
@@ -238,11 +238,11 @@ def update_not_written_counter(part):
         if to_delete:
             print(f"🗑 本次从 {validated_file} 删除 共 {deleted_count} 条")
         for rule in to_delete[:20]:
-            print(f"💥 write_counter ≤ 3 → 从 JSON 删除：{rule}")
+            print(f"💥 write_counter ≤ 0 → 从 JSON 删除：{rule}")
         if deleted_count > 0:
             print(f"🗑 本次从 JSON 删除 共 {deleted_count} 条规则")
 
-        new_lines = [l for l in old_lines if part_counter.get(l, 0) > 3]
+        new_lines = [l for l in old_lines if part_counter.get(l, 0) > 0]
         with open(validated_file, "w", encoding="utf-8") as f:
             f.write("\n".join(new_lines))
 

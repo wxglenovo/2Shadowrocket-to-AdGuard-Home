@@ -235,21 +235,13 @@ def update_not_written_counter(part):
         for rule in to_delete[:20]:
             print(f"🔥 write_counter ≤ 3 - 将从 {validated_file} 删除：{rule}")
 
+        # 打印总删除数量
         if deleted_count > 0:
             print(f"🗑 本次从 {validated_file} 删除 共 {deleted_count} 条")
 
         new_lines = [l for l in old_lines if part_counter.get(l, 0) > 3]
         with open(validated_file, "w", encoding="utf-8") as f:
             f.write("\n".join(new_lines))
-
-    # 删除 JSON 中 write_counter ≤3 的规则
-    json_deleted = [r for r, v in part_counter.items() if v <= 3]
-    for rule in json_deleted[:20]:
-        print(f"💥 write_counter ≤ 3 → 从 JSON 删除：{rule}")
-    if json_deleted:
-        print(f"🗑 本次从 JSON 删除 共 {len(json_deleted)} 条规则")
-    for r in json_deleted:
-        part_counter.pop(r, None)
 
     counter[part_key] = part_counter
     save_json(NOT_WRITTEN_FILE, counter)

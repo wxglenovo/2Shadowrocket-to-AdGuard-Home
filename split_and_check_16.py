@@ -208,43 +208,48 @@ def update_not_written_counter(part):
 
     part_counter = counter[part_key]
 
-    # 验证成功规则 write_counter = 6
+    # 验证成功的规则 → write_counter = 6
     for rule in tmp_rules:
         part_counter[rule] = 6
 
-    # 已存在规则在 tmp_rules 中缺失，write_counter -1
+    # 原 validated_part_X.txt 有、但 tmp 中没有
     for rule in existing_rules:
         if rule not in tmp_rules:
             if rule in part_counter:
                 part_counter[rule] -= 1
-                if part_counter[rule] <= 0:
-                    print(f"💥 write_counter ≤ 3 → 从 JSON 删除：{rule}")
+                if part_counter[rule] <= 3:
                     del part_counter[rule]
             else:
                 part_counter[rule] = 5
 
-    # 删除 validated_file 中 write_counter ≤3 的规则
+    # 删除 write_counter <=3 的规则，同时写回 validated_part_X.txt
+    deleted_count = 0
     if os.path.exists(validated_file):
         with open(validated_file, "r", encoding="utf-8") as f:
             old_lines = [l.strip() for l in f if l.strip()]
-        to_delete = [l for l in old_lines if part_counter.get(l, 0) <= 3]
 
+        to_delete = [l for l in old_lines if part_counter.get(l, 0) <= 3]
+        deleted_count = len(to_delete)
+
+        # 只显示前20条删除日志
         for rule in to_delete[:20]:
             print(f"🔥 write_counter ≤ 3 - 将从 {validated_file} 删除：{rule}")
 
-        # 统计删除总数
-        deleted_count = len(to_delete)
-
-        if to_delete:
-            print(f"🗑 本次从 {validated_file} 删除 共 {deleted_count} 条")
-        for rule in to_delete[:20]:
-            print(f"💥 write_counter ≤ 3 → 从 JSON 删除：{rule}")
         if deleted_count > 0:
-            print(f"🗑 本次从 JSON 删除 共 {deleted_count} 条规则")
+            print(f"🗑 本次从 {validated_file} 删除 共 {deleted_count} 条")
 
         new_lines = [l for l in old_lines if part_counter.get(l, 0) > 3]
         with open(validated_file, "w", encoding="utf-8") as f:
             f.write("\n".join(new_lines))
+
+    # 删除 JSON 中 write_counter ≤3 的规则
+    json_deleted = [r for r, v in part_counter.items() if v <= 3]
+    for rule in json_deleted[:20]:
+        print(f"💥 write_counter ≤ 3 → 从 JSON 删除：{rule}")
+    if json_deleted:
+        print(f"🗑 本次从 JSON 删除 共 {len(json_deleted)} 条规则")
+    for r in json_deleted:
+        part_counter.pop(r, None)
 
     counter[part_key] = part_counter
     save_json(NOT_WRITTEN_FILE, counter)
@@ -285,9 +290,7 @@ def process_part(part):
             print(f"⚠ 删除计数达到 7 或以上，跳过规则：{r}")
 
     valid = dns_validate(rules_to_validate, part)
-    filtered_count = len(rules_to_validate) - len(valid)
 
-    # 统计删除计数
     failure_counts = {}
     for rule in rules_to_validate:
         if rule in valid:
@@ -299,8 +302,8 @@ def process_part(part):
             current_failure_count = delete_counter[rule]
             failure_counts[current_failure_count] = failure_counts.get(current_failure_count, 0) + 1
             if delete_counter[rule] >= DELETE_THRESHOLD:
-                final_rules.discard(rule)
                 removed_count += 1
+                final_rules.discard(rule)
 
     save_json(DELETE_COUNTER_FILE, delete_counter)
 
@@ -313,11 +316,12 @@ def process_part(part):
 
     update_not_written_counter(part)
 
-    # 删除 validated_file 中 write_counter ≤3 的数量已经在 update_not_written_counter 内统计
+    # ✅ 正确统计删除数
+    total_count = len(final_rules)
     deleted_count = len(old_rules) - len(final_rules)
 
-    print(f"✅ 分片 {part} 完成: 总{len(final_rules)}, 新增{added_count}, 删除{deleted_count}, 过滤{filtered_count}")
-    print(f"COMMIT_STATS:总{len(final_rules)},新增{added_count},删除{deleted_count},过滤{filtered_count}")
+    print(f"✅ 分片 {part} 完成: 总{total_count}, 新增{added_count}, 删除{deleted_count}, 过滤{removed_count}")
+    print(f"COMMIT_STATS:总{total_count},新增{added_count},删除{deleted_count},过滤{removed_count}")
 
 # ===============================
 # 主入口

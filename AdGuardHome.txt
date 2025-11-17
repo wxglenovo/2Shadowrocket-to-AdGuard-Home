@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 186823
-! 压缩后规则数: 186823
+! 原始规则数: 186825
+! 压缩后规则数: 186825
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -92393,6 +92393,7 @@
 ||jitpirkky.com^
 ||jitsjnlwupbdh.site^
 ||jitsu.ixbt.com^
+||jitsu.ixbt.site^
 ||jitterspauperusher.com^
 ||jitterystation.com^
 ||jitterytwist.com^
@@ -139511,6 +139512,7 @@
 ||sgtm.infobus.eu^
 ||sgtm.innova3it.com.br^
 ||sgtm.iu-fernstudium.de^
+||sgtm.ixbt.site^
 ||sgtm.joga.dk^
 ||sgtm.joinamble.com^
 ||sgtm.joyspringvitamins.com^

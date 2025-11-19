@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 186843
-! 压缩后规则数: 186843
+! 原始规则数: 186846
+! 压缩后规则数: 186846
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -42952,6 +42952,7 @@
 ||cv.2jikaikun.com^
 ||cv.a-cial.com^
 ||cv.a-hikkoshi.com^
+||cv.aedi.ai^
 ||cv.ag.cybersecurity-jp.com^
 ||cv.agent-sana.com^
 ||cv.aqua-style.jp^
@@ -54138,6 +54139,7 @@
 ||ebjzywqbpkbbi.online^
 ||ebkvp.efavormart.com^
 ||eblastengine.com^
+||ebm.lfmall.co.kr^
 ||ebmhpt.sneakscloud.com^
 ||ebnpqi.carrefourlocation.fr^
 ||ebonizerebake.com^
@@ -96458,6 +96460,7 @@
 ||lc.caravanyou.com^
 ||lc.jiathis.com^
 ||lc.manhealthsolutions.com^
+||lc.recopick.com^
 ||lc.romegods.com^
 ||lc.taintedlovetoday.com^
 ||lc.thebugblues.com^

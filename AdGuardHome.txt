@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 186846
-! 压缩后规则数: 186846
+! 原始规则数: 186848
+! 压缩后规则数: 186848
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -101961,6 +101961,7 @@
 ||log1.wanmei.com^
 ||log1.wtlogin.qq.com^
 ||log16-normal-us-ttp.capcutapi.us^
+||log2.ihubgo.info^
 ||log2.molitv.cn^
 ||log2.mtime.cn^
 ||log2.musical.ly^
@@ -152967,6 +152968,7 @@
 ||stats.urban-media.com^
 ||stats.urbanfinn.com^
 ||stats.urlaubsverwaltung.cloud^
+||stats.us-light-edge.com^
 ||stats.uscreen.io^
 ||stats.useeffect.dev^
 ||stats.uswitch.com^

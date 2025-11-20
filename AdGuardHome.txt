@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 185979
-! 压缩后规则数: 185979
+! 原始规则数: 185980
+! 压缩后规则数: 185980
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -52559,6 +52559,7 @@
 ||dsxdn.com^
 ||dsxgg.com^
 ||dsxgwwrkecsxd.online^
+||dsxlez.com^
 ||dsxmn0.com^
 ||dsxrvvqolphwm.website^
 ||dsyred.dollarhobbyz.com^

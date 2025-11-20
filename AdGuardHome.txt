@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 185986
-! 压缩后规则数: 185986
+! 原始规则数: 185987
+! 压缩后规则数: 185987
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -48502,6 +48502,7 @@
 ||datapacstereos.shop^
 ||dataperforma.com^
 ||dataprajna.net^
+||datarangers-event.myrightone.com^
 ||datareport.fkw.com^
 ||datareporter.eu^
 ||datarobot.edge46.testandtarget.omniture.com^

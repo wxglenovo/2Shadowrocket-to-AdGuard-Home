@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 185993
-! 压缩后规则数: 185993
+! 原始规则数: 185995
+! 压缩后规则数: 185995
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -93713,6 +93713,7 @@
 ||jumpe.58xmgys.com^
 ||jumpedformer.com^
 ||jumperclasssearch.com^
+||jumpfiledoor.click^
 ||jumpingapplecloud.com^
 ||jumplead.com^
 ||jumpluna.58.com^
@@ -101909,6 +101910,7 @@
 ||loading.baofeng5.baofeng.net^
 ||loadingscripts.com^
 ||loadlink.transcore.ca^
+||loadmypath.click^
 ||loadsurprise.com^
 ||loadtime.org^
 ||loajawun.com^

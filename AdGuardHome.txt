@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 186528
-! 压缩后规则数: 186528
+! 原始规则数: 186529
+! 压缩后规则数: 186529
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -175444,6 +175444,7 @@
 ||web.ajostg.colonialfirststate.com.au^
 ||web.akademiai.hu^
 ||web.ali213.net^
+||web.analytics.metrobyt-mobile.com^
 ||web.araglegal.com^
 ||web.autobodytoolmart.com^
 ||web.autovista.fr^

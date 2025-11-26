@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 180833
-! 压缩后规则数: 180833
+! 原始规则数: 180834
+! 压缩后规则数: 180834
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -16757,6 +16757,7 @@
 ||adultsense.org^
 ||adultsexygame.superchat.live^
 ||adultsjuniorfling.com^
+||adunblock.static-cloudflare.workers.dev^
 ||adunite.com^
 ||adunity.com^
 ||adup-tech.com^

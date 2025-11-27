@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 180836
-! 压缩后规则数: 180836
+! 原始规则数: 180837
+! 压缩后规则数: 180837
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -113785,6 +113785,7 @@
 ||omnifpc.devry.edu^
 ||omnifpcs.devry.edu^
 ||omnikool.discovery.com^
+||omniqa.ru^
 ||omnis.basspro.com^
 ||omnis.bd.pcmall.com^
 ||omnis.firstdata.com^

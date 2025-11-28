@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 180837
-! 压缩后规则数: 180837
+! 原始规则数: 180840
+! 压缩后规则数: 180840
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -97764,6 +97764,7 @@
 ||logperf.vnexpress.net^
 ||logql.yahoo.co.jp^
 ||logr-ingest.com^
+||logrcv.adseyeservice.com^
 ||logreport-global-dual.coolbcloud.com^
 ||logreport-global-dual.coolhcloud.com^
 ||logrocket.com^
@@ -150540,6 +150541,7 @@
 ||sync.adspend.space^
 ||sync.audtd.com^
 ||sync.clearnview.com^
+||sync.getpublica.com^
 ||sync.gsyndication.com^
 ||sync.mobojoy.baidu.com^
 ||sync.morgdm.ru^
@@ -164977,6 +164979,7 @@
 ||valdes.net.anwalt.de^
 ||valeenjoy.com^
 ||valemedia.net^
+||valencia-beacons.xumo.com^
 ||valentino.tt.omtrdc.net^
 ||valeria.trk.agency^
 ||valeriesara.com^

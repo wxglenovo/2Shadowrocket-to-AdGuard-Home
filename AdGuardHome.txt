@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 181490
-! 压缩后规则数: 181490
+! 原始规则数: 181489
+! 压缩后规则数: 181489
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -30883,7 +30883,6 @@
 ||browser-update.org^
 ||browser-updater.yandex.net^
 ||browser.covatic.io^
-||browser.events.data.microsoft.com^
 ||browser.events.data.msn.cn^
 ||browser.events.data.msn.com^
 ||browser.pipe.aria.microsoft.com^

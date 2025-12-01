@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 181996
-! 压缩后规则数: 181996
+! 原始规则数: 181995
+! 压缩后规则数: 181995
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -38412,7 +38412,6 @@
 ||cmp-static.nature.com^
 ||cmp.audi.be^
 ||cmp.audifinance.be^
-||cmp.bonniernews.se^
 ||cmp.cdn.thesun.co.uk^
 ||cmp.cdn.thesun.ie^
 ||cmp.computerworld.pl^

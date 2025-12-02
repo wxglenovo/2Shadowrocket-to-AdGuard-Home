@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 182677
-! 压缩后规则数: 182677
+! 原始规则数: 182678
+! 压缩后规则数: 182678
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -16698,6 +16698,7 @@
 ||advanced-web-analytics.com^
 ||advanced.praticaestoica.com.br^
 ||advancedadblocker.pro^
+||advancedanalytics-websocket-pri-001.hexaglobe.net^
 ||advanceinvader.com^
 ||advancing.acams.org^
 ||advancingbertramincurable.com^

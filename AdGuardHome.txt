@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 182686
-! 压缩后规则数: 182686
+! 原始规则数: 182685
+! 压缩后规则数: 182685
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -6656,7 +6656,6 @@
 ||44fc0648ef.6cde8b5544.com^
 ||44q.com^
 ||44tele-infra.com^
-||44x.io^
 ||450a.feet9.com^
 ||4527824.notify6.com^
 ||452tapgn.de^

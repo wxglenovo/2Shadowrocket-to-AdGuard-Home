@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 183230
-! 压缩后规则数: 183230
+! 原始规则数: 183232
+! 压缩后规则数: 183232
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -144176,6 +144176,7 @@
 ||sp.notifysonic.com^
 ||sp.pal-item.com^
 ||sp.pamklein.com^
+||sp.pcid.ca^
 ||sp.pcoptimum.ca^
 ||sp.pnj.com^
 ||sp.portclintonnewsherald.com^
@@ -155234,8 +155235,9 @@
 ||telegramsvip.com^
 ||telegramv.com^
 ||telegramyy.com^
-||telegraph.prd.api.bleacherreport.com^
 ||telegraph.prd.api.discomax.com^
+||telegraph.prd.api.discoveryplus.com^
+||telegraph.prd.api.hbomax.com^
 ||telegraph.prd.api.max.com^
 ||telegraphcompetenceslightly.com^
 ||telegraphfamouscucumbers.com^

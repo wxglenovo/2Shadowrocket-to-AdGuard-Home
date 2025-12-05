@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 183232
-! 压缩后规则数: 183232
+! 原始规则数: 183235
+! 压缩后规则数: 183235
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -78350,6 +78350,7 @@
 ||gwwquc.icu^
 ||gwynorxqqcqxg.site^
 ||gwyorodtr.com^
+||gx-target-experiments-frontend-api.gx.nvidia.com^
 ||gx.idg.se^
 ||gx0.funfuckmovies.com^
 ||gx101.com^
@@ -123308,6 +123309,7 @@
 ||prod.event.mwm-asset-manager.mwmwebapis.com^
 ||prod.ew.srp.navigacloud.com^
 ||prod.nitrosniffer.ottogroup.io^
+||prod.otel.kaizen.nvidia.com^
 ||prod.report.nacustomerexperience.citi.com^
 ||prod.tahoe-analytics.publishers.advertising.a2z.com^
 ||prod.tracking.refinitiv.com^
@@ -155270,6 +155272,7 @@
 ||telemetry.doitbeststore.com^
 ||telemetry.dzen.ru^
 ||telemetry.firez.one^
+||telemetry.gfe.nvidia.com^
 ||telemetry.goodlifefitness.com^
 ||telemetry.individual.githubcopilot.com^
 ||telemetry.insights.video.a2z.com^

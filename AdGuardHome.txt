@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 183235
-! 压缩后规则数: 183235
+! 原始规则数: 183234
+! 压缩后规则数: 183234
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -16892,7 +16892,6 @@
 ||adx.mala.cn^
 ||adx.maplehaze.cn^
 ||adx.opera.com^
-||adx.promo^
 ||adx.rrt365.com^
 ||adx.sogaha.cn^
 ||adx.timewit.cn^

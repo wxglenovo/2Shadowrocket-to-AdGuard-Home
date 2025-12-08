@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 181319
-! 压缩后规则数: 181319
+! 原始规则数: 181320
+! 压缩后规则数: 181320
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -120776,6 +120776,7 @@
 ||pm.geniusmonkey.com^
 ||pm.pmu.fr^
 ||pm.poqwua.cn^
+||pm.redbull.com^
 ||pm0.net^
 ||pm1.superchat.live^
 ||pm14.com^

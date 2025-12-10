@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 180470
-! 压缩后规则数: 180470
+! 原始规则数: 180469
+! 压缩后规则数: 180469
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -19407,7 +19407,6 @@
 ||analytics-ingestion.production-public.tubi.io^
 ||analytics-ingress-global.bitmovin.com^
 ||analytics-ingress.bitmovin.com^
-||analytics-ipv6.tiktokw.us^
 ||analytics-la-nwsl.yinzcam.com^
 ||analytics-lac-nba.yinzcam.com^
 ||analytics-league-apl.yinzcam.com^

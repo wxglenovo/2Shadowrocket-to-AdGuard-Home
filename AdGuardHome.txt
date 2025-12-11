@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 181130
-! 压缩后规则数: 181130
+! 原始规则数: 181131
+! 压缩后规则数: 181131
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -110245,6 +110245,7 @@
 ||next-sail.pro^
 ||next.maispassagens.com.br^
 ||next.minutodenoticias.com^
+||nextacdn.top^
 ||nextbeforefollowerskean.com^
 ||nextclick.pl^
 ||nextjscms-sgtm.1800gotjunk.com^

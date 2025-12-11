@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 181134
-! 压缩后规则数: 181134
+! 原始规则数: 181135
+! 压缩后规则数: 181135
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -63257,6 +63257,7 @@
 ||eventos.usj.es^
 ||eventrecorder.cm.bloomberg.com^
 ||events-api.gazetadopovo.com.br^
+||events-api.lyrebirdstudio.net^
 ||events-api.soundcloud.com^
 ||events-api.towneers.prod.data.krmt.io^
 ||events-collector-api.viacom.tech^

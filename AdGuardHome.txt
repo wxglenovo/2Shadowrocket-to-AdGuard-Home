@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 181143
-! 压缩后规则数: 181143
+! 原始规则数: 181145
+! 压缩后规则数: 181145
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -15803,6 +15803,7 @@
 ||ads.imgdesu.art^
 ||ads.imovideo.ru^
 ||ads.info.doordash.com^
+||ads.inmobi.com^
 ||ads.intellidoctor.ai^
 ||ads.iosappsworld.com^
 ||ads.ipfighter.com^
@@ -69638,6 +69639,7 @@
 ||glamipixel.com^
 ||glamorousconditionsattempt.com^
 ||glamoroustangiblematching.com^
+||glance.inmobi.com^
 ||glancedsecretion.com^
 ||glancetree.top^
 ||glandlabel.com^

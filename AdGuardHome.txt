@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 181142
-! 压缩后规则数: 181142
+! 原始规则数: 181143
+! 压缩后规则数: 181143
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -105159,6 +105159,7 @@
 ||metrics.mcrewards.com^
 ||metrics.mdstrm.com^
 ||metrics.med.roche.ru^
+||metrics.media-amazon.com^
 ||metrics.medical.roche.de^
 ||metrics.mei.co.jp^
 ||metrics.meiers-weltreisen.de^

@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 181136
-! 压缩后规则数: 181136
+! 原始规则数: 181140
+! 压缩后规则数: 181140
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -51139,6 +51139,7 @@
 ||dsp.e-volution.ai^
 ||dsp.fcbox.com^
 ||dsp.foremedia.net^
+||dsp.groupminteraction.ru^
 ||dsp.hypers.com.cn^
 ||dsp.nativeads.com^
 ||dsp.newsbreak.com^
@@ -63164,6 +63165,7 @@
 ||event.api.drift.com^
 ||event.api.instant.one^
 ||event.ava.me^
+||event.bigkeyboardeasyphone.com^
 ||event.boozallen.com^
 ||event.chitai-gorod.ru^
 ||event.clientgear.com^
@@ -141818,6 +141820,7 @@
 ||songsterritory.com^
 ||songtopbrand.com^
 ||sonic002.fumblingvacation.pro^
+||sonicsads.com^
 ||sonkransme.com^
 ||sonne.helgahilft.com^
 ||sonnerie.net^
@@ -146522,6 +146525,7 @@
 ||stat.alibaba.com^
 ||stat.alloha.tv^
 ||stat.altalex.com^
+||stat.apfgexfusion.com^
 ||stat.api.2gis.ru^
 ||stat.arzamas.academy^
 ||stat.baike.com^

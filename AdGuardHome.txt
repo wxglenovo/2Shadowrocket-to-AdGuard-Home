@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 181773
-! 压缩后规则数: 181773
+! 原始规则数: 181774
+! 压缩后规则数: 181774
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -100249,6 +100249,7 @@
 ||m9sz0hh3f7.com^
 ||ma-adx.ctrip.com^
 ||ma-catinfo.com^
+||ma-tag.com^
 ||ma.1000kaze.jp^
 ||ma.55truck.com^
 ||ma.a3.se^

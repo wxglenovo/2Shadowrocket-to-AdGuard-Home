@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 179212
-! 压缩后规则数: 179212
+! 原始规则数: 179213
+! 压缩后规则数: 179213
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -106234,6 +106234,7 @@
 ||mob.lowtid.fun^
 ||mob10.cqjktj.com^
 ||mob1ledev1ces.com^
+||mob2.bpt.apprevork.com^
 ||mob2.cactus-bp.com^
 ||mob2.healthapplines.com^
 ||mob2.healthtrackergroup.com^

@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 179214
-! 压缩后规则数: 179214
+! 原始规则数: 179216
+! 压缩后规则数: 179216
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -21562,6 +21562,7 @@
 ||api.archdesigncad.com.br^
 ||api.arefinariagourmet.com.br^
 ||api.ariadirect.com^
+||api.arity.com^
 ||api.arkrix.com^
 ||api.armadillo.com.br^
 ||api.arquitetofaz.com.br^
@@ -33164,6 +33165,7 @@
 ||cdn.tinglian.com^
 ||cdn.tmooc.cn^
 ||cdn.track.olx.com.br^
+||cdn.trakkr.ai^
 ||cdn.trustpielote.com^
 ||cdn.tsepyk.com^
 ||cdn.tubecorp.com^

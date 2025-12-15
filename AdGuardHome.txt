@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 179213
-! 压缩后规则数: 179213
+! 原始规则数: 179214
+! 压缩后规则数: 179214
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -156629,6 +156629,7 @@
 ||track.trackmate777.com^
 ||track.trackmate888.com^
 ||track.trafficput.com^
+||track.trakkr.ai^
 ||track.traktor.fleszbielizna.com^
 ||track.trkbtga.com^
 ||track.truesource.com.br^

@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 181774
-! 压缩后规则数: 181774
+! 原始规则数: 181775
+! 压缩后规则数: 181775
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -43382,6 +43382,7 @@
 ||d2qn0djb6oujlt.cloudfront.net^
 ||d2qnx6y010m4rt.cloudfront.net^
 ||d2qqc8ssywi4j6.cloudfront.net^
+||d2qxmykuaro8s3.cloudfront.net^
 ||d2qz7ofajpstv5.cloudfront.net^
 ||d2r2yqcp8sshc6.cloudfront.net^
 ||d2r3rw91i5z1w9.cloudfront.net^

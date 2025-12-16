@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 179216
-! 压缩后规则数: 179216
+! 原始规则数: 179219
+! 压缩后规则数: 179219
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -134414,6 +134414,7 @@
 ||shield.sitelock.com^
 ||shieldload.neoseeker.com^
 ||shieldsherders.click^
+||shieryuefajkix.com^
 ||shigao.icu^
 ||shijuezhongguo.cdn.bcebos.com^
 ||shikobaton.click^
@@ -134452,6 +134453,7 @@
 ||shirdaizoongo.net^
 ||shirkyoops.click^
 ||shirtsidewalk.com^
+||shisanmaozser.com^
 ||shise.me^
 ||shisetsu.freestrip.chat^
 ||shiswashisco.com^
@@ -160288,6 +160290,7 @@
 ||txgpgszrhedyl.online^
 ||txgtadnmmwwte.space^
 ||txgupjxzbxvsx.online^
+||txhywh.cn^
 ||txkyoj3zat1qu0i-p.adktrack37.xyz^
 ||txljgipkkispw.space^
 ||txmmdl.lampy.pl^

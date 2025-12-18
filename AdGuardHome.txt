@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 179872
-! 压缩后规则数: 179872
+! 原始规则数: 179875
+! 压缩后规则数: 179875
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -88978,6 +88978,7 @@
 ||knowd.com^
 ||knowgrownupdoomed.com^
 ||knowingallot.com^
+||knowingcancel.pro^
 ||knowingsignificance.com^
 ||knowit.thinqtanklearning.com^
 ||knowledge.equitymethods.com^
@@ -97042,6 +97043,7 @@
 ||logs.browser-intake-datadoghq.eu^
 ||logs.chatboost-cv.algoage.co.jp^
 ||logs.chelaile.net.cn^
+||logs.classdojo.com^
 ||logs.cnfol.com^
 ||logs.datadoghq.com^
 ||logs.datadoghq.eu^
@@ -171299,6 +171301,7 @@
 ||worldlever.com^
 ||worldlinesa.tt.omtrdc.net^
 ||worldlogger.com^
+||worldlyscene.com^
 ||worldmtcs.nhk.jp^
 ||worldnaturenet.xyz^
 ||worldnetpr.actonservice.com^

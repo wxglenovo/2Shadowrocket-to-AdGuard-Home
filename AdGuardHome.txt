@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 179889
-! 压缩后规则数: 179889
+! 原始规则数: 179891
+! 压缩后规则数: 179891
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -20672,6 +20672,7 @@
 ||analytics.unive.nl^
 ||analytics.unsw.edu.au^
 ||analytics.upworthy.com^
+||analytics.urban-vpn.com^
 ||analytics.urbanapothecarylondon.com^
 ||analytics.urbanflowers.com.ua^
 ||analytics.us.archive.org^
@@ -147239,6 +147240,7 @@
 ||stats.unnaturalhistorytv.com^
 ||stats.unusualtourist.com^
 ||stats.urban-media.com^
+||stats.urban-vpn.com^
 ||stats.urbanfinn.com^
 ||stats.urlaubsverwaltung.cloud^
 ||stats.us-light-edge.com^

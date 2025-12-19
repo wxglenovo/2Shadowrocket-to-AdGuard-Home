@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 179877
-! 压缩后规则数: 179877
+! 原始规则数: 179882
+! 压缩后规则数: 179882
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -29643,6 +29643,7 @@
 ||boldem.cz^
 ||boldlydaisy.com^
 ||boldmeasurement.pro^
+||boldmetrics.io^
 ||bole.shangshufang.ksosoft.com^
 ||bolealwqnljys.online^
 ||bolfep.prospin.com.br^
@@ -38639,9 +38640,7 @@
 ||collector-medium.lightstep.com^
 ||collector-px0py5pczn.octopart.com^
 ||collector-pxdojv695v.protechts.net^
-||collector-pxdojv695v.px-cloud.net^
 ||collector-pxebumdlwe.px-cdn.net^
-||collector-pxebumdlwe.px-cloud.net^
 ||collector-pxebumdlwe.pxchk.net^
 ||collector-sbanking.shb-pelib.com^
 ||collector-statistics.nhn-commerce.com^
@@ -41817,6 +41816,7 @@
 ||ctubhxbaew.com^
 ||ctuqitwpic.com^
 ||ctusolution.com^
+||ctv-ads.api.leiniao.com^
 ||ctwcanlknfuoz.site^
 ||ctwmcd.com^
 ||ctwmed.com^
@@ -63266,6 +63266,7 @@
 ||event.meloshort.com^
 ||event.mrtnsvr.com^
 ||event.msi.com^
+||event.mwm-bs.com^
 ||event.newsbreak.com^
 ||event.northghost.com^
 ||event.ortec.com^
@@ -65917,6 +65918,7 @@
 ||fingercough.xyz^
 ||fingerly63.top^
 ||fingerprint.fool.com^
+||fingerprint.incodesmile.com^
 ||fingerprinter-production.herokuapp.com^
 ||fingerrealistic.com^
 ||finisheddaysflamboyant.com^
@@ -66375,6 +66377,7 @@
 ||fluentlyfeminineenfold.com^
 ||fluentmobile.com^
 ||fluese.com^
+||fluffy-analytics.vercel.app^
 ||fluffy-host.com^
 ||fluffy-structure.pro^
 ||fluffyaltarrecords.com^
@@ -146976,6 +146979,7 @@
 ||stats.rehaag-immobilien.de^
 ||stats.reisemobil.pro^
 ||stats.remotebear.io^
+||stats.renet.io^
 ||stats.repacheco.com^
 ||stats.reprage.com^
 ||stats.resellerratings.com^
@@ -154386,6 +154390,7 @@
 ||tokyoloadjav.lovingforever.pro^
 ||tokyosushi.openapp.link^
 ||toldaspirationpointy.com^
+||tolerancewarily.com^
 ||tolerantignorancepicturesque.com^
 ||tolidinlurries.digital^
 ||toll6kerb.com^

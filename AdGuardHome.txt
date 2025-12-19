@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 179875
-! 压缩后规则数: 179875
+! 原始规则数: 179877
+! 压缩后规则数: 179877
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -103674,6 +103674,7 @@
 ||metrics-fe-na1.hubspot.com^
 ||metrics-go.experian.com^
 ||metrics-ieeexplore.ieee.org^
+||metrics-ingress-web.svc.vinted.com^
 ||metrics-logger.spot.im^
 ||metrics-now.experian.com^
 ||metrics-prod.suno.com^
@@ -105123,6 +105124,7 @@
 ||metrics.viega.de^
 ||metrics.vikingline.ee^
 ||metrics.vikingline.fi^
+||metrics.vinted.lt^
 ||metrics.viqeo.tv^
 ||metrics.virginatlantic.com^
 ||metrics.virginaustralia.com^

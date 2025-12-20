@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 180562
-! 压缩后规则数: 180562
+! 原始规则数: 180571
+! 压缩后规则数: 180571
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -16048,6 +16048,7 @@
 ||adservicemedia.dk^
 ||adserviceretry.kglink.cn^
 ||adserviceretry.kugou.com^
+||adservices.brandcdn.com^
 ||adserving.menatech.net^
 ||adserving.unibet.com^
 ||adservingfactory.com^
@@ -19248,6 +19249,7 @@
 ||amray1976.foolhardywear.pro^
 ||amrlmvzyykdri.online^
 ||amruthatechnologies.stripchat.org^
+||ams-beacons.xumo.com^
 ||ams-pageview-public.s3.amazonaws.com^
 ||ams.lelong.com.my^
 ||ams.lustytube.net^
@@ -20942,6 +20944,7 @@
 ||andreas.bringandclean.dk^
 ||andreas.taffmachwerk.de^
 ||android-stat.acestream.net^
+||android-tv-beacons.xumo.com^
 ||android.bcfads.com^
 ||android.notifysrv.com^
 ||android.push.126.net^
@@ -54161,6 +54164,7 @@
 ||elite-flirts-find.com^
 ||elite-s001.com^
 ||elite-thedatingfind.com^
+||elitebidder.com^
 ||eliteclng.ericksonbuilt.com^
 ||elitics.com^
 ||elizabethpertinent.com^
@@ -112250,6 +112254,7 @@
 ||octaneblood.com^
 ||octaplagaius.shop^
 ||octavius.rocks^
+||octillion.tv^
 ||octo25.me^
 ||octoberads.space^
 ||octobertheatrenosy.com^
@@ -113718,6 +113723,7 @@
 ||openercompetent.com^
 ||openfpcdn.io^
 ||opengalaxyapps.monster^
+||openglass.tv^
 ||openguid.org^
 ||openhit.com^
 ||openingclutter.com^
@@ -128462,6 +128468,8 @@
 ||rtb-eu.xrtb.io^
 ||rtb-eu.zaimads.com^
 ||rtb-media.me^
+||rtb-trk4.linkedin.com^
+||rtb-us-east.linkedin.com^
 ||rtb-useast-bid.infinity-info.com^
 ||rtb-useast-v4.152media.cloud^
 ||rtb-useast-v4.3mads.com^
@@ -172392,6 +172400,7 @@
 ||wuporg.com^
 ||wurfl.io^
 ||wurflcloud.com^
+||wurl.com^
 ||wurqaz.com^
 ||wurst.hausschlachtebedarf.de^
 ||wurst.leffis.de^

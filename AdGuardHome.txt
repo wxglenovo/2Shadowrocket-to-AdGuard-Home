@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 180571
-! 压缩后规则数: 180571
+! 原始规则数: 180572
+! 压缩后规则数: 180572
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -14261,6 +14261,7 @@
 ||ad.mobile.youku.com^
 ||ad.mobiuspace.net^
 ||ad.moe.video^
+||ad.mojisead.co.kr^
 ||ad.molitv.cn^
 ||ad.mox.tv^
 ||ad.naver.com^

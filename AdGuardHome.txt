@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 180536
-! 压缩后规则数: 180536
+! 原始规则数: 180538
+! 压缩后规则数: 180538
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -14715,6 +14715,7 @@
 ||adc.9news.com.au^
 ||adc.api.nine.com.au^
 ||adc.hpplay.cn^
+||adc.indextops.com^
 ||adc.interia.pl^
 ||adc.nine.com.au^
 ||adc.xxxlshop.de^
@@ -164242,6 +164243,7 @@
 ||uxkrauhjb.net^
 ||uxkurx.sportsmansguide.com^
 ||uxkxoi.pflege.de^
+||uxlog-api.danawa.com^
 ||uxlog.next.koapp.com^
 ||uxmmxegfq.com^
 ||uxncqfiilwfkw.site^

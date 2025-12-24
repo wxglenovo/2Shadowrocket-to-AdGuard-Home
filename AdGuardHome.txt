@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 180538
-! 压缩后规则数: 180538
+! 原始规则数: 180539
+! 压缩后规则数: 180539
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -41969,6 +41969,7 @@
 ||ctx.citiservi.es^
 ||ctx.toponefutures.com^
 ||ctx.toponetrader.com^
+||ctxcollect.com^
 ||ctxirjhxpyjtm.space^
 ||ctxrpolj.net^
 ||ctxtfl.com^

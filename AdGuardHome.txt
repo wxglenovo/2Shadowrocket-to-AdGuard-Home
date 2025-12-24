@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 180541
-! 压缩后规则数: 180541
+! 原始规则数: 180542
+! 压缩后规则数: 180542
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -162676,6 +162676,7 @@
 ||unicume.com^
 ||unidentifiedanalytics.web.app^
 ||unidesk.alicdn.com^
+||unif-id.ssp.inmobi.com^
 ||unified-ter-na.hismarttv.com^
 ||unifieddataconnect.click^
 ||unifiedwfo.verintsystemsinc.com^

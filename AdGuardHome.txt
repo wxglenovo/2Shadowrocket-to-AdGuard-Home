@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 180539
-! 压缩后规则数: 180539
+! 原始规则数: 180541
+! 压缩后规则数: 180541
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -152585,6 +152585,7 @@
 ||telemetry.remoteapp.windowsazure.com^
 ||telemetry.ruthschris.com^
 ||telemetry.schwinnfitness.com^
+||telemetry.sdk.inmobi.com^
 ||telemetry.sentara.com^
 ||telemetry.sentarahealthplans.com^
 ||telemetry.services.yofi.ai^
@@ -163418,6 +163419,7 @@
 ||usdiagnosis.icocofun.com^
 ||usdspxxgwqqzn.online^
 ||use-cr.svr-algorix.com^
+||use-trk.monetune.com^
 ||use.fvr.to^
 ||use.lunos.app^
 ||useast.datacygnal.io^

@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 180546
-! 压缩后规则数: 180546
+! 原始规则数: 180547
+! 压缩后规则数: 180547
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -67769,6 +67769,7 @@
 ||fulllab.com.br^
 ||fullletter.com^
 ||fullmworkhovdi.org^
+||fullrestore.net^
 ||fullstacknir.com^
 ||fullstory.com^
 ||fulltai.top^

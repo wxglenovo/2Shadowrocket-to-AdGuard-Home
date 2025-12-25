@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 180546
-! 压缩后规则数: 180546
+! 原始规则数: 180547
+! 压缩后规则数: 180547
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -22696,6 +22696,7 @@
 ||apistape8.expoloucas.com.br^
 ||apistat.gao7.com^
 ||apistat.wasu.cn^
+||apistats.rg.ru^
 ||apiv4.classmanager.com^
 ||apivd.justpracticesuccess.com^
 ||apiwmda.58.com.cn^

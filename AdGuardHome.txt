@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 180547
-! 压缩后规则数: 180547
+! 原始规则数: 180546
+! 压缩后规则数: 180546
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -164074,7 +164074,6 @@
 ||utrabixfwlgyq.site^
 ||utrack.hexun.com^
 ||utraff.com^
-||uts-front.line-apps.com^
 ||uts.auction.co.kr^
 ||uts.gmarket.co.kr^
 ||utsgw.auction.co.kr^

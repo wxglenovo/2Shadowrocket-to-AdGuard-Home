@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 181222
-! 压缩后规则数: 181222
+! 原始规则数: 181223
+! 压缩后规则数: 181223
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -37188,6 +37188,7 @@
 ||client-logger.beta.salemove.com^
 ||client-logger.salemove.com^
 ||client-metrics.chess.com^
+||client-sdk.hackle.io^
 ||client-telemetry.hingeprod.net^
 ||client-telemetry.roblox.com^
 ||client.botchk.net^

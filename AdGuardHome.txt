@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 183019
-! 压缩后规则数: 183019
+! 原始规则数: 183020
+! 压缩后规则数: 183020
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -120520,6 +120520,7 @@
 ||pixel.tuko.co.ke^
 ||pixel.veritone-ce.com^
 ||pixel.videohub.tv^
+||pixel.visitiq.io^
 ||pixel.vreview.tv^
 ||pixel.wandaloo.com^
 ||pixel.watch^

@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 183020
-! 压缩后规则数: 183020
+! 原始规则数: 183021
+! 压缩后规则数: 183021
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -122887,6 +122887,7 @@
 ||protecmedia.com^
 ||protect-x.com^
 ||protectcrev.com^
+||protected-api.branch.io^
 ||protected-by.clarium.io^
 ||protected-redirect.click^
 ||protectflow.life^

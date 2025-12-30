@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 183022
-! 压缩后规则数: 183022
+! 原始规则数: 183024
+! 压缩后规则数: 183024
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -63988,6 +63988,7 @@
 ||event.api.drift.com^
 ||event.api.instant.one^
 ||event.ava.me^
+||event.bblmw.com^
 ||event.bigkeyboardeasyphone.com^
 ||event.boozallen.com^
 ||event.chitai-gorod.ru^
@@ -119565,6 +119566,7 @@
 ||peresentacconette.com^
 ||perf-events.cloud.unity3d.com^
 ||perf-serving.com^
+||perf.bblmw.com^
 ||perf.hsforms.com^
 ||perf.mouser.com^
 ||perfalytics.com^

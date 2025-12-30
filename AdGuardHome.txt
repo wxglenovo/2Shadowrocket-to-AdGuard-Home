@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 183021
-! 压缩后规则数: 183021
+! 原始规则数: 183022
+! 压缩后规则数: 183022
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -120293,6 +120293,7 @@
 ||pingo.staticmoly.me^
 ||pingomatic.com^
 ||pingometer.com^
+||pingpong.us^
 ||pings.conviva.com^
 ||pings.vidpulse.com^
 ||pingshetrip.com^

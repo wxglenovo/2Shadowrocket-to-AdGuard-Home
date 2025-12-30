@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 183028
-! 压缩后规则数: 183028
+! 原始规则数: 183029
+! 压缩后规则数: 183029
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -19677,6 +19677,7 @@
 ||analytics-v2.wetransfer.com^
 ||analytics-was-nba.yinzcam.com^
 ||analytics-wcms.joins.net^
+||analytics-webhook.doximity.com^
 ||analytics-wol-fa.yinzcam.com^
 ||analytics-wso-ten.yinzcam.com^
 ||analytics.126.net^

@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 180377
-! 压缩后规则数: 180377
+! 原始规则数: 180378
+! 压缩后规则数: 180378
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -49959,6 +49959,7 @@
 ||dnrrc.nixxit.com^
 ||dnrwtqdqfthjh.net^
 ||dns-clientinfo.cbsivideo.com^
+||dns-clientinfo.vtg.paramount.tech^
 ||dns.chuzushijian.cn^
 ||dns.jd.com^
 ||dns.m.sm.cn^

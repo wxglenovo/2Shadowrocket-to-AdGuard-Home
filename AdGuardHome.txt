@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 180771
-! 压缩后规则数: 180771
+! 原始规则数: 180772
+! 压缩后规则数: 180772
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -154312,6 +154312,7 @@
 ||tk.interflora.it^
 ||tk.jeux.loro.ch^
 ||tk.jim-joe.fr^
+||tk.jtbc.co.kr^
 ||tk.kaufda.de^
 ||tk.kidsaround.com^
 ||tk.kitchendiet.fr^

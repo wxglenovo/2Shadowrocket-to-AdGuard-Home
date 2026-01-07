@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 180770
-! 压缩后规则数: 180770
+! 原始规则数: 180771
+! 压缩后规则数: 180771
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -18785,7 +18785,6 @@
 ||ali-stats.jpush.cn^
 ||ali8.alinea.fr^
 ||alia-iso.com^
-||aliapp.org^
 ||alias.cloud-marketing.dimensiondata.com^
 ||aliasanvil.com^
 ||aliasfoot.com^
@@ -33261,6 +33260,7 @@
 ||cdn.xpln.tech^
 ||cdn.xwqea.com^
 ||cdn.yld.is^
+||cdn.ynuf.aliapp.org^
 ||cdn.ytihp.com^
 ||cdn.zamunda.ru^
 ||cdn.ziblo.cloud^
@@ -162732,6 +162732,7 @@
 ||umccle.traktorpool.hu^
 ||umcicv.europcar.com^
 ||umcrk.perfectlypriscilla.com^
+||umdc.aliapp.org^
 ||umdlbn.globetrotter.de^
 ||umdpva.gakumado.mynavi.jp^
 ||umdwwuasqcdar.online^

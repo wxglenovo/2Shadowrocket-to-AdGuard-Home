@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 181304
-! 压缩后规则数: 181304
+! 原始规则数: 181305
+! 压缩后规则数: 181305
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -18178,6 +18178,7 @@
 ||ailraustak.net^
 ||ailteetsufoothu.net^
 ||ailzgt.cyberport.at^
+||aim-tag.hcn.health^
 ||aim.loc.kr^
 ||aim4media.com^
 ||aima.shouhome.com^

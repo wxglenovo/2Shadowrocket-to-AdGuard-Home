@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 181307
-! 压缩后规则数: 181307
+! 原始规则数: 181308
+! 压缩后规则数: 181308
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -80046,6 +80046,7 @@
 ||hw-ot-ad.a.yximgs.com^
 ||hw-p2p-pull.video-voip.com^
 ||hw-p2p.pull.yximgs.com^
+||hw-t.hypers.com.cn^
 ||hw.zuimeitianqi.com^
 ||hwa.his.huawei.com^
 ||hwad.zuimeitianqi.com^

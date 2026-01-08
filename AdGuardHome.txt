@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 181305
-! 压缩后规则数: 181305
+! 原始规则数: 181307
+! 压缩后规则数: 181307
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -41523,6 +41523,7 @@
 ||csdri.gardner-white.com^
 ||csdrnf.a24.kr^
 ||cse.pasonatquila.com^
+||cse.rakanto.com^
 ||cse3.chausport.com^
 ||csebt.bloomist.com^
 ||csemail.bonusbingo.com^
@@ -126495,6 +126496,7 @@
 ||replyemails.united.com^
 ||replymgt.careerbuilder.com^
 ||replytangerine.com^
+||repo.rakanto.com^
 ||reporo.net^
 ||report-ads-sdk.upltv.com^
 ||report-edge.agora.io^

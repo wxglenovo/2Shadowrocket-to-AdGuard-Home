@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 181635
-! 压缩后规则数: 181635
+! 原始规则数: 181636
+! 压缩后规则数: 181636
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -63765,6 +63765,7 @@
 ||events.il.fi^
 ||events.info.mandirikartukredit.com^
 ||events.ingatlan.com^
+||events.insiad.com^
 ||events.interface.com^
 ||events.jianshu.io^
 ||events.jora.com^

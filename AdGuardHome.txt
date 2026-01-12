@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 181636
-! 压缩后规则数: 181636
+! 原始规则数: 181635
+! 压缩后规则数: 181635
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -42459,7 +42459,6 @@
 ||cz.inform.janssenpro.eu^
 ||cz.promo.skf.com^
 ||cz4444.cn^
-||cza.crazygames.com^
 ||cza4wopwcvdiq6sg.brandnewapp.pro^
 ||czamfgpnexsxo.vip^
 ||czarmishap.com^
@@ -77588,6 +77587,7 @@
 ||hb-247.com^
 ||hb-af-us-central1.outfit7.com^
 ||hb-failover-stpceyl2ua-uw.a.run.app^
+||hb-mob2.optiword.com^
 ||hb.collectiveaudience.co^
 ||hb.headbidder.net^
 ||hb.rayjump.com^
@@ -98057,7 +98057,6 @@
 ||lp.smartbusiness.samsung.com^
 ||lp.solutions.cegos.it^
 ||lp.sophos.com^
-||lp.spac.me^
 ||lp.strayer.edu^
 ||lp.svenskapostkodlotteriet.se^
 ||lp.switchworks.co.jp^
@@ -153059,7 +153058,6 @@
 ||tbp.tescobank.com^
 ||tbpot.com^
 ||tbpxrzzrtvbqn.space^
-||tbsone.imtt.qq.com^
 ||tbsxkmwsmksjj.buzz^
 ||tbugquyckdqry.online^
 ||tbunkrolo.com^
@@ -157973,6 +157971,7 @@
 ||track.animebee.com^
 ||track.apexhq.com^
 ||track.apharmaceuticaph.com.br^
+||track.applicaster.com^
 ||track.appsclub.mobi^
 ||track.appsflyer.com^
 ||track.aprila.no^

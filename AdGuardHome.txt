@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 181632
-! 压缩后规则数: 181632
+! 原始规则数: 181633
+! 压缩后规则数: 181633
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -134633,6 +134633,7 @@
 ||sfa.com.ar^
 ||sfacjbrjfczyy.online^
 ||sfajfu.boulanger.com^
+||sfaobvfic.in^
 ||sfbcapi.ecorybd.com^
 ||sfbcapi.laam.com.bd^
 ||sfbcapi.laambd.com^

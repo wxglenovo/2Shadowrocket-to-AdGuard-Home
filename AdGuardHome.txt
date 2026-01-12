@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 181633
-! 压缩后规则数: 181633
+! 原始规则数: 181636
+! 压缩后规则数: 181636
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -64987,6 +64987,7 @@
 ||fauzxn.hairlavie.com^
 ||fav.simba.taobao.com^
 ||faves.grow.me^
+||favismanomie.com^
 ||favor1.fractal.jp^
 ||favoritefinding.pro^
 ||favoritego.pro^
@@ -91091,6 +91092,7 @@
 ||latentdesert.com^
 ||latest.android-central.news^
 ||latestmoviesgallery.boyfriend.show^
+||latherprofanecognizance.com^
 ||latheseventhobscenity.com^
 ||latifyahia2006.foolhardywear.pro^
 ||latimes.activate.ensighten.com^
@@ -153560,6 +153562,7 @@
 ||telemetry.commonspirit.org^
 ||telemetry.dematic.com^
 ||telemetry.doitbeststore.com^
+||telemetry.doxo.com^
 ||telemetry.dzen.ru^
 ||telemetry.firez.one^
 ||telemetry.gfe.nvidia.com^

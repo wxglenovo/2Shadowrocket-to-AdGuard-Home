@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 181636
-! 压缩后规则数: 181636
+! 原始规则数: 181637
+! 压缩后规则数: 181637
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -50433,6 +50433,7 @@
 ||doppler-beacons.cbsivideo.com^
 ||doppler-client-events.cbsivideo.com^
 ||doppler-reporting.cbsivideo.com^
+||doppler.hulu.com^
 ||doppler.streetinteractive.com^
 ||doptefoumsifee.xyz^
 ||doptik.ru^

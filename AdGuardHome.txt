@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 182295
-! 压缩后规则数: 182295
+! 原始规则数: 182296
+! 压缩后规则数: 182296
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -39331,6 +39331,7 @@
 ||connect.care.wakemed.org^
 ||connect.caringcrowd.org^
 ||connect.carrier.com.ph^
+||connect.cdnsb.net^
 ||connect.certinia.com^
 ||connect.chapman.com^
 ||connect.chiropractic.ac.nz^

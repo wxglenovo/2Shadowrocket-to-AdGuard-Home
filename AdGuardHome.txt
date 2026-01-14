@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 182296
-! 压缩后规则数: 182296
+! 原始规则数: 182297
+! 压缩后规则数: 182297
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -145790,6 +145790,7 @@
 ||st.entdecke-deutschland-bahn.de^
 ||st.fahrkartenshop2-bahn.de^
 ||st.film.ru^
+||st.freedom24.com^
 ||st.go-static.info^
 ||st.hbrd.io^
 ||st.iceportal.de^

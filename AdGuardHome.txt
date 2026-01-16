@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 182320
-! 压缩后规则数: 182320
+! 原始规则数: 182323
+! 压缩后规则数: 182323
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -85873,6 +85873,7 @@
 ||iqyewu.cn^
 ||iqyioj.harryanddavid.com^
 ||iqzone.com^
+||ir-sdk.guardease.com^
 ||ir.denisonmines.com^
 ||ir.ecomatelas.fr^
 ||ir.impressiverevenue.com^
@@ -134881,6 +134882,7 @@
 ||servetraff.com^
 ||servg1.net^
 ||servh.net^
+||service-ad-image-ga-weighted.prd.pluto.tv^
 ||service-ad-image-ga.prd.pluto.tv^
 ||service-ad-impression-proxy-use1-1.prd.pluto.tv^
 ||service-api.flarelane.com^
@@ -142461,6 +142463,7 @@
 ||sp.pamklein.com^
 ||sp.pcid.ca^
 ||sp.pcoptimum.ca^
+||sp.pluto.tv^
 ||sp.pnj.com^
 ||sp.portclintonnewsherald.com^
 ||sp.postcrescent.com^

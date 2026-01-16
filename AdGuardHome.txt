@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 182319
-! 压缩后规则数: 182319
+! 原始规则数: 182320
+! 压缩后规则数: 182320
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -166598,6 +166598,7 @@
 ||verify.safesigned.com^
 ||verify.spin.app^
 ||verify.test.spin.app^
+||verifysession.uxcam.com^
 ||veritastechnologiesl.tt.omtrdc.net^
 ||veritrol.com^
 ||verizon-branch.locationlabs.com^

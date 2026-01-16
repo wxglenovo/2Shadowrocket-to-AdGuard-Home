@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 182313
-! 压缩后规则数: 182313
+! 原始规则数: 182319
+! 压缩后规则数: 182319
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -19847,6 +19847,7 @@
 ||analytics.cartoonnetworkasia.com^
 ||analytics.cartoonnetworkindia.com^
 ||analytics.cartoonnetworkmena.com^
+||analytics.carvana.io^
 ||analytics.cashably.com^
 ||analytics.castel.jp^
 ||analytics.castelliinaria.info^
@@ -20756,6 +20757,7 @@
 ||analytics.threedeepmarketing.com^
 ||analytics.ticimax.cloud^
 ||analytics.ticinolibero.ch^
+||analytics.ticketmaster.com^
 ||analytics.tiktok.com^
 ||analytics.timbertrove.com^
 ||analytics.tio.ch^
@@ -20863,6 +20865,7 @@
 ||analytics.voxbusinesscard.com^
 ||analytics.vpc.duolingo.com^
 ||analytics.vpplayer.tech^
+||analytics.wachanga.app^
 ||analytics.wadimanuka.com^
 ||analytics.waifu2x.org^
 ||analytics.waltherapparelwebshop.nl^
@@ -31690,7 +31693,6 @@
 ||c.tvsou.com^
 ||c.tyb.xyz^
 ||c.uaa.iqiyi.com^
-||c.us.heap-api.com^
 ||c.v-meng.org^
 ||c.vanityfair.com^
 ||c.vcty.co^
@@ -127206,6 +127208,7 @@
 ||report.qq.com^
 ||report.qqweb.qq.com^
 ||report.seznamzpravy.cz^
+||report.starshort.online^
 ||report.tencentmusic.com^
 ||report.tv.kohesport.qq.com^
 ||report.yumobi.cn^
@@ -159007,6 +159010,7 @@
 ||track.olx.com.br^
 ||track.omegapharmasrl.com^
 ||track.onahole.com^
+||track.opentable.com^
 ||track.oportalbemviver.com^
 ||track.oregonstateintl.com^
 ||track.organicbazar.net^
@@ -159691,6 +159695,7 @@
 ||tracking.care.essentiahealth.org^
 ||tracking.care.muschealth.org^
 ||tracking.care.salinasvalleyhealth.com^
+||tracking.carfax.com^
 ||tracking.carprices.com^
 ||tracking.carpshop24.com^
 ||tracking.carsales.com.au^
@@ -164959,6 +164964,7 @@
 ||usacg1essmtp1.tt.omtrdc.net^
 ||usaerklaert.foolhardywear.pro^
 ||usage.centsdonations.com^
+||usage.digitalconcerthall.com^
 ||usage.growthbook.io^
 ||usage.ideasnap.co^
 ||usage.influxdata.com^

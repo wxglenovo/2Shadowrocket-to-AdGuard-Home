@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 182960
-! 压缩后规则数: 182960
+! 原始规则数: 182962
+! 压缩后规则数: 182962
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -31448,6 +31448,7 @@
 ||bwntyd.neuve-a.net^
 ||bwomzivfbzrtm.online^
 ||bwoorvop.com^
+||bwoscenc.com^
 ||bwpzmo.kipling.com.co^
 ||bwqkqkhfvwppy.website^
 ||bwqlls.eletrosom.com^
@@ -115860,6 +115861,7 @@
 ||oxshgkbicsayq.website^
 ||oxstjmmbgenpw.website^
 ||oxsvddrogqvwm.website^
+||oxtafkzfe.com^
 ||oxtracking.com^
 ||oxtrmw.marinarinaldi.com^
 ||oxtsale1.com^

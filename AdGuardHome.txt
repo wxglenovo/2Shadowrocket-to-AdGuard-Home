@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 215711
-! 压缩后规则数: 215711
+! 原始规则数: 215712
+! 压缩后规则数: 215712
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -40967,6 +40967,7 @@
 ||console.channelvas.com^
 ||console.cincinnatimagazine.com^
 ||console.cricketworld.com^
+||console.data4.net^
 ||console.datateam.co.uk^
 ||console.engineeringnews.co.za^
 ||console.everythingcolorado.com^

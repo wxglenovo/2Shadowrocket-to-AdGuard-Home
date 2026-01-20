@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 216321
-! 压缩后规则数: 216321
+! 原始规则数: 216322
+! 压缩后规则数: 216322
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -110718,6 +110718,7 @@
 ||jpwy.ynp0h.cn^
 ||jpxzypyulrzyv.online^
 ||jpyjtgwltadyi.space^
+||jpyosglaxonk.com^
 ||jpz2etvkhnzdcox-p.linkomo.fr^
 ||jq.a0buy.top^
 ||jq159.com^

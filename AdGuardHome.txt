@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 216339
-! 压缩后规则数: 216339
+! 原始规则数: 216340
+! 压缩后规则数: 216340
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -123723,6 +123723,7 @@
 ||log-upload-os.mihoyo.com^
 ||log-upload.mihoyo.com^
 ||log-v4-insight.kaizenplatform.net^
+||log-va.tiktokv.com^
 ||log-verify.hiaiabc.com^
 ||log-verify.mob.com^
 ||log.120ask.com^

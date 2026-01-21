@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 216327
-! 压缩后规则数: 216327
+! 原始规则数: 216329
+! 压缩后规则数: 216329
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -27673,6 +27673,7 @@
 ||banner-media.ru^
 ||banner.alimama.com^
 ||banner.appsflyer.com^
+||banner.bet365partners.com^
 ||banner.cedubook.com^
 ||banner.cookiescan.com^
 ||banner.dabi.ir^
@@ -180870,6 +180871,7 @@
 ||stats.innoforge.com.au^
 ||stats.innoq.com^
 ||stats.inselloft-norderney.de^
+||stats.insighttimer.com^
 ||stats.instabudget.app^
 ||stats.instawares.com^
 ||stats.interactjs.io^

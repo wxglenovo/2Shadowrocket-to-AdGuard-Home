@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 216329
-! 压缩后规则数: 216329
+! 原始规则数: 216337
+! 压缩后规则数: 216337
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -22044,6 +22044,7 @@
 ||api-dev.boyfriend.show^
 ||api-flow.meizu.com^
 ||api-fp-retry-bj.fengkongcloud.com^
+||api-fp-retry-sa.fengkongcloud.com^
 ||api-gd.hiaiabc.com^
 ||api-hotmart-tracking-manager.hotmart.com^
 ||api-ktm.kkday.com^
@@ -38392,6 +38393,7 @@
 ||client-logger.salemove.com^
 ||client-metrics.chess.com^
 ||client-sdk.hackle.io^
+||client-telemetry-preauth.hingeprod.net^
 ||client-telemetry.hingeprod.net^
 ||client-telemetry.roblox.com^
 ||client.botchk.net^
@@ -48062,6 +48064,7 @@
 ||data-nl.medical-design.news^
 ||data-nl.tageskarte.io^
 ||data-optout-service.uca.cloud.unity3d.com^
+||data-p.gryphline.com^
 ||data-pic.cdn.cootekservice.com^
 ||data-px.services^
 ||data-sdk-uuid-log.d.meituan.net^
@@ -81377,6 +81380,8 @@
 ||event-dot-procolor-backend.appspot.com^
 ||event-hce-eu.fujifilm.com^
 ||event-listener.air.tv^
+||event-log-api-data-platform-data-lake-prod.gryphline.com^
+||event-log-api-ipv6.gryphline.com^
 ||event-logger.tagboard.com^
 ||event-portal.dailyinnovation.biz^
 ||event-reporting-dot-webylytics.appspot.com^
@@ -81486,6 +81491,7 @@
 ||eventgw.twilio.com^
 ||eventlog-aws.jftechws.com^
 ||eventlog.chatlead.com^
+||eventlog.gryphline.com^
 ||eventlog.hd.baofeng.com^
 ||eventlog.inspsearchapi.com^
 ||eventlog.jackpot.de^
@@ -85617,6 +85623,7 @@
 ||fozhu.rrsdl.com^
 ||fp-cdn.azureedge.net^
 ||fp-it.fengkongcloud.com^
+||fp-sa-it.fengkongcloud.com^
 ||fp-upload.dun.163.com^
 ||fp.aion.be^
 ||fp.ambrosewilson.com^
@@ -136874,6 +136881,7 @@
 ||native-ads-events-api.c4s-rd.services^
 ||native-ads-events-api2.c4s-rd.services^
 ||native-adserver.com^
+||native-log-collect.gryphline.com^
 ||native-track.com^
 ||native.ai^
 ||native.cli.bz^

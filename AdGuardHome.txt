@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 216927
-! 压缩后规则数: 216927
+! 原始规则数: 216930
+! 压缩后规则数: 216930
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -86354,6 +86354,7 @@
 ||frontcrash.pro^
 ||frontend-logger.flippback.com^
 ||fronthlpr.com^
+||frontier.capcutw.us^
 ||frontier.musical.ly^
 ||frontier100-toutiao-lf.fqnovel.com^
 ||frontiercomm.tt.omtrdc.net^
@@ -135935,6 +135936,7 @@
 ||mssdk.tiktokw.us^
 ||mssdk.volces.com^
 ||mssdk.zijieapi.com^
+||mssdk16-normal-us-ttp.capcutapi.us^
 ||mssfv.aspinaloflondon.com^
 ||mssheng.com^
 ||mssketmwvncmy.website^
@@ -147698,6 +147700,7 @@
 ||pinnulepagedom.com^
 ||pinoy101tv.fumblingvacation.pro^
 ||pinpinnet.net^
+||pinpoint.espn.com^
 ||pinpoll.com^
 ||pinptg.milleni.com.tr^
 ||pinqqatmn.net^

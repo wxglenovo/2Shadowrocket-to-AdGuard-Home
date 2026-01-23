@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 216930
-! 压缩后规则数: 216930
+! 原始规则数: 216929
+! 压缩后规则数: 216929
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -125076,7 +125076,6 @@
 ||lpskfqjxnrnh.xyz^
 ||lpsuu.coastpay.com^
 ||lpsxssm.com^
-||lptag.liveperson.net^
 ||lptamura.amortecedorestamura.com^
 ||lptest.email-mobiledx.cjm.adobe.com^
 ||lptrak.com^

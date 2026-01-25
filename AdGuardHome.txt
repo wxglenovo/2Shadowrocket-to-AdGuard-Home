@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 217657
-! 压缩后规则数: 217657
+! 原始规则数: 217658
+! 压缩后规则数: 217658
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -18174,6 +18174,7 @@
 ||afpjlcctwwoxn.online^
 ||afpmm.alicdn.com^
 ||afpne.allenedmonds.ca^
+||afppcvyfyjs.com^
 ||afpssp.alimama.com^
 ||afpsyrphwfqijpj.com^
 ||afptrack.alimama.com^

@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 236765
-! 压缩后规则数: 236765
+! 原始规则数: 236766
+! 压缩后规则数: 236766
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -142204,6 +142204,7 @@
 ||log.gomlab.com^
 ||log.goodnovel.com^
 ||log.goodreels.com^
+||log.grm.gsretail.com^
 ||log.gs3.goo.ne.jp^
 ||log.haberturk.com^
 ||log.happyapkdown.com^

@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 236764
-! 压缩后规则数: 236764
+! 原始规则数: 236765
+! 压缩后规则数: 236765
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -117003,6 +117003,7 @@
 ||hbwighyhsubhz.online^
 ||hbwrapper.com^
 ||hbwztfpirtboe.site^
+||hbx.media.net^
 ||hbxhpqsociiwc.space^
 ||hbxiol.numberingwebsite.com^
 ||hbxmdf.icu^

@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 236759
-! 压缩后规则数: 236759
+! 原始规则数: 236764
+! 压缩后规则数: 236764
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -4591,6 +4591,7 @@
 ||17315.sfap-qa1.marketingcloudqaops.com^
 ||17323.editor-qa1.marketingcloudqaapis.com^
 ||17323.ftp-qa1.marketingcloudqaops.com^
+||17324723.cfd^
 ||17324756.cfd^
 ||17325.editor-qa1.marketingcloudqaapis.com^
 ||17334.sfap-qa1.marketingcloudqaops.com^
@@ -142327,6 +142328,7 @@
 ||log.vdn.apps.cntv.cn^
 ||log.voicecloud.cn^
 ||log.wat.tv^
+||log.weathertrip.net^
 ||log.web.kugou.com^
 ||log.webnovel.com^
 ||log.wigoliv.work^
@@ -148526,6 +148528,7 @@
 ||matomo.cloud^
 ||matomo.cloudfront.similarweb.io^
 ||matomo.datago.ru^
+||matomo.eduwill.net^
 ||matomo.menshealth.de^
 ||matomo.mobilism.org^
 ||matomo.motorpresse.de^
@@ -170502,6 +170505,7 @@
 ||pyxjkx.springjapan.com^
 ||pyxytj.icu^
 ||pyzjhd.com^
+||pzaawtgujvim.com^
 ||pzajdh.guicheweb.com.br^
 ||pzapi-ij.com^
 ||pzapi-kg.com^
@@ -206716,6 +206720,7 @@
 ||telemetry.doitbeststore.com^
 ||telemetry.doxo.com^
 ||telemetry.dzen.ru^
+||telemetry.eyeo.com^
 ||telemetry.firez.one^
 ||telemetry.gfe.nvidia.com^
 ||telemetry.goodlifefitness.com^

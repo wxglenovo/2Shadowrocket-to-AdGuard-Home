@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 236766
-! 压缩后规则数: 236766
+! 原始规则数: 236767
+! 压缩后规则数: 236767
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -28484,6 +28484,7 @@
 ||b.thechivery.com^
 ||b.todaytix.com^
 ||b.tondaka.com^
+||b.trueanthem.com^
 ||b.tvsou.com^
 ||b.videoamp.com^
 ||b.vidmob.com^

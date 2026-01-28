@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 237389
-! 压缩后规则数: 237389
+! 原始规则数: 237391
+! 压缩后规则数: 237391
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -44563,6 +44563,7 @@
 ||cs.adgtrk.com^
 ||cs.alliedhousing.com^
 ||cs.analytics.lego.com^
+||cs.avito.ru^
 ||cs.aznudelive.com^
 ||cs.bankmillennium.pl^
 ||cs.boyfriend.show^
@@ -212446,6 +212447,7 @@
 ||track.olx.com.br^
 ||track.omegapharmasrl.com^
 ||track.onahole.com^
+||track.onef.pro^
 ||track.opentable.com^
 ||track.organicbazar.net^
 ||track.orisee.ro^

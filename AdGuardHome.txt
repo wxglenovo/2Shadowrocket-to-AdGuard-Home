@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 237538
-! 压缩后规则数: 237538
+! 原始规则数: 237542
+! 压缩后规则数: 237542
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -56165,6 +56165,7 @@
 ||e.synchronybank.com^
 ||e.szqifu.com^
 ||e.t71q.com^
+||e.tapdb.ap-sg.tapapis.com^
 ||e.tbaip.com^
 ||e.tbenc.com^
 ||e.tchep.com^
@@ -126133,6 +126134,7 @@
 ||ip.taobao.com^
 ||ip.tianqiapi.com^
 ||ip.up66.ru^
+||ip.xindong.com^
 ||ip176-194.bloblohub.com^
 ||ip186269007.ahcdn.com^
 ||ip192.ip-147-135-3.us^
@@ -142776,6 +142778,7 @@
 ||logapi.zhipin.com^
 ||logbak.hicloud.com^
 ||logbor.com^
+||logc-sg.tsd.xindong.com^
 ||logcol.kyobobook.co.kr^
 ||logcollect.totalcms.ncloud.or.kr^
 ||logcollection.ronghub.com^
@@ -161235,6 +161238,7 @@
 ||openjmacs.m.taobao.com^
 ||openlog.in^
 ||openlog.tapapis.cn^
+||openlog.tapapis.com^
 ||openmindedaching.com^
 ||openmindter.com^
 ||openmonitor.alipay-eco.com^

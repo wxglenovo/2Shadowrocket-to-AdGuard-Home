@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 237543
-! 压缩后规则数: 237543
+! 原始规则数: 237544
+! 压缩后规则数: 237544
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -43145,6 +43145,7 @@
 ||controlppliccontroltion-spring.net.daraz.com^
 ||controlpush.com^
 ||controlswim.com^
+||controversychilly.com^
 ||controversykeenworkshop.com^
 ||conuber.getyoursafelink.com^
 ||conv.insthenriqueamaral.com.br^

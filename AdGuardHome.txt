@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 237545
-! 压缩后规则数: 237545
+! 原始规则数: 237548
+! 压缩后规则数: 237548
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -98307,6 +98307,7 @@
 ||event-collector.prd.data.s.joyn.de^
 ||event-dot-learning-piano.appspot.com^
 ||event-dot-procolor-backend.appspot.com^
+||event-gateway.data.karrotmarket.com^
 ||event-hce-eu.fujifilm.com^
 ||event-listener.air.tv^
 ||event-log-api-data-platform-data-lake-prod.gryphline.com^
@@ -105701,6 +105702,7 @@
 ||gjrlcxthtkeab.site^
 ||gjrrr.hotelcollection.com^
 ||gjtrack.uc.cn^
+||gjtrack.ucweb.com^
 ||gjubvembrxsot.space^
 ||gjwkufnkofzgj.online^
 ||gjwmlhzgzucfn.website^
@@ -116716,6 +116718,7 @@
 ||h-adashx.ut.uc.cn^
 ||h-adashx.ut.youku.com^
 ||h-adashx4ae.ut.taobao.com^
+||h-adashx4id.ut.taobao.com^
 ||h-adashx4yt.ut.taobao.com^
 ||h-bid.com^
 ||h-cast.jp^

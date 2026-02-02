@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 238471
-! 压缩后规则数: 238471
+! 原始规则数: 238472
+! 压缩后规则数: 238472
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -221111,6 +221111,7 @@
 ||verify74882.percy.io^
 ||verify80767.mg.replit.com^
 ||verifysession.uxcam.com^
+||verint-cdn.com^
 ||veritastechnologiesl.tt.omtrdc.net^
 ||veritivoperatingcomp.tt.omtrdc.net^
 ||veritrol.com^

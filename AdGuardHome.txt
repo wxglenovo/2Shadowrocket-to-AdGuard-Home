@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 250161
-! 压缩后规则数: 250161
+! 原始规则数: 250160
+! 压缩后规则数: 250160
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -216006,7 +216006,6 @@
 ||syndication.link5c.com^
 ||syndication.linkfryn.com^
 ||syndication.linkwitt.com^
-||syndication.realsrv.com^
 ||syndication.trafficreps.com^
 ||syndication.twitter.com^
 ||syndication.whibd.com^

@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 250158
-! 压缩后规则数: 250158
+! 原始规则数: 250160
+! 压缩后规则数: 250160
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -105206,6 +105206,7 @@
 ||events.prd.api.discomax.com^
 ||events.prd.api.max.com^
 ||events.privy.com^
+||events.production.us1.pgw-pci.klarna.net^
 ||events.promo.mandirikartukredit.com^
 ||events.pyszne.pl^
 ||events.rahoy.com^
@@ -240071,6 +240072,7 @@
 ||wtaccesscontrol.com^
 ||wtadloahayytc.online^
 ||wtatrrum.net^
+||wtb-tag.mikmak.ai^
 ||wtb-tag.swaven.com^
 ||wtbeftkffxceq.online^
 ||wtbevents.pricespider.com^

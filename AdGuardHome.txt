@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 250160
-! 压缩后规则数: 250160
+! 原始规则数: 250161
+! 压缩后规则数: 250161
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -37218,6 +37218,7 @@
 ||cdn-media.brightline.tv^
 ||cdn-net.com^
 ||cdn-plugin-sync-upgrade-juui.hismarttv.com^
+||cdn-px-v1.metrix.az^
 ||cdn-redirector.glopal.com^
 ||cdn-rtb.sape.ru^
 ||cdn-rum.ngenix.net^

@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 250160
-! 压缩后规则数: 250160
+! 原始规则数: 250161
+! 压缩后规则数: 250161
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -49673,6 +49673,7 @@
 ||dashboard.alcancemg.com^
 ||dashboard.andbeyond.media^
 ||dashboard.beardcareclub.com^
+||dashboard.bildircin.az^
 ||dashboard.boostads.ru^
 ||dashboard.digita.media^
 ||dashboard.entravision.com^

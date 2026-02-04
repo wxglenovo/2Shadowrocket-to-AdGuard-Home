@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 250168
-! 压缩后规则数: 250168
+! 原始规则数: 250173
+! 压缩后规则数: 250173
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -135527,6 +135527,7 @@
 ||iuxvfhbaywskegn-p.adkoffer.fr^
 ||iuzvusqotkhad.online^
 ||iuzxfjpxvgkco.online^
+||iv-datatracker.spx.shopee.sg^
 ||iv.hautboyhellen.com^
 ||ivaff.sillysanta.com^
 ||ivajdy.jamhomemadeonlineshop.com^
@@ -145185,6 +145186,7 @@
 ||livestats.kaltura.com^
 ||livestats.matrix.it^
 ||livestt.co^
+||livetech.shopee.com.br^
 ||livetex.ru^
 ||livetrafficfeed.com^
 ||livetwo.space^
@@ -159491,6 +159493,7 @@
 ||media.envoyfinancial.com^
 ||media.eurolive.com^
 ||media.everlastnordic.dk^
+||media.evolv.ai^
 ||media.fmid5-1.fna.whatsapp.net.iberostar.com^
 ||media.fsctrust.com^
 ||media.garysmithpartnership.com^
@@ -175020,6 +175023,7 @@
 ||partenaireslld.temsys.fr^
 ||partener.aeriumshop.ro^
 ||parteonroll.xyz^
+||participants.evolv.ai^
 ||participantthoughtfulvoracious.com^
 ||participatechronic.com^
 ||participationfinessemachinery.com^
@@ -225873,6 +225877,7 @@
 ||tracking.shop.hunter.easynet.de^
 ||tracking.shop.verymobile.it^
 ||tracking.shopback.com^
+||tracking.shopee.com.br^
 ||tracking.shopstyle.co.uk^
 ||tracking.shopstyle.com^
 ||tracking.shoptogether.buy.com^

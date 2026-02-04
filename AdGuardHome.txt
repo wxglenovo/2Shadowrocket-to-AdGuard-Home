@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 250167
-! 压缩后规则数: 250167
+! 原始规则数: 250168
+! 压缩后规则数: 250168
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -177714,6 +177714,7 @@
 ||platform.adright.com^
 ||platform.adwep.com^
 ||platform.artilleryads.com^
+||platform.datazoom.io^
 ||platform.foursquare.com^
 ||platform.iteratehq.com^
 ||platform.kollective.com^

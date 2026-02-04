@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 250164
-! 压缩后规则数: 250164
+! 原始规则数: 250167
+! 压缩后规则数: 250167
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -17276,6 +17276,7 @@
 ||ad-api.cnblogs.com^
 ||ad-api.ehawk.com^
 ||ad-api.gl-inet.com^
+||ad-api.maxnapps.com^
 ||ad-arrow.com^
 ||ad-back.net^
 ||ad-balancer.net^
@@ -32179,6 +32180,7 @@
 ||bhyyiodopichc.site^
 ||bhzsid.deghishop.it^
 ||bi-metrics.aramuz.net^
+||bi-report.maxnapps.com^
 ||bi-tracker-global.rivergame.net^
 ||bi.banggood.com^
 ||bi.concordesolutions.com^
@@ -49200,6 +49202,7 @@
 ||d3v1lb83psg9di.cloudfront.net^
 ||d3v3bqdndm4erx.cloudfront.net^
 ||d3vebqdofhigrn.cloudfront.net^
+||d3vgkjyuhp91nc.cloudfront.net^
 ||d3vnm1492fpnm2.cloudfront.net^
 ||d3vp85u5z4wlqf.cloudfront.net^
 ||d3vpf6i51y286p.cloudfront.net^

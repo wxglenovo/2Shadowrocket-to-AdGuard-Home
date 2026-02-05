@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 247794
-! 压缩后规则数: 247794
+! 原始规则数: 247795
+! 压缩后规则数: 247795
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -151019,6 +151019,7 @@
 ||log-verify.mob.com^
 ||log.120ask.com^
 ||log.51changdu.com^
+||log.ablyft.com^
 ||log.adap.tv^
 ||log.adplex.co.kr^
 ||log.ads-m.net^

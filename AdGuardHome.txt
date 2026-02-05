@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 247791
-! 压缩后规则数: 247791
+! 原始规则数: 247793
+! 压缩后规则数: 247793
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -53784,6 +53784,7 @@
 ||demolishwaffleslegend.com^
 ||demolitionzerostomach.com^
 ||demon.lojauniformes.com.br^
+||demonicclanstarch.com^
 ||demonincreasevacancy.com^
 ||demorewards.com^
 ||demos.lovingforever.pro^
@@ -110347,6 +110348,7 @@
 ||garosesia.com^
 ||garotas.info^
 ||garroteoutlying.com^
+||garudakrakatau.com^
 ||garvum.julesb.co.uk^
 ||gary.altsuperstore.com^
 ||gas-sensing.spec-sensors.com^

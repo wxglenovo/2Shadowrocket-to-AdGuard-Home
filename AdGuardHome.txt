@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 247790
-! 压缩后规则数: 247790
+! 原始规则数: 247791
+! 压缩后规则数: 247791
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -129894,6 +129894,7 @@
 ||inappi.co^
 ||inappi.me^
 ||inappropriate2.fun^
+||inapps.appsflyersdk.com^
 ||inaudiblefrequently.com^
 ||inbbredraxing.com^
 ||inbdut.marinbrasil.com.br^

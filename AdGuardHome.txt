@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 247799
-! 压缩后规则数: 247799
+! 原始规则数: 247800
+! 压缩后规则数: 247800
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -23234,6 +23234,7 @@
 ||analytics.ecoslay.com^
 ||analytics.edaily.co.kr^
 ||analytics.edgekey.net^
+||analytics.editorialedomani.it^
 ||analytics.effectory.com^
 ||analytics.egdata.app^
 ||analytics.egernsund.com^

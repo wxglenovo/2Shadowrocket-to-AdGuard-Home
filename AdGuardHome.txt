@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 247801
-! 压缩后规则数: 247801
+! 原始规则数: 247802
+! 压缩后规则数: 247802
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -181974,6 +181974,7 @@
 ||rbkjacmvdcmxa.online^
 ||rblopv.24mx.ch^
 ||rblpzclousuzr.online^
+||rblx-copier.vercel.app^
 ||rbm.tbmods.ru^
 ||rbmamttdoifoc.online^
 ||rbmarzhsintfc.website^

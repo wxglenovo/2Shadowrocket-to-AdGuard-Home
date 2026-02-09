@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 248238
-! 压缩后规则数: 248238
+! 原始规则数: 248240
+! 压缩后规则数: 248240
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -104734,6 +104734,7 @@
 ||events.wonderstory.es^
 ||events.xletix.com^
 ||events.yourcx.io^
+||events1.avantisvideo.com^
 ||events2.directos.eu^
 ||events2.www.edenfantasys.com^
 ||eventsink.api.redbee.live^
@@ -177767,6 +177768,7 @@
 ||prebid.loopmertb.com^
 ||prebid.org^
 ||prebid.scope3.com^
+||prebid.tapatalk.com^
 ||prebidmanager.com^
 ||prebidwrapper.com^
 ||precariouscowardgreatly.com^

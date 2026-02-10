@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 248255
-! 压缩后规则数: 248255
+! 原始规则数: 248256
+! 压缩后规则数: 248256
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -163742,6 +163742,7 @@
 ||mszddprapuziw.vip^
 ||mszpktwaepcdl.site^
 ||mt-business.vodafone.com^
+||mt.9gag.com^
 ||mt.gigazine.net^
 ||mt.labasad.com^
 ||mt.plateiq.com^

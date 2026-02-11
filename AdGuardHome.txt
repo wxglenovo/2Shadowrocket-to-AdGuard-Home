@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 248813
-! 压缩后规则数: 248813
+! 原始规则数: 248815
+! 压缩后规则数: 248815
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -17754,6 +17754,7 @@
 ||adbit.co^
 ||adbite.com^
 ||adbits.online^
+||adbkacpmu.com^
 ||adbkwai.com^
 ||adblade.com^
 ||adblck.com^
@@ -141248,6 +141249,7 @@
 ||leoyard.com^
 ||lep5sk7v1sgb6dr-p.adkoffer.fr^
 ||lepetitdiary.com^
+||lepidpomps.com^
 ||lepodownload.mediatek.com^
 ||lepoint.tt.omtrdc.net^
 ||leppq.northbrevardfuneralhome.com^

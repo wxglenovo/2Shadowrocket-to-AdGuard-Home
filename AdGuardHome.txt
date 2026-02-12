@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 248818
-! 压缩后规则数: 248818
+! 原始规则数: 248820
+! 压缩后规则数: 248820
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -28537,6 +28537,7 @@
 ||at-o.net^
 ||at.360.audion.fm^
 ||at.agentcrate.com^
+||at.artistchai.co.kr^
 ||at.attualityofficial.com^
 ||at.badische-zeitung.de^
 ||at.campaign.daimlertruck.com^
@@ -51436,6 +51437,7 @@
 ||data.armexfort.uk^
 ||data.artangels.net^
 ||data.articles.ringcentral.com^
+||data.artistchai.co.kr^
 ||data.artnekretnine.com^
 ||data.aschito.com^
 ||data.ashbourne-co.com^

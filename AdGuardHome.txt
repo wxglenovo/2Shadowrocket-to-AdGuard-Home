@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 248820
-! 压缩后规则数: 248820
+! 原始规则数: 248826
+! 压缩后规则数: 248826
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -173703,16 +173703,22 @@
 ||pahangdaily.foolhardywear.pro^
 ||paht.tech^
 ||pahtag.tech^
+||pahtbt.tech^
 ||pahtdz.tech^
 ||pahtef.tech^
+||pahter.tech^
 ||pahtfi.tech^
 ||pahtgq.tech^
 ||pahthf.tech^
 ||pahtky.tech^
+||pahtlf.tech^
 ||pahtnf.tech^
 ||pahtoa.tech^
 ||pahtpw.tech^
 ||pahtqo.tech^
+||pahtsx.tech^
+||pahtuo.tech^
+||pahtuz.tech^
 ||pahtwt.tech^
 ||pahtzh.tech^
 ||pahzvkxwkxtzm.website^

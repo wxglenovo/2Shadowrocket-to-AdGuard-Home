@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 248816
-! 压缩后规则数: 248816
+! 原始规则数: 248818
+! 压缩后规则数: 248818
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -137840,6 +137840,7 @@
 ||karlschumacher.actonservice.com^
 ||karma.mdpcdn.com^
 ||karoonpc.com^
+||karrot-pixel.business.daangn.com^
 ||karthlipanung.shop^
 ||kartik.devishetty.com^
 ||kartik.devishetty.net^
@@ -141429,6 +141430,7 @@
 ||lgdpf.roark.com^
 ||lgdstolfuinmi.world^
 ||lgdsvuwxjbhwz.site^
+||lgecokr.api.useinsider.com^
 ||lgelectronics.tt.omtrdc.net^
 ||lgforbes.akamaized.net^
 ||lgglnedyuhmgk.site^

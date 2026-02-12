@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 248826
-! 压缩后规则数: 248826
+! 原始规则数: 248827
+! 压缩后规则数: 248827
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -58789,6 +58789,7 @@
 ||easy-dating.org^
 ||easy-hit-counter.com^
 ||easy-hit-counters.com^
+||easy-monetization.s3.yandex.net^
 ||easy.fixoem.com^
 ||easy.gameanalytics.com^
 ||easy.lv^

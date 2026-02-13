@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 248827
-! 压缩后规则数: 248827
+! 原始规则数: 248829
+! 压缩后规则数: 248829
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -176994,6 +176994,7 @@
 ||playbook.convio.com^
 ||playcvn.com^
 ||playedsophomore.com^
+||player-analytics.mp.lura.live^
 ||player-feedback.p7s1video.net^
 ||player-metrics.instaread.co^
 ||player-telemetry.vimeo.com^
@@ -226214,6 +226215,7 @@
 ||trkapi.impact.com^
 ||trkbc.com^
 ||trkcare.hmhn.org^
+||trkcliq.com^
 ||trkcmb.business.algeria.hsbc.com^
 ||trkcmb.business.hsbc.ae^
 ||trkcmb.business.hsbc.co.in^

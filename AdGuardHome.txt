@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 249511
-! 压缩后规则数: 249511
+! 原始规则数: 249510
+! 压缩后规则数: 249510
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -221048,7 +221048,6 @@
 ||tojdz.sillysanta.nl^
 ||tok.vaicore.xyz^
 ||tok0blog.lovingforever.pro^
-||token.awswaf.com^
 ||tokenads.com^
 ||tokenbroker.net.daraz.com^
 ||tokensguggled.com^

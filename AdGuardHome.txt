@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 249509
-! 压缩后规则数: 249509
+! 原始规则数: 249511
+! 压缩后规则数: 249511
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -28870,6 +28870,7 @@
 ||aty.hd.sohu.com^
 ||aty.sohu.com^
 ||atyoureatth.org^
+||atytentioniaukmla.org^
 ||atyvajlgh.com^
 ||atyvapfwastoa.space^
 ||atzzrq.tbs.co.jp^
@@ -48077,6 +48078,7 @@
 ||d1j1m9awq6n3x3.cloudfront.net^
 ||d1j2jv7bvcsxqg.cloudfront.net^
 ||d1j47wsepxe9u2.cloudfront.net^
+||d1j5bhx6uel4km.cloudfront.net^
 ||d1j6limf657foe.cloudfront.net^
 ||d1j818d3wapogd.cloudfront.net^
 ||d1j9qsxe04m2ki.cloudfront.net^

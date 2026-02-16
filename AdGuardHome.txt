@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 255529
-! 压缩后规则数: 255529
+! 原始规则数: 255528
+! 压缩后规则数: 255528
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -228895,7 +228895,6 @@
 ||trace.popin.cc^
 ||trace.qq.com^
 ||trace.rememberapp.co.kr^
-||trace.shengshu-ai.com^
 ||trace.swaven.com^
 ||trace.ynet.com^
 ||trace.zhiyan.tencent-cloud.net^

@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 249517
-! 压缩后规则数: 249517
+! 原始规则数: 249519
+! 压缩后规则数: 249519
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -144632,6 +144632,7 @@
 ||lipsgig.com^
 ||lipwesfzuidbk.club^
 ||liqmh.pureromance.com^
+||liquid-student.com^
 ||liquid.agora.pl^
 ||liquidateneville.com^
 ||liquidfire.mobi^
@@ -177186,6 +177187,7 @@
 ||plackfrowsy.top^
 ||pladform.ru^
 ||plagosedroopy.shop^
+||plain-plane.com^
 ||plainfeelings.com^
 ||plainlyhorizontally.com^
 ||plainpatient.pro^

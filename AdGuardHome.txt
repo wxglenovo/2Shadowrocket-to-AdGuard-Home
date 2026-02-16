@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 255528
-! 压缩后规则数: 255528
+! 原始规则数: 255530
+! 压缩后规则数: 255530
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -16733,6 +16733,7 @@
 ||abkgjyzfgszvd.website^
 ||abkobh.chobirich.com^
 ||abkxyinpiffsk.site^
+||abkzitollpce.com^
 ||ablage.heytoki.de^
 ||ablat.site^
 ||ablchemins.shop^
@@ -223837,6 +223838,7 @@
 ||tctlligvdwoppz.com^
 ||tctm.co^
 ||tctrbtdxbscuw.site^
+||tcufahfu.com^
 ||tcuk.team-consulting.com^
 ||tcvaj.revive-eo.com^
 ||tcvhz.joahbrown.com^

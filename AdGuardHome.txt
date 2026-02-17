@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 256243
-! 压缩后规则数: 256243
+! 原始规则数: 256245
+! 压缩后规则数: 256245
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -115791,6 +115791,7 @@
 ||gbgvq.stitchery.com^
 ||gbgxceugaznsc.site^
 ||gbhfrqzacrcqd.space^
+||gbhozynxmyxos.online^
 ||gbhyhxkdwqzjf.site^
 ||gbiathrilzik.com^
 ||gbitcoin.cn^
@@ -217781,6 +217782,7 @@
 ||static-ads.zaloapp.com^
 ||static-analytics.nativeads.com^
 ||static-img.threatbook.cn^
+||static-mon.yandex.net^
 ||static-rtb.adksrv.com^
 ||static-rtb.datacygnal.io^
 ||static-rtb.vespymedia.com^

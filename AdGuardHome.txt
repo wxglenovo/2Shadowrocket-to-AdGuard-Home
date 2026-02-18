@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 256245
-! 压缩后规则数: 256245
+! 原始规则数: 256246
+! 压缩后规则数: 256246
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -245092,6 +245092,7 @@
 ||wiw.recipeplayz.site^
 ||wiw.videorecipez.site^
 ||wix-engage-visitors-prod-6.firebaseio.com^
+||wix.consentik.com^
 ||wixlabs-adsense-v3.uc.r.appspot.com^
 ||wiylioisainmodr.com^
 ||wiyqdatgczefl.space^

@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 257512
-! 压缩后规则数: 257512
+! 原始规则数: 257515
+! 压缩后规则数: 257515
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -25521,6 +25521,7 @@
 ||animenippon.cc^
 ||animeteatr.ru^
 ||animits.com^
+||animo.sto.wiki^
 ||animositycandiedcalmly.com^
 ||animositycapitalist.com^
 ||animositytalenttonight.com^
@@ -56052,6 +56053,7 @@
 ||digianalytics.fr^
 ||digicard.jollyhires.com^
 ||digidip.net^
+||diginetica.net^
 ||diginibble.fumblingvacation.pro^
 ||digipathmedia.com^
 ||digipush.io^
@@ -185633,6 +185635,7 @@
 ||prom.gome.com.cn^
 ||promdamagecomplain.com^
 ||promdidna.com^
+||promediaspace.my^
 ||promerycergerful.com^
 ||promiseair.com^
 ||promo-bc.com^

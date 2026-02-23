@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 267821
-! 压缩后规则数: 267821
+! 原始规则数: 267823
+! 压缩后规则数: 267823
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -166308,6 +166308,7 @@
 ||logservice1.hicloud.com^
 ||logsink.zedge.net^
 ||logsk.glomancloud.gr^
+||logssug.ucweb.com^
 ||logstash-3.radio-canada.ca^
 ||logstat.caixin.com^
 ||logstat.t.sfht.com^
@@ -245813,6 +245814,7 @@
 ||uc9.ucweb.com^
 ||uca6.com^
 ||ucaas.avaya.com^
+||ucads.ucweb.com^
 ||ucaje.lasersafetycertification.com^
 ||ucalirfghlthc.space^
 ||ucan.tt.omtrdc.net^

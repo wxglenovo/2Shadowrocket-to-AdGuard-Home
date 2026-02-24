@@ -245882,6 +245882,7 @@
 ||ucsnddigmtwoe.space^
 ||ucstat.baidu.cn^
 ||ucstat.baidu.com^
+||uct.service.usercentrics.eu^
 ||uctiz.snoopslimes.co^
 ||uctrac.com^
 ||ucuhvo.jm-bruneau.be^
@@ -247747,7 +247748,6 @@
 ||user246.freestrip.chat^
 ||useraction.de^
 ||userballot.com^
-||usercentrics.eu^
 ||usercollection.chinadaily.com.cn^
 ||usercycle.com^
 ||userdatatrust.com^

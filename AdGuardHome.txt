@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 267823
-! 压缩后规则数: 267823
+! 原始规则数: 267825
+! 压缩后规则数: 267825
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -26800,6 +26800,7 @@
 ||aplikacja.tokfm.pl^
 ||apllogistics.actonservice.com^
 ||aplobv.xexymix.com^
+||aplus.gmarket.co.kr^
 ||aplusk.chiccams.com^
 ||apm-engine.meteor.com^
 ||apm-fe.xiaohongshu.com^
@@ -203953,6 +203954,7 @@
 ||s.octoberads.space^
 ||s.officialnanosparkle.com^
 ||s.omg.adult^
+||s.opensend.com^
 ||s.opoxv.com^
 ||s.opti-digital.com^
 ||s.optidigital.com^

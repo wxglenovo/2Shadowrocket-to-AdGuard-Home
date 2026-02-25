@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 267825
-! 压缩后规则数: 267825
+! 原始规则数: 267827
+! 压缩后规则数: 267827
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -187197,9 +187197,11 @@
 ||p1.zhongyoo.com^
 ||p12acx.com^
 ||p15vjj3og.com^
+||p16-ad-site-sign-sg.tiktokcdn.com^
 ||p16-ad.byteoversea.com^
 ||p16-tiktokcdn-com.akamaized.net.iberostar.com^
 ||p188.cn^
+||p19-ad-site-sign-sg.tiktokcdn.com^
 ||p192.eastbaytimes.com^
 ||p2-ad.adukwai.com^
 ||p2-jx.adukwai.com^

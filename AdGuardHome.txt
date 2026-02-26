@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 268397
-! 压缩后规则数: 268397
+! 原始规则数: 268399
+! 压缩后规则数: 268399
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -56088,6 +56088,7 @@
 ||daoxwweomcsvt.site^
 ||daoyoudao.com^
 ||dap.amsterdam.nl^
+||dap.livemint.com^
 ||dap.slurrp.com^
 ||dapaogg.xyz^
 ||dapemasblog.fumblingvacation.pro^
@@ -215601,6 +215602,7 @@
 ||smetrics.ebgsolutions.com^
 ||smetrics.echostar.com^
 ||smetrics.ecmweb.com^
+||smetrics.edb.gov.sg^
 ||smetrics.edc.ca^
 ||smetrics.eddiebauer.com^
 ||smetrics.edge.ca^

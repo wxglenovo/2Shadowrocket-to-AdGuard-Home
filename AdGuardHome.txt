@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 268399
-! 压缩后规则数: 268399
+! 原始规则数: 268400
+! 压缩后规则数: 268400
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -56090,6 +56090,7 @@
 ||dap.amsterdam.nl^
 ||dap.livemint.com^
 ||dap.slurrp.com^
+||dap.worldota.net^
 ||dapaogg.xyz^
 ||dapemasblog.fumblingvacation.pro^
 ||daphnews.com^

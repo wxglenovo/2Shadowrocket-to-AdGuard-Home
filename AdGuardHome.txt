@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 268404
-! 压缩后规则数: 268404
+! 原始规则数: 268405
+! 压缩后规则数: 268405
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -249502,6 +249502,7 @@
 ||vampirebat.tinamrak.com^
 ||vampiresubscription.com^
 ||vampn.calpaktravel.com^
+||vampyrejibmen.com^
 ||van.sync-logi.com^
 ||vandalismloungenylon.com^
 ||vandalismundermineshock.com^

@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 291271
-! 压缩后规则数: 291271
+! 原始规则数: 291270
+! 压缩后规则数: 291270
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -68570,7 +68570,6 @@
 ||digianalytics.fr^
 ||digicard.jollyhires.com^
 ||digidip.net^
-||diginetica.net^
 ||diginibble.fumblingvacation.pro^
 ||digipathmedia.com^
 ||digipush.io^

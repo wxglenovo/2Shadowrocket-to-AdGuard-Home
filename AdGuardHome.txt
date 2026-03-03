@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 291270
-! 压缩后规则数: 291270
+! 原始规则数: 291271
+! 压缩后规则数: 291271
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -269340,6 +269340,7 @@
 ||upload.c.ns.emailvjabberion.net.daraz.com^
 ||upload.euleriancdn.net^
 ||upload.net.daraz.com^
+||upload.xchina.io^
 ||uploadlog.p2p.qq.com^
 ||uploads-lib-oa-1-topup.net.daraz.com^
 ||uploads-manage.lib-oa-1.net.daraz.com^

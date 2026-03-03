@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 291270
-! 压缩后规则数: 291270
+! 原始规则数: 291271
+! 压缩后规则数: 291271
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -29106,6 +29106,7 @@
 ||api.danielhenriqueadv.com.br^
 ||api.danielsoutoortopedista.com.br^
 ||api.data-analytics.pokemon.com^
+||api.datahub-srgssr.ch^
 ||api.datinghelp.dk^
 ||api.datingxperten.de^
 ||api.dayrellcompany.com.br^

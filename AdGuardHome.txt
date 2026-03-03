@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 291269
-! 压缩后规则数: 291269
+! 原始规则数: 291270
+! 压缩后规则数: 291270
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -132327,6 +132327,7 @@
 ||feiyun.info^
 ||fejwoypdusamehl.com^
 ||fejwweqjtndwz.site^
+||fel-api.prod.browse.bestbuy.com^
 ||felidae.mmm.page^
 ||felidae.mysuperportal.com^
 ||felidae.theforeignarchitect.com^

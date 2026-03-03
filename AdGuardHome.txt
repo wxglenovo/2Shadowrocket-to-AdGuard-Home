@@ -147272,6 +147272,7 @@
 ||goto.sogou.com^
 ||goto.sportradar.com^
 ||goto.stnts.com^
+||goto.suno.com^
 ||goto.thehelperbees.com^
 ||goto.www.iciba.com^
 ||goto.zaful.com^
@@ -183860,6 +183861,7 @@
 ||m-profiling.cibc.com^
 ||m-profiling.simplii.com^
 ||m-rtb.com^
+||m-stratovibe.prod.suno.com^
 ||m-t.io^
 ||m-t.topya.com^
 ||m-test.papertrail.io^
@@ -205908,11 +205910,9 @@
 ||p123pago-svc.docs.net.daraz.com^
 ||p12acx.com^
 ||p15vjj3og.com^
-||p16-ad-site-sign-sg.tiktokcdn.com^
 ||p16-ad.byteoversea.com^
 ||p16-tiktokcdn-com.akamaized.net.iberostar.com^
 ||p188.cn^
-||p19-ad-site-sign-sg.tiktokcdn.com^
 ||p192.eastbaytimes.com^
 ||p1ner.net.daraz.com^
 ||p2-ad.adukwai.com^

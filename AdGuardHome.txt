@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 291271
-! 压缩后规则数: 291271
+! 原始规则数: 291273
+! 压缩后规则数: 291273
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -45896,6 +45896,7 @@
 ||carsandcovers.cabriosupply.it^
 ||carsandcovers.cabriosupply.nl^
 ||carsandcovers.shopforcovers.com^
+||carsarace.com^
 ||carstat.bitauto.com^
 ||cart-01-lib-oa-1-admin8.net.daraz.com^
 ||cart-partner-pay.net.daraz.com^
@@ -49632,6 +49633,7 @@
 ||citibanamex.tt.omtrdc.net^
 ||citicorpcreditservic.tt.omtrdc.net^
 ||citihktw.tt.omtrdc.net^
+||citiservi.es^
 ||citisgsgipbmy.tt.omtrdc.net^
 ||citizenagreementacting.com^
 ||citizenhid.com^

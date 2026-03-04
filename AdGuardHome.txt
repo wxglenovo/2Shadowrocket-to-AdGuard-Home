@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 291283
-! 压缩后规则数: 291283
+! 原始规则数: 291282
+! 压缩后规则数: 291282
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -241217,7 +241217,6 @@
 ||srvqck15.com^
 ||srvqck3.com^
 ||srvqck5.com^
-||srvr.dmvs-apac.com^
 ||srvr.drfelipepaulino.com.br^
 ||srvr.marcelobenites.com.br^
 ||srvr.mitaquilla.com^

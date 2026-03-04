@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 291273
-! 压缩后规则数: 291273
+! 原始规则数: 291274
+! 压缩后规则数: 291274
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -154570,6 +154570,7 @@
 ||host2-car21-web-wwww0node.net.daraz.com^
 ||host2.partner.net.daraz.com^
 ||host223pago.docs.net.daraz.com^
+||host57k.cfd^
 ||hostadsmarkets.com^
 ||hostave.net^
 ||hostave2.net^

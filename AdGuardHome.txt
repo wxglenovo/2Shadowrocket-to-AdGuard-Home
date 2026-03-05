@@ -29297,6 +29297,7 @@
 ||api.openingsci.com^
 ||api.openmitsubishi.com.br^
 ||api.openova.com.br^
+||api.openpanel.dev^
 ||api.openseminovos.com.br^
 ||api.operacaoconcursos.com.br^
 ||api.operalt.com.br^
@@ -202445,7 +202446,6 @@
 ||openmonitor.alipay-eco.com^
 ||openmonitor.alipay.com^
 ||openmsf.3g.qq.com^
-||openpanel.dev^
 ||openrate.aweber.com^
 ||openrcv.baidu.com^
 ||openrtb-banner.com^

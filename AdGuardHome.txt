@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 288081
-! 压缩后规则数: 288081
+! 原始规则数: 288082
+! 压缩后规则数: 288082
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -166936,6 +166936,7 @@
 ||kthukxjctweql.site^
 ||ktibk.gymreapers.com^
 ||ktimmewz.com^
+||ktinalzpiak.in^
 ||ktjtqehd.prograd.uk^
 ||ktk7k-zvz05.ads.tremorhub.com^
 ||ktkjmp.com^

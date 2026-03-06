@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 288080
-! 压缩后规则数: 288080
+! 原始规则数: 288081
+! 压缩后规则数: 288081
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -26166,6 +26166,7 @@
 ||analytics-api.invideo.io^
 ||analytics-api.klickly.com^
 ||analytics-api.liveapp.com^
+||analytics-api.penpencil.co^
 ||analytics-api.samsunghealthcn.com^
 ||analytics-api.sconto.cz^
 ||analytics-api.smzdm.com^

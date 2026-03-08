@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 288859
-! 压缩后规则数: 288859
+! 原始规则数: 288860
+! 压缩后规则数: 288860
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -29168,6 +29168,7 @@
 ||api.janainalaurentino.com^
 ||api.jazzigo.com^
 ||api.jetfloss.com.br^
+||api.jformatter.com^
 ||api.jfsun.com.br^
 ||api.jgssport.com^
 ||api.jialiangad.com^

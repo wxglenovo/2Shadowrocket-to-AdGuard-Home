@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 288856
-! 压缩后规则数: 288856
+! 原始规则数: 288859
+! 压缩后规则数: 288859
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -44059,6 +44059,7 @@
 ||cafescampfires.com^
 ||cafetv.bssturismo.com^
 ||cafewarriors.com^
+||cafflekiloton.com^
 ||cafi.vinnoshop.com^
 ||cafi.xitbazar.com^
 ||cafirebreather.com^
@@ -59959,6 +59960,7 @@
 ||cyksmcjfyyxxu.rocks^
 ||cylfakyhloppf.space^
 ||cylindrical-good.pro^
+||cylindrical-suggestion.com^
 ||cylindrical-wave.com^
 ||cylosczapchgk.space^
 ||cylyaclfzkqrb.website^
@@ -286824,6 +286826,7 @@
 ||zealous-direction.pro^
 ||zealousclothes.pro^
 ||zealousfinance.pro^
+||zealousimage.com^
 ||zealousinquiriesgovernment.com^
 ||zealousversion.pro^
 ||zealouswest.pro^

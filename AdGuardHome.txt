@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 298288
-! 压缩后规则数: 298288
+! 原始规则数: 298290
+! 压缩后规则数: 298290
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -20291,6 +20291,7 @@
 ||acceptableredheadcaviar.com^
 ||acceptableremotehumorous.com^
 ||acceptancecrowdadvertising.com^
+||acceptancedishearten.com^
 ||acceptatie-authpartner.net.daraz.com^
 ||acceptatie-engineapplication-spring.net.daraz.com^
 ||acceptatie.n-switch.net.daraz.com^
@@ -232168,6 +232169,7 @@
 ||satisfied-dare.com^
 ||satisfied-politics.com^
 ||satisfiedbad.com^
+||satisfiednews.com^
 ||satisfycork.com^
 ||satisfypliablehumiliated.com^
 ||satisfyruns.com^

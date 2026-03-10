@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 298292
-! 压缩后规则数: 298292
+! 原始规则数: 298293
+! 压缩后规则数: 298293
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -37546,6 +37546,7 @@
 ||bdt.kno-winkel.nl^
 ||bdt.mnventures.lt^
 ||bdtarreitxmbb.website^
+||bdtelemetry.amazon^
 ||bdtestsendpulse.branch.rocks^
 ||bdtheque.net.jumia.com.gh^
 ||bdthimglwawkb.site^
@@ -229839,6 +229840,7 @@
 ||rum.optimizely.com^
 ||rum.perfops.net^
 ||rum.uptime.com^
+||rum.us-east-1.amazonaws.com^
 ||rum39bxk.fun^
 ||rumanalytics.com^
 ||rumblebass.com^
@@ -269416,7 +269418,6 @@
 ||tracdelight.com^
 ||tracdelight.io^
 ||trace-2000.com^
-||trace-v1.free-reels.com^
 ||trace.51jingying.com^
 ||trace.bluemonkey.jp^
 ||trace.bounce.17track.net^

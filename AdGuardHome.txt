@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 302465
-! 压缩后规则数: 302465
+! 原始规则数: 302466
+! 压缩后规则数: 302466
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -290604,6 +290604,7 @@
 ||wstjxmlfzottr.website^
 ||wstlfwsmibwkw.site^
 ||wstohshlvmiqd.space^
+||wstpush-mobile.terra.com^
 ||wsuqzu.armani.com^
 ||wsurseonbhtvr.space^
 ||wsvgepytphsbp.site^

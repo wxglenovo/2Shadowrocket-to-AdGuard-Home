@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 302457
-! 压缩后规则数: 302457
+! 原始规则数: 302458
+! 压缩后规则数: 302458
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -199949,6 +199949,7 @@
 ||marsupial.dbcontractingltd.ca^
 ||marsupial.kymellis.co^
 ||marsupial.roleup.com^
+||martabackrock.com^
 ||martech.condenastdigital.com^
 ||martech.wavenet.com.tw^
 ||marten.countertype.com^

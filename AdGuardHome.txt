@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 302458
-! 压缩后规则数: 302458
+! 原始规则数: 302465
+! 压缩后规则数: 302465
 
 ||0--skitch--0.tt.omtrdc.net^
 ||0-0-0-birkart-clws-ifs-globalmn.0-030.net.daraz.com^
@@ -147486,6 +147486,7 @@
 ||global-go.experian.com^
 ||global-guardians.actonservice.com^
 ||global-mktg.transunion.com^
+||global-report.ml.youngjoygame.com^
 ||global-sis.engagelab.com^
 ||global.01-lib-oa-1-admin8.net.daraz.com^
 ||global.accadis.com^
@@ -157058,12 +157059,14 @@
 ||gpkheq.icu^
 ||gplansforourc.org^
 ||gplinks.in^
+||gplog-sg.byteoversea.com^
 ||gplovaumydkv.com^
 ||gplpl.dcshoes.com^
 ||gplusapi.appspot.com^
 ||gplywfirosiwd.one^
 ||gpm-mon-sg.bytegsdk.com^
 ||gpm-mon-sg.byteoversea.com^
+||gpm-mon-va.bytegsdk.com^
 ||gpm-mon-va.byteoversea.com^
 ||gpmodmpdrwbrx.space^
 ||gpplus-app.hotdoc.com.au^
@@ -157650,6 +157653,9 @@
 ||gsdcbsjh55xsc.top^
 ||gsddcgesleqfx.net^
 ||gsdhrj.esthermall.co.kr^
+||gsdk-quic-gcp-va.bytegsdk.com^
+||gsdk-va.bytegsdk.com^
+||gsdk19-va.bytegsdk.com^
 ||gsdm.tt.omtrdc.net^
 ||gsebalid3.click.s11.sfmc-osl.com^
 ||gsecondscreen.com^
@@ -192455,6 +192461,7 @@
 ||log-lb.skyperfectv.co.jp^
 ||log-mediation.easemobi.net^
 ||log-music-data.line-apps.com^
+||log-nontt.bytegsdk.com^
 ||log-player.arte.tv^
 ||log-pq.shopfully.cloud^
 ||log-pub-hk.aoshitang.com^

@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 107074
-! 压缩后规则数: 107074
+! 原始规则数: 107073
+! 压缩后规则数: 107073
 
 ||0.myikas.com^
 ||0.net.easyjet.com^
@@ -2593,7 +2593,6 @@
 ||9w2zed1szg.execute-api.us-east-1.amazonaws.com^
 ||9wad.com^
 ||9wdjf9va.xyz^
-||9wee.com^
 ||9wushuo.com^
 ||9xeqynu3gt7c.com^
 ||9xob25oszs.com^

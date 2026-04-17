@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 108455
-! 压缩后规则数: 108455
+! 原始规则数: 108453
+! 压缩后规则数: 108453
 
 ||0.myikas.com^
 ||0.net.easyjet.com^
@@ -39130,7 +39130,6 @@
 ||hw-ot-ad.a.yximgs.com^
 ||hw-p2p-pull.video-voip.com^
 ||hw-p2p.pull.yximgs.com^
-||hw.zuimeitianqi.com^
 ||hwad.zuimeitianqi.com^
 ||hwads-t.api.my7v.com^
 ||hwbccksvyjdto.website^
@@ -87908,7 +87907,6 @@
 ||sys.hager.com^
 ||sys.zhangyue.com^
 ||sysad.cn^
-||sysdig.com^
 ||sysmeasuring.net^
 ||sysmon.kakaku.com^
 ||sysomos.com^

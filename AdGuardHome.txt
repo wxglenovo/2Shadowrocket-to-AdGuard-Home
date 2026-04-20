@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 106380
-! 压缩后规则数: 106380
+! 原始规则数: 106381
+! 压缩后规则数: 106381
 
 ||0.myikas.com^
 ||0.net.easyjet.com^
@@ -8756,6 +8756,7 @@
 ||analytics.chase.com^
 ||analytics.chattarize.de^
 ||analytics.chegg.com^
+||analytics.cherry-ai.com^
 ||analytics.chilevision.cl^
 ||analytics.churchthemes.com^
 ||analytics.chvnoticias.cl^

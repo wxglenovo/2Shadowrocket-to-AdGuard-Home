@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 107470
-! 压缩后规则数: 107470
+! 原始规则数: 107471
+! 压缩后规则数: 107471
 
 ||0.myikas.com^
 ||0.net.easyjet.com^
@@ -6312,6 +6312,7 @@
 ||admtpmp124.com^
 ||admulti.com^
 ||admusicpic.music.126.net^
+||adn-plus.com.cn^
 ||adn.insight.ucweb.com^
 ||adnade.net^
 ||adnami.io^

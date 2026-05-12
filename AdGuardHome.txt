@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 106457
-! 压缩后规则数: 106457
+! 原始规则数: 106456
+! 压缩后规则数: 106456
 
 ||0.myikas.com^
 ||0.net.easyjet.com^
@@ -32447,7 +32447,6 @@
 ||figocjidpbloj.website^
 ||figpii.com^
 ||figqiqdhirid.in^
-||figshare.com^
 ||figsprotein.com^
 ||figuredworrying.com^
 ||figurehunter.net^

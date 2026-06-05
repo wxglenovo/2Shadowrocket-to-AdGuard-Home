@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 105335
-! 压缩后规则数: 105335
+! 原始规则数: 105334
+! 压缩后规则数: 105334
 
 ||0.myikas.com^
 ||0.net.easyjet.com^
@@ -69712,7 +69712,6 @@
 ||rddiqs.partyhallen.se^
 ||rddywd.com^
 ||rdedkdhyuyghl.online^
-||rdelivery.qq.com^
 ||rderstartirrelea.com^
 ||rdeswa1.com^
 ||rdfeesvsxhsyn.online^

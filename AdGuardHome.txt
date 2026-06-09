@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 106021
-! 压缩后规则数: 106021
+! 原始规则数: 106022
+! 压缩后规则数: 106022
 
 ||0.myikas.com^
 ||0.net.easyjet.com^
@@ -5967,6 +5967,7 @@
 ||adcdn.goo.ne.jp^
 ||adcdn.hpplay.cn^
 ||adcdn.tencentmusic.com^
+||adcdn6.tencentmusic.com^
 ||adcdnx.com^
 ||adcell.com^
 ||adcell.de^

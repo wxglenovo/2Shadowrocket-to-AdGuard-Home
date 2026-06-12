@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 103434
-! 压缩后规则数: 103434
+! 原始规则数: 103433
+! 压缩后规则数: 103433
 
 ||0.myikas.com^
 ||0.net.easyjet.com^
@@ -25944,7 +25944,6 @@
 ||dls.guidrr.com^
 ||dlsw.baidu.com^
 ||dlsw.br.baidu.com^
-||dlswbr.baidu.com^
 ||dlsybe78o0.com^
 ||dltehknrgvnjpf.com^
 ||dlthst9q2beh8.cloudfront.net^

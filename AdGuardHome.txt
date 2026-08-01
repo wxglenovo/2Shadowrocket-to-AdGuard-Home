@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 102159
-! 压缩后规则数: 102159
+! 原始规则数: 102158
+! 压缩后规则数: 102158
 
 ||0.myikas.com^
 ||0.net.easyjet.com^
@@ -91111,7 +91111,6 @@
 ||udzbxhgsqnbpn.online^
 ||udzpel.com^
 ||udzucw.haggar.com^
-||ue.yeyoucdn.com^
 ||ue8im.com^
 ||ueaczqcyrvval.online^
 ||ueadlian.com^

@@ -1,6 +1,6 @@
 ! 生成时间: 自动构建
-! 原始规则数: 104448
-! 压缩后规则数: 104448
+! 原始规则数: 104447
+! 压缩后规则数: 104447
 
 ||0.myikas.com^
 ||0.net.easyjet.com^
@@ -44657,7 +44657,6 @@
 ||iyxkoshoagpfc.website^
 ||iyyfj0g7m.com^
 ||iyykxvzgtxuyq.space^
-||izatcloud.net^
 ||izavjtqqznucm.site^
 ||izaybwqvajljf.space^
 ||izbwce.secretoutlet.com.br^
